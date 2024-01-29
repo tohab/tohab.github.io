@@ -7,10 +7,8 @@ url: tohab.github.io
 
 description: the blog of rohan prasad
 
-
+remote_theme: "tohab/tohab.github.io/"
 theme: cvless
-
-
 
 # author settings
 author: 
