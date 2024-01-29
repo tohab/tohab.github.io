@@ -45,12 +45,72 @@ small {
   /* Adjust the margin as needed */
 }
 
+// #navbar {
+//   display: flex;
+//   justify-content: flex-end; /* Align the navbar to the right */
+//   // margin-top: 10px; /* Adjust the margin as needed */
+//   // justify-content: space-between;
+// }
+
+// #nav_items {
+//   display: flex;
+//   justify-content: space-between; /* Spread items evenly */
+// }
+
+// #nav_items a {
+//   // color: white; /* Set text color for navigation items */
+//   text-decoration: none; /* Remove underlines from links */
+//   // padding: 10px; /* Add padding for better visibility */
+//   margin-right: 0.7em; /* Adjust the margin between navigation items using em */
+// }
+
+
 #navbar {
   display: flex;
-  justify-content: flex-end; /* Align the navbar to the right */
-  // margin-top: 10px; /* Adjust the margin as needed */
-  // justify-content: space-between;
+  justify-content: flex-end;
 }
+
+#nav_items {
+  display: flex;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0; /* Align the right edge of the dropdown with the right edge of the arrow */
+  top: 100%; /* Position it below the dropdown-toggle */
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  text-align: right;
+}
+
+.dropdown-toggle {
+  color: black;
+  text-decoration: none;
+  padding-left: 1em; /* Adjust the padding to your preference */
+  cursor: pointer;
+  content: "↓"; /* Unicode character for a down arrow */
+}
+
+.dropdown-content a {
+  color: black;
+  display: block;
+  text-align: right;
+  text-decoration: none; /* tries to remove default underlining, but it doesn't work.
+}
+
+.dropdown-content a:hover {
+  // background-color: #ddd;
+  text-decoration: underline; /* Add underline on hover does do it well */
+}
+
 
 abbr {
   text-transform: lowercase;

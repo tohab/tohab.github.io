@@ -17,4 +17,3 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 
 Below is a list of blog posts included for illustrative purposes. Make sure to delete or modify them before deploying your website.
 
-{% include archive.html %}

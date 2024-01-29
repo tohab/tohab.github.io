@@ -5,6 +5,10 @@ pagination:
   enabled: true
 ---
 
-{% include pagination.html %}
 
 {% include postlist.html %}
+
+{% include pagination.html %}
+
+
+{% include archive.html %}

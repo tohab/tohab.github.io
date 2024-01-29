@@ -1,9 +1,9 @@
 ---
 layout: cv
-title: cv
+title: art
 ---
 
-# Curriculum Vitæ
+# art 
 
 <!-- {% include contact.html %} -->
 
