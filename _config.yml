@@ -1,9 +1,9 @@
-title: rohan vijay prasad
+title: rohan prasad
 # site settings
-taglong: wandering since the year 2000 # goes beneath title
-# tagshort: rohan's website
+# taglong:  # goes beneath title
+tagshort: wandering since the year 2000
 baseurl: ""
-url: https://piazzai.github.io/cvless
+url: tohab.github.io
 
 description: the blog of rohan prasad
 

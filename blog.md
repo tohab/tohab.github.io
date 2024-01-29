@@ -1,9 +1,10 @@
 ---
 layout: page
-title: Posts
+title: blog
 pagination:
   enabled: true
 ---
 
-{% include postlist.html %}
 {% include pagination.html %}
+
+{% include postlist.html %}

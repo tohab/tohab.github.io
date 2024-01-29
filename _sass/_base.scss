@@ -38,6 +38,18 @@ footer {
 
 small {
   font-weight: 300;
+  // make small go down below
+  display: block;
+  margin-top: 0.1em;
+  font-style: italic;
+  /* Adjust the margin as needed */
+}
+
+#navbar {
+  display: flex;
+  justify-content: flex-end; /* Align the navbar to the right */
+  // margin-top: 10px; /* Adjust the margin as needed */
+  // justify-content: space-between;
 }
 
 abbr {
