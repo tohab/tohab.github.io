@@ -7,14 +7,14 @@ url: tohab.github.io
 
 description: the blog of rohan prasad
 
-remote_theme: "tohab/tohab.github.io/"
+remote_theme: "tohab/tohab.github.io@main"
 theme: cvless
 
 # author settings
 author: 
   name: Rohan Prasad
   email: username@domain.com
-photo: assets/files/photo.jpg
+photo: /themes/cvless/assets/files/photo.jpg
 # address: Foobar Hall 1.23
 # phone: +1 234 567 890
 
