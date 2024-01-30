@@ -7,9 +7,9 @@ url: tohab.github.io
 
 description: the blog of rohan prasad
 
-remote_theme: pages-themes/primer
 plugins:
 - jekyll-remote-theme
+remote_theme: pages-themes/primer
 
 # author settings
 author: 
