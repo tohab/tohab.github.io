@@ -7,10 +7,7 @@ url: tohab.github.io
 
 description: the blog of rohan prasad
 
-
-theme: cvless
-
-
+theme: minima
 
 # author settings
 author: 
