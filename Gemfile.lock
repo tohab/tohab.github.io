@@ -269,6 +269,7 @@ DEPENDENCIES
   jekyll-toc
   jekyll-twitter-plugin
   jemoji
+  rexml (~> 3.3.9)
   unicode_utils
   webrick
 
