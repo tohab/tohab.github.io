@@ -134,7 +134,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 blog_name: rohan's blog # blog_name will be displayed in your blog page
 blog_description: where he writes whatever he wants
 permalink: /blog/:year/:title/
-lsi: true # produce an index for related posts
+lsi: false # produce an index for related posts. maybe is producing an error?
 
 # Pagination
 pagination:
