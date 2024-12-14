@@ -5,14 +5,14 @@
 @use "sass:color";
 
 :root {
-  --global-bg-color: #{$white-color};
+  --global-bg-color: #ffd6aa;
   --global-code-bg-color: #{$code-bg-color-light};
   --global-text-color: #{$black-color};
-  --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$red-color};
-  --global-hover-color: #{$red-color};
+  --global-text-color-light: #575757;
+  --global-theme-color: #ff0000;
+  --global-hover-color: #b80000;
   --global-hover-text-color: #{$white-color};
-  --global-footer-bg-color: #{$grey-color-light};
+  --global-footer-bg-color: #fabb78;
   --global-footer-text-color: #{$grey-color-dark};
   --global-footer-link-color: #{$white-color};
   --global-distill-app-color: #{$grey-color};

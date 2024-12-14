@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: rohan prasad # the website title (if blank, full name will be used instead)
+title: Rohan Prasad # the website title (if blank, full name will be used instead)
 first_name: Rohan
 middle_name: 
 last_name: Prasad
@@ -12,7 +12,7 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
 keywords: jekyll, rohan, personal-website, portfolio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: 🌞 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: favicon512.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://tohab.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
