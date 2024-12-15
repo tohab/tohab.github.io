@@ -1,0 +1,65 @@
+[33mcommit 41ca703542d8e72a29be6325853a8fbce4fc5ef9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: tohab <therohanprasad@gmail.com>
+Date:   Sat Dec 14 23:50:32 2024 +0000
+
+    changed font to georgia
+
+[33mcommit f58dbf87a34faac9ff5c91f96470e2efa04cd5a3[m
+Author: tohab <therohanprasad@gmail.com>
+Date:   Sat Dec 14 23:39:10 2024 +0000
+
+    deleted blog posts, changed _themes.scss to have colors a mild orange
+
+[33mcommit e137d9ea4810a6106f0df3bfa5cb11385c7b4a13[m
+Author: tohab <therohanprasad@gmail.com>
+Date:   Sat Dec 14 22:54:49 2024 +0000
+
+    removed unwanted pages from navbar
+
+[33mcommit a60f570ed6675e8f7f8194b652692853b29218fa[m
+Author: tohab <therohanprasad@gmail.com>
+Date:   Tue Dec 10 23:25:11 2024 +0000
+
+    deleted unneeded files, updated home page, changed colors. fixed some things that broke
+
+[33mcommit 631db97ea8e86c6585d76ba2e8267b48f6a7b593[m
+Author: tohab <therohanprasad@gmail.com>
+Date:   Tue Dec 10 22:50:04 2024 +0000
+
+    updated mainpage picture and some config
+
+[33mcommit 4a90c84ac119c80804b9350fc11b4be90df1eaf2[m
+Author: tohab <therohanprasad@gmail.com>
+Date:   Mon Dec 9 20:03:13 2024 +0000
+
+    updated config yml
+
+[33mcommit f4b11a3eaf7276bddbf381322617a1731cfa5d6b[m
+Author: tohab <tohab@users.noreply.github.com>
+Date:   Mon Dec 9 13:47:33 2024 -0500
+
+    Update _config.yml
+
+[33mcommit eae9ac62c13a0ab3d65bada3a9722e075262a112[m
+Author: tohab <tohab@users.noreply.github.com>
+Date:   Mon Dec 9 13:45:06 2024 -0500
+
+    Update 2024-05-01-tabs.md
+
+[33mcommit 55d99fe36d64b1fc2f9212f8fd31c93d38e9d3ae[m
+Author: tohab <tohab@users.noreply.github.com>
+Date:   Mon Dec 9 13:41:35 2024 -0500
+
+    Update about.md
+
+[33mcommit 8fdcf688032d4f948494da7d8faad31f2faa9875[m
+Author: tohab <tohab@users.noreply.github.com>
+Date:   Mon Dec 9 13:16:48 2024 -0500
+
+    Update _config.yml
+
+[33mcommit 9cf138cb1ad74436b1310650796acf8fae13f9ef[m
+Author: tohab <tohab@users.noreply.github.com>
+Date:   Mon Dec 9 13:15:18 2024 -0500
+
+    Initial commit
