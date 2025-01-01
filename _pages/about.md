@@ -18,4 +18,6 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I'm a lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Rohan Prasad is a creator, writer, and thinker navigating the 21st century. He was born in 2000 and has been alive since.
+I'm Rohan! This is my personal website. Here you can find my blog and homepage.
+
+A little about me: I grew up in London, UK and went to the University of California, Berkeley and studied Economics. After that, I lived in Kaohsiung, Taiwan for 2 years working as an English teacher.

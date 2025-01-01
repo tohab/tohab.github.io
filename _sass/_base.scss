@@ -43,8 +43,9 @@ li,
 span,
 strong {
   color: var(--global-text-color);
-  font-size: 1.15em; /* Increase font size */
-  font-weight: 350; /* Make the font thicker */
+  font-size: 1.1em; /* Increase font size */
+  font-weight: 375; /* Make the font thicker */
+  line-height: 1.3
 }
 
 h1 {
@@ -64,14 +65,17 @@ h3 {
 
 h4 {
   font-size: 1.4em;
+  font-weight: 200; 
 }
 
 h5 {
   font-size: 1.20em;
+  font-weight: 200; 
 }
 
 h6 {
   font-size: 1.05em;
+  font-weight: 200; 
 } 
 
 
@@ -271,6 +275,18 @@ ul.task-list input[type="checkbox"] {
 .profile.float-left {
   margin-right: 1rem;
 }
+
+.centered-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.centered-profile img {
+  margin-bottom: 10px; /* Adds space between image and text */
+}
+
 
 @media (min-width: 576px) {
   .profile {
