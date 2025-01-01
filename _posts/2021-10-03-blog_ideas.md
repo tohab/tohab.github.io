@@ -1,9 +1,0 @@
----
-title: "blog ideas"
-date: 2021-10-03
----
-
-beyond meatwhat i did, learnedpromise of alt-meatlimitations; american capitalism, profit-motive, america-centricvalue of working full-time on something. so much execution, thoughtful decisions. power, money, experience corrupts and makes us arguably bad decision makers.ikigaiapply apply apply. consulting, finance, tech. intellectual labor. from an american college campus to a work campusbarraged, i tried to find solace.kate. 3 factors: the day-to-day, the people, the cause. 2 / 3 is fantastic. 1/3 may mean you look for something else. 3/3 is a privilege.
-career counsellor. keep your options open. but at what cost?george monbiot. interesting, artistic. explore. learn about the world before you setttle down.ikigai. the intersection of what you love, what you're good at, what pays the bills, what the world needs. less pressure in terms of salary, social status. because ultimately your career effects you far more than it affects your family, friends, or career counsellors. boddhisatva, doing goodmany cultures have a model of doing good in the world. buddhism, it's the main goal. christianity: charity, etc. effective altruism, the westernized approach that somehow has convinced Bay Area yuppies to donate to charity. the corporate social responsibility model -- donate revenues, be on the board of a non-profit, start a eco company.
-there's also the understanding of stages in your life. hindu model: play, study, work, relax (as you go throughout your years). we don't all fit to that. but if you're doing something that doesn't directly align with a cause, maybe it's just not the right stage in your life. sometimes use a jack-hammer, sometimes a chisel. pushing for change is contextual if it's done well. in the right communal space. at the right time of your life. having enough capacity for yourself, and for others to be receptive.
-deep interviews for understand, depolarization, empathy

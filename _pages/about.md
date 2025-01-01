@@ -20,4 +20,4 @@ social: true # includes social icons at the bottom of the page
 
 I'm Rohan! This is my personal website. Here you can find my blog and homepage.
 
-A little about me: I grew up in London, UK and went to the University of California, Berkeley and studied Economics. After that, I lived in Kaohsiung, Taiwan for 2 years working as an English teacher.
+A little about me: I grew up in London, UK and went to UC Berkeley and studied Economics. After that, I lived in Kaohsiung, Taiwan for two years working as an English teacher.
