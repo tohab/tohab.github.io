@@ -22,6 +22,6 @@ social: true # includes social icons at the bottom of the page
 
 ##### I grew up in London, UK and went to UC Berkeley and studied Economics. After that, I lived in Kaohsiung, Taiwan for two years working as an English teacher.
 
-To-do with regards to the blog:
-- reduce the gap above headers, especially h1 
-- eventually, write a script that automatically adds tags to all posts
+<!-- To-do with regards to the blog: -->
+<!-- - reduce the gap above headers, especially on the blogs browsing page -->
+<!-- - eventually, write a script that automatically adds tags to all posts -->
