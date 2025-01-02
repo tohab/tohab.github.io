@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2022-04-welcome-to-adulthood-can-i-see-your-w2
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Welcome to Adulthood! Can I see your W2?
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2022/04/welcome-to-adulthood-can-i-see-your-w2.html)\*.
+*This was originally posted on blogger.*
 
 Taxes have always seemed like the most absurdly, adulty, agonizing thing you can ever get up to on a Sunday afternoon. The kids are out playing baseball; dogs are playing fetch at a ball game; but the adults are stuck inside with a calculator, pen and pencil.
 

@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2021-12-ready-player-one-by-ernest-cline
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Ready Player One by Ernest Cline
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2021/12/ready-player-one-by-ernest-cline.html)\*.
+*This was originally posted on blogger.*
 
 *Ready Player One* deals with a frightening and unfortunately familiar dystopia. In the year 2045, the world has gone through crisis after crisis of wars, poverty, and climate catostrophe. Meanwhile, virtual reality has reached a whole new level. Nearly everyone on the planet is plugged into the OASIS, a near-perfect simulation that has millions of planets, public schools, and institutions acting through completely anonymous avatars. Created by James Halliday, an unabashed 80s geek, the OASIS has come to dominate most people's reality. One day, Halliday dies*,* and leaves his entire fortune to the person who can solve his secret "easter egg" hidden in the game.
 

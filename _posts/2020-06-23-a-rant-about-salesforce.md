@@ -6,13 +6,12 @@ published: True
 slug: 2020-06-a-rant-about-salesforce
 tags:
   - technology
-  - http://schemas.google.com/blogger/2008/kind#post
   - capitalism
   - legacy-blogger
 title: A rant about Salesforce
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2020/06/a-rant-about-salesforce.html)\*.
+*This was originally posted on blogger.*
 Let's talk about Salesforce. Maybe you don't care about them or what they do --  frankly I don't either -- but many people from my school want to go work there. Their internships will give you free housing and lots of money. And according to the stock market they're worth [171](https://ycharts.com/companies/CRM/market_cap) billion dollars.  
 
   

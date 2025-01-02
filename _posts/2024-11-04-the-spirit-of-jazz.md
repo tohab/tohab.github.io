@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2024-11-the-spirit-of-jazz
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: the spirit of jazz
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2024/11/the-spirit-of-jazz.html)\*.
+*This was originally posted on blogger.*
 
 Every jazz musician has heard the phrase, "there are no wrong notes in jazz." Trite but interesting, right? It implies that by definition, jazz is an artform in which there is no structure, no rules, nothing bad and nothing good. It just is. What you play just *is*.   
   

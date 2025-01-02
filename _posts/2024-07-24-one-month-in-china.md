@@ -6,7 +6,6 @@ published: True
 slug: 2024-07-one-month-in-china
 tags:
   - technology
-  - http://schemas.google.com/blogger/2008/kind#post
   - politics
   - travel
   - social change
@@ -15,7 +14,7 @@ tags:
 title: One month in China
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2024/07/one-month-in-china.html)\*.
+*This was originally posted on blogger.*
 
 I've been traveling in China for about a month, and have a couple weeks more in the country. Surprisingly, most people are willing to talk politics, in a large, outdoor space. It's fascinating getting people's opinions, and I have some of my own at the end of this post.
 

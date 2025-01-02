@@ -5,7 +5,6 @@ layout: post
 published: True
 slug: 2024-04-taiwan-rainbow-gathering-2024
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - capitalism
   - taiwan
   - personal
@@ -13,7 +12,7 @@ tags:
 title: Taiwan Rainbow Gathering 2024
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2024/04/taiwan-rainbow-gathering-2024.html)\*.
+*This was originally posted on blogger.*
 
 A Rainbow Gathering is essentially a camping festival. They're always in the woods in an arbitrary country. They last one lunar month starting from a new moon. In the Rainbow Gathering, there are no leaders, no rules, no monetary exchanges. But there are "consensuses": all food is vegan, there's no alcohol or hard drugs allowed, and no violence. Basically everything else is up to the people at the gathering's judgement.
 

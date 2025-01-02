@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2023-11-abiding-interests-and-discipline
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: abiding interests and discipline
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/11/abiding-interests-and-discipline.html)\*.
+*This was originally posted on blogger.*
 
 Abiding interests
 

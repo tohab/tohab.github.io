@@ -5,13 +5,12 @@ layout: post
 published: True
 slug: 2019-12-the-revolution-wont-happen-online
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - social change
   - legacy-blogger
 title: The revolution won't happen online
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2019/12/the-revolution-wont-happen-online.html)\*.
+*This was originally posted on blogger.*
 Several days ago, I hiked the Berkeley Fire Trails with two close
 friends as an end to our semester. We walked for an hour up the trail…
 through the dark paths, avoiding knotted roots and murky puddles. As we

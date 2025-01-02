@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2023-05-toilet-cloggage-in-on-taiwan-railway
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Toilet cloggage in on the Taiwan Railway
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/05/toilet-cloggage-in-on-taiwan-railway.html)\*.
+*This was originally posted on blogger.*
 
 今天我從苗栗三義跟朋友回高雄。我們在台中轉車，走到月台時，發現人超級多！整個月台都是人，可能有一萬人以上，真的『人山人海』。
 

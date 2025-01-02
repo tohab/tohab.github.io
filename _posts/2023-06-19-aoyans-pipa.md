@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2023-06-aoyans-pipa
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Aoyan's Pipa
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/06/aoyans-pipa.html)\*.
+*This was originally posted on blogger.*
 
 I met a man named Aoyan today playing the *pipa*, a Chinese instrument. It's like a guitar, but has a bustier bottom, and has a fabulous sound -- the sound of rain drops and a mountain-side view. It reminds me of those old Chinese landscape paintings, the ones where there are people walking along a bridge carrying water for the village, and people dressed up riding horses and the mountains in the background. All from four strings and a block of wood.
 

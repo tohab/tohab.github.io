@@ -5,13 +5,12 @@ layout: post
 published: True
 slug: 2024-01-iggys-friends
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - personal
   - legacy-blogger
 title: iggy's friends
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2024/01/iggys-friends.html)\*.
+*This was originally posted on blogger.*
 
 *Yeah, I've become really good friends with Iggy's sister. But it's weird.*
 

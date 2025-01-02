@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2022-07-how-rohan-plays-chess-career-framework
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: How Rohan Plays Chess -- A Career Framework
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2022/07/how-rohan-plays-chess-career-framework.html)\*.
+*This was originally posted on blogger.*
 
 Here’s how I decide which moves to play in chess.
 

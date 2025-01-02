@@ -5,7 +5,6 @@ layout: post
 published: True
 slug: 2024-04-kindness-on-april-23rd-2024
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - taiwan
   - teaching
   - personal
@@ -13,7 +12,7 @@ tags:
 title: Kindness on April 23rd, 2024
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2024/04/kindness-on-april-23rd-2024.html)\*.
+*This was originally posted on blogger.*
 
 My old jazz professor Ben Goldberg once wrote, "there are some downbeats that last a lifetime." As I write this it happens to be the eve of my 24th birthday. At midnight it'll be April 24th, 2024, exactly two zodiac cycles after I was born.   
   

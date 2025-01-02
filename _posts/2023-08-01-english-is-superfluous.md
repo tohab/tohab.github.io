@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2023-08-english-is-superfluous
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: english is superfluous
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/08/english-is-superfluous.html)\*.
+*This was originally posted on blogger.*
 
 I've realized that English has more curtesies than I had previously thought. Let me give some examples:
 

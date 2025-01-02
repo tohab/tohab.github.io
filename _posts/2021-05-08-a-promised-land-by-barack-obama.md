@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2021-05-a-promised-land-by-barack-obama
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: A Promised Land by Barack Obama
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2021/05/a-promised-land-by-barack-obama.html)\*.
+*This was originally posted on blogger.*
 
 When I was in third grade, I remember writing to President Barack Obama as a writing assignment. The letter lies in my portfolio -- evidently it never reached the White House. I told him that, "I'm black just like you and that I'm proud that you are President."
 

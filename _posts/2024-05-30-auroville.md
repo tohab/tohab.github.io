@@ -5,7 +5,6 @@ layout: post
 published: True
 slug: 2024-05-auroville
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - capitalism
   - india
   - travel
@@ -13,7 +12,7 @@ tags:
 title: Auroville
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2024/05/auroville.html)\*.
+*This was originally posted on blogger.*
 
 When I arrived to Pondicherry I quickly heard about a intentional community called Auroville. It's about 15km from where I was staying, so I figured it was worth a day trip to see what all the hype is all about. (You can read about Auroville on Wikipedia)   
 

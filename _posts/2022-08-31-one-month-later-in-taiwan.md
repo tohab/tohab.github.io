@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2022-08-one-month-later-in-taiwan
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: One month later in Taiwan
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2022/08/one-month-later-in-taiwan.html)\*.
+*This was originally posted on blogger.*
 
 The end of this week marks my first month of teaching in Taiwan, and five whole weeks in the country.
 

@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2023-05-sitting-at-sunny-day-coffee-roasters
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Sitting at Sunny Day Coffee Roasters
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/05/sitting-at-sunny-day-coffee-roasters.html)\*.
+*This was originally posted on blogger.*
 
 and free writing.   
 

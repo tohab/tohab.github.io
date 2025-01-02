@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2023-06-ping-pong-competition-1
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Ping Pong Competition 1
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/06/ping-pong-competition-1.html)\*.
+*This was originally posted on blogger.*
 
 Yesterday I went to my first ever ping pong competition!
 

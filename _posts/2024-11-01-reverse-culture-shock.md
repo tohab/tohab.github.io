@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2024-11-reverse-culture-shock
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Reverse Culture Shock
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2024/11/reverse-culture-shock.html)\*.
+*This was originally posted on blogger.*
 
 It's been a long long time since I got to a blog post, so let's go ahead and do it!  
   

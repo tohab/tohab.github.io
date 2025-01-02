@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2022-11-prices-in-taiwan
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Prices in Taiwan
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2022/11/prices-in-taiwan.html)\*.
+*This was originally posted on blogger.*
 
 Prices are interesting and sometimes hard to understand. In Taiwan, it feels like things are priced completely different to in the West and I'm trying to make sense of it.
 

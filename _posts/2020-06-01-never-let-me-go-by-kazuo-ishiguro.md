@@ -5,13 +5,12 @@ layout: post
 published: True
 slug: 2020-06-never-let-me-go-by-kazuo-ishiguro
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - review
   - legacy-blogger
 title: Never Let Me Go by Kazuo Ishiguro
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2020/06/never-let-me-go-by-kazuo-ishiguro.html)\*.
+*This was originally posted on blogger.*
 *Never Let Me Go* is a sad story.   
 
   

@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2024-12-stickers-hope-and-change-and-bible
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Stickers, hope and change, and bible-pusher Rohan
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2024/12/stickers-hope-and-change-and-bible.html)\*.
+*This was originally posted on blogger.*
 
 **Taiwanese sticker culture.** It's totally normal in Taiwan to send stickers to your friends. And your coworkers, boss, customers -- whoever. When I landed in Kaohsiung for the first time, my interactions with the quarantine hotel I was staying at were mediated through LINE, the common messaging app in Taiwan & Japan. Most of the time, I would type something, they would respond, and then send a sticker.So many stickers. A sticker is like a glorified emoji that moves. Or you could see it like sending a meme or a GIF. And you can also buy them. And they make stuffed animals and key-chains based on the common ones.   
   

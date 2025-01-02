@@ -5,7 +5,6 @@ layout: post
 published: True
 slug: 2023-10-core-memories
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - teaching
   - assorted
   - ping pong
@@ -14,7 +13,7 @@ tags:
 title: Core Memories
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/10/core-memories.html)\*.
+*This was originally posted on blogger.*
 
 Here are some stories about my students thatI think are cute. They don't necessarily have a great resolution or take-away message**.** That's why I'm sharing them on my blog.
 

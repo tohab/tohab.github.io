@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2024-11-speaking-plainly
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: speaking plainly
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2024/11/speaking-plainly.html)\*.
+*This was originally posted on blogger.*
 
 Day 2 in the US. I wake up at Leon's house. It's Thursday morning, and there's a knock on the door. I look around, but Leon is in a meeting, his mother is out, and his father appears to be changing. So I take a stab and peak outside.  
   

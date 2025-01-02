@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2022-01-the-killing-fields-by-roland-joffe
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: The Killing Fields by Roland Joffe
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2022/01/the-killing-fields-by-roland-joffe.html)\*.
+*This was originally posted on blogger.*
 
 I truly enjoyed our first day of "Hacks of the Silver Screen", a course with Mark Danner. The theme is
 journalists in film -- how films have shown journalists as heroes, scoundrels,

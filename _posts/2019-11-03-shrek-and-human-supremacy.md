@@ -5,13 +5,12 @@ layout: post
 published: True
 slug: 2020-05-shrek-and-human-supremacy
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - review
   - legacy-blogger
 title: Shrek and Human Supremacy
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2020/05/shrek-and-human-supremacy.html)\*.
+*This was originally posted on blogger.*
 *This essay contains spoilers for Shrek (2001). If you haven’t seen it, you have a deep problem that needs addressing.*  
 
   

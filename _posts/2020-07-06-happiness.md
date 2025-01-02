@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2020-07-happiness
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Don't worry, be happy!
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2020/07/happiness.html)\*.
+*This was originally posted on blogger.*
 We all know people in our who are extremely happy. People who float like bubbles over the concerns that plague others. People who bounce back from adversity like a ball of elastics, ready to get up, stretch, and tackle another day.  
 
   

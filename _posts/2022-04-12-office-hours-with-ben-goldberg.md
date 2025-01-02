@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2022-04-office-hours-with-ben-goldberg
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Office Hours with Ben Goldberg
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2022/04/office-hours-with-ben-goldberg.html)\*.
+*This was originally posted on blogger.*
 
 The tension between the narly and the beautiful in
 jazz. How do you approach it?

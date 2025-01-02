@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2021-01-ode-to-buttercup
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Ode to Buttercup
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2021/01/ode-to-buttercup.html)\*.
+*This was originally posted on blogger.*
 
 *Strong-willed. Determined.*
 

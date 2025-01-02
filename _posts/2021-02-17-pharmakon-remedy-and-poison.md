@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2021-02-pharmakon-remedy-and-poison
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Pharmakon -- Remedy and poison
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2021/02/pharmakon-remedy-and-poison.html)\*.
+*This was originally posted on blogger.*
 
 I just learned about an interesting concept: "pharmakon." The way I was taught it, this Greek word describes something that is both a medicine *and* a poison at the same time.
 

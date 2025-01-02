@@ -6,14 +6,13 @@ published: True
 slug: 2020-12-cyborgs-at-harkness-table
 tags:
   - technology
-  - http://schemas.google.com/blogger/2008/kind#post
   - social change
   - personal
   - legacy-blogger
 title: Cyborgs at the Harkness Table
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2020/12/cyborgs-at-harkness-table.html)\*.
+*This was originally posted on blogger.*
 
 Here's a thought: Are English majors Cyborgs when they sit around a discussion table?
 

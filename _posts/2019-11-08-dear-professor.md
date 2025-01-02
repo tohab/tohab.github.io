@@ -5,13 +5,12 @@ layout: post
 published: True
 slug: 2020-05-dear-professor
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - capitalism
   - legacy-blogger
 title: Dear Professor
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2020/05/dear-professor.html)\*.
+*This was originally posted on blogger.*
 *This is a letter I wrote to my economics professor about what
 we are taught in university. The main idea, I suppose, is that we
 should not only ask “what is efficient?” but also, “what is right?”*.  

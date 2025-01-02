@@ -5,13 +5,12 @@ layout: post
 published: True
 slug: 2020-06-yeasty-love
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - poetry
   - legacy-blogger
 title: Yeasty Love
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2020/06/yeasty-love.html)\*.
+*This was originally posted on blogger.*
 Shall I compare thee  
 
 To a mush-a-room?  

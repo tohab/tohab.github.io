@@ -5,13 +5,12 @@ layout: post
 published: True
 slug: 2020-06-maybe-youve-heard-this-poem-before
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - social change
   - legacy-blogger
 title: Whitey's off to space
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2020/06/maybe-youve-heard-this-poem-before.html)\*.
+*This was originally posted on blogger.*
 Maybe you've heard this poem before: *Whitey On the Moon.*   
 
   

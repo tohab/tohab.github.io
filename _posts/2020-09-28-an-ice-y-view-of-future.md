@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2020-09-an-ice-y-view-of-future
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: An ICE-y View of the Future
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2020/09/an-ice-y-view-of-future.html)\*.
+*This was originally posted on blogger.*
 
 *This essay was written for a class called* Human Contexts and Ethics of Data*. Hope you enjoy.*
 

@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2023-11-band-album-is-out
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: 補習BAND the album is out
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/11/band-album-is-out.html)\*.
+*This was originally posted on blogger.*
 
 My first album, 補習BAND, is now released! Here's the link:
 

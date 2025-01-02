@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2023-03-the-battle-for-myself
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: The battle for myself
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/03/the-battle-for-myself.html)\*.
+*This was originally posted on blogger.*
 
 In Jordan Peterson's second black horror film, *Us*, the world is split into two. There are those living normal lives like you or I: walking on two legs in the bright, open sunshine. And there are those living underground, the shadow people. Life below is a sorry imitation of life above the shadows. The shadow children get partially chewed dolls for Christmas; the people walk with a strange limp and speak raspily. The worlds are separate until they aren't -- until the moment they collide.
 

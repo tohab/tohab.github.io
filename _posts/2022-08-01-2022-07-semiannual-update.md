@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2022-08-2022-07-semiannual-update
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: 2022-08 Semiannual Update
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2022/08/2022-07-semiannual-update.html)\*.
+*This was originally posted on blogger.*
 
 Hello there!
 

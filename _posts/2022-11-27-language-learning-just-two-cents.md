@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2022-11-language-learning-just-two-cents
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Language Learning, just two cents
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2022/11/language-learning-just-two-cents.html)\*.
+*This was originally posted on blogger.*
 
 Between teaching Chinese and learning, I've found myself spending a great deal of my waking hours thinking about language learning. It's not as overwhelming as it sounds. Language learning is rich and contains many elements. Right now, I have some sort of a system -- not so rigid and not so regimented, but a system nonetheless. So I figure I'd explain it in words.  
 

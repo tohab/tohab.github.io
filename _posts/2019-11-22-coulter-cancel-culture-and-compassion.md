@@ -5,13 +5,12 @@ layout: post
 published: True
 slug: 2020-05-coulter-cancel-culture-and-compassion
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - social change
   - legacy-blogger
 title: Coulter, Cancel Culture, and Compassion
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2020/05/coulter-cancel-culture-and-compassion.html)\*.
+*This was originally posted on blogger.*
 *On November 22nd, 2019 the Berkeley College Republicans
 hosted Ann Coulter, a conservative commentator, on the UC campus.
 Several hundred students and anti-fascist protesters demonstrated before

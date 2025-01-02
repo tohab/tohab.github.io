@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2023-05-hank-and-goliath
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Hank and Goliath
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/05/hank-and-goliath.html)\*.
+*This was originally posted on blogger.*
 The battle to control Hank started long before I was his teacher. My predessor Bryan found him impossible. Bryan had him through the COVID online teaching period and eventually found a way to have him sent down a few English "levels", which is how he ended up in my class. Hank was dumped into my class.  
 Hank's offenses are sometimes minor. But over time they accumulate, and taking away "stars", a little school reward system, doesn't do quite enough. So inspired by my boss I thought that if students do something pretty bad twice, they just stay after class and write lines.  
 I held him after class the first time a couple months into teaching. "I will not throw balls at my classmates." He writes it ten times and we read it together, ten times. "Got it, Hank?" He goes on his way home. Then, just a couple weeks later, he suddenly was yelling swear words at someone for losing at Foosball. I held him back again: "I will not shout in class." Twenty times.   

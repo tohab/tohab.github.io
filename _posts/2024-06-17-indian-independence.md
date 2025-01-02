@@ -5,7 +5,6 @@ layout: post
 published: True
 slug: 2024-06-indian-independence
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - india
   - family
   - travel
@@ -14,7 +13,7 @@ tags:
 title: Indian Independence
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2024/06/indian-independence.html)\*.
+*This was originally posted on blogger.*
 I owe a blog post.   
   
 I've been in India since May 25th. Aside from Auroville, which I wrote about, I also stayed at Pondicherry. Pondicherry was a nice experience. It was my first time solo traveling in India. I stayed at a hostel that was about 5 USD a night (the facilities were commiserate with the price). I met some nice people there, all guys. The hostel manager was a 21-year-old fitness coach-in-training, who actually wants to be a movie script writer, but is biding his time. There was a South Korean guy (28 years old) who had been living in Egypt for 4 whole months, where he studied to become a free-diving instructor, but then he decided free diving wasn't his passion and moved on to India (he says he doesn't know how long he'll be in India, but his visa lasts a year). There was a guy from another city in Tamil Nadu who lived in Singapore before; he kinda talked too much and didn't want to go outside in the heat; but he won my sympathies when he told us how he got into a motorcycle accident (going too fast over a speed bump), cracked a rib, and went into a coma for a few days, and had to rest for 4 months -- since then, he's been taking life at a slooow pace.  

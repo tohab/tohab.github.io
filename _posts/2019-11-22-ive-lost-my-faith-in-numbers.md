@@ -5,14 +5,13 @@ layout: post
 published: True
 slug: 2019-11-ive-lost-my-faith-in-numbers
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - social change
   - personal
   - legacy-blogger
 title: I've lost my faith in numbers
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2019/11/ive-lost-my-faith-in-numbers.html)\*.
+*This was originally posted on blogger.*
 When I was little, I used to love playing with numbers. I’d try
 the New York Times Sudoku puzzles with my mom. I would hone my skills in
 arithmetic in games online and then zoom through the “minute

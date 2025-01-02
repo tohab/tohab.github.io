@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2021-04-ingrid-newkirk-head-honcho-of-peta
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Ingrid Newkirk, head honcho of PETA
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2021/04/ingrid-newkirk-head-honcho-of-peta.html)\*.
+*This was originally posted on blogger.*
 
 Well, it's not everyday you chat with Ingrid Newkirk, head honcho of PETA.
 

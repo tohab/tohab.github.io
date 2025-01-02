@@ -5,7 +5,6 @@ layout: post
 published: True
 slug: 2023-11-wayne-hsiung-coda-lin-yun-ju-and-other
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - taiwan
   - assorted
   - health
@@ -14,7 +13,7 @@ tags:
 title: Wayne Hsiung, CODA, Lin Yun-ju, and other assorted thoughts
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/11/wayne-hsiung-coda-lin-yun-ju-and-other.html)\*.
+*This was originally posted on blogger.*
 **I like this format.** It certainly doesn't get my blog more views, but that's not the point. Some thoughts come to me and I need to write them down. If they're on my blog, rather than in my journal, I'm far more likely to look over them in the future. And a thought is best in its pithiest form. Why write a whole blog post for something when it can just be a paragraph?
 
 That's not to say everything should be converted into a TikTok video. Or that every book should just be a series of articles. Many messages are better as a train of ideas.

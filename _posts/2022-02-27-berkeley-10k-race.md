@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2022-02-berkeley-10k-race
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Berkeley 10k Race
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2022/02/berkeley-10k-race.html)\*.
+*This was originally posted on blogger.*
 
 Today I ran a 10k race! It was my first time racing this distance and I exceeded expectations, running the Berkeley course in 44:54.   
 

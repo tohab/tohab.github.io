@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2022-08-diary-practice
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Diary Practice
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2022/08/diary-practice.html)\*.
+*This was originally posted on blogger.*
 
 七月五號   
 

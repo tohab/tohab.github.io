@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2023-01-2023-01-semiannual-update
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: 2023-01 Semiannual Update
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/01/2023-01-semiannual-update.html)\*.
+*This was originally posted on blogger.*
 Hello hello!
 
 Happy New Year! This is the second installment of my biannual life update to friends and family. Keeping in touch is a two-way street, so please do feel free to share your updates -- long or short -- back my way.

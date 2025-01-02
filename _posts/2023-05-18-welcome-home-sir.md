@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2023-05-welcome-home-sir
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Welcome home, sir
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/05/welcome-home-sir.html)\*.
+*This was originally posted on blogger.*
 
 Whenever I went to the US growing up, the border control officer would take my passport, look at my pre-pubescent face, and solemnly say, "welcome home, sir." I'd struggle to hold back a smirk.
 

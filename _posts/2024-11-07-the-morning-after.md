@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2024-11-the-morning-after
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: the morning after
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2024/11/the-morning-after.html)\*.
+*This was originally posted on blogger.*
 
 The Republicans have taken the Senate, likely the house, and the Presidency. The legislative trifecta allows Trump to be unchallenged in the White House. What do we take from this moment?  
   

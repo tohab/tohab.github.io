@@ -5,7 +5,6 @@ layout: post
 published: True
 slug: 2024-01-2024-01-semiannual-update
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - india
   - taiwan
   - china
@@ -15,7 +14,7 @@ tags:
 title: 2024-01 Semiannual Update
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2024/01/2024-01-semiannual-update.html)\*.
+*This was originally posted on blogger.*
 Well, a lot of things are going to be changing in the next few months for me. Notably, I'm intending to leave Taiwan on May 19th. The reason for departure is nothing dramatic or decisive. It's simply that two years seemed about right. Two years is the same length as the Peace Corps, Mormon missionary service, and, for a long time, the Taiwanese military service. Two years is a substantial amount of time to live in a place, but it’s gone by remarkably fast.
 
 Both Berkeley and Kaohsiung have become adopted homes for me. Home in

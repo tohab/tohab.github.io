@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2022-11-inputs-and-outputs
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Inputs and outputs
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2022/11/inputs-and-outputs.html)\*.
+*This was originally posted on blogger.*
 
 I had a new idea occur to me yesterday as I was biking, so I'm going to chew it over here.
 

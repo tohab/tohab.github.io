@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2024-11-judgement
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: judgement
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2024/11/judgement.html)\*.
+*This was originally posted on blogger.*
 
 Many people in my life have called me judgmental. The truth is that I speak my mind a lot, and sometimes people don't like it. Judgement is seen as something that is bad and I've never understood this. So this blogpost aims to breakdown the stages of judgement.  
   

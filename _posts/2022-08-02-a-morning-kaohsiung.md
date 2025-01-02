@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2022-08-a-morning-kaohsiung
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: A morning in Kaohsiung
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2022/08/a-morning-kaohsiung.html)\*.
+*This was originally posted on blogger.*
 
 This
 morning I walked outside for the first time in Taiwan! What a lovely

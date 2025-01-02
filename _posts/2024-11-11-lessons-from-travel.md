@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2024-11-lessons-from-travel
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Lessons from Travel
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2024/11/lessons-from-travel.html)\*.
+*This was originally posted on blogger.*
 
 * **See many perspectives.** While traveling I met a young Israeli sniper on the beaches of Siargao, Chinese nationalists who argue passionately in defense of the Chinese system, conservative French people who hate social welfare but also use it to travel. Keeping cool, curious, and empathetic is hard when you have different beliefs to someone.
 * **Overcome social anxiety.** So often when traveling, asking the nearest person is the best way to get the most accurate information. It's essentially a necessity to be bold enough to do this. I think I'm relatively good at doing this but I still have reluctance sometimes that doesn't serve me. Talking to a stranger is a subclass of "jumping into cold water" -- doing something you know has to be done, but you dread and keep procrastinating. I can think of many things that induce a similar feeling: quitting a job, packing up your things, breaking up with someone.

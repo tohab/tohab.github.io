@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2023-08-2023-08-semiannual-update
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: 2023-08 Semiannual Update
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/08/2023-08-semiannual-update.html)\*.
+*This was originally posted on blogger.*
 
 Greetings again,
 

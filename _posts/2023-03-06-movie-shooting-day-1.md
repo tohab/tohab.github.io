@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2023-03-movie-shooting-day-1
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Movie shooting Day 1
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/03/movie-shooting-day-1.html)\*.
+*This was originally posted on blogger.*
 
 Today I had a terrific day shooting a movie! I got up bright and early
 and basically made it on time to Gangshan, the south-most station. I met two

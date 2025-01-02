@@ -5,14 +5,13 @@ layout: post
 published: True
 slug: 2023-10-penghu-islands
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - review
   - personal
   - legacy-blogger
 title: 澎湖 The Penghu Islands
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/10/penghu-islands.html)\*.
+*This was originally posted on blogger.*
 
 I went to Penghu this weekend. It’s my new favorite place in
 Taiwan, so here are some memories from the places I went to.  

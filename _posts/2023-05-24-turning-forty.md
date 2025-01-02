@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2023-05-turning-forty
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Turning forty
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/05/turning-forty.html)\*.
+*This was originally posted on blogger.*
 
 Yesterday I had the privilege of hearing what was trobling forty-ish-year-old people.
 

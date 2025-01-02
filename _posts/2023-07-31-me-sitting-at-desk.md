@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2023-07-me-sitting-at-desk
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: me sitting at a desk
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/07/me-sitting-at-desk.html)\*.
+*This was originally posted on blogger.*
 
 Normally I really hate sitting down for long periods of time. Sitting is important for lots of things like preparing for tests, having coffee with people, sending emails, journalling, etc. I enjoy those things and can tolerate sitting for a little bit like that. But when I think about the monumentous task of doing something for many hours at end, day after day at a desk it's rather daunting. Sitting at end also has bad health effects on metabolism and such. It's said (by me) that sitting might even be the new smoking.
 

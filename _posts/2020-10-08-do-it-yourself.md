@@ -5,12 +5,11 @@ layout: post
 published: True
 slug: 2020-10-do-it-yourself
 tags:
-  - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
 title: Do it yourself
 ---
 
-\*This was originally posted on blogger [here](https://www.rohanprasad.org/2020/10/do-it-yourself.html)\*.
+*This was originally posted on blogger.*
 
 In the fourth grade I made my own Halloween costume: a garbage bag. That was how some saw it, at least. I'm not sure what I had in my head -- perhaps a paper warrior, or a recycling king? Either way, to make it I cut out a brown lunch bag as a helmet, taped an array of A4 sheets on my back, and held a long cardboard roll as a staff to parade around the streets of St. John's Wood.
 
