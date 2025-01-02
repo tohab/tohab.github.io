@@ -51,7 +51,7 @@ socials_in_search: true
 bib_search: true
 
 # Dimensions
-max_width: 930px
+max_width: 620px
 
 # TODO: add layout settings (single page vs. multi-page)
 
@@ -133,7 +133,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: rohan's blog # blog_name will be displayed in your blog page
+blog_name: Blog # blog_name will be displayed in your blog page
 blog_description: where he writes whatever he wants
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts. maybe is producing an error?

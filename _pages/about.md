@@ -18,6 +18,12 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I'm Rohan! This is my personal website. Here you can find my blog and homepage.
+##### I'm Rohan! This is my personal website. Here you can find my blog and homepage.
 
-A little about me: I grew up in London, UK and went to UC Berkeley and studied Economics. After that, I lived in Kaohsiung, Taiwan for two years working as an English teacher.
+##### I grew up in London, UK and went to UC Berkeley and studied Economics. After that, I lived in Kaohsiung, Taiwan for two years working as an English teacher.
+
+To-do with regards to the blog:
+- delete the http:// ugly tag from legacy blogger posts
+- change the intro on legacy blogger posts to just be *This was originally posted on blogger.*
+- reduce the gap above headers, especially h1 
+- eventually, write a script that automatically adds tags to all posts
