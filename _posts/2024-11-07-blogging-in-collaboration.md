@@ -25,11 +25,9 @@ Counterpoint:
 
 
 * Using AI to write doesn't let you practice writing. Why is writing an important skill? It is the intentionality of words, the careful selection of language to put on a piece of paper. Writing is a way to essentialize yourself. Your written work is a textual manifestation of yourself.
-
-+ Counter-counterpoint: Can't writers that collaborate with AI have their own personal mark? Directors of movies are assisted, but they have their own distinctive style. I wonder how much artistry and uniqueness there is to ordering about AI in the way that exactly works for you.
+  * Counter-counterpoint: Can't writers that collaborate with AI have their own personal mark? Directors of movies are assisted, but they have their own distinctive style. I wonder how much artistry and uniqueness there is to ordering about AI in the way that exactly works for you.
 
 * It encourages the creation of junk. The author doesn't have to put in so much effort into creation, and so that which is created is less thought-out. Of course, you can be a thoughtful, careful collaborator with AI so that you only say what you mean. You can also be a thoughtless, careless writer even without AI.
 * It completes your thoughts. Perhaps a continuation of Counterpoint #1. When I'm writing, I'm forced to exactly think what I want to say. It is a certain way of looking at yourself. When AI completes your statements, it may not be an exact reflection of what is on your mind. But you may roll with it anyways.
-
-+ Additional thought: AI is genuinely a useful thought partner. I can have a discussion with AI and learn a lot. It can take an idea or theory I have and strengthen it greatly. Still, this point stands in the sense that I believe it's important to have sovereignty over thinking, to have a space where your thought stand independently from external forces.
+  * Additional thought: AI is genuinely a useful thought partner. I can have a discussion with AI and learn a lot. It can take an idea or theory I have and strengthen it greatly. Still, this point stands in the sense that I believe it's important to have sovereignty over thinking, to have a space where your thought stand independently from external forces.
 
