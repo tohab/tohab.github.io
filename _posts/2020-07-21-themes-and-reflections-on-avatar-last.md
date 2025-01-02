@@ -7,7 +7,7 @@ slug: 2020-07-themes-and-reflections-on-avatar-last
 tags:
   - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
-title: Themes and reflections on Avatar: The Last Airbender
+title: Themes and reflections on Avatar -- The Last Airbender
 ---
 
 \*This was originally posted on blogger [here](https://www.rohanprasad.org/2020/07/themes-and-reflections-on-avatar-last.html)\*.

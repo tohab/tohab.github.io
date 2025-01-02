@@ -7,7 +7,7 @@ slug: 2023-01-swimming-with-fishes-or-my-english-is
 tags:
   - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
-title: "Swimming with the fishes" or "My English is really good"
+title: Swimming with the fishes or My English is really good
 ---
 
 \*This was originally posted on blogger [here](https://www.rohanprasad.org/2023/01/swimming-with-fishes-or-my-english-is.html)\*.

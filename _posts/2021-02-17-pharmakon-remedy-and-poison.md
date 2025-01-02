@@ -7,7 +7,7 @@ slug: 2021-02-pharmakon-remedy-and-poison
 tags:
   - http://schemas.google.com/blogger/2008/kind#post
   - legacy-blogger
-title: Pharmakon: Remedy and poison
+title: Pharmakon -- Remedy and poison
 ---
 
 \*This was originally posted on blogger [here](https://www.rohanprasad.org/2021/02/pharmakon-remedy-and-poison.html)\*.
