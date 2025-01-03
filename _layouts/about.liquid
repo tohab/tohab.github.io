@@ -22,7 +22,10 @@ layout: default
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
         {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          {% assign profile_image_path  <!-- Add the banner image -->
+  <div class="banner-container">
+    <img src="{{ '/assets/img/blog-banner.png' | relative_url }}" alt="Blog Banner" style="width: 100%; height: auto;">
+  </div>= page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
             {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
           {% else %}

@@ -12,21 +12,40 @@ pagination:
   sort_field: date
   sort_reverse: true
   trail:
-    before: 1 # The number of links before the current page
-    after: 3 # The number of links after the current page
+    before: 2 # The number of links before the current page
+    after: 2 # The number of links after the current page
 ---
 
 <div class="post">
+
+<!-- Banner with overlayed header -->
+  <div class="banner-container" style="position: relative; text-align: left;">
+    <img src="{{ '/assets/img/blog-banner.png' | relative_url }}" alt="Blog Banner" style="width: 100%; height: auto; opacity: 0.75;">
+    
+    <!-- Blog name header overlay -->
+    <h2 style="
+      position: absolute;
+      top: 75%;
+      left: 20%;
+      transform: translate(-20%, -75%);
+      color: black;
+      opacity: 1.00;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin: 0;">
+      {{ site.blog_name }}
+    </h2>
+  </div>
 
 {% assign blog_name_size = site.blog_name | size %}
 {% assign blog_description_size = site.blog_description | size %}
 
 {% if blog_name_size > 0 or blog_description_size > 0 %}
 
-  <div class="header-bar">
+  <!-- <div class="header-bar"> 
     <h2>{{ site.blog_name }}</h2>
-    <!-- <h3>{{ site.blog_description }}</h3> -->
-  </div>
+    <h3>{{ site.blog_description }}</h3> 
+  </div> -->
   {% endif %}
 
 {% assign featured_posts = site.posts | where: "featured", "true" %}
