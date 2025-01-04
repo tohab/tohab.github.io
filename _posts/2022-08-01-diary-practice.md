@@ -1,13 +1,17 @@
 ---
-date: 2022-08-01T12:51:00.003-07:00
-description: 
+date: 2022-08-01 12:51:00.003000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2022-08-diary-practice
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- taiwan
+- language-learning
 title: Diary Practice
 ---
+
 
 *This was originally posted on blogger.*
 

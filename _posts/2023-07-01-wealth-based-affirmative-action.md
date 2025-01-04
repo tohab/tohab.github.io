@@ -1,13 +1,18 @@
 ---
-date: 2023-07-01T04:30:00.001-07:00
-description: 
+date: 2023-07-01 04:30:00.001000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-07-wealth-based-affirmative-action
 tags:
-  - legacy-blogger
+- legacy-blogger
+- politics
+- justice
+- social-change
+- inequality
 title: Wealth-based affirmative action?
 ---
+
 
 *This was originally posted on blogger.*
 I can understand why many lefties are in a huff about affirmative action. Affirmative action policies are meant to be anti-racist, and maybe reverse residual effects of racist American policies of the past and general prejudice of society at large. Plus, universities like having multicolored recruitment posters.   

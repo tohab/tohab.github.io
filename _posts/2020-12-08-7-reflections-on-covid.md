@@ -1,13 +1,18 @@
 ---
-date: 2020-12-08T17:12:00.001-08:00
-description: 
+date: 2020-12-08 17:12:00.001000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-12-7-reflections-on-covid
 tags:
-  - legacy-blogger
+- legacy-blogger
+- reflection
+- health
+- politics
+- social-change
 title: 7 Reflections on COVID
 ---
+
 
 *This was originally posted on blogger.*
 

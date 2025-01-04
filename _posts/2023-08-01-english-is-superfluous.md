@@ -1,13 +1,16 @@
 ---
-date: 2023-08-01T01:29:00.004-07:00
-description: 
+date: 2023-08-01 01:29:00.004000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-08-english-is-superfluous
 tags:
-  - legacy-blogger
+- legacy-blogger
+- language-learning
+- english
 title: english is superfluous
 ---
+
 
 *This was originally posted on blogger.*
 

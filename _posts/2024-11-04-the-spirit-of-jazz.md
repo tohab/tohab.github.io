@@ -1,13 +1,18 @@
 ---
-date: 2024-11-04T14:55:00.000-08:00
-description: 
+date: 2024-11-04 14:55:00-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-11-the-spirit-of-jazz
 tags:
-  - legacy-blogger
+- legacy-blogger
+- music
+- jazz
+- philosophy
+- creativity
 title: the spirit of jazz
 ---
+
 
 *This was originally posted on blogger.*
 

@@ -1,16 +1,18 @@
 ---
-date: 2020-12-28T14:45:00.003-08:00
-description: 
+date: 2020-12-28 14:45:00.003000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-12-cyborgs-at-harkness-table
 tags:
-  - technology
-  - social change
-  - personal
-  - legacy-blogger
+- legacy-blogger
+- technology
+- philosophy
+- reflection
+- education
 title: Cyborgs at the Harkness Table
 ---
+
 
 *This was originally posted on blogger.*
 

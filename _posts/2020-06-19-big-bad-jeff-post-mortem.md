@@ -1,15 +1,19 @@
 ---
-date: 2020-06-19T12:31:00.000-07:00
-description: 
+date: 2020-06-19 12:31:00-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-06-big-bad-jeff-post-mortem
 tags:
-  - technology
-  - capitalism
-  - legacy-blogger
+- legacy-blogger
+- technology
+- capitalism
+- ethics
+- justice
+- animation
 title: Big Bad Jeff Post-mortem
 ---
+
 
 *This was originally posted on blogger.*
 Exactly four weeks ago I released my animation *How to Change the World* about Rosa Parks... and today I finished rendering this baby shark parody, *Big Bad Jeff*.  

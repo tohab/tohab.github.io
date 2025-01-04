@@ -1,17 +1,19 @@
 ---
-date: 2023-11-09T08:04:00.007-08:00
-description: 
+date: 2023-11-09 08:04:00.007000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-11-wayne-hsiung-coda-lin-yun-ju-and-other
 tags:
-  - taiwan
-  - assorted
-  - health
-  - ping pong
-  - legacy-blogger
+- legacy-blogger
+- assorted
+- activism
+- film
+- ping-pong
+- health
 title: Wayne Hsiung, CODA, Lin Yun-ju, and other assorted thoughts
 ---
+
 
 *This was originally posted on blogger.*
 **I like this format.** It certainly doesn't get my blog more views, but that's not the point. Some thoughts come to me and I need to write them down. If they're on my blog, rather than in my journal, I'm far more likely to look over them in the future. And a thought is best in its pithiest form. Why write a whole blog post for something when it can just be a paragraph?

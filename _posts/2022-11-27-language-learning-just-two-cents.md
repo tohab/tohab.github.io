@@ -1,13 +1,16 @@
 ---
-date: 2022-11-27T06:26:00.001-08:00
-description: 
+date: 2022-11-27 06:26:00.001000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2022-11-language-learning-just-two-cents
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- language-learning
 title: Language Learning, just two cents
 ---
+
 
 *This was originally posted on blogger.*
 

@@ -1,14 +1,17 @@
 ---
-date: 2024-01-26T09:04:00.000-08:00
-description: 
+date: 2024-01-26 09:04:00-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-01-iggys-friends
 tags:
-  - personal
-  - legacy-blogger
+- legacy-blogger
+- personal
+- community
+- grief
 title: iggy's friends
 ---
+
 
 *This was originally posted on blogger.*
 

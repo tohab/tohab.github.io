@@ -1,13 +1,17 @@
 ---
-date: 2022-11-18T20:47:00.002-08:00
-description: 
+date: 2022-11-18 20:47:00.002000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2022-11-inputs-and-outputs
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- reflection
+- success
 title: Inputs and outputs
 ---
+
 
 *This was originally posted on blogger.*
 

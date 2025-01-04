@@ -1,13 +1,16 @@
 ---
-date: 2023-05-18T03:13:00.001-07:00
-description: 
+date: 2023-05-18 03:13:00.001000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-05-willy-nilly-blogging
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- blogging
 title: Willy Nilly Blogging
 ---
+
 
 *This was originally posted on blogger.*
 I was talking to my friend Andrew today and he said he likes my habit of "willy nilly" blogging. That is, not thinking too hard about something before publishing and sharing it with the world.  

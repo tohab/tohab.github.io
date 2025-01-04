@@ -1,18 +1,19 @@
 ---
-date: 2024-07-24T02:21:00.000-07:00
-description: 
+date: 2024-07-24 02:21:00-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-07-one-month-in-china
 tags:
-  - technology
-  - politics
-  - travel
-  - social change
-  - personal
-  - legacy-blogger
+- legacy-blogger
+- travel
+- china
+- politics
+- social-change
+- technology
 title: One month in China
 ---
+
 
 *This was originally posted on blogger.*
 

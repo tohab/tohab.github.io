@@ -1,14 +1,17 @@
 ---
-date: 2020-06-08T06:05:00.001-07:00
-description: 
+date: 2020-06-08 06:05:00.001000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-06-five-minutes-to-go
 tags:
-  - personal
-  - legacy-blogger
+- legacy-blogger
+- personal
+- reflection
+- time
 title: Five minutes to go
 ---
+
 
 *This was originally posted on blogger.*
 As a little kid I always thought that five minutes more was a blessing. *Five* more minutes meant another round of battling legos, another game of tag, or really anything else you could think of. As the philosopher [euclonho describes it](https://wwwdabblebabble.wordpress.com/2020/06/02/specific/), multiples of five are "holes in the time line... little pockets of handwavy-ness where you're allowed to steal time from the universe within the bounds of social convention."  

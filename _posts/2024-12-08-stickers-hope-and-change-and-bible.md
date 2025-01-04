@@ -1,13 +1,18 @@
 ---
-date: 2024-12-08T20:10:00.000-08:00
-description: 
+date: 2024-12-08 20:10:00-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-12-stickers-hope-and-change-and-bible
 tags:
-  - legacy-blogger
+- legacy-blogger
+- taiwan
+- politics
+- social-change
+- reflection
 title: Stickers, hope and change, and bible-pusher Rohan
 ---
+
 
 *This was originally posted on blogger.*
 

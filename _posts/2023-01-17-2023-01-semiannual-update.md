@@ -1,13 +1,19 @@
 ---
-date: 2023-01-17T08:31:00.002-08:00
-description: 
+date: 2023-01-17 08:31:00.002000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-01-2023-01-semiannual-update
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- update
+- taiwan
+- teaching
+- language-learning
 title: 2023-01 Semiannual Update
 ---
+
 
 *This was originally posted on blogger.*
 Hello hello!

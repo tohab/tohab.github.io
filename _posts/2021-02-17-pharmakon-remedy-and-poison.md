@@ -1,13 +1,17 @@
 ---
-date: 2021-02-17T12:02:00.003-08:00
-description: 
+date: 2021-02-17 12:02:00.003000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2021-02-pharmakon-remedy-and-poison
 tags:
-  - legacy-blogger
+- legacy-blogger
+- philosophy
+- ethics
+- technology
 title: Pharmakon -- Remedy and poison
 ---
+
 
 *This was originally posted on blogger.*
 

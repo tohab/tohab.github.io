@@ -1,13 +1,17 @@
 ---
-date: 2020-10-08T00:38:00.002-07:00
-description: 
+date: 2020-10-08 00:38:00.002000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-10-do-it-yourself
 tags:
-  - legacy-blogger
+- legacy-blogger
+- reflection
+- ethics
+- sustainability
 title: Do it yourself
 ---
+
 
 *This was originally posted on blogger.*
 

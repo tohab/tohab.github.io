@@ -1,14 +1,18 @@
 ---
-date: 2020-06-02T05:48:00.002-07:00
-description: 
+date: 2020-06-02 05:48:00.002000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-06-maybe-youve-heard-this-poem-before
 tags:
-  - social change
-  - legacy-blogger
+- legacy-blogger
+- social-change
+- politics
+- justice
+- inequality
 title: Whitey's off to space
 ---
+
 
 *This was originally posted on blogger.*
 Maybe you've heard this poem before: *Whitey On the Moon.*   

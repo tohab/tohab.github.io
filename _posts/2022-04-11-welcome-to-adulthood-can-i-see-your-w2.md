@@ -1,13 +1,15 @@
 ---
-date: 2022-04-11T23:31:00.001-07:00
-description: 
+date: 2022-04-11 23:31:00.001000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2022-04-welcome-to-adulthood-can-i-see-your-w2
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
 title: Welcome to Adulthood! Can I see your W2?
 ---
+
 
 *This was originally posted on blogger.*
 

@@ -1,13 +1,16 @@
 ---
-date: 2023-07-31T23:46:00.002-07:00
-description: 
+date: 2023-07-31 23:46:00.002000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-07-me-sitting-at-desk
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- reflection
 title: me sitting at a desk
 ---
+
 
 *This was originally posted on blogger.*
 

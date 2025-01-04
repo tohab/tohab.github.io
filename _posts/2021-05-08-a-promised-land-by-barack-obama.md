@@ -1,13 +1,19 @@
 ---
-date: 2021-05-08T15:15:00.004-07:00
-description: 
+date: 2021-05-08 15:15:00.004000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2021-05-a-promised-land-by-barack-obama
 tags:
-  - legacy-blogger
+- legacy-blogger
+- review
+- politics
+- social-change
+- identity
+- justice
 title: A Promised Land by Barack Obama
 ---
+
 
 *This was originally posted on blogger.*
 

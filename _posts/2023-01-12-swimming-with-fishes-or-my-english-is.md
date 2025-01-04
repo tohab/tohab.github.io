@@ -1,13 +1,17 @@
 ---
-date: 2023-01-12T05:52:00.002-08:00
-description: 
+date: 2023-01-12 05:52:00.002000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-01-swimming-with-fishes-or-my-english-is
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- language-learning
+- english
 title: Swimming with the fishes or My English is really good
 ---
+
 
 *This was originally posted on blogger.*
 

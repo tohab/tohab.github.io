@@ -1,15 +1,17 @@
 ---
-date: 2020-06-23T12:31:00.002-07:00
-description: 
+date: 2020-06-23 12:31:00.002000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-06-a-rant-about-salesforce
 tags:
-  - technology
-  - capitalism
-  - legacy-blogger
+- legacy-blogger
+- technology
+- capitalism
+- ethics
 title: A rant about Salesforce
 ---
+
 
 *This was originally posted on blogger.*
 Let's talk about Salesforce. Maybe you don't care about them or what they do --  frankly I don't either -- but many people from my school want to go work there. Their internships will give you free housing and lots of money. And according to the stock market they're worth [171](https://ycharts.com/companies/CRM/market_cap) billion dollars.  

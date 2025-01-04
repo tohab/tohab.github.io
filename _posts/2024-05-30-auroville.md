@@ -1,16 +1,19 @@
 ---
-date: 2024-05-30T03:48:00.000-07:00
-description: 
+date: 2024-05-30 03:48:00-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-05-auroville
 tags:
-  - capitalism
-  - india
-  - travel
-  - legacy-blogger
+- legacy-blogger
+- travel
+- india
+- community
+- capitalism
+- social-change
 title: Auroville
 ---
+
 
 *This was originally posted on blogger.*
 

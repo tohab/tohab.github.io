@@ -1,13 +1,17 @@
 ---
-date: 2022-11-18T21:01:00.003-08:00
-description: 
+date: 2022-11-18 21:01:00.003000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2022-11-prices-in-taiwan
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- taiwan
+- economics
 title: Prices in Taiwan
 ---
+
 
 *This was originally posted on blogger.*
 

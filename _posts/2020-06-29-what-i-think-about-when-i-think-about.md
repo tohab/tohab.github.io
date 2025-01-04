@@ -1,13 +1,17 @@
 ---
-date: 2020-06-29T09:45:00.004-07:00
-description: 
+date: 2020-06-29 09:45:00.004000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-06-what-i-think-about-when-i-think-about
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- reflection
+- running
 title: What I think about when I think about running
 ---
+
 
 *This was originally posted on blogger.*
 Today, rather predictably, running was the thing that really centered me. I try to run most days, but that doesn't happen unless I'm coerced into it by some third party. The feeling before a run -- a feeling of lethargy and attachment to a present couch -- is one that all runners know. I think the only difference between fast runners and slow runners is that fast runners can get outside, every time.  

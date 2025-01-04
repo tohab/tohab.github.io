@@ -1,14 +1,18 @@
 ---
-date: 2019-11-22T09:25:00.000-08:00
-description: 
+date: 2019-11-22 09:25:00-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-05-coulter-cancel-culture-and-compassion
 tags:
-  - social change
-  - legacy-blogger
+- legacy-blogger
+- social-change
+- activism
+- ethics
+- politics
 title: Coulter, Cancel Culture, and Compassion
 ---
+
 
 *This was originally posted on blogger.*
 *On November 22nd, 2019 the Berkeley College Republicans

@@ -1,13 +1,16 @@
 ---
-date: 2020-07-06T04:22:00.003-07:00
-description: 
+date: 2020-07-06 04:22:00.003000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-07-happiness
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- reflection
 title: Don't worry, be happy!
 ---
+
 
 *This was originally posted on blogger.*
 We all know people in our who are extremely happy. People who float like bubbles over the concerns that plague others. People who bounce back from adversity like a ball of elastics, ready to get up, stretch, and tackle another day.  

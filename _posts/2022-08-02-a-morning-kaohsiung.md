@@ -1,13 +1,17 @@
 ---
-date: 2022-08-02T18:02:00.003-07:00
-description: 
+date: 2022-08-02 18:02:00.003000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2022-08-a-morning-kaohsiung
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- taiwan
+- travel
 title: A morning in Kaohsiung
 ---
+
 
 *This was originally posted on blogger.*
 

@@ -1,18 +1,20 @@
 ---
-date: 2024-01-31T05:03:00.000-08:00
-description: 
+date: 2024-01-31 05:03:00-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-01-2024-01-semiannual-update
 tags:
-  - india
-  - taiwan
-  - china
-  - travel
-  - personal
-  - legacy-blogger
+- legacy-blogger
+- personal
+- update
+- travel
+- taiwan
+- india
+- china
 title: 2024-01 Semiannual Update
 ---
+
 
 *This was originally posted on blogger.*
 Well, a lot of things are going to be changing in the next few months for me. Notably, I'm intending to leave Taiwan on May 19th. The reason for departure is nothing dramatic or decisive. It's simply that two years seemed about right. Two years is the same length as the Peace Corps, Mormon missionary service, and, for a long time, the Taiwanese military service. Two years is a substantial amount of time to live in a place, but it’s gone by remarkably fast.

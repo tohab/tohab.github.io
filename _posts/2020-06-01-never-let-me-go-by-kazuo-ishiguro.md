@@ -1,14 +1,20 @@
 ---
-date: 2020-06-01T02:53:00.003-07:00
-description: 
+date: 2020-06-01 02:53:00.003000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-06-never-let-me-go-by-kazuo-ishiguro
 tags:
-  - review
-  - legacy-blogger
+- legacy-blogger
+- review
+- philosophy
+- ethics
+- justice
+- identity
+- reflection
 title: Never Let Me Go by Kazuo Ishiguro
 ---
+
 
 *This was originally posted on blogger.*
 *Never Let Me Go* is a sad story.   

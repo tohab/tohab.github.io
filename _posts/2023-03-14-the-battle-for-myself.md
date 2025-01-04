@@ -1,13 +1,17 @@
 ---
-date: 2023-03-14T00:33:00.001-07:00
-description: 
+date: 2023-03-14 00:33:00.001000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-03-the-battle-for-myself
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- technology
+- identity
 title: The battle for myself
 ---
+
 
 *This was originally posted on blogger.*
 

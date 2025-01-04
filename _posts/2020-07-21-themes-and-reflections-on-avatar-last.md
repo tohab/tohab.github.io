@@ -1,13 +1,20 @@
 ---
-date: 2020-07-21T09:19:00.001-07:00
-description: 
+date: 2020-07-21 09:19:00.001000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-07-themes-and-reflections-on-avatar-last
 tags:
-  - legacy-blogger
+- legacy-blogger
+- review
+- philosophy
+- ethics
+- justice
+- animation
+- family
 title: Themes and reflections on Avatar -- The Last Airbender
 ---
+
 
 *This was originally posted on blogger.*
 **Introduction**  

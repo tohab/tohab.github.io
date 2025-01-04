@@ -1,13 +1,16 @@
 ---
-date: 2022-07-11T12:02:00.007-07:00
-description: 
+date: 2022-07-11 12:02:00.007000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2022-07-how-rohan-plays-chess-career-framework
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- reflection
 title: How Rohan Plays Chess -- A Career Framework
 ---
+
 
 *This was originally posted on blogger.*
 

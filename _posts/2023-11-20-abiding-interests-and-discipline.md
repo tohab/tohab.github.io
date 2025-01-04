@@ -1,13 +1,16 @@
 ---
-date: 2023-11-20T23:10:00.000-08:00
-description: 
+date: 2023-11-20 23:10:00-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-11-abiding-interests-and-discipline
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- reflection
 title: abiding interests and discipline
 ---
+
 
 *This was originally posted on blogger.*
 

@@ -1,13 +1,18 @@
 ---
-date: 2024-11-07T11:42:00.005-08:00
-description: 
+date: 2024-11-07 11:42:00.005000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-11-blogging-in-collaboration
 tags:
-  - legacy-blogger
+- legacy-blogger
+- blogging
+- ai
+- technology
+- writing
 title: blogging in collaboration
 ---
+
 
 *This was originally posted on blogger.*
 

@@ -1,15 +1,18 @@
 ---
-date: 2023-10-04T07:25:00.006-07:00
-description: 
+date: 2023-10-04 07:25:00.006000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-10-penghu-islands
 tags:
-  - review
-  - personal
-  - legacy-blogger
-title: 澎湖 The Penghu Islands
+- legacy-blogger
+- personal
+- taiwan
+- travel
+- review
+title: "\u6F8E\u6E56 The Penghu Islands"
 ---
+
 
 *This was originally posted on blogger.*
 

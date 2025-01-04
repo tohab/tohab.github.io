@@ -1,13 +1,17 @@
 ---
-date: 2023-06-19T04:00:00.001-07:00
-description: 
+date: 2023-06-19 04:00:00.001000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-06-ping-pong-competition-1
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- taiwan
+- ping-pong
 title: Ping Pong Competition 1
 ---
+
 
 *This was originally posted on blogger.*
 

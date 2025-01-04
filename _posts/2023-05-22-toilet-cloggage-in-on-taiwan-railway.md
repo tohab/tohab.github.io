@@ -1,13 +1,17 @@
 ---
-date: 2023-05-22T01:24:00.006-07:00
-description: 
+date: 2023-05-22 01:24:00.006000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-05-toilet-cloggage-in-on-taiwan-railway
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- taiwan
+- travel
 title: Toilet cloggage in on the Taiwan Railway
 ---
+
 
 *This was originally posted on blogger.*
 

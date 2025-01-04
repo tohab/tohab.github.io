@@ -1,13 +1,20 @@
 ---
-date: 2022-08-31T20:33:00.003-07:00
-description: 
+date: 2022-08-31 20:33:00.003000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2022-08-one-month-later-in-taiwan
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- taiwan
+- teaching
+- language-learning
+- reflection
+- community
 title: One month later in Taiwan
 ---
+
 
 *This was originally posted on blogger.*
 

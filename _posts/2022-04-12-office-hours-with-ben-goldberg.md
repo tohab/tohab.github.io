@@ -1,13 +1,17 @@
 ---
-date: 2022-04-12T19:33:00.002-07:00
-description: 
+date: 2022-04-12 19:33:00.002000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2022-04-office-hours-with-ben-goldberg
 tags:
-  - legacy-blogger
+- legacy-blogger
+- music
+- jazz
+- creativity
 title: Office Hours with Ben Goldberg
 ---
+
 
 *This was originally posted on blogger.*
 

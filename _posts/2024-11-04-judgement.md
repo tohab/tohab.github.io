@@ -1,13 +1,17 @@
 ---
-date: 2024-11-04T15:07:00.005-08:00
-description: 
+date: 2024-11-04 15:07:00.005000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-11-judgement
 tags:
-  - legacy-blogger
+- legacy-blogger
+- philosophy
+- ethics
+- reflection
 title: judgement
 ---
+
 
 *This was originally posted on blogger.*
 

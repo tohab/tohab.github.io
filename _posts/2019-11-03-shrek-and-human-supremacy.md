@@ -1,14 +1,22 @@
 ---
-date: 2019-11-03T09:21:00.000-08:00
-description: 
+date: 2019-11-03 09:21:00-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-05-shrek-and-human-supremacy
 tags:
-  - review
-  - legacy-blogger
+- review
+- legacy-blogger
+- justice
+- ethics
+- philosophy
+- social-change
+- activism
+- nature
+- animal-rights
 title: Shrek and Human Supremacy
 ---
+
 
 *This was originally posted on blogger.*
 *This essay contains spoilers for Shrek (2001). If you haven’t seen it, you have a deep problem that needs addressing.*  

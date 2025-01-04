@@ -1,13 +1,18 @@
 ---
-date: 2022-01-31T23:00:00.003-08:00
-description: 
+date: 2022-01-31 23:00:00.003000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2022-01-the-killing-fields-by-roland-joffe
 tags:
-  - legacy-blogger
+- legacy-blogger
+- review
+- film-criticism
+- politics
+- justice
 title: The Killing Fields by Roland Joffe
 ---
+
 
 *This was originally posted on blogger.*
 

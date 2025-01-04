@@ -1,13 +1,18 @@
 ---
-date: 2023-05-18T05:34:00.006-07:00
-description: 
+date: 2023-05-18 05:34:00.006000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-05-welcome-home-sir
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- identity
+- travel
+- america
 title: Welcome home, sir
 ---
+
 
 *This was originally posted on blogger.*
 

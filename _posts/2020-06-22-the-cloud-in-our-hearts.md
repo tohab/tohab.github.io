@@ -1,14 +1,18 @@
 ---
-date: 2020-06-22T07:12:00.002-07:00
-description: 
+date: 2020-06-22 07:12:00.002000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-06-the-cloud-in-our-hearts
 tags:
-  - personal
-  - legacy-blogger
+- legacy-blogger
+- personal
+- technology
+- reflection
+- education
 title: The cloud in our hearts
 ---
+
 
 *This was originally posted on blogger.*
 I struggle to read my book in the garden. There's two reasons, so bear with me. The first is that the London sun seems to never settle. She's like an angry child -- either warm and overly loving or throwing a temper tantrum and not to be seen. So, you wonder, why don't I sit in the shade and avoid this child altogether? The second reason is that I have allergies, and sitting in the shade means sitting in the grass, and that means that the sniffles start up. It's hard to read a book drenched in [flowing nasal discharge](https://www.chinesepod.com/dictionary/%E6%B5%81%E9%BC%BB%E6%B6%95) (trust me on this). So you see, for this simple task, location matters.  

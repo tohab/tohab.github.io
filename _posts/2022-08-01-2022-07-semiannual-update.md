@@ -1,13 +1,19 @@
 ---
-date: 2022-08-01T13:23:00.007-07:00
-description: 
+date: 2022-08-01 13:23:00.007000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2022-08-2022-07-semiannual-update
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- update
+- travel
+- taiwan
+- music
 title: 2022-08 Semiannual Update
 ---
+
 
 *This was originally posted on blogger.*
 

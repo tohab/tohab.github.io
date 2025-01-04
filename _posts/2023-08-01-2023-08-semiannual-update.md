@@ -1,13 +1,20 @@
 ---
-date: 2023-08-01T01:11:00.003-07:00
-description: 
+date: 2023-08-01 01:11:00.003000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-08-2023-08-semiannual-update
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- update
+- taiwan
+- travel
+- china
+- music
 title: 2023-08 Semiannual Update
 ---
+
 
 *This was originally posted on blogger.*
 

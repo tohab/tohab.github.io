@@ -1,16 +1,18 @@
 ---
-date: 2024-04-23T09:33:00.000-07:00
-description: 
+date: 2024-04-23 09:33:00-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-04-kindness-on-april-23rd-2024
 tags:
-  - taiwan
-  - teaching
-  - personal
-  - legacy-blogger
+- legacy-blogger
+- personal
+- taiwan
+- teaching
+- community
 title: Kindness on April 23rd, 2024
 ---
+
 
 *This was originally posted on blogger.*
 

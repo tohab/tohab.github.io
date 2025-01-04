@@ -1,13 +1,18 @@
 ---
-date: 2024-11-07T11:22:00.003-08:00
-description: 
+date: 2024-11-07 11:22:00.003000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-11-the-morning-after
 tags:
-  - legacy-blogger
+- legacy-blogger
+- politics
+- america
+- social-change
+- reflection
 title: the morning after
 ---
+
 
 *This was originally posted on blogger.*
 

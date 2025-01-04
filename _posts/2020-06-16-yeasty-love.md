@@ -1,14 +1,18 @@
 ---
-date: 2020-06-16T04:57:00.000-07:00
-description: 
+date: 2020-06-16 04:57:00-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-06-yeasty-love
 tags:
-  - poetry
-  - legacy-blogger
+- legacy-blogger
+- poetry
+- food
+- creativity
+- nature
 title: Yeasty Love
 ---
+
 
 *This was originally posted on blogger.*
 Shall I compare thee  

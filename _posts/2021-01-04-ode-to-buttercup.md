@@ -1,13 +1,17 @@
 ---
-date: 2021-01-04T06:47:00.000-08:00
-description: 
+date: 2021-01-04 06:47:00-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2021-01-ode-to-buttercup
 tags:
-  - legacy-blogger
+- legacy-blogger
+- poetry
+- personal
+- grief
 title: Ode to Buttercup
 ---
+
 
 *This was originally posted on blogger.*
 

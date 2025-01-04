@@ -1,13 +1,17 @@
 ---
-date: 2024-11-11T20:26:00.000-08:00
-description: 
+date: 2024-11-11 20:26:00-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-11-lessons-from-travel
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- travel
+- reflection
 title: Lessons from Travel
 ---
+
 
 *This was originally posted on blogger.*
 

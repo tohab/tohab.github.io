@@ -1,13 +1,17 @@
 ---
-date: 2023-05-26T12:21:00.002-07:00
-description: 
+date: 2023-05-26 12:21:00.002000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-05-hank-and-goliath
 tags:
-  - legacy-blogger
+- legacy-blogger
+- teaching
+- personal
+- taiwan
 title: Hank and Goliath
 ---
+
 
 *This was originally posted on blogger.*
 The battle to control Hank started long before I was his teacher. My predessor Bryan found him impossible. Bryan had him through the COVID online teaching period and eventually found a way to have him sent down a few English "levels", which is how he ended up in my class. Hank was dumped into my class.  

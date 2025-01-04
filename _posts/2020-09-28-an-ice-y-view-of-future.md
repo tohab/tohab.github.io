@@ -1,13 +1,19 @@
 ---
-date: 2020-09-28T12:59:00.000-07:00
-description: 
+date: 2020-09-28 12:59:00-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-09-an-ice-y-view-of-future
 tags:
-  - legacy-blogger
+- legacy-blogger
+- technology
+- ethics
+- politics
+- social-change
+- activism
 title: An ICE-y View of the Future
 ---
+
 
 *This was originally posted on blogger.*
 

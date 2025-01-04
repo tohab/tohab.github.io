@@ -1,13 +1,17 @@
 ---
-date: 2023-06-19T03:16:00.001-07:00
-description: 
+date: 2023-06-19 03:16:00.001000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-06-aoyans-pipa
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- taiwan
+- music
 title: Aoyan's Pipa
 ---
+
 
 *This was originally posted on blogger.*
 

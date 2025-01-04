@@ -1,13 +1,18 @@
 ---
-date: 2022-02-27T19:31:00.005-08:00
-description: 
+date: 2022-02-27 19:31:00.005000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2022-02-berkeley-10k-race
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- running
+- health
+- community
 title: Berkeley 10k Race
 ---
+
 
 *This was originally posted on blogger.*
 

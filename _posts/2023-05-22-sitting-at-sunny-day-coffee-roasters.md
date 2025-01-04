@@ -1,13 +1,17 @@
 ---
-date: 2023-05-22T02:32:00.004-07:00
-description: 
+date: 2023-05-22 02:32:00.004000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-05-sitting-at-sunny-day-coffee-roasters
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- taiwan
+- reflection
 title: Sitting at Sunny Day Coffee Roasters
 ---
+
 
 *This was originally posted on blogger.*
 

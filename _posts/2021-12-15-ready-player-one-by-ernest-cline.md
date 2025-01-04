@@ -1,13 +1,17 @@
 ---
-date: 2021-12-15T17:53:00.001-08:00
-description: 
+date: 2021-12-15 17:53:00.001000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2021-12-ready-player-one-by-ernest-cline
 tags:
-  - legacy-blogger
+- legacy-blogger
+- review
+- technology
+- dystopia
 title: Ready Player One by Ernest Cline
 ---
+
 
 *This was originally posted on blogger.*
 

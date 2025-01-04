@@ -1,16 +1,19 @@
 ---
-date: 2024-04-14T00:11:00.000-07:00
-description: 
+date: 2024-04-14 00:11:00-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-04-taiwan-rainbow-gathering-2024
 tags:
-  - capitalism
-  - taiwan
-  - personal
-  - legacy-blogger
+- legacy-blogger
+- travel
+- taiwan
+- community
+- social-change
+- activism
 title: Taiwan Rainbow Gathering 2024
 ---
+
 
 *This was originally posted on blogger.*
 

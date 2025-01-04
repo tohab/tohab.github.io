@@ -1,13 +1,17 @@
 ---
-date: 2023-05-24T09:40:00.002-07:00
-description: 
+date: 2023-05-24 09:40:00.002000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-05-turning-forty
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- reflection
+- health
 title: Turning forty
 ---
+
 
 *This was originally posted on blogger.*
 

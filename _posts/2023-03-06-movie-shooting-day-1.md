@@ -1,13 +1,17 @@
 ---
-date: 2023-03-06T06:33:00.001-08:00
-description: 
+date: 2023-03-06 06:33:00.001000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-03-movie-shooting-day-1
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- taiwan
+- film
 title: Movie shooting Day 1
 ---
+
 
 *This was originally posted on blogger.*
 

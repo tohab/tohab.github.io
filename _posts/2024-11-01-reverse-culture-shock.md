@@ -1,13 +1,18 @@
 ---
-date: 2024-11-01T10:16:00.000-07:00
-description: 
+date: 2024-11-01 10:16:00-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-11-reverse-culture-shock
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- travel
+- america
+- reflection
 title: Reverse Culture Shock
 ---
+
 
 *This was originally posted on blogger.*
 

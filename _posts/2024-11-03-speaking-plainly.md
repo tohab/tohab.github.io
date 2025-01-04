@@ -1,13 +1,17 @@
 ---
-date: 2024-11-03T17:13:00.001-08:00
-description: 
+date: 2024-11-03 17:13:00.001000-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-11-speaking-plainly
 tags:
-  - legacy-blogger
+- legacy-blogger
+- personal
+- america
+- reflection
 title: speaking plainly
 ---
+
 
 *This was originally posted on blogger.*
 

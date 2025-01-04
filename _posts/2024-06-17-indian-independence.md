@@ -1,17 +1,18 @@
 ---
-date: 2024-06-17T20:38:00.000-07:00
-description: 
+date: 2024-06-17 20:38:00-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-06-indian-independence
 tags:
-  - india
-  - family
-  - travel
-  - personal
-  - legacy-blogger
+- legacy-blogger
+- travel
+- india
+- family
+- personal
 title: Indian Independence
 ---
+
 
 *This was originally posted on blogger.*
 I owe a blog post.   

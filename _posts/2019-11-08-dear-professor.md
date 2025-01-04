@@ -1,14 +1,21 @@
 ---
-date: 2019-11-08T09:24:00.000-08:00
-description: 
+date: 2019-11-08 09:24:00-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2020-05-dear-professor
 tags:
-  - capitalism
-  - legacy-blogger
+- legacy-blogger
+- capitalism
+- ethics
+- justice
+- reflection
+- economics
+- social-change
+- inequality
 title: Dear Professor
 ---
+
 
 *This was originally posted on blogger.*
 *This is a letter I wrote to my economics professor about what

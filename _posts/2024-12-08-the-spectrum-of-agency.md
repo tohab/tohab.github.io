@@ -1,13 +1,18 @@
 ---
-date: 2024-12-08T19:56:00.000-08:00
-description: 
+date: 2024-12-08 19:56:00-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2024-12-the-spectrum-of-agency
 tags:
-  - legacy-blogger
+- legacy-blogger
+- philosophy
+- ethics
+- social-change
+- reflection
 title: the spectrum of agency
 ---
+
 
 *This was originally posted on blogger.*
 

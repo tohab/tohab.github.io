@@ -1,13 +1,16 @@
 ---
-date: 2023-11-13T09:13:00.000-08:00
-description: 
+date: 2023-11-13 09:13:00-08:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-11-band-album-is-out
 tags:
-  - legacy-blogger
-title: 補習BAND the album is out
+- legacy-blogger
+- music
+- taiwan
+title: "\u88DC\u7FD2BAND the album is out"
 ---
+
 
 *This was originally posted on blogger.*
 

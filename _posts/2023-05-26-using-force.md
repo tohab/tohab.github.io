@@ -1,13 +1,17 @@
 ---
-date: 2023-05-26T19:01:00.006-07:00
-description: 
+date: 2023-05-26 19:01:00.006000-07:00
+description: null
 layout: post
-published: True
+published: true
 slug: 2023-05-using-force
 tags:
-  - legacy-blogger
-title: 不對！
+- legacy-blogger
+- personal
+- taiwan
+- ping-pong
+title: "\u4E0D\u5C0D\uFF01"
 ---
+
 
 *This was originally posted on blogger.*
 I flick my wrist and strike the ball with a satisfying *tut*. *Score,*I think, but *jìaolìan,* my coach, doesn't agree. *Búdùi* he says. Wrong. He shows me the stroke one more time.  
