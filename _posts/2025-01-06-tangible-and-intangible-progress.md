@@ -5,9 +5,8 @@ layout: post
 published: true
 slug: 2025-01-tangible-and-intangible-progress
 tags:
-- job-search
-- career
-- progress
+- work
+- personal
 - reflection
 title: Tangible and Intangible Progress
 ---

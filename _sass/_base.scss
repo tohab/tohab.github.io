@@ -208,19 +208,39 @@ blockquote {
 
 // Checklist
 
-ul.task-list {
-  list-style-type: none; /* Remove bullets from all levels */
+// ul.task-list {
+//   list-style-type: none; /* Remove bullets from all levels */
+// }
+
+// ul.task-list > li ul {
+//   /* Nested lists within .task-list */
+//   padding-inline-start: 1.5rem;
+// }
+
+// ul.task-list input[type="checkbox"] {
+//   margin: 0.275rem 0.5rem 0.5rem -1rem;
+//   vertical-align: middle;
+// }
+
+/* Normalize nested bullet size */
+ul, ol {
+  font-size: 1em; /* Ensure consistent font size */
+  list-style-type: disc; /* Default bullet style */
 }
 
-ul.task-list > li ul {
-  /* Nested lists within .task-list */
-  padding-inline-start: 1.5rem;
+ul ul, ol ol, ul ol, ol ul {
+  font-size: 0.9em; /* Slightly smaller font size for nested lists */
+  list-style-type: circle; /* Optional: Different style for nested bullets */
+  padding-left: 1.5em; /* Indent nested lists */
 }
 
-ul.task-list input[type="checkbox"] {
-  margin: 0.275rem 0.5rem 0.5rem -1rem;
-  vertical-align: middle;
+ul ul ul, ol ol ol {
+  font-size: 0.85em; /* Adjust for deeply nested lists */
+  list-style-type: square; /* Optional: Further differentiation */
+  padding-left: 2em; /* Increase indent for deeper nesting */
 }
+
+
 
 // Math
 

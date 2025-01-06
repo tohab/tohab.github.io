@@ -2,6 +2,14 @@
 
 Here we will give you some tips on how to customize the website. One important thing to note is that **ALL** the changes you make should be done on the **main** branch of your repository. The `gh-pages` branch is automatically overwritten every time you make a change to the main branch.
 
+### Major tips from Rohan
+
+I did some major updates to this website in Dec 2024/Jan 2025, so I'm going to share some pointers now.
+- config.yml is a powerful file. It contains things like links to social media accounts, the title of the blog, whether certain features (eg. featured posts/recent posts) are enabled on the main page, my name (which is used in multiple places on the site).
+- _pages contains more in-depth formatting for the main pages like blog and about. This somehow operates in tandem with the files in _layouts
+- _sass is all about styles (colors, fonts and headers). _base.scss addresses the settings for types of elements in html like <p> and headers. _themes.scss addresses colors.
+
+
 ## Project structure
 
 The project is structured as follows, focusing on the main components that you will need to modify:
