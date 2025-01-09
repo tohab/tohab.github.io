@@ -124,9 +124,9 @@ pagination:
           {% else %}
             {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
           {% endif %}
-          {% assign year = post.date | date: "%Y" %}
-          {% assign tags = post.tags | join: "" %}
-          {% assign categories = post.categories | join: "" %}
+          <!-- {% assign year = post.date | date: "%Y" %} -->
+          <!-- {% assign tags = post.tags | join: "" %} -->
+          <!-- {% assign categories = post.categories | join: "" %} -->
 
           <li>
             {% if post.thumbnail %}
@@ -216,7 +216,7 @@ pagination:
         
         <hr>
 
-        <h6>archives</h6>
+        <h6 style="margin-top: 1rem; margin-bottom: 0.5rem;">archives</h6>
         <div style="font-size: 0.9rem;">
           {% assign all_dates = site.posts | map: 'date' %}
           {% assign all_years = "" | split: "" %}
