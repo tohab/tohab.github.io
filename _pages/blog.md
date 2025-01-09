@@ -8,7 +8,7 @@ pagination:
   enabled: true
   collection: posts
   permalink: /page/:num/
-  per_page: 5
+  per_page: 8
   sort_field: date
   sort_reverse: true
   trail:
@@ -17,23 +17,30 @@ pagination:
 ---
 
 <style>
-  /* Adjust font sizes */
   h3.post-title {
-    font-size: 1.2rem; /* Smaller than default */
+    font-size: 1.2rem;
   }
   .post-tags,
   .sidebar .post-tags a {
-    font-size: 0.9rem; /* Smaller font for tags */
+    font-size: 0.9rem;
+  }
+
+  hr {
+    margin: 0.05rem 0; /* Adjust to taste */
+  }
+
+  .post-list li p {
+     margin: 0.0rem 0rem; /* Tighten paragraph spacing within list items */
+  }
+
+  .post-tags a {
+    white-space: nowrap;
   }
 </style>
 
 <div class="post">
-
-  <!-- Banner with overlayed header -->
   <div class="banner-container" style="position: relative; text-align: left;">
     <img src="{{ '/assets/img/blog-banner.png' | relative_url }}" alt="Blog Banner" style="width: 100%; height: auto; opacity: 0.75;">
-    
-    <!-- Blog name header overlay -->
     <h2 style="
       position: absolute;
       top: 75%;
@@ -52,19 +59,16 @@ pagination:
   {% assign blog_description_size = site.blog_description | size %}
 
   {% if blog_name_size > 0 or blog_description_size > 0 %}
-    <!-- If you want a text header below the banner, uncomment:
+    <!--
     <div class="header-bar"> 
       <h2>{{ site.blog_name }}</h2>
-      <h3>{{ site.blog_description }}</h3> 
+      <h3>{{ site.blog_description }}</h3>
     </div>
     -->
   {% endif %}
 
-  <!-- Row for main blog content (left) and sidebar (right) -->
   <div class="row">
-    <!-- Left column: 2/3 width -->
     <div class="col-md-8">
-
       {% assign featured_posts = site.posts | where: "featured", "true" %}
       {% if featured_posts.size > 0 %}
       <br>
@@ -92,7 +96,7 @@ pagination:
                         <p class="post-meta">
                           {{ read_time }} min read &nbsp; &middot; &nbsp;
                           <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}">
-                            <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} 
+                            <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
                           </a>
                         </p>
                       </div>
@@ -104,7 +108,7 @@ pagination:
           {% endfor %}
         </div>
       </div>
-      <hr>
+      <hr style="margin: 0.3rem 0;">
       {% endif %}
 
       {% if page.pagination.enabled %}
@@ -129,7 +133,6 @@ pagination:
             <div class="row">
               <div class="col-sm-9">
             {% endif %}
-
                 <h3 class="post-title">
                   {% if post.redirect == blank %}
                     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
@@ -164,7 +167,7 @@ pagination:
                         <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}
                       </a>
                       {% unless forloop.last %}
-                        &nbsp;
+                        &nbsp; &middot; &nbsp;
                       {% endunless %}
                     {% endfor %}
                   {% endif %}
@@ -176,12 +179,11 @@ pagination:
                         <i class="fa-solid fa-tag fa-sm"></i> {{ category }}
                       </a>
                       {% unless forloop.last %}
-                        &nbsp;
+                        &nbsp; &middot; &nbsp;
                       {% endunless %}
                     {% endfor %}
                   {% endif %}
                 </p>
-
             {% if post.thumbnail %}
               </div>
               <div class="col-sm-3">
@@ -198,25 +200,24 @@ pagination:
       {% endif %}
     </div>
 
-    <!-- Right column (sidebar): 1/3 width -->
     <div class="col-md-4">
       <div class="sidebar">
-
-        <!-- Tags section -->
-        <h4>Tags</h4>
+        <h6 style="margin-top: 1rem; margin-bottom: 0.5rem;">tags</h6>
         <div class="post-tags">
           {% for tag in site.display_tags %}
             <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">
               <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}
-            </a><br>
+            </a>
+            {% unless forloop.last %}
+              &nbsp; &middot; &nbsp;
+            {% endunless %}
           {% endfor %}
         </div>
         
         <hr>
 
-        <!-- Archives section (dynamically list years from 2019 to 2025) -->
-        <h4>Archives</h4>
-        <ul style="font-size: 0.9rem; list-style: none; padding-left: 0;">
+        <h6>archives</h6>
+        <div style="font-size: 0.9rem;">
           {% assign all_dates = site.posts | map: 'date' %}
           {% assign all_years = "" | split: "" %}
           {% for d in all_dates %}
@@ -228,14 +229,15 @@ pagination:
           {% assign sorted_years = all_years | sort: "numeric" | reverse %}
           {% for y in sorted_years %}
             {% if y >= '2019' and y <= '2025' %}
-              <li>
-                <a href="{{ '/blog/' | append: y | relative_url }}">
-                  {{ y }}
-                </a>
-              </li>
+              <a href="{{ '/blog/' | append: y | relative_url }}">
+                {{ y }}
+              </a>
+              {% unless forloop.last %}
+                &nbsp; &middot; &nbsp;
+              {% endunless %}
             {% endif %}
           {% endfor %}
-        </ul>
+        </div>
       </div>
     </div>
   </div>
