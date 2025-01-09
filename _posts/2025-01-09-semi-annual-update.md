@@ -24,7 +24,7 @@ I have a newly designed website! Let me know if you have parts you like or sugge
 Backpacking for five months was no joke. It was a good growth experience, and a good way of understanding myself -- consider it a very active form of therapy.
 
 Here are some posts about...
-- *[Kindness on April 23rd, 2024*](https://www.rohanprasad.org/blog/2024/2024-04-kindness-on-april-23rd-2024/). In my last couple weeks of teaching, I wrote in appreciation of all the kind people I have known in Taiwan. "Some downbeats last a lifetime." -- Ben Goldberg
+- [Kindness on April 23rd, 2024](https://www.rohanprasad.org/blog/2024/2024-04-kindness-on-april-23rd-2024/). In my last couple weeks of teaching, I wrote in appreciation of all the kind people I have known in Taiwan. "Some downbeats last a lifetime." -- Ben Goldberg
 - Joining a [Rainbow Gathering](https://www.rohanprasad.org/blog/2024/2024-04-taiwan-rainbow-gathering-2024/) in Taiwan with hippies in the woods
 - Visiting [Hong Kong](https://www.rohanprasad.org/blog/2024/2024-05-homg-kong/), [Auroville](https://www.rohanprasad.org/blog/2024/2024-05-auroville/) (an intentional community in South India), [traveling independently in India](https://www.rohanprasad.org/blog/2024/2024-06-indian-independence/)
 - Speaking to [people in China](https://www.rohanprasad.org/blog/2024/2024-07-one-month-in-china/). I stayed there for five weeks in total, traveling with various friends from California and also solo.
