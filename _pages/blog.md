@@ -95,9 +95,9 @@ pagination:
                         {% assign year = post.date | date: "%Y" %}
                         <p class="post-meta">
                           {{ read_time }} min read &nbsp; &middot; &nbsp;
-                          <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}">
+                          <!-- <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}">
                             <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
-                          </a>
+                          </a> -->
                         </p>
                       </div>
                     </div>
@@ -156,11 +156,11 @@ pagination:
                 </p>
 
                 <p class="post-tags">
-                  <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}">
-                    <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
-                  </a>
+                  <!-- <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}"> -->
+                    <!-- <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} -->
+                  <!-- </a> -->
 
-                  {% if tags != "" %}
+                  <!-- {% if tags != "" %}
                     &nbsp; &middot; &nbsp;
                     {% for tag in post.tags %}
                       <a href="{{ tag | slugify | prepend: '/blog/tag/' | prepend: site.baseurl}}">
@@ -170,7 +170,7 @@ pagination:
                         &nbsp; &middot; &nbsp;
                       {% endunless %}
                     {% endfor %}
-                  {% endif %}
+                  {% endif %}  --!>
 
                   {% if categories != "" %}
                     &nbsp; &middot; &nbsp;
@@ -182,7 +182,7 @@ pagination:
                         &nbsp; &middot; &nbsp;
                       {% endunless %}
                     {% endfor %}
-                  {% endif %}
+                  {% endif %} 
                 </p>
             {% if post.thumbnail %}
               </div>
@@ -202,19 +202,6 @@ pagination:
 
     <div class="col-md-4">
       <div class="sidebar">
-        <h6 style="margin-top: 1rem; margin-bottom: 0.5rem;">tags</h6>
-        <div class="post-tags">
-          {% for tag in site.display_tags %}
-            <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">
-              <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}
-            </a>
-            {% unless forloop.last %}
-              &nbsp; &middot; &nbsp;
-            {% endunless %}
-          {% endfor %}
-        </div>
-        
-        <hr>
 
         <h6 style="margin-top: 1rem; margin-bottom: 0.5rem;">archives</h6>
         <div style="font-size: 0.9rem;">
@@ -238,6 +225,23 @@ pagination:
             {% endif %}
           {% endfor %}
         </div>
+        <p></p>
+        
+        <hr>
+
+        <h6 style="margin-top: 1rem; margin-bottom: 0.5rem;">tags</h6>
+        <div class="post-tags">
+          {% for tag in site.display_tags %}
+            <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">
+              <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}
+            </a>
+            {% unless forloop.last %}
+              &nbsp; &middot; &nbsp;
+            {% endunless %}
+          {% endfor %}
+        </div>
+        
+
       </div>
     </div>
   </div>
