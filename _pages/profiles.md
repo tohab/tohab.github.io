@@ -1,8 +1,8 @@
 ---
 layout: profiles
-permalink: /people/
-title: people
-description: members of the lab or group
+permalink: /work/
+title: work
+description: a portfolio of my work experience
 nav: false
 nav_order: 7
 
