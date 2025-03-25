@@ -22,9 +22,9 @@ social: true # includes social icons at the bottom of the page
 
 **About me.** I grew up in London and went to UC Berkeley for college. After college, I lived in Taiwan for two years where I taught English and learned Mandarin.
 
-Now I live in Oakland, California. I love to run, bike, and juggle. I write semi-regularly on this blog. My primary instrument is the alto saxophone, though I dabble in voice and guitar.
+Now I live in Oakland, California. I love to run, bike, and juggle. I write semi-regularly on this blog. I love to play the alto saxophone, and I dabble in voice and guitar.
 
-**On this site** you can find my blog, which contains writing since 2019. On my Youtube, I have a [jazz album](https://www.youtube.com/watch?v=wevUja0L6m8&list=PLLmNtQG2epzFG2PwtDTz4U9OVDCsiJGG8). 
+**On this site** you can find my blog, which contains writing since 2019. There's also a portfolio of projects I've led throughout my career.
 
 *Email me at first dot last at berkeley dot edu.*
 

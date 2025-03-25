@@ -10,19 +10,22 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-*Here are four case studies highlighting projects I've led over the course of my time as a project leader and entrepreneur.*
+**PROFESSIONAL SUMMARY**
 
-PROFESSIONAL SUMMARY 
+I'm an operations leader and non-profit founder. 
+I love to take intricate business problems and find strategic, data-driven solutions. 
+I thrive in a collaborative environment and love to get things done.
 
-Strategy and operations leader with a track record of driving data-informed decisions and executing high-impact initiatives. Experienced in optimizing business operations, leading strategic planning, and translating complex challenges into actionable solutions. Proven leadership in managing cross-functional teams, mentoring talent, and delivering results in dynamic environments. Background includes work in food innovation, economic research, and nonprofit leadership.
+**CAREER HIGHLIGHTS**
 
-CAREER HIGHLIGHTS  
 - Secured and managed a $2M+ housing grant for a non-profit organization, optimizing resource allocation to support maximum community impact  
 - Managed an educational program serving 150+ students, resulting in 200% increase in language fluency
 - Generated $30K in additional funding through strategic membership growth initiatives, increasing an organization's operational capacity by 400%  
 - Co-developed research that informed resource economics policy decisions, potentially influencing market regulations worth millions in wildlife trade sectors  
 
-### Case 1: Co-founded and scaled operations for Grassyouths, Inc.
+Below are four case studies highlighting projects I've led over the course of my time as a project leader and entrepreneur.
+
+### Case 1: Co-founding and scaling operations for Grassyouths, Inc.
 
 **📅 Date:** Aug. 2021 - Present  
 **🏢 Organization:** Grassyouths Inc.
