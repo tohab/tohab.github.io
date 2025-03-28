@@ -13,7 +13,7 @@ social: true # includes social icons at the bottom of the page
 **PROFESSIONAL SUMMARY**
 
 I'm an operations leader and non-profit founder. 
-I love to take intricate business problems and find strategic, data-driven solutions. 
+I love to build scalable systems and drive organizational growth. 
 I thrive in a collaborative environment and love to get things done.
 
 **CAREER HIGHLIGHTS**
