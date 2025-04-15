@@ -1,6 +1,6 @@
 ---
 date: 2025-04-14
-description: Reflections on the intense journey of job hunting, personal growth, and finding clarity through the process.
+description: null
 layout: post
 published: true
 slug: 2025-04-the-abyss-of-job-searching
