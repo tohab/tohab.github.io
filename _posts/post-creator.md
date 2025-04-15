@@ -1,5 +1,5 @@
 ### Input: a plain text Markdown file with blog post contents
-### User-discussion: Suggest tags you think are applicable for the post from this list. Also, list any explicit grammar/spelling mistakes you spot and as if they should be change. 
+### User-discussion: Suggest tags you think are applicable for the post from this list. Also, list any explicit grammar/spelling mistakes you spot and ask if they should be change. 
 family
 identity
 justice
