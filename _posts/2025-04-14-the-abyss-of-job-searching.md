@@ -1,9 +1,9 @@
 ---
-date: 2025-01-05
+date: 2025-04-14
 description: Reflections on the intense journey of job hunting, personal growth, and finding clarity through the process.
 layout: post
 published: true
-slug: 2025-01-the-abyss-of-job-searching
+slug: 2025-04-the-abyss-of-job-searching
 tags:
   - work
   - reflection
@@ -11,8 +11,6 @@ tags:
   - technology
 title: The abyss of job searching
 ---
-
-4/5  **The abyss of job searching**
 
 I believe I found a job!!! It's essentially an official offer. I'm completely blown away! 
 
