@@ -1,11 +1,11 @@
 ---
-layout: page
+layout: projects
 title: art
 permalink: /art/
 description: A growing collection of your cool projects.
 nav: false
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [music, acting, youtube]
 horizontal: false
 ---
 
