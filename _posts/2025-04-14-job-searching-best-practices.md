@@ -13,30 +13,37 @@ tags:
 title: Job searching -- What I learned
 ---
 
+*This post is about best practices and what I learned job searching. For a more reflective, experiential perspective, see my other post, "The Abyss of Job Searching."*
+
 What are the three things you can give someone who's job searching?
-- Information. About how to job search, or specifics about your industry.
+- Information. For example, how to job search well, or knowledge about your industry.
 - Confidence. Encouragement, love and support.
 - Connections. An introduction to someone you know.
 
-On a blog post, it's easiest to share the first category of thing: information. I'll be reflecting on how job searching went for me, and what I learned about best practices.
+This blog post aims to share the first category of thing: information.
 
 ### Stage 1: Explore what you want to do.
-- In particular:
+- Let's break "what do you want to do?" down into three sub-questions:
 	- What role?
 	- What industry?
 	- What location?
-- These decisions will require you to be both introspective and opportunistic. Generally, you must learn where what you are good at / interested in intersects with a market need. It took me a long time to realize this—we don't live in a post-capitalist world where we can just be ourselves and have needs taken care of. Instead, you have to "sell yourself" (your labor) in return for basic provisions. And thus in our economy, you must find out your market value. This may involve:
+- I'm not saying these questions are easy to answer, but at least you know what you're looking for. 
+- These decisions will require you to be both introspective and opportunistic. Generally, you must learn where what you are good at / interested in intersects with a market need.
 	- Interviewing many others to learn what they do
 	- Doing self-assessments and reflections to consider what you're good at
 	- Surveying the market and considering what's in-demand (skills, industries, types of organizations).
-- After some reflection, I thought about the following roles:
-	- Product manager. Though I realized this may be a longer-term aspiration.
-	- Operations. The operations people I talked to were invariably helpful, down-to-earth, and thoughtful.
-	- Sales/customer success. Customer success is seen as a gateway to product management. Sales is a grind, but also a foot-in-the-door occupation.
-- I learned about industries right now:
-	- I've worked in the non-profit sector before, so it's not my first choice personally at this point. I also was targeting a company where there's a large amount of growth potential. The similar logic applies to government jobs (which are also competitive especially now due to DOGE).
-	- The startup scene is booming, and I was looking to live in the SF Bay Area. In particular, AI is hot, climate is not.
-- So I ended up thinking about: operations/sales jobs at AI startups—for a combination of pragmatic reasons and personal assessment.
+- Once you've answered these questions, you can give a mission statement. For example:
+	- "I'm looking for product management roles at AI startups in the Bay Area."
+	- "I want to do customer success remotely for an ed-tech company."
+	- "I'm targetting operations roles at climate tech companies."
+- Having trouble? Here are some thoughts:
+	- Have more conversations. Trust your gut.
+	- Choose a couple roles or industries to start with. You may narrow down later as you continue to learn about these fields.
+	- Just pick something! No one has information, and there is no right answer. By picking something, you'll learn about yourself and can recalibrate the next time you look for a job.
+- Notes: on mission statements
+	- Some "mission statements" will be more attainable than others. This depends on your background, the field you choose, and the job market in your target location. 
+	- It helps to know your priorities. If your goal is to move countries, switch fields or do something where there are fewer jobs, by all means -- go ahead! It will be hard, but honestly, this process will be hard any way you look at it.
+	- My mission statement, for both pragmatic reasons and personal assessment: operations/sales jobs at AI startups 
 
 *My 2025 search experience: I did about 8 informational interviews before I had any idea of what job I was targeting. From that point, I still had questions so kept clarifying my career direction with every subsequent conversation.*
 
@@ -67,11 +74,19 @@ On a blog post, it's easiest to share the first category of thing: information. 
 	- Communities. Joining a Slack community for a particular field or a professional association will make people more likely to respond to a cold message. I got introductions and numerous helpful advisors this way.
 		- *Tip: Ask ChatGPT, "what are good online communities I can join in X field" (e.g., East Bay climate tech, remote product managers, environmental nonprofits)*
 	- Warm introductions. You may be lucky enough that a family friend, old college classmate etc. knows someone who's hiring. You can start with a 20-minute catch-up call, then ask if they know anyone else to chat with. They may not, if they're not well-connected—don't take it personally. If someone you do speak with passes you along to someone else, *follow up* and ask for an innocent informational chat!
+- What does the conversation look like?
+	- Read Steve Dalton's *The 2-Hour Job Search*! He describes the TIARA technique (trends, insights, advice, resources, assignments)
+	- In brief, you should ask questions about their work and keep the interviewee talking. Your goal is for them to consider you a mentee, so they provide sustained guidance throughout your job search.
+	- As you're closing, you may ask, "do you know anyone else I should chat with who may be useful?"
+- Note: Stay the course!
+	- Networking is the strongest, evidence-backed way to find a job. Stay the course! When in doubt, re-read the 2-hour Job Search! People tell you to send cold applications to the void. Of course, some jobs are gotten that way, but those are the exceptions. Know that these people are not career coaches or job searching experts, and don't know what they're talking about! 
+	- Some people are downers to talk to. Don't let them get to you! By nature of being a "search", you never know how close you are to finding a job until it's right in front of you. Continue having conversations at a reasonable, sustainable pace.
+	- Be confident. Take breaks. Pursue fun things on the side. You cannot typically grind out networking in one week, so do it in parralel with things that make you happy.
 
 *In my job search, I:*
 - *Sent 100+ cold emails, with 10–15 resulting informational interviews*
 - *Went to 2 conferences (Effective Altruism Global and AI for Animals) where I had ~30 one-on-one meetings*
-- *Attended about 5 networking events (one person I met said he attended 600 events in one year to break into climate VC)*
+- *Attended about 5 networking events*
 - *Sent <10 cold applications (I spent this time cold emailing!)*
 - *Sent about 4 warm applications*
 
@@ -97,7 +112,7 @@ On a blog post, it's easiest to share the first category of thing: information. 
 - Do a Pre-Negotiation Call (PNC) to feel out the company's flexibility on different aspects of the offer (see Dalton's *The Job Closer*).
 - Subsequently, do a negotiation call where you ask for certain improvements on the offer with a "because" after every statement (see Dalton!).
 
-*In my process, I received two verbal offers. One of which was full of smoke, and I accepted the other (there were also 2 other shitty offers that were 100% commission sales gigs—I said I'd rather keep looking).*
+*In my process, I received two verbal offers. One of which was full of smoke, and I accepted the other (there were also 2 other bad offers that were 100% commission sales gigs—I said I'd rather keep looking).*
 
 ### Timeline:
 - Oct 30. Landed in America bewildered, startled.
