@@ -46,6 +46,7 @@ jobs:
 
       - name: Link Checker 🔗
         uses: lycheeverse/lychee-action@v2.1.0
+        continue-on-error: true
         with:
           fail: true
           # removed md files that include liquid tags

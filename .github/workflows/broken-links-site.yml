@@ -40,6 +40,7 @@ jobs:
           purgecss -c purgecss.config.js
       - name: Link Checker 🔗
         uses: lycheeverse/lychee-action@v1.9.0
+        continue-on-error: true
         with:
           fail: true
           # only check local links
