@@ -68,21 +68,30 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Ruby 💎
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: "3.1.4"
-          bundler-cache: true  # Enable dependency caching
+  uses: ruby/setup-ruby@v1
+  with:
+    ruby-version: "3.1.4"
+    bundler-cache: true  # Crucial: enables caching and local installation
+
+      - name: Configure Bundler 
+        run: |
+          bundle config path vendor/bundle  # Install gems to project directory
+          bundle config deployment true     # Optimize for CI environment
+
+      - name: Install dependencies
+        run: |
+          bundle install --retry=3 --jobs=4  # Robust installation
+
+      - name: Verify Jekyll installation
+        run: |
+          bundle show jekyll  # Confirm Jekyll is present
+          bundle exec jekyll -v  # Check executable works
 
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"  # Use latest stable version
           cache: "pip"
-
-      - name: Configure Bundler
-        run: |
-          bundle config path vendor/bundle  # Isolate dependencies
-          bundle config deployment true     # Optimize for deployment
 
       - name: Install and Build 🔧
         run: |
