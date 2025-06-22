@@ -62,44 +62,33 @@ permissions:
 
 jobs:
   deploy:
-    # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
+
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.1.4"
-          bundler-cache: false
-      - name: Confirm Ruby Version 📢
-        run: |
-          which ruby
-          ruby -v
+          bundler-cache: true  # Enable dependency caching
+
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
-          cache: "pip" # caching pip dependencies
-      - name: Check Binaries 🧪
+          python-version: "3.12"  # Use latest stable version
+          cache: "pip"
+
+      - name: Configure Bundler
         run: |
-          which bundle
-          bundle -v
-          which jekyll
-          jekyll -v || echo "Jekyll not found"
-      - name: Update _config.yml ⚙️
-        uses: fjogeleit/yaml-update-action@main
-        with:
-          commitChange: false
-          valueFile: "_config.yml"
-          propertyPath: "giscus.repo"
-          value: ${{ github.repository }}
+          bundle config path vendor/bundle  # Isolate dependencies
+          bundle config deployment true     # Optimize for deployment
+
       - name: Install and Build 🔧
         run: |
-          pip3 install --upgrade nbconvert
+          pip install nbconvert
           export JEKYLL_ENV=production
-          gem install bundler
-          bundle install --verbose
+          bundle install  # Install gems from Gemfile
           bundle exec jekyll build --trace
       - name: Purge unused CSS 🧹
         run: |
