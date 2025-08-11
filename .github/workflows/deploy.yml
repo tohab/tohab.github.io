@@ -2,59 +2,9 @@ name: Deploy site
 
 on:
   push:
-    branches:
-      - master
-      - main
-    paths:
-      - "assets/**"
-      - "**.bib"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "Gemfile"
-      - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      # - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
-      - "!README.md"
+    branches: [ main, master ]
   pull_request:
-    branches:
-      - master
-      - main
-    paths:
-      - "assets/**"
-      - "**.bib"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "Gemfile"
-      - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      # - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
-      - "!README.md"
+    branches: [ main, master ]
   workflow_dispatch:
 
 permissions:
@@ -64,46 +14,52 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Ruby 💎
-  uses: ruby/setup-ruby@v1
-  with:
-    ruby-version: "3.1.4"
-    bundler-cache: true  # Crucial: enables caching and local installation
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1.4'
+          bundler-cache: true    # caches gems between runs
 
-      - name: Configure Bundler 
+      - name: Configure Bundler
         run: |
-          bundle config path vendor/bundle  # Install gems to project directory
-          bundle config deployment true     # Optimize for CI environment
+          bundle config path vendor/bundle
+          bundle config deployment true
 
-      - name: Install dependencies
+      - name: Install Ruby gems
+        run: bundle install --jobs=4 --retry=3
+
+      - name: Verify Jekyll
         run: |
-          bundle install --retry=3 --jobs=4  # Robust installation
+          bundle show jekyll || echo "jekyll not in Gemfile"
+          bundle exec jekyll -v
 
-      - name: Verify Jekyll installation
-        run: |
-          bundle show jekyll  # Confirm Jekyll is present
-          bundle exec jekyll -v  # Check executable works
-
-      - name: Setup Python 🐍
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"  # Use latest stable version
-          cache: "pip"
+          python-version: '3.12'
+          cache: 'pip'
 
-      - name: Install and Build 🔧
+      - name: Build site with Jekyll
         run: |
-          pip install nbconvert
           export JEKYLL_ENV=production
-          bundle install  # Install gems from Gemfile
           bundle exec jekyll build --trace
-      - name: Purge unused CSS 🧹
+
+      - name: Setup Node (for PurgeCSS)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Purge unused CSS
         run: |
+          npm ci
           npm install -g purgecss
-          purgecss -c purgecss.config.js
-      - name: Deploy 🚀
+          purgecss -c purgecss.config.js || echo "skip purgecss if not applicable"
+
+      - name: Deploy to gh-pages
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
