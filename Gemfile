@@ -6,6 +6,18 @@ gem "jekyll", "~> 3.10.0"
 # Essential Jekyll plugins
 gem "jekyll-scholar"
 gem "jekyll-feed"
+
+# Dependencies for custom plugins
+gem "css_parser"        # download-3rd-party.rb
+gem "feedjira"          # external-posts.rb  
+gem "httparty"          # external-posts.rb
+gem "nokogiri"          # external-posts.rb
+gem "bibtex-ruby"       # likely needed for bibliography plugins
+gem "citeproc-ruby"     # likely needed for citation processing
+gem "csl-styles"        # likely needed for citation styles
+
+# Markdown parser dependency
+gem "kramdown-parser-gfm"
 gem "jekyll-sitemap"
 gem "jekyll-paginate-v2"
 gem "jekyll-archives"
