@@ -24,10 +24,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-          bundler-cache: false
+          bundler-cache: true  # Changed to true for better caching
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
+      - name: Install dependencies  # Added this step
+        run: bundle install
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
