@@ -126,7 +126,7 @@ pagination:
           {% endif %}
           <!-- {% assign year = post.date | date: "%Y" %} -->
           <!-- {% assign tags = post.tags | join: "" %} -->
-          <!-- {% assign categories = post.categories | join: "" %} -->
+          {% assign categories = post.categories | join: "" %}
 
           <li>
             {% if post.thumbnail %}
