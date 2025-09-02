@@ -92,6 +92,14 @@ pagination:
                         {% else %}
                           {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
                         {% endif %}
+                        <!-- DEBUG INFO -->
+                        <p>Total posts: {{ site.posts.size }}</p>
+                        <p>Pagination enabled: {{ page.pagination.enabled }}</p>
+                        {% if page.pagination.enabled %}
+                        <p>Paginator posts: {{ paginator.posts.size }}</p>
+                        {% endif %}
+                        <p>Postlist size: {{ postlist.size }}</p>
+                        <!-- END DEBUG -->
                         {% assign year = post.date | date: "%Y" %}
                         <p class="post-meta">
                           {{ read_time }} min read &nbsp; &middot; &nbsp;
