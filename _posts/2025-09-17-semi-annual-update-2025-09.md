@@ -33,9 +33,10 @@ rohan
 
 PS. 
 *updates:*
-- blog deployment took a tumble but is being fixed. posts can be navigated from [here](https://github.com/tohab/tohab.github.io/tree/main/_posts) for now.
 - my friend leon and I told our "banana story" back in april. [it's on youtube.](https://www.youtube.com/watch?v=xyevx3CnEbc)
 - [my instagram](https://www.instagram.com/butianlan/) now will have photos from my life
+- blog deployment took a tumble but is being fixed. posts can be navigated from [here](https://github.com/tohab/tohab.github.io/tree/main/_posts) for now.
+
 
 ***LONG-FORM WRITING ABOUT LIFE***
 
@@ -79,7 +80,6 @@ Life these days is much more structured. I wake up in the morning, shower and so
 
 Backpacking in Asia felt like being on a tiny sailboat, where I could be blown any way by the wind, but also had ultimate freedom in my direction. I feel like I'm on a larger ship now; still in control, but movements require more thought and coordination.
 
-REVISE
 Certainly, there are larger ships. If I wanted to, I could really pick up and leave any time (can only imagine what it feels like to have kids, pets, or house plants). But I don't. A large part of me appreciates the stability, the feeling of going a month without questioning my major life decisions. With locked in commitment comes stability, and stability is the foundation for growth in other areas.
 
 I feel the slow accumulation of experience that comes with a regularized life. And I also feel the way that it grinds on me come Friday afternoon. I long for the weekend, a breath of fresh air, a precious forty-eight hours where I get to pause and look at my life from a different vantage point. Sometimes I dive into a deep, late-night conversation, where time stops ticking and starts flowing, and I get to think about where I really am in the voyage of life.
@@ -133,6 +133,7 @@ Songs:
 - enough for you, Olivia Rodrigo
 - You and I, Ingrid Michaelson
 - When There Was Me and You, Joshua Bassett
+- Stick Season, Noah Kahan
 
 **META NOTES**
 
