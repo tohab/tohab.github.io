@@ -16,7 +16,7 @@ title: Semiannual update, Fall 2025
 
 *in a nutshell*
 - the last post was way back in january.
-- since then, i've been settling back into Berkeley, playing guitar, and started a job in ai safety.
+- since then, i've been settling back into Berkeley, playing guitar, and working a job in ai safety.
 - i'd love to hear from you :)
 	- i welcome updates long or short
 	- a prompt (opt.): what have you done lately that has gotten you into ["flow" state](<https://en.wikipedia.org/wiki/Flow_(psychology)>)?
