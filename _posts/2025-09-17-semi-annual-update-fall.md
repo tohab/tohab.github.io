@@ -11,7 +11,7 @@ tags:
 - capitalism
 - review
 - update
-title: Semi-annual update, September 2025
+title: Semiannual update, Fall 2025 
 ---
 
 *in a nutshell*
@@ -44,7 +44,7 @@ PS.
 
 The first three months I lived in Kaohsiung, now three years ago, were daunting. The challenges mainly were moving to a new city and forging new relationships. It felt hard to have consistent friends with cool people. I clung onto community wherever I could find it. Settling into the East Bay (the Berkeley/Oakland) has been challenging in similar ways. Old college friends are around, but friend groups are different.
 
-I last published a blog post sitting in a co-op ("Duckpond") in Oakland. I stayed there for three months while I was getting my bearings in the Bay. It was a house of seven humans and one dog, Ducky. She and I quickly became best friends -- both of us have four limbs, love the outdoors, and were unemployed for many moons. Ducky's guardian, Andrea, provided food and housing, while I was there to provide emotional support and field trips to the local park. Being at Duckpond was grounding. At a time with so much uncertainty, it was so nice to have people around every day and someone who'd definitely notice if I slept in.
+I last published a blog post sitting in a co-op ("Duckpond") in Oakland. I stayed there for three months while I was getting my bearings in the Bay. It was a house of seven humans and one dog, Ducky. She and I quickly became best friends -- both of us have four limbs, love the outdoors, and were unemployed for many moons. Ducky's guardian, Andrea, provided food and housing, while I was there to provide emotional support and field trips to the local park. Being at Duckpond was grounding. At a time with so much uncertainty, it was so nice to have people around every day and someone who'd definitely notice if I slept in (I wrote about Ducky [here](https://www.rohanprasad.org/blog/2025/2025-06-mans-best-friend/)).
 
 I've also been grateful to have my friend Leon. He lived with me for a year in Taiwan, and now is pursuing a career in piano accompaniment here in the Bay. I crashed at his house for a few weeks when I first got here. For fun, we also told a [joint-story](https://www.youtube.com/watch?v=xyevx3CnEbc) from Taiwan on stage in March -- a "magical moment" turned crazy situation -- through an organization called First Person Story.
 
