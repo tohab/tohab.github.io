@@ -36,11 +36,11 @@ travel
  description: null
  layout: post
  published: true
- slug: 2025-01-the-future-of-work
+ slug: YYYY--add-appropriate-title
  tags:
  - ethics
  - social-change
  - ai
  - technology
- title: The future of work, as I see it
+ title: Add A Title Here
  ---
