@@ -59,21 +59,21 @@ But I did find I learned a lot about myself -- what activities, types of people,
 
 **Working**
 
-The last update on my career situation was rather bleak, but in the end I did find a job! When people ask about it, here's my shtick:
+The last update on my career situation was rather bleak, but in the end I did find a job! When people ask about it, here's what I say:
 
-"Have you heard the theory that AI is going to takeover the world? ...*person responds yes or no* ... Well , I work at a research center where people are very concerned about this."
+"Have you heard the theory that AI is going to takeover the world? ...*person responds yes or no* ... Well , I work at a place where people are very concerned about this."
 
-[Constellation](https://www.constellation.org/) is an AI safety research center. We run events and programming to support the work of alignment researchers (ie. people who test models and try to make them not do [scary things](https://ifanyonebuildsit.com/)). The aim is to facilitate field-building and gradually influence people at major labs to support the alignment of AI systems. The organization itself is about 25 people, and we support several hundred who have access to the space.
+[Constellation](https://www.constellation.org/) is an AI safety research center. We run events and programming to support the work of alignment researchers (ie. people who test models and try to make them not do scary things. The aim is to facilitate field-building and gradually influence people at major labs to support the alignment of AI systems. My organization itself is about 25 people, supporting several hundred who have access to the space.
 
-The culture is a blend of a tech start-up and a non-profit. Chiefly mission-driven, but funded well enough that our staff have cushy lifestyles, especially for the non-profit industry. My day-to-day is operations, which essentially the mundane, logistical aspects of creating a smooth, seamless space. I help with onboarding, events, and the management of our administrative systems. I'm grateful primarily to have a job, but also to be in a field that feels prescient. AI safety seems to make the news all the time, and oftentimes it's people in the Constellation ecosystem who are being interviewed in these situations. Every day there's a new problem or conversation that keeps me on my toes.
+The culture is a blend of a tech start-up and a non-profit. Chiefly mission-driven, but funded well enough that our staff have cushy lifestyles, especially for the non-profit industry. My day-to-day is operations, which essentially the mundane, logistical aspects of creating a smooth, seamless space... onboarding, events, and the management of our administrative systems. I'm grateful primarily to have a job, but also to be in a field that feels prescient -- AI safety seems to make the news all the time, and oftentimes it's people in the Constellation ecosystem who are being interviewed in these situations.
 
-I like it chiefly because of the kind people. My manager is wonderful -- he has vast non-profit and start-up experience, and it really shows in his reasonableness, consideration, and breadth of skills. The team is close-knit and small enough that I know everyone fairly well, since my work requires me to collaborate with people a lot. I feel a lot of belonging at work, like they'd miss me if I were gone -- which is important, because the nature of modern office life is that I spend more waking hours in the office than anywhere else. I also just find it interesting to interact and manage relationships in a work context.
+I like it chiefly because of the kind people. My manager is wonderful -- he has vast non-profit and start-up experience, and it really shows in his reasonableness, consideration, and breadth of skills. The team is close-knit and small enough that I know everyone fairly well, since my work requires me to collaborate with people a lot. I feel a lot of belonging at work, like they'd miss me if I were gone -- which is important, because the nature of modern office life is that I spend more waking hours in the office than anywhere else.
 
 We do fun things, too. I've taken the role of social captain at work (among other responsibilities). I coordinate birthday cards, karaoke nights, and team bonding lunches which are well-attended. I also organized Constellation's first ever Open Mic, which was awesome and had some knock-out performances (such as Bob Dylan played on a Turkish lute!).
 
 I do feel a steady amount of professional growth. My job is demanding, but people are compassionate and supportive -- I feel I'm learning a lot of soft skills like how to interact with people, how to take initiative and ask the right questions, and how to make things happen while keeping cool. Instead of Mandarin, I find myself learning to speak corporate vernacular, learning to answer "tell me about yourself", and thinking like an operations professional. 
 
-Relatedly, in the past few months I applied for my own credit card, setup an investment account, and a bunch of adult stuff like that. I guess I'll do taxes again in a few months. Sometimes I find myself talking about these things with my friends and I get this surreal, vertigo sensation of aging. When did I become the kind of guy who does has a 401k??? Strange, so strange. On paper I have the markers of adulthood, but in my head I'm just me.
+I've done other adult stuff since getting a job, too. I applied for my own credit card, setup an investment account, and a bunch of adult stuff like that. I guess I'll do taxes again in a few months. Sometimes I find myself talking about these things with my friends and I get this surreal, vertigo sensation of aging. When did I become the kind of guy who does has a 401k??? Strange, so strange. On paper I have the markers of adulthood, but in my head I'm just me.
 
 **Living**
 
@@ -118,9 +118,9 @@ Books:
 - Mistborn Trilogy by Brandon Sanderson
 	- Excellent high-fantasy. Epic, profound.
 - River Town: Two Years on the Yangtze by Peter Hessler
-	- a wonderful memoir about Hessler's life in the Peace Corps in China in Sichuan province. It captures the magic of language learning and connection to a place -- the same magic I felt in Kaohsiung a quarter century later.
+	- A wonderful memoir about Hessler's life in the Peace Corps in China in Sichuan province. It captures the magic of language learning and connection to a place -- the same magic I felt in Kaohsiung a quarter century later.
 - The Harry Potter Series
-	- I listened to the audio version of this by Stephen Fry while wandering about China. Listening to books makes you tune into every word and deepened my relationship with these books, which I've already read twice!
+	- I listened to the audio version of this by Stephen Fry while wandering about China. Listening to books makes you tune into every word and deepened my relationship with these books (which I've already read twice!)
 - A Wizard of Earthsea
 	- 1960s fantasy recommended by my roommate. 
 - The 2-Hour Job Search, Steve Dalton
@@ -142,7 +142,7 @@ Songs:
 
 **FAQs**
 
-If you're a new subscriber, you may be wondering -- why blog? Isn't this so 90s? Also have you thought about using Substack?
+If you're a new subscriber, you may have questions: why blog? Isn't this so 90s? Also have you thought about using Substack?
 
 - Why the semi-annual post?
 	- I feel it's important and meaningful to stay in touch with people from different stages through my life. As someone whose lived on three cities (London, Berkeley, and Kaohsiung) each on three different continents, this is especially true. I find the other options for doing this en mass (Facebook or Instagram) lacking. Hence the long-form post. Those who read way down to this point are the real ones (and you should definitely email me in response!). 
