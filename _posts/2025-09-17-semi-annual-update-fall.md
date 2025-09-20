@@ -36,7 +36,7 @@ PS.
 updates:
 - my friend leon and I told our "banana story" back in april. [it's on youtube.](https://www.youtube.com/watch?v=xyevx3CnEbc)
 - [my instagram](https://www.instagram.com/butianlan/) now will have photos from my life
-- the website is under construction. for now posts can be navigated from [here](https://github.com/tohab/tohab.github.io/tree/main/_posts) for now.
+- the website is under construction. posts can be navigated from [here](https://github.com/tohab/tohab.github.io/tree/main/_posts) for now.
 - please let me know if another email address works better for you
 
 
