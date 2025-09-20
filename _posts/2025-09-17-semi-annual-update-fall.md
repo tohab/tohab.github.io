@@ -11,7 +11,7 @@ tags:
 - capitalism
 - review
 - update
-title: Semiannual update, Fall 2025 
+title: rohan's times, fall 202
 ---
 
 *in a nutshell*
@@ -35,32 +35,36 @@ PS.
 *updates:*
 - my friend leon and I told our "banana story" back in april. [it's on youtube.](https://www.youtube.com/watch?v=xyevx3CnEbc)
 - [my instagram](https://www.instagram.com/butianlan/) now will have photos from my life
-- blog deployment took a tumble but is being fixed. posts can be navigated from [here](https://github.com/tohab/tohab.github.io/tree/main/_posts) for now.
+- please let me know if another email address works better for you
+- the website is under construction. for now posts can be navigated from [here](https://github.com/tohab/tohab.github.io/tree/main/_posts) for now.
 
 
 ***LONG-FORM WRITING ABOUT LIFE***
 
 **Settling**
 
-The first three months I lived in Kaohsiung, now three years ago, were daunting. The challenges mainly were moving to a new city and forging new relationships. It felt hard to have consistent friends with cool people. I clung onto community wherever I could find it. Settling into the East Bay (the Berkeley/Oakland) has been challenging in similar ways. Old college friends are around, but friend groups are different.
+<!-- My first three months in Kaohsiung City, Taiwan, now three years ago, were daunting. The challenges mainly were moving to a new city and forging new friendships. In Taiwan, I clung onto community wherever I could find it -- on the streets, in the classroom, and at Settling into the East Bay (the Berkeley/Oakland) has been challenging in similar ways. Old college friends are around, but friend groups are different. -->
 
-I last published a blog post sitting in a co-op ("Duckpond") in Oakland. I stayed there for three months while I was getting my bearings in the Bay. It was a house of seven humans and one dog, Ducky. She and I quickly became best friends -- both of us have four limbs, love the outdoors, and were unemployed for many moons. Ducky's guardian, Andrea, provided food and housing, while I was there to provide emotional support and field trips to the local park. Being at Duckpond was grounding. At a time with so much uncertainty, it was so nice to have people around every day and someone who'd definitely notice if I slept in (I wrote about Ducky [here](https://www.rohanprasad.org/blog/2025/2025-06-mans-best-friend/)).
+I last published a blog post sitting in a co-op ("Duckpond") in Oakland. I stayed there for three months while I was getting my bearings in the Bay. It was a house of seven humans and one dog, Ducky. She and I quickly became best friends -- both of us had four limbs, loved the outdoors, and were unemployed for many moons. Ducky's guardian, Andrea, provided food and housing, while I was there to provide emotional support and field trips to the local park. Being at Duckpond was grounding. At a time with so much uncertainty, it was so nice to have people around every day and someone who'd definitely notice if I slept in (I wrote more about Ducky [here](https://www.rohanprasad.org/blog/2025/2025-06-mans-best-friend/)).
 
-I've also been grateful to have my friend Leon. He lived with me for a year in Taiwan, and now is pursuing a career in piano accompaniment here in the Bay. I crashed at his house for a few weeks when I first got here. For fun, we also told a [joint-story](https://www.youtube.com/watch?v=xyevx3CnEbc) from Taiwan on stage in March -- a "magical moment" turned crazy situation -- through an organization called First Person Story.
+I've also been grateful to have my friend Leon. He lived with me for a year in Taiwan, and now is pursuing a career as a pianist here in the Bay. I crashed at his house for a few weeks when I first got here. For fun, we also told a [joint-story](https://www.youtube.com/watch?v=xyevx3CnEbc) from Taiwan on stage in March (🚌🍌🇹🇼) through an organization called First Person Story.
 
-As I experience this transition back to the Bay, I have many moments of nostalgia for life in Taiwan. I remember one evening walking around Lake Merritt. Leon and I were trading memories of our year in Taiwan: stories of our 2nd grade students dancing fanatically to Black Pink, about the old guy across our apartment who gave us sugar apples and spoke with a thick Taiwanese drawl, the weird [salvationist organization](https://en.wikipedia.org/wiki/Yiguandao) I almost got indoctrinated into. Over each passing month, these memories recede in my mind -- and unavoidably, so do my connections to people in Taiwan and the language, Mandarin, that carried me to boba shops and ping pong lessons and the small villages on the East Coast. Memories dormant, perhaps, but able to revive in full force when I get the opportunity to share.
+As I experience this transition back to the Bay, I have many moments of nostalgia for life in Taiwan. I remember one evening walking around Lake Merritt. Leon and I were trading memories of our year in Taiwan: stories of our 2nd grade students dancing fanatically to Black Pink, about the old guy across our apartment who spoke with a thick Taiwanese drawl and who gave us [sugar apples](https://en.wikipedia.org/wiki/Annona_squamosa), and the weird [salvationist organization](https://en.wikipedia.org/wiki/Yiguandao) I almost got indoctrinated into. Over each passing month, these memories recede in my mind, and so do my connections to people in Taiwan and the language, Mandarin -- that carried me to boba shops and ping pong lessons and the small villages on the East Coast. Memories that lie dormant, but activated in full force when the moment arises.
 
-I was talking to my new housemate YLai, lately, about what I learned from doing a "gap year". He also spent a while in Colombia before starting college. When I visited California, an uncle of mine asked me, "so, now that you've lived abroad, have you figured out what you're doing with your life?" The answer is not at all. Figuring out a career and what you like to do etc. I think comes mostly from just doing it. But I did find I learned a lot about myself -- what activities, types of people, and type of lifestyle makes me happy. 
+When I visited California, an uncle of mine asked me, "so, now that you've lived abroad, have you figured out what you're doing with your life?" The answer is "not at all". I was talking to my new housemate, YLai, about what I learned from doing a "gap year" (he also spent a while in Colombia before starting college). We both found we learned about ourselves -- traversing the inner world and understanding what places, people and things make me happy.
+<!-- Figuring out a career and what you like to do etc. I think comes mostly from just doing it. I was talking to my new housemate YLai, lately, about what I learned from doing a "gap year". He also spent a while in Colombia before starting college. 
+But I did find I learned a lot about myself -- what activities, types of people, and type of lifestyle makes me happy.  -->
+
 
 **Working**
 
 The last update on my career situation was rather bleak, but in the end I did find a job! When people ask about it, here's my shtick:
 
-"Have you heard the theory that AI is going to takeover the world? ...*person responds yes or no* ... Well , I work at a place where people are very concerned about this. It's a research center where people think about how to align AI with human interests."
+"Have you heard the theory that AI is going to takeover the world? ...*person responds yes or no* ... Well , I work at a research center where people are very concerned about this."
 
 [Constellation](https://www.constellation.org/) is an AI safety research center. We run events and programming to support the work of alignment researchers (ie. people who test models and try to make them not do [scary things](https://ifanyonebuildsit.com/)). The aim is to facilitate field-building and gradually influence people at major labs to support the alignment of AI systems. The organization itself is about 25 people, and we support several hundred who have access to the space.
 
-The culture is a blend of a tech start-up and a non-profit. Chiefly mission-driven, but [funded](https://www.openphilanthropy.org/) well enough that our staff have cushy lifestyles, especially for the non-profit industry. My day-to-day is operations, which essentially the mundane, logistical aspects of creating a smooth, seamless space. I help with onboarding, events, and the management of our administrative systems. I'm grateful firstly to have a job, but also to be in a field that feels significant. AI safety seems to make the news all the time, and oftentimes it's people in the Constellation ecosystem who are being interviewed in these situations. Every day there's a new problem or conversation that keeps me on my toes.
+The culture is a blend of a tech start-up and a non-profit. Chiefly mission-driven, but funded well enough that our staff have cushy lifestyles, especially for the non-profit industry. My day-to-day is operations, which essentially the mundane, logistical aspects of creating a smooth, seamless space. I help with onboarding, events, and the management of our administrative systems. I'm grateful primarily to have a job, but also to be in a field that feels prescient. AI safety seems to make the news all the time, and oftentimes it's people in the Constellation ecosystem who are being interviewed in these situations. Every day there's a new problem or conversation that keeps me on my toes.
 
 I like it chiefly because of the kind people. My manager is wonderful -- he has vast non-profit and start-up experience, and it really shows in his reasonableness, consideration, and breadth of skills. The team is close-knit and small enough that I know everyone fairly well, since my work requires me to collaborate with people a lot. I feel a lot of belonging at work, like they'd miss me if I were gone -- which is important, because the nature of modern office life is that I spend more waking hours in the office than anywhere else. I also just find it interesting to interact and manage relationships in a work context.
 
