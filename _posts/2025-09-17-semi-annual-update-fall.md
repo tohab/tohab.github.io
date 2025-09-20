@@ -11,7 +11,7 @@ tags:
 - capitalism
 - review
 - update
-title: rohan's times, fall 202
+title: rohan's times, fall 2025
 ---
 
 *in a nutshell*
@@ -151,10 +151,10 @@ If you're a new subscriber, you may have questions: why blog? Isn't this so 90s?
 	- Writing to me is a true, pure, direct expression of thought. It's like the transcription of a memory, because the letters on the page will hopefully create some kind of experience in your mind that mirrors the ones I had.
 	- It's for this reason that I really appreciate memoirs. I find them a way to gain more life experience without doing all too much. It's extremely instructive to me to see how other people have navigated through life -- both in actions and cognitive responses. This blog is not a full memoir (I'll wait a while longer for that) but it is auto-biographical.
 - Why not Substack or another service?
-	- I'm stubbornly attached the bespoke, homegrown style of my blog. It does mean more upkeep and tech know-how. Maybe this will change in the future. 
-- So what do you use to host your website and this email list?
+	- I'm stubbornly attached the bespoke, homegrown style of my blog. Can't say it better than [Kingsley Shacklebolt](https://www.youtube.com/watch?v=V46hFOCWM60).
+- So how do you host your website and this email list?
 	- The website is hosted for free on Github through something called Github Pages. I based the styling off a theme called Alfolio.
-	- I pay for the domain on Namecheap for about $15 dollars a year.
+	- I pay for the domain on Namecheap for about $15 dollars a year. What a steal, right! 
 	- This email list is a Google group which I update whenever I move / make new friends.
 - But then, why did you say in the "updates" section that you're starting to use Instagram again?
 	- I'm trying to have one central place to put nice photos that represent experiences I have. Using a blog for this is clunky. I suppose Instagram is useful as a way to get someone's contact, since a lot of people have it. I might revisit this decision after trying it out.
