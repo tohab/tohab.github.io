@@ -14,14 +14,14 @@ tags:
 title: rohan's times, fall 2025
 ---
 
-*in a nutshell*
+**in a nutshell**
 - the last post was way back in january.
 - since then, i've been settling back into Berkeley, playing guitar, and started a job in ai safety.
 - i'd love to hear from you :)
 	- i welcome updates long or short
 	- a prompt (opt.): what have you done lately that has gotten you into ["flow" state](<https://en.wikipedia.org/wiki/Flow_(psychology)>)?
 
-*contents of this post*
+**contents of this post**
 - ~1500 words about my life
 - media recommendations
 - FAQs
@@ -33,11 +33,12 @@ rohan
 看那麼多英文讓你太累嗎? 歡迎你用翻譯機器来翻譯這篇文章
 
 PS. 
-*updates:*
+updates:
 - my friend leon and I told our "banana story" back in april. [it's on youtube.](https://www.youtube.com/watch?v=xyevx3CnEbc)
 - [my instagram](https://www.instagram.com/butianlan/) now will have photos from my life
-- please let me know if another email address works better for you
 - the website is under construction. for now posts can be navigated from [here](https://github.com/tohab/tohab.github.io/tree/main/_posts) for now.
+- please let me know if another email address works better for you
+
 
 
 **LONG-FORM WRITING ABOUT LIFE**
