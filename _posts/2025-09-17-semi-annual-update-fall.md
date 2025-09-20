@@ -16,17 +16,18 @@ title: rohan's times, fall 202
 
 *in a nutshell*
 - the last post was way back in january.
-- since then, i've been settling back into Berkeley, playing guitar, and working a job in ai safety.
+- since then, i've been settling back into Berkeley, playing guitar, and started a job in ai safety.
 - i'd love to hear from you :)
 	- i welcome updates long or short
 	- a prompt (opt.): what have you done lately that has gotten you into ["flow" state](<https://en.wikipedia.org/wiki/Flow_(psychology)>)?
 
 *contents of this post*
-- long-form writing about my life
+- ~1500 words about my life
 - media recommendations
-- notes
+- FAQs
 
 love and peace,
+
 rohan
 
 看那麼多英文讓你太累嗎? 歡迎你用翻譯機器来翻譯這篇文章
@@ -39,7 +40,7 @@ PS.
 - the website is under construction. for now posts can be navigated from [here](https://github.com/tohab/tohab.github.io/tree/main/_posts) for now.
 
 
-***LONG-FORM WRITING ABOUT LIFE***
+**LONG-FORM WRITING ABOUT LIFE**
 
 **Settling**
 
@@ -139,7 +140,7 @@ Songs:
 - When There Was Me and You, Joshua Bassett
 - Stick Season, Noah Kahan
 
-**META NOTES**
+**FAQs**
 
 If you're a new subscriber, you may be wondering -- why blog? Isn't this so 90s? Also have you thought about using Substack?
 
