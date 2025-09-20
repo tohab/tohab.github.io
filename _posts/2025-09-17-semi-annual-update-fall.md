@@ -145,8 +145,8 @@ Songs:
 If you're a new subscriber, you may have questions: why blog? Isn't this so 90s? Also have you thought about using Substack?
 
 - Why the semi-annual post?
-	- I feel it's important and meaningful to stay in touch with people from different stages through my life. As someone whose lived on three cities (London, Berkeley, and Kaohsiung) each on three different continents, this is especially true. I find the other options for doing this en mass (Facebook or Instagram) lacking. Hence the long-form post. Those who read way down to this point are the real ones (and you should definitely email me in response!). 
-	- The inspiration for this was two friends ([David Zilberman](https://professorzilberman.com/2023/12/15/my-annual-review-2023/) and Nico Stubler) who had periodic posts similar to this one.
+	- I feel it's important and meaningful to stay in touch with people from different stages through my life. As someone whose lived in three cities (London, Berkeley, and Kaohsiung) each on three different continents, this is especially true. I find the other options for doing this en mass (Facebook or Instagram) lacking. Hence the long-form post. Those who read way down to this point are the real ones (and you should definitely email me in response!). 
+	- The inspiration for this was two friends ([David Zilberman](https://professorzilberman.com/2023/12/15/my-annual-review-2023/) and [Nico Stubler](https://nstubler.wordpress.com/2022/07/05/june-22-update/)) who had periodic posts similar to this one.
 - Why long-form writing?
 	- Writing to me is a true, pure, direct expression of thought. It's like the transcription of a memory, because the letters on the page will hopefully create some kind of experience in your mind that mirrors the ones I had.
 	- It's for this reason that I really appreciate memoirs. I find them a way to gain more life experience without doing all too much. It's extremely instructive to me to see how other people have navigated through life -- both in actions and cognitive responses. This blog is not a full memoir (I'll wait a while longer for that) but it is auto-biographical.
