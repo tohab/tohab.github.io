@@ -42,30 +42,34 @@ pagination:
 
   .blog-layout {
     display: flex;
-    flex-wrap: wrap;
     gap: 2.5rem;
     align-items: flex-start;
+    flex-wrap: wrap;
   }
 
   .blog-main {
-    flex: 1 1 60%;
-    min-width: 18rem;
+    flex: 0 0 66.666%;
+    max-width: 66.666%;
+    min-width: 20rem;
   }
 
   .blog-sidebar {
-    flex: 0 0 18rem;
-    width: 100%;
-    max-width: 22rem;
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    min-width: 14rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .blog-layout {
       flex-direction: column;
       gap: 1.5rem;
     }
 
+    .blog-main,
     .blog-sidebar {
+      flex: 1 1 auto;
       max-width: none;
+      width: 100%;
     }
   }
 </style>
