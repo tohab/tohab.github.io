@@ -60,6 +60,6 @@ Now, developing countries [fighting Coronavirus](https://www.theguardian.com/com
 
 -----------------------------
 
-1 comments captured from [original post](https://www.rohanprasad.org/2020/06/maybe-youve-heard-this-poem-before.html) on Blogger
+1 comments captured from [original post](https://www.rohanprasad.org/blog/2020/2020-06-maybe-youve-heard-this-poem-before/) on Blogger
 \*\*Unknown said on 2020-06-06\*\*
 Beautiful dissection of the meaning of space exploration. Your post made me realize that buried underneath all this talk of finding a new place for humans elsewhere in the universe is the question: "Well, who gets to go?" Just as the extreme circumstances of superhero stories are meant to illuminate the fundamentals of human heart and courage, it seems fitting that exploring the outside, outer space, should prompt us to re-examine the issues that internally plague our societies.

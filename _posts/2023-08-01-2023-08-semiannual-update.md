@@ -71,7 +71,7 @@ With my friends Etienne, Leon, and another friend Noé, I recorded a jazz album!
 -----------------------------
 
 
-1 comments captured from [original post](https://www.rohanprasad.org/2023/08/2023-08-semiannual-update.html) on Blogger
+1 comments captured from [original post](https://www.rohanprasad.org/blog/2023/2023-08-2023-08-semiannual-update/) on Blogger
 \*\*jack sawyer said on 2023-08-03\*\*
 Dear Rohan, What a pleasure to hear of your adventures.   
 Love, Jack..  

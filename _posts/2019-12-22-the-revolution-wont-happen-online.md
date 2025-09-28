@@ -139,6 +139,6 @@ Martin Luther King Jr., [“Letter from a Birmingham Jail”](https://www.africa
 -----------------------------
 
 
-1 comments captured from [original post](https://www.rohanprasad.org/2019/12/the-revolution-wont-happen-online.html) on Blogger
+1 comments captured from [original post](https://www.rohanprasad.org/blog/2019/2019-12-the-revolution-wont-happen-online/) on Blogger
 \*\*Unknown said on 2020-06-02\*\*
 It's ironic that you wrote this in December, and now we are in June, living in a much more online world.

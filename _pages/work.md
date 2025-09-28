@@ -139,6 +139,6 @@ Inspired by the global pandemic, this study used an economics lens to analyze th
 
 **📅 Date:** 2019 - Present
 
-- Designed and developed a personal website ([www.rohanprasad.org](http://www.rohanprasad.org)) with a unique, responsive HTML/CSS design for optimal user experience.
+- Designed and developed a personal website ([www.rohanprasad.org](https://www.rohanprasad.org/)) with a unique, responsive HTML/CSS design for optimal user experience.
 - Authored and published since 2019, exploring writing genres like travel writing, argumentative essays, and creative non-fiction.
 - Deployed via GitHub Pages, demonstrating proficiency in web hosting, front-end development, and project management.

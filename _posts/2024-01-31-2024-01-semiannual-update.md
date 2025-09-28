@@ -122,7 +122,7 @@ Love,
 Rohan.
 
 PS. The jazz album *補習**BAND*
-from last May is out. Music [here](https://www.youtube.com/playlist?list=PLLmNtQG2epzFG2PwtDTz4U9OVDCsiJGG8) and post-mortem [here](https://www.rohanprasad.org/2023/11/band-album-is-out.html).
+from last May is out. Music [here](https://www.youtube.com/playlist?list=PLLmNtQG2epzFG2PwtDTz4U9OVDCsiJGG8) and post-mortem [here](https://www.rohanprasad.org/blog/2023/2023-11-band-album-is-out/).
 
 PPS. A website redesign is in the works. You’ll know it when you
 see it.

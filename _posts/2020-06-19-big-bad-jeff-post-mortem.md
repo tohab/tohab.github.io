@@ -47,7 +47,7 @@ Thanks for reading and watching. If you've read this far on the blog-post you ma
 
 -----------------------------
 
-2 comments captured from [original post](https://www.rohanprasad.org/2020/06/big-bad-jeff-post-mortem.html) on Blogger
+2 comments captured from [original post](https://www.rohanprasad.org/blog/2020/2020-06-big-bad-jeff-post-mortem/) on Blogger
 \*\*Unknown said on 2020-06-21\*\*
 super cool!
 \*\*Unknown said on 2020-06-21\*\*

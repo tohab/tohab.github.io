@@ -42,7 +42,7 @@ I've learned a great deal about English itself. Why is it that "she teaches" but
 
 Teaching is a challenge, no doubt. But it makes me think and keeps me motivated and feels like something worth getting out of bed for.
 
-*related blogpost [here](https://www.rohanprasad.org/2022/08/one-month-later-in-taiwan.html)*   
+*related blogpost [here](https://www.rohanprasad.org/blog/2022/2022-08-one-month-later-in-taiwan/)*   
 
 
 **Chinese**
@@ -56,10 +56,10 @@ But things have improved. I've been intentional about my study -- much moreso th
 -- and had plenty of places to learn new words and their applications. So after these six months, I feel confident taking phone calls, communicating via. text; and doing things like buying a new phone and or going to a Chinese-only speaking dentist (we made it work). I went to a co-worker's New Year's party and learned about my colleague's friend who's done ship maintenance in the Falkland Islands (in Chinese). It's the little things that make me feel the 成就感 (sense of accomplishment). It's quite the feeling to successfully fire off horrid dad jokes or make small talk -- it tells me I'm getting somewhere. Of course many topics continue to elude my grasp. You'd find my thoughts on Korean dramas and mattress firmness rather lacking, to name a couple examples.   
 
 
-Language learning continues to be extremely fascinating. On the one hand, it seems to get harder and harder the more I do it (as I [wrote about](https://www.rohanprasad.org/2023/01/swimming-with-fishes-or-my-english-is.html) recently); but it also grows increasingly intoxicating. I feel closer day-by-day to understanding current events and the political climate in the Chinese-speaking world. Fascinating, to say the least, and markedly differnent from the struggles in Western politics. To some extent I believe in that old cliche quote, "to speak another language is to possess another soul."  
+Language learning continues to be extremely fascinating. On the one hand, it seems to get harder and harder the more I do it (as I [wrote about](https://www.rohanprasad.org/blog/2023/2023-01-swimming-with-fishes-or-my-english-is/) recently); but it also grows increasingly intoxicating. I feel closer day-by-day to understanding current events and the political climate in the Chinese-speaking world. Fascinating, to say the least, and markedly differnent from the struggles in Western politics. To some extent I believe in that old cliche quote, "to speak another language is to possess another soul."  
 
 
-*related blogpost [here](https://www.rohanprasad.org/2022/11/language-learning-just-two-cents.html) and the [one linked above](https://www.rohanprasad.org/2023/01/swimming-with-fishes-or-my-english-is.html)*  
+*related blogpost [here](https://www.rohanprasad.org/blog/2022/2022-11-language-learning-just-two-cents/) and the [one linked above](https://www.rohanprasad.org/blog/2023/2023-01-swimming-with-fishes-or-my-english-is/)*  
 
 
 **Adulting in Taiwan**

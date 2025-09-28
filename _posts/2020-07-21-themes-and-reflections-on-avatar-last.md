@@ -225,6 +225,6 @@ I feel really grateful that the show exists, and that so many talented people pu
 
 -----------------------------
 
-1 comments captured from [original post](https://www.rohanprasad.org/2020/07/themes-and-reflections-on-avatar-last.html) on Blogger
+1 comments captured from [original post](https://www.rohanprasad.org/blog/2020/2020-07-themes-and-reflections-on-avatar-last/) on Blogger
 \*\*Unknown said on 2020-07-27\*\*
 The specific, concrete examples you provided reminded me of literary analysis essays I wrote in high school. I feel your inspiration in your writing. I laughed aloud when you implied that Lord of the Rings did not shape your childhood in many ways, either because you read it later or because you found it less meaningful.

@@ -30,6 +30,6 @@ Wherever I went, and whatever was on my mind, when my run is over my mind is cle
 
 -----------------------------
 
-1 comments captured from [original post](https://www.rohanprasad.org/2020/06/what-i-think-about-when-i-think-about.html) on Blogger
+1 comments captured from [original post](https://www.rohanprasad.org/blog/2020/2020-06-what-i-think-about-when-i-think-about/) on Blogger
 \*\*Unknown said on 2020-07-03\*\*
 I, too, use my runs to be as inefficient as possible :)

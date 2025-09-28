@@ -84,7 +84,7 @@ urge in ourselves as we think about foreign policy.
 -----------------------------
 
 
-1 comments captured from [original post](https://www.rohanprasad.org/2022/01/the-killing-fields-by-roland-joffe.html) on Blogger
+1 comments captured from [original post](https://www.rohanprasad.org/blog/2022/2022-01-the-killing-fields-by-roland-joffe/) on Blogger
 \*\*badriavarone said on 2022-03-04\*\*
 Wynn Las Vegas | Casino and Resort | Dr.MD  
 Wynn Las Vegas is centrally located in Las Vegas, [속초 출장샵](https://drmcd.com/%ec%86%8d%ec%b4%88%ec%97%90-%eb%8c%80%ed%95%9c-%ec%9a%b0%ec%88%98%ed%95%9c%ec%b6%9c%ec%9e%a5%ec%95%88%eb%a7%88%eb%a6%ac%eb%b7%b0.html) steps from Fashion Show Mall and [인천광역 출장샵](https://drmcd.com/%ec%9d%b8%ec%b2%9c%ea%b4%91%ec%97%ad%ec%b5%9c%ea%b3%a0%ec%8b%9c%ec%84%a4%ec%b6%9c%ec%9e%a5%ec%83%b5.html) across [영천 출장샵](https://drmcd.com/%ec%98%81%ec%b2%9c%ec%b6%9c%ec%9e%a5%eb%a7%88%ec%82%ac%ec%a7%80%ec%9d%b8%ea%b8%b0-%ec%88%9c%ec%9c%84.html) from High Roller. The resort features two [경주 출장마사지](https://www.mapyro.com/%ea%b2%bd%ec%a3%bc%ec%b5%9c%ea%b3%a0%ec%8b%9c%ec%84%a4%ec%b6%9c%ec%9e%a5%ec%83%b5.html) restaurants, two nightclubs, [동해 출장안마](https://www.jtmhub.com/%eb%8f%99%ed%95%b4%ec%b5%9c%ec%83%81%ec%9d%98-%ea%b4%80%eb%a6%ac%ec%b6%9c%ec%9e%a5%ec%83%b5.html)
