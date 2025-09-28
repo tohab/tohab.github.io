@@ -40,17 +40,6 @@ pagination:
     white-space: nowrap;
   }
 
-  .archive-years {
-    list-style: decimal;
-    margin: 0;
-    padding-left: 1.25rem;
-    font-size: 0.9rem;
-  }
-
-  .archive-years li {
-    margin: 0.25rem 0;
-  }
-
   .blog-layout {
     display: grid;
     grid-template-columns: minmax(20rem, 2fr) minmax(14rem, 1fr);
@@ -247,17 +236,18 @@ pagination:
           {% endunless %}
         {% endfor %}
         {% assign sorted_years = all_years | sort | reverse %}
-        <ol class="archive-years" reversed>
+        <div style="font-size: 0.9rem;">
           {% for y in sorted_years %}
             {% if y >= '2019' and y <= '2025' %}
-              <li>
-                <a href="{{ '/blog/' | append: y | relative_url }}">
-                  {{ y }}
-                </a>
-              </li>
+              <a href="{{ '/blog/' | append: y | relative_url }}">
+                {{ y }}
+              </a>
+              {% unless forloop.last %}
+                &nbsp; &middot; &nbsp;
+              {% endunless %}
             {% endif %}
           {% endfor %}
-        </ol>
+        </div>
         <p></p>
         
         <hr>
