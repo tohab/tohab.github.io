@@ -1272,12 +1272,18 @@ ninja-keys {
   --ninja-modal-background: var(--global-bg-color);
   --ninja-selected-background: #f3c28a;
   --ninja-selected-text-color: var(--global-text-color);
+  --ninja-secondary-background-color: #f6d6ac;
+  --ninja-secondary-text-color: #472917;
+  --ninja-footer-background: rgba(243, 194, 138, 0.45);
   --ninja-z-index: 1031;
 }
 
 html[data-theme="dark"] ninja-keys {
   --ninja-selected-background: #3d291c;
   --ninja-selected-text-color: #ffe7b0;
+  --ninja-secondary-background-color: rgba(51, 51, 51, 0.44);
+  --ninja-secondary-text-color: #888;
+  --ninja-footer-background: rgba(30, 30, 30, 0.85);
 }
 
 ninja-keys::part(ninja-input) {
