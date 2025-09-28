@@ -1,29 +1,32 @@
 // Has to be in the head tag, otherwise a flicker effect will occur.
 
-// Toggle through light, dark, and system theme settings.
+// Toggle between explicit light and dark theme settings.
 let toggleThemeSetting = () => {
   let themeSetting = determineThemeSetting();
-  if (themeSetting == "system") {
+  if (themeSetting == "dark") {
     setThemeSetting("light");
-  } else if (themeSetting == "light") {
-    setThemeSetting("dark");
   } else {
-    setThemeSetting("system");
+    setThemeSetting("dark");
   }
 };
 
 // Change the theme setting and apply the theme.
-let setThemeSetting = (themeSetting) => {
-  localStorage.setItem("theme", themeSetting);
+let setThemeSetting = (themeSetting, persist = true) => {
+  if (persist) {
+    localStorage.setItem("theme", themeSetting);
+  }
 
   document.documentElement.setAttribute("data-theme-setting", themeSetting);
 
-  applyTheme();
+  applyTheme(themeSetting);
 };
 
 // Apply the computed dark or light theme to the website.
-let applyTheme = () => {
-  let theme = determineComputedTheme();
+let applyTheme = (themeSetting) => {
+  let theme = themeSetting;
+  if (theme != "dark" && theme != "light") {
+    theme = determineThemeSetting();
+  }
 
   transTheme();
   setHighlight(theme);
@@ -205,36 +208,42 @@ let transTheme = () => {
   }, 500);
 };
 
-// Determine the expected state of the theme toggle, which can be "dark", "light", or
-// "system". Default is "system".
+// Determine the expected state of the theme toggle, which can be "dark" or "light".
 let determineThemeSetting = () => {
-  let themeSetting = localStorage.getItem("theme");
-  if (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") {
-    themeSetting = "system";
-  }
-  return themeSetting;
-};
-
-// Determine the computed theme, which can be "dark" or "light". If the theme setting is
-// "system", the computed theme is determined based on the user's system preference.
-let determineComputedTheme = () => {
-  let themeSetting = determineThemeSetting();
-  if (themeSetting == "system") {
-    const userPref = window.matchMedia;
-    if (userPref && userPref("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    } else {
-      return "light";
-    }
-  } else {
+  let themeSetting = document.documentElement.getAttribute("data-theme-setting");
+  if (themeSetting == "dark" || themeSetting == "light") {
     return themeSetting;
   }
+
+  themeSetting = localStorage.getItem("theme");
+  if (themeSetting == "dark" || themeSetting == "light") {
+    return themeSetting;
+  }
+
+  const userPref = window.matchMedia;
+  if (userPref && userPref("(prefers-color-scheme: dark)").matches) {
+    return "dark";
+  }
+
+  return "light";
+};
+
+// Determine the computed theme, which can be "dark" or "light".
+let determineComputedTheme = () => {
+  return determineThemeSetting();
 };
 
 let initTheme = () => {
-  let themeSetting = determineThemeSetting();
+  let storedTheme = localStorage.getItem("theme");
+  let hasStoredTheme = storedTheme == "dark" || storedTheme == "light";
 
-  setThemeSetting(themeSetting);
+  if (!hasStoredTheme && storedTheme !== null) {
+    localStorage.removeItem("theme");
+  }
+
+  let themeSetting = hasStoredTheme ? storedTheme : determineThemeSetting();
+
+  setThemeSetting(themeSetting, hasStoredTheme);
 
   // Add event listener to the theme toggle button.
   document.addEventListener("DOMContentLoaded", function () {
@@ -246,7 +255,12 @@ let initTheme = () => {
   });
 
   // Add event listener to the system theme preference change.
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
-    applyTheme();
-  });
+  const prefersDarkMatcher = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
+  if (prefersDarkMatcher && prefersDarkMatcher.addEventListener) {
+    prefersDarkMatcher.addEventListener("change", ({ matches }) => {
+      if (!localStorage.getItem("theme")) {
+        setThemeSetting(matches ? "dark" : "light", false);
+      }
+    });
+  }
 };
