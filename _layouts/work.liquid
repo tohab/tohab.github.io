@@ -4,7 +4,7 @@ layout: default
 <div class="post" {% if page.url == '/' %} style="text-align: center;" {% endif %}>
   <header class="post-header">
     <h1 class="post-title">
-      Work Portfolio
+      {{ page.header_title | default: 'Work Portfolio' }}
     </h1>
     <p class="desc">{{ page.subtitle }}</p>
   </header>

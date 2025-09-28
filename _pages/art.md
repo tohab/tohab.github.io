@@ -1,36 +1,23 @@
----
-layout: page
+layout: work
 permalink: /art/
 title: art
 nav: true
 nav_order: 2
+description: a playlist of music projects
+news: false
+selected_papers: false
+social: true
+header_title: Art
 ---
 
-<style>
-  .art-video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-  }
-
-  .art-video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-</style>
-
-<div class="art-video-container">
+<div class="embed-responsive embed-responsive-16by9">
   <iframe
+    class="embed-responsive-item"
     src="https://www.youtube.com/embed/videoseries?list=PLLmNtQG2epzFG2PwtDTz4U9OVDCsiJGG8"
-    title="YouTube playlist"
+    title="補習BAND playlist"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
+    loading="lazy"
   ></iframe>
 </div>
 
