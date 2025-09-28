@@ -8,7 +8,7 @@ tags:
 - legacy-blogger
 - personal
 - taiwan
-- ping-pong
+- ping pong
 title: "\u4E0D\u5C0D\uFF01"
 ---
 

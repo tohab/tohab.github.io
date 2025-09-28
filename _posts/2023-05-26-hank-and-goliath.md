@@ -9,6 +9,7 @@ tags:
 - teaching
 - personal
 - taiwan
+- education
 title: Hank and Goliath
 ---
 

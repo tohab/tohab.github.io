@@ -6,7 +6,7 @@ published: true
 slug: 2020-06-maybe-youve-heard-this-poem-before
 tags:
 - legacy-blogger
-- social-change
+- social change
 - politics
 - justice
 - inequality

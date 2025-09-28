@@ -9,7 +9,7 @@ tags:
 - travel
 - taiwan
 - community
-- social-change
+- social change
 - activism
 title: Taiwan Rainbow Gathering 2024
 ---

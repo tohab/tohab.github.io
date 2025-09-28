@@ -9,6 +9,7 @@ tags:
 - creativity
 - nature
 - reflection
+- music
 title: Assorted thoughts on art and music
 ---
 

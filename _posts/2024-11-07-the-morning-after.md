@@ -8,7 +8,7 @@ tags:
 - legacy-blogger
 - politics
 - america
-- social-change
+- social change
 - reflection
 title: the morning after
 ---

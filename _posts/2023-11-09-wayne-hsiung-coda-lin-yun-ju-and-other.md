@@ -9,7 +9,7 @@ tags:
 - assorted
 - activism
 - film
-- ping-pong
+- ping pong
 - health
 title: Wayne Hsiung, CODA, Lin Yun-ju, and other assorted thoughts
 ---

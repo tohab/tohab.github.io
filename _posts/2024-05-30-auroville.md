@@ -10,7 +10,7 @@ tags:
 - india
 - community
 - capitalism
-- social-change
+- social change
 title: Auroville
 ---
 

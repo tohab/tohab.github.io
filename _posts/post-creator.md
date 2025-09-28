@@ -39,7 +39,7 @@ travel
  slug: YYYY--add-appropriate-title
  tags:
  - ethics
- - social-change
+ - social change
  - ai
  - technology
  title: Add A Title Here

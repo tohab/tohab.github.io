@@ -12,6 +12,9 @@ tags:
 - travel
 - china
 - music
+- teaching
+- education
+- language-learning
 title: 2023-08 Semiannual Update
 ---
 

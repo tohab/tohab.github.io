@@ -8,7 +8,7 @@ tags:
 - legacy-blogger
 - politics
 - justice
-- social-change
+- social change
 - inequality
 title: Wealth-based affirmative action?
 ---

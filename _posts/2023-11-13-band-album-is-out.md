@@ -8,6 +8,7 @@ tags:
 - legacy-blogger
 - music
 - taiwan
+- creativity
 title: "\u88DC\u7FD2BAND the album is out"
 ---
 

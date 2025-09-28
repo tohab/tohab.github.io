@@ -10,6 +10,7 @@ tags:
   - ping pong
   - personal
   - legacy-blogger
+  - education
 title: Core Memories
 ---
 

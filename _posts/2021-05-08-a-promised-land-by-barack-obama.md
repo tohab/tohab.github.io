@@ -8,7 +8,7 @@ tags:
 - legacy-blogger
 - review
 - politics
-- social-change
+- social change
 - identity
 - justice
 title: A Promised Land by Barack Obama

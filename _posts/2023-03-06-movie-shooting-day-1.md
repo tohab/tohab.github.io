@@ -9,6 +9,7 @@ tags:
 - personal
 - taiwan
 - film
+- creativity
 title: Movie shooting Day 1
 ---
 

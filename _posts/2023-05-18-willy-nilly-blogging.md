@@ -8,6 +8,8 @@ tags:
 - legacy-blogger
 - personal
 - blogging
+- creativity
+- writing
 title: Willy Nilly Blogging
 ---
 

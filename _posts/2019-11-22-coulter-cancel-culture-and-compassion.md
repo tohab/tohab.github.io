@@ -6,7 +6,7 @@ published: true
 slug: 2020-05-coulter-cancel-culture-and-compassion
 tags:
 - legacy-blogger
-- social-change
+- social change
 - activism
 - ethics
 - politics

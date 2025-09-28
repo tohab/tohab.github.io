@@ -12,6 +12,8 @@ tags:
 - taiwan
 - india
 - china
+- teaching
+- education
 title: 2024-01 Semiannual Update
 ---
 

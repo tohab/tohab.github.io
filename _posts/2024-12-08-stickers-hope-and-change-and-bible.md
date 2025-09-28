@@ -8,8 +8,9 @@ tags:
 - legacy-blogger
 - taiwan
 - politics
-- social-change
+- social change
 - reflection
+- work
 title: Stickers, hope and change, and bible-pusher Rohan
 ---
 

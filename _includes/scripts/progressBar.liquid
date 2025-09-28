@@ -9,6 +9,21 @@
      * with the `al-foio` theme.
      */
     const progressBar = $('#progress');
+    const $navbar = $('#navbar');
+    const $navbarNav = $('#navbarNav');
+    let collapsedNavbarHeight = null;
+
+    function getCollapsedNavbarHeight() {
+      if (!$navbar.length) {
+        return 0;
+      }
+
+      if (!$navbarNav.hasClass('show')) {
+        collapsedNavbarHeight = $navbar.outerHeight(true);
+      }
+
+      return collapsedNavbarHeight || $navbar.outerHeight(true);
+    }
     /*
      * We set up the bar after all elements are done loading.
      * In some cases, if the images in the page are larger than the intended
@@ -38,6 +53,10 @@
         $(document).on('scroll', resizeProgressBar);
         $(window).on('resize', resizeProgressBar);
       }
+
+      $navbarNav.on('shown.bs.collapse hidden.bs.collapse', function () {
+        initializeProgressElement();
+      });
     }
     /*
      * The vertical scroll position is the same as the number of pixels that
@@ -49,9 +68,9 @@
     }
 
     function initializeProgressElement() {
-      let navbarHeight = $('#navbar').outerHeight(true);
+      const navbarHeight = getCollapsedNavbarHeight();
       $('body').css({ 'padding-top': navbarHeight });
-      $('progress-container').css({ 'padding-top': navbarHeight });
+      $('.progress-container').css({ 'padding-top': navbarHeight });
       progressBar.css({ top: navbarHeight });
       progressBar.attr({
         max: getDistanceToScroll(),

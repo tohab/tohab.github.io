@@ -8,7 +8,7 @@ tags:
 - legacy-blogger
 - personal
 - taiwan
-- ping-pong
+- ping pong
 title: Ping Pong Competition 1
 ---
 

@@ -11,6 +11,9 @@ tags:
 - travel
 - taiwan
 - music
+- teaching
+- education
+- language-learning
 title: 2022-08 Semiannual Update
 ---
 

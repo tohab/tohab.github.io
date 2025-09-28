@@ -482,6 +482,18 @@ ul ul ul, ol ol ol {
   }
 }
 
+@media (max-width: 575.98px) {
+  .navbar-nav {
+    .toggle-container {
+      align-self: flex-end;
+
+      button {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
 #light-toggle,
 #search-toggle {
   padding: 0;

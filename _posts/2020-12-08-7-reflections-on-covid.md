@@ -9,7 +9,7 @@ tags:
 - reflection
 - health
 - politics
-- social-change
+- social change
 title: 7 Reflections on COVID
 ---
 

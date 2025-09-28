@@ -8,7 +8,7 @@ tags:
 - legacy-blogger
 - philosophy
 - ethics
-- social-change
+- social change
 - reflection
 title: the spectrum of agency
 ---

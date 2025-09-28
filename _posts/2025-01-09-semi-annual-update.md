@@ -10,6 +10,7 @@ tags:
 - travel
 - identity
 - personal
+- work
 title: 2025-01 Semiannual update
 ---
 

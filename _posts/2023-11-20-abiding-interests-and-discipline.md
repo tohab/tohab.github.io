@@ -8,6 +8,8 @@ tags:
 - legacy-blogger
 - personal
 - reflection
+- teaching
+- education
 title: abiding interests and discipline
 ---
 

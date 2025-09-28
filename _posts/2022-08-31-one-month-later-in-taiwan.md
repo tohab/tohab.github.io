@@ -12,6 +12,7 @@ tags:
 - language-learning
 - reflection
 - community
+- education
 title: One month later in Taiwan
 ---
 

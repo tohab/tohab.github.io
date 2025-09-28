@@ -9,7 +9,7 @@ tags:
 - travel
 - china
 - politics
-- social-change
+- social change
 - technology
 title: One month in China
 ---

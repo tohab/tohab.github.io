@@ -6,7 +6,7 @@ published: true
 slug: 2025-01-the-future-of-work
 tags:
 - ethics
-- social-change
+- social change
 - ai
 - technology
 title: The future of work, as I see it

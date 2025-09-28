@@ -11,7 +11,7 @@ tags:
 - justice
 - reflection
 - economics
-- social-change
+- social change
 - inequality
 title: Dear Professor
 ---
