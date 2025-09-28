@@ -21,7 +21,7 @@ pagination:
     font-size: 1.2rem;
   }
   .post-title a {
-    font-weight: 700;
+    font-weight: 400;
   }
   .post-tags,
   .sidebar .post-tags a {
