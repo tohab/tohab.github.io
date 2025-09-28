@@ -1,6 +1,6 @@
 ---
 date: 2025-01-05
-description: null
+description:
 layout: post
 published: true
 slug: 2025-01-the-future-of-work
@@ -11,7 +11,6 @@ tags:
 - technology
 title: The future of work, as I see it
 ---
-
 To understand the future of work, it helps to think briefly about the history of work.
 - in pre-historic times, "work" was hunter-gathering. Searching for food and creating shelters were the equivalents of a day-job. With no laws, kingdoms, or strong institutions, people could work however much they want. Life may have been better in that sense. But the work was hard and dangerous. 
 - Agriculture displaced hunter-gathering societies. Agriculture allows you to grow much more food for fewer man-hours. Agriculture existed alongside hunter-gatherer civilizations (for instance, in North America, the Aztec civilization fluorished in modern-day Mexico, while the Native American tribes continued in the modern-day US). The agricultural revolution arguably resulted in a dis-improvement the quality of people's lives. Work became monotonous, boring, and it enabled a more stratified society. At the same time, agricultural societies allowed people to specialize in labor. With smaller numbers of people tending to food production, others could focus on science, technology, governance etc.

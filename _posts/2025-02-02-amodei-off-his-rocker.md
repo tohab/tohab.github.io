@@ -1,20 +1,19 @@
 ---
 date: 2025-02-02
-description: null
+description:
 layout: post
 published: true
 slug: amodei-off-his-rocker
 tags:
-  - ethics
-  - social change
-  - ai
-  - technology
-  - capitalism
-  - politics
-  - china
+- ethics
+- social change
+- ai
+- technology
+- capitalism
+- politics
+- china
 title: Amodei is off his rocker
 ---
-
 Dario Amodei is the CEO of Anthropic. He is considered a more safety-oriented AI executive. Anthropic's strategy has allegedly been to develop "safe", reliable AI and thereby encourage other firms to follow suit.
 
 Most recently, Amodei has gone one step further toward being another Sam Altman. He wrote his blog post *On Deepseek and Export Controls*, which argues for greater export controls so that the US can be *the first and only great power* to develop artificial general intelligence (AGI). His argument goes like this:
