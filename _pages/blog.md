@@ -41,35 +41,16 @@ pagination:
   }
 
   .blog-layout {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(20rem, 2fr) minmax(14rem, 1fr);
     gap: 2.5rem;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .blog-main {
-    flex: 0 0 66.666%;
-    max-width: 66.666%;
-    min-width: 20rem;
-  }
-
-  .blog-sidebar {
-    flex: 0 0 33.333%;
-    max-width: 33.333%;
-    min-width: 14rem;
+    align-items: start;
   }
 
   @media (max-width: 992px) {
     .blog-layout {
-      flex-direction: column;
+      grid-template-columns: 1fr;
       gap: 1.5rem;
-    }
-
-    .blog-main,
-    .blog-sidebar {
-      flex: 1 1 auto;
-      max-width: none;
-      width: 100%;
     }
   }
 </style>
