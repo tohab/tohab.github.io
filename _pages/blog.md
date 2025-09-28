@@ -40,6 +40,17 @@ pagination:
     white-space: nowrap;
   }
 
+  .archive-years {
+    list-style: decimal;
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .archive-years li {
+    margin: 0.25rem 0;
+  }
+
   .blog-layout {
     display: grid;
     grid-template-columns: minmax(20rem, 2fr) minmax(14rem, 1fr);
@@ -227,34 +238,34 @@ pagination:
       <div class="sidebar">
 
         <h6 style="margin-top: 1rem; margin-bottom: 0.5rem;">archives</h6>
-        <div style="font-size: 0.9rem;">
-          {% assign all_dates = site.posts | map: 'date' %}
-          {% assign all_years = "" | split: "" %}
-          {% for d in all_dates %}
-            {% assign y = d | date: "%Y" %}
-            {% unless all_years contains y %}
-              {% assign all_years = all_years | push: y %}
-            {% endunless %}
-          {% endfor %}
-          {% assign sorted_years = all_years | sort: "numeric" | reverse %}
+        {% assign all_dates = site.posts | map: 'date' %}
+        {% assign all_years = "" | split: "" %}
+        {% for d in all_dates %}
+          {% assign y = d | date: "%Y" %}
+          {% unless all_years contains y %}
+            {% assign all_years = all_years | push: y %}
+          {% endunless %}
+        {% endfor %}
+        {% assign sorted_years = all_years | sort | reverse %}
+        <ol class="archive-years" reversed>
           {% for y in sorted_years %}
             {% if y >= '2019' and y <= '2025' %}
-              <a href="{{ '/blog/' | append: y | relative_url }}">
-                {{ y }}
-              </a>
-              {% unless forloop.last %}
-                &nbsp; &middot; &nbsp;
-              {% endunless %}
+              <li>
+                <a href="{{ '/blog/' | append: y | relative_url }}">
+                  {{ y }}
+                </a>
+              </li>
             {% endif %}
           {% endfor %}
-        </div>
+        </ol>
         <p></p>
         
         <hr>
 
         <h6 style="margin-top: 1rem; margin-bottom: 0.5rem;">tags</h6>
+        {% assign sorted_tags = site.display_tags | sort_natural %}
         <div class="post-tags">
-          {% for tag in site.display_tags %}
+          {% for tag in sorted_tags %}
             <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">
               <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}
             </a>
