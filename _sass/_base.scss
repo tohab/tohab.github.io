@@ -1275,6 +1275,11 @@ ninja-keys {
   --ninja-z-index: 1031;
 }
 
+html[data-theme="dark"] ninja-keys {
+  --ninja-selected-background: #3d291c;
+  --ninja-selected-text-color: #ffe7b0;
+}
+
 ninja-keys::part(ninja-input) {
   color: var(--ninja-selected-text-color);
 }
