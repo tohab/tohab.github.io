@@ -20,6 +20,9 @@ pagination:
   h3.post-title {
     font-size: 1.2rem;
   }
+  .post-title a {
+    font-weight: 700;
+  }
   .post-tags,
   .sidebar .post-tags a {
     font-size: 0.9rem;
@@ -35,6 +38,35 @@ pagination:
 
   .post-tags a {
     white-space: nowrap;
+  }
+
+  .blog-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    align-items: flex-start;
+  }
+
+  .blog-main {
+    flex: 1 1 60%;
+    min-width: 18rem;
+  }
+
+  .blog-sidebar {
+    flex: 0 0 18rem;
+    width: 100%;
+    max-width: 22rem;
+  }
+
+  @media (max-width: 768px) {
+    .blog-layout {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .blog-sidebar {
+      max-width: none;
+    }
   }
 </style>
 
@@ -67,8 +99,8 @@ pagination:
     -->
   {% endif %}
 
-  <div class="row">
-    <div class="col-md-8">
+  <div class="blog-layout">
+    <div class="blog-main">
       {% if paginator and paginator.posts %}
         {% assign postlist = paginator.posts %}
       {% elsif page.pagination and page.pagination.enabled %}
@@ -176,7 +208,7 @@ pagination:
                         &nbsp; &middot; &nbsp;
                       {% endunless %}
                     {% endfor %}
-                  {% endif %}  --!>
+                  {% endif %}  -->
 
                   {% if categories != "" %}
                     &nbsp; &middot; &nbsp;
@@ -206,7 +238,7 @@ pagination:
       {% endif %}
     </div>
 
-    <div class="col-md-4">
+    <aside class="blog-sidebar">
       <div class="sidebar">
 
         <h6 style="margin-top: 1rem; margin-bottom: 0.5rem;">archives</h6>
@@ -246,9 +278,7 @@ pagination:
             {% endunless %}
           {% endfor %}
         </div>
-        
-
       </div>
-    </div>
+    </aside>
   </div>
 </div>
