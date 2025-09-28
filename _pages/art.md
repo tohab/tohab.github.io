@@ -1,14 +1,16 @@
+---
 layout: work
 permalink: /art/
 title: art
+description: a selection of art & music
 nav: true
 nav_order: 2
-description: a playlist of music projects
-news: false
-selected_papers: false
-social: true
-header_title: Art
+news: false # includes a list of news items
+selected_papers: false # includes a list of papers marked as "selected={true}"
+social: true # includes social icons at the bottom of the page
+header_title: art
 ---
+
 
 <div class="embed-responsive embed-responsive-16by9">
   <iframe
