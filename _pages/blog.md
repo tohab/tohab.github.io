@@ -44,15 +44,11 @@ pagination:
     font-size: 1.08rem;
   }
 
-  .archive-years a,
-  .post-tags a,
-  .sidebar .post-tags a {
+  .archive-years a {
     color: var(--global-theme-color);
   }
 
-  .archive-years a:hover,
-  .post-tags a:hover,
-  .sidebar .post-tags a:hover {
+  .archive-years a:hover {
     color: var(--global-hover-color);
   }
 
