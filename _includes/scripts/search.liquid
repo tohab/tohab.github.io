@@ -53,6 +53,24 @@
       }
       openNinjaKeys();
     };
+
+    const registerSearchToggle = () => {
+      const searchToggle = document.getElementById('search-toggle');
+      if (!searchToggle) {
+        return;
+      }
+
+      searchToggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        openNinjaKeys();
+      });
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', registerSearchToggle);
+    } else {
+      registerSearchToggle();
+    }
   </script>
   <script>
     const injectSearchData = (target) => {
