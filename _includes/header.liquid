@@ -59,7 +59,7 @@
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
-            {% if p.nav and p.autogen == null %}
+            {% if p.nav == true and p.autogen == null %}
               {% if p.dropdown %}
                 {% assign has_active_child = false %}
                 {% for child in p.children %}
@@ -127,10 +127,12 @@
           {% endif %}
           {% if site.enable_darkmode %}
             <!-- Toogle theme mode -->
-            <li class="toggle-container">
-              <button id="light-toggle" title="Change theme">
-                <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
-                <i class="ti ti-sun-filled" id="light-toggle-light"></i>
+            <li class="nav-item toggle-container">
+              <button id="light-toggle" type="button" title="Change theme">
+                <span class="nav-link">
+                  <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
+                  <i class="ti ti-sun-filled" id="light-toggle-light"></i>
+                </span>
               </button>
             </li>
           {% endif %}
