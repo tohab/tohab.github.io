@@ -401,6 +401,17 @@ ul ul ul, ol ol ol {
     }
   }
 
+  .navbar-nav .toggle-container {
+    display: flex;
+    align-items: center;
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
   .navbar-nav .nav-item.active > .nav-link {
     background-color: inherit;
     font-weight: bolder;
