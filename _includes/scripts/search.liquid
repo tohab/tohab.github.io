@@ -2,30 +2,65 @@
   <script type="module" src="{{ '/assets/js/search/ninja-keys.min.js' | relative_url | bust_file_cache }}"></script>
   <ninja-keys hideBreadcrumbs noAutoLoadMdIcons placeholder="Type to start searching"></ninja-keys>
   <script>
-    let searchTheme = determineComputedTheme();
-    const ninjaKeys = document.querySelector('ninja-keys');
+    const getNinjaKeys = () => document.querySelector('ninja-keys');
 
-    if (searchTheme === 'dark') {
-      ninjaKeys.classList.add('dark');
+    const applySearchTheme = () => {
+      const ninjaKeys = getNinjaKeys();
+      if (!ninjaKeys) {
+        return;
+      }
+
+      const searchTheme = determineComputedTheme();
+      if (searchTheme === 'dark') {
+        ninjaKeys.classList.add('dark');
+      } else {
+        ninjaKeys.classList.remove('dark');
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', applySearchTheme);
     } else {
-      ninjaKeys.classList.remove('dark');
+      applySearchTheme();
     }
 
+    const tryOpenNinjaKeys = () => {
+      const ninjaKeys = getNinjaKeys();
+      if (!ninjaKeys || typeof ninjaKeys.open !== 'function') {
+        return false;
+      }
+
+      ninjaKeys.open();
+      return true;
+    };
+
+    const openNinjaKeys = () => {
+      if (tryOpenNinjaKeys()) {
+        return;
+      }
+
+      if (window.customElements && customElements.whenDefined) {
+        customElements.whenDefined('ninja-keys').then(() => {
+          tryOpenNinjaKeys();
+        });
+      }
+    };
+
     window.openSearchModal = () => {
-      // collapse navbarNav if expanded on mobile
       const $navbarNav = $('#navbarNav');
       if ($navbarNav.hasClass('show')) {
         $navbarNav.collapse('hide');
       }
-      ninjaKeys.open();
+      openNinjaKeys();
     };
   </script>
   <script>
-    // get the ninja-keys element
-    const ninja = document.querySelector('ninja-keys');
+    const injectSearchData = (target) => {
+      if (!target) {
+        return;
+      }
 
-    // add the home and posts menu items
-    ninja.data = [
+      target.data = [
       {%- for page in site.pages -%}
         {%- if page.permalink == '/' -%}{%- assign about_title = page.title | strip -%}{%- endif -%}
       {%- endfor -%}
@@ -573,7 +608,30 @@
           },
         },
       {%- endif -%}
-    ];
+      ];
+    };
+
+    const initializeSearchData = () => {
+      const ninja = document.querySelector('ninja-keys');
+      if (!ninja) {
+        return false;
+      }
+
+      injectSearchData(ninja);
+      return true;
+    };
+
+    if (!initializeSearchData()) {
+      if (window.customElements && customElements.whenDefined) {
+        customElements.whenDefined('ninja-keys').then(initializeSearchData);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeSearchData, { once: true });
+      } else {
+        window.requestAnimationFrame(initializeSearchData);
+      }
+    }
   </script>
   <script src="{{ '/assets/js/shortcut-key.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
