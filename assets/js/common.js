@@ -56,4 +56,38 @@ $(document).ready(function () {
   $('[data-toggle="popover"]').popover({
     trigger: "hover",
   });
+
+  // Force external links to open in a new tab with safe rel attributes
+  const currentHost = window.location.host;
+  $("a[href]").each(function () {
+    const link = $(this);
+    const href = link.attr("href");
+
+    if (!href || !/^https?:\/\//i.test(href.trim())) {
+      return;
+    }
+
+    let linkHost;
+    try {
+      linkHost = new URL(href, window.location.origin).host;
+    } catch (error) {
+      return;
+    }
+
+    if (linkHost === currentHost) {
+      return;
+    }
+
+    link.attr("target", "_blank");
+
+    const relAttr = link.attr("rel") || "";
+    const relParts = relAttr.split(/\s+/).filter(Boolean);
+    if (!relParts.includes("noopener")) {
+      relParts.push("noopener");
+    }
+    if (!relParts.includes("noreferrer")) {
+      relParts.push("noreferrer");
+    }
+    link.attr("rel", relParts.join(" "));
+  });
 });
