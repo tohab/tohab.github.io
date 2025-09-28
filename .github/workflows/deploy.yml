@@ -28,8 +28,8 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
-      - name: Generate tag pages
-        run: bin/sync_tag_pages.rb
+      - name: Generate archive pages
+        run: bin/sync_archives.rb
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
