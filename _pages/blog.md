@@ -18,7 +18,7 @@ pagination:
 
 <style>
   h3.post-title {
-    font-size: 1.2rem;
+    font-size: 1.44rem;
   }
   .post-title a {
     font-weight: 400;
@@ -38,6 +38,22 @@ pagination:
 
   .post-tags a {
     white-space: nowrap;
+  }
+
+  .archive-years {
+    font-size: 1.08rem;
+  }
+
+  .archive-years a,
+  .post-tags a,
+  .sidebar .post-tags a {
+    color: var(--global-theme-color);
+  }
+
+  .archive-years a:hover,
+  .post-tags a:hover,
+  .sidebar .post-tags a:hover {
+    color: var(--global-hover-color);
   }
 
   .blog-layout {
@@ -243,7 +259,7 @@ pagination:
           {% endunless %}
         {% endfor %}
         {% assign sorted_years = all_years | sort | reverse %}
-        <div style="font-size: 0.9rem;">
+        <div class="archive-years">
           {% for y in sorted_years %}
             {% if y >= '2019' and y <= '2025' %}
               <a href="{{ '/blog/' | append: y | relative_url }}">
