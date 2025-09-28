@@ -30,6 +30,8 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install dependencies  # Added this step
         run: bundle install
+      - name: Generate tag pages
+        run: bin/sync_tag_pages.rb
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
