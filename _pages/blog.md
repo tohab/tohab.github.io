@@ -69,7 +69,19 @@ pagination:
 
   <div class="row">
     <div class="col-md-8">
-      {% assign featured_posts = site.posts | where: "featured", "true" %}
+      {% if paginator and paginator.posts %}
+        {% assign postlist = paginator.posts %}
+      {% elsif page.pagination and page.pagination.enabled %}
+        {%- comment -%}
+          Pagination is enabled in front matter but the paginator object is unavailable
+          (e.g., when the plugin is disabled). Fall back to all posts to keep content visible.
+        {%- endcomment -%}
+        {% assign postlist = site.posts | sort: 'date' | reverse %}
+      {% else %}
+        {% assign postlist = site.posts | sort: 'date' | reverse %}
+      {% endif %}
+
+      {% assign featured_posts = site.posts | where: "featured", "true" | sort: 'date' | reverse %}
       {% if featured_posts.size > 0 %}
       <br>
       <div class="container featured-posts">
@@ -92,14 +104,6 @@ pagination:
                         {% else %}
                           {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
                         {% endif %}
-                        <!-- DEBUG INFO -->
-                        <p>Total posts: {{ site.posts.size }}</p>
-                        <p>Pagination enabled: {{ page.pagination.enabled }}</p>
-                        {% if page.pagination.enabled %}
-                        <p>Paginator posts: {{ paginator.posts.size }}</p>
-                        {% endif %}
-                        <p>Postlist size: {{ postlist.size }}</p>
-                        <!-- END DEBUG -->
                         {% assign year = post.date | date: "%Y" %}
                         <p class="post-meta">
                           {{ read_time }} min read &nbsp; &middot; &nbsp;
@@ -117,12 +121,6 @@ pagination:
         </div>
       </div>
       <hr style="margin: 0.3rem 0;">
-      {% endif %}
-
-      {% if page.pagination.enabled %}
-        {% assign postlist = paginator.posts %}
-      {% else %}
-        {% assign postlist = site.posts %}
       {% endif %}
 
       <ul class="post-list">
@@ -203,7 +201,7 @@ pagination:
         {% endfor %}
       </ul>
 
-      {% if page.pagination.enabled %}
+      {% if paginator and page.pagination and page.pagination.enabled %}
         {% include pagination.liquid %}
       {% endif %}
     </div>
