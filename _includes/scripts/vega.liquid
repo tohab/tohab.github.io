@@ -1,20 +1,26 @@
 {% if page.chart and page.chart.vega_lite %}
+  {% assign vega = site.third_party_libraries.vega %}
+  {% assign vega_js_url = vega.url.js | replace: '{{version}}', vega.version %}
   <script
     defer
-    src="{{ site.third_party_libraries.vega.url.js }}"
-    integrity="{{ site.third_party_libraries.vega.integrity.js }}"
+    src="{{ vega_js_url }}"
+    integrity="{{ vega.integrity.js }}"
     crossorigin="anonymous"
   ></script>
+  {% assign vega_lite = site.third_party_libraries['vega-lite'] %}
+  {% assign vega_lite_js_url = vega_lite.url.js | replace: '{{version}}', vega_lite.version %}
   <script
     defer
-    src="{{ site.third_party_libraries.vega-lite.url.js }}"
-    integrity="{{ site.third_party_libraries.vega-lite.integrity.js }}"
+    src="{{ vega_lite_js_url }}"
+    integrity="{{ vega_lite.integrity.js }}"
     crossorigin="anonymous"
   ></script>
+  {% assign vega_embed = site.third_party_libraries['vega-embed'] %}
+  {% assign vega_embed_js_url = vega_embed.url.js | replace: '{{version}}', vega_embed.version %}
   <script
     defer
-    src="{{ site.third_party_libraries.vega-embed.url.js }}"
-    integrity="{{ site.third_party_libraries.vega-embed.integrity.js }}"
+    src="{{ vega_embed_js_url }}"
+    integrity="{{ vega_embed.integrity.js }}"
     crossorigin="anonymous"
   ></script>
 

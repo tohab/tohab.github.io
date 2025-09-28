@@ -1,15 +1,19 @@
 {% if site.enable_masonry %}
   <!-- Masonry & imagesLoaded -->
+  {% assign masonry = site.third_party_libraries.masonry %}
+  {% assign masonry_js_url = masonry.url.js | replace: '{{version}}', masonry.version %}
   <script
     defer
-    src="{{ site.third_party_libraries.masonry.url.js }}"
-    integrity="{{ site.third_party_libraries.masonry.integrity.js }}"
+    src="{{ masonry_js_url }}"
+    integrity="{{ masonry.integrity.js }}"
     crossorigin="anonymous"
   ></script>
+  {% assign imagesloaded = site.third_party_libraries.imagesloaded %}
+  {% assign imagesloaded_js_url = imagesloaded.url.js | replace: '{{version}}', imagesloaded.version %}
   <script
     defer
-    src="{{ site.third_party_libraries.imagesloaded.url.js }}"
-    integrity="{{ site.third_party_libraries.imagesloaded.integrity.js }}"
+    src="{{ imagesloaded_js_url }}"
+    integrity="{{ imagesloaded.integrity.js }}"
     crossorigin="anonymous"
   ></script>
   <script defer src="{{ '/assets/js/masonry.js' | relative_url }}" type="text/javascript"></script>

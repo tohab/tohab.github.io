@@ -260,7 +260,18 @@ pagination:
         <hr>
 
         <h6 style="margin-top: 1rem; margin-bottom: 0.5rem;">tags</h6>
-        {% assign sorted_tags = site.display_tags | sort_natural %}
+        {% assign all_tags = "" | split: "" %}
+        {% for post in site.posts %}
+          {% for tag in post.tags %}
+            {% assign cleaned_tag = tag | strip %}
+            {% if cleaned_tag != "" %}
+              {% unless all_tags contains cleaned_tag %}
+                {% assign all_tags = all_tags | push: cleaned_tag %}
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+        {% assign sorted_tags = all_tags | sort_natural %}
         <div class="post-tags">
           {% for tag in sorted_tags %}
             <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">

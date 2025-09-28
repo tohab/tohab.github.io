@@ -1,8 +1,10 @@
 {% if page.chart and page.chart.chartjs %}
+  {% assign chartjs = site.third_party_libraries.chartjs %}
+  {% assign chartjs_js_url = chartjs.url.js | replace: '{{version}}', chartjs.version %}
   <script
     defer
-    src="{{ site.third_party_libraries.chartjs.url.js }}"
-    integrity="{{ site.third_party_libraries.chartjs.integrity.js }}"
+    src="{{ chartjs_js_url }}"
+    integrity="{{ chartjs.integrity.js }}"
     crossorigin="anonymous"
   ></script>
   <script>

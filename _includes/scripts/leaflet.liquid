@@ -1,7 +1,9 @@
 {% if page.map %}
+  {% assign leaflet = site.third_party_libraries.leaflet %}
+  {% assign leaflet_js_url = leaflet.url.js | replace: '{{version}}', leaflet.version %}
   <script
-    src="{{ site.third_party_libraries.leaflet.url.js }}"
-    integrity="{{ site.third_party_libraries.leaflet.integrity.js }}"
+    src="{{ leaflet_js_url }}"
+    integrity="{{ leaflet.integrity.js }}"
     crossorigin="anonymous"
   ></script>
   <script>

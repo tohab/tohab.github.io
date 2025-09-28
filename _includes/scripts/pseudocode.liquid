@@ -16,17 +16,21 @@
       },
     };
   </script>
+  {% assign mathjax = site.third_party_libraries.mathjax %}
+  {% assign mathjax_js_url = mathjax.url.js | replace: '{{version}}', mathjax.version %}
   <script
     type="text/javascript"
     id="MathJax-script"
-    src="{{ site.third_party_libraries.mathjax.url.js }}"
-    integrity="{{ site.third_party_libraries.mathjax.integrity.js }}"
+    src="{{ mathjax_js_url }}"
+    integrity="{{ mathjax.integrity.js }}"
     crossorigin="anonymous"
   ></script>
+  {% assign pseudocode = site.third_party_libraries.pseudocode %}
+  {% assign pseudocode_js_url = pseudocode.url.js | replace: '{{version}}', pseudocode.version %}
   <script
     type="text/javascript"
-    src="{{ site.third_party_libraries.pseudocode.url.js }}"
-    integrity="{{ site.third_party_libraries.pseudocode.integrity.js }}"
+    src="{{ pseudocode_js_url }}"
+    integrity="{{ pseudocode.integrity.js }}"
     crossorigin="anonymous"
   ></script>
   <script>

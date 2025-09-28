@@ -8,10 +8,12 @@
 {% endif %}
 {% if site.enable_medium_zoom %}
   <!-- Medium Zoom JS -->
+  {% assign medium_zoom = site.third_party_libraries.medium_zoom %}
+  {% assign medium_zoom_js_url = medium_zoom.url.js | replace: '{{version}}', medium_zoom.version %}
   <script
     defer
-    src="{{ site.third_party_libraries.medium_zoom.url.js }}"
-    integrity="{{ site.third_party_libraries.medium_zoom.integrity.js }}"
+    src="{{ medium_zoom_js_url }}"
+    integrity="{{ medium_zoom.integrity.js }}"
     crossorigin="anonymous"
   ></script>
   <script defer src="{{ '/assets/js/zoom.js' | relative_url | bust_file_cache }}"></script>
@@ -24,10 +26,12 @@
 <!-- Bootstrap Table -->
 {% if page.pretty_table %}
   <!-- Bootstrap Table doesn't go well with diff2html -->
+  {% assign bootstrap_table = site.third_party_libraries['bootstrap-table'] %}
+  {% assign bootstrap_table_js_url = bootstrap_table.url.js | replace: '{{version}}', bootstrap_table.version %}
   <script
     defer
-    src="{{ site.third_party_libraries.bootstrap-table.url.js }}"
-    integrity="{{ site.third_party_libraries.bootstrap-table.integrity.js }}"
+    src="{{ bootstrap_table_js_url }}"
+    integrity="{{ bootstrap_table.integrity.js }}"
     crossorigin="anonymous"
   ></script>
 {% endif %}
@@ -39,5 +43,3 @@
 
 <!-- Jupyter Open External Links New Tab -->
 <script defer src="{{ '/assets/js/jupyter_new_tab.js' | relative_url | bust_file_cache }}"></script>
-
-{% assign site.test-library.url = site.test-library.url | append: 'teste' %}

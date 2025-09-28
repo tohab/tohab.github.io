@@ -1,6 +1,8 @@
 <!-- jQuery -->
+{% assign jquery = site.third_party_libraries.jquery %}
+{% assign jquery_url = jquery.url.js | replace: '{{version}}', jquery.version %}
 <script
-  src="{{ site.third_party_libraries.jquery.url.js }}"
-  integrity="{{ site.third_party_libraries.jquery.integrity.js }}"
+  src="{{ jquery_url }}"
+  integrity="{{ jquery.integrity.js }}"
   crossorigin="anonymous"
 ></script>

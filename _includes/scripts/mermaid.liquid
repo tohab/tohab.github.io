@@ -1,15 +1,19 @@
 {% if page.mermaid and page.mermaid.enabled %}
+  {% assign mermaid_lib = site.third_party_libraries.mermaid %}
+  {% assign mermaid_js_url = mermaid_lib.url.js | replace: '{{version}}', mermaid_lib.version %}
   <script
     defer
-    src="{{ site.third_party_libraries.mermaid.url.js }}"
-    integrity="{{ site.third_party_libraries.mermaid.integrity.js }}"
+    src="{{ mermaid_js_url }}"
+    integrity="{{ mermaid_lib.integrity.js }}"
     crossorigin="anonymous"
   ></script>
   {% if page.mermaid.zoomable %}
+    {% assign d3 = site.third_party_libraries.d3 %}
+    {% assign d3_js_url = d3.url.js | replace: '{{version}}', d3.version %}
     <script
       defer
-      src="{{ site.third_party_libraries.d3.url.js }}"
-      integrity="{{ site.third_party_libraries.d3.integrity.js }}"
+      src="{{ d3_js_url }}"
+      integrity="{{ d3.integrity.js }}"
       crossorigin="anonymous"
     ></script>
   {% endif %}

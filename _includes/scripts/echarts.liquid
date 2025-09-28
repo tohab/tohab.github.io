@@ -1,13 +1,16 @@
 {% if page.chart and page.chart.echarts %}
+  {% assign echarts = site.third_party_libraries.echarts %}
+  {% assign echarts_library_url = echarts.url.js.library | replace: '{{version}}', echarts.version %}
   <script
-    src="{{ site.third_party_libraries.echarts.url.js.library }}"
-    integrity="{{ site.third_party_libraries.echarts.integrity.js.library }}"
+    src="{{ echarts_library_url }}"
+    integrity="{{ echarts.integrity.js.library }}"
     crossorigin="anonymous"
   ></script>
   {% if site.enable_darkmode %}
+    {% assign echarts_dark_theme_url = echarts.url.js.dark_theme | replace: '{{version}}', echarts.version %}
     <script
-      src="{{ site.third_party_libraries.echarts.url.js.dark_theme }}"
-      integrity="{{ site.third_party_libraries.echarts.integrity.js.dark_theme }}"
+      src="{{ echarts_dark_theme_url }}"
+      integrity="{{ echarts.integrity.js.dark_theme }}"
       crossorigin="anonymous"
     ></script>
   {% endif %}

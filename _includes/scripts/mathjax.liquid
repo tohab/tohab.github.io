@@ -8,17 +8,21 @@
         },
       };
     </script>
+    {% assign mathjax = site.third_party_libraries.mathjax %}
+    {% assign mathjax_js_url = mathjax.url.js | replace: '{{version}}', mathjax.version %}
     <script
       defer
       type="text/javascript"
       id="MathJax-script"
-      src="{{ site.third_party_libraries.mathjax.url.js }}"
-      integrity="{{ site.third_party_libraries.mathjax.integrity.js }}"
+      src="{{ mathjax_js_url }}"
+      integrity="{{ mathjax.integrity.js }}"
       crossorigin="anonymous"
     ></script>
+    {% assign polyfill = site.third_party_libraries.polyfill %}
+    {% assign polyfill_js_url = polyfill.url.js | replace: '{{version}}', polyfill.version %}
     <script
       defer
-      src="{{ site.third_party_libraries.polyfill.url.js }}"
+      src="{{ polyfill_js_url }}"
       crossorigin="anonymous"
     ></script>
   {% endunless %}

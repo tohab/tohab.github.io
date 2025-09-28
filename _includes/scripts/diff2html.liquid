@@ -1,8 +1,10 @@
 {% if page.code_diff %}
   <!-- diff2html doesn't go well with Bootstrap Table -->
+  {% assign diff2html = site.third_party_libraries.diff2html %}
+  {% assign diff2html_js_url = diff2html.url.js | replace: '{{version}}', diff2html.version %}
   <script
-    src="{{ site.third_party_libraries.diff2html.url.js }}"
-    integrity="{{ site.third_party_libraries.diff2html.integrity.js }}"
+    src="{{ diff2html_js_url }}"
+    integrity="{{ diff2html.integrity.js }}"
     crossorigin="anonymous"
   ></script>
   <script>

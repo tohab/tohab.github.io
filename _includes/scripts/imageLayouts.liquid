@@ -1,17 +1,21 @@
 {% if page.images %}
   {% if page.images.compare %}
+    {% assign img_comparison = site.third_party_libraries['img-comparison-slider'] %}
+    {% assign img_comparison_js_url = img_comparison.url.js | replace: '{{version}}', img_comparison.version %}
     <script
       defer
-      src="{{ site.third_party_libraries.img-comparison-slider.url.js }}"
-      integrity="{{ site.third_party_libraries.img-comparison-slider.integrity.js }}"
+      src="{{ img_comparison_js_url }}"
+      integrity="{{ img_comparison.integrity.js }}"
       crossorigin="anonymous"
     ></script>
   {% endif %}
   {% if page.images.slider %}
+    {% assign swiper = site.third_party_libraries.swiper %}
+    {% assign swiper_js_url = swiper.url.js | replace: '{{version}}', swiper.version %}
     <script
       defer
-      src="{{ site.third_party_libraries.swiper.url.js }}"
-      integrity="{{ site.third_party_libraries.swiper.integrity.js }}"
+      src="{{ swiper_js_url }}"
+      integrity="{{ swiper.integrity.js }}"
       crossorigin="anonymous"
     ></script>
   {% endif %}
