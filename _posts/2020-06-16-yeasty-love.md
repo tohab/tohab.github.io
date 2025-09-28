@@ -14,7 +14,6 @@ title: Yeasty Love
 ---
 
 
-*This was originally posted on blogger.*
 Shall I compare thee  
 
 To a mush-a-room?  
@@ -62,3 +61,5 @@ Deep in earth you may bring light
 To me you bring scrumptiousness   
 
 In one bulbous creation.
+
+*This was originally posted on blogger.*

@@ -13,7 +13,6 @@ tags:
 title: Core Memories
 ---
 
-*This was originally posted on blogger.*
 
 Here are some stories about my students thatI think are cute. They don't necessarily have a great resolution or take-away message**.** That's why I'm sharing them on my blog.
 
@@ -103,3 +102,4 @@ During work time, I realize some of the students are sitting on their butts. I t
 
 Momo, another student, wants to speak Mandarin. Because of our immersive English program, I've only heard her speak words and fragments in her native tongue. But then suddenly in Chinese, her words come tumbling out -- she wants her policy to be a multi-lingual school where kids can speak any language they want like Japanese or or Korean English or Chinese, like a bilingual program, but multi-lingual. She's excited and expressing her creativity! I've never seen her talk like this. And I'm suddenly unprepared how to support her idea. I simply tell her how to spell the word "languages" and that she should write down her idea. Thank god I don't teach actual humanities, and that suffices as a response.
 
+*This was originally posted on blogger.*

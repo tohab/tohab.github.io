@@ -14,7 +14,6 @@ title: Whitey's off to space
 ---
 
 
-*This was originally posted on blogger.*
 Maybe you've heard this poem before: *Whitey On the Moon.*   
 
   
@@ -59,7 +58,11 @@ mass spreading of disease.
   
 
 Now, developing countries [fighting Coronavirus](https://www.theguardian.com/commentisfree/2020/apr/21/coronavirus-disaster-developing-nations-global-marshall-plan), people are raising their voices against police brutality, and, well -- Whitey's off to space.
----
-## 1 comments captured from [original post](https://www.rohanprasad.org/2020/06/maybe-youve-heard-this-poem-before.html) on Blogger
+
+*This was originally posted on blogger.*
+
+-----------------------------
+
+1 comments captured from [original post](https://www.rohanprasad.org/2020/06/maybe-youve-heard-this-poem-before.html) on Blogger
 \*\*Unknown said on 2020-06-06\*\*
 Beautiful dissection of the meaning of space exploration. Your post made me realize that buried underneath all this talk of finding a new place for humans elsewhere in the universe is the question: "Well, who gets to go?" Just as the extreme circumstances of superhero stories are meant to illuminate the fundamentals of human heart and courage, it seems fitting that exploring the outside, outer space, should prompt us to re-examine the issues that internally plague our societies.

@@ -14,7 +14,6 @@ title: Indian Independence
 ---
 
 
-*This was originally posted on blogger.*
 I owe a blog post.   
   
 I've been in India since May 25th. Aside from Auroville, which I wrote about, I also stayed at Pondicherry. Pondicherry was a nice experience. It was my first time solo traveling in India. I stayed at a hostel that was about 5 USD a night (the facilities were commiserate with the price). I met some nice people there, all guys. The hostel manager was a 21-year-old fitness coach-in-training, who actually wants to be a movie script writer, but is biding his time. There was a South Korean guy (28 years old) who had been living in Egypt for 4 whole months, where he studied to become a free-diving instructor, but then he decided free diving wasn't his passion and moved on to India (he says he doesn't know how long he'll be in India, but his visa lasts a year). There was a guy from another city in Tamil Nadu who lived in Singapore before; he kinda talked too much and didn't want to go outside in the heat; but he won my sympathies when he told us how he got into a motorcycle accident (going too fast over a speed bump), cracked a rib, and went into a coma for a few days, and had to rest for 4 months -- since then, he's been taking life at a slooow pace.  
@@ -30,3 +29,5 @@ Right now, as I'm writing this, I'm in Mumbai at a hostel. I've heard a lot abou
 Some people ask me if I would live in India. I wouldn't say no... But it's a tough sell. Salaries, compared to a respective job in the US, are like 5-10 times lower. Most cities don't have public transportation (if they do like in Bangalore, it's intensely crowded at all times). The sidewalks and traffic are rather chaotic, there's more air pollution than the densest cities in the West. The other thing is that many, many young people are looking to move out of India. I see ads all over the place, "get placed at a US university" "study for TOCFL, GMAT" "hotel staff placed in US". Moving to the US is a continuation of upward mobility in the US. So why move back? For others, its to take care of parents. Maybe to be closer to family. Maybe to join Auroville or something like it. I'm not sure.   
   
 That's India so far. After Mumbai is Bangkok for 3 nights, then Kunming, China.   
+
+*This was originally posted on blogger.*

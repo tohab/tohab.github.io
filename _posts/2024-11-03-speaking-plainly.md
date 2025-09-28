@@ -13,7 +13,6 @@ title: speaking plainly
 ---
 
 
-*This was originally posted on blogger.*
 
 Day 2 in the US. I wake up at Leon's house. It's Thursday morning, and there's a knock on the door. I look around, but Leon is in a meeting, his mother is out, and his father appears to be changing. So I take a stab and peak outside.  
   
@@ -27,4 +26,4 @@ Next to Commentary is Chris, Berkeley's lone conservative voice. He told me abou
   
 I don't know if I understood how absurdly liberal Berkeley is until this day. When I see Berkeley, San Francisco and Oakland after coming back from Taiwan, I see a bunch of people who are scared to offend, scared to make jokes, scared to talk about what they really feel for fear of judgement. There are a few exceptions, like Commentary. But I think people my age are burdened by a perfectionism when it comes to speech and ideas. A perfectionism that hinders curiosity and self-realization.   
 
-
+*This was originally posted on blogger.*

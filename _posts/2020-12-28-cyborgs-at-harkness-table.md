@@ -14,7 +14,6 @@ title: Cyborgs at the Harkness Table
 ---
 
 
-*This was originally posted on blogger.*
 
 Here's a thought: Are English majors Cyborgs when they sit around a discussion table?
 
@@ -49,3 +48,5 @@ ourselves, don't get addicted to them, and of course have a bit of
 privacy.
 
 *How do you stop from becoming a Cyborg? Or is it something you whole-heartedly embrace? Leave a comment and tell me your thoughts!*  
+
+*This was originally posted on blogger.*

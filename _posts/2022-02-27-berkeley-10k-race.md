@@ -14,7 +14,6 @@ title: Berkeley 10k Race
 ---
 
 
-*This was originally posted on blogger.*
 
 Today I ran a 10k race! It was my first time racing this distance and I exceeded expectations, running the Berkeley course in 44:54.   
 
@@ -31,4 +30,4 @@ With middle-long distance races, I really feel the true race starts in the last 
 
 I love the 10k distance. It's long enough that you don't have to sprint and short enough that it's not brutal. I felt so great after the race would love to train for it more. Leo thinks I could run sub-40 -- who knows! It feels good to be part of a large, semi-athletic community and see improvements over time. You'll see me out there again!  
 
-
+*This was originally posted on blogger.*

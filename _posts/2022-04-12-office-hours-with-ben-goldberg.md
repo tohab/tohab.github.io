@@ -13,7 +13,6 @@ title: Office Hours with Ben Goldberg
 ---
 
 
-*This was originally posted on blogger.*
 
 The tension between the narly and the beautiful in
 jazz. How do you approach it?
@@ -81,3 +80,4 @@ It's essential.
 Record as much as you possibly can. Every recording carries a memory; a story;
 an accident of people getting together to create music.
 
+*This was originally posted on blogger.*

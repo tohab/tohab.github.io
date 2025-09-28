@@ -13,7 +13,6 @@ title: Inputs and outputs
 ---
 
 
-*This was originally posted on blogger.*
 
 I had a new idea occur to me yesterday as I was biking, so I'm going to chew it over here.
 
@@ -56,4 +55,4 @@ And so going forward I want to thing about my inputs. Am I focusing on developin
 
 Note: About time. Time is interesting -- is it an input or an output? Some people always are yearning for more time; students, working professionals, well really anyone. But some people have more time than they know what to do with, like kids on summer vacation. Time I think has to be combined with a routine, mindset, or skill you're focusing on to be put to good use. I'd say time is an environmental factor. At a given stage in your life, you can't really control how much of it you have. But you can routinize it so that it's better structured.  
 
-
+*This was originally posted on blogger.*

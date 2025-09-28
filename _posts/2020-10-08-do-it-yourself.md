@@ -13,7 +13,6 @@ title: Do it yourself
 ---
 
 
-*This was originally posted on blogger.*
 
 In the fourth grade I made my own Halloween costume: a garbage bag. That was how some saw it, at least. I'm not sure what I had in my head -- perhaps a paper warrior, or a recycling king? Either way, to make it I cut out a brown lunch bag as a helmet, taped an array of A4 sheets on my back, and held a long cardboard roll as a staff to parade around the streets of St. John's Wood.
 
@@ -34,3 +33,4 @@ Yes, this mantra asks a lot of you. But there's a lot to fix in this day and age
 
 \* My DIY ethic for Halloween costumes -- you may be pleased to know -- has continued past lower school. In tenth grade I dressed up as my physics teacher and won the "scariest costume prize" in the high school; in freshmen year of college I did a similar impersonation of my math professor (for that, no prize was received except a confused expression on his face.)
 
+*This was originally posted on blogger.*

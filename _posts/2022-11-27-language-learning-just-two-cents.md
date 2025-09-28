@@ -12,7 +12,6 @@ title: Language Learning, just two cents
 ---
 
 
-*This was originally posted on blogger.*
 
 Between teaching Chinese and learning, I've found myself spending a great deal of my waking hours thinking about language learning. It's not as overwhelming as it sounds. Language learning is rich and contains many elements. Right now, I have some sort of a system -- not so rigid and not so regimented, but a system nonetheless. So I figure I'd explain it in words.  
 
@@ -28,4 +27,4 @@ Practice 3: Grammar study. Textbooks, online resources, or a language teacher ar
 
 Practice 4: Practice. I believe this is best done at your skill level, kind of like having a sparring partner. Or if you're like me and fortunate to live in the country whose language you are studying, "the streets" can serve as great conversation practice. It's also important to have deeper conversations with friends or a teacher about different topics, as much as you can. It's in these circumstances where I feel most lacking in my vocabulary, or my grammar feels overly simplistic, and I'm drawn back to practices 1-3.  
 
-
+*This was originally posted on blogger.*

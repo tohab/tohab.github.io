@@ -14,7 +14,6 @@ title: Stickers, hope and change, and bible-pusher Rohan
 ---
 
 
-*This was originally posted on blogger.*
 
 **Taiwanese sticker culture.** It's totally normal in Taiwan to send stickers to your friends. And your coworkers, boss, customers -- whoever. When I landed in Kaohsiung for the first time, my interactions with the quarantine hotel I was staying at were mediated through LINE, the common messaging app in Taiwan & Japan. Most of the time, I would type something, they would respond, and then send a sticker.So many stickers. A sticker is like a glorified emoji that moves. Or you could see it like sending a meme or a GIF. And you can also buy them. And they make stuffed animals and key-chains based on the common ones.   
   
@@ -36,4 +35,4 @@ These days, I've been thinking about the job search. There's a whole slew of tip
   
 Two years ago, I recommended *The Defining Decade* to anyone and everyone. Now, I have a new Bible: *The 2-Hour Job Search* by Steve Dalton. This book is more easily summarized: instead of shooting resume after resume into the black hole of job application portals, your time is better spent networking at targeting companies by informational interviews to learn about your industry. Moreover, Dalton provides explicit instructions on how to implement this strategy. No generic tips & tricks -- just actionable advice, based on research and his experience as a career counselor. I like this book because it flips the traditional paradigm on its head. And god, there's a lot of vague advice for job searching, but very few people who actually know how to do it.   
 
-
+*This was originally posted on blogger.*

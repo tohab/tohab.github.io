@@ -12,7 +12,6 @@ title: How Rohan Plays Chess -- A Career Framework
 ---
 
 
-*This was originally posted on blogger.*
 
 Here’s how I decide which moves to play in chess.
 
@@ -53,3 +52,5 @@ And here are some stylized facts from this framework:
 + But know that your opening will, in an unpredictable way, affect the rest of your game.
 
 But what positions are worth striving for? How do you choose which opponents to face? These questions are out of the scope of this post.
+
+*This was originally posted on blogger.*

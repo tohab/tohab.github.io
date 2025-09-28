@@ -15,7 +15,6 @@ title: Big Bad Jeff Post-mortem
 ---
 
 
-*This was originally posted on blogger.*
 Exactly four weeks ago I released my animation *How to Change the World* about Rosa Parks... and today I finished rendering this baby shark parody, *Big Bad Jeff*.  
 
   
@@ -46,8 +45,12 @@ face. Mr. Bezos on $100 bills, or him hanging out with Mr. Coronavirus is meant 
   
 
 Thanks for reading and watching. If you've read this far on the blog-post you may as well give a comment below :D. Right now, I'm excited to rest for a few days and then tackle my next creative project!
----
-## 2 comments captured from [original post](https://www.rohanprasad.org/2020/06/big-bad-jeff-post-mortem.html) on Blogger
+
+*This was originally posted on blogger.*
+
+-----------------------------
+
+2 comments captured from [original post](https://www.rohanprasad.org/2020/06/big-bad-jeff-post-mortem.html) on Blogger
 \*\*Unknown said on 2020-06-21\*\*
 super cool!
 \*\*Unknown said on 2020-06-21\*\*

@@ -10,7 +10,6 @@ tags:
 title: The revolution won't happen online
 ---
 
-*This was originally posted on blogger.*
 Several days ago, I hiked the Berkeley Fire Trails with two close
 friends as an end to our semester. We walked for an hour up the trail…
 through the dark paths, avoiding knotted roots and murky puddles. As we
@@ -138,8 +137,10 @@ Billy Bragg, Three Dimensions to Freedom
 
 Martin Luther King Jr., [“Letter from a Birmingham Jail”](https://www.africa.upenn.edu/Articles_Gen/Letter_Birmingham.html)  
 
+*This was originally posted on blogger.*
+-----------------------------
 
----
-## 1 comments captured from [original post](https://www.rohanprasad.org/2019/12/the-revolution-wont-happen-online.html) on Blogger
+
+1 comments captured from [original post](https://www.rohanprasad.org/2019/12/the-revolution-wont-happen-online.html) on Blogger
 \*\*Unknown said on 2020-06-02\*\*
 It's ironic that you wrote this in December, and now we are in June, living in a much more online world.

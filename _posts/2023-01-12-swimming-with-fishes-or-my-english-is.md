@@ -13,7 +13,6 @@ title: Swimming with the fishes or My English is really good
 ---
 
 
-*This was originally posted on blogger.*
 
 How good is my English? Really, quite good. In fact, yours is too, if you can understand every word I've used in my blog. I'm beginning to understand that being fluent in a language is no easy task. It took me two decades to get to my level with a sponge-like, child's brain and a fully immersive English environment. And not to brag, but I was speaking rather fluent English by maybe age 6. From then on, my diction and sophistication has only grown.
 
@@ -27,4 +26,4 @@ It seems to me that each of these students of Chinese gave up a great deal to "m
 
 I haven't made any horcruxes. Nor have I sprouted any gils. But you can catch me out here in Kaohsiung City, swimming with the fishes.  
 
-
+*This was originally posted on blogger.*

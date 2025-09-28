@@ -15,7 +15,6 @@ title: 2022-08 Semiannual Update
 ---
 
 
-*This was originally posted on blogger.*
 
 Hello there!
 
@@ -85,4 +84,4 @@ Studying so far, it has been humbling. There's so much knowledge of English voca
 
 **Be well, joyful and healthy these next few months!**  
 
-
+*This was originally posted on blogger.*

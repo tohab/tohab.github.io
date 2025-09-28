@@ -13,7 +13,6 @@ title: judgement
 ---
 
 
-*This was originally posted on blogger.*
 
 Many people in my life have called me judgmental. The truth is that I speak my mind a lot, and sometimes people don't like it. Judgement is seen as something that is bad and I've never understood this. So this blogpost aims to breakdown the stages of judgement.  
   
@@ -42,4 +41,4 @@ Those who speak their mind too much are called judgmental, presumptuous, or bigo
   
 I tell friends I love them dearly, and I tell them that certain behaviors of theirs piss me off beyond belief. I've sent letters to teachers and professors telling them how much their class means to mean, and when I feel like their class is meaningless. All the times I am speaking a truth I feel, and to do so is intrinsically good. Yet I realize that such truth must be tempered with compassion and tactful delivery. I don't pretend I do a good job at this. But, for now, I do what I do and it's a process of learning.   
 
-
+*This was originally posted on blogger.*

@@ -15,7 +15,6 @@ title: One month in China
 ---
 
 
-*This was originally posted on blogger.*
 
 I've been traveling in China for about a month, and have a couple weeks more in the country. Surprisingly, most people are willing to talk politics, in a large, outdoor space. It's fascinating getting people's opinions, and I have some of my own at the end of this post.
 
@@ -43,4 +42,4 @@ Another strength of China is the national pride. In cafes and restaurants, you h
 
 So in conclusion, China has a lot to admire about it. The housing and mass transit is a dream for liberal activists in the US, and I daresay there's a lot we can learn from. I do think the nationalism and internal media landscape is a downside. But in general, the Western media landscape is certainly skewed against China, and rarely appreciates the strengths of the political system here. There should be some pressure on China to liberalize its politics, but also a healthy appreciation for what they've done for 1.4 billion people.   
 
-
+*This was originally posted on blogger.*

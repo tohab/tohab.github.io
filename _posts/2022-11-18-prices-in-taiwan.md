@@ -13,7 +13,6 @@ title: Prices in Taiwan
 ---
 
 
-*This was originally posted on blogger.*
 
 Prices are interesting and sometimes hard to understand. In Taiwan, it feels like things are priced completely different to in the West and I'm trying to make sense of it.
 
@@ -25,4 +24,4 @@ Category 3: Exportable/imported goods. This is where my divide by ten metric bre
 
 So there you have it, a little bit about living abroad, pricing strategy and international trade.  
 
-
+*This was originally posted on blogger.*

@@ -13,7 +13,6 @@ title: A rant about Salesforce
 ---
 
 
-*This was originally posted on blogger.*
 Let's talk about Salesforce. Maybe you don't care about them or what they do --  frankly I don't either -- but many people from my school want to go work there. Their internships will give you free housing and lots of money. And according to the stock market they're worth [171](https://ycharts.com/companies/CRM/market_cap) billion dollars.  
 
   
@@ -63,3 +62,5 @@ No, no. I don't blame you, or any of my Berkeley friends. We live in a system th
   
 
 But for god's sake, don't *brag* that you got an internship at Salesforce or Snapchat or TikTok or the next cool thing out there. Don't talk about *data science* or *artificial intelligence* like it's going to save humankind (It's probably doing the opposite). Don't read those company slogans and think you're at all making a difference, because that's not the point of a corporation. Working under capitalism should be something you don't *want* to do, but you have to -- kind of like voting for Joe Biden or eating your veggies.
+
+*This was originally posted on blogger.*

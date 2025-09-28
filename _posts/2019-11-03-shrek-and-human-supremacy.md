@@ -18,7 +18,6 @@ title: Shrek and Human Supremacy
 ---
 
 
-*This was originally posted on blogger.*
 *This essay contains spoilers for Shrek (2001). If you haven’t seen it, you have a deep problem that needs addressing.*  
 
   
@@ -130,3 +129,5 @@ unintelligent, vile, and unrespectable. Though used comically, the same
 depiction of donkeys is used to justify their enslavement and
 commidification for human use. Such jokes are also examples of human
 supremacy.
+
+*This was originally posted on blogger.*

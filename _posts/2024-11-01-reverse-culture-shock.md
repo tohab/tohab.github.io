@@ -14,7 +14,6 @@ title: Reverse Culture Shock
 ---
 
 
-*This was originally posted on blogger.*
 
 It's been a long long time since I got to a blog post, so let's go ahead and do it!  
   
@@ -30,4 +29,4 @@ On my walk, I walked into a 7-Eleven. This is another past time in Taiwan; to du
   
 These anecdotes are all to say that I feel like a total Taiwanese FOB (Fresh of the Boat). America feels unwieldy, expensive, unsafe. In three days, my Taiwanese permanent residence expires, which means I don't have any legal status in the country. I've said goodbye to beloved friends there. And they all wished me luck going back to my country. But now I'm here, in the great US of A, and I feel remarkably out of my comfort zone. Everything is scary, different. Thank god I speak English, and have vestigial memory of aspects of this society. But after over two years living abroad, I feel again like I have a tenuous connection to this country.   
 
-
+*This was originally posted on blogger.*

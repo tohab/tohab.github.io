@@ -14,7 +14,6 @@ title: the morning after
 ---
 
 
-*This was originally posted on blogger.*
 
 The Republicans have taken the Senate, likely the house, and the Presidency. The legislative trifecta allows Trump to be unchallenged in the White House. What do we take from this moment?  
   
@@ -30,3 +29,4 @@ Kamala was unknown by most voters before her own campaign, and so would've done 
   
 America has chosen Trump, and this is the time to find out why.
 
+*This was originally posted on blogger.*

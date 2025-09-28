@@ -13,7 +13,6 @@ title: Ping Pong Competition 1
 ---
 
 
-*This was originally posted on blogger.*
 
 Yesterday I went to my first ever ping pong competition!
 
@@ -34,7 +33,4 @@ I left after that, happy to leave the pressure-cooker environment. I reflected t
 
 On the floor upstairs, my friends I watched the advanced tournament going on simultaneously. Mostly still young kids, maybe averaging a couple years older. One boy holds back tears as he plays. He raises his left hand to signal to his opponent that he's not yet ready to start, sniffles, and presses on. On a different table, a girl is locked in an epic duel with a boy that obnoxiously shouts *"DUI!"* every time he scores a point. She develops her own call, *"Wei!"*. But eventually she suffers a defeat, three to one, like my match against the Teenager. She's only eight-years-old, I learn from her father; dexterity ten times greater than my students at school. *"Ni hen lihai,"* I say (you're really good). She smiles at me. After a day of losing I reflect that the hardest part about sports is learning how to lose even when you give it your all.  
 
-
-  
-
-
+*This was originally posted on blogger.*

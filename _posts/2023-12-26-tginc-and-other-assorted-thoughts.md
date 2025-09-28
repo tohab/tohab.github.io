@@ -9,7 +9,6 @@ tags:
 title: TGINC and other assorted thoughts
 ---
 
-*This was originally posted on blogger.*
 
 **Thank god it's not Christmas.** As a cram school teacher, nothing is worse than the back-to-back holidays of Halloween, Thanksgiving, and Christmas. In public schools here, they don't celebrate any of those (the Chinese holidays are more sensibly spread out throughout the year). The consequence is that cram schools, and foreigners like me, end up being the representatives. It makes me delighted not to hear "Jingle Bells" in the PXMart and wonder how my students will do it when they're caroling. Hats off to my colleague, Teacher Phil, for directing a stellar matinee performance of *A Christmas Carol* with his class of 2nd graders.
 
@@ -28,4 +27,4 @@ title: TGINC and other assorted thoughts
 
 **A neat look at the [news](https://newsdejavu.github.io/).** Powered by an LLM, of course.  
 
-
+*This was originally posted on blogger.*

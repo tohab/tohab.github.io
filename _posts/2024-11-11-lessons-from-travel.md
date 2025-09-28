@@ -13,7 +13,6 @@ title: Lessons from Travel
 ---
 
 
-*This was originally posted on blogger.*
 
 * **See many perspectives.** While traveling I met a young Israeli sniper on the beaches of Siargao, Chinese nationalists who argue passionately in defense of the Chinese system, conservative French people who hate social welfare but also use it to travel. Keeping cool, curious, and empathetic is hard when you have different beliefs to someone.
 * **Overcome social anxiety.** So often when traveling, asking the nearest person is the best way to get the most accurate information. It's essentially a necessity to be bold enough to do this. I think I'm relatively good at doing this but I still have reluctance sometimes that doesn't serve me. Talking to a stranger is a subclass of "jumping into cold water" -- doing something you know has to be done, but you dread and keep procrastinating. I can think of many things that induce a similar feeling: quitting a job, packing up your things, breaking up with someone.
@@ -36,3 +35,5 @@ title: Lessons from Travel
 * **How to kill time/wait when you need to.** Talking to people. Reading my Kindle. Podcasts.
 * **Ground yourself in a new physical environment.** (e.g. via routine, exercise, putting luggage in a certain way). No routines but mini-routines. I had my bags set up so they felt familiar. A place for everything, and everything in its place, my dad likes to say. In the same vein, mini-routines in the morning, or a set time to go foraging for food, or having a hot beverage.
 * **Accepting there will be mistakes.** In Hong Kong, I thought it was way too pricey and bought too many groceries. I lost my hat and never went back to look for it. I got overcharged for a train booking. Mistakes are human, and I am human. It is part of life to make missteps, and these missteps do not define you. That's a tough lesson.
+
+*This was originally posted on blogger.*

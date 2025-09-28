@@ -14,7 +14,6 @@ title: "\u6F8E\u6E56 The Penghu Islands"
 ---
 
 
-*This was originally posted on blogger.*
 
 I went to Penghu this weekend. It’s my new favorite place in
 Taiwan, so here are some memories from the places I went to.  
@@ -264,8 +263,4 @@ Lily watched the boat from Magong recede into the horizon. The sunset
 illuminated the ocean, and I saw the disappearing outline of the Penghu
 islands.
 
-  
-  
-  
-  
-  
+*This was originally posted on blogger.*

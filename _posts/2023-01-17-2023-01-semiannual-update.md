@@ -15,7 +15,6 @@ title: 2023-01 Semiannual Update
 ---
 
 
-*This was originally posted on blogger.*
 Hello hello!
 
 Happy New Year! This is the second installment of my biannual life update to friends and family. Keeping in touch is a two-way street, so please do feel free to share your updates -- long or short -- back my way.
@@ -80,3 +79,4 @@ And then there's Kaohsiung as a city. People say that Taiwan is the heart of Asi
 
 Many people ask, both here and in the states, how long I'll stay in Taiwan, and what I plan to do next. I normally reply by flexing one of the two Chinese proverbs I know:且看且走 (to see as you walk) or 順其自然 (to let nature take its course). In English, I think that means I'll stay until something else calls out to me, or until I feel I'm no longer living life to its fullest. Which basically means, I don't know, and that's part of the fun.
 
+*This was originally posted on blogger.*

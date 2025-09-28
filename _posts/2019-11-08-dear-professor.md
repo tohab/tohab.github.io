@@ -17,7 +17,6 @@ title: Dear Professor
 ---
 
 
-*This was originally posted on blogger.*
 *This is a letter I wrote to my economics professor about what
 we are taught in university. The main idea, I suppose, is that we
 should not only ask “what is efficient?” but also, “what is right?”*.  
@@ -130,3 +129,5 @@ Community Lead, Berkeley Organization for Animal Advocacy
 *“We need, in a special way, to work twice as hard to make all
 people understand that animals are fellow creatures, that we must
 protect them and love them as we love ourselves.” – Cesar Chavez*
+
+*This was originally posted on blogger.*

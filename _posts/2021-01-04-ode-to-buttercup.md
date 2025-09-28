@@ -13,7 +13,6 @@ title: Ode to Buttercup
 ---
 
 
-*This was originally posted on blogger.*
 
 *Strong-willed. Determined.*
 
@@ -49,3 +48,5 @@ After a few weeks with living with us, she loses her appetite. She withdraws to 
 *Buttercup.*
 
 *[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEipp0LPp67HV1gkrYnYIcNZF_ML6V_S2l-8zGxdUhaFKglGbff3-2V0MVD5IqBNptLU4jtAv1R1GNkMC-PUblGvYD_Asz-XlUzfZNLkbRNcJVLNjCgcxsJzCu_D_JkTSjftT2Na4las48o/s320/WhatsApp+Image+2021-01-03+at+16.29.55.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEipp0LPp67HV1gkrYnYIcNZF_ML6V_S2l-8zGxdUhaFKglGbff3-2V0MVD5IqBNptLU4jtAv1R1GNkMC-PUblGvYD_Asz-XlUzfZNLkbRNcJVLNjCgcxsJzCu_D_JkTSjftT2Na4las48o/s1600/WhatsApp+Image+2021-01-03+at+16.29.55.jpeg)* *- Rohan Prasad, Jan 4th, 2020.*  
+
+*This was originally posted on blogger.*

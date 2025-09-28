@@ -13,7 +13,6 @@ title: Diary Practice
 ---
 
 
-*This was originally posted on blogger.*
 
 七月五號   
 
@@ -78,3 +77,4 @@ We are like yin and yang. He's left-handed, I'm right-handed. He spins the ball,
 
 Now, John lives in the UK and I live in the US. He is also the strongest ping pong opponent I have ever met. Now, I only have one dream. I hope I can practice my ping pong in Taiwan. After I met John, I will win!
 
+*This was originally posted on blogger.*

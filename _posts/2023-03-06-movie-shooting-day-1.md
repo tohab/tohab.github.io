@@ -13,7 +13,6 @@ title: Movie shooting Day 1
 ---
 
 
-*This was originally posted on blogger.*
 
 Today I had a terrific day shooting a movie! I got up bright and early
 and basically made it on time to Gangshan, the south-most station. I met two
@@ -145,4 +144,4 @@ times. No, if he thinks his performance was bad, he’ll just go outside, smoke 
 cigarette, and move on to the next one. There’s a practically – and a devotion
 to his craft – that I admire immensely, and I said as much on the car-ride back.
 
-
+*This was originally posted on blogger.*

@@ -16,7 +16,6 @@ title: Themes and reflections on Avatar -- The Last Airbender
 ---
 
 
-*This was originally posted on blogger.*
 **Introduction**  
 
   
@@ -224,7 +223,11 @@ I think *Avatar* is a powerful example of how fiction can really make a differen
   
 
 I feel really grateful that the show exists, and that so many talented people put time into writing, story-boarding, animating, music-ing, sound-tracking, and spreading the message to kids and adults across the world. The lessons of Team Avatar will not be forgotten, and remain dear to my heart.
----
-## 1 comments captured from [original post](https://www.rohanprasad.org/2020/07/themes-and-reflections-on-avatar-last.html) on Blogger
+
+*This was originally posted on blogger.*
+
+-----------------------------
+
+1 comments captured from [original post](https://www.rohanprasad.org/2020/07/themes-and-reflections-on-avatar-last.html) on Blogger
 \*\*Unknown said on 2020-07-27\*\*
 The specific, concrete examples you provided reminded me of literary analysis essays I wrote in high school. I feel your inspiration in your writing. I laughed aloud when you implied that Lord of the Rings did not shape your childhood in many ways, either because you read it later or because you found it less meaningful.

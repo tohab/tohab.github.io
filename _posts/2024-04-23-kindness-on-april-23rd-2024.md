@@ -14,7 +14,6 @@ title: Kindness on April 23rd, 2024
 ---
 
 
-*This was originally posted on blogger.*
 
 My old jazz professor Ben Goldberg once wrote, "there are some downbeats that last a lifetime." As I write this it happens to be the eve of my 24th birthday. At midnight it'll be April 24th, 2024, exactly two zodiac cycles after I was born.   
   
@@ -30,4 +29,4 @@ Today also as I was buying fruit juice, another customer said hello to me and ga
   
 My uncle Sampath is walking the Camino de Santiago pilgrimage in Spain for about a month. I have to say, it's hard to imagine him, at 60 years old!, staying in hostels and walking with a bike pack for so long. Great kudos for getting out of his comfortable retired life in California. His audaciousness inspires me, and his [amusing blog](https://samcamino.wordpress.com/) reminds me that traveling can't be all that bad. I'll be sure to blog once or twice a week while on the road as a way to keep in touch with friends and myself.   
 
-
+*This was originally posted on blogger.*

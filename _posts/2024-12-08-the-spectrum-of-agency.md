@@ -14,7 +14,6 @@ title: the spectrum of agency
 ---
 
 
-*This was originally posted on blogger.*
 
 If you were a rich person in the 1800s, would you used cotton shirts made by slave laborers? If you were a German in the 1940s, would you used soap made by the bodies of the victims of the Holocaust? If you were alive in the 2000s, would you have eaten the flesh of dead animals.
 
@@ -53,3 +52,5 @@ It's up to all of us to decide how much we follow social convention, and how muc
 * Installing Linux. I did this recently -- It brings me great joy. \*So\* much better than Windows. It feels like I have a whole new computer. And there's so much more choice and freedom on my laptop, now, which I had very little of on Windows.
 * Wearing clothes you like, or thrifting for nice stuff.
 * Creating art or music without thinking of whether it sounds "good".
+
+*This was originally posted on blogger.*

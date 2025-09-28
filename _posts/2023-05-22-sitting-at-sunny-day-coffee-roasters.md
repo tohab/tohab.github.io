@@ -13,7 +13,6 @@ title: Sitting at Sunny Day Coffee Roasters
 ---
 
 
-*This was originally posted on blogger.*
 
 and free writing.   
 
@@ -30,4 +29,4 @@ Since coming to Taiwan, my goals have somewhat pivoted. Regarding language, I ca
 
 Recently, I've also been learning how to accept things out of my control. For instance, I think there's a chance that super-smart artificial intelligence will take over the world in a couple decades. But what can I do about that? Right now, rather little. The same goes with traffic jams, train delays, scheduling conflicts, and whether my clothes will crease from being left in the laundry too long. Rationally speaking, once you commit to a decision, there's no point worrying about counter-factuals until you come to the next decision-point. Easier said than done. Post-college life goes at a slower pace. There's more value to being content in the present, leveling up as you can in day-to-day life rather than considering things existentially. That's what my blog's for after all.  
 
-
+*This was originally posted on blogger.*

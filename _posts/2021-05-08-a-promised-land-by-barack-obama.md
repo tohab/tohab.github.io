@@ -15,7 +15,6 @@ title: A Promised Land by Barack Obama
 ---
 
 
-*This was originally posted on blogger.*
 
 When I was in third grade, I remember writing to President Barack Obama as a writing assignment. The letter lies in my portfolio -- evidently it never reached the White House. I told him that, "I'm black just like you and that I'm proud that you are President."
 
@@ -39,4 +38,4 @@ This realization gives me a new perspective on how to judge politicians and peop
 
 I highly recommend Obama's autobiography. For aspiring politicians, and anyone who wants to be part of the ecology of change. It's a reminder that being President is just another job.  
 
-
+*This was originally posted on blogger.*

@@ -12,7 +12,6 @@ title: abiding interests and discipline
 ---
 
 
-*This was originally posted on blogger.*
 
 Abiding interests
 
@@ -41,4 +40,4 @@ Or that's at least what the disciplinarians say. And I wouldn't have thought it 
 
 Well, I'm learning guitar on my own, and a string broke. I got the guitar used, so maybe it's about time to change the strings anyways. I got a pack of strings and started with the one that was broken. Then, all of a sudden as I'm installing the new one for that size, it breaks too! Sigh. Learning things on your has it's drawbacks.   
 
-
+*This was originally posted on blogger.*

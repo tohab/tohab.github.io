@@ -14,7 +14,6 @@ title: Welcome home, sir
 ---
 
 
-*This was originally posted on blogger.*
 
 Whenever I went to the US growing up, the border control officer would take my passport, look at my pre-pubescent face, and solemnly say, "welcome home, sir." I'd struggle to hold back a smirk.
 
@@ -30,4 +29,4 @@ This July may be the first time I really feel what it's like to "go back to the 
 
 The young, pre-pubescent Rohan might wonder why I enjoy a visit "home". To me now, I reluctantly accept that with my cultural backgronud, America is the place to go back to. I suppose I'll be [homeward bound](https://youtu.be/4c87TeR7Evs).  
 
-
+*This was originally posted on blogger.*

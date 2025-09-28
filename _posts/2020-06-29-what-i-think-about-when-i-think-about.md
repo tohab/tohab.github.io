@@ -13,7 +13,6 @@ title: What I think about when I think about running
 ---
 
 
-*This was originally posted on blogger.*
 Today, rather predictably, running was the thing that really centered me. I try to run most days, but that doesn't happen unless I'm coerced into it by some third party. The feeling before a run -- a feeling of lethargy and attachment to a present couch -- is one that all runners know. I think the only difference between fast runners and slow runners is that fast runners can get outside, every time.  
 
   
@@ -31,7 +30,11 @@ Wherever I went, and whatever was on my mind, when my run is over my mind is cle
   
 
 \* or rather, a closed path. My multi-variable calculus professor, [Maciej Zworski](https://math.berkeley.edu/~zworski/), would correct me on that.
----
-## 1 comments captured from [original post](https://www.rohanprasad.org/2020/06/what-i-think-about-when-i-think-about.html) on Blogger
+
+*This was originally posted on blogger.*
+
+-----------------------------
+
+1 comments captured from [original post](https://www.rohanprasad.org/2020/06/what-i-think-about-when-i-think-about.html) on Blogger
 \*\*Unknown said on 2020-07-03\*\*
 I, too, use my runs to be as inefficient as possible :)

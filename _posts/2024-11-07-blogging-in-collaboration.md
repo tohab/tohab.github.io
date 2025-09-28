@@ -14,7 +14,6 @@ title: blogging in collaboration
 ---
 
 
-*This was originally posted on blogger.*
 
 I want to say that I don't write blog posts with AI. I say that, while also thinking that there may be good reasons to. And I may try it in the future. Here are some points for using AI and counter-point, too.  
   
@@ -35,3 +34,4 @@ Counterpoint:
 * It completes your thoughts. Perhaps a continuation of Counterpoint #1. When I'm writing, I'm forced to exactly think what I want to say. It is a certain way of looking at yourself. When AI completes your statements, it may not be an exact reflection of what is on your mind. But you may roll with it anyways.
   * Additional thought: AI is genuinely a useful thought partner. I can have a discussion with AI and learn a lot. It can take an idea or theory I have and strengthen it greatly. Still, this point stands in the sense that I believe it's important to have sovereignty over thinking, to have a space where your thought stand independently from external forces.
 
+*This was originally posted on blogger.*

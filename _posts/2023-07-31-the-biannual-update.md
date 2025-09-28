@@ -11,8 +11,7 @@ title: the biannual update
 ---
 
 
-*This was originally posted on blogger.*
 
 it's coming  
 
-
+*This was originally posted on blogger.*

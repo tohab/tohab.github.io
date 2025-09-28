@@ -13,7 +13,6 @@ title: Toilet cloggage in on the Taiwan Railway
 ---
 
 
-*This was originally posted on blogger.*
 
 今天我從苗栗三義跟朋友回高雄。我們在台中轉車，走到月台時，發現人超級多！整個月台都是人，可能有一萬人以上，真的『人山人海』。
 
@@ -23,3 +22,4 @@ title: Toilet cloggage in on the Taiwan Railway
 
 因為這個經驗，我想，你怎麼判斷一個國家的設備（比如，台鐵）？應該是透過他們最尖峰，最有壓力的時刻才能了解設計得多好。
 
+*This was originally posted on blogger.*

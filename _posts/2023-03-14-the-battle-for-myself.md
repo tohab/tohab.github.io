@@ -13,7 +13,6 @@ title: The battle for myself
 ---
 
 
-*This was originally posted on blogger.*
 
 In Jordan Peterson's second black horror film, *Us*, the world is split into two. There are those living normal lives like you or I: walking on two legs in the bright, open sunshine. And there are those living underground, the shadow people. Life below is a sorry imitation of life above the shadows. The shadow children get partially chewed dolls for Christmas; the people walk with a strange limp and speak raspily. The worlds are separate until they aren't -- until the moment they collide.
 
@@ -27,4 +26,4 @@ I was lamenting my loss of Facebook access to my roommate. He told me he had bee
 
 The battle for my Facebook account continues. My and my shadowy self wrestle back and forth on Facebook's invisible servers, our attentions online but our physical selves perhaps separated by continents. I frantically close all the portals to my life that my phone may key into, whilst my hacker posts photos of phallus-looking sweet potatos.   
 
-
+*This was originally posted on blogger.*

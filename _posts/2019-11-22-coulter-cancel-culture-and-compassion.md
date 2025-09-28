@@ -14,7 +14,6 @@ title: Coulter, Cancel Culture, and Compassion
 ---
 
 
-*This was originally posted on blogger.*
 *On November 22nd, 2019 the Berkeley College Republicans
 hosted Ann Coulter, a conservative commentator, on the UC campus.
 Several hundred students and anti-fascist protesters demonstrated before
@@ -110,3 +109,5 @@ evidence-based dialog, not shut down opposition after one bigoted
 statement. We should do creative, positive demonstrations in line with
 the just world that we imagine. We should channel the energies used
 against fascists and use it *for* a more beautiful world. *That*, to me, is what social justice is about.
+
+*This was originally posted on blogger.*

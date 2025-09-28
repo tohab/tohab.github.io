@@ -16,7 +16,6 @@ title: 2023-08 Semiannual Update
 ---
 
 
-*This was originally posted on blogger.*
 
 Greetings again,
 
@@ -70,9 +69,11 @@ I've also started learning guitar. The initial motivation was to learn an instru
 
 With my friends Etienne, Leon, and another friend Noé, I recorded a jazz album! It was quite the musical experience. We recorded 13 jazz standards that we had been practicing for a few months. Each took one to four takes, which is why the process was so exhausting -- our own standards for perfection were self-defeating. Knowing that every note/sound would be recorded made playing much harder. And having the pressure of recording all the songs we wanted to do in one day was difficult too. Anyways, the music is still in the mastering process. When it's ready, I think we'll put it on Bandcamp (and it probably deserves another blog post). I hope to record again!  
 
+*This was originally posted on blogger.*
+-----------------------------
 
----
-## 1 comments captured from [original post](https://www.rohanprasad.org/2023/08/2023-08-semiannual-update.html) on Blogger
+
+1 comments captured from [original post](https://www.rohanprasad.org/2023/08/2023-08-semiannual-update.html) on Blogger
 \*\*jack sawyer said on 2023-08-03\*\*
 Dear Rohan, What a pleasure to hear of your adventures.   
 Love, Jack..  

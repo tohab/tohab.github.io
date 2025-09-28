@@ -15,7 +15,6 @@ title: Auroville
 ---
 
 
-*This was originally posted on blogger.*
 
 When I arrived to Pondicherry I quickly heard about a intentional community called Auroville. It's about 15km from where I was staying, so I figured it was worth a day trip to see what all the hype is all about. (You can read about Auroville on Wikipedia)   
 
@@ -49,3 +48,5 @@ the making of red bricks, which are used all over Auroville
 farm for spirulina, the algae that has made Auroville millions
 [![](https://blogger.googleusercontent.com/img/a/AVvXsEgNeoiBhbJ9jdVoZK4oQsqDGBccJlPcyK81q8KGJigzE1bcfdQKYgW-fs6VFxG9fPmhUu2cDe--_zCYzFuBrav9r3rXwpOKYrBIZosjbzjn8DISKmnXF5ylCRPfRRwSf3IiwA6_YDvTn8GhD8w7EEO4I6JwyXbqbHWfk49ZwIXzui_u8BUVagGcU3JyaGQ)](https://blogger.googleusercontent.com/img/a/AVvXsEgNeoiBhbJ9jdVoZK4oQsqDGBccJlPcyK81q8KGJigzE1bcfdQKYgW-fs6VFxG9fPmhUu2cDe--_zCYzFuBrav9r3rXwpOKYrBIZosjbzjn8DISKmnXF5ylCRPfRRwSf3IiwA6_YDvTn8GhD8w7EEO4I6JwyXbqbHWfk49ZwIXzui_u8BUVagGcU3JyaGQ)
 the solar kitchen cafe
+
+*This was originally posted on blogger.*
