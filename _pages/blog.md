@@ -42,12 +42,19 @@ pagination:
 
   .blog-layout {
     display: grid;
-    grid-template-columns: minmax(20rem, 2fr) minmax(14rem, 1fr);
-    gap: 2.5rem;
+    grid-template-columns: minmax(18rem, 2fr) minmax(12rem, 1fr);
+    gap: 2rem;
     align-items: start;
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: 820px) {
+    .blog-layout {
+      grid-template-columns: minmax(16rem, 3fr) minmax(11rem, 2fr);
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 640px) {
     .blog-layout {
       grid-template-columns: 1fr;
       gap: 1.5rem;
