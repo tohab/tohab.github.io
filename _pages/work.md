@@ -157,7 +157,7 @@ Inspired by the global pandemic, this study used an economics lens to analyze th
 </details>
 
 <details class="work-case">
-<summary><h3>Personal Website</h3></summary>
+<summary><h3>www.rohanprasad.org</h3></summary>
   {% capture project_website %}
 **📅 Date:** 2019 - Present
 

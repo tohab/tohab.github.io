@@ -42,29 +42,57 @@
         return;
       }
 
-      var onTransitionEnd = function (event) {
-        if (event.propertyName !== 'height') {
+      var fallbackTimer = null;
+
+      var clearFallback = function () {
+        if (fallbackTimer !== null) {
+          window.clearTimeout(fallbackTimer);
+          fallbackTimer = null;
+        }
+      };
+
+      var finishAnimation = function (shouldRemainOpen) {
+        clearFallback();
+        content.removeEventListener('transitionend', onTransitionEnd);
+        content.removeEventListener('transitioncancel', onTransitionEnd);
+        detail.removeAttribute('data-animating');
+
+        if (shouldRemainOpen) {
+          detail.classList.remove('closing');
+          content.style.height = 'auto';
+          updateAriaExpanded(true);
           return;
         }
 
-        content.removeEventListener('transitionend', onTransitionEnd);
+        detail.classList.remove('closing');
+        detail.open = false;
+        content.style.height = '';
+        updateAriaExpanded(false);
+      };
 
-        if (detail.classList.contains('closing')) {
-          detail.open = false;
-          detail.classList.remove('closing');
-          content.style.height = '';
-        } else {
-          content.style.height = 'auto';
+      var onTransitionEnd = function (event) {
+        if (event.target !== content || event.propertyName !== 'height') {
+          return;
         }
 
-        detail.removeAttribute('data-animating');
-        updateAriaExpanded(detail.open);
+        finishAnimation(!detail.classList.contains('closing'));
+      };
+
+      var scheduleFallback = function () {
+        clearFallback();
+        var timeout = reduceMotion ? 50 : 1100;
+        fallbackTimer = window.setTimeout(function () {
+          if (detail.getAttribute('data-animating') === 'true') {
+            finishAnimation(!detail.classList.contains('closing'));
+          }
+        }, timeout);
       };
 
       var open = function () {
         detail.setAttribute('data-animating', 'true');
         detail.classList.remove('closing');
         content.style.height = '0px';
+        content.getBoundingClientRect();
 
         detail.open = true;
         updateAriaExpanded(true);
@@ -75,6 +103,8 @@
         });
 
         content.addEventListener('transitionend', onTransitionEnd);
+        content.addEventListener('transitioncancel', onTransitionEnd);
+        scheduleFallback();
       };
 
       var close = function () {
@@ -83,12 +113,15 @@
 
         var currentHeight = content.scrollHeight;
         content.style.height = currentHeight + 'px';
+        content.getBoundingClientRect();
 
         requestAnimationFrame(function () {
           content.style.height = '0px';
         });
 
         content.addEventListener('transitionend', onTransitionEnd);
+        content.addEventListener('transitioncancel', onTransitionEnd);
+        scheduleFallback();
       };
 
       summary.addEventListener('click', function (event) {
