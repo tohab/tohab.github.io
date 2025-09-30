@@ -318,7 +318,7 @@ pagination:
           <h6 style="margin-top: 1rem; margin-bottom: 0.5rem;">rss</h6>
           <p>
             <a href="{{ '/feed.xml' | relative_url }}" target="_blank" rel="noopener">subscribe via rss</a>
-            to get notified for new posts.
+            to get notified of new posts.
           </p>
         </div>
       </div>

@@ -359,6 +359,8 @@ ul ul ul, ol ol ol {
 .navbar .dropdown-menu {
   background-color: var(--global-bg-color);
   border: 1px solid var(--global-divider-color);
+  min-width: 8.5rem;
+  padding: 0.4rem 0;
 
   a:not(.active) {
     color: var(--global-text-color);
@@ -373,6 +375,10 @@ ul ul ul, ol ol ol {
   }
 }
 
+.navbar .dropdown-toggle::after {
+  margin-left: 0.2rem;
+}
+
 .dropdown-item {
   color: var(--global-text-color);
 
@@ -380,6 +386,14 @@ ul ul ul, ol ol ol {
     color: var(--global-hover-color);
     background-color: var(--global-bg-color);
   }
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  font-size: 1.05rem;
+}
+
+.navbar-nav .nav-link {
+  text-transform: none;
 }
 
 .navbar.navbar-light {

@@ -5,9 +5,7 @@ layout: post
 published: true
 slug: 2025-09-29-so-you-want-to-make-a-website
 tags:
-- web dev
-- tools
-- personal projects
+- tech
 title: so you want to make a website
 ---
 
