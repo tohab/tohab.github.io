@@ -31,6 +31,16 @@ body.sticky-bottom-footer {
   max-width: $max-content-width;
 }
 
+.section-header {
+  text-align: left;
+}
+
+.section-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
 // Profile
 .profile {
   img {

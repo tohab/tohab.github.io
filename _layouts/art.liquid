@@ -2,10 +2,10 @@
 layout: default
 ---
 <section class="art-overview py-5">
-  <header class="text-center mb-5">
-    <h1 class="display-4">{{ page.title | default: 'art' }}</h1>
+  <header class="section-header mb-4">
+    <h1 class="section-heading">{{ page.title | default: 'art' }}</h1>
     {% if page.lede %}
-      <p class="lead mb-0">{{ page.lede }}</p>
+      <p class="mb-0">{{ page.lede }}</p>
     {% endif %}
   </header>
   <div class="row justify-content-center">

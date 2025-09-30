@@ -2,20 +2,13 @@
 layout: default
 ---
 <section class="film-library py-5">
-  <header class="text-center mb-5">
-    <h1 class="display-4">{{ page.title | default: 'films' }}</h1>
-    {% if page.tagline %}
-      <p class="lead mb-0">{{ page.tagline }}</p>
-    {% endif %}
+  <header class="section-header mb-4">
+    <h1 class="section-heading">{{ page.title | default: 'films' }}</h1>
   </header>
   <div class="row">
-    <div class="col-lg-4 mb-4">
-      <aside class="sticky-top pt-2">
-        {% if page.curator_note %}
-          <h2 class="h5">Curator's note</h2>
-          <p>{{ page.curator_note }}</p>
-        {% endif %}
-        {% if page.playlists %}
+    {% if page.playlists %}
+      <div class="col-lg-4 mb-4">
+        <aside class="sticky-top pt-2">
           <ul class="list-unstyled">
             {% for playlist in page.playlists %}
               <li class="mb-2">
@@ -23,10 +16,10 @@ layout: default
               </li>
             {% endfor %}
           </ul>
-        {% endif %}
-      </aside>
-    </div>
-    <div class="col-lg-8">
+        </aside>
+      </div>
+    {% endif %}
+    <div class="col-lg-{% if page.playlists %}8{% else %}12{% endif %}">
       {{ content }}
       {% if page.featured_trailers %}
         <div class="row mt-4">
