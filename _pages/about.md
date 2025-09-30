@@ -20,11 +20,11 @@ social: false # includes social icons at the bottom of the page
 
 **I'm Rohan!** I'm a writer, creator, and thinker navigating the 21st century.
 
-**About me.** I grew up in London and went to UC Berkeley for college. After college, I lived in Taiwan for two years where I taught English and learned Mandarin. I'm back living Berkeley, California. I now work at [Constellation Research Center](https://www.constellation.org).
+**About me.** I grew up in London and went to UC Berkeley for college. After college, I lived in Taiwan for two years where I taught English and learned Mandarin. I'm back living in Berkeley, California, and now work at [Constellation Research Center](https://www.constellation.org).
 
-For fun, I love to write (semi-regularly) on this blog, bike, run, play the alto saxophone and strum acoustic guitar. 
+For fun, I love to write on this blog, bike, run, play the alto saxophone and strum acoustic guitar. 
 
-**On this site** you can find my blog (started in 2019). There's also a portfolio of projects I've led throughout my career.
+**On this site** you can find my blog, which I've been writing since 2019. There's also a portfolio of projects I've led throughout my career.
 
 *Email me at first dot last at berkeley dot edu.*
 
