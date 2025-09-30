@@ -72,6 +72,77 @@ pagination:
       gap: 1.5rem;
     }
   }
+
+  .rss-feed-card {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, rgba(255, 153, 0, 0.14), rgba(255, 204, 0, 0.08));
+    box-shadow: 0 0.6rem 1.6rem rgba(255, 153, 0, 0.12);
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .rss-feed-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    color: var(--global-theme-color, #ff8c00);
+  }
+
+  .rss-feed-header .fa-rss {
+    color: #ff8c00;
+    font-size: 1.2rem;
+  }
+
+  .rss-feed-description {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(39, 39, 39, 0.82);
+    line-height: 1.45;
+  }
+
+  .rss-feed-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .rss-feed-actions a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.95rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    background: var(--global-theme-color, #ff8c00);
+    color: #fff;
+    transition: all 0.2s ease;
+  }
+
+  .rss-feed-actions a:hover {
+    background: var(--global-hover-color, #d97706);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  .rss-feed-url {
+    display: inline-block;
+    padding: 0.35rem 0.5rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px dashed rgba(255, 153, 0, 0.4);
+    font-family: var(--global-font-family-monospace, Menlo, Consolas, 'Courier New', monospace);
+    font-size: 0.8rem;
+    color: rgba(39, 39, 39, 0.85);
+    word-break: break-all;
+  }
 </style>
 
 <div class="post">
@@ -293,6 +364,21 @@ pagination:
               &nbsp; &middot; &nbsp;
             {% endunless %}
           {% endfor %}
+        </div>
+
+        <div class="rss-feed-card">
+          <div class="rss-feed-header">
+            <i class="fa-solid fa-rss"></i>
+            <span>Stay in the loop</span>
+          </div>
+          <p class="rss-feed-description">Add this blog to your reader and catch new writing the moment it drops.</p>
+          <div class="rss-feed-actions">
+            <a href="{{ '/feed.xml' | relative_url }}" target="_blank" rel="noopener">
+              <span>Subscribe via RSS</span>
+              <i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i>
+            </a>
+            <span class="rss-feed-url">{{ '/feed.xml' | absolute_url }}</span>
+          </div>
         </div>
       </div>
     </aside>
