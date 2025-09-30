@@ -4,7 +4,7 @@ permalink: /art/films/
 title: films
 ---
 
-use this space to premiere new shorts, collect reference reels, and annotate the videos that inform current work. link out to youtube trailers or essays as they go live.
+Sometimes I record random YouTube that are somewhat entertaining. 
 
 ### mornin' cuppa' tea!
 

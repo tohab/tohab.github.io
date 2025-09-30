@@ -140,3 +140,21 @@ body.sticky-bottom-footer {
     margin-top: 1.25rem;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .work-case {
+    transition: none;
+
+    &[open] {
+      box-shadow: none;
+    }
+
+    summary {
+      transition: none;
+    }
+
+    .work-case__content {
+      transition: none;
+    }
+  }
+}
