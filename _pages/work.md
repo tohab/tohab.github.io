@@ -25,7 +25,8 @@ I'm an operations leader and non-profit founder. I'm adept at building scalable 
 Below are four case studies highlighting projects I've led over the course of my time as a project leader and entrepreneur.
 
 <details class="work-case">
-<summary>Case 1: Co-founding and scaling operations for Grassyouths, Inc.</summary>
+<summary><h3>Case 1: Co-founding and scaling operations for Grassyouths, Inc.</h3></summary>
+<div class="work-case__content" markdown="1">
 
 **📅 Date:** Aug. 2021 - Present  
 **🏢 Organization:** Grassyouths Inc.
@@ -47,10 +48,13 @@ Grassyouths Inc. aimed to provide affordable housing for animal rights activists
 - Secured and grew funding to 2.5 million dollars.
 - Developed a scalable and repeatable application and selection process.
 - Created a self-sustaining, well-organized community with improved coordination and cleanliness.
+
+</div>
 </details>
 
 <details class="work-case">
-<summary>Case 2: Optimizing Bilingual Educational Program Efficiency for 150+ Taiwanese Students</summary>
+<summary><h3>Case 2: Optimizing Bilingual Educational Program Efficiency for 150+ Taiwanese Students</h3></summary>
+<div class="work-case__content" markdown="1">
 
 **📅 Date:** Aug. 2022 - May 2024  
 **🏢 Organization:** Schoolhouse Language Center, Taiwan
@@ -71,10 +75,13 @@ Our school's value proposition was to bring life to the English curriculum and g
 - Increased assessment scores by 200% across vocabulary, spoken fluency, and reading comprehension metrics.
 - Reduced behavioral issue rates by 90% through implementation of clear guidelines and engaging content.
 - Consistently received top parent reviews and was voted favorite teacher by students.
+
+</div>
 </details>
 
 <details class="work-case">
-<summary>Case 3: Driving Political Advocacy & Membership Growth in Student Organization</summary>
+<summary><h3>Case 3: Driving Political Advocacy & Membership Growth in Student Organization</h3></summary>
+<div class="work-case__content" markdown="1">
 
 **📅 Date:** Sept. 2019 - May 2022  
 **🏢 Organization:** Berkeley Organization for Animal Advocacy (BOAA)
@@ -97,10 +104,13 @@ BOAA's mission was to create political support for animal rights legislation on 
 - Established a scalable leadership development framework that influenced dozens of interns in subsequent semesters.
 - Successfully mobilized students to influence 3 major pro-animal bills in the local government.
 - Used the multi-campus coalition to pressure the UC Berkeley system to drop Tyson Foods.
+
+</div>
 </details>
 
 <details class="work-case">
-<summary>Case 4: Led Publication of an Economics Paper on the Illegal Wildlife Trade</summary>
+<summary><h3>Case 4: Led Publication of an Economics Paper on the Illegal Wildlife Trade</h3></summary>
+<div class="work-case__content" markdown="1">
 
 **📅 Date:** July 2020 - Jan. 2022
 
@@ -122,6 +132,8 @@ Inspired by the global pandemic, this study used an economics lens to analyze th
 - Published research to an _Annual Review of Resource Economics_ with two prize-winning Berkeley economics professors.
 - Provided policymakers with data-driven insights on wildlife trade regulations.
 - Strengthened academic networks by engaging with key experts in the field.
+
+</div>
 </details>
 
 ### Side Projects
