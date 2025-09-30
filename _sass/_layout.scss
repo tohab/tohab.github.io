@@ -68,3 +68,56 @@ body.sticky-bottom-footer {
 *****************************************************************************/
 
 // TODO: redefine projects layout.
+
+/******************************************************************************
+ * Work page cases
+ ******************************************************************************/
+
+.work-case {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  margin: 1.25rem 0;
+  padding: 0 1.25rem 1.25rem;
+  background-color: var(--global-bg-color);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &[open] {
+    border-color: var(--global-theme-color);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+
+  summary {
+    font-size: 1.6em;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.85rem 0;
+    color: var(--global-text-color);
+    list-style-position: outside;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+      color: var(--global-theme-color);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--global-theme-color);
+      outline-offset: 2px;
+    }
+
+    &::marker {
+      color: var(--global-theme-color);
+    }
+  }
+
+  > *:not(summary) {
+    margin-top: 0.75rem;
+  }
+
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.25rem;
+  }
+}

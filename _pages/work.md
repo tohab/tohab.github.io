@@ -24,7 +24,8 @@ I'm an operations leader and non-profit founder. I'm adept at building scalable 
 
 Below are four case studies highlighting projects I've led over the course of my time as a project leader and entrepreneur.
 
-### Case 1: Co-founding and scaling operations for Grassyouths, Inc.
+<details class="work-case">
+<summary>Case 1: Co-founding and scaling operations for Grassyouths, Inc.</summary>
 
 **📅 Date:** Aug. 2021 - Present  
 **🏢 Organization:** Grassyouths Inc.
@@ -46,10 +47,10 @@ Grassyouths Inc. aimed to provide affordable housing for animal rights activists
 - Secured and grew funding to 2.5 million dollars.
 - Developed a scalable and repeatable application and selection process.
 - Created a self-sustaining, well-organized community with improved coordination and cleanliness.
+</details>
 
----
-
-### Case 2: Optimizing Bilingual Educational Program Efficiency for 150+ Taiwanese Students
+<details class="work-case">
+<summary>Case 2: Optimizing Bilingual Educational Program Efficiency for 150+ Taiwanese Students</summary>
 
 **📅 Date:** Aug. 2022 - May 2024  
 **🏢 Organization:** Schoolhouse Language Center, Taiwan
@@ -70,37 +71,36 @@ Our school's value proposition was to bring life to the English curriculum and g
 - Increased assessment scores by 200% across vocabulary, spoken fluency, and reading comprehension metrics.
 - Reduced behavioral issue rates by 90% through implementation of clear guidelines and engaging content.
 - Consistently received top parent reviews and was voted favorite teacher by students.
+</details>
 
----
-
-### Case 3: Driving Political Advocacy & Membership Growth in Student Organization
+<details class="work-case">
+<summary>Case 3: Driving Political Advocacy & Membership Growth in Student Organization</summary>
 
 **📅 Date:** Sept. 2019 - May 2022  
 **🏢 Organization:** Berkeley Organization for Animal Advocacy (BOAA)
 
 #### 🔍 Problem
 
-BOAA's mission was to create political support for animal rights legislation on the Berkeley campus. The club had dwindling membership and lacked structured programs to engage new advocates effectively. 
+BOAA's mission was to create political support for animal rights legislation on the Berkeley campus. The club had dwindling membership and lacked structured programs to engage new advocates effectively.
 
 #### 💡 Approach
 
 - Spearheaded recruitment strategies, growing membership from 5-10 to 40-50 active participants in three months.
 - Launched the BOAA intern program, introducing structured mentorship for new advocates.
 - Created Students for Animal Rights (StAR), connecting 80+ students across UC campuses for weekly advocacy discussions and coalesced around a campaign against Tyson Foods, gathering evidence on animal abuse in their facilities.
-- Built relationships with University of California stakeholders to gain additional funding for animal advocacy
-
+- Built relationships with University of California stakeholders to gain additional funding for animal advocacy.
 
 #### 📈 Impact
 
-- Achieved 8x membership growth through structured engagement efforts. 
-- Generated $30K in additional funding through strategic membership growth initiatives
-- Established a scalable leadership development framework that influenced dozens of interns in subsequent semesters. 
+- Achieved 8x membership growth through structured engagement efforts.
+- Generated $30K in additional funding through strategic membership growth initiatives.
+- Established a scalable leadership development framework that influenced dozens of interns in subsequent semesters.
 - Successfully mobilized students to influence 3 major pro-animal bills in the local government.
 - Used the multi-campus coalition to pressure the UC Berkeley system to drop Tyson Foods.
+</details>
 
----
-
-### Case 4: Led Publication of an Economics Paper on the Illegal Wildlife Trade
+<details class="work-case">
+<summary>Case 4: Led Publication of an Economics Paper on the Illegal Wildlife Trade</summary>
 
 **📅 Date:** July 2020 - Jan. 2022
 
@@ -122,8 +122,7 @@ Inspired by the global pandemic, this study used an economics lens to analyze th
 - Published research to an _Annual Review of Resource Economics_ with two prize-winning Berkeley economics professors.
 - Provided policymakers with data-driven insights on wildlife trade regulations.
 - Strengthened academic networks by engaging with key experts in the field.
-
----
+</details>
 
 ### Side Projects
 
