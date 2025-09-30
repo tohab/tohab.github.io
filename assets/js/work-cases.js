@@ -43,6 +43,7 @@
       }
 
       var fallbackTimer = null;
+      var animationDuration = 700;
 
       var clearFallback = function () {
         if (fallbackTimer !== null) {
@@ -80,7 +81,7 @@
 
       var scheduleFallback = function () {
         clearFallback();
-        var timeout = reduceMotion ? 50 : 1100;
+        var timeout = reduceMotion ? 50 : animationDuration + 400;
         fallbackTimer = window.setTimeout(function () {
           if (detail.getAttribute('data-animating') === 'true') {
             finishAnimation(!detail.classList.contains('closing'));
@@ -124,8 +125,9 @@
         scheduleFallback();
       };
 
-      summary.addEventListener('click', function (event) {
+      var handleSummaryClick = function (event) {
         event.preventDefault();
+        event.stopPropagation();
 
         if (detail.getAttribute('data-animating') === 'true') {
           return;
@@ -136,12 +138,17 @@
         } else {
           open();
         }
+      };
+
+      summary.addEventListener('click', handleSummaryClick, {
+        capture: true,
+        passive: false,
       });
 
       summary.addEventListener('keydown', function (event) {
         if (event.key === ' ' || event.key === 'Enter') {
           event.preventDefault();
-          summary.click();
+          handleSummaryClick(event);
         }
       });
     });
