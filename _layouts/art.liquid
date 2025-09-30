@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<section class="art-overview py-5">
+  <header class="text-center mb-5">
+    <h1 class="display-4">{{ page.title | default: 'Art' }}</h1>
+    {% if page.lede %}
+      <p class="lead mb-0">{{ page.lede }}</p>
+    {% endif %}
+  </header>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      {{ content }}
+    </div>
+  </div>
+  {% if page.subsections %}
+    <div class="row mt-4">
+      {% for item in page.subsections %}
+        <div class="col-md-4 mb-4">
+          <article class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h2 class="h4">
+                <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              </h2>
+              {% if item.description %}
+                <p class="mb-0">{{ item.description }}</p>
+              {% endif %}
+            </div>
+          </article>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>

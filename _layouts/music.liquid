@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<section class="music-catalog py-5">
+  <header class="text-center mb-5">
+    <h1 class="display-4">{{ page.title | default: 'Music' }}</h1>
+    {% if page.subtitle %}
+      <p class="lead">{{ page.subtitle }}</p>
+    {% endif %}
+  </header>
+  <div class="row justify-content-center">
+    <div class="col-xl-8">
+      {{ content }}
+      {% if page.featured_videos %}
+        <div class="list-group mt-4">
+          {% for video in page.featured_videos %}
+            <a class="list-group-item list-group-item-action" href="https://www.youtube.com/watch?v={{ video.id }}" target="_blank" rel="noopener">
+              <div class="d-flex w-100 justify-content-between">
+                <h2 class="h5 mb-1">{{ video.title }}</h2>
+                {% if video.duration %}
+                  <small class="text-muted">{{ video.duration }}</small>
+                {% endif %}
+              </div>
+              {% if video.description %}
+                <p class="mb-1">{{ video.description }}</p>
+              {% endif %}
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

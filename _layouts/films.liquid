@@ -1,0 +1,53 @@
+---
+layout: default
+---
+<section class="film-library py-5">
+  <header class="text-center mb-5">
+    <h1 class="display-4">{{ page.title | default: 'Films' }}</h1>
+    {% if page.tagline %}
+      <p class="lead mb-0">{{ page.tagline }}</p>
+    {% endif %}
+  </header>
+  <div class="row">
+    <div class="col-lg-4 mb-4">
+      <aside class="sticky-top pt-2">
+        {% if page.curator_note %}
+          <h2 class="h5">Curator's note</h2>
+          <p>{{ page.curator_note }}</p>
+        {% endif %}
+        {% if page.playlists %}
+          <ul class="list-unstyled">
+            {% for playlist in page.playlists %}
+              <li class="mb-2">
+                <a href="https://www.youtube.com/playlist?list={{ playlist.id }}" target="_blank" rel="noopener">{{ playlist.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </aside>
+    </div>
+    <div class="col-lg-8">
+      {{ content }}
+      {% if page.featured_trailers %}
+        <div class="row mt-4">
+          {% for trailer in page.featured_trailers %}
+            <div class="col-md-6 mb-4">
+              <article class="card h-100">
+                <div class="card-body">
+                  <h2 class="h5">{{ trailer.title }}</h2>
+                  {% if trailer.year %}
+                    <p class="text-muted mb-2">{{ trailer.year }}</p>
+                  {% endif %}
+                  {% if trailer.description %}
+                    <p>{{ trailer.description }}</p>
+                  {% endif %}
+                  <a class="stretched-link" href="https://www.youtube.com/watch?v={{ trailer.id }}" target="_blank" rel="noopener">Watch trailer</a>
+                </div>
+              </article>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

@@ -1,26 +1,29 @@
 ---
-layout: work
+layout: art
 permalink: /art/
-title: art
-description: a selection of art & music
-nav: false
+title: Art
+lede: A hub for the sounds, screens, and play spaces I am building out.
+nav: true
 nav_order: 2
-news: false # includes a list of news items
-selected_papers: false # includes a list of papers marked as "selected={true}"
-social: false # includes social icons at the bottom of the page
-header_title: art
+subsections:
+  - title: Music
+    description: Curated recordings, live sessions, and playlists worth looping.
+    url: /art/music/
+  - title: Films
+    description: Short films, essays, and video experiments I am watching or making.
+    url: /art/films/
+  - title: Games
+    description: Browser-friendly experiments built with HTML, CSS, and JavaScript.
+    url: /art/games/
 ---
 
+Welcome to the creative wing of the site. Each section dives into a different medium I love to explore.
 
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe
-    class="embed-responsive-item"
-    src="https://www.youtube.com/embed/videoseries?list=PLLmNtQG2epzFG2PwtDTz4U9OVDCsiJGG8"
-    title="補習BAND playlist"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-    loading="lazy"
-  ></iframe>
-</div>
+### Music
+Notes on the songs, albums, and performances that move me, coupled with embeds and playlists so you can listen along.
 
-In 2023 I recorded a jazz album with friends in Taiwan. You can read more about it [here](https://www.rohanprasad.org/blog/2023/2023-11-band-album-is-out/).
+### Films
+Context for the films and video essays I am recording, plus curated links to what is inspiring the work in progress.
+
+### Games
+An evolving archive of lightweight browser games and interactive toys that I am prototyping for the web.
