@@ -6,7 +6,7 @@ layout: default
     <h1 class="section-heading">{{ page.title | default: 'games' }}</h1>
   </header>
   <div class="row">
-    <div class="col-xl-9">
+    <div class="col-12">
       {{ content }}
       {% if page.embeds %}
         {% for game in page.embeds %}
@@ -23,22 +23,6 @@ layout: default
           </article>
         {% endfor %}
       {% endif %}
-    </div>
-    <div class="col-xl-3">
-      <div class="card sticky-top">
-        <div class="card-body">
-          <h2 class="h6 text-uppercase">Tech notes</h2>
-          {% if page.tools %}
-            <ul class="list-unstyled mb-0">
-              {% for tool in page.tools %}
-                <li class="mb-1">{{ tool }}</li>
-              {% endfor %}
-            </ul>
-          {% else %}
-            <p class="mb-0">Drop HTML, CSS, or JavaScript embeds here to make the games come alive.</p>
-          {% endif %}
-        </div>
-      </div>
     </div>
   </div>
 </section>
