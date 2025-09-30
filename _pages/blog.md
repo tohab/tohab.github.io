@@ -36,6 +36,13 @@ pagination:
      margin: 0.0rem 0rem; /* Tighten paragraph spacing within list items */
   }
 
+  .post-summary {
+    margin: 0.2rem 0 0.35rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.75);
+  }
+
   .post-tags a {
     white-space: nowrap;
   }
@@ -198,7 +205,9 @@ pagination:
                   {% endif %}
                 </h3>
 
-                <p>{{ post.description }}</p>
+                {% if post.description %}
+                <p class="post-summary">{{ post.description }}</p>
+                {% endif %}
                 <p class="post-meta">
                   {{ read_time }} min read &nbsp; &middot; &nbsp;
                   {{ post.date | date: '%B %d, %Y' }}
