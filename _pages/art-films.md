@@ -1,9 +1,22 @@
 ---
 layout: films
 permalink: /art/films/
-title: Films
-tagline: Essays, vignettes, and the footage that inspires them.
-curator_note: Drafting storyboards, experimenting with voiceover, and sharing the references that shape each project.
+title: films
+tagline: essays, vignettes, and the footage that inspires them.
+curator_note: drafting storyboards, experimenting with voiceover, and sharing the references that shape each project.
 ---
 
-Use this space to premiere new shorts, collect reference reels, and annotate the videos that inform current work. Link out to YouTube trailers or essays as they go live.
+use this space to premiere new shorts, collect reference reels, and annotate the videos that inform current work. link out to youtube trailers or essays as they go live.
+
+### mornin' cuppa' tea!
+
+<div class="embed-responsive embed-responsive-16by9 mb-4">
+  <iframe
+    class="embed-responsive-item"
+    src="https://www.youtube.com/embed/videoseries?list=PLLmNtQG2epzExIOQxio-b9aVVA8W7i3Ht"
+    title="mornin' cuppa' tea!"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy"
+  ></iframe>
+</div>

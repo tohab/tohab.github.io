@@ -68,10 +68,14 @@
                   {% endif %}
                 {% endfor %}
                 <li class="nav-item dropdown {% if page.title == p.title or has_active_child %}active{% endif %}">
+                  {% assign dropdown_href = p.url %}
+                  {% if p.permalink %}
+                    {% assign dropdown_href = p.permalink %}
+                  {% endif %}
                   <a
                     class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
+                    href="{% if dropdown_href contains '://' %}{{ dropdown_href }}{% else %}{{ dropdown_href | relative_url }}{% endif %}"
+                    id="navbarDropdown-{{ forloop.index }}"
                     role="button"
                     data-toggle="dropdown"
                     aria-haspopup="true"
@@ -82,7 +86,7 @@
                       <span class="sr-only">(current)</span>
                     {% endif %}
                   </a>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-{{ forloop.index }}">
                     {% for child in p.children %}
                       {% if child.title == 'divider' %}
                         <div class="dropdown-divider"></div>

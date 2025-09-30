@@ -1,11 +1,11 @@
 ---
 layout: music
 permalink: /art/music/
-title: Music
-subtitle: Sessions, playlists, and listening notes from the studio.
+title: music
+subtitle: sessions, playlists, and listening notes from the studio.
 ---
 
-Start with the latest recordings and mixes that are shaping what I play next.
+start with the latest recordings and mixes that are shaping what i play next. the playlist below pairs with the [buxiband post-mortem](https://www.rohanprasad.org/blog/2023/2023-11-band-album-is-out/), where i unpack the session from the inside.
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
   <iframe
@@ -18,4 +18,4 @@ Start with the latest recordings and mixes that are shaping what I play next.
   ></iframe>
 </div>
 
-Add more sets below—solo takes, jam session footage, or listening notes linked out to YouTube.
+add more sets below—solo takes, jam session footage, or listening notes linked out to youtube.
