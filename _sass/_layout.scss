@@ -112,27 +112,22 @@ body.sticky-bottom-footer {
 
   summary h3 {
     margin: 0;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.0rem;
+    font-weight: 750;
   }
 
   .work-case__content {
-    height: 0;
+    max-height: 0;
     opacity: 0;
     overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.35s ease;
     padding-bottom: 0;
-    transition: height 0.35s ease, opacity 0.35s ease, padding-bottom 0.35s ease;
   }
 
   &[open] .work-case__content {
-    height: auto;
+    max-height: 2000px; /* large enough to reveal content */
     opacity: 1;
     padding-bottom: 1.25rem;
-  }
-
-  &.closing .work-case__content {
-    opacity: 0;
-    padding-bottom: 0;
   }
 
   .work-case__content > *:first-child {
