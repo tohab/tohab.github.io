@@ -7,7 +7,12 @@ layout: default
     <p class="post-description">an archive of posts with this tag</p>
   </header>
 
-  {% assign tagged_posts = site.tags[page.tag] | sort: 'date' | reverse %}
+  {% assign tagged_posts = site.tags[page.tag] %}
+  {% if tagged_posts %}
+    {% assign tagged_posts = tagged_posts | sort: 'date' | reverse %}
+  {% else %}
+    {% assign tagged_posts = '' | split: '' %}
+  {% endif %}
 
   <article class="archive">
     <div class="table-responsive">
