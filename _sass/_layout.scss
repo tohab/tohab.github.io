@@ -158,3 +158,29 @@ body.sticky-bottom-footer {
     }
   }
 }
+
+@media (min-width: 576px) {
+  .navbar.navbar-light {
+    .container {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-brand {
+      flex: 0 0 20%;
+      max-width: 20%;
+      justify-content: flex-start;
+    }
+
+    .navbar-nav {
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navbar.navbar-light .navbar-brand {
+    flex: initial;
+    max-width: none;
+  }
+}
