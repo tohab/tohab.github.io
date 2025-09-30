@@ -4,7 +4,7 @@ permalink: /art/music/
 title: music
 ---
 
-start with the latest recordings and mixes that are shaping what i play next. the playlist below pairs with the [buxiband post-mortem](https://www.rohanprasad.org/blog/2023/2023-11-band-album-is-out/), where i unpack the session from the inside.
+I recorded 補習BAND (buxiband) album below in Taiwan with three wonderful friends. You can find more details on the backstory in the [buxiband post-mortem](https://www.rohanprasad.org/blog/2023/2023-11-band-album-is-out/).
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
   <iframe
@@ -17,4 +17,4 @@ start with the latest recordings and mixes that are shaping what i play next. th
   ></iframe>
 </div>
 
-add more sets below—solo takes, jam session footage, or listening notes linked out to youtube.
+thanks for listening!
