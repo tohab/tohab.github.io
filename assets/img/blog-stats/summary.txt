@@ -1,0 +1,6 @@
+total_posts: 99
+total_words: 76768
+avg_words: 775.4343434343434
+quarterly_chart: assets/img/blog-stats/quarterly-words.png
+histogram_chart: assets/img/blog-stats/post-length-histogram.png
+word_cloud: assets/img/blog-stats/word-cloud.png
