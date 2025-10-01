@@ -64,6 +64,154 @@ html[data-theme="dark"] {
   }
 }
 
+.interactive-piano {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  user-select: none;
+  touch-action: none;
+
+  &.piano-unsupported {
+    font-size: 0.95rem;
+    text-align: center;
+    color: rgba(47, 29, 12, 0.75);
+  }
+
+  .piano-surface {
+    position: relative;
+    width: 100%;
+    max-width: 860px;
+    height: 100%;
+    max-height: 320px;
+    padding: 0.5rem 0.35rem 0.75rem;
+    border-radius: 16px;
+    border: 1px solid rgba(47, 29, 12, 0.25);
+    background: linear-gradient(180deg, #fbe9d3 0%, #f3d8b5 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 0.55rem 1.2rem rgba(47, 29, 12, 0.15);
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .piano-whites {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+  }
+
+  .piano-blacks {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 68%;
+    z-index: 2;
+  }
+
+  .piano-key {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 0.65rem;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding-bottom: 0.4rem;
+    box-sizing: border-box;
+    border-radius: 0 0 8px 8px;
+    cursor: pointer;
+    transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.08s ease;
+    outline: none;
+
+    &:focus-visible {
+      outline: 2px solid var(--global-theme-color);
+      outline-offset: -3px;
+    }
+
+    &.is-active {
+      transform: translateY(3px);
+    }
+
+    &__label {
+      pointer-events: none;
+      font-weight: 600;
+    }
+  }
+
+  .piano-key--white {
+    flex: 1;
+    height: 100%;
+    margin: 0 0.08rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f7dfbe 100%);
+    border: 1px solid rgba(47, 29, 12, 0.25);
+    border-bottom-width: 3px;
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.08);
+
+    &.is-active {
+      box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+      filter: brightness(0.96);
+    }
+  }
+
+  .piano-key--black {
+    pointer-events: auto;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    min-height: 100%;
+    border-radius: 0 0 6px 6px;
+    background: linear-gradient(180deg, #2d1f19 0%, #110904 100%);
+    border: 1px solid rgba(0, 0, 0, 0.75);
+    border-bottom-width: 3px;
+    color: #f5f1ed;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+    transform-origin: center bottom;
+
+    &.is-active {
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+      filter: brightness(1.1);
+    }
+
+    .piano-key__label {
+      font-size: 0.6rem;
+    }
+  }
+}
+
+html[data-theme="dark"] {
+  .interactive-piano {
+    &.piano-unsupported {
+      color: rgba(255, 238, 214, 0.85);
+    }
+
+    .piano-surface {
+      border-color: rgba(0, 0, 0, 0.4);
+      background: linear-gradient(180deg, #b38752 0%, #8c6131 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 0.55rem 1.2rem rgba(0, 0, 0, 0.45);
+    }
+
+    .piano-key--white {
+      background: linear-gradient(180deg, #f7ede2 0%, #e2c59c 100%);
+      border-color: rgba(0, 0, 0, 0.45);
+    }
+
+    .piano-key--black {
+      background: linear-gradient(180deg, #1d1612 0%, #040201 100%);
+    }
+  }
+}
+
 .art-overview {
   h3 {
     margin-top: 0.4rem;

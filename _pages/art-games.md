@@ -34,6 +34,17 @@ title: games
   </div>
 </article>
 
+<article class="card game-card mb-4 shadow-sm">
+  <div class="card-body">
+    <h2 class="h5">two octave daydream piano</h2>
+    <p>tap across a two-octave keyboard to play a lightweight synth piano, or use the home row (A through Enter, add Shift for the upper octave). holds let notes linger with a soft fade.</p>
+    <div class="embed-responsive embed-responsive-4by3">
+      <div id="two-octave-piano" class="interactive-piano embed-responsive-item" role="application" aria-label="Interactive two octave piano"></div>
+    </div>
+  </div>
+</article>
+
 <script src="{{ '/assets/js/ragdoll-playground.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/fractal-mouse-generator.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/conway-life.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/two-octave-piano.js' | relative_url }}" defer></script>
