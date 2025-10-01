@@ -16,16 +16,6 @@ title: games
 
 <article class="card game-card mb-4 shadow-sm">
   <div class="card-body">
-    <h2 class="h5">escher paradox loop</h2>
-    <p>dodge through warped hallways, slip through paradox warps, and blast the anomalies before they fold space around you.</p>
-    <div class="embed-responsive embed-responsive-16by9">
-      <div id="escher-raycaster-game" class="embed-responsive-item" role="img" aria-label="Escher-inspired raycaster shooter"></div>
-    </div>
-  </div>
-</article>
-
-<article class="card game-card mb-4 shadow-sm">
-  <div class="card-body">
     <h2 class="h5">mouse fractal painter</h2>
     <p>move your cursor across the canvas to morph a Julia set. the fractal palette shifts as you explore different complex constants.</p>
     <div class="embed-responsive embed-responsive-4by3">
@@ -45,6 +35,5 @@ title: games
 </article>
 
 <script src="{{ '/assets/js/ragdoll-playground.js' | relative_url }}" defer></script>
-<script src="{{ '/assets/js/escher-raycaster-game.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/fractal-mouse-generator.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/conway-life.js' | relative_url }}" defer></script>
