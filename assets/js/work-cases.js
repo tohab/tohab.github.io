@@ -130,7 +130,7 @@
         event.stopPropagation();
 
         if (detail.getAttribute('data-animating') === 'true') {
-          return;
+          finishAnimation(!detail.classList.contains('closing'));
         }
 
         if (detail.open) {
