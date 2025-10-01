@@ -2,7 +2,7 @@
 date: 2025-09-29
 description:
 layout: post
-published: true
+published: false
 slug: 2025-09-29-so-you-want-to-make-a-website
 tags:
 - tech

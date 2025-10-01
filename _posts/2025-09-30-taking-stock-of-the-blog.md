@@ -2,6 +2,7 @@
 layout: post
 title: my blog by the numbers
 date: 2025-09-30 09:00:00 -07:00
+published: false
 description: null
 tags:
 - meta
