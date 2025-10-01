@@ -2,7 +2,7 @@
 layout: post
 title: my blog by the numbers
 date: 2025-09-30 09:00:00 -07:00
-description: A dive into how much I write, how long those pieces run, and the words I lean on most across the archive.
+description: null
 tags:
 - meta
 - retrospective

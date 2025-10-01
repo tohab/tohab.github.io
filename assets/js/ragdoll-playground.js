@@ -5,6 +5,7 @@
   const ctx = canvas.getContext('2d');
   const hues = [330, 25, 55, 200, 260, 120, 185, 300];
   const defaultGravity = { x: 0, y: 2200 };
+  const holdGravityMultiplier = 1.8;
   const damping = 0.985;
   const iterations = 6;
   const bounce = 0.6;
@@ -72,22 +73,13 @@
       points.push(createPoint(x, y, radius, mass, points.length));
     };
 
-    addPoint(cx, cy - 140, 22); // head
-    addPoint(cx, cy - 100, 16); // neck
-    addPoint(cx, cy - 60, 18); // chest
-    addPoint(cx, cy - 10, 18); // stomach
-    addPoint(cx - 45, cy - 65, 15); // left shoulder
-    addPoint(cx - 90, cy - 25, 14); // left elbow
-    addPoint(cx - 120, cy + 40, 15); // left hand
-    addPoint(cx + 45, cy - 65, 15); // right shoulder
-    addPoint(cx + 90, cy - 25, 14); // right elbow
-    addPoint(cx + 120, cy + 40, 15); // right hand
-    addPoint(cx - 28, cy + 45, 16); // left hip
-    addPoint(cx - 38, cy + 105, 16); // left knee
-    addPoint(cx - 38, cy + 165, 18); // left foot
-    addPoint(cx + 28, cy + 45, 16); // right hip
-    addPoint(cx + 38, cy + 105, 16); // right knee
-    addPoint(cx + 38, cy + 165, 18); // right foot
+    addPoint(cx, cy - 130, 24); // head
+    addPoint(cx, cy - 60, 20); // top of back
+    addPoint(cx, cy + 20, 20); // bottom of back
+    addPoint(cx - 90, cy - 40, 18); // left arm
+    addPoint(cx + 90, cy - 40, 18); // right arm
+    addPoint(cx - 50, cy + 120, 20); // left leg
+    addPoint(cx + 50, cy + 120, 20); // right leg
 
     sticks = [];
     const addStick = (a, b, stiffness = 1) => {
@@ -96,33 +88,12 @@
 
     addStick(0, 1);
     addStick(1, 2);
-    addStick(2, 3);
-    addStick(2, 4);
-    addStick(4, 5);
-    addStick(5, 6);
-    addStick(2, 7);
-    addStick(7, 8);
-    addStick(8, 9);
-    addStick(3, 10);
-    addStick(10, 11);
-    addStick(11, 12);
-    addStick(3, 13);
-    addStick(13, 14);
-    addStick(14, 15);
-    addStick(4, 7, 0.8);
-    addStick(10, 13, 0.8);
-    addStick(1, 4, 0.85);
-    addStick(1, 7, 0.85);
-    addStick(0, 4, 0.75);
-    addStick(0, 7, 0.75);
-    addStick(2, 10, 0.75);
-    addStick(2, 13, 0.75);
-    addStick(4, 10, 0.6);
-    addStick(7, 13, 0.6);
-    addStick(5, 8, 0.6);
-    addStick(6, 9, 0.5);
-    addStick(11, 14, 0.5);
-    addStick(12, 15, 0.5);
+    addStick(1, 3);
+    addStick(1, 4);
+    addStick(2, 5);
+    addStick(2, 6);
+    addStick(3, 4, 0.7);
+    addStick(5, 6, 0.7);
   }
 
   function getPointerPosition(event) {
@@ -199,8 +170,9 @@
     const vx = (point.x - point.prevX) * damping;
     const vy = (point.y - point.prevY) * damping;
 
-    let ax = defaultGravity.x;
-    let ay = defaultGravity.y;
+    const gravityScale = pointer.active ? holdGravityMultiplier : 1;
+    let ax = defaultGravity.x * gravityScale;
+    let ay = defaultGravity.y * gravityScale;
 
     if (pointer.active && !pointer.dragging) {
       const dx = pointer.x - point.x;
