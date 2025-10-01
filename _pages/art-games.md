@@ -4,7 +4,7 @@ permalink: /art/games/
 title: games
 ---
 
-<article class="card mb-4 shadow-sm">
+<article class="card game-card mb-4 shadow-sm">
   <div class="card-body">
     <h2 class="h5">rainbow ragdoll playground</h2>
     <p>click, fling, and tug on the ragdoll. hold anywhere on the canvas to tilt gravity toward your cursor.</p>
@@ -14,7 +14,7 @@ title: games
   </div>
 </article>
 
-<article class="card mb-4 shadow-sm">
+<article class="card game-card mb-4 shadow-sm">
   <div class="card-body">
     <h2 class="h5">mouse fractal painter</h2>
     <p>move your cursor across the canvas to morph a Julia set. the fractal palette shifts as you explore different complex constants.</p>

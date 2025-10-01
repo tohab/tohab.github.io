@@ -41,6 +41,29 @@ body.sticky-bottom-footer {
   margin-bottom: 0.25rem;
 }
 
+.games-gallery {
+  .card.game-card {
+    background-color: #f0c89b;
+    border: 1px solid rgba(47, 29, 12, 0.18);
+    color: #2f1d0c;
+    box-shadow: 0 0.6rem 1.2rem rgba(47, 29, 12, 0.12);
+
+    .card-title,
+    p {
+      color: inherit;
+    }
+  }
+}
+
+html[data-theme="dark"] {
+  .games-gallery .card.game-card {
+    background-color: #dcae73;
+    border-color: rgba(0, 0, 0, 0.35);
+    color: #1f1206;
+    box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.35);
+  }
+}
+
 .art-overview {
   h3 {
     margin-top: 0.4rem;
