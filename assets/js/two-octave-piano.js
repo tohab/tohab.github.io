@@ -59,24 +59,19 @@
   let audioContext = null;
 
   const baseKeyMap = new Map([
-    ['KeyA', { offset: 0, label: 'A' }],
-    ['KeyW', { offset: 1, label: 'W' }],
-    ['KeyS', { offset: 2, label: 'S' }],
-    ['KeyE', { offset: 3, label: 'E' }],
-    ['KeyD', { offset: 4, label: 'D' }],
-    ['KeyF', { offset: 5, label: 'F' }],
-    ['KeyT', { offset: 6, label: 'T' }],
-    ['KeyG', { offset: 7, label: 'G' }],
-    ['KeyY', { offset: 8, label: 'Y' }],
-    ['KeyH', { offset: 9, label: 'H' }],
-    ['KeyU', { offset: 10, label: 'U' }],
-    ['KeyJ', { offset: 11, label: 'J' }],
+    ['KeyA', 0],
+    ['KeyW', 1],
+    ['KeyS', 2],
+    ['KeyE', 3],
+    ['KeyD', 4],
+    ['KeyF', 5],
+    ['KeyT', 6],
+    ['KeyG', 7],
+    ['KeyY', 8],
+    ['KeyH', 9],
+    ['KeyU', 10],
+    ['KeyJ', 11],
   ]);
-
-  const offsetHotkeyLabel = new Map();
-  baseKeyMap.forEach(entry => {
-    offsetHotkeyLabel.set(entry.offset, entry.label);
-  });
 
   const envelope = {
     attack: 0.02,
@@ -86,6 +81,14 @@
   };
 
   const quarterToneCents = 50;
+  let quarterToneModifier = false;
+
+  function setQuarterToneModifier(active) {
+    if (quarterToneModifier === active) return;
+    quarterToneModifier = active;
+    container.classList.toggle('quarter-tone-active', quarterToneModifier);
+    releaseAllKeys();
+  }
 
   function ensureContext() {
     if (!audioContext) {
@@ -108,10 +111,10 @@
     const oscillator = ctx.createOscillator();
     const gain = ctx.createGain();
 
+    const now = ctx.currentTime;
+
     oscillator.type = 'triangle';
     oscillator.frequency.value = note.frequency;
-
-    const now = ctx.currentTime;
     oscillator.detune.setValueAtTime(detuneCents, now);
     const peakLevel = 0.85;
 
@@ -165,21 +168,14 @@
 
     const label = document.createElement('span');
     label.className = 'piano-key__label';
-    const hotkeyLabel = offsetHotkeyLabel.get(note.index % 12);
-    if (hotkeyLabel) {
-      const needsShift = note.index >= 12;
-      const prefix = needsShift ? 'Shift+' : '';
-      label.textContent = `${note.name} (${prefix}${hotkeyLabel})`;
-    } else {
-      label.textContent = note.name;
-    }
+    label.textContent = note.name;
     key.appendChild(label);
 
     key.addEventListener('pointerdown', event => {
       event.preventDefault();
       key.focus({ preventScroll: true });
       key.setPointerCapture(event.pointerId);
-      const detune = event.getModifierState && event.getModifierState('ShiftRight') ? quarterToneCents : 0;
+      const detune = quarterToneModifier ? quarterToneCents : 0;
       startNote(note, key, detune);
     });
 
@@ -203,14 +199,14 @@
 
     key.addEventListener('keydown', event => {
       if (event.repeat) return;
-      if (event.code === 'Space' || event.key === 'Enter') {
+      if (event.key === 'Enter') {
         event.preventDefault();
-        startNote(note, key);
+        startNote(note, key, quarterToneModifier ? quarterToneCents : 0);
       }
     });
 
     key.addEventListener('keyup', event => {
-      if (event.code === 'Space' || event.key === 'Enter') {
+      if (event.key === 'Enter') {
         event.preventDefault();
         stopNote(note.name);
       }
@@ -253,21 +249,26 @@
 
   function handleKeyDown(event) {
     if (event.repeat) return;
-    const base = baseKeyMap.get(event.code);
-    if (!base) return;
+    if (event.code === 'Space') {
+      if (isTypingTarget(event.target)) return;
+      event.preventDefault();
+      setQuarterToneModifier(true);
+      return;
+    }
+
+    const offset = baseKeyMap.get(event.code);
+    if (offset === undefined) return;
     if (isTypingTarget(event.target)) return;
 
-    const leftShift = event.getModifierState('ShiftLeft');
-    const rightShift = event.getModifierState('ShiftRight');
+    const useUpperOctave = event.getModifierState('ShiftLeft');
+    const noteIndex = offset + (useUpperOctave ? 12 : 0);
 
-    const noteIndex = base.offset + (leftShift ? 12 : 0);
-    
     const note = notes[noteIndex];
     if (!note || !note.element) return;
 
     event.preventDefault();
 
-    const detune = rightShift ? quarterToneCents : 0;
+    const detune = quarterToneModifier ? quarterToneCents : 0;
     const existing = pressedKeyNotes.get(event.code);
     if (existing && existing.noteName === note.name && existing.detune === detune) {
       return;
@@ -282,8 +283,21 @@
   }
 
   function handleKeyUp(event) {
-    const base = baseKeyMap.get(event.code);
-    if (!base) return;
+    if (event.code === 'Space') {
+      if (!quarterToneModifier) return;
+      if (isTypingTarget(event.target)) return;
+      event.preventDefault();
+      setQuarterToneModifier(false);
+      return;
+    }
+
+    if (event.code === 'ShiftLeft') {
+      releaseAllKeys();
+      return;
+    }
+
+    const offset = baseKeyMap.get(event.code);
+    if (offset === undefined) return;
 
     const info = pressedKeyNotes.get(event.code);
     if (!info) return;
@@ -300,17 +314,16 @@
 
   document.addEventListener('keydown', handleKeyDown);
   document.addEventListener('keyup', handleKeyUp);
-  document.addEventListener('keyup', event => {
-    if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
-      releaseAllKeys();
-    }
+  window.addEventListener('blur', () => {
+    releaseAllKeys();
+    setQuarterToneModifier(false);
   });
-  window.addEventListener('blur', releaseAllKeys);
 
   // Release any sustained notes if the page becomes hidden.
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') {
       releaseAllKeys();
+      setQuarterToneModifier(false);
       [...activeNotes.keys()].forEach(name => stopNote(name, true));
     }
   });

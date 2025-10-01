@@ -87,8 +87,9 @@ html[data-theme="dark"] {
     width: 100%;
     max-width: 860px;
     height: 100%;
-    max-height: 320px;
-    padding: 0.5rem 0.35rem 0.75rem;
+    max-height: 240px;
+    aspect-ratio: 5 / 2;
+    padding: 0.4rem 0.35rem 0.6rem;
     border-radius: 16px;
     border: 1px solid rgba(47, 29, 12, 0.25);
     background: linear-gradient(180deg, #fbe9d3 0%, #f3d8b5 100%);
@@ -97,6 +98,7 @@ html[data-theme="dark"] {
     align-items: stretch;
     justify-content: center;
     box-sizing: border-box;
+    margin: auto;
   }
 
   .piano-whites {
