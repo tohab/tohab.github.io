@@ -35,6 +35,7 @@
       type: isBlack ? 'black' : 'white',
       frequency: midiToFrequency(midiNumber),
       whiteIndex,
+      index: i,
     });
   }
 
@@ -57,12 +58,34 @@
   const activeNotes = new Map();
   let audioContext = null;
 
+  const baseKeyMap = new Map([
+    ['KeyA', { offset: 0, label: 'A' }],
+    ['KeyW', { offset: 1, label: 'W' }],
+    ['KeyS', { offset: 2, label: 'S' }],
+    ['KeyE', { offset: 3, label: 'E' }],
+    ['KeyD', { offset: 4, label: 'D' }],
+    ['KeyF', { offset: 5, label: 'F' }],
+    ['KeyT', { offset: 6, label: 'T' }],
+    ['KeyG', { offset: 7, label: 'G' }],
+    ['KeyY', { offset: 8, label: 'Y' }],
+    ['KeyH', { offset: 9, label: 'H' }],
+    ['KeyU', { offset: 10, label: 'U' }],
+    ['KeyJ', { offset: 11, label: 'J' }],
+  ]);
+
+  const offsetHotkeyLabel = new Map();
+  baseKeyMap.forEach(entry => {
+    offsetHotkeyLabel.set(entry.offset, entry.label);
+  });
+
   const envelope = {
     attack: 0.02,
     decay: 0.12,
     sustain: 0.75,
     release: 0.25,
   };
+
+  const quarterToneCents = 50;
 
   function ensureContext() {
     if (!audioContext) {
@@ -74,7 +97,7 @@
     return audioContext;
   }
 
-  function startNote(note, element) {
+  function startNote(note, element, detuneCents = 0) {
     const ctx = ensureContext();
     if (!ctx) return;
 
@@ -89,6 +112,7 @@
     oscillator.frequency.value = note.frequency;
 
     const now = ctx.currentTime;
+    oscillator.detune.setValueAtTime(detuneCents, now);
     const peakLevel = 0.85;
 
     gain.gain.cancelScheduledValues(now);
@@ -105,6 +129,7 @@
       oscillator,
       gain,
       element,
+      detuneCents,
     });
 
     element.classList.add('is-active');
@@ -140,14 +165,22 @@
 
     const label = document.createElement('span');
     label.className = 'piano-key__label';
-    label.textContent = note.name;
+    const hotkeyLabel = offsetHotkeyLabel.get(note.index % 12);
+    if (hotkeyLabel) {
+      const needsShift = note.index >= 12;
+      const prefix = needsShift ? 'Shift+' : '';
+      label.textContent = `${note.name} (${prefix}${hotkeyLabel})`;
+    } else {
+      label.textContent = note.name;
+    }
     key.appendChild(label);
 
     key.addEventListener('pointerdown', event => {
       event.preventDefault();
       key.focus({ preventScroll: true });
       key.setPointerCapture(event.pointerId);
-      startNote(note, key);
+      const detune = event.getModifierState && event.getModifierState('ShiftRight') ? quarterToneCents : 0;
+      startNote(note, key, detune);
     });
 
     key.addEventListener('pointerup', event => {
@@ -209,21 +242,6 @@
     }
   });
 
-  const keyboardSequence = [
-    'KeyA',
-    'KeyS',
-    'KeyD',
-    'KeyF',
-    'KeyG',
-    'KeyH',
-    'KeyJ',
-    'KeyK',
-    'KeyL',
-    'Semicolon',
-    'Quote',
-    'Enter',
-  ];
-
   const pressedKeyNotes = new Map();
 
   function isTypingTarget(target) {
@@ -235,49 +253,58 @@
 
   function handleKeyDown(event) {
     if (event.repeat) return;
-    if (!keyboardSequence.includes(event.code)) return;
+    const base = baseKeyMap.get(event.code);
+    if (!base) return;
     if (isTypingTarget(event.target)) return;
 
-    const baseIndex = keyboardSequence.indexOf(event.code);
-    let noteIndex = baseIndex;
-    if (event.shiftKey) {
-      noteIndex += 12;
-    }
+    const leftShift = event.getModifierState('ShiftLeft');
+    const rightShift = event.getModifierState('ShiftRight');
 
+    const noteIndex = base.offset + (leftShift ? 12 : 0);
+    
     const note = notes[noteIndex];
     if (!note || !note.element) return;
 
     event.preventDefault();
 
-    const existingNoteName = pressedKeyNotes.get(event.code);
-    if (existingNoteName === note.name) return;
-
-    if (existingNoteName) {
-      stopNote(existingNoteName, true);
+    const detune = rightShift ? quarterToneCents : 0;
+    const existing = pressedKeyNotes.get(event.code);
+    if (existing && existing.noteName === note.name && existing.detune === detune) {
+      return;
     }
 
-    pressedKeyNotes.set(event.code, note.name);
-    startNote(note, note.element);
+    if (existing) {
+      stopNote(existing.noteName, true);
+    }
+
+    pressedKeyNotes.set(event.code, { noteName: note.name, detune });
+    startNote(note, note.element, detune);
   }
 
   function handleKeyUp(event) {
-    if (!keyboardSequence.includes(event.code)) return;
+    const base = baseKeyMap.get(event.code);
+    if (!base) return;
 
-    const noteName = pressedKeyNotes.get(event.code);
-    if (!noteName) return;
+    const info = pressedKeyNotes.get(event.code);
+    if (!info) return;
 
     pressedKeyNotes.delete(event.code);
-    stopNote(noteName);
+    stopNote(info.noteName);
     event.preventDefault();
   }
 
   function releaseAllKeys() {
-    pressedKeyNotes.forEach(noteName => stopNote(noteName, true));
+    pressedKeyNotes.forEach(entry => stopNote(entry.noteName, true));
     pressedKeyNotes.clear();
   }
 
   document.addEventListener('keydown', handleKeyDown);
   document.addEventListener('keyup', handleKeyUp);
+  document.addEventListener('keyup', event => {
+    if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
+      releaseAllKeys();
+    }
+  });
   window.addEventListener('blur', releaseAllKeys);
 
   // Release any sustained notes if the page becomes hidden.

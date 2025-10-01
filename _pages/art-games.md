@@ -37,7 +37,7 @@ title: games
 <article class="card game-card mb-4 shadow-sm">
   <div class="card-body">
     <h2 class="h5">two octave daydream piano</h2>
-    <p>tap across a two-octave keyboard to play a lightweight synth piano, or use the home row (A through Enter, add Shift for the upper octave). holds let notes linger with a soft fade.</p>
+    <p>tap across a two-octave keyboard to play a lightweight synth piano. use the home row (A S D F G H J…) for white keys, the top row (W E T Y U…) for black keys, hold Left Shift for the upper octave, and press Right Shift while playing to push the note up by a quarter tone. holds let notes linger with a soft fade.</p>
     <div class="embed-responsive embed-responsive-4by3">
       <div id="two-octave-piano" class="interactive-piano embed-responsive-item" role="application" aria-label="Interactive two octave piano"></div>
     </div>
