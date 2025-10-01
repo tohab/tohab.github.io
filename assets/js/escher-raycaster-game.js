@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const container = document.getElementById('boxed-ai-adventure');
+  const container = document.getElementById('escher-raycaster-game');
   if (!container) {
     return;
   }
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   container.style.maxWidth = `${VIEW_WIDTH + 32}px`;
 
   const title = document.createElement('h3');
-  title.textContent = 'Boxed Paradox Raycaster';
+  title.textContent = 'Escher Paradox Raycaster';
   title.style.margin = '0 0 12px 0';
   title.style.fontFamily = "'DM Mono', 'Fira Code', monospace";
   title.style.fontSize = '1.15rem';
