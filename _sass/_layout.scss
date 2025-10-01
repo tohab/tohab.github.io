@@ -69,9 +69,11 @@ html[data-theme="dark"] {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem;
+  gap: 0.5rem;
+  padding: 0.75rem 0.75rem 0.95rem;
   box-sizing: border-box;
   user-select: none;
   touch-action: none;
@@ -82,12 +84,59 @@ html[data-theme="dark"] {
     color: rgba(47, 29, 12, 0.75);
   }
 
+  .piano-controls {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    pointer-events: auto;
+  }
+
+  .piano-mode-toggle {
+    appearance: none;
+    border: 1px solid rgba(47, 29, 12, 0.35);
+    background: rgba(255, 244, 231, 0.9);
+    color: #2f1d0c;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+    border-radius: 999px;
+    padding: 0.3rem 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 0 0 2px rgba(47, 29, 12, 0.2);
+      outline: none;
+    }
+
+    &[aria-pressed="true"] {
+      background: rgba(47, 29, 12, 0.9);
+      color: #fbead3;
+      box-shadow: 0 0 0 2px rgba(47, 29, 12, 0.25);
+    }
+  }
+
+  &.quarter-tone-active {
+    .piano-mode-toggle {
+      background: rgba(47, 29, 12, 0.9);
+      color: #fbead3;
+      border-color: rgba(47, 29, 12, 0.45);
+      box-shadow: 0 0 0 2px rgba(47, 29, 12, 0.2);
+
+      &[aria-pressed="false"] {
+        background: rgba(47, 29, 12, 0.75);
+      }
+    }
+  }
+
   .piano-surface {
     position: relative;
     width: 100%;
     max-width: 860px;
     height: 100%;
-    max-height: 240px;
+    max-height: 200px;
     aspect-ratio: 5 / 2;
     padding: 0.4rem 0.35rem 0.6rem;
     border-radius: 16px;
@@ -125,7 +174,7 @@ html[data-theme="dark"] {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     line-height: 1;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -195,6 +244,35 @@ html[data-theme="dark"] {
   .interactive-piano {
     &.piano-unsupported {
       color: rgba(255, 238, 214, 0.85);
+    }
+
+    .piano-mode-toggle {
+      border-color: rgba(0, 0, 0, 0.4);
+      background: rgba(55, 35, 20, 0.85);
+      color: #fbead3;
+
+      &:hover,
+      &:focus-visible {
+        background: rgba(79, 52, 30, 0.95);
+      }
+
+      &[aria-pressed="true"] {
+        background: rgba(234, 199, 149, 0.95);
+        color: #201208;
+        box-shadow: 0 0 0 2px rgba(234, 199, 149, 0.35);
+      }
+    }
+
+    &.quarter-tone-active .piano-mode-toggle {
+      background: rgba(234, 199, 149, 0.92);
+      color: #201208;
+      border-color: rgba(234, 199, 149, 0.65);
+
+      &[aria-pressed="false"] {
+        background: rgba(162, 119, 75, 0.9);
+        color: #fbead3;
+        border-color: rgba(0, 0, 0, 0.45);
+      }
     }
 
     .piano-surface {

@@ -46,6 +46,9 @@
   const pianoSurface = document.createElement('div');
   pianoSurface.className = 'piano-surface';
 
+  const controls = document.createElement('div');
+  controls.className = 'piano-controls';
+
   const whiteLane = document.createElement('div');
   whiteLane.className = 'piano-whites';
   const blackLane = document.createElement('div');
@@ -53,6 +56,7 @@
 
   pianoSurface.appendChild(whiteLane);
   pianoSurface.appendChild(blackLane);
+  container.appendChild(controls);
   container.appendChild(pianoSurface);
 
   const activeNotes = new Map();
@@ -82,12 +86,32 @@
 
   const quarterToneCents = 50;
   let quarterToneModifier = false;
+  let quarterToneLatch = false;
+  let quarterToneHold = false;
+  let quarterToneButton = null;
 
-  function setQuarterToneModifier(active) {
+  function applyQuarterToneState() {
+    const active = quarterToneLatch || quarterToneHold;
     if (quarterToneModifier === active) return;
     quarterToneModifier = active;
     container.classList.toggle('quarter-tone-active', quarterToneModifier);
     releaseAllKeys();
+  }
+
+  function setQuarterToneLatch(active) {
+    if (quarterToneLatch === active) return;
+    quarterToneLatch = active;
+    if (quarterToneButton) {
+      quarterToneButton.setAttribute('aria-pressed', String(quarterToneLatch));
+      quarterToneButton.textContent = quarterToneLatch ? 'Quarter Tone · On' : 'Quarter Tone · Off';
+    }
+    applyQuarterToneState();
+  }
+
+  function setQuarterToneHold(active) {
+    if (quarterToneHold === active) return;
+    quarterToneHold = active;
+    applyQuarterToneState();
   }
 
   function ensureContext() {
@@ -252,7 +276,7 @@
     if (event.code === 'Space') {
       if (isTypingTarget(event.target)) return;
       event.preventDefault();
-      setQuarterToneModifier(true);
+      setQuarterToneHold(true);
       return;
     }
 
@@ -260,7 +284,7 @@
     if (offset === undefined) return;
     if (isTypingTarget(event.target)) return;
 
-    const useUpperOctave = event.getModifierState('ShiftLeft');
+    const useUpperOctave = event.shiftKey;
     const noteIndex = offset + (useUpperOctave ? 12 : 0);
 
     const note = notes[noteIndex];
@@ -284,15 +308,9 @@
 
   function handleKeyUp(event) {
     if (event.code === 'Space') {
-      if (!quarterToneModifier) return;
       if (isTypingTarget(event.target)) return;
       event.preventDefault();
-      setQuarterToneModifier(false);
-      return;
-    }
-
-    if (event.code === 'ShiftLeft') {
-      releaseAllKeys();
+      setQuarterToneHold(false);
       return;
     }
 
@@ -316,15 +334,27 @@
   document.addEventListener('keyup', handleKeyUp);
   window.addEventListener('blur', () => {
     releaseAllKeys();
-    setQuarterToneModifier(false);
+    setQuarterToneHold(false);
+    setQuarterToneLatch(false);
   });
 
   // Release any sustained notes if the page becomes hidden.
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') {
       releaseAllKeys();
-      setQuarterToneModifier(false);
+      setQuarterToneHold(false);
+      setQuarterToneLatch(false);
       [...activeNotes.keys()].forEach(name => stopNote(name, true));
     }
   });
+
+  quarterToneButton = document.createElement('button');
+  quarterToneButton.type = 'button';
+  quarterToneButton.className = 'piano-mode-toggle';
+  quarterToneButton.textContent = 'Quarter Tone · Off';
+  quarterToneButton.setAttribute('aria-pressed', 'false');
+  quarterToneButton.addEventListener('click', () => {
+    setQuarterToneLatch(!quarterToneLatch);
+  });
+  controls.appendChild(quarterToneButton);
 })();
