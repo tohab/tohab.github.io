@@ -1,22 +1,77 @@
-{% assign have_related_posts = false %}
-{% for post in site.related_posts | limit: site.related_blog_posts.max_related %}
-  {% unless have_related_posts %}
-    {% assign have_related_posts = true %}
-    <br>
-    <hr>
-    <br>
+{% assign target_count = site.related_blog_posts.max_related | default: 4 %}
+{% assign target_count = target_count | plus: 0 %}
+{% assign scored_candidates = '' | split: '' %}
 
-    <!-- Adds related posts to the end of an article -->
-    <h3 class="text-3xl font-semibold mb-4 mt-12">More blogs... </h3>
-    <p class="mb-2">Here are some other recent posts:</p>
-    <ul class="list-disc pl-8">
-  {% endunless %}
+{% if page.tags and page.tags != empty %}
+  {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+  {% for candidate in sorted_posts %}
+    {% if candidate.url != page.url and candidate.tags and candidate.tags != empty %}
+      {% assign shared_count = 0 %}
+      {% assign weighted_overlap = 0 %}
+      {% for tag in candidate.tags %}
+        {% if page.tags contains tag %}
+          {% assign shared_count = shared_count | plus: 1 %}
+          {% assign tag_posts = site.tags[tag] %}
+          {% assign tag_frequency = tag_posts | size %}
+          {% if tag_frequency > 0 %}
+            {% assign tag_weight = 1.0 | divided_by: tag_frequency %}
+          {% else %}
+            {% assign tag_weight = 1 %}
+          {% endif %}
+          {% assign weighted_overlap = weighted_overlap | plus: tag_weight %}
+        {% endif %}
+      {% endfor %}
+      {% if shared_count > 0 %}
+        {% assign score_scaled = weighted_overlap | times: 100000 | floor %}
+        {% assign score_padded = score_scaled | plus: 100000000 %}
+        {% assign timestamp = candidate.date | date: '%s' %}
+        {% capture entry %}{{ score_padded }}|{{ timestamp }}|{{ candidate.url }}{% endcapture %}
+        {% assign scored_candidates = scored_candidates | push: entry %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 
-  <li class="my-2">
-    <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-  </li>
+{% assign sorted_entries = scored_candidates | sort | reverse %}
+{% assign sorted_entries = sorted_entries | slice: 0, target_count %}
+
+{% assign related_urls = '' | split: '' %}
+{% for entry in sorted_entries %}
+  {% assign parts = entry | split: '|' %}
+  {% assign related_urls = related_urls | push: parts[2] %}
 {% endfor %}
-{% if have_related_posts %}
+
+{% if related_urls.size < target_count %}
+  {% assign recent_posts = site.posts | sort: 'date' | reverse %}
+  {% for candidate in recent_posts %}
+    {% if candidate.url != page.url %}
+      {% unless related_urls contains candidate.url %}
+        {% assign related_urls = related_urls | push: candidate.url %}
+      {% endunless %}
+    {% endif %}
+    {% if related_urls.size == target_count %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if related_urls.size > 0 %}
+  <br>
+  <hr>
+  <br>
+
+  <!-- Adds related posts to the end of an article -->
+  <h3 class="text-3xl font-semibold mb-4 mt-12">More blogs... </h3>
+  <p class="mb-2">Here are some other recent posts:</p>
+  <ul class="list-disc pl-8">
+    {% for url in related_urls %}
+      {% assign related_post = site.posts | where: 'url', url | first %}
+      {% if related_post %}
+        <li class="my-2">
+          <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="{{ site.baseurl }}{{ related_post.url }}">{{ related_post.title }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
   </ul>
 {% endif %}
 {% if site.newsletter.enabled and site.footer_fixed %}
