@@ -62,7 +62,7 @@
 
   <!-- Adds related posts to the end of an article -->
   <h3 class="text-3xl font-semibold mb-4 mt-12">More blogs... </h3>
-  <p class="mb-2">Here are some other recent posts:</p>
+  <p class="mb-2">Here are some other posts on related topics:</p>
   <ul class="list-disc pl-8">
     {% for url in related_urls %}
       {% assign related_post = site.posts | where: 'url', url | first %}
