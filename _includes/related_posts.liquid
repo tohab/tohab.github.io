@@ -5,17 +5,20 @@
     <br>
     <hr>
     <br>
-    <ul class="list-disc pl-8"></ul>
 
     <!-- Adds related posts to the end of an article -->
     <h3 class="text-3xl font-semibold mb-4 mt-12">More blogs... </h3>
     <p class="mb-2">Here are some other recent posts:</p>
+    <ul class="list-disc pl-8">
   {% endunless %}
 
   <li class="my-2">
     <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
   </li>
 {% endfor %}
+{% if have_related_posts %}
+  </ul>
+{% endif %}
 {% if site.newsletter.enabled and site.footer_fixed %}
   <p class="mb-2" style="margin-top: 1.5rem !important">Subscribe to be notified of future articles:</p>
   {% include scripts/newsletter.liquid left=true %}
