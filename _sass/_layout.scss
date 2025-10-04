@@ -184,6 +184,7 @@ html[data-theme="dark"] {
     cursor: pointer;
     transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.08s ease;
     outline: none;
+    min-width: 0;
 
     &:focus-visible {
       outline: 2px solid var(--global-theme-color);
@@ -197,6 +198,22 @@ html[data-theme="dark"] {
     &__label {
       pointer-events: none;
       font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.15rem;
+      white-space: nowrap;
+    }
+
+    &__label-text {
+      display: inline-block;
+    }
+
+    &__label-octave {
+      display: inline-block;
+      font-size: 0.68em;
+      letter-spacing: normal;
+      opacity: 0.75;
     }
   }
 
@@ -236,6 +253,34 @@ html[data-theme="dark"] {
 
     .piano-key__label {
       font-size: 0.6rem;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .interactive-piano {
+    padding: 0.6rem 0.5rem 0.85rem;
+    gap: 0.4rem;
+
+    .piano-controls {
+      justify-content: center;
+    }
+
+    .piano-mode-toggle {
+      font-size: 0.75rem;
+      padding: 0.28rem 0.7rem;
+    }
+
+    .piano-surface {
+      max-height: clamp(150px, 48vw, 220px);
+    }
+
+    .piano-key {
+      font-size: 0.52rem;
+
+      &__label-octave {
+        display: none;
+      }
     }
   }
 }

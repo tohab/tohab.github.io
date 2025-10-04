@@ -192,7 +192,21 @@
 
     const label = document.createElement('span');
     label.className = 'piano-key__label';
-    label.textContent = note.name;
+    const baseName = note.name.replace(/\d+/g, '');
+    const octaveMatch = note.name.match(/\d+/);
+
+    const baseSpan = document.createElement('span');
+    baseSpan.className = 'piano-key__label-text';
+    baseSpan.textContent = baseName;
+    label.appendChild(baseSpan);
+
+    if (octaveMatch) {
+      const octaveSpan = document.createElement('span');
+      octaveSpan.className = 'piano-key__label-octave';
+      octaveSpan.textContent = octaveMatch[0];
+      label.appendChild(octaveSpan);
+    }
+
     key.appendChild(label);
 
     key.addEventListener('pointerdown', event => {
@@ -247,6 +261,9 @@
     return key;
   }
 
+  const whiteNotes = [];
+  const blackNotes = [];
+
   notes.forEach(note => {
     const key = buildKey(note);
 
@@ -254,11 +271,13 @@
 
     if (note.type === 'white') {
       whiteLane.appendChild(key);
+      whiteNotes.push(note);
     } else {
       key.style.width = `${blackKeyPercent}%`;
       const leftOffset = (note.whiteIndex + 1) * whiteKeyPercent - (blackKeyPercent / 2);
       key.style.left = `${leftOffset}%`;
       blackLane.appendChild(key);
+      blackNotes.push(note);
     }
   });
 
@@ -357,4 +376,68 @@
     setQuarterToneLatch(!quarterToneLatch);
   });
   controls.appendChild(quarterToneButton);
+
+  function positionBlackKeys() {
+    if (!blackNotes.length) return;
+
+    const surfaceRect = pianoSurface.getBoundingClientRect();
+    if (!surfaceRect.width) return;
+
+    const whiteRects = whiteNotes.map(whiteNote => {
+      if (!whiteNote.element) return null;
+      return whiteNote.element.getBoundingClientRect();
+    });
+
+    blackNotes.forEach(note => {
+      const keyElement = note.element;
+      if (!keyElement) return;
+
+      const previousWhiteRect = whiteRects[note.whiteIndex];
+      const nextWhiteRect = whiteRects[note.whiteIndex + 1];
+      if (!previousWhiteRect || !nextWhiteRect) return;
+
+      const keyWidth = keyElement.offsetWidth;
+      if (!keyWidth) return;
+
+      const center = (previousWhiteRect.right + nextWhiteRect.left) / 2;
+      const leftPx = center - keyWidth / 2;
+      const widthPercent = (keyWidth / surfaceRect.width) * 100;
+      const rawLeftPercent = ((leftPx - surfaceRect.left) / surfaceRect.width) * 100;
+      const clampedLeft = Math.min(
+        Math.max(rawLeftPercent, 0),
+        Math.max(0, 100 - widthPercent),
+      );
+
+      keyElement.style.left = `${clampedLeft}%`;
+    });
+  }
+
+  let pendingFrame = null;
+  function scheduleBlackKeyLayout() {
+    if (pendingFrame !== null) return;
+    pendingFrame = requestAnimationFrame(() => {
+      pendingFrame = null;
+      positionBlackKeys();
+    });
+  }
+
+  scheduleBlackKeyLayout();
+
+  if (typeof ResizeObserver !== 'undefined') {
+    const observer = new ResizeObserver(() => {
+      scheduleBlackKeyLayout();
+    });
+    observer.observe(pianoSurface);
+  } else {
+    window.addEventListener('resize', scheduleBlackKeyLayout);
+  }
+
+  window.addEventListener('orientationchange', scheduleBlackKeyLayout);
+  window.addEventListener('load', scheduleBlackKeyLayout);
+
+  if (document.fonts && document.fonts.ready && typeof document.fonts.ready.then === 'function') {
+    document.fonts.ready.then(() => {
+      scheduleBlackKeyLayout();
+    }).catch(() => {});
+  }
 })();
