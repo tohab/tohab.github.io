@@ -9,7 +9,7 @@ tags:
 - taiwan
 title: Robby's Last
 
-I sat with Dada in the basement of Louisa Coffee on Qingnian Road in central Kaohsiung. I was visiting Taiwan and staying for a couple weeks after traveling and going back to America. I've met Dada once before, before she lost her husband to a freak health condition.
+I sat with Dada in the basement of Louisa Coffee on Qingnian Road in central Kaohsiung. I was visiting Taiwan and staying for a couple weeks after traveling and before going back to America. I've met Dada once before, before she lost her husband to a freak health condition.
 
 Her husband, Robby, who was 36, only a decade older than me. He was cheeriest man I knew; he taught me the ropes of DnD with gusto and played a mean sorcerer in our campaign; he'd lived in Taiwan for almost a decade and loved Dada more than anything else. 
 
