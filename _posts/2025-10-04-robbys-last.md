@@ -3,7 +3,8 @@ date: 2025-10-04
 description:
 layout: post
 published: true
-slug: 2025-10-04-robbys-last
+slug: robbys-last
+permalink: /blog/2025/robbys-last/
 tags:
 - grief
 - taiwan
