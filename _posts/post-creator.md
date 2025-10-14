@@ -1,34 +1,45 @@
 ### Input: a plain text Markdown file with blog post contents
 ### User-discussion: Suggest tags you think are applicable for the post from this list. Also, list any explicit grammar/spelling mistakes you spot and ask if they should be change. 
-family
-identity
-justice
-systems
-community
-reflection
-creativity
 activism
-ethics
-philosophy
-food
-nature
-work
-ping pong
-personal
-teaching
-capitalism
-health
-review
-india
-update
-technology
-taiwan
-family
-china
-social-change
-politics
+ai
+america
+animal-rights
+animation
 assorted
+blogging
+capitalism
+china
+community
+creativity
+economics
+education
+ethics
+family
+food
+grief
+health
+identity
+india
+inequality
+justice
+language-learning
+music
+nature
+philosophy
+ping pong
+poetry
+politics
+relationships
+review
+running
+social change
+taiwan
+teaching
+technology
 travel
+update
+work
+writing
 ### Output: a Markdown file with appropriate front-matter (see below). File name in format YYYY-MM-DD-title-slightly-abbreviated.md.
 
  ---
