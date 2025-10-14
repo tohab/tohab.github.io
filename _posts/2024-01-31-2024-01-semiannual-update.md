@@ -12,7 +12,7 @@ tags:
 - china
 - teaching
 - education
-title: 2024-01 Semiannual Update
+title: rohan's times, winter 2024
 ---
 Well, a lot of things are going to be changing in the next few months for me. Notably, I'm intending to leave Taiwan on May 19th. The reason for departure is nothing dramatic or decisive. It's simply that two years seemed about right. Two years is the same length as the Peace Corps, Mormon missionary service, and, for a long time, the Taiwanese military service. Two years is a substantial amount of time to live in a place, but it’s gone by remarkably fast.
 

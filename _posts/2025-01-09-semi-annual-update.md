@@ -9,7 +9,7 @@ tags:
 - travel
 - identity
 - work
-title: 2025-01 Semiannual update
+title: rohan's times, winter 2025
 ---
 It is that time of year! Some people send Christmas cards, I send this blog post :D.
 
