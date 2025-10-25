@@ -2,6 +2,8 @@
 layout: music
 permalink: /art/music/
 title: music
+nav: true
+nav_order: 2
 ---
 
 I recorded 補習BAND (buxiband) album below in Taiwan with three wonderful friends. You can find more details on the backstory in the [buxiband post-mortem](https://www.rohanprasad.org/blog/2023/2023-11-band-album-is-out/).
