@@ -335,16 +335,8 @@ ul ul ul, ol ol ol {
 
 @media (max-width: 575.98px) {
   .profile {
-    max-width: 260px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .profile.float-right,
-  .profile.float-left {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
+    width: 46vw;
+    max-width: 240px;
   }
 
   .profile img {
