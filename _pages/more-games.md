@@ -1,6 +1,6 @@
 ---
 layout: games
-permalink: /art/games/
+permalink: /more/games/
 title: games
 ---
 

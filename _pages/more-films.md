@@ -1,6 +1,6 @@
 ---
 layout: films
-permalink: /art/films/
+permalink: /more/films/
 title: films
 ---
 
