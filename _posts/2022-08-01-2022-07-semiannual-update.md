@@ -32,7 +32,7 @@ Rohan
 
 **Graduation**
 
-It's hard to believe but in May I did graduate from UC Berkeley! I thouroughly enjoyed my time there, and I was especially grateful for this last year being in-person. [![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVFOH180wCi-3-Z131GxUXohUqG4dI40KoxUa60vf1xfOEPOldJO4vXQPxibs9Lj1mgvcuKKVfziiWVwJhGhnrrKqDNtAP1ugBzwgGSucosWr6lfFol-XITUgvAnSoVzGrMu8YhwGOlGgkv4PqvN9fbFActuWrnHeggW2yorL4NK9ZlYH908i5-szm/w150-h200/WhatsApp%20Image%202022-05-15%20at%208.02.20%20PM.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVFOH180wCi-3-Z131GxUXohUqG4dI40KoxUa60vf1xfOEPOldJO4vXQPxibs9Lj1mgvcuKKVfziiWVwJhGhnrrKqDNtAP1ugBzwgGSucosWr6lfFol-XITUgvAnSoVzGrMu8YhwGOlGgkv4PqvN9fbFActuWrnHeggW2yorL4NK9ZlYH908i5-szm/s1024/WhatsApp%20Image%202022-05-15%20at%208.02.20%20PM.jpeg)  
+It's hard to believe but in May I did graduate from UC Berkeley! I thouroughly enjoyed my time there, and I was especially grateful for this last year being in-person. ![](/assets/img/posts/2022-08-2022-07-semiannual-update/img01.png)  
 
 
 Graduation was quite the riot. The stadium was unbearably hot, and the audio quality sucked. So all the famous people on-stage spoke to a fidgetty and distracted crowd of students on the field of Memorial Stadium. I had a great time nonetheless -- it was like a 6,000 person mixer! After graduation, I spent a week with my parents in Yosemite National Park.
@@ -49,7 +49,7 @@ I also took a class in jazz improvisation and reconnected with my study of the s
 
 As an aside, one small thing I learned recently was how to use music notation software. So here's song I wrote about Tamiami Boulevard. It's a main drag near my parents' new home in Florida.
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEholbtvytw_DgOOmgefCDnfVF5jthxnkYxPbOqDLDGtomLttBBT5sixVvd4cV2dqSZlCZb8ub9Ai1v_ApYADjefbTx-yQpRKL8P9lQuB2vU34u5HYsZTqrPY5oUtQnFTqqg7mlhlSMIu1k6ilDpG5eTBf5SVCGLNnSOyXhrI9XtnZTsMebCMY-pmRTm/w548-h187/down%20tamiami.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEholbtvytw_DgOOmgefCDnfVF5jthxnkYxPbOqDLDGtomLttBBT5sixVvd4cV2dqSZlCZb8ub9Ai1v_ApYADjefbTx-yQpRKL8P9lQuB2vU34u5HYsZTqrPY5oUtQnFTqqg7mlhlSMIu1k6ilDpG5eTBf5SVCGLNnSOyXhrI9XtnZTsMebCMY-pmRTm/s1225/down%20tamiami.png)
+![](/assets/img/posts/2022-08-2022-07-semiannual-update/img02.png)
 
 **Research**
 
@@ -69,7 +69,7 @@ Nonetheless, throughout the process I realized that academia is slow, solitary w
 
 I just moved to Taiwan! I'm teaching at an English "cram school" (after-school, supplementary education) called Schoolhouse Language Center in [Kaohsiung City](https://en.wikipedia.org/wiki/Kaohsiung) (pronounced: GAO-shiong). My friend from Berkeley, Leon, is also with me teaching at the same school.
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihmHkcuYoUaahf4rUEVnzY5xApa9afq_rackfk85mZ3cC87BeZiJd5y2SkUizMB4i1CwTve85uHpU9EsHcFvw76cx4Gs3uwnX8LHcrGSqdmz6M-dJRK7WQqy9uD7jolDVQfFfofBKZOyE4_M9AOoHO4ilangCYJCltNb5zNw3ExlfO6gbtXzqaI2O5/w205-h154/WhatsApp%20Image%202022-07-30%20at%209.22.52%20AM.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihmHkcuYoUaahf4rUEVnzY5xApa9afq_rackfk85mZ3cC87BeZiJd5y2SkUizMB4i1CwTve85uHpU9EsHcFvw76cx4Gs3uwnX8LHcrGSqdmz6M-dJRK7WQqy9uD7jolDVQfFfofBKZOyE4_M9AOoHO4ilangCYJCltNb5zNw3ExlfO6gbtXzqaI2O5/s2000/WhatsApp%20Image%202022-07-30%20at%209.22.52%20AM.jpeg)
+![](/assets/img/posts/2022-08-2022-07-semiannual-update/img03.png)
 
 A lot people are thrown off to hear this update. People also sometimes confuse Taiwan with Thailand, Vietnam, or China. It's understandable. But Taiwan is a unique and remarkable island! Mandarin, English and Taiwanese are the main languages here. It's an incredibly safe and well-run democratic place. Public transport in the cities is extremely efficient, and there's a high-speed rail that runs from Taipei to Kaohsiung.  
 

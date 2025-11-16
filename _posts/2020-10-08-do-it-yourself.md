@@ -17,7 +17,7 @@ You may laugh -- because we all know that isn't quite true. Linux isn't quite as
 Fortunately this ethic is not just another one of my crack-pot ideas. The feelings brewing in my pre-adolescent youth have been codified in the *Repair Manifesto*, which I recently saw on my landlord's shed. "We hold these truths to be self-evident," it begins. "If you can't fix it, you don't own it."  
 
 
-![iFixit's self-repair manifesto](https://d1ulmmr4d4i8j4.cloudfront.net/static/images/manifesto/manifesto_en_final.jpg)
+![iFixit's self-repair manifesto](/assets/img/posts/2020-10-do-it-yourself/img01.png)
 
 I confess this *Manifesto* mentions many things I was not completely conscious of when I assembled my "garbage bag" costume. When we repair any type of gadget or doohickey, the benefit for the earth is three-fold: you don't throw out the gadget you have, you save on the materials needed to create another gadget, and you don't produce wasteful by-products created through the gadget's supply chain. Of course, over time you also save money (I've found this to be true after I started cutting my own hair), you gain independence from industries, and you learn some engineering skills you can easily practice in the future.
 

@@ -35,14 +35,14 @@ Auroville brands itself as utopian society with free healthcare, free education,
 
 Even if Auroville exaggerates how great the town is, I can understand why people move there. It's a lot like a gated retirement community, or a private liberal arts college, except for adults of all ages. It's alright, if you can pay the price, which is very reasonable by Western standards, and when you compare Auroville to similar communities. Nonetheless, I wouldn't ever say that moving to such a community can drastically improve ones quality of life. It's just another place to be.
 
-[![](https://blogger.googleusercontent.com/img/a/AVvXsEhzq_MWfbwWXIbbBGslnywfkSRxQ-T880UdtM2fq2kHNokt7k_rMKDivwV9kSd84Ca5BgTsuLquJVWJYs0z9NQ7wKsUB3cfWQMs5Mu_U7MH-866mt5Lg9ci7U0yQVv7PvaECDHqKyaVTEsZuunmeYbNvnEvohHFEIN2xLtZD7v7Kv-L9451OgUGpI4XKMk)](https://blogger.googleusercontent.com/img/a/AVvXsEhzq_MWfbwWXIbbBGslnywfkSRxQ-T880UdtM2fq2kHNokt7k_rMKDivwV9kSd84Ca5BgTsuLquJVWJYs0z9NQ7wKsUB3cfWQMs5Mu_U7MH-866mt5Lg9ci7U0yQVv7PvaECDHqKyaVTEsZuunmeYbNvnEvohHFEIN2xLtZD7v7Kv-L9451OgUGpI4XKMk)
+![](/assets/img/posts/2024-05-auroville/img01.png)
 the golden dome
-[![](https://blogger.googleusercontent.com/img/a/AVvXsEjHYNQs3mPmHGslGv2vzq7UMRJuPP3mv4zPbpYVLZw7id6fKnLfzG9MRoOageTz2fOWddr5Gdfh1wHp4nceRAmDFrv1C1m-rObeHVCRbHpLb2muJrw2JFSrq_oqwGZ2v584iKxVNsF5XPa4TOpPPNWJ1OYgHNLilMOgEFh9MJ6osJC1ABl5qiHEStOF-M8)](https://blogger.googleusercontent.com/img/a/AVvXsEjHYNQs3mPmHGslGv2vzq7UMRJuPP3mv4zPbpYVLZw7id6fKnLfzG9MRoOageTz2fOWddr5Gdfh1wHp4nceRAmDFrv1C1m-rObeHVCRbHpLb2muJrw2JFSrq_oqwGZ2v584iKxVNsF5XPa4TOpPPNWJ1OYgHNLilMOgEFh9MJ6osJC1ABl5qiHEStOF-M8)
-[![](https://blogger.googleusercontent.com/img/a/AVvXsEi0T65eqXnKP6lyxoyBt31ejAtN0vcZqnAWQqAQFrU9_YOmVrUIhTVhS_sETMisVBiSuZB76EUHpI6MVwFz79BszLd7S9Oo28mzVVGryiFDktNJM6mbOT4r0qLVoLC1QvHwjFMct-36uT9R8EatTHqWfowTvA3iDZWP1LXqGI81nqT8W42-h8Ax_sHDlb8)](https://blogger.googleusercontent.com/img/a/AVvXsEi0T65eqXnKP6lyxoyBt31ejAtN0vcZqnAWQqAQFrU9_YOmVrUIhTVhS_sETMisVBiSuZB76EUHpI6MVwFz79BszLd7S9Oo28mzVVGryiFDktNJM6mbOT4r0qLVoLC1QvHwjFMct-36uT9R8EatTHqWfowTvA3iDZWP1LXqGI81nqT8W42-h8Ax_sHDlb8)
+![](/assets/img/posts/2024-05-auroville/img02.png)
+![](/assets/img/posts/2024-05-auroville/img03.png)
 the making of red bricks, which are used all over Auroville
-[![](https://blogger.googleusercontent.com/img/a/AVvXsEiaIIqUvRHm8so7mfcv3WAN91cshLsNEdx6HMDGXTLSt8jVrXIDyOu9zut5h8PNOamvxTWXxLpSrwotRZ3Mrx2M5CFKE84O0zh82KMKI2nvDA5S367MkbII8gGVtMiIGJosRB_kEryA__GcPIs9XynOHWsHlbktebxxd3LzjTMCJo4OdRIRCeSfUk_sIAM)](https://blogger.googleusercontent.com/img/a/AVvXsEiaIIqUvRHm8so7mfcv3WAN91cshLsNEdx6HMDGXTLSt8jVrXIDyOu9zut5h8PNOamvxTWXxLpSrwotRZ3Mrx2M5CFKE84O0zh82KMKI2nvDA5S367MkbII8gGVtMiIGJosRB_kEryA__GcPIs9XynOHWsHlbktebxxd3LzjTMCJo4OdRIRCeSfUk_sIAM)
+![](/assets/img/posts/2024-05-auroville/img04.png)
 farm for spirulina, the algae that has made Auroville millions
-[![](https://blogger.googleusercontent.com/img/a/AVvXsEgNeoiBhbJ9jdVoZK4oQsqDGBccJlPcyK81q8KGJigzE1bcfdQKYgW-fs6VFxG9fPmhUu2cDe--_zCYzFuBrav9r3rXwpOKYrBIZosjbzjn8DISKmnXF5ylCRPfRRwSf3IiwA6_YDvTn8GhD8w7EEO4I6JwyXbqbHWfk49ZwIXzui_u8BUVagGcU3JyaGQ)](https://blogger.googleusercontent.com/img/a/AVvXsEgNeoiBhbJ9jdVoZK4oQsqDGBccJlPcyK81q8KGJigzE1bcfdQKYgW-fs6VFxG9fPmhUu2cDe--_zCYzFuBrav9r3rXwpOKYrBIZosjbzjn8DISKmnXF5ylCRPfRRwSf3IiwA6_YDvTn8GhD8w7EEO4I6JwyXbqbHWfk49ZwIXzui_u8BUVagGcU3JyaGQ)
+![](/assets/img/posts/2024-05-auroville/img05.png)
 the solar kitchen cafe
 
 *This was originally posted on blogger.*

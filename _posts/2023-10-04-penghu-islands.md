@@ -13,7 +13,7 @@ title: 澎湖 The Penghu Islands
 I went to Penghu this weekend. It’s my new favorite place in
 Taiwan, so here are some memories from the places I went to.  
    
- ![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.toTixt_ZYe6z2yFkFPwSdwHaHF%26pid%3DApi&f=1&ipt=8036036f0ab517a5e9b65890d191f21acf29a1959ada07e28c3ed29090eab876&ipo=images)   
+ ![](/assets/img/posts/2023-10-penghu-islands/img01.png)   
   
 As a preface, I had a fair amount of anticipation for this trip. Even the map of Penghu reminds me of a Pokemon game. The island is mostly naturer, and scaled so that you can bike from Magong City to Shiyu Township in just 3-4 hours. So reasonable, but not so small.
 
@@ -32,13 +32,13 @@ buffet-style restaurant, which is also all-vegan and open every day! 
 My
 friends, Don, Lily and Truman and I all went to a wonderful vegan
 late-night tea shop. They’re open till midnight and rest on
-Wednesdays. They have awesome noodles, a friendly [![](https://blogger.googleusercontent.com/img/a/AVvXsEjBkkvtIsHY2fBbnzlNf6NxT0lZQHj4PCw_tFP8C5L-siIML-bbNZamXj30EJGE-1MVK6B30EqWooFliq3Fu4lwqaUVTBnxrDRsluvbhWeLDaqE1H27FrYq8QGN0yWcYCZ4X1R7h_l1FmvLLLekWyK89WWVdRyXoZc22_JMSXNKyV5zaOYLPP3LhXK_GbQ=w213-h160)](https://blogger.googleusercontent.com/img/a/AVvXsEjBkkvtIsHY2fBbnzlNf6NxT0lZQHj4PCw_tFP8C5L-siIML-bbNZamXj30EJGE-1MVK6B30EqWooFliq3Fu4lwqaUVTBnxrDRsluvbhWeLDaqE1H27FrYq8QGN0yWcYCZ4X1R7h_l1FmvLLLekWyK89WWVdRyXoZc22_JMSXNKyV5zaOYLPP3LhXK_GbQ)*laoban*,
+Wednesdays. They have awesome noodles, a friendly ![](/assets/img/posts/2023-10-penghu-islands/img02.png)*laoban*,
 and great books upstairs
 about all sorts of spiritual subjects.
 
-[![](https://blogger.googleusercontent.com/img/a/AVvXsEhdY58oVt4P915t7YOPCdn0CWG_-bYG5GRJrYMc5wzSSrMt772TorPDRspgZO7RUicCKkAwkzvXsEObIpk2DRbg3uc7Efo20Rxq_7Z5J7eGCJ1sJVQ_gnka1C5rS-YnrRxK8ncdKQJXj3cA4nXUxBQehGOBc6u3r8XvffNWQhHp0-jG7wm3OTaJsWsTrr8=w232-h174)](https://blogger.googleusercontent.com/img/a/AVvXsEhdY58oVt4P915t7YOPCdn0CWG_-bYG5GRJrYMc5wzSSrMt772TorPDRspgZO7RUicCKkAwkzvXsEObIpk2DRbg3uc7Efo20Rxq_7Z5J7eGCJ1sJVQ_gnka1C5rS-YnrRxK8ncdKQJXj3cA4nXUxBQehGOBc6u3r8XvffNWQhHp0-jG7wm3OTaJsWsTrr8)I went to a museum about early life in Penghu. I went by myself and I'm glad I did, because I go through museums at a blitz-pace (1 hour for 2 floors). I learned that Penghu has archeological remains that date even before Taiwan. But most people didn't settle in Penghu because they realized it's damn hard to grow anything there when it's so windy in the winter. Most people made voyages to greener pastures in Kaohsiung or Pingtung. Fruits and vegetables are still mostly shipped to Penghu from Kaohsiung.  
+![](/assets/img/posts/2023-10-penghu-islands/img03.png)I went to a museum about early life in Penghu. I went by myself and I'm glad I did, because I go through museums at a blitz-pace (1 hour for 2 floors). I learned that Penghu has archeological remains that date even before Taiwan. But most people didn't settle in Penghu because they realized it's damn hard to grow anything there when it's so windy in the winter. Most people made voyages to greener pastures in Kaohsiung or Pingtung. Fruits and vegetables are still mostly shipped to Penghu from Kaohsiung.  
 
-[![](https://blogger.googleusercontent.com/img/a/AVvXsEhytmcsTPYlAsQ2irS0dbhfYNQGlCKulDzfqgOuhkNb2G8g8IQ_Dpfrn5p9Ui5WEwySmhyAW2-QfvcivE6I43wuhhS2RMFdSSog5-gZuOIagApZNIROwLtgCH7l2Js6M3-o28c4kcRgNjsyjRkPL0_0w82psssXp1oR4AngtQ-4uP-nKaKhBZwZYgLnswY=w133-h177)](https://blogger.googleusercontent.com/img/a/AVvXsEhytmcsTPYlAsQ2irS0dbhfYNQGlCKulDzfqgOuhkNb2G8g8IQ_Dpfrn5p9Ui5WEwySmhyAW2-QfvcivE6I43wuhhS2RMFdSSog5-gZuOIagApZNIROwLtgCH7l2Js6M3-o28c4kcRgNjsyjRkPL0_0w82psssXp1oR4AngtQ-4uP-nKaKhBZwZYgLnswY)
+![](/assets/img/posts/2023-10-penghu-islands/img04.png)
 
 Another night, Don, Lily and I biked around. We saw a very tall statue of Mazu or the Buddha or Dao-incarnation or something. And we also saw the end of a rocking concert. 
 
@@ -78,7 +78,7 @@ least with the people Mumin knew). Truman
 was a little scared off. I admired the kitesurfing from afar but had
 little desire to participate.
 
-[![](https://blogger.googleusercontent.com/img/a/AVvXsEimROjYy8mAHdlXRPYLwkY3_1S437oxWIMUkdO1mm_0AOrLXPVtkC7ZFHEbr6Nyl-U_HUgPSvV-EmcgQ8ixAEz5SqyfetyKdWQK5we8NQRAKBldBK3fQ5lBsSE24FXchOC5UqwkWmtlbIlAyX2vrkfEsHbiFw1HAmEgzcBbZLLoXxqXDzW0QmTCv-3Jbns=w229-h172)](https://blogger.googleusercontent.com/img/a/AVvXsEimROjYy8mAHdlXRPYLwkY3_1S437oxWIMUkdO1mm_0AOrLXPVtkC7ZFHEbr6Nyl-U_HUgPSvV-EmcgQ8ixAEz5SqyfetyKdWQK5we8NQRAKBldBK3fQ5lBsSE24FXchOC5UqwkWmtlbIlAyX2vrkfEsHbiFw1HAmEgzcBbZLLoXxqXDzW0QmTCv-3Jbns)[![](https://blogger.googleusercontent.com/img/a/AVvXsEhxXUjXakRfv3-UdzgtDM4T1Zx2AUvc1H4icpdMRL1ap0RTprlyLRpZAfkBTCsn8ALjoqFF_1D1eMDJk7RZd9fcIHuYCHRQjtXBODz-JSx68Zj4E_Mpq3O6xoEl3o0vHoioda30341j_7VXy9s8oubQT4U7Cjo_eYNITkHD14Vg-OlJl0pRd8CiFXXXHeo=w235-h176)](https://blogger.googleusercontent.com/img/a/AVvXsEimROjYy8mAHdlXRPYLwkY3_1S437oxWIMUkdO1mm_0AOrLXPVtkC7ZFHEbr6Nyl-U_HUgPSvV-EmcgQ8ixAEz5SqyfetyKdWQK5we8NQRAKBldBK3fQ5lBsSE24FXchOC5UqwkWmtlbIlAyX2vrkfEsHbiFw1HAmEgzcBbZLLoXxqXDzW0QmTCv-3Jbns)
+![](/assets/img/posts/2023-10-penghu-islands/img05.png)![](/assets/img/posts/2023-10-penghu-islands/img06.png)
 On
 his break from the waves, Mumin told me about his life. He's Taiwanese and grew up in Taipei, but lived in
 America for 10 years doing college and his masters. Then
@@ -128,12 +128,12 @@ also other nearby islands. Maybe that has something to do with the
 
  
 
-[![](https://blogger.googleusercontent.com/img/a/AVvXsEgJ1w0Kn-MmLLt7wa7Gk66l1yE4_Md1w_GWQ94xINdGpGF9BsQ_0ukfSxRTMMhxid0H3XkDtSedikVnt6BSsTSztG5rhqRcRV0YJ9FPWg--V3Yywm1xLx11G41TGvR0sZCuT3nUri8bYJArz3iSp_syaVdjI6yK-W0GWng0hO6poXlxhnX8Ni_wppFeNK8)](https://blogger.googleusercontent.com/img/a/AVvXsEgJ1w0Kn-MmLLt7wa7Gk66l1yE4_Md1w_GWQ94xINdGpGF9BsQ_0ukfSxRTMMhxid0H3XkDtSedikVnt6BSsTSztG5rhqRcRV0YJ9FPWg--V3Yywm1xLx11G41TGvR0sZCuT3nUri8bYJArz3iSp_syaVdjI6yK-W0GWng0hO6poXlxhnX8Ni_wppFeNK8)Truman
+![](/assets/img/posts/2023-10-penghu-islands/img07.png)Truman
 and I pushed our way through the crowd. It wasn’t hard because
 people were sapped from the force of the Penghu sun. Inside
 the temple were three men dressed in red and gold gowns. Two
 were old and pudgy. One was
-young, relatively – maybe 40-50 years old. [![](https://blogger.googleusercontent.com/img/a/AVvXsEhzcOWX1lib3RG0GvR3ZRweJ3MJpsfHYbaS3qZpWrqRmL3Mo5337imWQsNnRCgAXXirsUX364X6iv0ODcuhRYNnss9QDYkv-bv56J8OThNbQrg9j19tvGOWcZBPKwjzyZ1kIiv22NMjfCvySxDND7gg57nre-xh_rjyL6V-W_dPeioqgSI0Hq02DBbvuOM)](https://blogger.googleusercontent.com/img/a/AVvXsEhzcOWX1lib3RG0GvR3ZRweJ3MJpsfHYbaS3qZpWrqRmL3Mo5337imWQsNnRCgAXXirsUX364X6iv0ODcuhRYNnss9QDYkv-bv56J8OThNbQrg9j19tvGOWcZBPKwjzyZ1kIiv22NMjfCvySxDND7gg57nre-xh_rjyL6V-W_dPeioqgSI0Hq02DBbvuOM)They
+young, relatively – maybe 40-50 years old. ![](/assets/img/posts/2023-10-penghu-islands/img08.png)They
 all had blood flowing from their foreheads. They
 all were salivating. And they all looked like they were about to pass
 out. I was somewhat prepared for this but god, it was still
@@ -184,7 +184,7 @@ It sounded like an ideal childhood.
 **西嶼 (Shiyu)**.
 I only went past Baisha to the other islands once. 
 
-[![](https://blogger.googleusercontent.com/img/a/AVvXsEgAUf1Gl4z_NIwDCcU7Il6u-D7qw7GcMFu7f8rZTHfuEqtcIy_rdTB6tgUh26JxQY9VDqcdXTVhwiyNH0IhDZBzlCj9-imNHQmdnyJ-MUzd2KtpZ0E3nf_Ko20MjczLdeeNHJSV1omL5jL4ayt1D_EGZsFq3ZL4e3jt-OiZ9ckhASYztnLaAss6OG3tdgE)](https://blogger.googleusercontent.com/img/a/AVvXsEgAUf1Gl4z_NIwDCcU7Il6u-D7qw7GcMFu7f8rZTHfuEqtcIy_rdTB6tgUh26JxQY9VDqcdXTVhwiyNH0IhDZBzlCj9-imNHQmdnyJ-MUzd2KtpZ0E3nf_Ko20MjczLdeeNHJSV1omL5jL4ayt1D_EGZsFq3ZL4e3jt-OiZ9ckhASYztnLaAss6OG3tdgE)When
+![](/assets/img/posts/2023-10-penghu-islands/img09.png)When
 we gave up on taking the ferry to Niaoyu, Truman and I rode on his
 scooter out to where he was staying in Xiyu. Xiyu
 was beautiful. There are so many beaches there and natural sites.
@@ -205,7 +205,7 @@ told us how his fruit ice creams are made. Many flavors were also
 vegan. Truman met him before and we talked so long that he also gave
 us the ice cream for free. He insisted even though we had two scoops
 between the two of us. This cactus ice cream was slightly
-more sour and had some cool rose flavorings.[![](https://blogger.googleusercontent.com/img/a/AVvXsEiBTI_-a-99lzZzNBrNJNWHMYTBxp4xo_zaULp0cVcC2l7eC20VK-upOXrYaN_I95bBMQGkDQVX6wMkv9fSBZQXRvivsW94cqWLlCF4H96W6nLTnT0FhV_qG5Pjvf854OBTjCKK6Bi8EpWXRkX6lp_yM-BnuYgaml7gbrSTXoFH7XDNKs66ZwoT_B1jlIU)](https://blogger.googleusercontent.com/img/a/AVvXsEiBTI_-a-99lzZzNBrNJNWHMYTBxp4xo_zaULp0cVcC2l7eC20VK-upOXrYaN_I95bBMQGkDQVX6wMkv9fSBZQXRvivsW94cqWLlCF4H96W6nLTnT0FhV_qG5Pjvf854OBTjCKK6Bi8EpWXRkX6lp_yM-BnuYgaml7gbrSTXoFH7XDNKs66ZwoT_B1jlIU)[![](https://blogger.googleusercontent.com/img/a/AVvXsEhiekeumpSkm8Yb2XXNdD1Y1nb98fUouXiQwILLTl_mdhN_qz6MFYT7H0tHJdDbNF2_vBYaYVrrErzMFlhYLF5cPbUoFsC3ARkHwxedIJ3okkH-ltTkmARMF65SyM389_mf45fafh8dkyri7IJpvHA_djhz0ZvdPZyrcMphrTIslnS6ELOVLlPhnPyFRr8)](https://blogger.googleusercontent.com/img/a/AVvXsEhiekeumpSkm8Yb2XXNdD1Y1nb98fUouXiQwILLTl_mdhN_qz6MFYT7H0tHJdDbNF2_vBYaYVrrErzMFlhYLF5cPbUoFsC3ARkHwxedIJ3okkH-ltTkmARMF65SyM389_mf45fafh8dkyri7IJpvHA_djhz0ZvdPZyrcMphrTIslnS6ELOVLlPhnPyFRr8)
+more sour and had some cool rose flavorings.![](/assets/img/posts/2023-10-penghu-islands/img10.png)![](/assets/img/posts/2023-10-penghu-islands/img11.png)
 
  The
 last thing I did in Xiyu was snorkling.
@@ -232,7 +232,7 @@ should say a word about the
 *Penghu Lun’s* it’s
 predecessor, the Taihwa. 
 
-[![](https://blogger.googleusercontent.com/img/a/AVvXsEjceHFLWcLFYjTIcYnjGwVwu6RFgPUkj_zwk5v9Pj1iCEZtyBdKx1FkrYYVxBesNJWek9TG_BaviPdZvOKKv-he-5FoA22a3p6h-V8xV7kgNZdElp7OPP66wWXHyX6SGr0X-dErYB9vcdHgQL44aSecz45H1DAtug-oGG-v7x79DvUOokCFKhKg5ozctgA)](https://blogger.googleusercontent.com/img/a/AVvXsEjceHFLWcLFYjTIcYnjGwVwu6RFgPUkj_zwk5v9Pj1iCEZtyBdKx1FkrYYVxBesNJWek9TG_BaviPdZvOKKv-he-5FoA22a3p6h-V8xV7kgNZdElp7OPP66wWXHyX6SGr0X-dErYB9vcdHgQL44aSecz45H1DAtug-oGG-v7x79DvUOokCFKhKg5ozctgA)The
+![](/assets/img/posts/2023-10-penghu-islands/img12.png)The
 Taihwa was also often docked at the Kaohsiung port and to Lily, and
 another friend Penny, it sparked wonder and fascination. They dreamed
 one day it could take them to the far away island that is Penghu. It
@@ -251,7 +251,7 @@ beetelnut and oil. When you're on the boat, footing is unsteady in the
 subtlest of ways -- you can't quite tell which way the waves are going,
 but when you get on land things feel less sway-ey.
 
-[![](https://blogger.googleusercontent.com/img/a/AVvXsEjDDfkp1leH_c4w6hgRTBdYNGFteabb239NtMdsNd42VFwa6WgKis_ZE6KXEVyEYo9zOrOthbaYC11hpiYVow8QXCV-yohMvyIrEWgqGLNcb709Xph2NZlrm7xyOJ2hx-S4m24MfEK1_2zb__lO6RMSXXsU5XSHKrlqMkunOP6Xy7siUkljcEje9A7-u_E)](https://blogger.googleusercontent.com/img/a/AVvXsEjDDfkp1leH_c4w6hgRTBdYNGFteabb239NtMdsNd42VFwa6WgKis_ZE6KXEVyEYo9zOrOthbaYC11hpiYVow8QXCV-yohMvyIrEWgqGLNcb709Xph2NZlrm7xyOJ2hx-S4m24MfEK1_2zb__lO6RMSXXsU5XSHKrlqMkunOP6Xy7siUkljcEje9A7-u_E)[![](https://blogger.googleusercontent.com/img/a/AVvXsEjLmr-PHaeOVNyZmOkZ8BKjvnjWiKDftFACZACqXnMNr8_McifYdvmlV_BrwPVhagFnV2VBUbZO8G_NxaIsmNh6GoBwAaqkE-USHME9sqgu7dQap9CkBE_0DsRa6ltJjbbbP3hG64CD945pQpZgeOVJLHOv5dJSp2P0pXLmsi0HMR1bKM-ZW29_CfPqE44)](https://blogger.googleusercontent.com/img/a/AVvXsEjLmr-PHaeOVNyZmOkZ8BKjvnjWiKDftFACZACqXnMNr8_McifYdvmlV_BrwPVhagFnV2VBUbZO8G_NxaIsmNh6GoBwAaqkE-USHME9sqgu7dQap9CkBE_0DsRa6ltJjbbbP3hG64CD945pQpZgeOVJLHOv5dJSp2P0pXLmsi0HMR1bKM-ZW29_CfPqE44)On
+![](/assets/img/posts/2023-10-penghu-islands/img13.png)![](/assets/img/posts/2023-10-penghu-islands/img14.png)On
 the way back, I took an evening boat. I stood on top deck and other
 Kaohsiungers who went to Penghu for the long weekend. My friends Don and
 Lily watched the boat from Magong recede into the horizon. The sunset

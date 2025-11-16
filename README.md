@@ -22,6 +22,30 @@
 
 </div>
 
+## Local image workflow
+
+This fork keeps per-post artwork under `assets/img/posts/<slug>/` so referencing images while writing Markdown is predictable: drop `![](/assets/img/posts/<post-slug>/img01.png)`\* straight into the post and Jekyll will copy the file during the build. Original, high-resolution photos are preserved in `assets/img/raw/<slug>/`, which is gitignored so the repository only tracks the optimized PNGs.
+
+### Converting remote placeholders
+
+When drafting, it is fine to paste remote links directly into Markdown. Once you are ready to publish:
+
+1. Run `python3 scripts/localize_images.py _posts/2023-10-04-penghu-islands.md` (or omit the file path to scan all posts). The script downloads every remote image it finds, stores an untouched copy under `assets/img/raw/<slug>/`, converts it to a resized PNG via ImageMagick’s `convert`, and rewrites the Markdown to point at `/assets/img/posts/<slug>/imgNN.png`.
+2. Commit the new PNGs in `assets/img/posts/<slug>/`. The raw files remain on disk for safekeeping but stay out of Git because `assets/img/raw/` is ignored.
+3. Rerun the script whenever you change a post or add new remote photos. Use `--force` to redownload/reconvert or `--dry-run` to preview changes.
+
+Dependencies: Python 3 with PyYAML (already in `requirements.txt`) and ImageMagick (`convert` must be available on your `$PATH`). Network access is only needed while the script downloads remote files.
+
+### Adding photos directly
+
+If you already have local imagery:
+
+- Drop the master copy into `assets/img/raw/<slug>/your-name.ext` for safekeeping.
+- Create the publishable PNG (e.g., `convert assets/img/raw/<slug>/your-name.ext -resize 1800x1800\> -strip assets/img/posts/<slug>/your-name.png`).
+- Reference it from Markdown: `![](/assets/img/posts/<slug>/your-name.png)`.
+
+\*Use the `slug` from the post front matter so the folders stay consistent with the automation.
+
 ## User community
 
 The vibrant community of **al-folio** users is growing!
