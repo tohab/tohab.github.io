@@ -16,6 +16,8 @@ collapsible_panels: true
 
 I'm an operations leader and non-profit founder. I'm adept at building scalable systems and driving organizational growth. I thrive in a collaborative environment and love to get things done.
 
+[LinkedIn](https://www.linkedin.com/in/therohanprasad/)
+
 **CAREER HIGHLIGHTS**
 
 - Secured and managed a $2M+ housing grant for a non-profit organization, optimizing resource allocation to support maximum community impact  
