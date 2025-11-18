@@ -1,0 +1,24 @@
+---
+layout: default
+---
+{% if page._styles %}
+  <!-- Resume-specific inline styles -->
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<div class="resume-page">
+  {% if page.title and page.show_title %}
+    <header class="resume-page__header">
+      <h1 class="resume-page__title">{{ page.title }}</h1>
+      {% if page.description %}
+        <p class="resume-page__description">{{ page.description }}</p>
+      {% endif %}
+    </header>
+  {% endif %}
+
+  <section id="resume-preview">
+    {{ content }}
+  </section>
+</div>
