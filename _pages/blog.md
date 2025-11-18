@@ -47,37 +47,39 @@ pagination:
     white-space: nowrap;
   }
 
+  {% if site.blog_hover_preview.enabled %}
+  {% assign hover_bg = site.blog_hover_preview.background | default: '#fef7f1' %}
   .post-list li {
     position: relative;
   }
 
   .post-hover-preview {
     position: absolute;
-    top: 0;
-    right: -22rem;
+    top: 0.15rem;
+    left: calc(100% + 1rem);
     width: 20rem;
-    background: #fff;
+    background: {{ hover_bg }};
     border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    border-radius: 0.5rem;
-    padding: 0.65rem 0.75rem 0.75rem;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+    border-radius: 0.6rem;
+    padding: 0.7rem 0.9rem 0.85rem;
     z-index: 5;
     opacity: 0;
     transform: translateY(8px);
-    transition: opacity 0.15s ease, transform 0.15s ease;
+    transition: opacity 0.18s ease, transform 0.18s ease;
     pointer-events: none;
   }
 
   .post-hover-preview__image {
     width: 100%;
     height: 8rem;
-    border-radius: 0.35rem;
+    border-radius: 0.45rem;
     object-fit: cover;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.55rem;
   }
 
   .post-hover-preview__summary {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     color: rgba(0, 0, 0, 0.72);
     margin: 0;
   }
@@ -94,6 +96,7 @@ pagination:
       display: none;
     }
   }
+  {% endif %}
 
   .archive-years {
     font-size: 1.08rem;
@@ -301,23 +304,25 @@ pagination:
             </div>
             {% endif %}
 
-            {% assign preview_image = post.preview_image %}
-            {% if preview_image == nil or preview_image == '' %}
-              {% assign preview_image = post.thumbnail %}
-            {% endif %}
-            {% assign hover_summary = post.description %}
-            {% if hover_summary == nil or hover_summary == '' %}
-              {% assign hover_summary = post.content | strip_html | replace: '&nbsp;', ' ' | strip | truncatewords: 36 %}
-            {% endif %}
-            {% if preview_image or hover_summary %}
-              <div class="post-hover-preview">
-                {% if preview_image %}
-                  <img class="post-hover-preview__image" src="{{ preview_image | relative_url }}" alt="preview for {{ post.title }}">
-                {% endif %}
-                {% if hover_summary %}
-                  <p class="post-hover-preview__summary">{{ hover_summary }}</p>
-                {% endif %}
-              </div>
+            {% if site.blog_hover_preview.enabled %}
+              {% assign preview_image = post.preview_image %}
+              {% if preview_image == nil or preview_image == '' %}
+                {% assign preview_image = post.thumbnail %}
+              {% endif %}
+              {% assign hover_summary = post.description %}
+              {% if hover_summary == nil or hover_summary == '' %}
+                {% assign hover_summary = post.content | strip_html | replace: '&nbsp;', ' ' | strip | truncatewords: 36 %}
+              {% endif %}
+              {% if preview_image or hover_summary %}
+                <div class="post-hover-preview">
+                  {% if preview_image %}
+                    <img class="post-hover-preview__image" src="{{ preview_image | relative_url }}" alt="preview for {{ post.title }}">
+                  {% endif %}
+                  {% if hover_summary %}
+                    <p class="post-hover-preview__summary">{{ hover_summary }}</p>
+                  {% endif %}
+                </div>
+              {% endif %}
             {% endif %}
           </li>
         {% endfor %}
