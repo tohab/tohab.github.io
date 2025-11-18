@@ -26,23 +26,23 @@ I'm an operations leader and non-profit founder. I'm adept at building scalable 
 Below are four case studies highlighting projects I've led over the course of my time as a project leader and entrepreneur.
 
 <details class="collapsible-panel work-case">
-<summary><h3>Case 1: Co-founding and scaling operations for Grassyouths, Inc.</h3></summary>
+<summary><strong>Case 1: Co-founding and scaling operations for Grassyouths, Inc.</strong></summary>
   {% capture case_1 %}
 **📅 Date:** Aug. 2021 - Present  
 **🏢 Organization:** Grassyouths Inc.
 
-#### 🔍 Problem
+**🔍 Problem**
 
 Grassyouths Inc. aimed to provide affordable housing for animal rights activists but lacked the necessary operational infrastructure to scale. The organization needed legal status, a structured application process, and a cohesive living environment.
 
-#### 💡 Approach
+**💡 Approach**
 
 - Established the nonprofit's legal framework in collaboration with co-founders.
 - Built trust with the primary donor and landlord through regular meetings and demonstration of competency to secure long-term funding.
 - Led the scaling of the recruitment process, developed the interview structure, and guided criteria discussions and deliberations.
 - Led facility enhancement initiatives to create an aesthetically pleasing and functional communal space; facilitated conflict mediation and established productive meeting protocols.
 
-#### 📈 Impact
+**📈 Impact**
 
 - Dramatically expanded candidate consideration capacity from approximately 5 to over 200 applicants.
 - Secured and grew funding to 2.5 million dollars.
@@ -55,23 +55,23 @@ Grassyouths Inc. aimed to provide affordable housing for animal rights activists
 </details>
 
 <details class="collapsible-panel work-case">
-<summary><h3>Case 2: Optimizing Bilingual Educational Program Efficiency for 150+ Taiwanese Students</h3></summary>
+<summary><strong>Case 2: Optimizing Bilingual Educational Program Efficiency for 150+ Taiwanese Students</strong></summary>
   {% capture case_2 %}
 **📅 Date:** Aug. 2022 - May 2024  
 **🏢 Organization:** Schoolhouse Language Center, Taiwan
 
-#### 🔍 Problem
+**🔍 Problem**
 
 Our school's value proposition was to bring life to the English curriculum and generate excitement about learning. As the sole classroom teacher responsible for instruction, assessments, and discipline, I faced the challenge of engaging students with widely varying English proficiency and academic abilities.
 
-#### 💡 Approach
+**💡 Approach**
 
 - Developed tailored engagement strategies based on student age and ability, implementing research-backed approaches.
 - Designed interactive projects including a public speaking project (Class President campaign), board game design sessions, and organized field trips to the zoo/aquarium to foster self-expression and leadership.
 - Used behavioral methods, group reading, and on-the-spot translations with fluent Mandarin language skills to enhance education while maintaining an immersive English learning environment.
 - Used frontier AI models and data analysis tools to automate creation of lesson plans and assessment grading.
 
-#### 📈 Impact
+**📈 Impact**
 
 - Increased assessment scores by 200% across vocabulary, spoken fluency, and reading comprehension metrics.
 - Reduced behavioral issue rates by 90% through implementation of clear guidelines and engaging content.
@@ -83,23 +83,23 @@ Our school's value proposition was to bring life to the English curriculum and g
 </details>
 
 <details class="collapsible-panel work-case">
-<summary><h3>Case 3: Driving Political Advocacy & Membership Growth in Student Organization</h3></summary>
+<summary><strong>Case 3: Driving Political Advocacy & Membership Growth in Student Organization</strong></summary>
   {% capture case_3 %}
 **📅 Date:** Sept. 2019 - May 2022  
 **🏢 Organization:** Berkeley Organization for Animal Advocacy (BOAA)
 
-#### 🔍 Problem
+**🔍 Problem**
 
 BOAA's mission was to create political support for animal rights legislation on the Berkeley campus. The club had dwindling membership and lacked structured programs to engage new advocates effectively.
 
-#### 💡 Approach
+**💡 Approach**
 
 - Spearheaded recruitment strategies, growing membership from 5-10 to 40-50 active participants in three months.
 - Launched the BOAA intern program, introducing structured mentorship for new advocates.
 - Created Students for Animal Rights (StAR), connecting 80+ students across UC campuses for weekly advocacy discussions and coalesced around a campaign against Tyson Foods, gathering evidence on animal abuse in their facilities.
 - Built relationships with University of California stakeholders to gain additional funding for animal advocacy.
 
-#### 📈 Impact
+**📈 Impact**
 
 - Achieved 8x membership growth through structured engagement efforts.
 - Generated $30K in additional funding through strategic membership growth initiatives.
@@ -113,24 +113,24 @@ BOAA's mission was to create political support for animal rights legislation on 
 </details>
 
 <details class="collapsible-panel work-case">
-<summary><h3>Case 4: Led Publication of an Economics Paper on the Illegal Wildlife Trade</h3></summary>
+<summary><strong>Case 4: Led Publication of an Economics Paper on the Illegal Wildlife Trade</strong></summary>
   {% capture case_4 %}
 **📅 Date:** July 2020 - Jan. 2022
 
 **🏢 Organization:** UC Berkeley Agricultural & Resource Economics
 
-#### 🔍 Problem
+**🔍 Problem**
 
 Inspired by the global pandemic, this study used an economics lens to analyze the illegal wildlife trade. This industry has vast economic and ecological implications, but limited consolidated data analysis hindered effective policy decisions.
 
-#### 💡 Approach
+**💡 Approach**
 
 - Conducted an extensive literature review and wrote a 20-page paper with 150+ references.
 - Integrated feedback from senior economists and journal reviewers to refine insights.
 - Used Excel and Python to analyze data, visualizing economic trends in the wildlife trade.
 - Gathered all available data in the literature and consolidated it into one place, while networking with academic experts to enhance data sources and methodology.
 
-#### 📈 Impact
+**📈 Impact**
 
 - Published research to an _Annual Review of Resource Economics_ with two prize-winning Berkeley economics professors.
 - Provided policymakers with data-driven insights on wildlife trade regulations.
@@ -144,7 +144,7 @@ Inspired by the global pandemic, this study used an economics lens to analyze th
 ### Side Projects
 
 <details class="collapsible-panel work-case">
-<summary><h3>補習BAND Jazz Album</h3></summary>
+<summary><strong>補習BAND Jazz Album</strong></summary>
   {% capture project_band %}
 **📅 Date:** Jan 2023 - May 2023
 
@@ -158,7 +158,7 @@ Inspired by the global pandemic, this study used an economics lens to analyze th
 </details>
 
 <details class="collapsible-panel work-case">
-<summary><h3>www.rohanprasad.org</h3></summary>
+<summary><strong>www.rohanprasad.org</strong></summary>
   {% capture project_website %}
 **📅 Date:** 2019 - Present
 

@@ -348,14 +348,12 @@ pagination:
         {% assign sorted_years = all_years | sort | reverse %}
         <div class="archive-years">
           {% for y in sorted_years %}
-            {% if y >= '2019' and y <= '2025' %}
-              <a href="{{ '/blog/' | append: y | relative_url }}">
-                {{ y }}
-              </a>
-              {% unless forloop.last %}
-                &nbsp; &middot; &nbsp;
-              {% endunless %}
-            {% endif %}
+            <a href="{{ '/blog/' | append: y | relative_url }}">
+              {{ y }}
+            </a>
+            {% unless forloop.last %}
+              &nbsp; &middot; &nbsp;
+            {% endunless %}
           {% endfor %}
         </div>
         <p></p>
