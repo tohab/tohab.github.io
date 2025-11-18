@@ -53,7 +53,7 @@ pagination:
     position: relative;
   }
 
-  .post-hover-preview {
+  .post-list li .post-hover-preview {
     position: absolute;
     top: 0.15rem;
     left: calc(100% + 1rem);
@@ -70,7 +70,7 @@ pagination:
     pointer-events: none;
   }
 
-  .post-hover-preview__image {
+  .post-list li .post-hover-preview__image {
     width: 100%;
     height: 8rem;
     border-radius: 0.45rem;
@@ -78,7 +78,7 @@ pagination:
     margin-bottom: 0.55rem;
   }
 
-  .post-hover-preview__summary {
+  .post-list li .post-hover-preview__summary {
     font-size: 0.92rem;
     color: rgba(0, 0, 0, 0.72);
     margin: 0;
@@ -92,7 +92,7 @@ pagination:
   }
 
   @media (max-width: 991px) {
-    .post-hover-preview {
+    .post-list li .post-hover-preview {
       display: none;
     }
   }

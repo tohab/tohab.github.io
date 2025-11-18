@@ -48,7 +48,7 @@ If you already have local imagery:
 
 ### Link previews
 
-Open Graph and Schema.org metadata are enabled, so every blog post can surface a rich card when shared (and, if `blog_hover_preview.enabled` is true in `_config.yml`, the `/blog/` index shows a hover preview whenever a `preview_image` is present). Add a `preview_image` entry to a post’s front matter (pointing at an asset inside `assets/img/posts/<slug>/`) to publish a large Twitter/Open Graph image and hover card:
+Open Graph and Schema.org metadata are enabled, so every blog post can surface a rich card when shared (and, if `blog_hover_preview.enabled` is true in `_config.yml`, both the `/blog/` index and any in-article links to other posts display image/tool-tip previews whenever `preview_image` is present). Add a `preview_image` entry to a post’s front matter (pointing at an asset inside `assets/img/posts/<slug>/`) to publish a large Twitter/Open Graph image and hover card:
 
 ```yaml
 preview_image: /assets/img/posts/2023-10-penghu-islands/img01.png
@@ -63,6 +63,8 @@ blog_hover_preview:
   enabled: true          # flip to false to remove the flyouts entirely
   background: "#fef7f1"  # tweak to any hex color to better match your palette
 ```
+
+The toggle applies to both the `/blog/` list flyouts and the inline link previews that appear inside individual posts.
 
 ## User community
 

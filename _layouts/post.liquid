@@ -12,6 +12,46 @@ layout: default
   </style>
 {% endif %}
 
+{% if site.blog_hover_preview.enabled %}
+  {% assign hover_bg = site.blog_hover_preview.background | default: '#fef7f1' %}
+  <style>
+    .post-hover-preview--floating {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 20rem;
+      background: {{ hover_bg }};
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+      border-radius: 0.65rem;
+      padding: 0.75rem 0.9rem 0.9rem;
+      opacity: 0;
+      transform: translate3d(0, 8px, 0);
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      pointer-events: none;
+      z-index: 30;
+      display: none;
+    }
+    .post-hover-preview--floating.is-visible {
+      display: block;
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+    .post-hover-preview--floating .post-hover-preview__image {
+      width: 100%;
+      height: 8.5rem;
+      object-fit: cover;
+      border-radius: 0.45rem;
+      margin-bottom: 0.5rem;
+    }
+    .post-hover-preview--floating .post-hover-preview__summary {
+      margin: 0;
+      font-size: 0.92rem;
+      color: rgba(0, 0, 0, 0.72);
+    }
+  </style>
+{% endif %}
+
 {% assign url_beginning = page.url | slice: 0, 6 %}
 
 <div class="post">
@@ -88,5 +128,32 @@ layout: default
   {% endif %}
   {% if site.giscus and page.giscus_comments %}
     {% include giscus.liquid %}
+  {% endif %}
+
+  {% if site.blog_hover_preview.enabled %}
+    {% assign posts_for_preview = site.posts %}
+    <script>
+      window.__blogPreviewData = [
+        {% for preview_post in posts_for_preview %}
+          {% assign preview_image_path = '' %}
+          {% if preview_post.preview_image %}
+            {% assign preview_image_path = preview_post.preview_image | relative_url %}
+          {% elsif preview_post.thumbnail %}
+            {% assign preview_image_path = preview_post.thumbnail | relative_url %}
+          {% endif %}
+          {% assign hover_summary = preview_post.description %}
+          {% if hover_summary == nil or hover_summary == '' %}
+            {% assign hover_summary = preview_post.content | strip_html | replace: '&nbsp;', ' ' | strip | truncatewords: 36 %}
+          {% endif %}
+          {
+            "url": {{ preview_post.url | relative_url | jsonify }},
+            "title": {{ preview_post.title | jsonify }},
+            "summary": {{ hover_summary | jsonify }},
+            "image": {% if preview_image_path != '' %}{{ preview_image_path | jsonify }}{% else %}null{% endif %}
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ];
+    </script>
+    <script src="{{ '/assets/js/blog-hover-previews.js' | relative_url | bust_file_cache }}"></script>
   {% endif %}
 </div>
