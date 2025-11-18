@@ -53,11 +53,42 @@ _styles: |
   #resume-preview h3 {
     font-size: 1.1rem;
     margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.25rem;
+  }
+
+  #resume-preview h3 .resume-dates {
+    font-size: 1rem;
+    color: #8d3b1d;
+    font-weight: 600;
+  }
+
+  #resume-preview .resume-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.25rem;
+    font-style: italic;
+    color: #6b3415;
+    margin: 0.2rem 0 0.8rem;
+  }
+
+  #resume-preview .resume-meta strong {
+    font-style: normal;
+    color: #5e1c06;
+  }
+
+  #resume-preview .resume-meta .resume-location {
+    font-style: normal;
+    color: rgba(25, 10, 3, 0.75);
+    white-space: nowrap;
   }
 
   #resume-preview ul {
     padding-left: 1.1rem;
-    margin: 0;
+    margin: 0.4rem 0 0;
     color: #2f1d0c;
   }
 
@@ -96,34 +127,36 @@ _styles: |
 
 ## Education
 
-### University of California, Berkeley
+### University of California, Berkeley <span class="resume-dates">2018 &ndash; 2022</span>
 
-*Bachelor's Degree in Economics &middot; Graduated 2022*
-
-- GPA: 3.84
+**Bachelor's Degree in Economics** <span class="resume-location">Graduated with 3.84 GPA</span>
+{: .resume-meta}
 
 ## Work Experience
 
-### English Instructor
+### English Instructor <span class="resume-dates">2022 &ndash; 2024</span>
 
-*Schoolhouse Language Center &middot; Kaohsiung City, Taiwan &middot; 2022-2024*
+**Schoolhouse Language Center** <span class="resume-location">Kaohsiung City, Taiwan</span>
+{: .resume-meta}
 
 - Increased assessment scores by 200% across vocabulary, spoken fluency, and reading comprehension metrics.
 - Designed and taught 1000+ hours of interactive lessons, reducing behavioral issue rates by 90%.
 - Developed public speaking curriculum guiding students through their first formal presentations.
 - Consistently received top parent reviews and was voted favorite teacher by students.
 
-### Lead Researcher
+### Lead Researcher <span class="resume-dates">2020 &ndash; 2021</span>
 
-*UC Berkeley Agricultural & Resource Economics &middot; Berkeley, CA &middot; 2020-2021*
+**UC Berkeley Agricultural & Resource Economics** <span class="resume-location">Berkeley, CA</span>
+{: .resume-meta}
 
 - Co-authored a 20-page publication on the illegal wildlife trade, shepherding the project from concept to print.
 - Used Excel and Python to process market data and produce actionable insights and visualizations.
 - Conducted 15 expert interviews and curated 150+ academic sources to validate research conclusions.
 
-### Innovation Intern
+### Innovation Intern <span class="resume-dates">2021</span>
 
-*Beyond Meat &middot; Remote &middot; 2021*
+**Beyond Meat** <span class="resume-location">Remote</span>
+{: .resume-meta}
 
 - Launched a company-wide newsletter that reached 200+ R&D professionals with an 85% engagement rate.
 - Prepared market analysis reports that informed $10M+ in product development decisions.
@@ -131,17 +164,19 @@ _styles: |
 
 ## Entrepreneurial Experience
 
-### Co-founder & COO
+### Co-founder & COO <span class="resume-dates">2021 &ndash; Present</span>
 
-*Grassyouths Inc. &middot; Berkeley, CA &middot; 2021-Present*
+**Grassyouths Inc.** <span class="resume-location">Berkeley, CA</span>
+{: .resume-meta}
 
 - Secured and managed a $2M+ housing grant, optimizing allocations for community impact.
 - Created legal processes and selection criteria to scale applicant reviews from ~5 to 200+ candidates.
 - Implemented community management systems that cut maintenance costs by 30% and raised satisfaction.
 
-### Director of Organizational Strategy
+### Director of Organizational Strategy <span class="resume-dates">2019 &ndash; 2022</span>
 
-*Berkeley Organization for Animal Advocacy &middot; Berkeley, CA &middot; 2019-2022*
+**Berkeley Organization for Animal Advocacy** <span class="resume-location">Berkeley, CA</span>
+{: .resume-meta}
 
 - Expanded the organization by 400% through targeted recruitment and engagement programs.
 - Formed a coalition connecting 80+ advocates across five UC campuses.
