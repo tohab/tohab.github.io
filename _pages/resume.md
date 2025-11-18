@@ -44,14 +44,20 @@ _styles: |
   }
 
   #resume-preview h2 {
-    font-size: 1.35rem;
+    font-size: 1.15rem;
     margin: 1.5rem 0 0.75rem;
     padding-bottom: 0.25rem;
     border-bottom: 2px solid rgba(122, 36, 17, 0.25);
   }
 
+  #resume-preview .resume-major-title {
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
   #resume-preview h3 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -63,6 +69,7 @@ _styles: |
     font-size: 1rem;
     color: #8d3b1d;
     font-weight: 600;
+    white-space: nowrap;
   }
 
   #resume-preview .resume-meta {
@@ -104,6 +111,26 @@ _styles: |
     #resume-preview {
       padding: 2rem 1.4rem;
     }
+
+    #resume-preview h3 {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.35rem;
+    }
+
+    #resume-preview h3 .resume-dates {
+      align-self: flex-start;
+    }
+
+    #resume-preview .resume-meta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.15rem;
+    }
+
+    #resume-preview .resume-meta .resume-location {
+      white-space: normal;
+    }
   }
 
   @media print {
@@ -126,6 +153,7 @@ _styles: |
 📞 +1 (941) 280-7329 &nbsp;|&nbsp; [📧 rohan.prasad@berkeley.edu](mailto:rohan.prasad@berkeley.edu) &nbsp;|&nbsp; [LinkedIn: therohanprasad](https://linkedin.com/in/therohanprasad)
 
 ## Education
+{: .resume-major-title }
 
 ### University of California, Berkeley <span class="resume-dates">2018 &ndash; 2022</span>
 
@@ -133,6 +161,7 @@ _styles: |
 {: .resume-meta}
 
 ## Work Experience
+{: .resume-major-title }
 
 ### English Instructor <span class="resume-dates">2022 &ndash; 2024</span>
 
