@@ -6,10 +6,9 @@ published: true
 slug: 2020-06-big-bad-jeff-post-mortem
 tags:
 - technology
-- capitalism
+- economics
 - ethics
 - justice
-- animation
 title: Big Bad Jeff Post-mortem
 ---
 Exactly four weeks ago I released my animation *How to Change the World* about Rosa Parks... and today I finished rendering this baby shark parody, *Big Bad Jeff*.  

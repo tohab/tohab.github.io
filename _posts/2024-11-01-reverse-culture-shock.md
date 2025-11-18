@@ -6,7 +6,7 @@ published: true
 slug: 2024-11-reverse-culture-shock
 tags:
 - travel
-- america
+- identity
 title: Reverse Culture Shock
 ---
 It's been a long long time since I got to a blog post, so let's go ahead and do it!  

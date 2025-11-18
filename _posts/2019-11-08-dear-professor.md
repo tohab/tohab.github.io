@@ -5,12 +5,10 @@ layout: post
 published: true
 slug: 2020-05-dear-professor
 tags:
-- capitalism
+- economics
 - ethics
 - justice
-- economics
 - social change
-- inequality
 title: Dear Professor
 ---
 *This is a letter I wrote to my economics professor about what

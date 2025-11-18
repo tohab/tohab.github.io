@@ -8,7 +8,7 @@ tags:
 - social change
 - politics
 - justice
-- inequality
+- economics
 title: Whitey's off to space
 ---
 Maybe you've heard this poem before: *Whitey On the Moon.*   

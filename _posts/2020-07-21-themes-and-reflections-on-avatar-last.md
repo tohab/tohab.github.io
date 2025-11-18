@@ -9,7 +9,6 @@ tags:
 - philosophy
 - ethics
 - justice
-- animation
 - family
 title: Themes and reflections on Avatar -- The Last Airbender
 ---

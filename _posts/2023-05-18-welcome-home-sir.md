@@ -7,7 +7,6 @@ slug: 2023-05-welcome-home-sir
 tags:
 - identity
 - travel
-- america
 title: Welcome home, sir
 ---
 Whenever I went to the US growing up, the border control officer would take my passport, look at my pre-pubescent face, and solemnly say, "welcome home, sir." I'd struggle to hold back a smirk.

@@ -1296,14 +1296,18 @@ swiper-container {
 // Ninja Keys
 // for more options, check https://github.com/ssleptsov/ninja-keys?tab=readme-ov-file#css-variables
 ninja-keys {
+  --ninja-width: 500px;
+  --ninja-font-size: 18.7px;
   --ninja-accent-color: var(--global-theme-color);
   --ninja-icon-size: 0px;
   --ninja-modal-background: var(--global-bg-color);
+  --ninja-text-color: var(--global-text-color);
   --ninja-selected-background: #f3c28a;
   --ninja-selected-text-color: var(--global-text-color);
   --ninja-secondary-background-color: #f3c28a;
   --ninja-secondary-text-color: var(--global-text-color);
   --ninja-footer-background: rgba(243, 194, 138, 0.58);
+  --ninja-placeholder-color: var(--global-text-color);
   --ninja-font-family: "Times New Roman", Times, serif;
   --ninja-z-index: 1031;
 }

@@ -6,7 +6,7 @@ published: true
 slug: 2020-06-a-rant-about-salesforce
 tags:
 - technology
-- capitalism
+- economics
 - ethics
 title: A rant about Salesforce
 ---

@@ -9,7 +9,7 @@ tags:
 - social change
 - ai
 - technology
-- capitalism
+- economics
 - politics
 - china
 title: Amodei is off his rocker

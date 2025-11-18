@@ -5,7 +5,6 @@ layout: post
 published: true
 slug: 2025-10-celebrating-100-posts
 tags:
-- blogging
 - writing
 - creativity
 - update

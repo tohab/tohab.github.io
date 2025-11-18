@@ -5,9 +5,8 @@ layout: post
 published: true
 slug: 2023-05-willy-nilly-blogging
 tags:
-- blogging
-- creativity
 - writing
+- creativity
 title: Willy Nilly Blogging
 ---
 I was talking to my friend Andrew today and he said he likes my habit of "willy nilly" blogging. That is, not thinking too hard about something before publishing and sharing it with the world.  

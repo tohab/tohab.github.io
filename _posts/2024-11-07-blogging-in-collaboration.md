@@ -5,10 +5,9 @@ layout: post
 published: true
 slug: 2024-11-blogging-in-collaboration
 tags:
-- blogging
+- writing
 - ai
 - technology
-- writing
 title: blogging in collaboration
 ---
 I want to say that I don't write blog posts with AI. I say that, while also thinking that there may be good reasons to. And I may try it in the future. Here are some points for using AI and counter-point, too.  

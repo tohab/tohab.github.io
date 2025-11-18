@@ -7,7 +7,7 @@ slug: 2025-04-job-searching-best-practices
 tags:
 - work
 - technology
-- capitalism
+- economics
 title: Job searching -- What I learned
 ---
 *This post is about best practices and what I learned job searching. For a more reflective, experiential perspective, see my other post, "The Abyss of Job Searching."*

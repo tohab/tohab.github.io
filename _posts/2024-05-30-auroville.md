@@ -8,7 +8,7 @@ tags:
 - travel
 - india
 - community
-- capitalism
+- economics
 - social change
 title: Auroville
 ---

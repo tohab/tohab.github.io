@@ -8,7 +8,7 @@ tags:
 - politics
 - justice
 - social change
-- inequality
+- economics
 title: Wealth-based affirmative action?
 ---
 I can understand why many lefties are in a huff about affirmative action. Affirmative action policies are meant to be anti-racist, and maybe reverse residual effects of racist American policies of the past and general prejudice of society at large. Plus, universities like having multicolored recruitment posters.   

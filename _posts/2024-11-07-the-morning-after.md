@@ -6,7 +6,7 @@ published: true
 slug: 2024-11-the-morning-after
 tags:
 - politics
-- america
+- identity
 - social change
 title: the morning after
 ---

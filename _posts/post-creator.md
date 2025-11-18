@@ -2,12 +2,8 @@
 ### User-discussion: Suggest tags you think are applicable for the post from this list. Also, list any explicit grammar/spelling mistakes you spot and ask if they should be change. 
 activism
 ai
-america
 animal-rights
-animation
 assorted
-blogging
-capitalism
 china
 community
 creativity
@@ -20,7 +16,6 @@ grief
 health
 identity
 india
-inequality
 justice
 language-learning
 music
