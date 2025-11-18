@@ -24,7 +24,7 @@ social: false # includes social icons at the bottom of the page
 
 For fun, I love to write on this blog, bike, run, play the alto saxophone and strum acoustic guitar. 
 
-**On this site** you can find my blog, which I've been writing since 2019. There's also a portfolio of projects I've led throughout my career.
+**On this site.** I've been writing publicly since 2019 on my blog. I also have a jazz album, and a work portfolio.
 
 *Email me at first dot last at berkeley dot edu.*
 
