@@ -1,525 +1,167 @@
-# al-folio
+# Rohan Prasad — Website Ops Guide
 
-<div align="center">
+This fork of the **al-folio** theme powers [tohab.github.io](https://tohab.github.io), where Rohan publishes essays, artwork, music, and project notes. The upstream README that described the generic theme was removed in favor of this document so future Codex iterations (and human collaborators) can land quickly. Everything below reflects how the site is actually wired today.
 
-[![Preview](readme_preview/al-folio-preview.png)](https://alshedivat.github.io/al-folio/)
+## Stack at a Glance
 
-**A simple, clean, and responsive [Jekyll](https://jekyllrb.com/) theme for academics.**
+- Static site built with **Jekyll** (Ruby 3.1.4, GitHub Pages compatible).
+- Theme: [alshedivat/al-folio](https://github.com/alshedivat/al-folio) with custom pages in `_pages/` and many bespoke posts.
+- Tooling: Bundler, Node (for Prettier and PurgeCSS), Python 3 for helper scripts, ImageMagick for asset processing, and Docker Compose for an optional containerized dev loop.
+- Deployment: GitHub Actions workflow `.github/workflows/deploy.yml` builds on every push to `main` and publishes to GitHub Pages (`gh-pages`).
 
----
+## Getting Started
 
-[![deploy](https://github.com/alshedivat/al-folio/actions/workflows/deploy.yml/badge.svg)](https://github.com/alshedivat/al-folio/actions/workflows/deploy.yml)
-[![Maintainers](https://img.shields.io/badge/maintainers-4-success.svg)](#maintainers)
-[![GitHub contributors](https://img.shields.io/github/contributors/alshedivat/al-folio.svg)](https://github.com/alshedivat/al-folio/graphs/contributors/)
-[![Docker Image Version](https://img.shields.io/docker/v/amirpourmand/al-folio?sort=semver&label=docker%20image&color=blueviolet)](https://hub.docker.com/r/amirpourmand/al-folio)
-[![Docker Image Size](https://img.shields.io/docker/image-size/amirpourmand/al-folio?sort=date&label=docker%20image%20size&color=blueviolet)](https://hub.docker.com/r/amirpourmand/al-folio)
-[![Docker Pulls](https://img.shields.io/docker/pulls/amirpourmand/al-folio?color=blueviolet)](https://hub.docker.com/r/amirpourmand/al-folio)
+### Prerequisites
 
-[![GitHub release](https://img.shields.io/github/v/release/alshedivat/al-folio)](https://github.com/alshedivat/al-folio/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/alshedivat/al-folio?color=blue)](https://github.com/alshedivat/al-folio/blob/main/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/alshedivat/al-folio)](https://github.com/alshedivat/al-folio)
-[![GitHub forks](https://img.shields.io/github/forks/alshedivat/al-folio)](https://github.com/alshedivat/al-folio/fork)
+| Tool | Why | Notes |
+| ---- | --- | ----- |
+| Ruby 3.1.4 + Bundler 2.x | Run Jekyll locally | `.ruby-version` pins 3.1.4. Install via `rbenv`, `asdf`, or system package manager. |
+| Node.js 18+ & npm | PurgeCSS (manual deploy) + Prettier | Run `npm install` once to install dependencies in `package.json`. |
+| Python 3.10+ | Repo scripts (`scripts/*.py`) | Install packages with `python3 -m pip install -r requirements.txt` and `pip install pillow pyyaml` (needed for the image and stats scripts). |
+| ImageMagick (`convert`) | Downscale & optimize artwork | Homebrew: `brew install imagemagick`; Debian/Ubuntu: `sudo apt install imagemagick`. |
+| Optional: Docker | Run `docker compose up` for a self-contained dev server | Uses the provided `Dockerfile` and `docker-compose.yml`. |
 
-</div>
+### Initial setup
 
-## Local image workflow
+```bash
+git clone git@github.com:tohab/tohab.github.io.git
+cd tohab.github.io
+gem install bundler
+bundle install
+npm install
+python3 -m pip install -r requirements.txt pillow pyyaml
+```
 
-This fork keeps per-post artwork under `assets/img/posts/<slug>/` so referencing images while writing Markdown is predictable: drop `![](/assets/img/posts/<post-slug>/img01.png)`\* straight into the post and Jekyll will copy the file during the build. Original, high-resolution photos are preserved in `assets/img/raw/<slug>/`, which is gitignored so the repository only tracks the optimized PNGs.
+### Running the site locally
 
-### Converting remote placeholders
+The standard dev loop is:
 
-When drafting, it is fine to paste remote links directly into Markdown. Once you are ready to publish:
+```bash
+bundle exec jekyll serve --livereload --incremental
+```
 
-1. Run `python3 scripts/localize_images.py _posts/2023-10-04-penghu-islands.md` (or omit the file path to scan all posts). The script downloads every remote image it finds, stores an untouched copy under `assets/img/raw/<slug>/`, converts it to a resized PNG via ImageMagick’s `convert`, and rewrites the Markdown to point at `/assets/img/posts/<slug>/imgNN.png`.
-2. Commit the new PNGs in `assets/img/posts/<slug>/`. The raw files remain on disk for safekeeping but stay out of Git because `assets/img/raw/` is ignored.
-3. Rerun the script whenever you change a post or add new remote photos. Use `--force` to redownload/reconvert or `--dry-run` to preview changes.
+- Visit `http://127.0.0.1:4000`.
+- Livereload watches `_pages`, `_posts`, `_sass`, `_layouts`, `_includes`, `_data`, and most assets. Restart the server if you touch `_config.yml` or `_plugins`.
+- Stop with `Ctrl+C`. If you see stale layouts, run `bundle exec jekyll clean` before restarting.
 
-Dependencies: Python 3 with PyYAML (already in `requirements.txt`) and ImageMagick (`convert` must be available on your `$PATH`). Network access is only needed while the script downloads remote files.
+**Docker option:** `docker compose up` mirrors the command above inside a container. Edit files locally; Docker handles Ruby deps.
 
-### Adding photos directly
+## Repository Layout (What You Actually Need)
 
-If you already have local imagery:
+| Path | Purpose |
+| ---- | ------- |
+| `_config.yml` | Single source of truth for metadata, navigation labels, permalink format (`/blog/:year/:title/`), hover previews, analytics toggles, etc. |
+| `_pages/` | Top-level pages (home, resume, art, work, etc.). Each file declares a `permalink` to control routing. |
+| `_posts/` | Blog posts in `YYYY-MM-DD-title.md` format. Individual front matter (`slug`, `preview_image`, `tags`, `description`) drives indexes, hover cards, and image folders. |
+| `_projects/`, `_news/`, `_bibliography/` | Extra collections that render on dedicated layouts. |
+| `_generated/tag` & `_generated/year` | Archive landing pages generated by `bin/sync_archives.rb`. Do not edit by hand. |
+| `_data/` | YAML data for CV sections, repos, and venues. |
+| `_sass/`, `_layouts/`, `_includes/` | Theme customizations. `_sass/_layout.scss` currently defines page scaffolding. |
+| `assets/img/posts/<slug>/` | Optimized PNGs that ship with the site. Each post owns a folder named after its `slug`. |
+| `assets/img/raw/<slug>/` | Gitignored source imagery (keeps high-res originals without bloating Git history). |
+| `scripts/` | Custom automation (`localize_images.py`, `generate_blog_stats.py`). |
+| `bin/` | Operational helpers (`cibuild`, `deploy`, `sync_archives.rb`). |
+| `docs/`, `FAQ.md`, `INSTALL.md`, `CUSTOMIZE.md` | Upstream al-folio references for deeper theme tweaks. |
 
-- Drop the master copy into `assets/img/raw/<slug>/your-name.ext` for safekeeping.
-- Create the publishable PNG (e.g., `convert assets/img/raw/<slug>/your-name.ext -resize 1800x1800\> -strip assets/img/posts/<slug>/your-name.png`).
-- Reference it from Markdown: `![](/assets/img/posts/<slug>/your-name.png)`.
+## Content Workflow
 
-\*Use the `slug` from the post front matter so the folders stay consistent with the automation.
+### Posts
 
-### Link previews
-
-Open Graph and Schema.org metadata are enabled, so every blog post can surface a rich card when shared (and, if `blog_hover_preview.enabled` is true in `_config.yml`, both the `/blog/` index and any in-article links to other posts display image/tool-tip previews whenever `preview_image` is present). Add a `preview_image` entry to a post’s front matter (pointing at an asset inside `assets/img/posts/<slug>/`) to publish a large Twitter/Open Graph image and hover card:
+1. Create `_posts/YYYY-MM-DD-my-title.md`.
+2. Add front matter like:
 
 ```yaml
-preview_image: /assets/img/posts/2023-10-penghu-islands/img01.png
+---
+layout: post
+title: rain, rain come again
+date: 2025-10-13
+slug: 2025-10-rain-rain-come-again   # used for asset folders
+tags: [nature, reflection]
+preview_image: /assets/img/posts/2025-10-rain-rain-come-again/img01.png
+description: Short summary that shows up on cards and metadata.
+---
 ```
 
-If `preview_image` (or a custom `og_image`) is missing, the metadata omits the `og:image` tags entirely so the share falls back to text-only cards—no site-wide default banner is injected.
+- `slug` must match the folder under `assets/img/posts/` (automation depends on this).
+- `preview_image` populates Open Graph + blog hover cards (if you flip `blog_hover_preview.enabled` in `_config.yml`).
+- `published: false` keeps drafts out of production while still allowing local preview.
+- Tags feed both inline metadata and the generated archive pages.
 
-The hover preview styling is configurable via `_config.yml`:
+### Pages, Resume, and Collections
 
-```yaml
-blog_hover_preview:
-  enabled: true          # flip to false to remove the flyouts entirely
-  background: "#fef7f1"  # tweak to any hex color to better match your palette
+- `_pages/*.md` drive navigation. The front matter `permalink` decides the URL (`permalink: /about/`, `permalink: /blog/`, etc.).
+- `_pages/blog.md` lists posts and surfaces inline preview cards; `_pages/work.md`, `_pages/art.md`, etc. each call into layouts under `_layouts/`.
+- `_projects` and `_news` behave like mini-blogs using their own layouts; drop Markdown files with the relevant metadata.
+- `_bibliography` + `_bibliography/references.bib` (if present) work with `jekyll-scholar` should you need publications.
+- `_data/cv.yml`, `_data/coauthors.yml`, `_data/repositories.yml`, and `_data/venues.yml` feed the resume and publication components.
+
+## Image & Media Pipeline
+
+Central rule: every published post keeps artwork in `/assets/img/posts/<slug>/`. Two methods exist to get there.
+
+### Localizing remote placeholders
+
+While drafting it is fine to paste remote images. Before publishing, run:
+
+```bash
+python3 scripts/localize_images.py _posts/2025-10-13-rain-rain-come-again.md
+# or omit the argument to scan all posts
 ```
 
-The toggle applies to both the `/blog/` list flyouts and the inline link previews that appear inside individual posts.
-
-## User community
-
-The vibrant community of **al-folio** users is growing!
-Academics around the world use this theme for their homepages, blogs, lab pages, as well as webpages for courses, workshops, conferences, meetups, and more.
-Check out the community webpages below.
-Feel free to add your own page(s) by sending a PR.
-
-<table>
-<tr>
-<td>Academics</td>
-<td>
-<a href="https://martinbulla.github.io" target="_blank">★</a>
-<a href="https://maruan.alshedivat.com" target="_blank">★</a>
-<a href="https://www.cs.columbia.edu/~chen1ru/" target="_blank">★</a>
-<a href="https://maithraraghu.com" target="_blank">★</a>
-<a href="https://platanios.org" target="_blank">★</a>
-<a href="https://otiliastr.github.io" target="_blank">★</a>
-<a href="https://www.maths.dur.ac.uk/~sxwc62/" target="_blank">★</a>
-<a href="https://jessachandler.com/" target="_blank">★</a>
-<a href="https://mayankm96.github.io/" target="_blank">★</a>
-<a href="https://markdean.info/" target="_blank">★</a>
-<a href="https://kakodkar.github.io/" target="_blank">★</a>
-<a href="https://sahirbhatnagar.com/" target="_blank">★</a>
-<a href="https://spd.gr/" target="_blank">★</a>
-<a href="https://jay-sarkar.github.io/" target="_blank">★</a>
-<a href="https://aborowska.github.io/" target="_blank">★</a>
-<a href="https://aditisgh.github.io/" target="_blank">★</a>
-<a href="https://alexhaydock.co.uk/" target="_blank">★</a>
-<a href="https://alixkeener.net/" target="_blank">★</a>
-<a href="https://andreea7b.github.io/" target="_blank">★</a>
-<a href="https://rishabhjoshi.github.io/" target="_blank">★</a>
-<a href="https://sheelabhadra.github.io/" target="_blank">★</a>
-<a href="https://giograno.me/" target="_blank">★</a>
-<a href="https://immsrini.github.io/" target="_blank">★</a>
-<a href="https://apooladian.github.io/" target="_blank">★</a>
-<a href="https://chinmoy-dutta.github.io/" target="_blank">★</a>
-<a href="https://liamcli.com/" target="_blank">★</a>
-<a href="https://yoonholee.com/" target="_blank">★</a>
-<a href="https://zrqiao.github.io/" target="_blank">★</a>
-<a href="https://abstractgeek.github.io/" target="_blank">★</a>
-<a href="https://www.compphys.de/" target="_blank">★</a>
-<a href="https://julianstreyczek.github.io" target="_blank">★</a>
-<a href="https://sdaza.com" target="_blank">★</a>
-<a href="https://niweera.gq" target="_blank">★</a>
-<a href="https://www.alihkw.com" target="_blank">★</a>
-<a href="https://amirpourmand.ir" target="_blank">★</a>
-<a href="https://scottleechua.github.io" target="_blank">★</a>
-<a href="https://sk1y101.github.io" target="_blank">★</a>
-<a href="https://yyang768osu.github.io" target="_blank">★</a>
-<a href="https://veedata.github.io" target="_blank">★</a>
-<a href="https://K-Wu.github.io" target="_blank">★</a>
-<a href="https://amalawilson.com" target="_blank">★</a>
-<a href="https://tirtharajdash.github.io" target="_blank">★</a>
-<a href="https://carolinacarreira.github.io" target="_blank">★</a>
-<a href="https://manandey.github.io" target="_blank">★</a>
-<a href="https://johanneshoerner.github.io" target="_blank">★</a>
-<a href="https://ioannismavromatis.com" target="_blank">★</a>
-<a href="https://taidnguyen.github.io" target="_blank">★</a>
-<a href="https://lbugnon.github.io" target="_blank">★</a>
-<a href="https://joahannes.github.io" target="_blank">★</a>
-<a href="https://dominikstrb.github.io" target="_blank">★</a>
-<a href="https://tylerbarna.com" target="_blank">★</a>
-<a href="https://daviddmc.github.io/" target="_blank">★</a>
-<a href="https://andreaskuster.ch/" target="_blank">★</a>
-<a href="https://ellisbrown.github.io/" target="_blank">★</a>
-<a href="https://noman-bashir.github.io/" target="_blank">★</a>
-<a href="https://djherron.github.io/" target="_blank">★</a>
-<a href="https://rodosingh.github.io/" target="_blank">★</a>
-<a href="https://vdivakar.github.io/" target="_blank">★</a>
-<a href="https://george-gca.github.io/" target="_blank">★</a>
-<a href="https://bashirkazimi.github.io/" target="_blank">★</a>
-<a href="https://dohaison.github.io/" target="_blank">★</a>
-<a href="https://raphaaal.github.io/" target="_blank">★</a>
-<a href="https://varuniyer.info/" target="_blank">★</a>
-<a href="https://yukimasano.github.io/" target="_blank">★</a>
-<a href="https://hashe037.github.io/" target="_blank">★</a>
-<a href="https://wang-boyu.github.io/" target="_blank">★</a>
-<a href="https://qingqingchen.info" target="_blank">★</a>
-<a href="https://bajinsheng.github.io/" target="_blank">★</a>
-<a href="https://www.silviofanzon.com/" target="_blank">★</a>
-<a href="https://kaikaiyao.github.io/" target="_blank">★</a>
-<a href="https://alchemz.github.io/" target="_blank">★</a>
-<a href="https://samadamday.com/" target="_blank">★</a>
-<a href="https://fanpu.io/" target="_blank">★</a>
-<a href="https://abigalekim.github.io/" target="_blank">★</a>
-<a href="https://lucasresck.github.io/" target="_blank">★</a>
-<a href="https://users.wpi.edu/~lfichera/" target="_blank">★</a>
-<a href="https://anmspro.github.io/" target="_blank">★</a>
-<a href="https://berlyne.net/" target="_blank">★</a>
-<a href="https://filippomazzoli.github.io/" target="_blank">★</a>
-<a href="https://www.escontrela.me/" target="_blank">★</a>
-<a href="https://raffaem.github.io/" target="_blank">★</a>
-<a href="https://cbueth.de/" target="_blank">★</a>
-<a href="https://kyleaoman.github.io/" target="_blank">★</a>
-<a href="https://decwest.github.io/" target="_blank">★</a>
-<a href="https://www.jedburkat.com" target="_blank">★</a>
-<a href="https://hrzhang.me" target="_blank">★</a>
-<a href="https://kudhru.github.io/" target="_blank">★</a>
-<a href="https://mbarbetti.github.io/" target="_blank">★</a>
-<a href="https://www.zhivotenko.com/" target="_blank">★</a>
-<a href="https://giordanodaloisio.github.io/" target="_blank">★</a>
-<a href="https://aadityaura.github.io/" target="_blank">★</a>
-<a href="https://abhinav-mehta.github.io/" target="_blank">★</a>
-<a href="https://shubhashisroydipta.com/" target="_blank">★</a>
-<a href="https://astanziola.github.io" target="_blank">★</a>
-<a href="https://tinkerer.in" target="_blank">★</a>
-<a href="https://sam-bieberich.github.io/" target="_blank">★</a>
-<a href="https://afraniomelo.github.io/en/" target="_blank">★</a>
-<a href="https://jonaruthardt.github.io" target="_blank">★</a>
-<a href="https://www.zla.app/" target="_blank">★</a>
-<a href="https://stavros.github.io" target="_blank">★</a>
-<a href="https://ericslyman.com" target="_blank">★</a>
-<a href="https://ztjona.github.io/" target="_blank">★</a>
-<a href="https://chrischoi314.github.io" target="_blank">★</a>
-<a href="https://riccobelli.faculty.polimi.it" target="_blank">★</a>
-<a href="https://kishanved.tech/" target="_blank">★</a>
-<a href="https://abhilesh.github.io/" target="_blank">★</a>
-<a href="https://jackjburnett.github.io/" target="_blank">★</a>
-<a href="https://physics-morris.github.io/" target="_blank">★</a>
-<a href="https://sraf.ir" target="_blank">★</a>
-<a href="https://acad.garywei.dev/" target="_blank">★</a>
-<a href="https://tonideleo.github.io/" target="_blank">★</a>
-<a href="https://alonkellner.com/" target="_blank">★</a>
-<a href="https://berylbir.github.io/" target="_blank">★</a>
-<a href="https://thefermi0n.github.io/" target="_blank">★</a>
-<a href="https://mingsun-kaust.github.io/" target="_blank">★</a>
-<a href="https://hdocmsu.github.io/" target="_blank">★</a>
-<a href="https://trandangtrungduc.github.io/" target="_blank">★</a>
-<a href="https://kinghowler.github.io/" target="_blank">★</a>
-<a href="https://anurye.github.io/" target="_blank">★</a>
-<a href="https://charlie-xiao.github.io/" target="_blank">★</a>
-<a href="https://giuseppeperelli.github.io/" target="_blank">★</a>
-<a href="https://shlee-lab.github.io/" target="_blank">★</a>
-<a href="https://devos50.github.io/" target="_blank">★</a>
-<a href="https://kocikowski.com/" target="_blank">★</a>
-<a href="https://vmooers.github.io/" target="_blank">★</a>
-<a href="https://jpfonseca.github.io/" target="_blank">★</a>
-<a href="https://dmitryryumin.github.io/" target="_blank">★</a>
-</td>
-</tr>
-<tr>
-<td>Labs</td>
-<td>
-<a href="https://www.haylab.caltech.edu/" target="_blank">★</a>
-<a href="https://sjkimlab.github.io/" target="_blank">★</a>
-<a href="https://systemconsultantgroup.github.io/scg-folio/" target="_blank">★</a>
-<a href="https://decisionlab.ucsf.edu/" target="_blank">★</a>
-<a href="https://programming-group.com/" target="_blank">★</a>
-<a href="https://sailing-lab.github.io/" target="_blank">★</a>
-<a href="https://inbt.jhu.edu/epidiagnostics/" target="_blank">★</a>
-<a href="https://www.nuesl.org/" target="_blank">★</a>
-<a href="https://big-culture.github.io/" target="_blank">★</a>
-</td>
-</tr>
-<tr>
-<td>Courses</td>
-<td>
-CMU PGM (<a href="https://sailinglab.github.io/pgm-spring-2019/" target="_blank">S-19</a>) <br>
-CMU DeepRL (<a href="https://cmudeeprl.github.io/403_website/" target="_blank">S-21</a>, <a href="https://cmudeeprl.github.io/703website_f21/" target="_blank">F-21</a>, <a href="https://cmudeeprl.github.io/403website_s22/" target="_blank">S-22</a>, <a href="https://cmudeeprl.github.io/703website_f22/" target="_blank">F-22</a>, <a href="https://cmudeeprl.github.io/403website_s23/" target="_blank">S-23</a>, <a href="https://cmudeeprl.github.io/703website_f23/" target="_blank">F-23</a>) <br>
-CMU MMML (<a href="https://cmu-multicomp-lab.github.io/mmml-course/fall2020/" target="_blank">F-20</a>, <a href="https://cmu-multicomp-lab.github.io/mmml-course/fall2022/" target="_blank">F-22</a>) <br>
-CMU AMMML (<a href="https://cmu-multicomp-lab.github.io/adv-mmml-course/spring2022/" target="_blank">S-22</a>, <a href="https://cmu-multicomp-lab.github.io/adv-mmml-course/spring2023/" target="_blank">S-23</a>) <br>
-CMU ASI (<a href="https://cmu-multicomp-lab.github.io/asi-course/spring2023/" target="_blank">S-23</a>) <br>
-CMU Distributed Systems (<a href="https://andrew.cmu.edu/course/15-440/" target="_blank">S-24</a>)
-</td>
-</tr>
-<tr>
-<td>Conferences & workshops</td>
-<td>
-ICLR Blog Post Track (<a href="https://iclr-blogposts.github.io/2023/" target="_blank">2023</a>, <a href="https://iclr-blogposts.github.io/2024/about" target="_blank">2024</a>) <br>
-ML Retrospectives (NeurIPS: <a href="https://ml-retrospectives.github.io/neurips2019/" target="_blank">2019</a>, <a href="https://ml-retrospectives.github.io/neurips2020/" target="_blank">2020</a>; ICML: <a href="https://ml-retrospectives.github.io/icml2020/" target="_blank">2020</a>) <br>
-HAMLETS (NeurIPS: <a href="https://hamlets-workshop.github.io/" target="_blank">2020</a>) <br>
-ICBINB (NeurIPS: <a href="https://i-cant-believe-its-not-better.github.io/" target="_blank">2020</a>, <a href="https://i-cant-believe-its-not-better.github.io/neurips2021/" target="_blank">2021</a>) <br>
-Neural Compression (ICLR: <a href="https://neuralcompression.github.io/" target="_blank">2021</a>) <br>
-Score Based Methods (NeurIPS: <a href="https://score-based-methods-workshop.github.io/" target="_blank">2022</a>)<br>
-Images2Symbols (CogSci: <a href="https://images2symbols.github.io/" target="_blank"> 2022</a>) <br>
-Medical Robotics Junior Faculty Forum (ISMR: <a href="https://junior-forum-ismr.github.io/" target="_blank"> 2023</a>)<br>
-Beyond Vision: Physics meets AI (ICIAP: <a href="https://physicsmeetsai.github.io/beyond-vision/" target="_blank">2023</a>) <br>
-Workshop on Diffusion Models (NeurIPS: <a href="https://diffusionworkshop.github.io/" target="_blank">2023</a>) <br>
-Workshop on Structured Probabilistic Inference & Generative Modeling (ICML: <a href="https://spigmworkshop.github.io/" target="_blank">2023</a>, <a href="https://spigmworkshop2024.github.io/" target="_blank">2024</a>)
-</td>
-</tr>
-</table>
-
-## Lighthouse PageSpeed Insights
-
-### Desktop
-
-[![Google Lighthouse PageSpeed Insights](lighthouse_results/desktop/pagespeed.svg)](https://htmlpreview.github.io/?https://github.com/alshedivat/al-folio/blob/main/lighthouse_results/desktop/alshedivat_github_io_al_folio_.html)
-
-Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.web.dev/report?url=https%3A%2F%2Falshedivat.github.io%2Fal-folio%2F&form_factor=desktop)
-
-### Mobile
-
-[![Google Lighthouse PageSpeed Insights](lighthouse_results/mobile/pagespeed.svg)](https://htmlpreview.github.io/?https://github.com/alshedivat/al-folio/blob/main/lighthouse_results/mobile/alshedivat_github_io_al_folio_.html)
-
-Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.web.dev/report?url=https%3A%2F%2Falshedivat.github.io%2Fal-folio%2F&form_factor=mobile)
-
-## Table Of Contents
-
-- [al-folio](#al-folio)
-  - [User community](#user-community)
-  - [Lighthouse PageSpeed Insights](#lighthouse-pagespeed-insights)
-    - [Desktop](#desktop)
-    - [Mobile](#mobile)
-  - [Table Of Contents](#table-of-contents)
-  - [Getting started](#getting-started)
-  - [Installing and Deploying](#installing-and-deploying)
-  - [Customizing](#customizing)
-  - [Features](#features)
-    - [Light/Dark Mode](#lightdark-mode)
-    - [CV](#cv)
-    - [People](#people)
-    - [Publications](#publications)
-    - [Collections](#collections)
-    - [Layouts](#layouts)
-      - [The iconic style of Distill](#the-iconic-style-of-distill)
-      - [Full support for math \& code](#full-support-for-math--code)
-      - [Photos, Audio, Video and more](#photos-audio-video-and-more)
-    - [Other features](#other-features)
-      - [GitHub's repositories and user stats](#githubs-repositories-and-user-stats)
-      - [Theming](#theming)
-      - [Social media previews](#social-media-previews)
-      - [Atom (RSS-like) Feed](#atom-rss-like-feed)
-      - [Related posts](#related-posts)
-      - [Code quality checks](#code-quality-checks)
-  - [FAQ](#faq)
-  - [Contributing](#contributing)
-    - [Maintainers](#maintainers)
-    - [All Contributors](#all-contributors)
-  - [Star History](#star-history)
-  - [License](#license)
-
-## Getting started
-
-Want to learn more about Jekyll? Check out [this tutorial](https://www.taniarascia.com/make-a-static-website-with-jekyll/). Why Jekyll? Read [Andrej Karpathy's blog post](https://karpathy.github.io/2014/07/01/switching-to-jekyll/)! Why write a blog? Read [Rachel Thomas blog post](https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045).
-
-## Installing and Deploying
-
-For installation and deployment details please refer to [INSTALL.md](INSTALL.md).
-
-## Customizing
-
-For customization details please refer to [CUSTOMIZE.md](CUSTOMIZE.md).
-
-## Features
-
-### Light/Dark Mode
-
-This template has a built-in light/dark mode. It detects the user preferred color scheme and automatically switches to it. You can also manually switch between light and dark mode by clicking on the sun/moon icon in the top right corner of the page.
-
-<p align="center">
-<img src="readme_preview/light.png" width=400>
-<img src="readme_preview/dark.png" width=400>
-</p>
-
----
-
-### CV
-
-There are currently 2 different ways of generating the CV page content. The first one is by using a json file located in [assets/json/resume.json](assets/json/resume.json). It is a [known standard](https://jsonresume.org/) for creating a CV programmatically. The second one, currently used as a fallback when the json file is not found, is by using a yml file located in [\_data/cv.yml](_data/cv.yml). This was the original way of creating the CV page content and since it is more human readable than a json file we decided to keep it as an option.
-
-What this means is, if there is no resume data defined in [\_config.yml](_config.yml) and loaded via a json file, it will load the contents of [\_data/cv.yml](_data/cv.yml) as fallback.
-
-[![CV Preview](readme_preview/cv.png)](https://alshedivat.github.io/al-folio/cv/)
-
----
-
-### People
-
-You can create a people page if you want to feature more than one person. Each person can have its own short bio, profile picture, and you can also set if every person will appear at the same or opposite sides.
-
-[![People Preview](readme_preview/people.png)](https://alshedivat.github.io/al-folio/people/)
-
----
-
-### Publications
-
-Your publications' page is generated automatically from your BibTex bibliography. Simply edit [\_bibliography/papers.bib](_bibliography/papers.bib). You can also add new `*.bib` files and customize the look of your publications however you like by editing [\_pages/publications.md](_pages/publications.md). By default, the publications will be sorted by year and the most recent will be displayed first. You can change this behavior and more in the `Jekyll Scholar` section in [\_config.yml](_config.yml) file.
-
-You can add extra information to a publication, like a PDF file in the [assets/pdf/](assets/pdf/) directory and add the path to the PDF file in the BibTeX entry with the `pdf` field. Some of the supported fields are: `abstract`, `altmetric`, `arxiv`, `bibtex_show`, `blog`, `code`, `dimensions`, `doi`, `eprint`, `html`, `isbn`, `pdf`, `pmid`, `poster`, `slides`, `supp`, `video`, and `website`.
-
-[![Publications Preview](readme_preview/publications.png)](https://alshedivat.github.io/al-folio/publications/)
-
----
-
-### Collections
+What it does:
 
-This Jekyll theme implements `collections` to let you break up your work into categories. The theme comes with two default collections: `news` and `projects`. Items from the `news` collection are automatically displayed on the home page. Items from the `projects` collection are displayed on a responsive grid on projects page.
+1. Scans Markdown for `![alt](https://remote...)` (and linked images).
+2. Downloads each image under `assets/img/raw/<slug>/imgNN.ext` (preserving an untouched original; folder is gitignored).
+3. Uses ImageMagick `convert` to create a web-ready PNG in `assets/img/posts/<slug>/imgNN.png` (auto-orient, strip metadata, max 1800px).
+4. Rewrites the Markdown in-place to use `/assets/img/posts/<slug>/imgNN.png`.
 
-[![Projects Preview](readme_preview/projects.png)](https://alshedivat.github.io/al-folio/projects/)
+Flags:
 
-You can easily create your own collections, apps, short stories, courses, or whatever your creative work is. To do this, edit the collections in the [\_config.yml](_config.yml) file, create a corresponding folder, and create a landing page for your collection, similar to `_pages/projects.md`.
+- `--dry-run` shows what would change.
+- `--force` redownloads/reprocesses existing assets.
+- `--max-size` overrides the default 1800px cap.
 
----
+Dependencies: Python 3, PyYAML, ImageMagick (`convert` must be on your PATH), and outbound network access for the downloads.
 
-### Layouts
+### Adding local artwork manually
 
-**al-folio** comes with stylish layouts for pages and blog posts.
+1. Drop master files (RAW photos, PSDs, etc.) into `assets/img/raw/<slug>/`.
+2. Export/convert into PNGs sized ≤1800px on the long edge and place them inside `assets/img/posts/<slug>/`.
+3. Reference them in Markdown via `![](/assets/img/posts/<slug>/your-name.png)`.
 
-#### The iconic style of Distill
+The raw directory stays out of Git (see `.gitignore`) so commits only include optimized PNGs.
 
-The theme allows you to create blog posts in the [distill.pub](https://distill.pub/) style:
+## Automation & Helper Scripts
 
-[![Distill Preview](readme_preview/distill.png)](https://alshedivat.github.io/al-folio/blog/2021/distill/)
+| Command | Purpose | Notes |
+| ------- | ------- | ----- |
+| `bin/sync_archives.rb` | Rebuilds `_generated/tag` and `_generated/year` pages by scanning `_posts`. | GitHub Actions runs this on deploy, but run it locally after adding posts or renaming tags so the generated pages stay committed. |
+| `python3 scripts/localize_images.py …` | See “Image & Media Pipeline” above. | Install PyYAML + ImageMagick. |
+| `python3 scripts/generate_blog_stats.py` | Produces `/assets/img/blog-stats/*.png` charts and a `summary.txt` describing totals. | Requires Pillow and the `DejaVuSans.ttf` font (install via `sudo apt install fonts-dejavu` or equivalent). Useful when updating posts like `_posts/2025-09-30-taking-stock-of-the-blog.md`. |
+| `bin/cibuild` | Convenience wrapper for `bundle exec jekyll build`. | Used by some CI workflows. |
+| `bin/deploy` | Force-pushes a production build to `gh-pages`. | Interactive, destructive: wipes the working tree except for `_site` artifacts, runs `purgecss -c purgecss.config.js`, and pushes to `gh-pages`. Requires `purgecss` on PATH (`npm install -g purgecss` or `npx purgecss …`). Prefer the GitHub Pages workflow unless you need an immediate manual publish. |
 
-For more details on how to create distill-styled posts using `<d-*>` tags, please refer to [the example](https://alshedivat.github.io/al-folio/blog/2021/distill/).
+## Formatting, Checks, and Tooling
 
-#### Full support for math & code
+- **Build check:** `bundle exec jekyll build` (or `bin/cibuild`). Use `JEKYLL_ENV=production` to mirror deploys.
+- **Prettier:** Liquid and Markdown formatting is standardized via Prettier 3 with the Shopify Liquid plugin. Run `npx prettier --write _layouts/ _includes/ _pages/ _posts/ _sass/`.
+- **Pre-commit:** `.pre-commit-config.yaml` provides whitespace/yaml/large-file hooks. Opt in with `pre-commit install` and run `pre-commit run --all-files` before pushing.
+- **CSS purging:** `purgecss -c purgecss.config.js` trims unused selectors in `_site/assets/css/`. The deploy script handles this automatically; don’t run during dev.
+- **Python tooling:** `requirements.txt` currently lists `nbconvert` (used for notebook-to-Markdown conversions). Install Pillow + PyYAML as mentioned earlier for the scripts.
 
-**al-folio** supports fast math typesetting through [MathJax](https://www.mathjax.org/) and code syntax highlighting using [GitHub style](https://github.com/jwarby/jekyll-pygments-themes). Also supports [chartjs charts](https://www.chartjs.org/), [mermaid diagrams](https://mermaid-js.github.io/mermaid/#/), and [TikZ figures](https://tikzjax.com/).
+## Deployment
 
-<p align="center">
-<a href="https://alshedivat.github.io/al-folio/blog/2015/math/" target="_blank"><img src="readme_preview/math.png" width=400></a>
-<a href="https://alshedivat.github.io/al-folio/blog/2015/code/" target="_blank"><img src="readme_preview/code.png" width=400></a>
-</p>
+- **GitHub Pages (default):** `.github/workflows/deploy.yml` triggers on every push to `main`, runs `bin/sync_archives.rb`, builds the site with Ruby 3.1, and publishes to `gh-pages`. The `pages-build-deployment` workflow then serves it at https://tohab.github.io.
+- **Manual deploy:** If CI is unavailable, run `bin/deploy` from a clean working tree. It switches to a temporary `gh-pages` branch, builds with `JEKYLL_ENV=production`, runs PurgeCSS, commits the contents of `_site/` to `gh-pages`, and returns you to `main`.
+- **Other hosting:** `bundle exec jekyll build --destination path/to/output` will write a static bundle to `_site/` (or the provided destination). Remember to set `_config.yml`’s `url`/`baseurl` before building for custom domains/subpaths.
 
-#### Photos, Audio, Video and more
+## Troubleshooting & Tips
 
-Photo formatting is made simple using [Bootstrap's grid system](https://getbootstrap.com/docs/4.4/layout/grid/). Easily create beautiful grids within your blog posts and project pages, also with support for [video](https://alshedivat.github.io/al-folio/blog/2023/videos/) and [audio](https://alshedivat.github.io/al-folio/blog/2023/audios/) embeds:
+- **“Missing layouts/data” errors:** Usually solved by `bundle exec jekyll clean && bundle exec jekyll serve`.
+- **Broken archive/tag pages:** Re-run `bin/sync_archives.rb` and commit the regenerated files under `_generated/`.
+- **PurgeCSS not found during `bin/deploy`:** Install it globally (`npm install -g purgecss`) or edit the script to call `npx purgecss`. CI uses Mavenized GitHub actions, so this only affects local deploys.
+- **ImageMagick `convert` failures:** Ensure the binary is available (`which convert`). macOS users on Apple Silicon sometimes need `brew install imagemagick` and to restart their shell.
+- **Blog stats script font errors:** Install the DejaVu font family (`sudo apt install fonts-dejavu` or `brew install --cask font-dejavu-sans`).
+- **More theme help:** See `CUSTOMIZE.md`, `FAQ.md`, `INSTALL.md`, and the upstream [al-folio documentation](https://github.com/alshedivat/al-folio). This repo follows the upstream layout closely, so their guidance usually applies verbatim.
 
-<p align="center">
-  <a href="https://alshedivat.github.io/al-folio/projects/1_project/">
-    <img src="readme_preview/photos-screenshot.png" width="75%">
-  </a>
-</p>
-
----
-
-### Other features
-
-#### GitHub's repositories and user stats
-
-**al-folio** uses [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) and [github-profile-trophy](https://github.com/ryo-ma/github-profile-trophy) to display GitHub repositories and user stats on the `/repositories/` page.
-
-[![Repositories Preview](readme_preview/repositories.png)](https://alshedivat.github.io/al-folio/repositories/)
-
-Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories to the `/repositories/` page.
-
-You may also use the following codes for displaying this in any other pages.
-
-```html
-<!-- code for GitHub users -->
-{% if site.data.repositories.github_users %}
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for user in site.data.repositories.github_users %} {% include repository/repo_user.liquid username=user %} {% endfor %}
-</div>
-{% endif %}
-
-<!-- code for GitHub trophies -->
-{% if site.repo_trophies.enabled %} {% for user in site.data.repositories.github_users %} {% if site.data.repositories.github_users.size > 1 %}
-<h4>{{ user }}</h4>
-{% endif %}
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% include repository/repo_trophies.liquid username=user %}
-</div>
-{% endfor %} {% endif %}
-
-<!-- code for GitHub repositories -->
-{% if site.data.repositories.github_repos %}
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for repo in site.data.repositories.github_repos %} {% include repository/repo.liquid repository=repo %} {% endfor %}
-</div>
-{% endif %}
-```
-
----
-
-#### Theming
-
-A variety of beautiful theme colors have been selected for you to choose from. The default is purple, but you can quickly change it by editing the `--global-theme-color` variable in the `_sass/_themes.scss` file. Other color variables are listed there as well. The stock theme color options available can be found at [\_sass/\_variables.scss](_sass/_variables.scss). You can also add your own colors to this file assigning each a name for ease of use across the template.
-
----
-
-#### Social media previews
-
-**al-folio** supports preview images on social media. To enable this functionality you will need to set `serve_og_meta` to `true` in your [\_config.yml](_config.yml). Once you have done so, all your site's pages will include Open Graph data in the HTML head element.
-
-You will then need to configure what image to display in your site's social media previews. This can be configured on a per-page basis, by setting the `og_image` page variable. If for an individual page this variable is not set, then the theme will fall back to a site-wide `og_image` variable, configurable in your [\_config.yml](_config.yml). In both the page-specific and site-wide cases, the `og_image` variable needs to hold the URL for the image you wish to display in social media previews.
-
----
-
-#### Atom (RSS-like) Feed
-
-It generates an Atom (RSS-like) feed of your posts, useful for Atom and RSS readers. The feed is reachable simply by typing after your homepage `/feed.xml`. E.g. assuming your website mountpoint is the main folder, you can type `yourusername.github.io/feed.xml`
-
----
-
-#### Related posts
-
-By default, there will be a related posts section on the bottom of the blog posts. These are generated by selecting the `max_related` most recent posts that share at least `min_common_tags` tags with the current post. If you do not want to display related posts on a specific post, simply add `related_posts: false` to the front matter of the post. If you want to disable it for all posts, simply set `enabled` to false in the `related_blog_posts` section in [\_config.yml](_config.yml).
-
----
-
-#### Code quality checks
-
-Currently, we run some checks to ensure that the code quality and generated site are good. The checks are done using GitHub Actions and the following tools:
-
-- [Prettier](https://prettier.io/) - check if the formatting of the code follows the style guide
-- [lychee](https://lychee.cli.rs/) - check for broken links
-- [Axe](https://github.com/dequelabs/axe-core) (need to run manually) - do some accessibility testing
-
-We decided to keep `Axe` runs manual because fixing the issues are not straightforward and might be hard for people without web development knowledge.
-
-## FAQ
-
-For frequently asked questions, please refer to [FAQ.md](FAQ.md).
-
-## Contributing
-
-Contributions to al-folio are very welcome! Before you get started, please take a look at [the guidelines](CONTRIBUTING.md).
-
-If you would like to improve documentation or fix a minor inconsistency or bug, please feel free to send a PR directly to `main`. For more complex issues/bugs or feature requests, please open an issue using the appropriate template.
-
-### Maintainers
-
-Our most active contributors are welcome to join the maintainers team. If you are interested, please reach out!
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="http://maruan.alshedivat.com"><img src="https://avatars.githubusercontent.com/u/2126561?v=4" width="100px;" alt=""/><br /><sub><b>Maruan</b></sub></a></td>
-      <td align="center" valign="top" width="14.28%"><a href="http://rohandebsarkar.github.io"><img src="https://avatars.githubusercontent.com/u/50144004?v=4" width="100px;" alt=""/><br /><sub><b>Rohan Deb Sarkar</b></sub></a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://amirpourmand.ir"><img src="https://avatars.githubusercontent.com/u/32064808?v=4" width="100px;" alt=""/><br /><sub><b>Amir Pourmand</b></sub></a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://george-gca.github.io/"><img src="https://avatars.githubusercontent.com/u/31376482?v=4" width="100px;" alt=""/><br /><sub><b>George</b></sub></a></td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-### All Contributors
-
-<a href="https://contrib.rocks">
-  <img src="https://contrib.rocks/image?repo=alshedivat/al-folio&max=500&columns=24" />
-</a>
-
-## Star History
-
-<a href="https://star-history.com/#alshedivat/al-folio&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=alshedivat/al-folio&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=alshedivat/al-folio&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=alshedivat/al-folio&type=Date" />
-  </picture>
-</a>
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://github.com/alshedivat/al-folio/blob/main/LICENSE).
-
-Originally, **al-folio** was based on the [\*folio theme](https://github.com/bogoli/-folio) (published by [Lia Bogoev](https://liabogoev.com) and under the MIT license). Since then, it got a full re-write of the styles and many additional cool features.
+With this context you should be able to spin up the site, add or edit posts, wrangle assets, and ship changes with confidence. Happy writing! 
