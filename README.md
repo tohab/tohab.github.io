@@ -46,6 +46,16 @@ If you already have local imagery:
 
 \*Use the `slug` from the post front matter so the folders stay consistent with the automation.
 
+### Link previews
+
+Open Graph and Schema.org metadata are enabled, so every blog post can surface a rich card when shared. Add a `preview_image` entry to a post’s front matter (pointing at an asset inside `assets/img/posts/<slug>/`) to publish a large Twitter/Open Graph image:
+
+```yaml
+preview_image: /assets/img/posts/2023-10-penghu-islands/img01.png
+```
+
+If `preview_image` (or a custom `og_image`) is missing, the metadata omits the `og:image` tags entirely so the share falls back to text-only cards—no site-wide default banner is injected.
+
 ## User community
 
 The vibrant community of **al-folio** users is growing!
