@@ -6,16 +6,17 @@ description: A focused snapshot of my recent experience and projects.
 nav: false
 giscus_comments: false
 show_title: false
+full_width: true
 _styles: |
   #resume-preview {
-    background: radial-gradient(circle at top, #fff4ea 0%, #fde1c2 60%, #fcd3a9 100%);
-    border: 2px solid rgba(184, 0, 0, 0.25);
-    border-radius: 18px;
-    box-shadow: 0 18px 45px rgba(63, 36, 7, 0.15);
-    padding: 2.25rem 2.5rem;
-    margin-bottom: 2rem;
+    background: linear-gradient(150deg, #ffe9d5, #ffdaba);
+    border: 2px solid rgba(184, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 22px 60px rgba(63, 36, 7, 0.18);
+    padding: 2.75rem 3.25rem;
+    margin: 0 auto 2.5rem;
     color: var(--global-text-color);
-    max-width: 900px;
+    width: min(1200px, 100%);
   }
 
   #resume-preview > h1:first-child {
@@ -70,7 +71,7 @@ _styles: |
 
   @media (max-width: 640px) {
     #resume-preview {
-      padding: 1.75rem 1.5rem;
+      padding: 2rem 1.4rem;
     }
   }
 
