@@ -41,7 +41,7 @@
 <script defer src="{{ '/assets/js/common.js' | relative_url | bust_file_cache }}"></script>
 <script defer src="{{ '/assets/js/copy_code.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
 
-{% if page.layout == 'work' %}
+{% if page.layout == 'work' or page.layout == 'games' %}
   <script defer src="{{ '/assets/js/work-cases.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
 
