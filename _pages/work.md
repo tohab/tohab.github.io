@@ -9,6 +9,7 @@ news: false # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 header_title: Work Portfolio
+collapsible_panels: true
 ---
 
 **PROFESSIONAL SUMMARY**
@@ -24,7 +25,7 @@ I'm an operations leader and non-profit founder. I'm adept at building scalable 
 
 Below are four case studies highlighting projects I've led over the course of my time as a project leader and entrepreneur.
 
-<details class="work-case">
+<details class="collapsible-panel work-case">
 <summary><h3>Case 1: Co-founding and scaling operations for Grassyouths, Inc.</h3></summary>
   {% capture case_1 %}
 **📅 Date:** Aug. 2021 - Present  
@@ -48,12 +49,12 @@ Grassyouths Inc. aimed to provide affordable housing for animal rights activists
 - Developed a scalable and repeatable application and selection process.
 - Created a self-sustaining, well-organized community with improved coordination and cleanliness.
   {% endcapture %}
-  <div class="work-case__content">
+  <div class="collapsible-panel__content">
     {{ case_1 | strip | markdownify }}
   </div>
 </details>
 
-<details class="work-case">
+<details class="collapsible-panel work-case">
 <summary><h3>Case 2: Optimizing Bilingual Educational Program Efficiency for 150+ Taiwanese Students</h3></summary>
   {% capture case_2 %}
 **📅 Date:** Aug. 2022 - May 2024  
@@ -76,12 +77,12 @@ Our school's value proposition was to bring life to the English curriculum and g
 - Reduced behavioral issue rates by 90% through implementation of clear guidelines and engaging content.
 - Consistently received top parent reviews and was voted favorite teacher by students.
   {% endcapture %}
-  <div class="work-case__content">
+  <div class="collapsible-panel__content">
     {{ case_2 | strip | markdownify }}
   </div>
 </details>
 
-<details class="work-case">
+<details class="collapsible-panel work-case">
 <summary><h3>Case 3: Driving Political Advocacy & Membership Growth in Student Organization</h3></summary>
   {% capture case_3 %}
 **📅 Date:** Sept. 2019 - May 2022  
@@ -106,12 +107,12 @@ BOAA's mission was to create political support for animal rights legislation on 
 - Successfully mobilized students to influence 3 major pro-animal bills in the local government.
 - Used the multi-campus coalition to pressure the UC Berkeley system to drop Tyson Foods.
   {% endcapture %}
-  <div class="work-case__content">
+  <div class="collapsible-panel__content">
     {{ case_3 | strip | markdownify }}
   </div>
 </details>
 
-<details class="work-case">
+<details class="collapsible-panel work-case">
 <summary><h3>Case 4: Led Publication of an Economics Paper on the Illegal Wildlife Trade</h3></summary>
   {% capture case_4 %}
 **📅 Date:** July 2020 - Jan. 2022
@@ -135,14 +136,14 @@ Inspired by the global pandemic, this study used an economics lens to analyze th
 - Provided policymakers with data-driven insights on wildlife trade regulations.
 - Strengthened academic networks by engaging with key experts in the field.
   {% endcapture %}
-  <div class="work-case__content">
+  <div class="collapsible-panel__content">
     {{ case_4 | strip | markdownify }}
   </div>
 </details>
 
 ### Side Projects
 
-<details class="work-case">
+<details class="collapsible-panel work-case">
 <summary><h3>補習BAND Jazz Album</h3></summary>
   {% capture project_band %}
 **📅 Date:** Jan 2023 - May 2023
@@ -151,12 +152,12 @@ Inspired by the global pandemic, this study used an economics lens to analyze th
 - Produced and oversaw the recording process, ensuring a high-quality final product.
 - Designed the album cover art and collaborated with band members to create a cohesive, engaging release available for streaming.
   {% endcapture %}
-  <div class="work-case__content">
+  <div class="collapsible-panel__content">
     {{ project_band | strip | markdownify }}
   </div>
 </details>
 
-<details class="work-case">
+<details class="collapsible-panel work-case">
 <summary><h3>www.rohanprasad.org</h3></summary>
   {% capture project_website %}
 **📅 Date:** 2019 - Present
@@ -165,7 +166,7 @@ Inspired by the global pandemic, this study used an economics lens to analyze th
 - Authored and published since 2019, exploring writing genres like travel writing, argumentative essays, and creative non-fiction.
 - Deployed via GitHub Pages, demonstrating proficiency in web hosting, front-end development, and project management.
   {% endcapture %}
-  <div class="work-case__content">
+  <div class="collapsible-panel__content">
     {{ project_website | strip | markdownify }}
   </div>
 </details>

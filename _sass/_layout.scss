@@ -369,7 +369,7 @@ html[data-theme="dark"] {
  * Work page cases
  ******************************************************************************/
 
-.work-case {
+.collapsible-panel {
   border: 2px solid #000;
   border-radius: 8px;
   margin: 1.25rem 0;
@@ -426,7 +426,7 @@ html[data-theme="dark"] {
     }
   }
 
-  .work-case__content {
+  .collapsible-panel__content {
     height: 0;
     opacity: 0;
     overflow: hidden;
@@ -434,30 +434,30 @@ html[data-theme="dark"] {
     transition: height 0.7s ease, opacity 0.7s ease, padding-bottom 0.7s ease;
   }
 
-  &[open] .work-case__content {
+  &[open] .collapsible-panel__content {
     height: auto;
     opacity: 1;
     padding-bottom: 1.25rem;
   }
 
-  &.closing .work-case__content {
+  &.closing .collapsible-panel__content {
     opacity: 0;
     padding-bottom: 0;
   }
 
-  .work-case__content > *:first-child {
+  .collapsible-panel__content > *:first-child {
     margin-top: 0.5rem;
   }
 
-  .work-case__content h4,
-  .work-case__content h5,
-  .work-case__content h6 {
+  .collapsible-panel__content h4,
+  .collapsible-panel__content h5,
+  .collapsible-panel__content h6 {
     margin-top: 1.25rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .work-case {
+  .collapsible-panel {
     transition: none;
 
     &[open] {
@@ -468,7 +468,7 @@ html[data-theme="dark"] {
       transition: none;
     }
 
-    .work-case__content {
+    .collapsible-panel__content {
       transition: none;
     }
   }

@@ -1,6 +1,6 @@
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
-    var detailsList = document.querySelectorAll('details.work-case');
+    var detailsList = document.querySelectorAll('details.collapsible-panel');
     if (!detailsList.length) {
       return;
     }
@@ -9,14 +9,14 @@
 
     detailsList.forEach(function (detail, index) {
       var summary = detail.querySelector('summary');
-      var content = detail.querySelector('.work-case__content');
+      var content = detail.querySelector('.collapsible-panel__content');
 
       if (!summary || !content) {
         return;
       }
 
       if (!content.id) {
-        content.id = 'work-case-content-' + (index + 1);
+        content.id = 'collapsible-panel-content-' + (index + 1);
       }
       summary.setAttribute('aria-controls', content.id);
 
