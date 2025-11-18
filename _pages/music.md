@@ -1,6 +1,6 @@
 ---
 layout: music
-permalink: /art/music/
+permalink: /music/
 title: music
 nav: true
 nav_order: 2
