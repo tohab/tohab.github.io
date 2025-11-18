@@ -47,6 +47,54 @@ pagination:
     white-space: nowrap;
   }
 
+  .post-list li {
+    position: relative;
+  }
+
+  .post-hover-preview {
+    position: absolute;
+    top: 0;
+    right: -22rem;
+    width: 20rem;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 0.5rem;
+    padding: 0.65rem 0.75rem 0.75rem;
+    z-index: 5;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    pointer-events: none;
+  }
+
+  .post-hover-preview__image {
+    width: 100%;
+    height: 8rem;
+    border-radius: 0.35rem;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-hover-preview__summary {
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.72);
+    margin: 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) and (min-width: 992px) {
+    .post-list li:hover .post-hover-preview {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 991px) {
+    .post-hover-preview {
+      display: none;
+    }
+  }
+
   .archive-years {
     font-size: 1.08rem;
   }
@@ -251,6 +299,25 @@ pagination:
                 <img class="card-img" src="{{ post.thumbnail | relative_url }}" style="object-fit: cover; height: 90%;" alt="image">
               </div>
             </div>
+            {% endif %}
+
+            {% assign preview_image = post.preview_image %}
+            {% if preview_image == nil or preview_image == '' %}
+              {% assign preview_image = post.thumbnail %}
+            {% endif %}
+            {% assign hover_summary = post.description %}
+            {% if hover_summary == nil or hover_summary == '' %}
+              {% assign hover_summary = post.content | strip_html | replace: '&nbsp;', ' ' | strip | truncatewords: 36 %}
+            {% endif %}
+            {% if preview_image or hover_summary %}
+              <div class="post-hover-preview">
+                {% if preview_image %}
+                  <img class="post-hover-preview__image" src="{{ preview_image | relative_url }}" alt="preview for {{ post.title }}">
+                {% endif %}
+                {% if hover_summary %}
+                  <p class="post-hover-preview__summary">{{ hover_summary }}</p>
+                {% endif %}
+              </div>
             {% endif %}
           </li>
         {% endfor %}

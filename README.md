@@ -48,7 +48,7 @@ If you already have local imagery:
 
 ### Link previews
 
-Open Graph and Schema.org metadata are enabled, so every blog post can surface a rich card when shared. Add a `preview_image` entry to a post’s front matter (pointing at an asset inside `assets/img/posts/<slug>/`) to publish a large Twitter/Open Graph image:
+Open Graph and Schema.org metadata are enabled, so every blog post can surface a rich card when shared (and the `/blog/` index shows a hover preview when a `preview_image` is present). Add a `preview_image` entry to a post’s front matter (pointing at an asset inside `assets/img/posts/<slug>/`) to publish a large Twitter/Open Graph image and hover card:
 
 ```yaml
 preview_image: /assets/img/posts/2023-10-penghu-islands/img01.png
