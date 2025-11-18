@@ -80,21 +80,38 @@
     card.style.top = `${top}px`;
   };
 
+  const requestPositionUpdate = (anchor) => {
+    window.requestAnimationFrame(() => positionCard(anchor));
+  };
+
   const showCard = (anchor, entry) => {
     if (!entry) {
       return;
     }
     activeAnchor = anchor;
+    const textContent = entry.summary || entry.title || '';
+    cardSummary.textContent = textContent;
+
+    const finalize = () => {
+      card.classList.add('is-visible');
+      requestPositionUpdate(anchor);
+    };
+
     if (entry.image) {
-      cardImage.src = entry.image;
+      const needsReload = cardImage.getAttribute('src') !== entry.image;
       cardImage.style.display = '';
+      if (needsReload) {
+        cardImage.addEventListener('load', finalize, { once: true });
+        cardImage.addEventListener('error', finalize, { once: true });
+        cardImage.src = entry.image;
+      } else {
+        finalize();
+      }
     } else {
       cardImage.removeAttribute('src');
       cardImage.style.display = 'none';
+      finalize();
     }
-    cardSummary.textContent = entry.summary || entry.title || '';
-    card.classList.add('is-visible');
-    positionCard(anchor);
   };
 
   const getEntry = (href) => {
@@ -133,7 +150,7 @@
   window.addEventListener('scroll', () => hideCard());
   window.addEventListener('resize', () => {
     if (activeAnchor) {
-      positionCard(activeAnchor);
+      requestPositionUpdate(activeAnchor);
     }
   });
 })();
