@@ -499,18 +499,17 @@ html[data-theme="dark"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.25em;
-  height: 1.25em;
+  width: 1.35em;
+  height: 1.35em;
   border-radius: 50%;
-  border: 1px solid var(--global-theme-color);
-  background-color: rgba(184, 0, 0, 0.12);
-  transition: color 0.15s ease, transform 0.15s ease,
-    background-color 0.15s ease, border-color 0.15s ease;
+  border: 1px solid #111;
+  background-color: transparent;
+  transition: color 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
 
   &:hover,
   &:focus-visible {
     color: var(--global-theme-color);
-    background-color: rgba(184, 0, 0, 0.2);
+    border-color: var(--global-theme-color);
     transform: translateY(-0.05em);
     outline: none;
   }
@@ -519,8 +518,8 @@ html[data-theme="dark"] {
 .footnote-ref__bubble {
   position: absolute;
   bottom: calc(100% + 0.55rem);
-  left: 100%;
-  transform: translate(-0.75rem, 0);
+  left: 50%;
+  transform: translate(-50%, 0);
   min-width: 150px;
   max-width: min(300px, calc(100vw - 2rem));
   padding: 0.65rem 0.85rem;
@@ -545,9 +544,8 @@ html[data-theme="dark"] {
     content: '';
     position: absolute;
     bottom: -7px;
-    left: auto;
-    right: 0.85rem;
-    transform: rotate(45deg);
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
     width: 12px;
     height: 12px;
     background-color: inherit;
@@ -560,14 +558,14 @@ html[data-theme="dark"] {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translate(-0.75rem, -0.15rem);
+  transform: translate(-50%, -0.15rem);
 }
 
 html[data-theme='dark'] {
   .footnote-ref__button {
     color: var(--global-link-color);
-    border-color: rgba(255, 255, 255, 0.4);
-    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.85);
+    background-color: transparent;
   }
 
   .footnote-ref__bubble {
