@@ -123,6 +123,22 @@
 
     enhanceReferences(document);
 
+    var mutationObserver = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        mutation.addedNodes.forEach(function (node) {
+          if (!node || node.nodeType !== Node.ELEMENT_NODE) return;
+          enhanceReferences(node);
+        });
+      });
+    });
+
+    if (document.body) {
+      mutationObserver.observe(document.body, {
+        childList: true,
+        subtree: true,
+      });
+    }
+
     document.addEventListener('click', function (event) {
       if (event.target.closest('sup.footnote-ref')) return;
       closeAllRefs();
