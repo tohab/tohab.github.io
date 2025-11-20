@@ -23,6 +23,9 @@
   --global-back-to-top-text-color: #{$white-color};
   --global-newsletter-bg-color: #{$white-color};
   --global-newsletter-text-color: #{$black-color};
+  --footnote-bubble-bg-color: #f9cfac;
+  --footnote-bubble-border-color: rgba(184, 0, 0, 0.25);
+  --footnote-bubble-text-color: #3b1a00;
 
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;
@@ -94,6 +97,9 @@ html[data-theme="dark"] {
   --global-back-to-top-text-color: #ffff00;
   --global-newsletter-bg-color: #{$black-color};
   --global-newsletter-text-color: #ffff00;
+  --footnote-bubble-bg-color: rgba(69, 0, 0, 0.9);
+  --footnote-bubble-border-color: rgba(255, 136, 0, 0.4);
+  --footnote-bubble-text-color: #fff5c2;
 
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;

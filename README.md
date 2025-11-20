@@ -123,6 +123,12 @@ This line has some extra context[^about-origin].
 
 Footnote definitions can live at the bottom of the same file (like any other Markdown footnote). They never render inline as a list—the JavaScript enhancer removes the generated `<div class="footnotes">` and only leaves the tooltip bubbles—so you can tuck those definitions near the end just for editorial clarity.
 
+Key behaviors and tips:
+- Footnotes work on _any_ Markdown file that Jekyll processes (posts, `_pages`, collections, etc.).
+- The tooltip replaces the superscript list entirely—click/tap the `[n]` to reveal the note and click elsewhere (or press `Esc`) to close it.
+- Because the superscript stays in-flow, keep notes short (1–3 sentences) so the bubble doesn’t cover large chunks of text.
+- Styling inherits the site’s light/dark palette, so no additional front matter flags are needed.
+
 > **Heads‑up:** the site runs Kramdown with `input: GFM`, so the shortcut syntax `^[inline note]` is ignored. Always reference footnotes via `[^note_id]` + a definition block as shown above.
 
 ### Pages, Resume, and Collections
