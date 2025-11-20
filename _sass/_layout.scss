@@ -474,6 +474,120 @@ html[data-theme="dark"] {
   }
 }
 
+.footnote-ref {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  margin-left: 0.15em;
+  line-height: 1;
+}
+
+.footnote-ref__button {
+  appearance: none;
+  border: 1px solid var(--global-divider-color);
+  background-color: var(--global-card-bg-color);
+  color: var(--global-theme-color);
+  font: inherit;
+  font-size: 0.9em;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.15rem 0.35rem;
+  border-radius: 999px;
+  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease,
+    border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--global-card-bg-color);
+    background-color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    transform: translateY(-1px);
+    outline: none;
+  }
+}
+
+.footnote-ref__bubble {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0.35rem);
+  min-width: 180px;
+  max-width: min(320px, calc(100vw - 2rem));
+  padding: 0.85rem 1rem;
+  border-radius: 0.9rem;
+  border: 1px solid var(--global-divider-color);
+  background-color: var(--global-card-bg-color);
+  color: var(--global-text-color);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  z-index: 25;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background-color: inherit;
+    border-left: inherit;
+    border-top: inherit;
+  }
+}
+
+.footnote-ref.is-open .footnote-ref__button {
+  color: var(--global-card-bg-color);
+  background-color: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.footnote-ref.is-open .footnote-ref__bubble {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0.6rem);
+}
+
+html[data-theme='dark'] {
+  .footnote-ref__button {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.18);
+    color: var(--global-link-color);
+  }
+
+  .footnote-ref__bubble {
+    background-color: rgba(39, 39, 39, 0.94);
+    color: var(--global-text-color);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0.85rem 1.6rem rgba(0, 0, 0, 0.55);
+  }
+}
+
+.footnotes--visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 @media (min-width: 576px) {
   .navbar.navbar-light {
     .container {

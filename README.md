@@ -87,6 +87,42 @@ description: Short summary that shows up on cards and metadata.
 - `published: false` keeps drafts out of production while still allowing local preview.
 - Tags feed both inline metadata and the generated archive pages.
 
+#### Post Creator prompt
+
+`_posts/post-creator.md` stores the Codex instructions for generating draft posts from plain Markdown. When you invoke the “post creator” helper, give it raw Markdown body text as **Input**. The **User-discussion** step asks the AI to suggest tags from this approved list (activism, ai, animal-rights, assorted, china, community, creativity, economics, education, ethics, family, food, grief, health, identity, india, justice, language-learning, music, nature, philosophy, ping pong, poetry, politics, relationships, review, running, social change, taiwan, teaching, technology, travel, update, work, writing) and to call out any explicit grammar or spelling mistakes so you can confirm fixes before saving.
+
+The helper outputs a Markdown file with full Jekyll front matter (file name `YYYY-MM-DD-title-slightly-abbreviated.md`). The template it follows is:
+
+```yaml
+---
+date: 2025-01-05
+description: null
+layout: post
+published: true
+slug: YYYY--add-appropriate-title
+tags:
+  - ethics
+  - social change
+  - ai
+  - technology
+title: Add A Title Here
+---
+```
+
+Edit the placeholder date/title/slug/tags before committing so they reflect the actual post.
+
+#### Inline footnotes
+
+Use standard Markdown/Kramdown footnotes anywhere (posts, `_pages/*.md`, etc.) and the site will automatically turn them into clickable tooltip bubbles:
+
+```markdown
+This line has some extra context[^about-origin].
+
+[^about-origin]: The bubble can render Markdown—links, _italics_, **bold**, etc.
+```
+
+Footnote definitions can live at the bottom of the same file (like any other Markdown footnote). If JavaScript is disabled the default numbered list still appears, so the feature degrades gracefully.
+
 ### Pages, Resume, and Collections
 
 - `_pages/*.md` drive navigation. The front matter `permalink` decides the URL (`permalink: /about/`, `permalink: /blog/`, etc.).
