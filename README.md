@@ -113,7 +113,7 @@ Edit the placeholder date/title/slug/tags before committing so they reflect the 
 
 #### Inline footnotes
 
-Use standard Markdown/Kramdown footnotes anywhere (posts, `_pages/*.md`, etc.) and the site will automatically turn them into clickable tooltip bubbles:
+Use standard Markdown/Kramdown footnotes anywhere (posts, `_pages/*.md`, etc.) and the site will automatically turn them into clickable tooltip bubbles (no list at the bottom of the page):
 
 ```markdown
 This line has some extra context[^about-origin].
@@ -121,7 +121,7 @@ This line has some extra context[^about-origin].
 [^about-origin]: The bubble can render Markdown—links, _italics_, **bold**, etc.
 ```
 
-Footnote definitions can live at the bottom of the same file (like any other Markdown footnote). If JavaScript is disabled the default numbered list still appears, so the feature degrades gracefully.
+Footnote definitions can live at the bottom of the same file (like any other Markdown footnote). They never render inline as a list—the JavaScript enhancer removes the generated `<div class="footnotes">` and only leaves the tooltip bubbles—so you can tuck those definitions near the end just for editorial clarity.
 
 > **Heads‑up:** the site runs Kramdown with `input: GFM`, so the shortcut syntax `^[inline note]` is ignored. Always reference footnotes via `[^note_id]` + a definition block as shown above.
 

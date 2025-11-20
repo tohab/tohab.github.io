@@ -58,9 +58,8 @@
       var content = noteMap.get(targetId);
       if (!sup || !targetId || !content) return;
 
-      var wrapper = document.createElement('span');
-      wrapper.className = 'footnote-ref';
-      wrapper.dataset.footnoteTarget = targetId;
+      sup.classList.add('footnote-ref');
+      sup.dataset.footnoteTarget = targetId;
 
       var button = document.createElement('button');
       button.type = 'button';
@@ -83,20 +82,19 @@
 
       button.addEventListener('click', function (event) {
         event.preventDefault();
-        toggleRef(wrapper);
-        if (wrapper.classList.contains('is-open')) {
+        toggleRef(sup);
+        if (sup.classList.contains('is-open')) {
           bubble.focus();
         }
       });
 
       sup.innerHTML = '';
-      wrapper.appendChild(button);
-      wrapper.appendChild(bubble);
-      sup.appendChild(wrapper);
+      sup.appendChild(button);
+      sup.appendChild(bubble);
     });
 
     document.addEventListener('click', function (event) {
-      if (event.target.closest('.footnote-ref')) return;
+      if (event.target.closest('sup.footnote-ref')) return;
       closeRef(openRef);
     });
 
@@ -106,7 +104,7 @@
       }
     });
 
-    footnotesRoot.classList.add('footnotes--visually-hidden');
+    footnotesRoot.remove();
   }
 
   if (document.readyState === 'loading') {
