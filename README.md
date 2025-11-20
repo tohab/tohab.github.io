@@ -123,6 +123,8 @@ This line has some extra context[^about-origin].
 
 Footnote definitions can live at the bottom of the same file (like any other Markdown footnote). If JavaScript is disabled the default numbered list still appears, so the feature degrades gracefully.
 
+> **Heads‑up:** the site runs Kramdown with `input: GFM`, so the shortcut syntax `^[inline note]` is ignored. Always reference footnotes via `[^note_id]` + a definition block as shown above.
+
 ### Pages, Resume, and Collections
 
 - `_pages/*.md` drive navigation. The front matter `permalink` decides the URL (`permalink: /about/`, `permalink: /blog/`, etc.).
