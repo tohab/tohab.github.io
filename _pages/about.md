@@ -28,10 +28,6 @@ For fun, I love to write on this blog, bike, run, play the alto saxophone and st
 
 *Email me at first dot last at berkeley dot edu.*
 
-testing testing[^home-note]
-
-[^home-note]: footnote here
-
 <!-- I was born in the year 2000, so my Chinese zodiac is the dragon. I grew up in the UK, and went to school called *The American School in London*. I moved to the US to attend college, and graduated from UC Berkeley with a BA in Economics. At Berkeley, I did a lot of animal rights activism, sang in an a capella group, published an economics paper, and helped found a vegan coop. After graduating, I moved to Kaohsiung, Taiwan to teach English and learn Mandarin, Chinese. I enjoyed teaching a great deal, but thought I should try something else after two years. Right now, I'm pondering my next steps! -->
 
 
