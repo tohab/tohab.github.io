@@ -29,7 +29,7 @@ collapsible_panels: true
 {% endfor %}
 
 {% if games.size > 0 %}
-  {% for game in games %}
-    <script src="{{ game.url | relative_url | bust_file_cache }}" defer></script>
-  {% endfor %}
+{% for game in games %}
+<script src="{{ game.url | relative_url | bust_file_cache }}" defer></script>
+{% endfor %}
 {% endif %}
