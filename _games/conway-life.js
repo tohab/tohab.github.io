@@ -1,3 +1,18 @@
+---
+layout: null
+title: looping life garden
+summary: >-
+  watch conway's game of life bloom on an endless torus. click or drag to seed
+  new cells and nudge the color-shifting ecosystem.
+element_tag: canvas
+element_id: conway-life
+element_class: embed-responsive-item
+element_role: img
+element_aria_label: "Conway's Game of Life simulation"
+aspect_ratio: embed-responsive-4by3
+order: 3
+---
+
 (() => {
   const canvas = document.getElementById('conway-life');
   if (!canvas) return;

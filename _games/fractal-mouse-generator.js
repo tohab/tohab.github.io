@@ -1,3 +1,18 @@
+---
+layout: null
+title: mouse fractal painter
+summary: >-
+  move your cursor across the canvas to morph a Julia set. the fractal palette
+  shifts as you explore different complex constants.
+element_tag: canvas
+element_id: fractal-generator
+element_class: embed-responsive-item
+element_role: img
+element_aria_label: Interactive fractal generator
+aspect_ratio: embed-responsive-4by3
+order: 2
+---
+
 (() => {
   const canvas = document.getElementById('fractal-generator');
   if (!canvas) return;

@@ -1,3 +1,21 @@
+---
+layout: null
+title: two octave daydream piano
+summary: >-
+  tap across a two-octave keyboard to play a lightweight synth piano. use the
+  home row (A S D F G H J...) for white keys, the top row (W E T Y U...) for
+  sharps, hold Shift for the upper octave, and hold Space or toggle the
+  quarter-tone switch to nudge notes fifty cents up. holds let notes linger with
+  a soft fade.
+element_tag: div
+element_id: two-octave-piano
+element_class: "interactive-piano embed-responsive-item"
+element_role: application
+element_aria_label: Interactive two octave piano
+aspect_ratio: embed-responsive-21by9
+order: 4
+---
+
 (() => {
   const container = document.getElementById('two-octave-piano');
   if (!container) return;

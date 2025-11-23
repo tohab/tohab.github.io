@@ -1,3 +1,18 @@
+---
+layout: null
+title: rainbow ragdoll playground
+summary: >-
+  click, fling, and tug on the ragdoll. hold anywhere on the canvas to tilt
+  gravity toward your cursor.
+element_tag: canvas
+element_id: ragdoll-simulator
+element_class: embed-responsive-item
+element_role: img
+element_aria_label: Interactive ragdoll simulation
+aspect_ratio: embed-responsive-4by3
+order: 1
+---
+
 (() => {
   const canvas = document.getElementById('ragdoll-simulator');
   if (!canvas) return;

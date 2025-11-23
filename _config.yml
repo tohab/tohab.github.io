@@ -201,6 +201,9 @@ collections:
   projects:
     output: true
     permalink: /:collection/:title/
+  games:
+    output: true
+    permalink: /games/:name.js
 
 announcements:
   enabled: true
