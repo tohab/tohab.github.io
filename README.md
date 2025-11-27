@@ -132,6 +132,44 @@ Key behaviors and tips:
 
 > **Heads‑up:** the site runs Kramdown with `input: GFM`, so the shortcut syntax `^[inline note]` is ignored. Always reference footnotes via `[^note_id]` + a definition block as shown above.
 
+### Secret posts (password-gated content)
+
+Sensitive essays live in an encrypted workflow so nothing private lands in git history:
+
+1. **Draft in `secret_plain/` (gitignored).** Example scaffold:
+   ```markdown
+   ---
+   layout: secret_post        # keeps previews consistent locally
+   title: encrypted test
+   date: 2024-05-16
+   permalink: /secret/encrypted-test/
+   secret_key: feiyang        # passphrase you’ll share with readers
+   ---
+
+   Write the actual post body here in normal Markdown.
+   ```
+   - `secret_key` stays in the plaintext file only. Each post can pick its own passphrase.
+   - Leave the public `secret/` folder alone—files there are generated.
+
+2. **Encrypt + publish.** After editing a plaintext file, re-run the helper:
+   ```bash
+   bundle exec ruby scripts/encrypt_secret.rb secret_plain/encrypted-test.md
+   ```
+   The script:
+   - Parses front matter, renders Markdown → HTML, and derives an AES-256-GCM key from `secret_key` using PBKDF2 (210k iterations, SHA-256).
+   - Writes `secret/encrypted-test.md` with only the public metadata (title, date, permalink, salt, IV, tag, ciphertext). The body is ciphertext; no plaintext remains in the repo.
+   - Overwrites any existing encrypted file, so rerun it whenever you change content *or* the password.
+
+3. **Serving + unlock flow.**
+   - `_pages/secret.md` lists every post inside `secret/`.
+   - Each entry uses `_layouts/secret_post.html`, which shows a prominent “enter passcode for this post” form. The browser derives the same key client-side (WebCrypto) and decrypts the HTML only when the correct passphrase is entered.
+   - Wrong passwords simply display an inline error; nothing leaks because the ciphertext stays encrypted at rest.
+
+4. **Safety checks.**
+   - Never commit files under `secret_plain/` (already gitignored).
+   - If you need to rotate a password, update `secret_key` in the plaintext file and rerun the script—this regenerates the salt, IV, and ciphertext automatically.
+   - For extra assurance run `git diff secret/` to verify only opaque metadata changed.
+
 ### Pages, Resume, and Collections
 
 - `_pages/*.md` drive navigation. The front matter `permalink` decides the URL (`permalink: /about/`, `permalink: /blog/`, etc.).
