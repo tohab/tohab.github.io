@@ -13,3 +13,4 @@ vendor
 .idea
 _generated/
 assets/img/raw/
+secret_plain/
