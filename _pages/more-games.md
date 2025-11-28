@@ -13,9 +13,6 @@ title: games
           <div class="game-card__meta">
             <p class="game-card__eyebrow">play</p>
             <h2 class="game-card__title">{{ game.title }}</h2>
-            {% if game.summary %}
-              <p class="game-card__summary">{{ game.summary }}</p>
-            {% endif %}
           </div>
           <span class="game-card__cta" aria-hidden="true">→</span>
         </a>
