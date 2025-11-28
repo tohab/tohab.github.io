@@ -1296,36 +1296,120 @@ swiper-container {
 // Ninja Keys
 // for more options, check https://github.com/ssleptsov/ninja-keys?tab=readme-ov-file#css-variables
 ninja-keys {
-  --ninja-width: 500px;
-  --ninja-font-size: 18.7px;
-  --ninja-accent-color: var(--global-theme-color);
+  --ninja-width: min(420px, calc(100vw - 2rem));
+  --ninja-font-size: 17.5px;
+  --ninja-accent-color: #c95f17;
   --ninja-icon-size: 0px;
-  --ninja-modal-background: var(--global-bg-color);
+  --ninja-modal-background: #fff3e1;
+  --ninja-modal-shadow: 0 20px 55px rgba(99, 40, 0, 0.25);
   --ninja-text-color: var(--global-text-color);
-  --ninja-selected-background: #f3c28a;
+  --ninja-selected-background: rgba(255, 255, 255, 0.95);
   --ninja-selected-text-color: var(--global-text-color);
-  --ninja-secondary-background-color: #f3c28a;
-  --ninja-secondary-text-color: var(--global-text-color);
-  --ninja-footer-background: rgba(243, 194, 138, 0.58);
-  --ninja-placeholder-color: var(--global-text-color);
-  --ninja-font-family: "Times New Roman", Times, serif;
+  --ninja-secondary-background-color: rgba(201, 95, 23, 0.18);
+  --ninja-secondary-text-color: #8f5220;
+  --ninja-footer-background: rgba(255, 255, 255, 0.6);
+  --ninja-placeholder-color: rgba(60, 40, 18, 0.75);
+  --ninja-font-family: Georgia, "Times New Roman", Times, serif;
   --ninja-z-index: 1031;
+  --ninja-actions-height: 320px;
+  --ninja-top: 17%;
+  --ninja-overflow-background: rgba(255, 244, 231, 0.6);
+  --ninja-key-border-radius: 999px;
 }
 
 html[data-theme="dark"] ninja-keys {
-  --ninja-selected-background: #3d291c;
+  --ninja-modal-background: #20120a;
+  --ninja-modal-shadow: 0 25px 50px rgba(0, 0, 0, 0.65);
+  --ninja-text-color: #ffe7b0;
+  --ninja-selected-background: rgba(61, 41, 28, 0.95);
   --ninja-selected-text-color: #ffe7b0;
-  --ninja-secondary-background-color: rgba(51, 51, 51, 0.44);
-  --ninja-secondary-text-color: #888;
-  --ninja-footer-background: rgba(30, 30, 30, 0.85);
+  --ninja-secondary-background-color: rgba(255, 255, 255, 0.12);
+  --ninja-secondary-text-color: #f6d5a3;
+  --ninja-footer-background: rgba(10, 5, 1, 0.75);
+  --ninja-placeholder-color: rgba(255, 231, 176, 0.7);
+  --ninja-overflow-background: rgba(0, 0, 0, 0.45);
 }
 
 ninja-keys::part(ninja-input) {
   color: var(--ninja-selected-text-color);
+  font-size: 1.05em;
+  letter-spacing: 0.02em;
+  font-style: normal;
+}
+
+ninja-keys::part(ninja-input)::placeholder {
+  font-style: italic;
+  color: var(--ninja-placeholder-color);
 }
 
 ninja-keys::part(ninja-input-wrapper) {
   background: var(--global-bg-color);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+  border: none;
+}
+
+html[data-theme="dark"] ninja-keys::part(ninja-input-wrapper) {
+  background: rgba(27, 15, 8, 0.85);
+  box-shadow: inset 0 0 0 1px rgba(255, 231, 176, 0.25);
+}
+
+ninja-keys::part(actions-list) {
+  padding: 0.35rem 0.75rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+
+ninja-keys::part(ninja-action) {
+  border-left: 0 !important;
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem !important;
+  margin: 0.05rem 0;
+  background: transparent !important;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+ninja-keys::part(ninja-action):hover {
+  background: rgba(201, 95, 23, 0.12) !important;
+  transform: translateX(4px);
+}
+
+html[data-theme="dark"] ninja-keys::part(ninja-action):hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+ninja-keys::part(ninja-action):focus-visible {
+  outline: 2px solid rgba(201, 95, 23, 0.45);
+  outline-offset: 2px;
+}
+
+html[data-theme="dark"] ninja-keys::part(ninja-action):focus-visible {
+  outline-color: rgba(255, 231, 176, 0.6);
+}
+
+ninja-keys::part(ninja-selected) {
+  background: linear-gradient(
+      120deg,
+      rgba(255, 202, 149, 0.9),
+      rgba(255, 247, 233, 0.95)
+    )
+    !important;
+  box-shadow: 0 12px 28px rgba(201, 95, 23, 0.35);
+  transform: translateX(4px);
+}
+
+html[data-theme="dark"] ninja-keys::part(ninja-selected) {
+  background: linear-gradient(
+      120deg,
+      rgba(88, 55, 33, 0.95),
+      rgba(57, 33, 18, 0.9)
+    )
+    !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.75);
 }
 
 // newsletter
