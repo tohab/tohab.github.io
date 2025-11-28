@@ -1310,6 +1310,7 @@ ninja-keys {
   --ninja-footer-background: rgba(255, 255, 255, 0.75);
   --ninja-placeholder-color: rgba(74, 62, 54, 0.75);
   --ninja-font-family: "Fira Code", "Courier New", monospace;
+  --global-bg-color: #fff8f1;
   --ninja-z-index: 1031;
   --ninja-actions-height: 290px;
   --ninja-top: 14%;
@@ -1328,6 +1329,7 @@ html[data-theme="dark"] ninja-keys {
   --ninja-footer-background: rgba(10, 5, 1, 0.75);
   --ninja-placeholder-color: rgba(248, 229, 196, 0.75);
   --ninja-overflow-background: rgba(0, 0, 0, 0.45);
+  --global-bg-color: #1c1511;
 }
 
 ninja-keys::part(ninja-input) {
