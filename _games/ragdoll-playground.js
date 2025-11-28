@@ -17,6 +17,18 @@ order: 1
   const canvas = document.getElementById('ragdoll-simulator');
   if (!canvas) return;
 
+  const controller =
+    window.createGamePanelController && typeof window.createGamePanelController === 'function'
+      ? window.createGamePanelController(canvas)
+      : null;
+
+  const manageEvent = controller
+    ? (target, type, handler, options) => controller.addManagedEvent(target, type, handler, options)
+    : (target, type, handler, options) => {
+        target.addEventListener(type, handler, options);
+        return () => target.removeEventListener(type, handler, options);
+      };
+
   const ctx = canvas.getContext('2d');
   const hues = [330, 25, 55, 200, 260, 120, 185, 300];
   const defaultGravity = { x: 0, y: 2200 };
@@ -34,6 +46,8 @@ order: 1
 
   let points = [];
   let sticks = [];
+  let frameHandle = null;
+  let running = false;
 
   function resize() {
     const rect = canvas.getBoundingClientRect();
@@ -146,7 +160,7 @@ order: 1
     }
   }
 
-  canvas.addEventListener('pointerdown', (event) => {
+  manageEvent(canvas, 'pointerdown', (event) => {
     canvas.setPointerCapture(event.pointerId);
     pointer.pointerId = event.pointerId;
     pointer.active = true;
@@ -154,12 +168,12 @@ order: 1
     pointer.dragging = findClosestPoint(pointer);
   });
 
-  canvas.addEventListener('pointermove', (event) => {
+  manageEvent(canvas, 'pointermove', (event) => {
     if (!pointer.active) return;
     updatePointer(event);
   });
 
-  canvas.addEventListener('pointerup', (event) => {
+  manageEvent(canvas, 'pointerup', (event) => {
     if (pointer.pointerId === event.pointerId) {
       if (canvas.hasPointerCapture(event.pointerId)) {
         canvas.releasePointerCapture(event.pointerId);
@@ -170,7 +184,7 @@ order: 1
     }
   });
 
-  canvas.addEventListener('pointercancel', (event) => {
+  manageEvent(canvas, 'pointercancel', (event) => {
     if (pointer.pointerId === event.pointerId && canvas.hasPointerCapture(event.pointerId)) {
       canvas.releasePointerCapture(event.pointerId);
     }
@@ -300,6 +314,10 @@ order: 1
 
   let lastTime = performance.now();
   function frame(now) {
+    if (!running) {
+      frameHandle = null;
+      return;
+    }
     const dt = Math.min((now - lastTime) / 1000, 0.035);
     lastTime = now;
 
@@ -308,10 +326,42 @@ order: 1
     }
     satisfyConstraints();
     draw(now);
-    requestAnimationFrame(frame);
+    frameHandle = requestAnimationFrame(frame);
   }
 
-  resize();
-  window.addEventListener('resize', resize);
-  requestAnimationFrame(frame);
+  manageEvent(window, 'resize', resize);
+
+  function startPlayground() {
+    if (running) return;
+    running = true;
+    resize();
+    lastTime = performance.now();
+    frameHandle = requestAnimationFrame(frame);
+  }
+
+  function stopPlayground() {
+    running = false;
+    if (pointer.pointerId !== null && canvas.hasPointerCapture(pointer.pointerId)) {
+      canvas.releasePointerCapture(pointer.pointerId);
+    }
+    pointer.pointerId = null;
+    pointer.active = false;
+    pointer.dragging = null;
+    if (frameHandle !== null) {
+      cancelAnimationFrame(frameHandle);
+      frameHandle = null;
+    }
+  }
+
+  if (controller) {
+    controller.onChange((active) => {
+      if (active) {
+        startPlayground();
+      } else {
+        stopPlayground();
+      }
+    });
+  } else {
+    startPlayground();
+  }
 })();

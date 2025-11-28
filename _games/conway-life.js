@@ -17,6 +17,18 @@ order: 3
   const canvas = document.getElementById('conway-life');
   if (!canvas) return;
 
+  const controller =
+    window.createGamePanelController && typeof window.createGamePanelController === 'function'
+      ? window.createGamePanelController(canvas)
+      : null;
+
+  const manageEvent = controller
+    ? (target, type, handler, options) => controller.addManagedEvent(target, type, handler, options)
+    : (target, type, handler, options) => {
+        target.addEventListener(type, handler, options);
+        return () => target.removeEventListener(type, handler, options);
+      };
+
   const ctx = canvas.getContext('2d');
   const GRID_SIZE = 60;
   const STEP_MS = 140;
@@ -39,12 +51,13 @@ order: 3
   let hueOrbit = Math.random() * 360;
   let pointerActive = false;
   let pointerId = null;
+  let frameHandle = null;
+  let running = false;
 
   seedRandomPattern();
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
+  manageEvent(window, 'resize', resizeCanvas);
 
-  canvas.addEventListener('pointerdown', (event) => {
+  manageEvent(canvas, 'pointerdown', (event) => {
     event.preventDefault();
     pointerActive = true;
     pointerId = event.pointerId;
@@ -52,12 +65,12 @@ order: 3
     spawnFromEvent(event);
   });
 
-  canvas.addEventListener('pointermove', (event) => {
+  manageEvent(canvas, 'pointermove', (event) => {
     if (!pointerActive) return;
     spawnFromEvent(event);
   });
 
-  canvas.addEventListener('pointerup', (event) => {
+  manageEvent(canvas, 'pointerup', (event) => {
     if (pointerId !== event.pointerId) return;
     pointerActive = false;
     if (canvas.hasPointerCapture(pointerId)) {
@@ -66,7 +79,7 @@ order: 3
     pointerId = null;
   });
 
-  canvas.addEventListener('pointercancel', (event) => {
+  manageEvent(canvas, 'pointercancel', (event) => {
     if (pointerId !== event.pointerId) return;
     pointerActive = false;
     if (canvas.hasPointerCapture(pointerId)) {
@@ -74,10 +87,12 @@ order: 3
     }
     pointerId = null;
   });
-
-  requestAnimationFrame(loop);
 
   function loop(now) {
+    if (!running) {
+      frameHandle = null;
+      return;
+    }
     const delta = now - lastTick;
     if (delta >= STEP_MS) {
       advanceGeneration();
@@ -85,7 +100,7 @@ order: 3
       hueOrbit = (hueOrbit + delta * 0.02) % 360;
     }
     render(now);
-    requestAnimationFrame(loop);
+    frameHandle = requestAnimationFrame(loop);
   }
 
   function seedRandomPattern() {
@@ -217,5 +232,35 @@ order: 3
     const idx = cellY * GRID_SIZE + cellX;
     grid[idx] = 1;
     ageGrid[idx] = 1;
+  }
+
+  function startSimulation() {
+    if (running) return;
+    running = true;
+    resizeCanvas();
+    lastTick = performance.now();
+    frameHandle = requestAnimationFrame(loop);
+  }
+
+  function stopSimulation() {
+    running = false;
+    pointerActive = false;
+    pointerId = null;
+    if (frameHandle !== null) {
+      cancelAnimationFrame(frameHandle);
+      frameHandle = null;
+    }
+  }
+
+  if (controller) {
+    controller.onChange((active) => {
+      if (active) {
+        startSimulation();
+      } else {
+        stopSimulation();
+      }
+    });
+  } else {
+    startSimulation();
   }
 })();

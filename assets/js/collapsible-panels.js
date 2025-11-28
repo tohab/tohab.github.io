@@ -30,13 +30,19 @@
       };
       updateAriaExpanded(detail.open);
 
+      var dispatchStateEvent = function (type) {
+        detail.dispatchEvent(new CustomEvent(type));
+      };
+
       if (reduceMotion) {
         detail.addEventListener('toggle', function () {
           updateAriaExpanded(detail.open);
           if (detail.open) {
             content.style.height = 'auto';
+            dispatchStateEvent('collapsible-panel:opening');
           } else {
             content.style.height = '';
+            dispatchStateEvent('collapsible-panel:closing');
           }
         });
         return;
@@ -92,6 +98,7 @@
       var open = function () {
         detail.setAttribute('data-animating', 'true');
         detail.classList.remove('closing');
+        dispatchStateEvent('collapsible-panel:opening');
         content.style.height = '0px';
         content.getBoundingClientRect();
 
@@ -111,6 +118,7 @@
       var close = function () {
         detail.setAttribute('data-animating', 'true');
         detail.classList.add('closing');
+        dispatchStateEvent('collapsible-panel:closing');
 
         var currentHeight = content.scrollHeight;
         content.style.height = currentHeight + 'px';

@@ -17,6 +17,18 @@ order: 6
   const canvas = document.getElementById('cosmic-drifter');
   if (!canvas) return;
 
+  const controller =
+    window.createGamePanelController && typeof window.createGamePanelController === 'function'
+      ? window.createGamePanelController(canvas)
+      : null;
+
+  const manageEvent = controller
+    ? (target, type, handler, options) => controller.addManagedEvent(target, type, handler, options)
+    : (target, type, handler, options) => {
+        target.addEventListener(type, handler, options);
+        return () => target.removeEventListener(type, handler, options);
+      };
+
   const ctx = canvas.getContext('2d');
   let width = 0;
   let height = 0;
@@ -81,6 +93,8 @@ order: 6
 
   const spaceObjects = [];
   let lastTime = performance.now();
+  let frameHandle = null;
+  let running = false;
 
   function resize() {
     const rect = canvas.getBoundingClientRect();
@@ -157,9 +171,9 @@ order: 6
   }
 
   function attachEvents() {
-    window.addEventListener('keydown', (e) => handleKey(e, true));
-    window.addEventListener('keyup', (e) => handleKey(e, false));
-    window.addEventListener('resize', resize);
+    manageEvent(window, 'keydown', (e) => handleKey(e, true));
+    manageEvent(window, 'keyup', (e) => handleKey(e, false));
+    manageEvent(window, 'resize', resize);
   }
 
   function updateShip(dt) {
@@ -368,6 +382,10 @@ order: 6
   }
 
   function loop() {
+    if (!running) {
+      frameHandle = null;
+      return;
+    }
     const now = performance.now();
     const dt = Math.min(0.05, (now - lastTime) / 1000);
     lastTime = now;
@@ -380,11 +398,44 @@ order: 6
     drawShip();
     drawHud(dt);
 
-    requestAnimationFrame(loop);
+    frameHandle = requestAnimationFrame(loop);
+  }
+
+  function startFlight() {
+    if (running) return;
+    running = true;
+    resize();
+    lastTime = performance.now();
+    frameHandle = requestAnimationFrame(loop);
+  }
+
+  function stopFlight() {
+    running = false;
+    Object.keys(input).forEach((key) => {
+      input[key] = false;
+    });
+    ship.vx = 0;
+    ship.vy = 0;
+    ship.speed = ship.baseSpeed;
+    if (frameHandle !== null) {
+      cancelAnimationFrame(frameHandle);
+      frameHandle = null;
+    }
   }
 
   resize();
   attachEvents();
   initField();
-  requestAnimationFrame(loop);
+
+  if (controller) {
+    controller.onChange((active) => {
+      if (active) {
+        startFlight();
+      } else {
+        stopFlight();
+      }
+    });
+  } else {
+    startFlight();
+  }
 })();

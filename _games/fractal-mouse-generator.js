@@ -17,6 +17,18 @@ order: 2
   const canvas = document.getElementById('fractal-generator');
   if (!canvas) return;
 
+  const controller =
+    window.createGamePanelController && typeof window.createGamePanelController === 'function'
+      ? window.createGamePanelController(canvas)
+      : null;
+
+  const manageEvent = controller
+    ? (target, type, handler, options) => controller.addManagedEvent(target, type, handler, options)
+    : (target, type, handler, options) => {
+        target.addEventListener(type, handler, options);
+        return () => target.removeEventListener(type, handler, options);
+      };
+
   const ctx = canvas.getContext('2d', { willReadFrequently: false });
   const pointer = { x: 0.5, y: 0.5 };
   const viewScale = 3.0;
@@ -25,6 +37,8 @@ order: 2
   let height = 0;
   let dpr = window.devicePixelRatio || 1;
   let pendingRender = false;
+  let pendingFrameId = null;
+  let allowRendering = true;
 
   const palette = new Array(maxIterations + 1).fill(0).map((_, i) => {
     if (i === maxIterations) return [9, 9, 20, 255];
@@ -49,13 +63,15 @@ order: 2
   }
 
   function requestRender() {
-    if (pendingRender) return;
+    if (pendingRender || !allowRendering) return;
     pendingRender = true;
-    requestAnimationFrame(render);
+    pendingFrameId = requestAnimationFrame(render);
   }
 
   function render() {
     pendingRender = false;
+    pendingFrameId = null;
+    if (!allowRendering) return;
     const pixelWidth = canvas.width;
     const pixelHeight = canvas.height;
     const imageData = ctx.createImageData(pixelWidth, pixelHeight);
@@ -100,12 +116,36 @@ order: 2
     requestRender();
   }
 
-  canvas.addEventListener('pointerdown', updatePointer);
-  canvas.addEventListener('pointermove', updatePointer);
-  canvas.addEventListener('pointerenter', updatePointer);
+  manageEvent(canvas, 'pointerdown', updatePointer);
+  manageEvent(canvas, 'pointermove', updatePointer);
+  manageEvent(canvas, 'pointerenter', updatePointer);
 
-  window.addEventListener('resize', resize);
+  manageEvent(window, 'resize', resize);
 
-  resize();
-  requestRender();
+  function startFractal() {
+    allowRendering = true;
+    resize();
+    requestRender();
+  }
+
+  function stopFractal() {
+    allowRendering = false;
+    if (pendingFrameId !== null) {
+      cancelAnimationFrame(pendingFrameId);
+      pendingFrameId = null;
+    }
+    pendingRender = false;
+  }
+
+  if (controller) {
+    controller.onChange((active) => {
+      if (active) {
+        startFractal();
+      } else {
+        stopFractal();
+      }
+    });
+  } else {
+    startFractal();
+  }
 })();

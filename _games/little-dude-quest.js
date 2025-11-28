@@ -18,23 +18,40 @@ order: 6
   const canvas = document.getElementById('tiny-horizon-platformer');
   if (!canvas) return;
 
+  const controller =
+    window.createGamePanelController && typeof window.createGamePanelController === 'function'
+      ? window.createGamePanelController(canvas)
+      : null;
+
+  const manageEvent = controller
+    ? (target, type, handler, options) => controller.addManagedEvent(target, type, handler, options)
+    : (target, type, handler, options) => {
+        target.addEventListener(type, handler, options);
+        return () => target.removeEventListener(type, handler, options);
+      };
+
   const ctx = canvas.getContext('2d');
   let width = 0;
   let height = 0;
   let dpr = window.devicePixelRatio || 1;
   let lastTime = performance.now();
+  let frameHandle = null;
+  let running = false;
 
   const input = { left: false, right: false };
   let jumpBuffer = 0;
   const JUMP_BUFFER_TIME = 0.16;
   const GRAVITY = 2300;
-  const MOVE_ACCEL = 1600;
-  const MAX_SPEED = 320;
+  const MOVE_ACCEL = 1700;
+  const MAX_SPEED = 430;
   const MAX_FALL = 1600;
   const FRICTION_GROUND = 12;
   const FRICTION_AIR = 3;
   const JUMP_VELOCITY = 760;
   const COYOTE_TIME = 0.09;
+  const MAX_ASCENT = 110;
+  const MIN_GAP = 70;
+  const MAX_GAP = 210;
 
   const player = {
     x: 0,
@@ -58,6 +75,7 @@ order: 6
   let skyGradient = null;
   let message = '';
   let messageTimer = 0;
+  const clouds = [];
 
   const colors = {
     skyTop: '#251a4a',
@@ -82,6 +100,7 @@ order: 6
     skyGradient = ctx.createLinearGradient(0, 0, 0, height);
     skyGradient.addColorStop(0, colors.skyTop);
     skyGradient.addColorStop(1, colors.skyBottom);
+    seedClouds();
     generateLevel('freshly built run!');
   }
 
@@ -118,7 +137,11 @@ order: 6
 
     for (let i = 0; i < sectionCount; i += 1) {
       const platformWidth = rand(160, 320);
-      cursorY = clamp(cursorY + rand(-150, 150), minY, maxY);
+      let deltaY = rand(-150, 150);
+      if (deltaY < -MAX_ASCENT) {
+        deltaY = -MAX_ASCENT;
+      }
+      cursorY = clamp(cursorY + deltaY, minY, maxY);
       platforms.push({
         x: cursorX,
         y: cursorY,
@@ -142,11 +165,12 @@ order: 6
         });
       }
 
-      cursorX += platformWidth + rand(80, 180);
+      cursorX += platformWidth + rand(MIN_GAP, MAX_GAP);
 
       if (Math.random() < 0.4) {
         const floatingWidth = rand(80, 150);
-        const floatingY = clamp(cursorY - rand(90, 160), minY, cursorY - 40);
+        const floatRise = rand(60, 140);
+        const floatingY = clamp(cursorY - Math.min(floatRise, MAX_ASCENT - 10), minY, cursorY - 40);
         platforms.push({
           x: cursorX - floatingWidth * 0.6,
           y: floatingY,
@@ -307,6 +331,7 @@ order: 6
     updateMonsters(dt);
     updateGoal();
     updateCamera(dt);
+    updateClouds(dt);
     messageTimer = Math.max(0, messageTimer - dt);
   }
 
@@ -405,11 +430,59 @@ order: 6
   function drawBackground() {
     ctx.fillStyle = skyGradient;
     ctx.fillRect(0, 0, width, height);
+    const horizon = ctx.createLinearGradient(0, height * 0.7, 0, height);
+    horizon.addColorStop(0, 'rgba(255,142,193,0.1)');
+    horizon.addColorStop(1, 'rgba(255,221,113,0.2)');
+    ctx.fillStyle = horizon;
+    ctx.fillRect(0, 0, width, height);
+    drawClouds();
     ctx.fillStyle = 'rgba(255,255,255,0.06)';
     for (let i = 0; i < 40; i += 1) {
       const starX = (i * 97 + performance.now() * 0.01) % (width + 200) - 100;
       const starY = ((i * 53) % height) * 0.5 + 20;
       ctx.fillRect(starX, starY, 2, 2);
+    }
+  }
+
+  function seedClouds() {
+    clouds.length = 0;
+    const cloudCount = Math.max(6, Math.round(width / 90));
+    for (let i = 0; i < cloudCount; i += 1) {
+      clouds.push({
+        x: Math.random() * (width + 200) - 100,
+        y: rand(20, height * 0.45),
+        scale: rand(40, 110),
+        speed: rand(10, 30),
+        fluff: Math.random() * 0.4 + 0.6,
+        layer: Math.random() < 0.4 ? 0.8 : 1,
+      });
+    }
+  }
+
+  function updateClouds(dt) {
+    for (const cloud of clouds) {
+      cloud.x += cloud.speed * dt;
+      if (cloud.x > width + 140) {
+        cloud.x = -160;
+        cloud.y = rand(20, height * 0.45);
+        cloud.scale = rand(40, 110);
+        cloud.speed = rand(10, 30);
+      }
+    }
+  }
+
+  function drawClouds() {
+    for (const cloud of clouds) {
+      const x = cloud.x;
+      const y = cloud.y;
+      const w = cloud.scale * 2;
+      const h = cloud.scale * 0.6;
+      ctx.save();
+      ctx.globalAlpha = 0.35 * cloud.fluff;
+      ctx.fillStyle = cloud.layer > 0.9 ? '#fdfaff' : '#d6efff';
+      roundedRectPath(x - camera.x * 0.08, y, w, h, h / 2);
+      ctx.fill();
+      ctx.restore();
     }
   }
 
@@ -425,11 +498,15 @@ order: 6
   }
 
   function loop(now) {
+    if (!running) {
+      frameHandle = null;
+      return;
+    }
     const dt = Math.min((now - lastTime) / 1000, 1 / 30);
     lastTime = now;
     update(dt);
     render();
-    requestAnimationFrame(loop);
+    frameHandle = requestAnimationFrame(loop);
   }
 
   function setKeyState(event, isDown) {
@@ -459,14 +536,42 @@ order: 6
     }
   }
 
-  window.addEventListener('keydown', (event) => setKeyState(event, true));
-  window.addEventListener('keyup', (event) => setKeyState(event, false));
-  window.addEventListener('blur', () => {
+  manageEvent(window, 'keydown', (event) => setKeyState(event, true));
+  manageEvent(window, 'keyup', (event) => setKeyState(event, false));
+  manageEvent(window, 'blur', () => {
     input.left = false;
     input.right = false;
   });
-  window.addEventListener('resize', resize);
+  manageEvent(window, 'resize', resize);
 
-  resize();
-  requestAnimationFrame(loop);
+  function startRun() {
+    if (running) return;
+    running = true;
+    resize();
+    lastTime = performance.now();
+    frameHandle = requestAnimationFrame(loop);
+  }
+
+  function stopRun() {
+    running = false;
+    input.left = false;
+    input.right = false;
+    jumpBuffer = 0;
+    if (frameHandle !== null) {
+      cancelAnimationFrame(frameHandle);
+      frameHandle = null;
+    }
+  }
+
+  if (controller) {
+    controller.onChange((active) => {
+      if (active) {
+        startRun();
+      } else {
+        stopRun();
+      }
+    });
+  } else {
+    startRun();
+  }
 })();

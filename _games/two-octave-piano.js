@@ -20,6 +20,18 @@ order: 4
   const container = document.getElementById('two-octave-piano');
   if (!container) return;
 
+  const controller =
+    window.createGamePanelController && typeof window.createGamePanelController === 'function'
+      ? window.createGamePanelController(container)
+      : null;
+
+  const manageEvent = controller
+    ? (target, type, handler, options) => controller.addManagedEvent(target, type, handler, options)
+    : (target, type, handler, options) => {
+        target.addEventListener(type, handler, options);
+        return () => target.removeEventListener(type, handler, options);
+      };
+
   const AudioContextClass = window.AudioContext || window.webkitAudioContext;
   if (!AudioContextClass) {
     container.textContent = 'Your browser does not support the Web Audio API required for this piano.';
@@ -367,16 +379,16 @@ order: 4
     pressedKeyNotes.clear();
   }
 
-  document.addEventListener('keydown', handleKeyDown);
-  document.addEventListener('keyup', handleKeyUp);
-  window.addEventListener('blur', () => {
+  manageEvent(document, 'keydown', handleKeyDown);
+  manageEvent(document, 'keyup', handleKeyUp);
+  manageEvent(window, 'blur', () => {
     releaseAllKeys();
     setQuarterToneHold(false);
     setQuarterToneLatch(false);
   });
 
   // Release any sustained notes if the page becomes hidden.
-  document.addEventListener('visibilitychange', () => {
+  manageEvent(document, 'visibilitychange', () => {
     if (document.visibilityState === 'hidden') {
       releaseAllKeys();
       setQuarterToneHold(false);
@@ -439,23 +451,42 @@ order: 4
     });
   }
 
-  scheduleBlackKeyLayout();
-
   if (typeof ResizeObserver !== 'undefined') {
     const observer = new ResizeObserver(() => {
       scheduleBlackKeyLayout();
     });
     observer.observe(pianoSurface);
   } else {
-    window.addEventListener('resize', scheduleBlackKeyLayout);
+    manageEvent(window, 'resize', scheduleBlackKeyLayout);
   }
 
-  window.addEventListener('orientationchange', scheduleBlackKeyLayout);
-  window.addEventListener('load', scheduleBlackKeyLayout);
+  manageEvent(window, 'orientationchange', scheduleBlackKeyLayout);
 
   if (document.fonts && document.fonts.ready && typeof document.fonts.ready.then === 'function') {
     document.fonts.ready.then(() => {
-      scheduleBlackKeyLayout();
+      if (!controller || controller.isActive()) {
+        scheduleBlackKeyLayout();
+      }
     }).catch(() => {});
+  }
+
+  function handleActivation(active) {
+    if (active) {
+      scheduleBlackKeyLayout();
+      return;
+    }
+    releaseAllKeys();
+    setQuarterToneHold(false);
+    setQuarterToneLatch(false);
+    [...activeNotes.keys()].forEach(name => stopNote(name, true));
+    if (audioContext && typeof audioContext.suspend === 'function') {
+      audioContext.suspend().catch(() => {});
+    }
+  }
+
+  if (controller) {
+    controller.onChange(handleActivation);
+  } else {
+    scheduleBlackKeyLayout();
   }
 })();

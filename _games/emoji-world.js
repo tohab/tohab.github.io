@@ -18,6 +18,18 @@ order: 5
   const canvas = document.getElementById('emoji-world');
   if (!canvas) return;
 
+  const controller =
+    window.createGamePanelController && typeof window.createGamePanelController === 'function'
+      ? window.createGamePanelController(canvas)
+      : null;
+
+  const manageEvent = controller
+    ? (target, type, handler, options) => controller.addManagedEvent(target, type, handler, options)
+    : (target, type, handler, options) => {
+        target.addEventListener(type, handler, options);
+        return () => target.removeEventListener(type, handler, options);
+      };
+
   const ctx = canvas.getContext('2d');
   let width = 0;
   let height = 0;
@@ -25,6 +37,8 @@ order: 5
   let tileSize = 64;
   let lastTime = performance.now();
   let elapsed = 0;
+  let frameHandle = null;
+  let running = false;
 
   const CHUNK_W = 12;
   const CHUNK_H = 8;
@@ -1091,12 +1105,16 @@ order: 5
   }
 
   function tick(timestamp) {
+    if (!running) {
+      frameHandle = null;
+      return;
+    }
     const delta = Math.min(0.05, (timestamp - lastTime) / 1000);
     lastTime = timestamp;
     elapsed += delta;
     update(delta);
     render();
-    requestAnimationFrame(tick);
+    frameHandle = requestAnimationFrame(tick);
   }
 
   function resize() {
@@ -1148,25 +1166,57 @@ order: 5
     pointer.active = false;
   }
 
-  window.addEventListener('resize', resize);
-  document.addEventListener('visibilitychange', () => {
+  manageEvent(window, 'resize', resize);
+  manageEvent(document, 'visibilitychange', () => {
     lastTime = performance.now();
   });
-  window.addEventListener('keydown', (event) => handleKey(event, true));
-  window.addEventListener('keyup', (event) => handleKey(event, false));
-  canvas.addEventListener('pointerdown', updatePointer);
-  canvas.addEventListener('pointermove', (event) => {
+  manageEvent(window, 'keydown', (event) => handleKey(event, true));
+  manageEvent(window, 'keyup', (event) => handleKey(event, false));
+  manageEvent(canvas, 'pointerdown', updatePointer);
+  manageEvent(canvas, 'pointermove', (event) => {
     if (event.pressure === 0 && !pointer.active) return;
     if (event.buttons === 0 && !pointer.active) return;
     if (pointer.active) updatePointer(event);
   });
-  window.addEventListener('pointerup', releasePointer);
-  window.addEventListener('pointercancel', releasePointer);
-  canvas.addEventListener('pointerleave', releasePointer);
-  canvas.addEventListener('click', () => handleAction('primary'));
+  manageEvent(window, 'pointerup', releasePointer);
+  manageEvent(window, 'pointercancel', releasePointer);
+  manageEvent(canvas, 'pointerleave', releasePointer);
+  manageEvent(canvas, 'click', () => handleAction('primary'));
 
-  resize();
+  function startWorld() {
+    if (running) return;
+    running = true;
+    resize();
+    lastTime = performance.now();
+    frameHandle = requestAnimationFrame(tick);
+  }
+
+  function stopWorld() {
+    running = false;
+    pointer.active = false;
+    pointer.dx = 0;
+    pointer.dy = 0;
+    Object.keys(input).forEach((key) => {
+      input[key] = false;
+    });
+    if (frameHandle !== null) {
+      cancelAnimationFrame(frameHandle);
+      frameHandle = null;
+    }
+  }
+
   const { cx, cy } = currentChunkCoords();
   ensureNeighborhood(cx, cy);
-  requestAnimationFrame(tick);
+
+  if (controller) {
+    controller.onChange((active) => {
+      if (active) {
+        startWorld();
+      } else {
+        stopWorld();
+      }
+    });
+  } else {
+    startWorld();
+  }
 })();

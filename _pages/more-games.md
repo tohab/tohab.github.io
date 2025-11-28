@@ -29,6 +29,7 @@ collapsible_panels: true
 {% endfor %}
 
 {% if games.size > 0 %}
+<script defer src="{{ '/assets/js/game-panel-controller.js' | relative_url | bust_file_cache }}"></script>
 {% for game in games %}
 <script src="{{ game.url | relative_url | bust_file_cache }}" defer></script>
 {% endfor %}
