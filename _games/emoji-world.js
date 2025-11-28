@@ -36,12 +36,17 @@ order: 5
     y: 0.5,
     vx: 0,
     vy: 0,
-    maxSpeed: 3.2,
-    accel: 8,
+    maxSpeed: 3.5,
+    accel: 10,
     drag: 6,
-    emoji: '🧭',
+    sprite: {
+      idle: '🧍‍♂️',
+      walk: '🚶‍♂️',
+      run: '🏃‍♂️',
+    },
     chat: '',
     chatTimer: 0,
+    isMoving: false,
   };
 
   const camera = { x: player.x, y: player.y, easing: 5 };
@@ -50,6 +55,18 @@ order: 5
   const world = new Map();
   const inventory = [];
   const inventoryIndex = new Map();
+  const party = [];
+  const partyIndex = new Map();
+  let partyTotal = 0;
+  const PARTY_LIMIT = 6;
+  const encounterState = {
+    active: false,
+    creature: null,
+    biome: null,
+    message: '',
+    banner: '',
+  };
+  let encounterCooldown = 1.5;
 
   const BIOMES = [
     {
@@ -59,6 +76,10 @@ order: 5
       sky: ['#a5ecff', '#f6ffe3'],
       haze: 'rgba(255,255,255,0.35)',
       floor: ['🌱', '🌿', '🍀', '🌾', '🍃'],
+      encounters: {
+        rate: 0.18,
+        floors: ['🌱', '🌿', '🍀', '🌾'],
+      },
       features: [
         {
           glyph: '🌼',
@@ -107,6 +128,10 @@ order: 5
       sky: ['#78c9ff', '#c6f0ff'],
       haze: 'rgba(64,131,206,0.25)',
       floor: ['🌊', '🪸', '🐚', '💎', '🩵'],
+      encounters: {
+        rate: 0.12,
+        floors: ['🌊', '🪸', '🐚'],
+      },
       features: [
         {
           glyph: '🪼',
@@ -156,6 +181,10 @@ order: 5
       sky: ['#ffd4b8', '#fff5ea'],
       haze: 'rgba(255,199,168,0.3)',
       floor: ['🧱', '🛣️', '🪙', '🪵'],
+      encounters: {
+        rate: 0.1,
+        floors: ['🛣️', '🧱'],
+      },
       features: [
         {
           glyph: '🏵️',
@@ -195,6 +224,10 @@ order: 5
       sky: ['#1b1d40', '#3a2b5f'],
       haze: 'rgba(93,73,151,0.35)',
       floor: ['🌌', '⭐', '💠', '🔹'],
+      encounters: {
+        rate: 0.25,
+        floors: ['🌌', '⭐', '💠'],
+      },
       features: [
         {
           glyph: '🌠',
@@ -238,6 +271,101 @@ order: 5
     },
   ];
 
+  const CREATURES = {
+    meadow: [
+      {
+        id: 'spriglet',
+        name: 'Spriglet',
+        emoji: '🦊',
+        type: 'bloom',
+        flavor: 'a sprout-tailed foxlet who loves paths lined with moss.',
+      },
+      {
+        id: 'lumifoal',
+        name: 'Lumifoal',
+        emoji: '🦄',
+        type: 'bloom',
+        flavor: 'a prismatic foal that braids light into the air.',
+      },
+      {
+        id: 'padpup',
+        name: 'Padpup',
+        emoji: '🐕',
+        type: 'bloom',
+        flavor: 'a loyal buddy who naps beneath clover patches.',
+      },
+    ],
+    tide: [
+      {
+        id: 'glimmerfin',
+        name: 'Glimmerfin',
+        emoji: '🐬',
+        type: 'tide',
+        flavor: 'a playful swimmer that keeps tidepool secrets.',
+      },
+      {
+        id: 'mistril',
+        name: 'Mistril',
+        emoji: '🐧',
+        type: 'tide',
+        flavor: 'a breezy wanderer wrapped in seafoam feathers.',
+      },
+      {
+        id: 'coralotl',
+        name: 'Coralotl',
+        emoji: '🦎',
+        type: 'tide',
+        flavor: 'a giggling axolotl with coral freckles.',
+      },
+    ],
+    plaza: [
+      {
+        id: 'brickit',
+        name: 'Brickit',
+        emoji: '🧱',
+        type: 'urban',
+        flavor: 'a stout pal who stacks cozy plazas together.',
+      },
+      {
+        id: 'clockette',
+        name: 'Clockette',
+        emoji: '⏰',
+        type: 'urban',
+        flavor: 'a tiny timekeeper with jangling keys.',
+      },
+      {
+        id: 'fluttertail',
+        name: 'Fluttertail',
+        emoji: '🕊️',
+        type: 'urban',
+        flavor: 'a dove that guides travelers between courtyards.',
+      },
+    ],
+    cosmos: [
+      {
+        id: 'starnib',
+        name: 'Starnib',
+        emoji: '🌟',
+        type: 'cosmic',
+        flavor: 'a scribbling mote that writes constellations mid-flight.',
+      },
+      {
+        id: 'orbulo',
+        name: 'Orbulo',
+        emoji: '🪐',
+        type: 'cosmic',
+        flavor: 'a ringed wanderer humming lullabies.',
+      },
+      {
+        id: 'moonbean',
+        name: 'Moonbean',
+        emoji: '🌙',
+        type: 'cosmic',
+        flavor: 'a sleepy crescent that wants to join your adventure.',
+      },
+    ],
+  };
+
   const BIOME_WEIGHT = BIOMES.reduce((sum, biome) => sum + biome.weight, 0);
 
   const keyMap = {
@@ -250,6 +378,15 @@ order: 5
     s: 'down',
     d: 'right',
   };
+  const actionKeys = {
+    ' ': 'primary',
+    Space: 'primary',
+    Enter: 'primary',
+    Spacebar: 'primary',
+    Escape: 'secondary',
+    Backspace: 'secondary',
+  };
+  const runtimeRng = mulberry32(worldSeed ^ 0xf00d);
 
   function clamp(value, min, max) {
     return Math.max(min, Math.min(max, value));
@@ -322,6 +459,27 @@ order: 5
     entry.count += 1;
   }
 
+  function recordCompanion(creature) {
+    let entry = partyIndex.get(creature.id);
+    if (!entry) {
+      entry = {
+        id: creature.id,
+        name: creature.name,
+        emoji: creature.emoji,
+        flavor: creature.flavor,
+        count: 0,
+      };
+      partyIndex.set(creature.id, entry);
+      party.push(entry);
+    }
+    entry.count += 1;
+    partyTotal += 1;
+  }
+
+  function partyCount() {
+    return partyTotal;
+  }
+
   function getChunk(cx, cy) {
     const key = chunkKey(cx, cy);
     let chunk = world.get(key);
@@ -347,6 +505,8 @@ order: 5
           tall: false,
           bark: null,
           collectible: null,
+          encounter: null,
+          biomeId: biome.id,
         };
 
         if (rand() < biome.featureDensity) {
@@ -365,6 +525,17 @@ order: 5
               };
             }
           }
+        }
+
+        if (
+          biome.encounters &&
+          biome.encounters.floors &&
+          biome.encounters.floors.includes(base.base)
+        ) {
+          base.encounter = {
+            type: 'wild',
+            rate: biome.encounters.rate,
+          };
         }
 
         tiles[y * CHUNK_W + x] = base;
@@ -440,8 +611,15 @@ order: 5
   }
 
   function updatePlayer(dt) {
+    if (encounterState.active) {
+      player.vx *= 1 - clamp(player.drag * dt * 0.5, 0, 1);
+      player.vy *= 1 - clamp(player.drag * dt * 0.5, 0, 1);
+      player.isMoving = false;
+      return;
+    }
     let moveX = (input.right ? 1 : 0) - (input.left ? 1 : 0);
     let moveY = (input.down ? 1 : 0) - (input.up ? 1 : 0);
+    player.isMoving = false;
 
     const pointerDir = pointerDirection();
     if (pointerDir) {
@@ -454,6 +632,7 @@ order: 5
       moveX /= mag;
       moveY /= mag;
     }
+    player.isMoving = mag > 0;
 
     const targetVx = moveX * player.maxSpeed;
     const targetVy = moveY * player.maxSpeed;
@@ -497,6 +676,51 @@ order: 5
     recordInventoryItem(collectible);
     player.chat = collectible.message || `you tucked ${collectible.name}.`;
     player.chatTimer = 3.2;
+  }
+
+  function startEncounter(tile) {
+    if (!tile || !tile.biomeId) return;
+    const options = CREATURES[tile.biomeId];
+    if (!options || !options.length) return;
+    const pickIndex = Math.floor(runtimeRng() * options.length) % options.length;
+    const creature = options[pickIndex];
+    encounterState.active = true;
+    encounterState.creature = creature;
+    encounterState.biome = tile.biomeId;
+    encounterState.banner = `${creature.name} wants to adventure with you!`;
+    encounterState.message = '';
+    encounterCooldown = 5;
+    pointer.active = false;
+    player.vx = 0;
+    player.vy = 0;
+    player.chat = `a wild ${creature.name}!`;
+    player.chatTimer = 3.5;
+  }
+
+  function endEncounter(message) {
+    encounterState.active = false;
+    encounterState.creature = null;
+    encounterState.message = message || '';
+    encounterState.banner = '';
+    if (message) {
+      player.chat = message;
+      player.chatTimer = 3.5;
+    }
+  }
+
+  function befriendEncounter() {
+    if (!encounterState.active || !encounterState.creature) return;
+    if (partyCount() >= PARTY_LIMIT) {
+      encounterState.message = 'your party is full · press Esc to let them roam.';
+      return;
+    }
+    recordCompanion(encounterState.creature);
+    endEncounter(`${encounterState.creature.name} joins your party!`);
+  }
+
+  function fleeEncounter() {
+    if (!encounterState.active) return;
+    endEncounter('maybe next time!');
   }
 
   function triggerBarks() {
@@ -549,11 +773,30 @@ order: 5
     }
   }
 
+  function updateEncounters(dt) {
+    encounterCooldown = Math.max(0, encounterCooldown - dt);
+    if (encounterState.active) return;
+
+    const speed = Math.hypot(player.vx, player.vy);
+    if (speed < 0.35) return;
+
+    const tile = getTile(player.x, player.y);
+    if (!tile || !tile.encounter) return;
+    if (encounterCooldown > 0) return;
+
+    const rate = tile.encounter.rate || 0.08;
+    const chance = rate * dt * 0.8;
+    if (runtimeRng() < chance) {
+      startEncounter(tile);
+    }
+  }
+
   function update(dt) {
     updatePlayer(dt);
     updateCamera(dt);
     updateChunks(dt);
     updateChat(dt);
+    updateEncounters(dt);
   }
 
   function drawSky(activeBiome) {
@@ -655,8 +898,15 @@ order: 5
     ctx.restore();
   }
 
+  function currentPlayerEmoji() {
+    const speed = Math.hypot(player.vx, player.vy);
+    if (speed > 2.3) return player.sprite.run;
+    if (speed > 0.25) return player.sprite.walk;
+    return player.sprite.idle;
+  }
+
   function drawPlayer() {
-    drawEmoji(player.emoji, player.x, player.y, tileSize);
+    drawEmoji(currentPlayerEmoji(), player.x, player.y, tileSize);
     if (player.chat) {
       const screenX = width / 2 + (player.x + 0.5 - camera.x) * tileSize;
       const screenY = height / 2 + (player.y - 0.2 - camera.y) * tileSize;
@@ -729,6 +979,103 @@ order: 5
     ctx.restore();
   }
 
+  function drawParty() {
+    const cardWidth = 220;
+    const padding = 10;
+    const x = 16;
+    const y = 48;
+    const rows = Math.max(1, party.length);
+    const rowHeight = 32;
+    const height = padding * 2 + rows * rowHeight;
+
+    ctx.save();
+    ctx.fillStyle = 'rgba(0,0,0,0.25)';
+    ctx.fillRect(x + 2, y + 2, cardWidth, height);
+    ctx.fillStyle = 'rgba(255,255,255,0.95)';
+    ctx.fillRect(x, y, cardWidth, height);
+
+    ctx.fillStyle = '#444';
+    ctx.font = '600 14px system-ui, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'top';
+    ctx.fillText(`party · ${partyCount()}/${PARTY_LIMIT}`, x + padding, y + 4);
+
+    if (!party.length) {
+      ctx.font = '12px system-ui, sans-serif';
+      ctx.fillStyle = '#777';
+      ctx.fillText('walk through tall grass to find friends!', x + padding, y + 24);
+      ctx.restore();
+      return;
+    }
+
+    party.slice(0, PARTY_LIMIT).forEach((entry, index) => {
+      const rowY = y + padding + 16 + index * rowHeight;
+      ctx.font = '22px system-ui, apple color emoji, emoji';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(entry.emoji, x + padding + 4, rowY + rowHeight / 2 - 4);
+
+      ctx.font = '13px system-ui, sans-serif';
+      ctx.fillStyle = '#333';
+      ctx.textBaseline = 'top';
+      ctx.fillText(entry.name, x + padding + 38, rowY);
+
+      ctx.font = '11px system-ui, sans-serif';
+      ctx.fillStyle = '#666';
+      ctx.fillText(entry.flavor, x + padding + 38, rowY + 16);
+
+      ctx.font = '12px system-ui, sans-serif';
+      ctx.fillStyle = '#444';
+      ctx.textAlign = 'right';
+      ctx.fillText(`x${entry.count}`, x + cardWidth - padding, rowY + 2);
+      ctx.textAlign = 'left';
+    });
+
+    ctx.restore();
+  }
+
+  function drawEncounter() {
+    if (!encounterState.active || !encounterState.creature) return;
+    const panelWidth = Math.min(420, width - 32);
+    const panelHeight = 140;
+    const x = (width - panelWidth) / 2;
+    const y = height - panelHeight - 24;
+    const creature = encounterState.creature;
+
+    ctx.save();
+    ctx.fillStyle = 'rgba(0,0,0,0.55)';
+    ctx.fillRect(x - 4, y - 4, panelWidth + 8, panelHeight + 8);
+    ctx.fillStyle = 'rgba(255,255,255,0.95)';
+    ctx.fillRect(x, y, panelWidth, panelHeight);
+
+    ctx.font = '64px system-ui, apple color emoji, emoji';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(creature.emoji, x + 24, y + panelHeight / 2);
+
+    ctx.textBaseline = 'top';
+    ctx.font = '18px system-ui, sans-serif';
+    ctx.fillStyle = '#222';
+    ctx.fillText(`${creature.name} · ${creature.type}`, x + 108, y + 18);
+
+    ctx.font = '13px system-ui, sans-serif';
+    ctx.fillStyle = '#555';
+    ctx.fillText(creature.flavor, x + 108, y + 44);
+
+    ctx.font = '12px system-ui, sans-serif';
+    ctx.fillStyle = '#2a2a2a';
+    const banner =
+      encounterState.banner || `${creature.name} wants to adventure with you!`;
+    ctx.fillText(banner, x + 108, y + panelHeight - 54);
+
+    ctx.font = '12px system-ui, sans-serif';
+    ctx.fillStyle = encounterState.message ? '#b14343' : '#333';
+    const prompt =
+      encounterState.message || 'press space/click to befriend · esc to let them roam';
+    ctx.fillText(prompt, x + 108, y + panelHeight - 32);
+
+    ctx.restore();
+  }
+
   function render() {
     const activeBiome = biomeForChunk(
       Math.floor(player.x / CHUNK_W),
@@ -738,7 +1085,9 @@ order: 5
     drawTiles(elapsed);
     drawPlayer();
     drawUI(activeBiome);
+    drawParty();
     drawInventory();
+    drawEncounter();
   }
 
   function tick(timestamp) {
@@ -764,10 +1113,28 @@ order: 5
   }
 
   function handleKey(event, isDown) {
+    const action = actionKeys[event.key];
+    if (action && isDown) {
+      handleAction(action);
+      event.preventDefault();
+      return;
+    }
     const key = keyMap[event.key];
     if (!key) return;
     input[key] = isDown;
     event.preventDefault();
+  }
+
+  function handleAction(type) {
+    if (type === 'primary') {
+      if (encounterState.active) {
+        befriendEncounter();
+      }
+    } else if (type === 'secondary') {
+      if (encounterState.active) {
+        fleeEncounter();
+      }
+    }
   }
 
   function updatePointer(event) {
@@ -796,6 +1163,7 @@ order: 5
   window.addEventListener('pointerup', releasePointer);
   window.addEventListener('pointercancel', releasePointer);
   canvas.addEventListener('pointerleave', releasePointer);
+  canvas.addEventListener('click', () => handleAction('primary'));
 
   resize();
   const { cx, cy } = currentChunkCoords();
