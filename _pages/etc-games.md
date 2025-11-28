@@ -1,6 +1,6 @@
 ---
 layout: games
-permalink: /more/games/
+permalink: /etc/games/
 title: games
 
 ---

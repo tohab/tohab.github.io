@@ -203,7 +203,7 @@ collections:
     permalink: /:collection/:title/
   games:
     output: true
-    permalink: /more/games/:name/
+    permalink: /etc/games/:name/
 
 announcements:
   enabled: true

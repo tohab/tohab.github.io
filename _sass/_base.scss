@@ -1296,56 +1296,58 @@ swiper-container {
 // Ninja Keys
 // for more options, check https://github.com/ssleptsov/ninja-keys?tab=readme-ov-file#css-variables
 ninja-keys {
-  --ninja-width: min(420px, calc(100vw - 2rem));
-  --ninja-font-size: 17.5px;
-  --ninja-accent-color: #c95f17;
+  --ninja-width: min(400px, calc(100vw - 2rem));
+  --ninja-font-size: 16.9px;
+  --ninja-accent-color: #5a4c5c;
   --ninja-icon-size: 0px;
-  --ninja-modal-background: #fff3e1;
-  --ninja-modal-shadow: 0 20px 55px rgba(99, 40, 0, 0.25);
+  --ninja-modal-background: #fff8f1;
+  --ninja-modal-shadow: 0 14px 45px rgba(23, 11, 1, 0.28);
   --ninja-text-color: var(--global-text-color);
-  --ninja-selected-background: rgba(255, 255, 255, 0.95);
+  --ninja-selected-background: rgba(226, 218, 205, 0.9);
   --ninja-selected-text-color: var(--global-text-color);
-  --ninja-secondary-background-color: rgba(201, 95, 23, 0.18);
-  --ninja-secondary-text-color: #8f5220;
-  --ninja-footer-background: rgba(255, 255, 255, 0.6);
-  --ninja-placeholder-color: rgba(60, 40, 18, 0.75);
-  --ninja-font-family: Georgia, "Times New Roman", Times, serif;
+  --ninja-secondary-background-color: rgba(90, 76, 92, 0.12);
+  --ninja-secondary-text-color: #5a4c5c;
+  --ninja-footer-background: rgba(255, 255, 255, 0.75);
+  --ninja-placeholder-color: rgba(74, 62, 54, 0.75);
+  --ninja-font-family: "Fira Code", "Courier New", monospace;
   --ninja-z-index: 1031;
-  --ninja-actions-height: 320px;
-  --ninja-top: 17%;
-  --ninja-overflow-background: rgba(255, 244, 231, 0.6);
+  --ninja-actions-height: 290px;
+  --ninja-top: 14%;
+  --ninja-overflow-background: rgba(255, 248, 241, 0.65);
   --ninja-key-border-radius: 999px;
 }
 
 html[data-theme="dark"] ninja-keys {
-  --ninja-modal-background: #20120a;
+  --ninja-modal-background: #1c1511;
   --ninja-modal-shadow: 0 25px 50px rgba(0, 0, 0, 0.65);
-  --ninja-text-color: #ffe7b0;
-  --ninja-selected-background: rgba(61, 41, 28, 0.95);
-  --ninja-selected-text-color: #ffe7b0;
-  --ninja-secondary-background-color: rgba(255, 255, 255, 0.12);
-  --ninja-secondary-text-color: #f6d5a3;
+  --ninja-text-color: #f8e5cd;
+  --ninja-selected-background: rgba(61, 41, 28, 0.9);
+  --ninja-selected-text-color: #f8e5cd;
+  --ninja-secondary-background-color: rgba(248, 229, 196, 0.1);
+  --ninja-secondary-text-color: #d4c2ac;
   --ninja-footer-background: rgba(10, 5, 1, 0.75);
-  --ninja-placeholder-color: rgba(255, 231, 176, 0.7);
+  --ninja-placeholder-color: rgba(248, 229, 196, 0.75);
   --ninja-overflow-background: rgba(0, 0, 0, 0.45);
 }
 
 ninja-keys::part(ninja-input) {
   color: var(--ninja-selected-text-color);
-  font-size: 1.05em;
-  letter-spacing: 0.02em;
+  font-size: 1em;
+  letter-spacing: 0.01em;
   font-style: normal;
+  font-family: "Fira Code", "Courier New", monospace;
 }
 
 ninja-keys::part(ninja-input)::placeholder {
   font-style: italic;
   color: var(--ninja-placeholder-color);
+  text-transform: lowercase;
 }
 
 ninja-keys::part(ninja-input-wrapper) {
   background: var(--global-bg-color);
-  border-radius: 999px;
-  padding: 0.4rem 1rem;
+  border-radius: 28px;
+  padding: 0.22rem 0.85rem;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
   border: none;
 }
@@ -1356,10 +1358,10 @@ html[data-theme="dark"] ninja-keys::part(ninja-input-wrapper) {
 }
 
 ninja-keys::part(actions-list) {
-  padding: 0.35rem 0.75rem 0.85rem;
+  padding: 0.2rem 0.6rem 0.7rem;
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.1rem;
   scroll-behavior: smooth;
   overscroll-behavior: contain;
 }
@@ -1367,14 +1369,15 @@ ninja-keys::part(actions-list) {
 ninja-keys::part(ninja-action) {
   border-left: 0 !important;
   border-radius: 999px;
-  padding: 0.55rem 0.95rem !important;
-  margin: 0.05rem 0;
+  padding: 0.4rem 0.85rem !important;
+  margin: 0;
   background: transparent !important;
-  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  line-height: 1.3;
 }
 
 ninja-keys::part(ninja-action):hover {
-  background: rgba(201, 95, 23, 0.12) !important;
+  background: rgba(90, 76, 92, 0.12) !important;
   transform: translateX(4px);
 }
 
@@ -1383,32 +1386,22 @@ html[data-theme="dark"] ninja-keys::part(ninja-action):hover {
 }
 
 ninja-keys::part(ninja-action):focus-visible {
-  outline: 2px solid rgba(201, 95, 23, 0.45);
+  outline: 2px solid rgba(90, 76, 92, 0.45);
   outline-offset: 2px;
 }
 
 html[data-theme="dark"] ninja-keys::part(ninja-action):focus-visible {
-  outline-color: rgba(255, 231, 176, 0.6);
+  outline-color: rgba(248, 229, 196, 0.6);
 }
 
 ninja-keys::part(ninja-selected) {
-  background: linear-gradient(
-      120deg,
-      rgba(255, 202, 149, 0.9),
-      rgba(255, 247, 233, 0.95)
-    )
-    !important;
-  box-shadow: 0 12px 28px rgba(201, 95, 23, 0.35);
+  background: #f0e5d9 !important;
+  box-shadow: 0 10px 22px rgba(76, 63, 65, 0.25);
   transform: translateX(4px);
 }
 
 html[data-theme="dark"] ninja-keys::part(ninja-selected) {
-  background: linear-gradient(
-      120deg,
-      rgba(88, 55, 33, 0.95),
-      rgba(57, 33, 18, 0.9)
-    )
-    !important;
+  background: rgba(61, 41, 28, 0.95) !important;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.75);
 }
 

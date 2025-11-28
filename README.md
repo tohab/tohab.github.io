@@ -180,7 +180,7 @@ Sensitive essays live in an encrypted workflow so nothing private lands in git h
 
 ### Interactive games
 
-`_pages/more-games.md` renders collapsible panels for every entry in the `_games/` collection. To add or update a game:
+`_pages/etc-games.md` renders collapsible panels for every entry in the `_games/` collection. To add or update a game:
 
 1. Create `_games/<slug>.js`.
 2. Add Liquid front matter describing the embed target and metadata:

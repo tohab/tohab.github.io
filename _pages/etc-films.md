@@ -1,6 +1,6 @@
 ---
 layout: films
-permalink: /more/films/
+permalink: /etc/films/
 title: films
 ---
 
