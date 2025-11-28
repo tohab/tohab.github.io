@@ -1296,40 +1296,38 @@ swiper-container {
 // Ninja Keys
 // for more options, check https://github.com/ssleptsov/ninja-keys?tab=readme-ov-file#css-variables
 ninja-keys {
-  --ninja-width: min(400px, calc(100vw - 2rem));
-  --ninja-font-size: 16.9px;
-  --ninja-accent-color: #5a4c5c;
+  --ninja-width: min(420px, calc(100vw - 2rem));
+  --ninja-font-size: 17.4px;
+  --ninja-accent-color: var(--global-theme-color);
   --ninja-icon-size: 0px;
-  --ninja-modal-background: #fff8f1;
-  --ninja-modal-shadow: 0 14px 45px rgba(23, 11, 1, 0.28);
+  --ninja-modal-background: var(--global-bg-color);
+  --ninja-modal-shadow: 0 18px 45px rgba(117, 59, 17, 0.25);
   --ninja-text-color: var(--global-text-color);
-  --ninja-selected-background: rgba(226, 218, 205, 0.9);
+  --ninja-selected-background: #f3c28a;
   --ninja-selected-text-color: var(--global-text-color);
-  --ninja-secondary-background-color: rgba(90, 76, 92, 0.12);
-  --ninja-secondary-text-color: #5a4c5c;
-  --ninja-footer-background: rgba(255, 255, 255, 0.75);
-  --ninja-placeholder-color: rgba(74, 62, 54, 0.75);
-  --ninja-font-family: "Fira Code", "Courier New", monospace;
-  --global-bg-color: #fff8f1;
+  --ninja-secondary-background-color: rgba(243, 194, 138, 0.35);
+  --ninja-secondary-text-color: var(--global-text-color);
+  --ninja-footer-background: rgba(243, 194, 138, 0.58);
+  --ninja-placeholder-color: rgba(60, 40, 18, 0.75);
+  --ninja-font-family: "Times New Roman", Times, serif;
   --ninja-z-index: 1031;
-  --ninja-actions-height: 290px;
-  --ninja-top: 14%;
-  --ninja-overflow-background: rgba(255, 248, 241, 0.65);
+  --ninja-actions-height: 300px;
+  --ninja-top: 16%;
+  --ninja-overflow-background: rgba(252, 216, 183, 0.65);
   --ninja-key-border-radius: 999px;
 }
 
 html[data-theme="dark"] ninja-keys {
   --ninja-modal-background: #1c1511;
   --ninja-modal-shadow: 0 25px 50px rgba(0, 0, 0, 0.65);
-  --ninja-text-color: #f8e5cd;
-  --ninja-selected-background: rgba(61, 41, 28, 0.9);
-  --ninja-selected-text-color: #f8e5cd;
-  --ninja-secondary-background-color: rgba(248, 229, 196, 0.1);
-  --ninja-secondary-text-color: #d4c2ac;
-  --ninja-footer-background: rgba(10, 5, 1, 0.75);
-  --ninja-placeholder-color: rgba(248, 229, 196, 0.75);
-  --ninja-overflow-background: rgba(0, 0, 0, 0.45);
-  --global-bg-color: #1c1511;
+  --ninja-text-color: #ffe7b0;
+  --ninja-selected-background: #3d291c;
+  --ninja-selected-text-color: #ffe7b0;
+  --ninja-secondary-background-color: rgba(255, 255, 255, 0.15);
+  --ninja-secondary-text-color: #ffe7b0;
+  --ninja-footer-background: rgba(10, 5, 1, 0.85);
+  --ninja-placeholder-color: rgba(255, 231, 176, 0.75);
+  --ninja-overflow-background: rgba(0, 0, 0, 0.55);
 }
 
 ninja-keys::part(ninja-input) {
@@ -1337,7 +1335,7 @@ ninja-keys::part(ninja-input) {
   font-size: 1em;
   letter-spacing: 0.01em;
   font-style: normal;
-  font-family: "Fira Code", "Courier New", monospace;
+  font-family: inherit;
 }
 
 ninja-keys::part(ninja-input)::placeholder {
@@ -1349,7 +1347,7 @@ ninja-keys::part(ninja-input)::placeholder {
 ninja-keys::part(ninja-input-wrapper) {
   background: var(--global-bg-color);
   border-radius: 28px;
-  padding: 0.22rem 0.85rem;
+  padding: 0.12rem 0.55rem;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
   border: none;
 }
@@ -1379,7 +1377,7 @@ ninja-keys::part(ninja-action) {
 }
 
 ninja-keys::part(ninja-action):hover {
-  background: rgba(90, 76, 92, 0.12) !important;
+  background: rgba(243, 194, 138, 0.35) !important;
   transform: translateX(4px);
 }
 
@@ -1388,22 +1386,22 @@ html[data-theme="dark"] ninja-keys::part(ninja-action):hover {
 }
 
 ninja-keys::part(ninja-action):focus-visible {
-  outline: 2px solid rgba(90, 76, 92, 0.45);
+  outline: 2px solid rgba(184, 0, 0, 0.5);
   outline-offset: 2px;
 }
 
 html[data-theme="dark"] ninja-keys::part(ninja-action):focus-visible {
-  outline-color: rgba(248, 229, 196, 0.6);
+  outline-color: rgba(255, 231, 176, 0.6);
 }
 
 ninja-keys::part(ninja-selected) {
-  background: #f0e5d9 !important;
-  box-shadow: 0 10px 22px rgba(76, 63, 65, 0.25);
+  background: var(--ninja-selected-background) !important;
+  box-shadow: 0 10px 22px rgba(114, 53, 16, 0.25);
   transform: translateX(4px);
 }
 
 html[data-theme="dark"] ninja-keys::part(ninja-selected) {
-  background: rgba(61, 41, 28, 0.95) !important;
+  background: var(--ninja-selected-background) !important;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.75);
 }
 
