@@ -1,5 +1,5 @@
 ---
-layout: null
+layout: game
 title: rainbow ragdoll playground
 summary: >-
   click, fling, and tug on the ragdoll. hold anywhere on the canvas to tilt

@@ -203,7 +203,7 @@ collections:
     permalink: /:collection/:title/
   games:
     output: true
-    permalink: /games/:name.js
+    permalink: /more/games/:name.js
 
 announcements:
   enabled: true

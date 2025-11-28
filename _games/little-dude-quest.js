@@ -1,5 +1,5 @@
 ---
-layout: null
+layout: game
 title: tiny horizon sprint
 summary: >-
   guide a tiny adventurer across improvised ledges, hopping over pits and

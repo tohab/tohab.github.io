@@ -1,5 +1,5 @@
 ---
-layout: null
+layout: game
 title: looping life garden
 summary: >-
   watch conway's game of life bloom on an endless torus. click or drag to seed

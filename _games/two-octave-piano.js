@@ -1,5 +1,5 @@
 ---
-layout: null
+layout: game
 title: two octave daydream piano
 summary: >-
   tap across a two-octave keyboard to play a lightweight synth piano. use the

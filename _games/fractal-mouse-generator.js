@@ -1,5 +1,5 @@
 ---
-layout: null
+layout: game
 title: mouse fractal painter
 summary: >-
   move your cursor across the canvas to morph a Julia set. the fractal palette

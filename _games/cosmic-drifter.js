@@ -1,5 +1,5 @@
 ---
-layout: null
+layout: game
 title: cosmic drift courier
 summary: >-
   pilot a nimble courier ship through an endless 3d star lane. weave between

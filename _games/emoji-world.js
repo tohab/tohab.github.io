@@ -1,5 +1,5 @@
 ---
-layout: null
+layout: game
 title: emoji wanderer
 summary: >-
   roam through an endlessly generated emoji diorama. the camera follows from

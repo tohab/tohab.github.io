@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<section class="game-detail py-4 py-md-5">
+  <div class="container">
+    <a class="game-detail__back-link" href="{{ '/more/games/' | relative_url }}">← all games</a>
+    <div class="game-detail__header">
+      <p class="game-detail__eyebrow">interactive toy</p>
+      <h1 class="game-detail__title">{{ page.title }}</h1>
+      {% if page.summary %}
+      <p class="game-detail__summary">{{ page.summary }}</p>
+      {% endif %}
+    </div>
+    <div class="game-detail__playable embed-responsive {{ page.aspect_ratio | default: 'embed-responsive-4by3' }}">
+      {% assign element_tag = page.element_tag | default: 'div' %}
+      <{{ element_tag }}
+        {% if page.element_id %}id="{{ page.element_id }}"{% endif %}
+        class="{{ page.element_class | default: 'embed-responsive-item' }}"
+        {% if page.element_role %}role="{{ page.element_role }}"{% endif %}
+        {% if page.element_aria_label %}aria-label="{{ page.element_aria_label }}"{% endif %}
+      ></{{ element_tag }}>
+    </div>
+  </div>
+</section>
+<script>
+{{ content | strip }}
+</script>
