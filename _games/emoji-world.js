@@ -48,6 +48,8 @@ order: 5
   const input = { up: false, down: false, left: false, right: false };
   const pointer = { active: false, dx: 0, dy: 0 };
   const world = new Map();
+  const inventory = [];
+  const inventoryIndex = new Map();
 
   const BIOMES = [
     {
@@ -58,10 +60,40 @@ order: 5
       haze: 'rgba(255,255,255,0.35)',
       floor: ['🌱', '🌿', '🍀', '🌾', '🍃'],
       features: [
-        { glyph: '🌼', blocking: false, bark: 'daisies sway hello.' },
-        { glyph: '🍄', blocking: false, bark: 'mushrooms whisper secrets.' },
+        {
+          glyph: '🌼',
+          blocking: false,
+          bark: 'daisies sway hello.',
+          collectible: {
+            id: 'wildflower',
+            name: 'Wildflower Sprig',
+            emoji: '🌼',
+            message: 'you bundle bright petals!',
+          },
+        },
+        {
+          glyph: '🍄',
+          blocking: false,
+          bark: 'mushrooms whisper secrets.',
+          collectible: {
+            id: 'mushroom',
+            name: 'Tiny Mushroom',
+            emoji: '🍄',
+            message: 'you pocket a tiny mushroom.',
+          },
+        },
         { glyph: '🌳', blocking: true, tall: true, bark: 'shade from a gentle tree.' },
-        { glyph: '🪺', blocking: true, bark: 'a quiet little nest.' },
+        {
+          glyph: '🪺',
+          blocking: false,
+          bark: 'a quiet little nest.',
+          collectible: {
+            id: 'feather',
+            name: 'Downy Feather',
+            emoji: '🪶',
+            message: 'a stray feather joins your satchel.',
+          },
+        },
       ],
       featureDensity: 0.1,
       critters: ['🦋', '🐝', '🐞'],
@@ -76,10 +108,41 @@ order: 5
       haze: 'rgba(64,131,206,0.25)',
       floor: ['🌊', '🪸', '🐚', '💎', '🩵'],
       features: [
-        { glyph: '🪼', blocking: false, bark: 'a jellyfish bobs quietly.' },
-        { glyph: '🐠', blocking: false, bark: 'tiny fish dart past.' },
+        {
+          glyph: '🪼',
+          blocking: false,
+          bark: 'a jellyfish bobs quietly.',
+          collectible: {
+            id: 'jelly',
+            name: 'Biolum Jelly',
+            emoji: '🪼',
+            message: 'you bottle a gentle glow.',
+          },
+        },
+        {
+          glyph: '🐠',
+          blocking: false,
+          bark: 'tiny fish dart past.',
+          collectible: {
+            id: 'scale',
+            name: 'Opal Scale',
+            emoji: '🐠',
+            message: 'a shimmering scale clings to you.',
+          },
+        },
         { glyph: '🪨', blocking: true, bark: 'a tide-worn stone.' },
-        { glyph: '🏝️', blocking: true, tall: true, bark: 'a tiny sandbar.' },
+        {
+          glyph: '🏝️',
+          blocking: false,
+          tall: true,
+          bark: 'a tiny sandbar.',
+          collectible: {
+            id: 'shell',
+            name: 'Spiral Shell',
+            emoji: '🐚',
+            message: 'you tuck away a spiral shell.',
+          },
+        },
       ],
       featureDensity: 0.08,
       critters: ['🐚', '🦀', '🐡'],
@@ -94,9 +157,30 @@ order: 5
       haze: 'rgba(255,199,168,0.3)',
       floor: ['🧱', '🛣️', '🪙', '🪵'],
       features: [
-        { glyph: '🏵️', blocking: false, bark: 'a plaza planter blooms.' },
+        {
+          glyph: '🏵️',
+          blocking: false,
+          bark: 'a plaza planter blooms.',
+          collectible: {
+            id: 'pin',
+            name: 'Flower Pin',
+            emoji: '🏵️',
+            message: 'you fasten a plaza pin.',
+          },
+        },
         { glyph: '🪑', blocking: true, bark: 'a bench invites a break.' },
-        { glyph: '⛲', blocking: true, tall: true, bark: 'listen to the fountain.' },
+        {
+          glyph: '⛲',
+          blocking: false,
+          tall: true,
+          bark: 'listen to the fountain.',
+          collectible: {
+            id: 'coin',
+            name: 'Lucky Coin',
+            emoji: '🪙',
+            message: 'you fish out a lucky coin.',
+          },
+        },
         { glyph: '🏘️', blocking: true, tall: true, bark: 'miniature homes peek out.' },
       ],
       featureDensity: 0.12,
@@ -112,10 +196,40 @@ order: 5
       haze: 'rgba(93,73,151,0.35)',
       floor: ['🌌', '⭐', '💠', '🔹'],
       features: [
-        { glyph: '🌠', blocking: false, bark: 'a comet leaves a trail.' },
+        {
+          glyph: '🌠',
+          blocking: false,
+          bark: 'a comet leaves a trail.',
+          collectible: {
+            id: 'comet-tail',
+            name: 'Comet Tail',
+            emoji: '🌠',
+            message: 'you snatch a comet tail!',
+          },
+        },
         { glyph: '🪐', blocking: true, tall: true, bark: 'a ringed planet drifts low.' },
-        { glyph: '🔭', blocking: true, bark: 'set your sights on constellations.' },
-        { glyph: '✨', blocking: false, bark: 'stardust tickles your shoes.' },
+        {
+          glyph: '🔭',
+          blocking: false,
+          bark: 'set your sights on constellations.',
+          collectible: {
+            id: 'star-chart',
+            name: 'Star Chart',
+            emoji: '🗺️',
+            message: 'a telescope sketch folds into your bag.',
+          },
+        },
+        {
+          glyph: '✨',
+          blocking: false,
+          bark: 'stardust tickles your shoes.',
+          collectible: {
+            id: 'stardust',
+            name: 'Stardust Pinch',
+            emoji: '✨',
+            message: 'you gather glittering stardust.',
+          },
+        },
       ],
       featureDensity: 0.1,
       critters: ['🛸', '🌙', '⭐'],
@@ -193,6 +307,21 @@ order: 5
     return `${cx},${cy}`;
   }
 
+  function recordInventoryItem(collectible) {
+    let entry = inventoryIndex.get(collectible.id);
+    if (!entry) {
+      entry = {
+        id: collectible.id,
+        name: collectible.name,
+        emoji: collectible.emoji,
+        count: 0,
+      };
+      inventoryIndex.set(collectible.id, entry);
+      inventory.push(entry);
+    }
+    entry.count += 1;
+  }
+
   function getChunk(cx, cy) {
     const key = chunkKey(cx, cy);
     let chunk = world.get(key);
@@ -217,6 +346,7 @@ order: 5
           blocking: false,
           tall: false,
           bark: null,
+          collectible: null,
         };
 
         if (rand() < biome.featureDensity) {
@@ -226,6 +356,14 @@ order: 5
             base.blocking = !!feature.blocking;
             base.tall = !!feature.tall;
             base.bark = feature.bark || null;
+            if (feature.collectible) {
+              base.collectible = {
+                id: feature.collectible.id,
+                name: feature.collectible.name,
+                emoji: feature.collectible.emoji || feature.glyph,
+                message: feature.collectible.message,
+              };
+            }
           }
         }
 
@@ -333,6 +471,7 @@ order: 5
     player.y += player.vy * dt;
 
     resolveCollisions(prevX, prevY);
+    handleCollectibles();
     triggerBarks();
   }
 
@@ -344,6 +483,20 @@ order: 5
       player.vx *= -0.2;
       player.vy *= -0.2;
     }
+  }
+
+  function handleCollectibles() {
+    const tile = getTile(player.x, player.y);
+    if (!tile || !tile.collectible) return;
+
+    const collectible = tile.collectible;
+    tile.collectible = null;
+    if (!tile.blocking) {
+      tile.overlay = null;
+    }
+    recordInventoryItem(collectible);
+    player.chat = collectible.message || `you tucked ${collectible.name}.`;
+    player.chatTimer = 3.2;
   }
 
   function triggerBarks() {
@@ -528,6 +681,54 @@ order: 5
     ctx.fillText(text, 16, 18);
   }
 
+  function drawInventory() {
+    const panelWidth = 210;
+    const rowHeight = 30;
+    const padding = 12;
+    const headerHeight = 24;
+    const rows = Math.max(1, inventory.length);
+    const panelHeight = headerHeight + rows * rowHeight + padding;
+    const x = width - panelWidth - 16;
+    const y = 18;
+
+    ctx.save();
+    ctx.fillStyle = 'rgba(0,0,0,0.25)';
+    ctx.fillRect(x + 3, y + 3, panelWidth, panelHeight);
+    ctx.fillStyle = 'rgba(255,255,255,0.9)';
+    ctx.fillRect(x, y, panelWidth, panelHeight);
+
+    ctx.fillStyle = '#555';
+    ctx.font = '600 15px system-ui, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'top';
+    ctx.fillText('satchel', x + padding, y + 6);
+
+    if (!inventory.length) {
+      ctx.font = '13px system-ui, sans-serif';
+      ctx.fillStyle = '#777';
+      ctx.fillText('empty · explore to collect keepsakes', x + padding, y + 24);
+      ctx.restore();
+      return;
+    }
+
+    inventory.forEach((entry, index) => {
+      const rowY = y + headerHeight + index * rowHeight + padding * 0.3;
+      ctx.font = '22px system-ui, apple color emoji, emoji';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(entry.emoji, x + padding + 4, rowY + rowHeight / 2);
+
+      ctx.font = '13px system-ui, sans-serif';
+      ctx.fillStyle = '#444';
+      ctx.fillText(entry.name, x + padding + 36, rowY + 8);
+
+      ctx.font = '12px system-ui, sans-serif';
+      ctx.fillStyle = '#666';
+      ctx.fillText(`x${entry.count}`, x + panelWidth - padding - 24, rowY + 8);
+    });
+
+    ctx.restore();
+  }
+
   function render() {
     const activeBiome = biomeForChunk(
       Math.floor(player.x / CHUNK_W),
@@ -537,6 +738,7 @@ order: 5
     drawTiles(elapsed);
     drawPlayer();
     drawUI(activeBiome);
+    drawInventory();
   }
 
   function tick(timestamp) {
