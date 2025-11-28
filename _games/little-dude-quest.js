@@ -43,7 +43,7 @@ order: 6
   const JUMP_BUFFER_TIME = 0.16;
   const GRAVITY = 2300;
   const MOVE_ACCEL = 1700;
-  const MAX_SPEED = 430;
+  const MAX_SPEED = 520;
   const MAX_FALL = 1600;
   const FRICTION_GROUND = 12;
   const FRICTION_AIR = 3;
@@ -52,6 +52,7 @@ order: 6
   const MAX_ASCENT = 110;
   const MIN_GAP = 70;
   const MAX_GAP = 210;
+  const GAP_SAFETY = 0.82;
 
   const player = {
     x: 0,
@@ -126,6 +127,15 @@ order: 6
     messageTimer = 2.2;
   }
 
+  function computeReachableGap(deltaY) {
+    const travelTerm = JUMP_VELOCITY * JUMP_VELOCITY + 2 * GRAVITY * deltaY;
+    if (travelTerm <= 0) {
+      return MIN_GAP;
+    }
+    const airTime = (JUMP_VELOCITY + Math.sqrt(travelTerm)) / GRAVITY;
+    return airTime * MAX_SPEED * GAP_SAFETY;
+  }
+
   function generateLevel(msg = 'new layout!') {
     const sectionCount = Math.floor(rand(6, 10));
     const minY = height * 0.25;
@@ -135,16 +145,22 @@ order: 6
     platforms = [];
     monsters = [];
 
+    const sectionHeights = [];
     for (let i = 0; i < sectionCount; i += 1) {
-      const platformWidth = rand(160, 320);
       let deltaY = rand(-150, 150);
       if (deltaY < -MAX_ASCENT) {
         deltaY = -MAX_ASCENT;
       }
       cursorY = clamp(cursorY + deltaY, minY, maxY);
+      sectionHeights.push(cursorY);
+    }
+
+    for (let i = 0; i < sectionHeights.length; i += 1) {
+      const platformWidth = rand(160, 320);
+      const currentY = sectionHeights[i];
       platforms.push({
         x: cursorX,
-        y: cursorY,
+        y: currentY,
         width: platformWidth,
         height: 18,
         hueIndex: i % colors.platform.length,
@@ -165,12 +181,22 @@ order: 6
         });
       }
 
-      cursorX += platformWidth + rand(MIN_GAP, MAX_GAP);
+      if (i < sectionHeights.length - 1) {
+        const deltaToNext = sectionHeights[i + 1] - currentY;
+        const reachableGap = Math.max(MIN_GAP, Math.min(MAX_GAP, computeReachableGap(deltaToNext)));
+        cursorX += platformWidth + rand(MIN_GAP, reachableGap);
+      } else {
+        cursorX += platformWidth;
+      }
 
-      if (Math.random() < 0.4) {
+      if (i < sectionHeights.length - 1 && Math.random() < 0.4) {
         const floatingWidth = rand(80, 150);
         const floatRise = rand(60, 140);
-        const floatingY = clamp(cursorY - Math.min(floatRise, MAX_ASCENT - 10), minY, cursorY - 40);
+        const floatingY = clamp(
+          currentY - Math.min(floatRise, MAX_ASCENT - 10),
+          minY,
+          currentY - 40
+        );
         platforms.push({
           x: cursorX - floatingWidth * 0.6,
           y: floatingY,
@@ -182,9 +208,10 @@ order: 6
     }
 
     levelLength = cursorX + 240;
+    const lastHeight = sectionHeights[sectionHeights.length - 1] || height - 110;
     goal = {
       x: levelLength - 120,
-      y: clamp(cursorY - 80, minY + 30, maxY - 60),
+      y: clamp(lastHeight - 80, minY + 30, maxY - 60),
       width: 48,
       height: 80,
     };
