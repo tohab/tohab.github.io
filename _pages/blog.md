@@ -140,6 +140,17 @@ pagination:
     font-size: 0.9rem;
     color: rgba(0, 0, 0, 0.82);
   }
+
+  .rohans-times-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+  }
+
+  .rohans-times-list li {
+    margin-bottom: 0.35rem;
+  }
 </style>
 
 <div class="post">
@@ -383,6 +394,29 @@ pagination:
             {% endunless %}
           {% endfor %}
         </div>
+
+        <hr>
+
+        <h6 style="margin-top: 1rem; margin-bottom: 0.5rem;">rohan's times</h6>
+        {% assign rohans_times_label = "rohan's times" | downcase %}
+        {% assign rohans_times_posts = site.posts | sort: 'date' | reverse %}
+        {% assign rohans_times_count = 0 %}
+        <ul class="rohans-times-list">
+          {% for post in rohans_times_posts %}
+            {% assign normalized_title = post.title | downcase %}
+            {% if normalized_title contains rohans_times_label %}
+              {% assign rohans_times_count = rohans_times_count | plus: 1 %}
+              <li>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+          {% if rohans_times_count == 0 %}
+            <li>No rohan's times posts yet.</li>
+          {% endif %}
+        </ul>
+
+        <hr>
 
         <div class="rss-feed">
           <h6 style="margin-top: 1rem; margin-bottom: 0.5rem;">rss</h6>
