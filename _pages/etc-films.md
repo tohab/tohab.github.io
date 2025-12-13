@@ -6,6 +6,21 @@ title: films
 
 Sometimes I record random YouTube that are somewhat entertaining. 
 
+### tour bus story with Leon
+
+Here's a story I performed with my friend Leon about an unusual tour bus experience shortly after we moved to Taiwan. Performed with First Person Story at the West Berkeley Fencing Club on April 11th, 2025. Thanks to Dean Wyrzykowski for filming!
+
+<div class="embed-responsive embed-responsive-16by9 mb-4">
+  <iframe
+    class="embed-responsive-item"
+    src="https://www.youtube.com/embed/xyevx3CnEbc"
+    title="Tour bus story with Leon"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy"
+  ></iframe>
+</div>
+
 ### mornin' cuppa' tea!
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
