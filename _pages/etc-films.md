@@ -6,7 +6,7 @@ title: films
 
 Sometimes I record random YouTube that are somewhat entertaining. 
 
-### tour bus story with Leon
+### Banana Story
 
 Here's a story I performed with my friend Leon about an unusual tour bus experience shortly after we moved to Taiwan. Performed with First Person Story at the West Berkeley Fencing Club on April 11th, 2025. Thanks to Dean Wyrzykowski for filming!
 
@@ -14,7 +14,7 @@ Here's a story I performed with my friend Leon about an unusual tour bus experie
   <iframe
     class="embed-responsive-item"
     src="https://www.youtube.com/embed/xyevx3CnEbc"
-    title="Tour bus story with Leon"
+    title="Banana Story"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
     loading="lazy"
