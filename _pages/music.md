@@ -10,9 +10,7 @@ featured_videos:
     description: "Played at an open mic I hosted on October 30th, 2025"
 ---
 
-I recorded 補習BAND (buxiband) album below in Taiwan with three wonderful friends. You can find more details on the backstory in the [buxiband post-mortem](https://www.rohanprasad.org/blog/2023/2023-11-band-album-is-out/).
-
-### 對面的女孩看過來 (Girl Over There, Look Over Here)
+#### 對面的女孩看過來 (Girl Over There, Look Over Here)
 
 Played at an open mic I hosted on October 30th, 2025.
 
@@ -26,6 +24,10 @@ Played at an open mic I hosted on October 30th, 2025.
     loading="lazy"
   ></iframe>
 </div>
+
+#### 補習BAND
+
+I recorded 補習BAND (buxiband) album below in Taiwan with three wonderful friends. You can find more details on the backstory in the [buxiband post-mortem](https://www.rohanprasad.org/blog/2023/2023-11-band-album-is-out/).
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
   <iframe
