@@ -152,7 +152,7 @@ related_blog_posts:
 # Giscus comments (RECOMMENDED)
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out the information below.
 giscus:
-  repo: tohab/tohab.github.io
+  repo:
   repo_id:
   category: Comments # name of the category under which discussions will be created
   category_id:
@@ -285,11 +285,6 @@ defaults:
       path: "assets"
     values:
       sitemap: false
-  - scope:
-      path: ""
-      type: posts
-    values:
-      giscus_comments: true
 
 sass:
   style: compressed
