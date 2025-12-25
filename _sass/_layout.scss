@@ -498,6 +498,7 @@ html[data-theme="dark"] {
   --collapsible-panel-triangle-glyph: "▷";
   --collapsible-panel-triangle-size: 1.15rem;
   --collapsible-panel-triangle-color: var(--global-theme-color);
+  --collapsible-panel-triangle-offset: 0;
 
   border: var(--collapsible-panel-border);
   border-radius: 8px;
@@ -526,6 +527,7 @@ html[data-theme="dark"] {
       color: var(--collapsible-panel-triangle-color);
       font-size: var(--collapsible-panel-triangle-size);
       line-height: 1;
+      margin-left: var(--collapsible-panel-triangle-offset);
       transform: rotate(0deg);
       transition: transform 0.35s ease;
     }
@@ -568,6 +570,7 @@ html[data-theme="dark"] {
   &.work-case {
     --collapsible-panel-border: none;
     --collapsible-panel-triangle-display: inline-block;
+    --collapsible-panel-triangle-offset: -0.35rem;
 
     summary {
       &::marker {
