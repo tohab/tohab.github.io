@@ -26,7 +26,7 @@ social: false # includes social icons at the bottom of the page
 
 I grew up in London and went to UC Berkeley for college. After college, I lived in Taiwan for two years where I taught English and learned Mandarin. I'm back living in Berkeley, California, and now work at [Constellation](https://www.constellation.org).
 
-For fun, I love to write on this blog, bike, run, play the alto saxophone and strum acoustic guitar.
+For fun, I love to write on [this blog](/blog/), bike, run, play the alto saxophone, and strum acoustic guitar.
 
   </div>
 </details>
@@ -35,7 +35,7 @@ For fun, I love to write on this blog, bike, run, play the alto saxophone and st
 <summary><strong>On this site.</strong></summary>
   <div class="collapsible-panel__content" markdown="1">
 
-I've been writing publicly since 2019 on my blog. I also have a jazz album, and a work portfolio.
+I've been writing publicly since 2019 on my [blog](/blog/). I also have a [jazz album](/music/) and a [work portfolio](/work/).
 
   </div>
 </details>
