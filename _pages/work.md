@@ -12,11 +12,14 @@ header_title: Work Portfolio
 collapsible_panels: true
 ---
 
-**PROFESSIONAL SUMMARY**
+<div class="work-summary-header">
+  <span class="work-summary-title">PROFESSIONAL SUMMARY</span>
+  <a class="work-summary-linkedin" href="https://www.linkedin.com/in/therohanprasad/" aria-label="LinkedIn profile">
+    <i class="fa-brands fa-linkedin"></i>
+  </a>
+</div>
 
 I'm an operations leader and non-profit founder. I'm adept at building scalable systems and driving organizational growth. I thrive in a collaborative environment and love to get things done.
-
-[LinkedIn](https://www.linkedin.com/in/therohanprasad/)
 
 **CAREER HIGHLIGHTS**
 

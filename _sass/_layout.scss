@@ -491,6 +491,35 @@ html[data-theme="dark"] {
  * Work page cases
  ******************************************************************************/
 
+.work-summary-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 0.5rem;
+}
+
+.work-summary-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.work-summary-linkedin {
+  margin-left: auto;
+  color: var(--global-text-color);
+  text-decoration: none;
+  font-size: 1.35rem;
+  line-height: 1;
+
+  &:hover {
+    color: var(--global-theme-color);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 2px;
+  }
+}
+
 .collapsible-panel {
   --collapsible-panel-border: 2px solid #000;
   --collapsible-panel-border-open-color: var(--global-theme-color);
