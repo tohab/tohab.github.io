@@ -20,6 +20,8 @@ social: false # includes social icons at the bottom of the page
 
 **I'm Rohan!** I'm a writer, creator, and thinker navigating the 21st century.
 
+*Email me at first dot last at berkeley dot edu.*
+
 <details class="collapsible-panel work-case">
 <summary><strong>About me.</strong></summary>
   <div class="collapsible-panel__content" markdown="1">
@@ -48,7 +50,6 @@ For fun, I love to write on this blog, bike, run, play the alto saxophone and st
 **On this site.** I've been writing publicly since 2019 on my blog. I also have a jazz album, and a work portfolio. -->
 
 
-*Email me at first dot last at berkeley dot edu.*
 
 <!-- I was born in the year 2000, so my Chinese zodiac is the dragon. I grew up in the UK, and went to school called *The American School in London*. I moved to the US to attend college, and graduated from UC Berkeley with a BA in Economics. At Berkeley, I did a lot of animal rights activism, sang in an a capella group, published an economics paper, and helped found a vegan coop. After graduating, I moved to Kaohsiung, Taiwan to teach English and learn Mandarin, Chinese. I enjoyed teaching a great deal, but thought I should try something else after two years. Right now, I'm pondering my next steps! -->
 
