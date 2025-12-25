@@ -570,7 +570,7 @@ html[data-theme="dark"] {
     --collapsible-panel-triangle-display: inline-block;
 
     summary {
-      font-size: 1rem;
+      font-size: 1.1em;
 
       &::marker {
         content: '';
@@ -586,7 +586,7 @@ html[data-theme="dark"] {
     }
 
     .collapsible-panel__content {
-      font-size: 1rem;
+      font-size: 1.1em;
     }
   }
 
