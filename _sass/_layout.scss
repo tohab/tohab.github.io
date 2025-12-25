@@ -600,7 +600,7 @@ html[data-theme="dark"] {
     --collapsible-panel-triangle-offset: -0.35rem;
 
     summary {
-      font-size: 1.1em;
+      font-size: inherit;
 
       &::marker {
         content: '';
@@ -611,26 +611,13 @@ html[data-theme="dark"] {
       }
     }
 
-    summary strong,
-    summary em,
-    summary span {
+    summary *,
+    .collapsible-panel__content,
+    .collapsible-panel__content * {
       font-size: inherit;
     }
 
     summary h3 {
-      font-size: inherit;
-    }
-
-    .collapsible-panel__content {
-      font-size: 1.1em;
-    }
-
-    .collapsible-panel__content div,
-    .collapsible-panel__content p,
-    .collapsible-panel__content li,
-    .collapsible-panel__content strong,
-    .collapsible-panel__content em,
-    .collapsible-panel__content span {
       font-size: inherit;
     }
   }
