@@ -73,6 +73,8 @@ The work page (`_pages/work.md`) uses `<details class="collapsible-panel work-ca
 
 The triangle rotates when the panel opens (via the `[open]` attribute) and respects reduced motion settings.
 
+**Typography gotcha:** `_sass/_base.scss` sets `font-size: 1.1em` on both `div` and `p`, so nested markdown (like `div > p`) compounds to `1.21em`. Collapsible panels force inheritance to avoid runaway scaling; if panels look smaller than surrounding text, it is usually because the surrounding content is already compounded.
+
 ## Content Workflow
 
 ### Posts
