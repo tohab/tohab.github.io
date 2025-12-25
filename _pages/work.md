@@ -13,10 +13,12 @@ collapsible_panels: true
 ---
 
 <div class="work-summary-header">
-  <span class="work-summary-title">PROFESSIONAL SUMMARY</span>
-  <a class="work-summary-linkedin" href="https://www.linkedin.com/in/therohanprasad/" aria-label="LinkedIn profile">
-    <i class="fa-brands fa-linkedin"></i>
-  </a>
+  <span class="work-summary-title">
+    PROFESSIONAL SUMMARY
+    <a class="work-summary-linkedin" href="https://www.linkedin.com/in/therohanprasad/" aria-label="LinkedIn profile">
+      <i class="fa-brands fa-linkedin"></i>
+    </a>
+  </span>
 </div>
 
 I'm an operations leader and non-profit founder. I'm adept at building scalable systems and driving organizational growth. I thrive in a collaborative environment and love to get things done.

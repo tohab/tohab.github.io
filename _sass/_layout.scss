@@ -492,9 +492,6 @@ html[data-theme="dark"] {
  ******************************************************************************/
 
 .work-summary-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
   margin: 0 0 0.5rem;
 }
 
@@ -504,11 +501,12 @@ html[data-theme="dark"] {
 }
 
 .work-summary-linkedin {
-  margin-left: auto;
+  margin-left: 0.45rem;
   color: var(--global-text-color);
   text-decoration: none;
   font-size: 1.35rem;
   line-height: 1;
+  vertical-align: middle;
 
   &:hover {
     color: var(--global-theme-color);
@@ -602,6 +600,8 @@ html[data-theme="dark"] {
     --collapsible-panel-triangle-offset: -0.35rem;
 
     summary {
+      font-size: 1.1em;
+
       &::marker {
         content: '';
       }
@@ -611,7 +611,26 @@ html[data-theme="dark"] {
       }
     }
 
+    summary strong,
+    summary em,
+    summary span {
+      font-size: inherit;
+    }
+
     summary h3 {
+      font-size: inherit;
+    }
+
+    .collapsible-panel__content {
+      font-size: 1.1em;
+    }
+
+    .collapsible-panel__content div,
+    .collapsible-panel__content p,
+    .collapsible-panel__content li,
+    .collapsible-panel__content strong,
+    .collapsible-panel__content em,
+    .collapsible-panel__content span {
       font-size: inherit;
     }
   }
