@@ -64,6 +64,15 @@ bundle exec jekyll serve --livereload --incremental
 | `bin/` | Operational helpers (`cibuild`, `deploy`, `sync_archives.rb`). |
 | `docs/`, `FAQ.md`, `INSTALL.md`, `CUSTOMIZE.md` | Upstream al-folio references for deeper theme tweaks. |
 
+## Work Page Collapsible Toggles
+
+The work page (`_pages/work.md`) uses `<details class="collapsible-panel work-case">` panels. The styling lives in `_sass/_layout.scss` under `.collapsible-panel`. Two CSS custom properties make the visuals easy to toggle:
+
+- `--collapsible-panel-border`: Controls the panel border. It is set to `none` for work cases to remove the border. Restore the old look by setting it to `2px solid #000`.
+- `--collapsible-panel-triangle-display`: Controls the triangular bullet next to each summary. It is set to `inline-block` for work cases (showing the triangle). Turn it off by setting it to `none`.
+
+The triangle rotates when the panel opens (via the `[open]` attribute) and respects reduced motion settings.
+
 ## Content Workflow
 
 ### Posts

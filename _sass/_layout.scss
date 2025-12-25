@@ -495,8 +495,8 @@ html[data-theme="dark"] {
   --collapsible-panel-border: 2px solid #000;
   --collapsible-panel-border-open-color: var(--global-theme-color);
   --collapsible-panel-triangle-display: none;
-  --collapsible-panel-triangle-height: 0.6rem;
-  --collapsible-panel-triangle-width: 0.95rem;
+  --collapsible-panel-triangle-glyph: "▷";
+  --collapsible-panel-triangle-size: 1.15rem;
   --collapsible-panel-triangle-color: var(--global-theme-color);
 
   border: var(--collapsible-panel-border);
@@ -521,13 +521,11 @@ html[data-theme="dark"] {
     transition: color 0.35s ease;
 
     &::before {
-      content: '';
+      content: var(--collapsible-panel-triangle-glyph);
       display: var(--collapsible-panel-triangle-display);
-      width: 0;
-      height: 0;
-      border-top: var(--collapsible-panel-triangle-height) solid transparent;
-      border-bottom: var(--collapsible-panel-triangle-height) solid transparent;
-      border-left: var(--collapsible-panel-triangle-width) solid var(--collapsible-panel-triangle-color);
+      color: var(--collapsible-panel-triangle-color);
+      font-size: var(--collapsible-panel-triangle-size);
+      line-height: 1;
       transform: rotate(0deg);
       transition: transform 0.35s ease;
     }
