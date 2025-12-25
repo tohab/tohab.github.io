@@ -528,7 +528,6 @@ html[data-theme="dark"] {
   --collapsible-panel-triangle-offset: 0;
 
   font-family: "Times New Roman", Times, serif;
-  font-size: 1.1em;
   border: var(--collapsible-panel-border);
   border-radius: 8px;
   margin: 1.25rem 0;
@@ -548,6 +547,7 @@ html[data-theme="dark"] {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: 1.1em;
     transition: color 0.35s ease;
 
     &::before {
@@ -582,6 +582,10 @@ html[data-theme="dark"] {
     font-weight: 500;
   }
 
+  summary * {
+    font-size: inherit;
+  }
+
   &.game-case {
     summary {
       flex-direction: column;
@@ -602,8 +606,6 @@ html[data-theme="dark"] {
     --collapsible-panel-triangle-offset: -0.35rem;
 
     summary {
-      font-size: inherit;
-
       &::marker {
         content: '';
       }
@@ -613,23 +615,22 @@ html[data-theme="dark"] {
       }
     }
 
-    summary *,
-    .collapsible-panel__content,
-    .collapsible-panel__content * {
-      font-size: inherit;
-    }
-
     summary h3 {
       font-size: inherit;
     }
   }
 
   .collapsible-panel__content {
+    font-size: 1.1em;
     height: 0;
     opacity: 0;
     overflow: hidden;
     padding-bottom: 0;
     transition: height 0.7s ease, opacity 0.7s ease, padding-bottom 0.7s ease;
+  }
+
+  .collapsible-panel__content * {
+    font-size: inherit;
   }
 
   &[open] .collapsible-panel__content {
