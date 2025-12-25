@@ -492,7 +492,14 @@ html[data-theme="dark"] {
  ******************************************************************************/
 
 .collapsible-panel {
-  border: 2px solid #000;
+  --collapsible-panel-border: 2px solid #000;
+  --collapsible-panel-border-open-color: var(--global-theme-color);
+  --collapsible-panel-triangle-display: none;
+  --collapsible-panel-triangle-height: 0.6rem;
+  --collapsible-panel-triangle-width: 0.95rem;
+  --collapsible-panel-triangle-color: var(--global-theme-color);
+
+  border: var(--collapsible-panel-border);
   border-radius: 8px;
   margin: 1.25rem 0;
   padding: 0 1.25rem;
@@ -500,7 +507,7 @@ html[data-theme="dark"] {
   transition: border-color 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
 
   &[open] {
-    border-color: var(--global-theme-color);
+    border-color: var(--collapsible-panel-border-open-color);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   }
 
@@ -508,11 +515,22 @@ html[data-theme="dark"] {
     cursor: pointer;
     padding: 0.5rem 0;
     color: var(--global-text-color);
-    list-style-position: outside;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     transition: color 0.35s ease;
+
+    &::before {
+      content: '';
+      display: var(--collapsible-panel-triangle-display);
+      width: 0;
+      height: 0;
+      border-top: var(--collapsible-panel-triangle-height) solid transparent;
+      border-bottom: var(--collapsible-panel-triangle-height) solid transparent;
+      border-left: var(--collapsible-panel-triangle-width) solid var(--collapsible-panel-triangle-color);
+      transform: rotate(0deg);
+      transition: transform 0.35s ease;
+    }
 
     &:hover {
       color: var(--global-theme-color);
@@ -523,9 +541,10 @@ html[data-theme="dark"] {
       outline-offset: 2px;
     }
 
-    &::marker {
-      color: var(--global-theme-color);
-    }
+  }
+
+  &[open] summary::before {
+    transform: rotate(90deg);
   }
 
   summary h3 {
@@ -545,6 +564,21 @@ html[data-theme="dark"] {
       margin: 0;
       font-size: 0.95rem;
       color: var(--global-muted-text-color, #555);
+    }
+  }
+
+  &.work-case {
+    --collapsible-panel-border: none;
+    --collapsible-panel-triangle-display: inline-block;
+
+    summary {
+      &::marker {
+        content: '';
+      }
+
+      &::-webkit-details-marker {
+        display: none;
+      }
     }
   }
 
@@ -587,6 +621,10 @@ html[data-theme="dark"] {
     }
 
     summary {
+      transition: none;
+    }
+
+    summary::before {
       transition: none;
     }
 
