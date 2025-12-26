@@ -41,6 +41,7 @@ After college, I decided to move to Taiwan to study Mandarin and teach English. 
   </div>
 </details>
 
+
 <details class="collapsible-panel work-case">
 <summary><strong>Now.</strong></summary>
   <div class="collapsible-panel__content" markdown="1">
@@ -50,8 +51,10 @@ Since April 2025, I've been working [Constellation](https://www.constellation.or
 
 For fun, I love to write on [this blog](/blog/), bike, run, play the alto saxophone, and strum acoustic guitar.
 
+
   </div>
 </details>
+
 
 <details class="collapsible-panel work-case">
 <summary><strong>On this site.</strong></summary>
