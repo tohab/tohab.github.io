@@ -548,7 +548,7 @@ html[data-theme="dark"] {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 1.1em;
+    font-size: inherit;
     transition: color 0.35s ease;
 
     &::after {
@@ -583,7 +583,7 @@ html[data-theme="dark"] {
 
   summary h3 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: inherit;
     font-weight: 500;
   }
 
