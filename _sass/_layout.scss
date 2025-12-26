@@ -814,7 +814,17 @@ html[data-theme='dark'] {
 #cusdis_thread input::placeholder,
 #cusdis_thread textarea::placeholder {
   color: #000 !important;
-  opacity: 0.65;
+  opacity: 1;
+}
+
+#cusdis_thread small,
+#cusdis_thread time,
+#cusdis_thread .date,
+#cusdis_thread .time,
+#cusdis_thread .muted,
+#cusdis_thread .text-muted {
+  color: #000 !important;
+  opacity: 1 !important;
 }
 
 #cusdis_thread .cusdis,
