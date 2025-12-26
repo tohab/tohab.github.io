@@ -22,14 +22,12 @@ social: false # includes social icons at the bottom of the page
 
 **I'm Rohan!** I'm a writer, creator, and thinker navigating the 21st century.
 
-*Email me at first dot last at berkeley dot edu.*
-
 <details class="collapsible-panel work-case">
 <summary><strong>About me.</strong></summary>
   <div class="collapsible-panel__content" markdown="1">
 
 I was born in New Jersey in 2000. When I was two, my family moved to the UK, 
-and I ended up attending the [American School in London](https://www.asl.org/)) until graduating high school.
+and I ended up attending [ASL](https://www.asl.org/)) until graduating high school.
 
 After that, I went to the University of California, Berkeley and studied Economics. 
 I got involved in the animal rights movement at Cal, revitalizing a student group ([BOAA](https://boaa.studentorg.berkeley.edu/)), 
@@ -49,7 +47,8 @@ After college, I decided to move to Taiwan to study Mandarin and teach English. 
 I've been living in Berkeley, California, for about the past year. 
 Since April 2025, I've been working [Constellation](https://www.constellation.org).
 
-For fun, I love to write on [this blog](/blog/), bike, run, play the alto saxophone, and strum acoustic guitar.
+I love to write on this blog, bike, run, play the alto saxophone, and strum acoustic guitar.
+I also love having conversations with people, young and old.
 
 
   </div>
