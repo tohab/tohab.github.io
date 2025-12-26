@@ -9,7 +9,9 @@ profile:
   image: prof_pic.png
   image_circular: false # crops the image to make it circular
   more_info: # 
-    # <p>555 your office number</p>
+    # <p>555 your office number<
+    
+    /p>
     # <p>123 your address street</p>
     # <p>Your City, State 12345</p>
 
@@ -26,7 +28,16 @@ social: false # includes social icons at the bottom of the page
 <summary><strong>About me.</strong></summary>
   <div class="collapsible-panel__content" markdown="1">
 
-I grew up in London and went to UC Berkeley for college. After college, I lived in Taiwan for two years where I taught English and learned Mandarin. I'm back living in Berkeley, California, and now work at [Constellation](https://www.constellation.org).
+I grew up in London and went to UC Berkeley for college. After college, I lived in Taiwan for two years where I taught English and learned Mandarin. 
+
+  </div>
+</details>
+
+<details class="collapsible-panel work-case">
+<summary><strong>About me.</strong></summary>
+  <div class="collapsible-panel__content" markdown="1">
+
+I've been living in Berkeley, California, for about the past year. Since April 2025, I've been working [Constellation](https://www.constellation.org).
 
 For fun, I love to write on [this blog](/blog/), bike, run, play the alto saxophone, and strum acoustic guitar.
 

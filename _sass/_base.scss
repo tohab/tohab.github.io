@@ -43,7 +43,7 @@ li,
 span,
 strong {
   color: var(--global-text-color);
-  font-family: "Times New Roman", Times, serif; 
+  font-family: var(--global-font-family);
   font-size: 1.1em; /* Increase font size */
   font-weight: 400; /* Make the font thicker */
   line-height: 1.3;
@@ -1309,7 +1309,7 @@ ninja-keys {
   --ninja-secondary-text-color: var(--global-text-color);
   --ninja-footer-background: rgba(243, 194, 138, 0.58);
   --ninja-placeholder-color: rgba(60, 40, 18, 0.75);
-  --ninja-font-family: "Times New Roman", Times, serif;
+  --ninja-font-family: var(--global-font-family);
   --ninja-z-index: 1031;
   --ninja-actions-height: 300px;
   --ninja-top: 16%;

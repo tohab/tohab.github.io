@@ -6,6 +6,7 @@ body {
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
+  font-family: var(--global-font-family);
 
   h1,
   h2,
@@ -527,7 +528,7 @@ html[data-theme="dark"] {
   --collapsible-panel-triangle-color: var(--global-theme-color);
   --collapsible-panel-triangle-offset: 0;
 
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--global-font-family);
   border: var(--collapsible-panel-border);
   border-radius: 8px;
   margin: 1.25rem 0;
@@ -798,7 +799,7 @@ html[data-theme='dark'] {
   min-height: 420px;
   overflow: visible;
   color: #000 !important;
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--global-font-family);
 }
 
 #cusdis_thread * {
