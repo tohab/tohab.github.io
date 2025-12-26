@@ -38,7 +38,6 @@ and founded a vegan cooperative group house.
 After college, I decided to move to Taiwan to study Mandarin and teach English. I taught ages 7-14 and quite enjoyed it!
 
 
-
   </div>
 </details>
 
