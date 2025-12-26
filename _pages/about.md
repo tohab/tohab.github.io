@@ -58,7 +58,7 @@ For fun, I love to write on [this blog](/blog/), bike, run, play the alto saxoph
 <summary><strong>On this site.</strong></summary>
   <div class="collapsible-panel__content" markdown="1">
 
-I've been writing publicly since 2019 on my [blog](/blog/). I also have a [jazz album](/music/) and a [work portfolio](/work/).
+Here you can find my [blog](/blog/), which I've been writing since 2019. I also have a [jazz album](/music/), and a [work portfolio](/work/).
 
   </div>
 </details>
