@@ -1,0 +1,41 @@
+{% assign cusdis_host = site.cusdis.host | default: 'https://cusdis.com' %}
+{% assign cusdis_page_id = page.cusdis_page_id | default: page.id | default: page.url %}
+
+<div id="cusdis_thread" style="max-width: {{ site.max_width }}; margin: 0 auto;"></div>
+{% if site.cusdis and site.cusdis.app_id %}
+  <script>
+    (() => {
+      let cusdisThread = document.getElementById('cusdis_thread');
+      if (!cusdisThread) {
+        return;
+      }
+
+      let cusdisThemeSetting = {{ site.cusdis.theme | default: 'auto' | jsonify }};
+      let cusdisTheme = cusdisThemeSetting && cusdisThemeSetting !== 'auto' ? cusdisThemeSetting : determineComputedTheme();
+      let cusdisAttributes = {
+        'data-host': {{ cusdis_host | jsonify }},
+        'data-app-id': {{ site.cusdis.app_id | jsonify }},
+        'data-page-id': {{ cusdis_page_id | jsonify }},
+        'data-page-url': {{ page.url | absolute_url | jsonify }},
+        'data-page-title': {{ page.title | jsonify }},
+        'data-theme': cusdisTheme,
+      };
+
+      Object.entries(cusdisAttributes).forEach(([key, value]) => {
+        if (value) {
+          cusdisThread.setAttribute(key, value);
+        }
+      });
+
+      let cusdisScript = document.createElement('script');
+      cusdisScript.async = true;
+      cusdisScript.defer = true;
+      cusdisScript.src = {{ cusdis_host | append: '/js/cusdis.es.js' | jsonify }};
+      cusdisThread.appendChild(cusdisScript);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by cusdis.</noscript>
+{% else %}
+  {% capture cusdis_warning %} > ##### cusdis comments misconfigured > Please set `cusdis.app_id` in `_config.yml` (and `cusdis.host` if you self-host). {: .block-danger } {% endcapture %}
+  {{ cusdis_warning | markdownify }}
+{% endif %}

@@ -129,6 +129,9 @@ layout: default
   {% if site.giscus and page.giscus_comments %}
     {% include giscus.liquid %}
   {% endif %}
+  {% if site.cusdis and page.cusdis_comments %}
+    {% include cusdis.liquid %}
+  {% endif %}
 
   {% if site.blog_hover_preview.enabled %}
     {% assign posts_for_preview = site.posts %}

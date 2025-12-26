@@ -127,6 +127,9 @@
       {% if site.giscus.repo and page.giscus_comments %}
         {% include giscus.liquid %}
       {% endif %}
+      {% if site.cusdis and page.cusdis_comments %}
+        {% include cusdis.liquid %}
+      {% endif %}
     </div>
 
     <!-- Footer -->
