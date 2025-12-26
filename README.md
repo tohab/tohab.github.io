@@ -143,6 +143,17 @@ Key behaviors and tips:
 
 > **Heads‑up:** the site runs Kramdown with `input: GFM`, so the shortcut syntax `^[inline note]` is ignored. Always reference footnotes via `[^note_id]` + a definition block as shown above.
 
+#### Blog hover previews (optional)
+
+There is an optional hover preview that shows the first lines of a blog post when a link points to a local blog URL (including `rohanprasad.org`).
+
+How it works:
+- Toggle it in `_config.yml` via `blog_hover_preview.enabled` (currently set to `false`).
+- Previews pull `preview_image` or `thumbnail` if present; otherwise they show text only.
+- The summary is `description` if provided, else a truncated excerpt of the post body.
+- The hover card only shows on pointer/hover devices; it is disabled on touch-first screens.
+- The shared data + styles live in `_includes/scripts/blog_hover_preview.liquid`, and the behavior lives in `assets/js/blog-hover-previews.js`.
+
 ### Secret posts (password-gated content)
 
 Sensitive essays live in an encrypted workflow so nothing private lands in git history:
