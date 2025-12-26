@@ -782,15 +782,15 @@ html[data-theme='dark'] {
 #cusdis_thread input,
 #cusdis_thread textarea,
 #cusdis_thread select {
-  border: 1px solid #000;
-  box-shadow: none;
+  border: 1px solid #000 !important;
+  box-shadow: none !important;
 }
 
 #cusdis_thread input:focus,
 #cusdis_thread textarea:focus,
 #cusdis_thread select:focus {
-  border-color: #000;
-  outline: 1px solid #000;
+  border-color: #000 !important;
+  outline: 1px solid #000 !important;
   outline-offset: 0;
 }
 
@@ -798,10 +798,12 @@ html[data-theme='dark'] {
   min-height: 420px;
   overflow: visible;
   color: #000 !important;
+  font-family: "Times New Roman", Times, serif;
 }
 
 #cusdis_thread * {
   color: #000 !important;
+  font-family: inherit;
 }
 
 #cusdis_thread a {
