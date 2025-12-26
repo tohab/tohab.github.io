@@ -26,14 +26,14 @@ social: false # includes social icons at the bottom of the page
   <div class="collapsible-panel__content" markdown="1">
 
 I was born in New Jersey in 2000. When I was two, my family moved to the UK, 
-and I ended up attending [ASL](https://www.asl.org/)) until graduating high school.
+and I ended up attending [ASL](https://www.asl.org/) until graduating high school.
 
 After that, I went to the University of California, Berkeley and studied Economics. 
 I got involved in the animal rights movement at Cal, revitalizing a student group ([BOAA](https://boaa.studentorg.berkeley.edu/)), 
 and founded a vegan cooperative group house.
 
 After college, I decided to move to Taiwan to study Mandarin and teach English. I taught ages 7-14 for two years. 
-Post-Taiwan, I spent about five months backpacking in India, China, and South-East Asia.
+I then spent about five months backpacking in India, China, and South-East Asia.
 
 
   </div>

@@ -4,16 +4,47 @@
     return;
   }
 
+  const supportsHover =
+    !window.matchMedia || window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!supportsHover) {
+    return;
+  }
+
+  const hostList = Array.isArray(window.__blogPreviewHosts) ? window.__blogPreviewHosts : [];
+  const allowedHosts = new Set();
+  hostList.forEach((host) => {
+    if (typeof host === 'string' && host.trim()) {
+      allowedHosts.add(host.trim());
+    }
+  });
+  if (window.location && window.location.hostname) {
+    allowedHosts.add(window.location.hostname);
+  }
+
   const normalize = (href) => {
+    if (!href) {
+      return null;
+    }
+    const trimmed = String(href).trim();
+    if (!trimmed || trimmed.startsWith('#')) {
+      return null;
+    }
     try {
       const url = new URL(href, window.location.origin);
+      if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+        return null;
+      }
+      const host = url.hostname;
+      if (host && allowedHosts.size && !allowedHosts.has(host)) {
+        return null;
+      }
       let path = url.pathname;
       if (!path.endsWith('/')) {
         path += '/';
       }
       return path;
     } catch (err) {
-      return href;
+      return null;
     }
   };
 
@@ -23,6 +54,9 @@
       return;
     }
     const normalized = normalize(entry.url);
+    if (!normalized) {
+      return;
+    }
     previewMap.set(normalized, entry);
   });
 
@@ -30,7 +64,7 @@
     return;
   }
 
-  const anchors = document.querySelectorAll('.post-content a[href]');
+  const anchors = document.querySelectorAll('a[href]');
   if (!anchors.length) {
     return;
   }
@@ -119,6 +153,9 @@
       return null;
     }
     const normalized = normalize(href);
+    if (!normalized) {
+      return null;
+    }
     if (previewMap.has(normalized)) {
       return previewMap.get(normalized);
     }
@@ -132,7 +169,24 @@
     return null;
   };
 
+  const shouldSkipAnchor = (anchor) => {
+    if (!anchor) {
+      return true;
+    }
+    if (anchor.closest('.post-hover-preview')) {
+      return true;
+    }
+    const listItem = anchor.closest('li');
+    if (listItem && listItem.querySelector('.post-hover-preview')) {
+      return true;
+    }
+    return false;
+  };
+
   anchors.forEach((anchor) => {
+    if (shouldSkipAnchor(anchor)) {
+      return;
+    }
     const handleEnter = () => {
       const entry = getEntry(anchor.href || anchor.getAttribute('href'));
       if (!entry) {
