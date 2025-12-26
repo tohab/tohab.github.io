@@ -32,7 +32,8 @@ After that, I went to the University of California, Berkeley and studied Economi
 I got involved in the animal rights movement at Cal, revitalizing a student group ([BOAA](https://boaa.studentorg.berkeley.edu/)), 
 and founded a vegan cooperative group house.
 
-After college, I decided to move to Taiwan to study Mandarin and teach English. I taught ages 7-14 and quite enjoyed it!
+After college, I decided to move to Taiwan to study Mandarin and teach English. I taught ages 7-14 for two years. 
+Post-Taiwan, I spent about five months backpacking in India, China, and South-East Asia.
 
 
   </div>
