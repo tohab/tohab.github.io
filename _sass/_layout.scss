@@ -169,6 +169,23 @@ html[data-theme="dark"] {
   }
 }
 
+.game-detail--full {
+  .container,
+  .container-fluid {
+    max-width: none;
+  }
+}
+
+.game-detail--tall {
+  .game-detail__playable {
+    height: clamp(520px, 78vh, 980px);
+  }
+
+  .game-detail__playable::before {
+    padding-top: 0;
+  }
+}
+
 html[data-theme="dark"] {
   .game-detail {
     background-color: #312215;
@@ -404,6 +421,14 @@ html[data-theme="dark"] {
       &__label-octave {
         display: none;
       }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .game-detail--tall {
+    .game-detail__playable {
+      height: clamp(360px, 70vh, 720px);
     }
   }
 }

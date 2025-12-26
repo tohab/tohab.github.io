@@ -1,8 +1,19 @@
 ---
 layout: default
 ---
-<section class="game-detail py-4 py-md-5">
-  <div class="container">
+{% assign game_container_class = 'container' %}
+{% if page.full_width %}
+  {% assign game_container_class = 'container-fluid px-0' %}
+{% endif %}
+{% assign game_section_class = 'game-detail py-4 py-md-5' %}
+{% if page.full_width %}
+  {% assign game_section_class = game_section_class | append: ' game-detail--full' %}
+{% endif %}
+{% if page.full_height %}
+  {% assign game_section_class = game_section_class | append: ' game-detail--tall' %}
+{% endif %}
+<section class="{{ game_section_class }}">
+  <div class="{{ game_container_class }}">
     <a class="game-detail__back-link" href="{{ '/etc/games/' | relative_url }}">← all games</a>
     <div class="game-detail__header">
       <p class="game-detail__eyebrow">interactive toy</p>

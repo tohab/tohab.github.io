@@ -11,6 +11,8 @@ element_role: application
 element_aria_label: Blog viewer graph prototype
 aspect_ratio: embed-responsive-4by3
 order: 7
+full_width: true
+full_height: true
 ---
 
 (() => {
