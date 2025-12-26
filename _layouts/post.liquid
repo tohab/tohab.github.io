@@ -117,12 +117,6 @@ layout: default
   {% endif %}
 
 
-  {% if site.related_blog_posts.enabled %}
-    {% if page.related_posts == null or page.related_posts %}
-      {% include related_posts.liquid %}
-    {% endif %}
-  {% endif %}
-
   {% if site.disqus_shortname and page.disqus_comments %}
     {% include disqus.liquid %}
   {% endif %}
@@ -131,6 +125,12 @@ layout: default
   {% endif %}
   {% if site.cusdis and page.cusdis_comments %}
     {% include cusdis.liquid %}
+  {% endif %}
+
+  {% if site.related_blog_posts.enabled %}
+    {% if page.related_posts == null or page.related_posts %}
+      {% include related_posts.liquid %}
+    {% endif %}
   {% endif %}
 
   {% if site.blog_hover_preview.enabled %}

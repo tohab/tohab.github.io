@@ -779,6 +779,21 @@ html[data-theme='dark'] {
   }
 }
 
+#cusdis_thread input,
+#cusdis_thread textarea,
+#cusdis_thread select {
+  border: 1px solid #000;
+  box-shadow: none;
+}
+
+#cusdis_thread input:focus,
+#cusdis_thread textarea:focus,
+#cusdis_thread select:focus {
+  border-color: #000;
+  outline: 1px solid #000;
+  outline-offset: 0;
+}
+
 @media (min-width: 576px) {
   .navbar.navbar-light {
     .container {
