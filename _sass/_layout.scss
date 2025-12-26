@@ -796,20 +796,23 @@ html[data-theme='dark'] {
 
 #cusdis_thread {
   min-height: 420px;
-  color: var(--global-text-color);
+  overflow: visible;
+  color: #000 !important;
+}
+
+#cusdis_thread * {
+  color: #000 !important;
 }
 
 #cusdis_thread a {
-  color: var(--global-theme-color);
+  color: #000 !important;
+  text-decoration-color: #000;
 }
 
-#cusdis_thread small,
-#cusdis_thread time,
-#cusdis_thread .date,
-#cusdis_thread .time,
-#cusdis_thread .muted,
-#cusdis_thread .text-muted {
-  color: var(--global-text-color-light);
+#cusdis_thread input::placeholder,
+#cusdis_thread textarea::placeholder {
+  color: #000 !important;
+  opacity: 0.65;
 }
 
 #cusdis_thread .cusdis,
