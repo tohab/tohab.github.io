@@ -30,13 +30,14 @@ order: 7
       };
 
   const rawPosts = [
-    {% for post in site.posts limit: 24 %}
+    {% for post in site.posts %}
       {
         title: {{ post.title | jsonify }},
         tags: {{ post.tags | jsonify }},
         url: {{ post.url | relative_url | jsonify }},
         date: {{ post.date | date: "%Y-%m-%d" | jsonify }},
-        excerpt: {{ post.excerpt | strip_html | strip_newlines | truncate: 140 | jsonify }}
+        excerpt: {{ post.excerpt | strip_html | strip_newlines | truncate: 140 | jsonify }},
+        preview: {{ post.content | strip_html | strip_newlines | truncate: 260 | jsonify }}
       }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ];
@@ -49,6 +50,7 @@ order: 7
       url: post.url || '#',
       date: post.date || '',
       excerpt: post.excerpt || '',
+      preview: post.preview || post.excerpt || '',
     }));
 
   container.textContent = '';
@@ -117,8 +119,14 @@ order: 7
   detailsMeta.className = 'blog-viewer__details-meta';
   const detailsBody = document.createElement('p');
   detailsBody.className = 'blog-viewer__details-body';
-  const detailsList = document.createElement('div');
-  detailsList.className = 'blog-viewer__details-list';
+  const detailsTagsLabel = document.createElement('p');
+  detailsTagsLabel.className = 'blog-viewer__details-subtitle';
+  const detailsTagsList = document.createElement('div');
+  detailsTagsList.className = 'blog-viewer__details-list';
+  const detailsRelatedLabel = document.createElement('p');
+  detailsRelatedLabel.className = 'blog-viewer__details-subtitle';
+  const detailsRelatedList = document.createElement('div');
+  detailsRelatedList.className = 'blog-viewer__details-list blog-viewer__details-list--related';
   const detailsLink = document.createElement('a');
   detailsLink.className = 'blog-viewer__details-link';
   detailsLink.textContent = 'open post';
@@ -127,7 +135,10 @@ order: 7
   details.appendChild(detailsTitle);
   details.appendChild(detailsMeta);
   details.appendChild(detailsBody);
-  details.appendChild(detailsList);
+  details.appendChild(detailsTagsLabel);
+  details.appendChild(detailsTagsList);
+  details.appendChild(detailsRelatedLabel);
+  details.appendChild(detailsRelatedList);
   details.appendChild(detailsLink);
 
   footer.appendChild(legend);
@@ -142,6 +153,7 @@ order: 7
   const nodes = [];
   const links = [];
   const adjacency = new Map();
+  const tagToPosts = new Map();
 
   function normalizeTag(tag) {
     return String(tag || '')
@@ -198,6 +210,10 @@ order: 7
       });
       postNode.degree += 1;
       tagNode.degree += 1;
+      if (!tagToPosts.has(tagNode.id)) {
+        tagToPosts.set(tagNode.id, []);
+      }
+      tagToPosts.get(tagNode.id).push(postNode);
       addAdjacency(postNode.id, tagNode.id);
       addAdjacency(tagNode.id, postNode.id);
     });
@@ -219,12 +235,29 @@ order: 7
     linkElements.push({ link, element: line });
   });
 
+  const tagNodes = nodes.filter((node) => node.type === 'tag');
+  const minTagDegree = tagNodes.reduce((min, node) => Math.min(min, node.degree), Infinity);
+  const maxTagDegree = tagNodes.reduce((max, node) => Math.max(max, node.degree), 0);
+  const logMin = Math.log((Number.isFinite(minTagDegree) ? minTagDegree : 0) + 1 || 1);
+  const logMax = Math.log((Number.isFinite(maxTagDegree) ? maxTagDegree : 0) + 1 || 1);
+  const scaleMin = 0.88;
+  const scaleMax = 1.18;
+
   nodes.forEach((node, index) => {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = `blog-node blog-node--${node.type}`;
     button.textContent = node.type === 'tag' ? `#${node.label}` : node.label;
     button.style.animationDelay = `${index * 30}ms`;
+    const scale =
+      node.type === 'tag' && maxTagDegree > 0
+        ? scaleMin +
+          (scaleMax - scaleMin) *
+            ((Math.log(node.degree + 1) - logMin) / (logMax - logMin || 1))
+        : 1;
+    button.style.setProperty('--node-scale', scale.toFixed(3));
+    button.style.setProperty('--node-scale-hover', (scale * 1.05).toFixed(3));
+    button.style.setProperty('--node-scale-active', (scale * 1.08).toFixed(3));
     button.setAttribute('data-node-id', node.id);
     button.setAttribute(
       'aria-label',
@@ -423,21 +456,59 @@ order: 7
       node.type === 'post'
         ? `${node.date || 'undated'} · ${node.tags.length} tags`
         : `${node.degree} posts tagged`;
-    detailsBody.textContent =
-      node.type === 'post' ? node.excerpt || 'no excerpt available.' : 'posts connected to this tag:';
-
-    detailsList.textContent = '';
-
     if (node.type === 'post') {
+      detailsBody.textContent = node.preview || node.excerpt || 'no excerpt available.';
+      detailsTagsLabel.textContent = 'tags';
+      detailsRelatedLabel.textContent = 'related posts';
+      detailsRelatedLabel.style.display = 'block';
+      detailsRelatedList.style.display = 'flex';
+      detailsTagsList.textContent = '';
+      detailsRelatedList.textContent = '';
       node.tags.forEach((tag) => {
         const chip = document.createElement('span');
         chip.className = 'blog-viewer__chip';
         chip.textContent = `#${tag}`;
-        detailsList.appendChild(chip);
+        detailsTagsList.appendChild(chip);
+      });
+
+      const relatedMap = new Map();
+      const tagIds = adjacency.get(node.id) ? Array.from(adjacency.get(node.id)) : [];
+      tagIds.forEach((tagId) => {
+        const relatedPosts = tagToPosts.get(tagId) || [];
+        relatedPosts.forEach((post) => {
+          if (post.id === node.id) return;
+          relatedMap.set(post.id, (relatedMap.get(post.id) || 0) + 1);
+        });
+      });
+
+      const relatedEntries = Array.from(relatedMap.entries())
+        .map(([id, score]) => ({ node: nodeElements.get(id), score }))
+        .filter((entry) => entry.node && entry.node.type === 'post')
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 4);
+
+      if (relatedEntries.length === 0) {
+        const empty = document.createElement('span');
+        empty.className = 'blog-viewer__chip blog-viewer__chip--post';
+        empty.textContent = 'no related posts yet';
+        detailsRelatedList.appendChild(empty);
+      } else {
+        relatedEntries.forEach(({ node: relatedNode }) => {
+          const chip = document.createElement('span');
+          chip.className = 'blog-viewer__chip blog-viewer__chip--post';
+          chip.textContent = relatedNode.label;
+          detailsRelatedList.appendChild(chip);
+        });
       });
       detailsLink.style.display = 'inline-flex';
       detailsLink.setAttribute('href', node.url);
     } else {
+      detailsBody.textContent = 'posts connected to this tag';
+      detailsTagsLabel.textContent = 'posts';
+      detailsRelatedLabel.style.display = 'none';
+      detailsRelatedList.style.display = 'none';
+      detailsTagsList.textContent = '';
+      detailsRelatedList.textContent = '';
       const relatedPosts = nodes.filter(
         (candidate) => candidate.type === 'post' && adjacency.get(node.id)?.has(candidate.id)
       );
@@ -445,7 +516,7 @@ order: 7
         const chip = document.createElement('span');
         chip.className = 'blog-viewer__chip blog-viewer__chip--post';
         chip.textContent = post.label;
-        detailsList.appendChild(chip);
+        detailsTagsList.appendChild(chip);
       });
       detailsLink.style.display = 'none';
       detailsLink.removeAttribute('href');
