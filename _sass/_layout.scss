@@ -551,7 +551,7 @@ html[data-theme="dark"] {
     font-size: 1.1em;
     transition: color 0.35s ease;
 
-    &::before {
+    &::after {
       content: var(--collapsible-panel-triangle-glyph);
       display: var(--collapsible-panel-triangle-display);
       color: var(--collapsible-panel-triangle-color);
@@ -573,8 +573,12 @@ html[data-theme="dark"] {
 
   }
 
-  &[open] summary::before {
+  &[open] summary::after {
     transform: rotate(90deg);
+  }
+
+  &.closing summary::after {
+    transform: rotate(0deg);
   }
 
   summary h3 {
@@ -604,7 +608,7 @@ html[data-theme="dark"] {
   &.work-case {
     --collapsible-panel-border: none;
     --collapsible-panel-triangle-display: inline-block;
-    --collapsible-panel-triangle-offset: -0.35rem;
+    --collapsible-panel-triangle-offset: 0;
 
     summary {
       &::marker {
@@ -668,7 +672,7 @@ html[data-theme="dark"] {
       transition: none;
     }
 
-    summary::before {
+    summary::after {
       transition: none;
     }
 
