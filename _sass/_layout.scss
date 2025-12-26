@@ -794,6 +794,44 @@ html[data-theme='dark'] {
   outline-offset: 0;
 }
 
+#cusdis_thread {
+  min-height: 420px;
+  color: var(--global-text-color);
+}
+
+#cusdis_thread a {
+  color: var(--global-theme-color);
+}
+
+#cusdis_thread small,
+#cusdis_thread time,
+#cusdis_thread .date,
+#cusdis_thread .time,
+#cusdis_thread .muted,
+#cusdis_thread .text-muted {
+  color: var(--global-text-color-light);
+}
+
+#cusdis_thread .cusdis,
+#cusdis_thread .cusdis-wrapper,
+#cusdis_thread .cusdis-comments,
+#cusdis_thread .cusdis-comment,
+#cusdis_thread .cusdis-comment-body {
+  max-height: none;
+  height: auto;
+  overflow: visible;
+}
+
+#cusdis_thread iframe {
+  width: 100%;
+  min-height: 420px;
+  height: auto;
+}
+
+#cusdis_thread textarea {
+  min-height: 120px;
+}
+
 @media (min-width: 576px) {
   .navbar.navbar-light {
     .container {
