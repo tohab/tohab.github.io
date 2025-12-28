@@ -196,6 +196,7 @@ Sensitive essays live in an encrypted workflow so nothing private lands in git h
 
 - `_pages/*.md` drive navigation. The front matter `permalink` decides the URL (`permalink: /about/`, `permalink: /blog/`, etc.).
 - `_pages/blog.md` lists posts and surfaces inline preview cards; `_pages/work.md`, `_pages/art.md`, etc. each call into layouts under `_layouts/`.
+- The home/about layout (`_layouts/about.liquid`) wraps the profile image and page content in `.about-content.clearfix` so text wraps beside the floated image and then expands full-width once it clears the image. Adjust float direction via `profile.align` in front matter and sizing in `_sass/_base.scss` (`.profile`).
 - `_projects` and `_news` behave like mini-blogs using their own layouts; drop Markdown files with the relevant metadata.
 - `_bibliography` + `_bibliography/references.bib` (if present) work with `jekyll-scholar` should you need publications.
 - `_data/cv.yml`, `_data/coauthors.yml`, `_data/repositories.yml`, and `_data/venues.yml` feed the resume and publication components.

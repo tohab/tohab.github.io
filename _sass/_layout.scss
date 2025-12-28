@@ -1151,6 +1151,7 @@ html[data-theme="dark"] {
 }
 
 .about-panel-stack {
+  clear: both;
   width: 100%;
   max-width: min(45rem, 100%);
   margin: 1.5rem 0 0;
