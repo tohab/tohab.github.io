@@ -21,6 +21,7 @@
 
     var openRefs = [];
     var refCounter = 0;
+    var viewportMargin = 12;
 
     function removeOpenRef(ref) {
       openRefs = openRefs.filter(function (item) {
@@ -38,6 +39,10 @@
       });
 
       ref.classList.remove('is-open');
+      var bubble = ref.querySelector('.footnote-ref__bubble');
+      if (bubble) {
+        bubble.style.removeProperty('--footnote-offset');
+      }
       var button = ref.querySelector('.footnote-ref__button');
       if (button) {
         button.setAttribute('aria-expanded', 'false');
@@ -51,6 +56,23 @@
       });
     }
 
+    function positionBubble(ref) {
+      if (!ref) return;
+      var bubble = ref.querySelector('.footnote-ref__bubble');
+      if (!bubble) return;
+      bubble.style.setProperty('--footnote-offset', '0px');
+      var anchorRect = ref.getBoundingClientRect();
+      var bubbleRect = bubble.getBoundingClientRect();
+      var viewportWidth = document.documentElement.clientWidth || window.innerWidth;
+      if (!viewportWidth) return;
+      var desiredLeft = anchorRect.left + anchorRect.width / 2 - bubbleRect.width / 2;
+      var minLeft = viewportMargin;
+      var maxLeft = Math.max(minLeft, viewportWidth - viewportMargin - bubbleRect.width);
+      var clampedLeft = Math.min(Math.max(desiredLeft, minLeft), maxLeft);
+      var offset = clampedLeft - desiredLeft;
+      bubble.style.setProperty('--footnote-offset', offset + 'px');
+    }
+
     function toggleRef(ref) {
       if (!ref) return;
       var willOpen = !ref.classList.contains('is-open');
@@ -62,6 +84,7 @@
           closeAllRefs();
         }
         ref.classList.add('is-open');
+        positionBubble(ref);
         var btn = ref.querySelector('.footnote-ref__button');
         if (btn) {
           btn.setAttribute('aria-expanded', 'true');
@@ -134,6 +157,12 @@
       if (event.key === 'Escape') {
         closeAllRefs();
       }
+    });
+
+    window.addEventListener('resize', function () {
+      openRefs.slice().forEach(function (ref) {
+        positionBubble(ref);
+      });
     });
 
     footnotesRoot.remove();
