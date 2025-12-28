@@ -1155,6 +1155,15 @@ html[data-theme="dark"] {
   margin: 1.5rem 0 0;
 }
 
+.about-panel-stack .collapsible-panel__content {
+  overflow: visible;
+}
+
+.about-panel-stack .collapsible-panel[data-animating="true"] .collapsible-panel__content,
+.about-panel-stack .collapsible-panel:not([open]) .collapsible-panel__content {
+  overflow: hidden;
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   .collapsible-panel {
