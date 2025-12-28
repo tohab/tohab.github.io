@@ -21,6 +21,7 @@ social: false # includes social icons at the bottom of the page
 
 **I'm Rohan!** I'm a writer, creator, and thinker navigating the 21st century.
 
+<section class="about-panel-stack">
 <details class="collapsible-panel work-case">
 <summary><strong>About me.</strong></summary>
   <div class="collapsible-panel__content" markdown="1">
@@ -63,6 +64,7 @@ Here you can find my [blog](/blog/), which I've been writing since 2019. I also 
 
   </div>
 </details>
+</section>
 
 <!-- **About me.** I grew up in London and went to UC Berkeley for college. After college, I lived in Taiwan for two years where I taught English and learned Mandarin. I'm back living in Berkeley, California, and now work at [Constellation](https://www.constellation.org).
 

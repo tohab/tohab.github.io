@@ -1150,6 +1150,37 @@ html[data-theme="dark"] {
   }
 }
 
+.about-panel-stack {
+  clear: both;
+  width: 100%;
+  max-width: min(42rem, 100%);
+  margin: 1.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.about-panel-stack .collapsible-panel.work-case {
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0.9rem 1.25rem 1rem;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.about-panel-stack .collapsible-panel__content {
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  color: var(--global-muted-text-color, #231b18);
+}
+
+.about-panel-stack .collapsible-panel summary {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+
 @media (prefers-reduced-motion: reduce) {
   .collapsible-panel {
     transition: none;
