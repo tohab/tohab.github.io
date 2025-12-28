@@ -23,7 +23,7 @@ Played at an open mic I hosted on October 30th, 2025.
 
 #### 補習BAND
 
-I created 補習BAND (buxiband) album below in Taiwan with three great friends. We recorded on June 4th, 2023. You can find more details on the backstory in the [buxiband post-mortem](https://www.rohanprasad.org/blog/2023/2023-11-band-album-is-out/).
+I recorded 補習BAND (buxiband) album in Taiwan with Leon Chou, Etienne Lalonde, and Noé Largeron. I played alto saxophone on most tracks, and also some flute and voice. We recorded on June 4th, 2023. More details on the tracks and backstory are written in [buxiband post-mortem](https://www.rohanprasad.org/blog/2023/2023-11-band-album-is-out/).
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
   <iframe
