@@ -511,9 +511,11 @@ full_height: true
       detailsRelatedList.style.display = 'none';
       detailsTagsList.textContent = '';
       detailsRelatedList.textContent = '';
-      const relatedPosts = nodes.filter(
-        (candidate) => candidate.type === 'post' && adjacency.get(node.id)?.has(candidate.id)
-      );
+      const relatedConnections = adjacency.get(node.id);
+      const relatedPosts = nodes.filter((candidate) => {
+        if (candidate.type !== 'post') return false;
+        return relatedConnections ? relatedConnections.has(candidate.id) : false;
+      });
       relatedPosts.slice(0, 6).forEach((post) => {
         const chip = document.createElement('span');
         chip.className = 'blog-viewer__chip blog-viewer__chip--post';
@@ -534,10 +536,14 @@ full_height: true
     }
     if (activeNodeId) focusSet.add(activeNodeId);
 
+    const hoverConnections = hoverNodeId ? adjacency.get(hoverNodeId) : null;
+
     nodes.forEach((node) => {
       if (!node.el) return;
       const isActive = node.id === activeNodeId;
-      const isHover = hoverNodeId && (node.id === hoverNodeId || adjacency.get(hoverNodeId)?.has(node.id));
+      const isHover =
+        hoverNodeId &&
+        (node.id === hoverNodeId || (hoverConnections && hoverConnections.has(node.id)));
       const isFocused = activeNodeId ? focusSet.has(node.id) : true;
       node.el.classList.toggle('is-active', isActive);
       node.el.classList.toggle('is-hovered', !!hoverNodeId && isHover);
