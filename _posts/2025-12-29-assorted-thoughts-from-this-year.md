@@ -11,7 +11,9 @@ tags:
 title: Assorted thoughts from this year
 ---
 
-New York City (January 2025). In Washington Square Park, I'm with my friend Elizabeth, and I comment on an art piece to a man next to us. "It looks like the Bean in Chicago." He tells us he used to be a bank robber and got locked in the 90s, and got out of jail a few years ago. "Congratulations!" said Elizabeth and I.
+New York City (January 2025). In Washington Square Park, I'm with my friend Elizabeth, and I comment on an art piece to a man next to us. "It looks like the Bean in Chicago." He tells us he used to be a bank robber and got locked in the 90s, and got out of jail a few years ago. "Congratulations!" say Elizabeth and I [^1].
+
+[^1]: Elizabeth tells me after that she feels quite sure he was joking. I think that's a distinct possibility -- but also that would be an insane joke to make.
 
 A city of multitudes. I'm at a party with my friend from school, Herbert, who I met when I was 12 as his orientation penpal. Herbert wears his dress shirt in the morning before heading off to his job as a consultant. "What happened to us, Herbert?" Later, at a party, a girl tells me she works in derivatives. "Like dy/dx?" I play. She's ticked off by that one.
 
