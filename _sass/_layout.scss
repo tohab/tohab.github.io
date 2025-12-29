@@ -1272,7 +1272,7 @@ html[data-theme="dark"] {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translate(-50%, -0.15rem);
+  transform: translate(calc(-50% + var(--footnote-offset, 0px)), -0.15rem);
 }
 
 html[data-theme='dark'] {
