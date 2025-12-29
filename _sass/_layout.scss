@@ -1258,7 +1258,7 @@ html[data-theme="dark"] {
     content: '';
     position: absolute;
     bottom: -7px;
-    left: 50%;
+    left: calc(50% - var(--footnote-offset, 0px));
     transform: translateX(-50%) rotate(45deg);
     width: 12px;
     height: 12px;
