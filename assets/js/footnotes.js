@@ -42,6 +42,7 @@
       var bubble = ref.querySelector('.footnote-ref__bubble');
       if (bubble) {
         bubble.style.removeProperty('--footnote-offset');
+        bubble.style.removeProperty('--footnote-tail-left');
       }
       var button = ref.querySelector('.footnote-ref__button');
       if (button) {
@@ -61,16 +62,19 @@
       var bubble = ref.querySelector('.footnote-ref__bubble');
       if (!bubble) return;
       bubble.style.setProperty('--footnote-offset', '0px');
+      bubble.style.setProperty('--footnote-tail-left', '50%');
       var anchorRect = ref.getBoundingClientRect();
       var bubbleRect = bubble.getBoundingClientRect();
       var viewportWidth = document.documentElement.clientWidth || window.innerWidth;
       if (!viewportWidth) return;
-      var desiredLeft = anchorRect.left + anchorRect.width / 2 - bubbleRect.width / 2;
+      var anchorCenter = anchorRect.left + anchorRect.width / 2;
+      var desiredLeft = anchorCenter - bubbleRect.width / 2;
       var minLeft = viewportMargin;
       var maxLeft = Math.max(minLeft, viewportWidth - viewportMargin - bubbleRect.width);
       var clampedLeft = Math.min(Math.max(desiredLeft, minLeft), maxLeft);
       var offset = clampedLeft - desiredLeft;
       bubble.style.setProperty('--footnote-offset', offset + 'px');
+      bubble.style.setProperty('--footnote-tail-left', anchorCenter - clampedLeft + 'px');
     }
 
     function toggleRef(ref) {
