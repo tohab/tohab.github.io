@@ -9,6 +9,30 @@ This fork of the **al-folio** theme powers [tohab.github.io](https://tohab.githu
 - Tooling: Bundler (`Gemfile`), Node (`package.json`) for Prettier + PurgeCSS (`purgecss.config.js`), Python 3 for helper scripts (`scripts/*.py`), ImageMagick for asset processing, and Docker Compose (`docker-compose.yml`) for an optional containerized dev loop.
 - Deployment: GitHub Actions workflow `.github/workflows/deploy.yml` builds on every push to `main` and deploys via the Pages artifact flow (no `gh-pages` branch push); the branch-based path lives in `bin/deploy`.
 
+## Quick Links (Most-Used Files)
+
+- `README.md` (this guide)
+- `_config.yml` (site metadata, nav, toggles, permalinks)
+- `_pages/` (top-level pages)
+- `_posts/` (blog posts)
+- `_layouts/about.liquid` (home/about layout)
+- `_sass/_base.scss` (typography + profile styling)
+- `_sass/_layout.scss` (collapsible panels + layout)
+- `scripts/localize_images.py` (download + relink remote images)
+- `scripts/encrypt_secret.rb` (encrypt secret posts)
+- `bin/sync_archives.rb` (rebuild tag/year pages)
+- `.github/workflows/deploy.yml` (GitHub Pages deploy)
+
+## Where to Edit What
+
+- Navigation labels/URLs: `_config.yml`
+- About page layout + profile image wrapping: `_layouts/about.liquid` + `_sass/_base.scss`
+- Collapsible panel styling/behavior: `_sass/_layout.scss` + `assets/js/collapsible-panels.js`
+- Footnote tooltips: `assets/js/footnotes.js` + `_sass/_layout.scss`
+- Blog hover previews: `_includes/scripts/blog_hover_preview.liquid` + `assets/js/blog-hover-previews.js`
+- Secret posts list + unlock UI: `_pages/secret.md` + `_layouts/secret_post.html`
+- Game gallery + game pages: `_pages/etc-games.md` + `_layouts/games.liquid` + `_layouts/game.liquid`
+
 ## Getting Started
 
 ### Prerequisites
@@ -45,6 +69,12 @@ bundle exec jekyll serve --livereload --incremental
 - Stop with `Ctrl+C`. If you see stale layouts, run `bundle exec jekyll clean` before restarting.
 
 **Docker option:** `docker compose up` uses the command in `docker-compose.yml` (`bundle install && bundle exec jekyll serve --host 0.0.0.0 --port 8080`) and exposes ports `8080` and `35729`. If you want `--livereload` or `--incremental`, edit the compose command.
+
+### Local dev variants (CLI vs Docker)
+
+- CLI loop: `bundle exec jekyll serve --livereload --incremental` (fast rebuilds, local Ruby env).
+- Docker loop: `docker compose up` runs the fixed command in `docker-compose.yml` (currently no `--livereload` or `--incremental`).
+- If you need parity, edit the compose command to match the CLI flags.
 
 ## Repository Layout (What You Actually Need)
 
@@ -122,6 +152,13 @@ title: Add A Title Here
 ```
 
 Edit the placeholder date/title/slug/tags before committing, and delete `description` (or leave it blank/`null`) if you do not want a custom summary.
+
+### Front matter conventions (by content type)
+
+- Posts (`_posts/*.md`): `layout: post`, `title`, `date`, `slug`, `tags`, optional `preview_image`, optional `description`, optional `published: false`.
+- Projects (`_projects/*.md`): Use `layout: page` (see sample files in `_projects/`); cards are rendered by `_pages/projects.md` via `_includes/projects*.liquid`.
+- News (`_news/*.md`): Uses `layout: post` by default (see `_config.yml` collections).
+- Games (`_games/*.js`): `layout: game`, `title`, `summary`, plus the embed fields (`element_tag`, `element_id`, etc.).
 
 #### Inline footnotes
 
@@ -279,6 +316,12 @@ The raw directory stays out of Git (see `.gitignore`) so commits only include op
 | `python3 scripts/generate_blog_stats.py` | Produces `/assets/img/blog-stats/*.png` charts and a `summary.txt` describing totals. | Requires Pillow and the `DejaVuSans.ttf` font (install via `sudo apt install fonts-dejavu` or equivalent). Useful when updating posts like `_posts/2025-09-30-taking-stock-of-the-blog.md`. |
 | `bin/cibuild` | Convenience wrapper for `bundle exec jekyll build`. | Used by some CI workflows. |
 | `bin/deploy` | Force-pushes a production build to `gh-pages`. | Interactive, destructive: wipes the working tree except for `_site` artifacts, runs `purgecss -c purgecss.config.js`, and pushes to `gh-pages`. Requires `purgecss` on PATH (`npm install -g purgecss` or `npx purgecss …`). Prefer the GitHub Pages workflow unless you need an immediate manual publish. |
+
+### Danger zone (manual deploy)
+
+- `bin/deploy` deletes everything except `_site/` + git metadata during its run and force-pushes to `gh-pages`.
+- It will abort if there are uncommitted or untracked files, but still treat it as destructive.
+- Always run it from a clean working tree and only if you explicitly want to bypass the GitHub Pages workflow.
 
 ## Formatting, Checks, and Tooling
 
