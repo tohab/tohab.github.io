@@ -1293,38 +1293,76 @@ html[data-theme='dark'] {
 #cusdis_thread input,
 #cusdis_thread textarea,
 #cusdis_thread select {
-  border: 1px solid #000 !important;
+  border: 1px solid var(--global-divider-color) !important;
+  background-color: var(--global-card-bg-color);
+  color: var(--global-text-color) !important;
   box-shadow: none !important;
+  border-radius: 6px;
+  padding: 8px 12px;
 }
 
 #cusdis_thread input:focus,
 #cusdis_thread textarea:focus,
 #cusdis_thread select:focus {
-  border-color: #000 !important;
-  outline: 1px solid #000 !important;
-  outline-offset: 0;
+  border-color: var(--global-theme-color) !important;
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 1px;
+}
+
+#cusdis_thread button,
+#cusdis_thread input[type='submit'],
+#cusdis_thread input[type='button'],
+#cusdis_thread input[type='reset'] {
+  background-color: var(--global-theme-color);
+  color: var(--global-bg-color) !important;
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem 0.85rem;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+#cusdis_thread button:hover,
+#cusdis_thread input[type='submit']:hover,
+#cusdis_thread input[type='button']:hover,
+#cusdis_thread input[type='reset']:hover {
+  background-color: var(--global-hover-color);
+  color: var(--global-hover-text-color) !important;
+}
+
+#cusdis_thread button:focus-visible,
+#cusdis_thread input[type='submit']:focus-visible,
+#cusdis_thread input[type='button']:focus-visible,
+#cusdis_thread input[type='reset']:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 2px;
 }
 
 #cusdis_thread {
   min-height: 420px;
   overflow: visible;
-  color: #000 !important;
+  color: var(--global-text-color);
   font-family: var(--global-font-family);
 }
 
 #cusdis_thread * {
-  color: #000 !important;
+  color: inherit !important;
   font-family: inherit;
 }
 
 #cusdis_thread a {
-  color: #000 !important;
-  text-decoration-color: #000;
+  color: var(--global-theme-color) !important;
+  text-decoration-color: currentColor;
+}
+
+#cusdis_thread a:hover,
+#cusdis_thread a:focus-visible {
+  color: var(--global-hover-color) !important;
 }
 
 #cusdis_thread input::placeholder,
 #cusdis_thread textarea::placeholder {
-  color: #000 !important;
+  color: var(--global-text-color-light) !important;
   opacity: 1;
 }
 
@@ -1334,7 +1372,7 @@ html[data-theme='dark'] {
 #cusdis_thread .time,
 #cusdis_thread .muted,
 #cusdis_thread .text-muted {
-  color: #000 !important;
+  color: var(--global-text-color-light) !important;
   opacity: 1 !important;
 }
 
