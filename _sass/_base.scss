@@ -222,21 +222,50 @@ blockquote {
 //   vertical-align: middle;
 // }
 
-/* Normalize nested bullet size */
-ul, ol {
+/* Normalize list size and keep ordered lists numbered */
+ul,
+ol {
   font-size: 1em; /* Ensure consistent font size */
+}
+
+ul {
   list-style-type: disc; /* Default bullet style */
 }
 
-ul ul, ol ol, ul ol, ol ul {
+ol {
+  list-style-type: decimal; /* Default numbering */
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
   font-size: 0.9em; /* Slightly smaller font size for nested lists */
-  list-style-type: circle; /* Optional: Different style for nested bullets */
   padding-left: 1.5em; /* Indent nested lists */
 }
 
-ul ul ul, ol ol ol {
+ul ul,
+ul ol,
+ol ul {
+  list-style-type: circle; /* Optional: Different style for nested bullets */
+}
+
+ol ol {
+  list-style-type: lower-alpha; /* Keep nested ordered lists numbered */
+}
+
+ul ul ul,
+ul ol ul,
+ul ul ol,
+ul ol ol {
   font-size: 0.85em; /* Adjust for deeply nested lists */
   list-style-type: square; /* Optional: Further differentiation */
+  padding-left: 2em; /* Increase indent for deeper nesting */
+}
+
+ol ol ol {
+  font-size: 0.85em; /* Adjust for deeply nested lists */
+  list-style-type: lower-roman; /* Deeper ordered list style */
   padding-left: 2em; /* Increase indent for deeper nesting */
 }
 

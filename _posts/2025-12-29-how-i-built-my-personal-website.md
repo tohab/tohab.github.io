@@ -20,13 +20,13 @@ I was mainly trying to build a site that was very customizable and very cheap to
 
 Below are some steps I followed.
 
-1. Create a basic GitHub Pages website.
+1. Create a basic GitHub Pages website, then clone it to your computer.
 2. Download VS Code and get the Codex extension.
 3. Go wild with vibe coding.
 4. (optional) Get your own domain name on Namecheap.
 5. (optional) Set up a comment section with Cusdis.
 
-You can ask any LLM[^0] to elaborate on the above steps for more details. Or email me to chat about the process!
+You can ask any LLM[^0] to elaborate on the above steps for more details. My website content is entirely open-source and can be found [here](https://github.com/tohab/tohab.github.io). Or email me to chat about the process!
 
 If you're someone who wants to build your own website, I'd offer the following thoughts:
 - Think about what you want, first. For others, it's possible that starting a Substack newsletter is good enough for you; or maybe [Blogger](https://www.blogger.com/about/) is where it's at; or perhaps Google [Sites](sites.google.com).
