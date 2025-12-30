@@ -9,13 +9,10 @@ tags:
 - creativity
 - ai
 - writing
-preview_image: /assets/img/posts/2025-12-29-how-i-built-my-personal-website/img01.png
 title: How to build a personal website
 ---
 
 I love having a personal website, and am writing this so more people feel empowered to create their own.
-
-![](/assets/img/posts/2025-12-29-how-i-built-my-personal-website/img01.png)
 
 My goals for a website: I wanted a place to blog, share musical creations, have a work portfolio, and share other projects as they come up. Designing and creating a website makes me feel artsy! I also think it's a good way for friends to learn about what I'm up to and thinking about.
 
