@@ -26,7 +26,7 @@ Below are some steps I followed.
 4. (optional) Get your own domain name on Namecheap.
 5. (optional) Set up a comment section with Cusdis.
 
-You can ask any LLM to elaborate on the above steps for more details. Or email me to chat about the process!
+You can ask any LLM[^0] to elaborate on the above steps for more details. Or email me to chat about the process!
 
 If you're someone who wants to build your own website, I'd offer the following thoughts:
 - Think about what you want, first. For others, it's possible that starting a Substack newsletter is good enough for you; or maybe [Blogger](https://www.blogger.com/about/) is where it's at; or perhaps Google [Sites](sites.google.com).
@@ -36,4 +36,5 @@ If you're someone who wants to build your own website, I'd offer the following t
   - LLMs can also point you in the right direction early on. The more you tell it, the more helpful it is. These days, you can upload images and the LLM will figure out the rest.
   - Directing LLMs is a bit of a skill, but one that can be easily learned. I recommend having a clear ask; work feature by feature; and if it's not working, be more specific, or give a picture of what you're looking for. Most of the time, you can just give specific instructions and let it cook for a few minutes. Then, bam, you have a website!
 
+[^0]: LLM = "large language model" = ChatGPT, Claude, Gemini or any of those other tools kids have been talking about lately.
 [^1]: An IDE is basically a word processor for code. It stands for Integrated Development Environment. In my case, I use VSCode. 
