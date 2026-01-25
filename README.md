@@ -202,7 +202,7 @@ Sensitive essays live in an encrypted workflow so nothing private lands in git h
    title: encrypted test
    date: 2024-05-16
    permalink: /secret/encrypted-test/
-   secret_key: feiyang        # passphrase you’ll share with readers
+   secret_key: your-passphrase-here  # passphrase you’ll share with readers
    ---
 
    Write the actual post body here in normal Markdown.
