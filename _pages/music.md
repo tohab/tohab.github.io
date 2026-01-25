@@ -8,7 +8,7 @@ nav_order: 2
 
 #### 對面的女孩看過來 (Girl Over There, Look Over Here)
 
-Played at an open mic I hosted on October 30th, 2025.
+I played this classic Taiwanese song at an open mic I hosted on October 30th, 2025.
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
   <iframe
