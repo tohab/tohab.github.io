@@ -76,10 +76,10 @@ When I joined Constellation as the sole Operations Coordinator, the building was
 **💡 Approach**
 
 - Built the role itself from scratch: created the Operations Coordinator Handbook, a comprehensive internal guide covering the full scope of the role, decision flowcharts for triaging requests, and escalation protocols — foundational documentation that was subsequently used by all new hires to the position.
-- Scaled the membership services coordination team from 1 (myself) to 4 people over 11 months, leading hiring, onboarding, and team cohesion efforts.
+- Scaled the membership services coordination team from 1 (myself) to 4 people over 11 months, leading hiring, training, and team coordination efforts.
 - Coordinated a team of 10 porters, implementing a shift system and ticketing workflow to triage and assign daily member requests as volume scaled from ~5 to ~12 per day.
 - Co-developed a member tiering system with the policy team, establishing differentiated service standards calibrated to organizational values, staff capacity, and budget constraints.
-- Redesigned the member onboarding and offboarding processes, cutting onboarding time from ~10 weeks to 4 weeks.
+- Redesigned the member onboarding and offboarding processes, increasing max onboarding capacity from ~3-5 to up to 100 in a day
 - Managed a $40K/month inventory budget for snacks and office supplies; transitioned to wholesale suppliers, slashing costs and staff time by 50%.
 
 **📈 Impact**
