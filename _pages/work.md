@@ -26,15 +26,15 @@ I thrive with a lot of autonomy and a fast-moving environment. My instinct is to
 **CAREER HIGHLIGHTS**
 
 - **Built Constellation's media operations function from scratch** — coordinating 8 incident-free engagements with NPR, The Daily Show, Scientific American, and The Verge, and achieving an 80% reduction in policy violation incidents
-- **Scaled a member services team from 1 to 4 coordinators** at Constellation Institute, supporting a doubling of daily attendance from ~100 to ~200–250 members with no drop in service quality
+- **Scaled a member services team from 1 to 4 coordinators** at Constellation, supporting a doubling of daily attendance from ~100 to ~200–250 members with no drop in service quality
 - **Founded and legally incorporated a nonprofit**, growing funding to $2.5M and expanding applicant capacity from 5 informal referrals to 200+ through a structured, repeatable selection pipeline
 - **Digitized curriculum and evaluation operations** at a Taiwanese language school using AI tools, securing franchise-wide CEO adoption across 8 teachers and operations staff
-- **Identified Tyson Foods as the campaign target, built the coalition and operational infrastructure for a multi-campus pressure campaign, and designed the succession strategy** that ultimately led UC Berkeley to sever its contract with Tyson Foods
+- **Built strategic roadmap for a Drop Tyson Foods campaign at UC Berkeley**, resulting in successful, multi-year campaign that led to a campus boycott of the supplier due to animal cruelty issues
 
 <details class="collapsible-panel work-case">
 <summary><strong>Case 1: Building Constellation's Media Operations Function</strong></summary>
   {% capture case_1 %}
-**📅 Date:** 2024
+**📅 Date:** 2025-2026
 **🏢 Organization:** Constellation Institute
 
 **🔍 Problem**
@@ -64,9 +64,9 @@ Constellation Institute sits at the center of the AI safety ecosystem in the Bay
 </details>
 
 <details class="collapsible-panel work-case">
-<summary><strong>Case 2: Scaling Member Services Operations at Constellation Institute</strong></summary>
+<summary><strong>Case 2: Scaling Member Services Operations at Constellation </strong></summary>
   {% capture case_2 %}
-**📅 Date:** 2024
+**📅 Date:** 2025-2026
 **🏢 Organization:** Constellation Institute
 
 **🔍 Problem**
@@ -97,7 +97,7 @@ When I joined Constellation as the sole Operations Coordinator, the building was
 <details class="collapsible-panel work-case">
 <summary><strong>Case 3: Co-founding and Scaling Operations for Grassyouths, Inc.</strong></summary>
   {% capture case_3 %}
-**📅 Date:** 2021 - Present
+**📅 Date:** 2021 - 2025
 **🏢 Organization:** Grassyouths Inc.
 
 **🔍 Problem**
