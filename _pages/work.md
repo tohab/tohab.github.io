@@ -26,7 +26,7 @@ I thrive with autonomy and a clear north-star. My instinct is to build structure
 **CAREER HIGHLIGHTS**
 
 - **Scaled a member services team by four-fold** at Constellation, supporting a doubling of daily attendance from ~100 to ~200–250 members with no drop in service quality
-- **Built Constellation's media operations function from scratch** — coordinating 8 successful engagements with NPR, The Daily Show, Scientific American, and The Verge, and achieving an 80% reduction in policy violation incidents
+- **Built Constellation's media operations function from scratch** — coordinating 8 successful engagements with outlets including NPR, The Daily Show, Scientific American, and The Verge, and achieving an 80% reduction in policy violation incidents
 - **Founded and legally incorporated a nonprofit**, growing funding to $2.5M and expanding applicant capacity from 5 informal referrals to 200+ through a structured, repeatable selection pipeline
 - **Digitized curriculum and evaluation operations** at a Taiwanese language school using AI tools, securing franchise-wide CEO adoption across 8 teachers and operations staff
 - **Built strategic roadmap for a Drop Tyson Foods campaign at UC Berkeley**, resulting in successful, multi-year campaign that led to a campus boycott of the supplier due to animal cruelty issues
