@@ -21,7 +21,7 @@ collapsible_panels: true
   </span>
 </div>
 
-I thrive with a lot of autonomy and a fast-moving environment. My instinct is to find where structure is missing and build it — processes, documentation, team systems — so the organization can operate at scale without things falling through the cracks.
+I thrive autonomy and a clear north-star. My instinct is to find where structure is missing and build it — documentation, processes, and team systems — so good work compounds as organizations scale.
 
 **CAREER HIGHLIGHTS**
 

@@ -1101,6 +1101,8 @@ html[data-theme="dark"] {
     --collapsible-panel-triangle-offset: 0;
 
     summary {
+      justify-content: space-between;
+
       &::marker {
         content: '';
       }
