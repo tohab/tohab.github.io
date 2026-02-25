@@ -32,8 +32,39 @@ I thrive with autonomy and a clear north-star. My instinct is to build structure
 - **Built strategic roadmap for a Drop Tyson Foods campaign at UC Berkeley**, resulting in successful, multi-year campaign that led to a campus boycott of the supplier due to animal cruelty issues
 
 <details class="collapsible-panel work-case">
-<summary><strong>Case 1: Building Constellation's Media Operations Function</strong></summary>
+<summary><strong>Case 1: Scaling Member Services Operations at Constellation </strong></summary>
   {% capture case_1 %}
+**📅 Date:** 2025-2026
+**🏢 Organization:** Constellation Institute
+
+**🔍 Problem**
+
+When I joined Constellation as the sole Operations Coordinator, the building was serving around 100 members per day with ad hoc processes, minimal documentation, and no structured service standards. Membership was growing fast — the operations function needed to scale alongside it without degrading the experience members had come to expect.
+
+**💡 Approach**
+
+- Built the role itself from scratch: created the Operations Coordinator Handbook, a comprehensive internal guide covering the full scope of the role, decision flowcharts for triaging requests, and escalation protocols — foundational documentation that was subsequently used by all new hires to the position.
+- Scaled the membership services coordination team from 1 (myself) to 4 people over 11 months, leading hiring, training, and team coordination efforts.
+- Coordinated a team of 10 porters, implementing a shift system and ticketing workflow to triage and assign daily member requests as volume scaled from ~5 to ~12 per day.
+- Co-developed a member tiering system with the policy team, establishing differentiated service standards calibrated to organizational values, staff capacity, and budget constraints.
+- Redesigned the member onboarding and offboarding processes, increasing max onboarding capacity from ~3-5 to up to 100 in a day
+- Managed a $40K/month inventory budget for snacks and office supplies; transitioned to wholesale suppliers, slashing costs and staff time by 50%.
+
+**📈 Impact**
+
+- Supported a doubling of daily building attendance — from ~100 to ~200–250 members per day — with no drop in service quality.
+- Reduced member onboarding time by 60%, enabling faster, more consistent member integration at higher throughput.
+- Cut food and beverage operational costs by 50% through supplier restructuring.
+- Left behind scalable systems and documentation that allowed the team to operate independently after my departure.
+  {% endcapture %}
+  <div class="collapsible-panel__content">
+    {{ case_1 | strip | markdownify }}
+  </div>
+</details>
+
+<details class="collapsible-panel work-case">
+<summary><strong>Case 2: Building Constellation's Media Operations Function</strong></summary>
+  {% capture case_2 %}
 **📅 Date:** 2025-2026
 **🏢 Organization:** Constellation Institute
 
@@ -57,37 +88,6 @@ Constellation Institute sits at the center of the AI safety ecosystem in the Bay
 - Delivered 8 successful media engagements with no incidents, resulting in published coverage in NPR and Scientific American.
 - Achieved an 80% reduction in media policy violation incidents, materially reducing reputational and operational risk for the organization.
 - Left the organization positioned to handle high-profile media interest confidently, consistently, and at scale.
-  {% endcapture %}
-  <div class="collapsible-panel__content">
-    {{ case_1 | strip | markdownify }}
-  </div>
-</details>
-
-<details class="collapsible-panel work-case">
-<summary><strong>Case 2: Scaling Member Services Operations at Constellation </strong></summary>
-  {% capture case_2 %}
-**📅 Date:** 2025-2026
-**🏢 Organization:** Constellation Institute
-
-**🔍 Problem**
-
-When I joined Constellation as the sole Operations Coordinator, the building was serving around 100 members per day with ad hoc processes, minimal documentation, and no structured service standards. Membership was growing fast — the operations function needed to scale alongside it without degrading the experience members had come to expect.
-
-**💡 Approach**
-
-- Built the role itself from scratch: created the Operations Coordinator Handbook, a comprehensive internal guide covering the full scope of the role, decision flowcharts for triaging requests, and escalation protocols — foundational documentation that was subsequently used by all new hires to the position.
-- Scaled the membership services coordination team from 1 (myself) to 4 people over 11 months, leading hiring, training, and team coordination efforts.
-- Coordinated a team of 10 porters, implementing a shift system and ticketing workflow to triage and assign daily member requests as volume scaled from ~5 to ~12 per day.
-- Co-developed a member tiering system with the policy team, establishing differentiated service standards calibrated to organizational values, staff capacity, and budget constraints.
-- Redesigned the member onboarding and offboarding processes, increasing max onboarding capacity from ~3-5 to up to 100 in a day
-- Managed a $40K/month inventory budget for snacks and office supplies; transitioned to wholesale suppliers, slashing costs and staff time by 50%.
-
-**📈 Impact**
-
-- Supported a doubling of daily building attendance — from ~100 to ~200–250 members per day — with no drop in service quality.
-- Reduced member onboarding time by 60%, enabling faster, more consistent member integration at higher throughput.
-- Cut food and beverage operational costs by 50% through supplier restructuring.
-- Left behind scalable systems and documentation that allowed the team to operate independently after my departure.
   {% endcapture %}
   <div class="collapsible-panel__content">
     {{ case_2 | strip | markdownify }}
