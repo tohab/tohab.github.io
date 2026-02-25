@@ -1117,6 +1117,13 @@ html[data-theme="dark"] {
     }
   }
 
+  &.work-side-project {
+    summary {
+      justify-content: flex-start;
+      gap: 2rem;
+    }
+  }
+
   .collapsible-panel__content {
     font-size: 1.1em;
     height: 0;

@@ -187,7 +187,7 @@ Schoolhouse Language Center's flagship branch had a recurring operational proble
 
 ### Side Projects
 
-<details class="collapsible-panel work-case">
+<details class="collapsible-panel work-case work-side-project">
 <summary><strong>補習BAND Jazz Album</strong></summary>
   {% capture project_band %}
 **📅 Date:** 2023
@@ -199,8 +199,8 @@ Founded and led a jazz band in Taiwan, performing alto saxophone, flute, and voc
   </div>
 </details>
 
-<details class="collapsible-panel work-case">
-<summary><strong>www.rohanprasad.org</strong></summary>
+<details class="collapsible-panel work-case work-side-project">
+<summary><strong>Blog and Portfolio Website</strong></summary>
   {% capture project_website %}
 **📅 Date:** 2019 - Present
 
@@ -211,7 +211,7 @@ Written 100+ posts since 2019 across travel writing, argumentative essays, and c
   </div>
 </details>
 
-<details class="collapsible-panel work-case">
+<details class="collapsible-panel work-case work-side-project">
 <summary><strong>Economics Paper: Illegal Wildlife Trade</strong></summary>
   {% capture project_paper %}
 **📅 Date:** 2020 - 2022
