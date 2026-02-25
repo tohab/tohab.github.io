@@ -25,8 +25,8 @@ I thrive with autonomy and a clear north-star. My instinct is to build structure
 
 **CAREER HIGHLIGHTS**
 
-- **Built Constellation's media operations function from scratch** — coordinating 8 incident-free engagements with NPR, The Daily Show, Scientific American, and The Verge, and achieving an 80% reduction in policy violation incidents
-- **Scaled a member services team from 1 to 4 coordinators** at Constellation, supporting a doubling of daily attendance from ~100 to ~200–250 members with no drop in service quality
+- **Scaled a member services team by four-fold** at Constellation, supporting a doubling of daily attendance from ~100 to ~200–250 members with no drop in service quality
+- **Built Constellation's media operations function from scratch** — coordinating 8 successful engagements with NPR, The Daily Show, Scientific American, and The Verge, and achieving an 80% reduction in policy violation incidents
 - **Founded and legally incorporated a nonprofit**, growing funding to $2.5M and expanding applicant capacity from 5 informal referrals to 200+ through a structured, repeatable selection pipeline
 - **Digitized curriculum and evaluation operations** at a Taiwanese language school using AI tools, securing franchise-wide CEO adoption across 8 teachers and operations staff
 - **Built strategic roadmap for a Drop Tyson Foods campaign at UC Berkeley**, resulting in successful, multi-year campaign that led to a campus boycott of the supplier due to animal cruelty issues
@@ -47,7 +47,7 @@ Constellation Institute sits at the center of the AI safety ecosystem in the Bay
 - Authored a comprehensive media visit playbook — step-by-step logistics, a decision flowchart, and defined staff roles — so that any team member could execute a visit professionally and consistently, without needing to improvise.
 - Coordinated 8 end-to-end media engagements over 11 months, managing logistics, building access, staff briefings, and senior affiliate coordination for journalists from NPR, The Daily Show, The Verge, and Scientific American.
 - Built and deployed a CRM to track journalist and expert contacts, enabling warm introductions and creating a searchable, institutional record of media relationships that would outlast my tenure.
-- Piloted Constellation's podcast room program, coordinating the logistics behind 3 recorded episodes that aired on the 80,000 Hours podcast — featuring Holden Karnofsky, Rob Long, and the Forethought Institute.
+- Piloted Constellation's podcast room program, coordinating the logistics behind 3 recorded episodes that aired on the 80,000 Hours podcast — including interviews with Anthropic Head of Safety Policies (Holden Karnofsky), Executive Director of Eleos AI (Rob Long), and the Forethought Institute.
 - Partnered with senior affiliates to shape Constellation's broader media strategy, triaging and prioritizing incoming journalistic opportunities.
 - Organized a media strategy workshop with 5 AI safety media consultants to develop a coordinated, field-wide communications approach.
 
@@ -187,7 +187,7 @@ Schoolhouse Language Center's flagship branch had a recurring operational proble
 
 ### Side Projects
 
-<details class="collapsible-panel work-case work-side-project">
+<details class="collapsible-panel work-case">
 <summary><strong>補習BAND Jazz Album</strong></summary>
   {% capture project_band %}
 **📅 Date:** 2023
@@ -199,7 +199,7 @@ Founded and led a jazz band in Taiwan, performing alto saxophone, flute, and voc
   </div>
 </details>
 
-<details class="collapsible-panel work-case work-side-project">
+<details class="collapsible-panel work-case">
 <summary><strong>Blog and Portfolio Website</strong></summary>
   {% capture project_website %}
 **📅 Date:** 2019 - Present
@@ -211,7 +211,7 @@ Written 100+ posts since 2019 across travel writing, argumentative essays, and c
   </div>
 </details>
 
-<details class="collapsible-panel work-case work-side-project">
+<details class="collapsible-panel work-case">
 <summary><strong>Economics Paper: Illegal Wildlife Trade</strong></summary>
   {% capture project_paper %}
 **📅 Date:** 2020 - 2022
