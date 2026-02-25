@@ -21,40 +21,42 @@ collapsible_panels: true
   </span>
 </div>
 
-I'm an operations leader and non-profit founder. I'm adept at building scalable systems and driving organizational growth. I thrive in a collaborative environment and love to get things done.
+I thrive with a lot of autonomy and a fast-moving environment. My instinct is to find where structure is missing and build it — processes, documentation, team systems — so the organization can operate at scale without things falling through the cracks.
 
 **CAREER HIGHLIGHTS**
 
-- Secured and managed a $2M+ housing grant for a non-profit organization, optimizing resource allocation to support maximum community impact  
-- Managed an educational program serving 150+ students, resulting in 200% increase in language fluency
-- Generated $30K in additional funding through strategic membership growth initiatives, increasing an organization's operational capacity by 400%  
-- Co-developed research that informed resource economics policy decisions, potentially influencing market regulations worth millions in wildlife trade sectors  
-
-Below are four case studies highlighting projects I've led over the course of my time as a project leader and entrepreneur.
+- **Built Constellation's media operations function from scratch** — coordinating 8 incident-free engagements with NPR, The Daily Show, Scientific American, and The Verge, and achieving an 80% reduction in policy violation incidents
+- **Scaled a member services team from 1 to 4 coordinators** at Constellation Institute, supporting a doubling of daily attendance from ~100 to ~200–250 members with no drop in service quality
+- **Founded and legally incorporated a nonprofit**, growing funding to $2.5M and expanding applicant capacity from 5 informal referrals to 200+ through a structured, repeatable selection pipeline
+- **Digitized curriculum and evaluation operations** at a Taiwanese language school using AI tools, securing franchise-wide CEO adoption across 8 teachers and operations staff
+- **Identified Tyson Foods as the campaign target, built the coalition and operational infrastructure for a multi-campus pressure campaign, and designed the succession strategy** that ultimately led UC Berkeley to sever its contract with Tyson Foods
 
 <details class="collapsible-panel work-case">
-<summary><strong>Case 1: Co-founding and scaling operations for Grassyouths, Inc.</strong></summary>
+<summary><strong>Case 1: Building Constellation's Media Operations Function</strong></summary>
   {% capture case_1 %}
-**📅 Date:** Aug. 2021 - Present  
-**🏢 Organization:** Grassyouths Inc.
+**📅 Date:** 2024
+**🏢 Organization:** Constellation Institute
 
 **🔍 Problem**
 
-Grassyouths Inc. aimed to provide affordable housing for animal rights activists but lacked the necessary operational infrastructure to scale. The organization needed legal status, a structured application process, and a cohesive living environment.
+Constellation Institute sits at the center of the AI safety ecosystem in the Bay Area — a hub for researchers, affiliates, and conversations that attract intense journalistic interest. When I joined, the organization had no operational infrastructure to manage that interest responsibly. As Constellation's public profile grew, the absence of a coherent media operations function was becoming a real reputational risk.
 
 **💡 Approach**
 
-- Established the nonprofit's legal framework in collaboration with co-founders.
-- Built trust with the primary donor and landlord through regular meetings and demonstration of competency to secure long-term funding.
-- Led the scaling of the recruitment process, developed the interview structure, and guided criteria discussions and deliberations.
-- Led facility enhancement initiatives to create an aesthetically pleasing and functional communal space; facilitated conflict mediation and established productive meeting protocols.
+- Drafted Constellation's media policy from scratch, establishing enforceable guidelines covering journalist access, approved areas, talking points, and escalation protocols for sensitive situations.
+- Authored a comprehensive media visit playbook — step-by-step logistics, a decision flowchart, and defined staff roles — so that any team member could execute a visit professionally and consistently, without needing to improvise.
+- Coordinated 8 end-to-end media engagements over 11 months, managing logistics, building access, staff briefings, and senior affiliate coordination for journalists from NPR, The Daily Show, The Verge, and Scientific American.
+- Built and deployed a CRM to track journalist and expert contacts, enabling warm introductions and creating a searchable, institutional record of media relationships that would outlast my tenure.
+- Piloted Constellation's podcast room program, coordinating the logistics behind 3 recorded episodes that aired on the 80,000 Hours podcast — featuring Holden Karnofsky, Rob Long, and the Forethought Institute.
+- Partnered with senior affiliates to shape Constellation's broader media strategy, triaging and prioritizing incoming journalistic opportunities.
+- Organized a media strategy workshop with 5 AI safety media consultants to develop a coordinated, field-wide communications approach.
 
 **📈 Impact**
 
-- Dramatically expanded candidate consideration capacity from approximately 5 to over 200 applicants.
-- Secured and grew funding to 2.5 million dollars.
-- Developed a scalable and repeatable application and selection process.
-- Created a self-sustaining, well-organized community with improved coordination and cleanliness.
+- Built a media operations function where none existed, producing durable policy, process, and relationship infrastructure.
+- Delivered 8 successful media engagements with no incidents, resulting in published coverage in NPR and Scientific American.
+- Achieved an 80% reduction in media policy violation incidents, materially reducing reputational and operational risk for the organization.
+- Left the organization positioned to handle high-profile media interest confidently, consistently, and at scale.
   {% endcapture %}
   <div class="collapsible-panel__content">
     {{ case_1 | strip | markdownify }}
@@ -62,27 +64,30 @@ Grassyouths Inc. aimed to provide affordable housing for animal rights activists
 </details>
 
 <details class="collapsible-panel work-case">
-<summary><strong>Case 2: Optimizing Bilingual Educational Program Efficiency for 150+ Taiwanese Students</strong></summary>
+<summary><strong>Case 2: Scaling Member Services Operations at Constellation Institute</strong></summary>
   {% capture case_2 %}
-**📅 Date:** Aug. 2022 - May 2024  
-**🏢 Organization:** Schoolhouse Language Center, Taiwan
+**📅 Date:** 2024
+**🏢 Organization:** Constellation Institute
 
 **🔍 Problem**
 
-Our school's value proposition was to bring life to the English curriculum and generate excitement about learning. As the sole classroom teacher responsible for instruction, assessments, and discipline, I faced the challenge of engaging students with widely varying English proficiency and academic abilities.
+When I joined Constellation as the sole Operations Coordinator, the building was serving around 100 members per day with ad hoc processes, minimal documentation, and no structured service standards. Membership was growing fast — the operations function needed to scale alongside it without degrading the experience members had come to expect.
 
 **💡 Approach**
 
-- Developed tailored engagement strategies based on student age and ability, implementing research-backed approaches.
-- Designed interactive projects including a public speaking project (Class President campaign), board game design sessions, and organized field trips to the zoo/aquarium to foster self-expression and leadership.
-- Used behavioral methods, group reading, and on-the-spot translations with fluent Mandarin language skills to enhance education while maintaining an immersive English learning environment.
-- Used frontier AI models and data analysis tools to automate creation of lesson plans and assessment grading.
+- Built the role itself from scratch: created the Operations Coordinator Handbook, a comprehensive internal guide covering the full scope of the role, decision flowcharts for triaging requests, and escalation protocols — foundational documentation that was subsequently used by all new hires to the position.
+- Scaled the membership services coordination team from 1 (myself) to 4 people over 11 months, leading hiring, onboarding, and team cohesion efforts.
+- Coordinated a team of 10 porters, implementing a shift system and ticketing workflow to triage and assign daily member requests as volume scaled from ~5 to ~12 per day.
+- Co-developed a member tiering system with the policy team, establishing differentiated service standards calibrated to organizational values, staff capacity, and budget constraints.
+- Redesigned the member onboarding and offboarding processes, cutting onboarding time from ~10 weeks to 4 weeks.
+- Managed a $40K/month inventory budget for snacks and office supplies; transitioned to wholesale suppliers, slashing costs and staff time by 50%.
 
 **📈 Impact**
 
-- Increased assessment scores by 200% across vocabulary, spoken fluency, and reading comprehension metrics.
-- Reduced behavioral issue rates by 90% through implementation of clear guidelines and engaging content.
-- Consistently received top parent reviews and was voted favorite teacher by students.
+- Supported a doubling of daily building attendance — from ~100 to ~200–250 members per day — with no drop in service quality.
+- Reduced member onboarding time by 60%, enabling faster, more consistent member integration at higher throughput.
+- Cut food and beverage operational costs by 50% through supplier restructuring.
+- Left behind scalable systems and documentation that allowed the team to operate independently after my departure.
   {% endcapture %}
   <div class="collapsible-panel__content">
     {{ case_2 | strip | markdownify }}
@@ -90,29 +95,28 @@ Our school's value proposition was to bring life to the English curriculum and g
 </details>
 
 <details class="collapsible-panel work-case">
-<summary><strong>Case 3: Driving Political Advocacy & Membership Growth in Student Organization</strong></summary>
+<summary><strong>Case 3: Co-founding and Scaling Operations for Grassyouths, Inc.</strong></summary>
   {% capture case_3 %}
-**📅 Date:** Sept. 2019 - May 2022  
-**🏢 Organization:** Berkeley Organization for Animal Advocacy (BOAA)
+**📅 Date:** 2021 - Present
+**🏢 Organization:** Grassyouths Inc.
 
 **🔍 Problem**
 
-BOAA's mission was to create political support for animal rights legislation on the Berkeley campus. The club had dwindling membership and lacked structured programs to engage new advocates effectively.
+Grassyouths Inc. set out to provide subsidized housing for animal rights activists — but at founding, the organization lacked the infrastructure to function as a formal entity, let alone scale. There was no legal status, no structured process for selecting residents, and no systems for managing shared living across 8 people.
 
 **💡 Approach**
 
-- Spearheaded recruitment strategies, growing membership from 5-10 to 40-50 active participants in three months.
-- Launched the BOAA intern program, introducing structured mentorship for new advocates.
-- Created Students for Animal Rights (StAR), connecting 80+ students across UC campuses for weekly advocacy discussions and coalesced around a campaign against Tyson Foods, gathering evidence on animal abuse in their facilities.
-- Built relationships with University of California stakeholders to gain additional funding for animal advocacy.
+- Established the nonprofit's legal framework from scratch — filing for 501(c)(3) status, drafting bylaws, and co-authoring an organizational constitution with co-founders.
+- Replaced an informal, referral-based selection process with a structured two-stage pipeline: a 1-on-1 screening interview followed by a full panel interview with standardized questions, assessed against criteria developed through deliberate consensus-building across housemates and the primary donor/landlord.
+- Managed facility operations end-to-end: coordinated renovations, implemented a house chore system, established domain ownership and management responsibilities, and set structured timelines for leases, move-ins, and move-outs.
+- Built trust with the primary donor and landlord through consistent communication and demonstrated operational competency, securing long-term funding commitments.
+- Designed and executed a leadership transition, handing off to the next generation with documented systems and a functional operational structure.
 
 **📈 Impact**
 
-- Achieved 8x membership growth through structured engagement efforts.
-- Generated $30K in additional funding through strategic membership growth initiatives.
-- Established a scalable leadership development framework that influenced dozens of interns in subsequent semesters.
-- Successfully mobilized students to influence 3 major pro-animal bills in the local government.
-- Used the multi-campus coalition to pressure the UC Berkeley system to drop Tyson Foods.
+- Expanded candidate consideration capacity from ~5 informal referrals to 200+ applicants through a structured, repeatable pipeline.
+- Secured and grew funding to $2.5 million.
+- Built a self-sustaining organization that has continued operating independently through multiple leadership transitions, currently housing 8 residents.
   {% endcapture %}
   <div class="collapsible-panel__content">
     {{ case_3 | strip | markdownify }}
@@ -120,31 +124,64 @@ BOAA's mission was to create political support for animal rights legislation on 
 </details>
 
 <details class="collapsible-panel work-case">
-<summary><strong>Case 4: Led Publication of an Economics Paper on the Illegal Wildlife Trade</strong></summary>
+<summary><strong>Case 4: Building an Advocacy Organization and Succession Pipeline at BOAA</strong></summary>
   {% capture case_4 %}
-**📅 Date:** July 2020 - Jan. 2022
-
-**🏢 Organization:** UC Berkeley Agricultural & Resource Economics
+**📅 Date:** 2019 - 2022
+**🏢 Organization:** Berkeley Organization for Animal Advocacy (BOAA)
 
 **🔍 Problem**
 
-Inspired by the global pandemic, this study used an economics lens to analyze the illegal wildlife trade. This industry has vast economic and ecological implications, but limited consolidated data analysis hindered effective policy decisions.
+BOAA had a mission — building political support for animal rights legislation — but almost no organizational infrastructure to pursue it. Membership had fallen below 10 active participants, there were no programs to develop new advocates, no framework for cross-campus coordination, and no strategic documentation to ensure institutional continuity. The work that did happen lived entirely in the heads of a small group of people.
 
 **💡 Approach**
 
-- Conducted an extensive literature review and wrote a 20-page paper with 150+ references.
-- Integrated feedback from senior economists and journal reviewers to refine insights.
-- Used Excel and Python to analyze data, visualizing economic trends in the wildlife trade.
-- Gathered all available data in the literature and consolidated it into one place, while networking with academic experts to enhance data sources and methodology.
+- Launched the BOAA Intern Program, designing a structured mentorship curriculum that gave new advocates a defined development pathway — from onboarding through leading their own campaigns — producing a replicable pipeline that developed dozens of advocates across subsequent semesters.
+- Founded Students for Animal Rights (StAR), a multi-campus coalition connecting 80+ students across UC campuses, establishing a weekly meeting cadence, shared campaign objectives, and cross-campus coordination infrastructure that extended BOAA's reach beyond Berkeley.
+- Identified Tyson Foods as the campaign target; built out the campaign strategy, documentation framework, evidence-gathering protocols, and escalation tactics for a coordinated multi-campus pressure campaign; then deliberately transferred ownership to a trained successor who carried it to completion.
+- Cultivated relationships with University of California stakeholders to unlock $30K in additional funding through university allocations.
+- Grew active membership from fewer than 10 to 40–50 participants in three months through targeted recruitment and structured onboarding.
 
 **📈 Impact**
 
-- Published research to an _Annual Review of Resource Economics_ with two prize-winning Berkeley economics professors.
-- Provided policymakers with data-driven insights on wildlife trade regulations.
-- Strengthened academic networks by engaging with key experts in the field.
+- Established a replicable intern program that became BOAA's core leadership development program, developing dozens of advocates in the semesters that followed.
+- Built and operationalized a multi-campus coalition that extended the organization's political reach across the UC system.
+- Influenced two pieces of legislation: the Animal Sentience Bill and Right to Know legislation, at both the student government and Berkeley City Council level.
+- Designed and executed a campaign succession strategy that enabled a trained successor to carry the Tyson Foods campaign to completion — resulting in UC Berkeley severing its contract with Tyson Foods.
+- Generated $30K in additional funding through university stakeholder relationships.
   {% endcapture %}
   <div class="collapsible-panel__content">
     {{ case_4 | strip | markdownify }}
+  </div>
+</details>
+
+<details class="collapsible-panel work-case">
+<summary><strong>Case 5: Systematizing Operations for a Bilingual Educational Program Serving 150+ Students</strong></summary>
+  {% capture case_5 %}
+**📅 Date:** 2022 - 2024
+**🏢 Organization:** Schoolhouse Language Center, Taiwan
+
+**🔍 Problem**
+
+Schoolhouse Language Center's flagship branch had a recurring operational problem: inconsistent student outcomes across classrooms, persistent behavioral disruptions, and no standardized systems for curriculum planning, assessment, or reporting. Operations ran on paper and informal LINE messages. Without structured processes, performance depended entirely on individual teachers — making quality uneven and difficult to improve at scale.
+
+**💡 Approach**
+
+- Diagnosed the root causes of inconsistent classroom performance: absence of behavioral standards, no differentiated instruction by proficiency level, and no feedback loop between assessments and curriculum adjustments.
+- Developed a tiered behavioral framework — clear guidelines, a graduated consequence structure, and defined escalation protocols to parents and administration — replacing ad hoc discipline with a consistent, enforceable system across classrooms.
+- Segmented students by proficiency and designed differentiated engagement tracks by age and ability, ensuring instruction was calibrated to where each group actually was rather than teaching to an undifferentiated middle.
+- Implemented a data-driven curriculum adjustment process: used assessment results as diagnostic signals to identify specific fluency gaps and updated lesson plans accordingly each cycle.
+- Designed and implemented a Google Sheets-based curriculum planning system across all teachers, replacing fragmented paper and LINE-based coordination with a shared, structured format.
+- Automated the evaluation and report card workflow using AI tools, cutting per-teacher report card time by 75% — and secured buy-in from the franchise CEO to adopt the system across the flagship branch, making the changes institutionally durable.
+
+**📈 Impact**
+
+- Increased student assessment scores by 200% across vocabulary, spoken fluency, and reading comprehension metrics — a direct result of systematized, differentiated instruction and data-driven curriculum adjustment.
+- Reduced behavioral disruption rates by 90% through the tiered behavioral framework and escalation structure.
+- Cut report card and evaluation time by 75% per teacher across 8 teachers through AI-automated workflows, with comparable savings for operations and translation staff.
+- Left behind a digitized operational infrastructure adopted at the franchise level, outlasting my tenure.
+  {% endcapture %}
+  <div class="collapsible-panel__content">
+    {{ case_5 | strip | markdownify }}
   </div>
 </details>
 
@@ -153,11 +190,9 @@ Inspired by the global pandemic, this study used an economics lens to analyze th
 <details class="collapsible-panel work-case">
 <summary><strong>補習BAND Jazz Album</strong></summary>
   {% capture project_band %}
-**📅 Date:** Jan 2023 - May 2023
+**📅 Date:** 2023
 
-- Founded and led a jazz band in Taiwan, performing alto saxophone, flute, and vocals on a 13-track [album](https://www.youtube.com/playlist?list=PLLmNtQG2epzFG2PwtDTz4U9OVDCsiJGG8&si=USk_tLQg9ANbEvwG).
-- Produced and oversaw the recording process, ensuring a high-quality final product.
-- Designed the album cover art and collaborated with band members to create a cohesive, engaging release available for streaming.
+Founded and led a jazz band in Taiwan, performing alto saxophone, flute, and vocals on a 13-track [album](https://www.youtube.com/playlist?list=PLLmNtQG2epzFG2PwtDTz4U9OVDCsiJGG8&si=USk_tLQg9ANbEvwG). Produced and oversaw the recording process and designed the album cover art.
   {% endcapture %}
   <div class="collapsible-panel__content">
     {{ project_band | strip | markdownify }}
@@ -169,11 +204,21 @@ Inspired by the global pandemic, this study used an economics lens to analyze th
   {% capture project_website %}
 **📅 Date:** 2019 - Present
 
-- Designed and developed a personal website ([www.rohanprasad.org](https://www.rohanprasad.org/)) with a unique, responsive HTML/CSS design for optimal user experience.
-- Authored and published since 2019, exploring writing genres like travel writing, argumentative essays, and creative non-fiction.
-- Deployed via GitHub Pages, demonstrating proficiency in web hosting, front-end development, and project management.
+Written 100+ posts since 2019 across travel writing, argumentative essays, and creative non-fiction. Designed and built the site from scratch in HTML/CSS, deployed via GitHub Pages.
   {% endcapture %}
   <div class="collapsible-panel__content">
     {{ project_website | strip | markdownify }}
+  </div>
+</details>
+
+<details class="collapsible-panel work-case">
+<summary><strong>Economics Paper: Illegal Wildlife Trade</strong></summary>
+  {% capture project_paper %}
+**📅 Date:** 2020 - 2022
+
+Co-authored a 20-page paper published in the *Annual Review of Resource Economics* alongside two prize-winning Berkeley economics professors. Conducted an extensive literature review with 150+ references, used Excel and Python for data analysis, and delivered data-driven insights on wildlife trade regulations to policymakers.
+  {% endcapture %}
+  <div class="collapsible-panel__content">
+    {{ project_paper | strip | markdownify }}
   </div>
 </details>
