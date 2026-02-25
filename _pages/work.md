@@ -21,7 +21,7 @@ collapsible_panels: true
   </span>
 </div>
 
-I thrive autonomy and a clear north-star. My instinct is to find where structure is missing and build it — documentation, processes, and team systems — so good work compounds as organizations scale.
+I thrive with autonomy and a clear north-star. My instinct is to find where structure is missing and build it — documentation, processes, and team systems — so good work compounds as organizations scale.
 
 **CAREER HIGHLIGHTS**
 
