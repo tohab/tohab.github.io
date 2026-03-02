@@ -25,9 +25,9 @@ I thrive with autonomy and a clear north-star. My instinct is to build structure
 
 **CAREER HIGHLIGHTS**
 
-- **Scaled a member services team four-fold** at Constellation, building the infrastructure that enabled daily attendance to double from ~100 to ~200–250 members with consistent service quality throughout
-- **Built Constellation's media operations function from scratch** — coordinating 8 successful engagements with outlets including NPR, The Daily Show, Scientific American, and The Verge, and establishing media policy and compliance infrastructure that materially reduced reputational risk
-- **Founded and legally incorporated a nonprofit**, growing funding to $2.5M and expanding applicant capacity from 5 informal referrals to 200+ through a structured, repeatable selection pipeline
+- **Scaled a member services team four-fold** at Constellation, building infrastructure that enabled daily attendance to grow from ~100 to ~200–250 members with premier service quality throughout
+- **Built Constellation's media operations function from scratch** — coordinating 8 successful engagements with outlets including NPR, The Daily Show, Scientific American, and The Verge, and establishing media policy and procedures that dramatically reduced reputational risk
+- **Founded and incorporated a housing nonprofit**, growing funding to $2.5M and expanding applicant capacity from 5 informal referrals to 200+ through a structured, repeatable selection pipeline
 - **Digitized curriculum and evaluation operations** at a Taiwanese language school using AI tools, securing franchise-wide CEO adoption across 8 teachers and operations staff
 - **Built strategic roadmap for a Drop Tyson Foods campaign at UC Berkeley**, resulting in successful, multi-year campaign that led to a campus boycott of the supplier due to animal cruelty issues
 
@@ -39,12 +39,12 @@ I thrive with autonomy and a clear north-star. My instinct is to build structure
 
 **🔍 Problem**
 
-When I joined Constellation as the sole Operations Coordinator, the building was serving around 100 members per day with ad hoc processes, minimal documentation, and no structured service standards. Membership was growing fast — the operations function needed to scale alongside it without degrading the experience members had come to expect.
+When I joined Constellation as the sole Operations Coordinator, the building was serving around 100 members per day with ad hoc processes, minimal documentation, and no structured service standards. Our capacity needed to scale with membership without degrading the service quality members had come to expect.
 
 **💡 Approach**
 
-- Built the role itself from scratch: created the Operations Coordinator Handbook, a comprehensive internal guide covering the full scope of the role, decision flowcharts for triaging requests, and escalation protocols — foundational documentation that was subsequently used by all new hires to the position.
-- Scaled the membership services coordination team from 1 (myself) to 4 people over 11 months, leading hiring, training, and team coordination efforts.
+- Scaled the membership services coordination team from 1 (myself) to 4 people over 11 months, spearheading training and team coordination efforts.
+- Created a comprehensive internal guide covering the full scope of the Coordinator role, decision flowcharts for triaging requests, and escalation protocols — documentation that was subsequently used by all new hires to the position.
 - Coordinated a team of 10 porters, implementing a shift system and ticketing workflow to triage and assign daily member requests as volume scaled from ~5 to ~12 per day.
 - Co-developed a member tiering system with the policy team, establishing differentiated service standards calibrated to organizational values, staff capacity, and budget constraints.
 - Redesigned the member onboarding and offboarding processes, increasing max onboarding capacity from ~3-5 to up to 100 in a day
@@ -55,7 +55,6 @@ When I joined Constellation as the sole Operations Coordinator, the building was
 - Built the operational infrastructure that enabled daily building attendance to double — from ~100 to ~200–250 members per day — with consistent service quality throughout.
 - Reduced member onboarding time by 60%, enabling faster, more consistent member integration at higher throughput.
 - Cut food and beverage operational costs by 50% through supplier restructuring.
-- Left behind scalable systems and documentation that allowed the team to operate independently after my departure.
   {% endcapture %}
   <div class="collapsible-panel__content">
     {{ case_1 | strip | markdownify }}
@@ -70,24 +69,21 @@ When I joined Constellation as the sole Operations Coordinator, the building was
 
 **🔍 Problem**
 
-Constellation Institute sits at the center of the AI safety ecosystem in the Bay Area — a hub for researchers, affiliates, and conversations that attract intense journalistic interest. When I joined, the organization had no operational infrastructure to manage that interest responsibly. As Constellation's public profile grew, the absence of a coherent media operations function was becoming a real reputational risk.
+Constellation Institute is a hub for researchers in the AI safety ecosystem — many of whom attract journalistic interest. As AI entered public discourse, two things became clear: the absence of a media operations function posed real reputational risk, Constellation's affiliates were well-position to shape the public narrative.
 
 **💡 Approach**
 
-- Drafted Constellation's media policy from scratch, establishing enforceable guidelines covering journalist access, approved areas, talking points, and escalation protocols for sensitive situations.
-- Authored a comprehensive media visit playbook — step-by-step logistics, a decision flowchart, and defined staff roles — so that any team member could execute a visit professionally and consistently, without needing to improvise.
-- Coordinated 8 end-to-end media engagements over 11 months, managing logistics, building access, staff briefings, and senior affiliate coordination for journalists from NPR, The Daily Show, The Verge, and Scientific American.
-- Built and deployed a CRM to track journalist and expert contacts, enabling warm introductions and creating a searchable, institutional record of media relationships that would outlast my tenure.
-- Piloted Constellation's podcast room program, coordinating the logistics behind 3 recorded episodes that aired on the 80,000 Hours podcast — including interviews with Anthropic Head of Safety Policies (Holden Karnofsky), Executive Director of Eleos AI (Rob Long), and the Forethought Institute.
-- Partnered with senior affiliates to shape Constellation's broader media strategy, triaging and prioritizing incoming journalistic opportunities.
-- Organized a media strategy workshop with 5 AI safety media consultants to develop a coordinated, field-wide communications approach.
+- Drafted Constellation's media policy and visit playbook from scratch — enforceable guidelines covering journalist access, approved areas, talking points, and escalation protocols, alongside step-by-step logistics and defined staff roles so any team member could execute a visit professionally and consistently.
+- Coordinated 8 end-to-end media engagements, managing logistics staff briefings, and affiliate coordination for journalists from NPR, The Daily Show, The Verge, and Scientific American.
+- Built and deployed a CRM to track journalist and expert contacts, enabling warm introductions and creating a searchable, institutional record of media relationships.
+- Piloted Constellation's podcast room program, leading to 3 high-quality podcasts that aired on the 80,000 Hours podcast — including interviews with Anthropic Head of Safety Policies (Holden Karnofsky), Executive Director of Eleos AI (Rob Long), and the Forethought Institute.
+- Convened a communications workshop with 5 AI safety media consultants to develop a coordinated, field-wide communications approach.
 
 **📈 Impact**
 
 - Built a media operations function where none existed, producing durable policy, process, and relationship infrastructure.
 - Delivered 8 successful media engagements with no incidents, resulting in published coverage in NPR and Scientific American.
 - Established media policy and compliance infrastructure from scratch, materially reducing reputational and operational risk for the organization.
-- Left the organization positioned to handle high-profile media interest confidently, consistently, and at scale.
   {% endcapture %}
   <div class="collapsible-panel__content">
     {{ case_2 | strip | markdownify }}
