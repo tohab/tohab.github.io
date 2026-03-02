@@ -25,8 +25,8 @@ I thrive with autonomy and a clear north-star. My instinct is to build structure
 
 **CAREER HIGHLIGHTS**
 
-- **Scaled a member services team four-fold** at Constellation, supporting a doubling of daily attendance from ~100 to ~200–250 members with no drop in service quality
-- **Built Constellation's media operations function from scratch** — coordinating 8 successful engagements with outlets including NPR, The Daily Show, Scientific American, and The Verge, and achieving an 80% reduction in policy violation incidents
+- **Scaled a member services team four-fold** at Constellation, building the infrastructure that enabled daily attendance to double from ~100 to ~200–250 members with consistent service quality throughout
+- **Built Constellation's media operations function from scratch** — coordinating 8 successful engagements with outlets including NPR, The Daily Show, Scientific American, and The Verge, and establishing media policy and compliance infrastructure that materially reduced reputational risk
 - **Founded and legally incorporated a nonprofit**, growing funding to $2.5M and expanding applicant capacity from 5 informal referrals to 200+ through a structured, repeatable selection pipeline
 - **Digitized curriculum and evaluation operations** at a Taiwanese language school using AI tools, securing franchise-wide CEO adoption across 8 teachers and operations staff
 - **Built strategic roadmap for a Drop Tyson Foods campaign at UC Berkeley**, resulting in successful, multi-year campaign that led to a campus boycott of the supplier due to animal cruelty issues
@@ -52,7 +52,7 @@ When I joined Constellation as the sole Operations Coordinator, the building was
 
 **📈 Impact**
 
-- Supported a doubling of daily building attendance — from ~100 to ~200–250 members per day — with no drop in service quality.
+- Built the operational infrastructure that enabled daily building attendance to double — from ~100 to ~200–250 members per day — with consistent service quality throughout.
 - Reduced member onboarding time by 60%, enabling faster, more consistent member integration at higher throughput.
 - Cut food and beverage operational costs by 50% through supplier restructuring.
 - Left behind scalable systems and documentation that allowed the team to operate independently after my departure.
@@ -86,7 +86,7 @@ Constellation Institute sits at the center of the AI safety ecosystem in the Bay
 
 - Built a media operations function where none existed, producing durable policy, process, and relationship infrastructure.
 - Delivered 8 successful media engagements with no incidents, resulting in published coverage in NPR and Scientific American.
-- Achieved an 80% reduction in media policy violation incidents, materially reducing reputational and operational risk for the organization.
+- Established media policy and compliance infrastructure from scratch, materially reducing reputational and operational risk for the organization.
 - Left the organization positioned to handle high-profile media interest confidently, consistently, and at scale.
   {% endcapture %}
   <div class="collapsible-panel__content">
@@ -102,7 +102,7 @@ Constellation Institute sits at the center of the AI safety ecosystem in the Bay
 
 **🔍 Problem**
 
-Grassyouths Inc. set out to provide subsidized housing for animal rights activists — but at founding, the organization lacked the infrastructure to function as a formal entity, let alone scale. There was no legal status, no structured process for selecting residents, and no systems for managing shared living across 8 people.
+Grassyouths Inc. was a newly founded organization — which meant all foundational infrastructure needed to be established from the ground up: legal incorporation, a structured resident selection process, and operational systems for managing shared living. The central challenge was building durable institutional infrastructure capable of supporting the organization's mission as it scaled.
 
 **💡 Approach**
 
@@ -131,7 +131,7 @@ Grassyouths Inc. set out to provide subsidized housing for animal rights activis
 
 **🔍 Problem**
 
-BOAA had a mission — building political support for animal rights legislation — but almost no organizational infrastructure to pursue it. Membership had fallen below 10 active participants, there were no programs to develop new advocates, no framework for cross-campus coordination, and no strategic documentation to ensure institutional continuity. The work that did happen lived entirely in the heads of a small group of people.
+BOAA had a mission — building political support for animal rights legislation — but almost no organizational infrastructure to pursue it. Membership had fallen below 10 active participants. We had no programs to develop new advocates, no framework for cross-campus coordination, and no strategic documentation to ensure institutional continuity. The work that did happen lived entirely in the heads of a small group of people.
 
 **💡 Approach**
 
@@ -162,7 +162,7 @@ BOAA had a mission — building political support for animal rights legislation 
 
 **🔍 Problem**
 
-Schoolhouse Language Center's flagship branch had a recurring operational problem: inconsistent student outcomes across classrooms, persistent behavioral disruptions, and no standardized systems for curriculum planning, assessment, or reporting. Operations ran on paper and informal LINE messages. Without structured processes, performance depended entirely on individual teachers — making quality uneven and difficult to improve at scale.
+As Schoolhouse Language Center's flagship branch grew to serve 150+ students, I identified an opportunity to systematize operations and establish consistent outcomes across classrooms. Instruction varied by individual teacher, and coordination ran on paper and informal LINE messages — meaning there was significant room to build shared systems that could raise the floor for all students and give leadership meaningful visibility into performance across the branch.
 
 **💡 Approach**
 
