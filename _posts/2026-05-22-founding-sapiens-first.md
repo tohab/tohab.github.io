@@ -13,11 +13,9 @@ tags:
 title: Founding Sapiens First
 ---
 
-Revolution. Technologists have promised us this year after year, and I believe it is finally upon us.
+Lately, I've been thinking a lot about artificial intelligence. This decade, it's likely that machines machines will likely be able to anything humans can do at a computer -- law, mathematics research, taxes (thank god). Handled well, the upsides are immense. Handled poorly, there's the risk that AI is used by terrorists to create biological weapons, dictators to conduct mass surveillance... or the machine itself may pursue goals in conflict with the existence of humanity.
 
-I am talking about artificial intelligence. Soon, machines will be able to do anything humans can do at a desk -- law, neurosurgery, taxes (thank god). In theory, the upsides are great, but also... AI may be used by terrorists to create biological weapons, dictators to conduct mass surveillance... or the machine itself may pursue goals in conflict with the existence of humanity.
-
-Our governments have the power to stop this riff-raff and make this technology be used for good. But instead of acting, they've decided to take Big Tech money and ignore the will of the people.
+Our governments have the power to make this technology be used for good. But instead of creating reforms needed for this period in history, they've decided to turn a blind eye and take money from Big Tech. 
 
 In response, I've started a political movement. Our goal is to put powerful artificial intelligence in the hands of the people. We demand that governments of the world:
 1. Declare an AI Crisis
@@ -28,11 +26,11 @@ You can support the movement by joining the email list, telling a friend, or [do
 
 ------
 
-Sapiens First has basically taken over my life since I left Constellation three months ago. For that reason, I feel most drawn to write about my experience founding an organization. 
+Sapiens First has basically taken over my life since I left Constellation three months ago. For that reason, I'll mostly write my experience founding this organization. 
 
 **Courage**
 
-Before this project, the biggest leap I took in my life was moving to Taiwan. I was lucky to have my dear friend Leon with me. Our friends were lining up at high-paying jobs in the Bay, but I felt a contrarian instinct in me. Being in Taiwan was scary. Now, it feels like home, but at first, it felt alien and lonely.
+Before this project, the biggest leap I took in my life was moving to Taiwan. I was lucky to have my dear friend Leon with me. Our friends were lining up at high-paying jobs in the Bay, but I felt a contrarian instinct in me. Now, Taiwan feels like home, but at first, it was foreign and isolating being there.
 
 You have to be scared to be brave. I heard that line in a movie.
 
