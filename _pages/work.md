@@ -26,7 +26,7 @@ I thrive with autonomy and a clear north-star. My instinct is to build structure
 **CAREER HIGHLIGHTS**
 
 - **Scaled a member services team four-fold** at Constellation, building infrastructure that enabled daily attendance to grow from ~100 to ~200–250 members with premier service quality throughout
-- **Built Constellation's media operations function from scratch** — coordinating 8 successful engagements with outlets including NPR, The Daily Show, Scientific American, and The Verge, and establishing media policy and procedures that dramatically reduced reputational risk
+- **Built Constellation's media operations function from scratch** — coordinating 8 successful engagements with national outlets establishing media policy and procedures that dramatically reduced reputational risk
 - **Founded and incorporated a housing nonprofit**, growing funding to $2.5M and expanding applicant capacity from 5 informal referrals to 200+ through a structured, repeatable selection pipeline
 - **Digitized curriculum and evaluation operations** at a Taiwanese language school using AI tools, securing franchise-wide CEO adoption across 8 teachers and operations staff
 - **Built strategic roadmap for a Drop Tyson Foods campaign at UC Berkeley**, resulting in successful, multi-year campaign that led to a campus boycott of the supplier due to animal cruelty issues
@@ -48,11 +48,11 @@ When I joined Constellation as the sole Operations Coordinator, the building was
 - Coordinated a team of 10 porters, implementing a shift system and ticketing workflow to triage and assign daily member requests as volume scaled from ~5 to ~12 per day.
 - Co-developed a member tiering system with the policy team, establishing differentiated service standards calibrated to organizational values, staff capacity, and budget constraints.
 - Redesigned the member onboarding and offboarding processes, increasing max onboarding capacity from ~3-5 to up to 100 in a day
-- Managed a $40K/month inventory budget for snacks and office supplies; transitioned to wholesale suppliers, slashing costs and staff time by 50%.
+- Strategized and executed restructuring of inventory, slashing costs and staff time by 50%.
 
 **📈 Impact**
 
-- Built the operational infrastructure that enabled daily building attendance to double — from ~100 to ~200–250 members per day — with consistent service quality throughout.
+- Built the operational infrastructure that enabled daily building attendance to double with consistent service quality throughout.
 - Reduced member onboarding time by 60%, enabling faster, more consistent member integration at higher throughput.
 - Cut food and beverage operational costs by 50% through supplier restructuring.
   {% endcapture %}

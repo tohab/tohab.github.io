@@ -34,7 +34,7 @@ I got involved in the animal rights movement at Cal, revitalizing a student grou
 and founded a vegan cooperative group house.
 
 After college, I decided to move to Taiwan to study Mandarin and teach English. I taught ages 7-14 for two years. 
-I then spent about five months backpacking in India, China, and South-East Asia.
+I then spent about five months backpacking in India, China, and South-East Asia. For about a year, I worked at [Constellation](https://www.constellation.org).
 
 
   </div>
@@ -45,8 +45,7 @@ I then spent about five months backpacking in India, China, and South-East Asia.
 <summary><strong>Now.</strong></summary>
   <div class="collapsible-panel__content" markdown="1">
 
-I've been living in Berkeley, California, for about the past year. 
-Since April 2025, I've been working [Constellation](https://www.constellation.org).
+I've live in Berkeley, California. I'm the founder of a political movement known as  [Sapiens First](https://www.sapiensfirst.org).
 
 I love to write on this blog, bike, run, play the alto saxophone, and strum acoustic guitar.
 I also love having conversations with people, young and old.
