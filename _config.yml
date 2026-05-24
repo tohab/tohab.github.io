@@ -295,7 +295,7 @@ defaults:
       path: ""
       type: posts
     values:
-      cusdis_comments: true
+      cusdis_comments: false
   - scope:
       path: "assets"
     values:
