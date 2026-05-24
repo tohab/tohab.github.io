@@ -22,7 +22,7 @@ In response, I've started a political movement. Our goal is to put powerful arti
 2. Democratize power over intelligence through Citizens' Assemblies
 3. Govern AI like an existential threat
 
-You can support the movement by joining the email list, telling a friend, or [donating](www.sapiensfirst.org/donate). More on the [website](www.sapiensfirst.org). 
+You can support the movement by joining the email list, telling a friend, or [donating](https://www.sapiensfirst.org/donate). More on the [website](https://www.sapiensfirst.org). 
 
 ------
 
