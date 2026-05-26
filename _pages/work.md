@@ -25,7 +25,7 @@ I thrive with autonomy and a clear north-star. My instinct is to build structure
 
 **CAREER HIGHLIGHTS**
 
-- **Scaled a member services team four-fold** at Constellation, building infrastructure that enabled daily attendance to grow from ~100 to ~200–250 members with premier service quality throughout
+- **Scaled a member services team four-fold** at Constellation, building infrastructure that enabled doubling of daily attendance with premier service quality throughout
 - **Built Constellation's media operations function from scratch** — coordinating 8 successful engagements with national outlets establishing media policy and procedures that dramatically reduced reputational risk
 - **Founded and incorporated a housing nonprofit**, growing funding to $2.5M and expanding applicant capacity from 5 informal referrals to 200+ through a structured, repeatable selection pipeline
 - **Digitized curriculum and evaluation operations** at a Taiwanese language school using AI tools, securing franchise-wide CEO adoption across 8 teachers and operations staff
@@ -73,16 +73,16 @@ Constellation Institute is a hub for researchers in the AI safety ecosystem — 
 
 **💡 Approach**
 
-- Drafted Constellation's media policy and visit playbook from scratch — enforceable guidelines covering journalist access, approved areas, talking points, and escalation protocols, alongside step-by-step logistics and defined staff roles so any team member could execute a visit professionally and consistently.
-- Coordinated 8 end-to-end media engagements, managing logistics staff briefings, and affiliate coordination for journalists from NPR, The Daily Show, The Verge, and Scientific American.
-- Built and deployed a CRM to track journalist and expert contacts, enabling warm introductions and creating a searchable, institutional record of media relationships.
-- Piloted Constellation's podcast room program, leading to 3 high-quality podcasts that aired on the 80,000 Hours podcast — including interviews with Anthropic Head of Safety Policies (Holden Karnofsky), Executive Director of Eleos AI (Rob Long), and the Forethought Institute.
+- Drafted Constellation's media policy and visit playbook from scratch — enforceable guidelines covering journalist access, talking points, and escalation protocols, alongside step-by-step logistics and defined staff roles so any team member could execute a visit professionally and consistently.
+- Coordinated 8 end-to-end media engagements, managing logistics staff briefings, and affiliate coordination for journalists from national outlets.
+- Built and deployed a system to track journalist and expert contacts, enabling warm introductions and creating a searchable, institutional record of media relationships.
+- Piloted Constellation's podcast room program, leading to 3 high-quality podcasts.
 - Convened a communications workshop with 5 AI safety media consultants to develop a coordinated, field-wide communications approach.
 
 **📈 Impact**
 
 - Built a media operations function where none existed, producing durable policy, process, and relationship infrastructure.
-- Delivered 8 successful media engagements with no incidents, resulting in published coverage in NPR and Scientific American.
+- Delivered 8 successful media engagements.
 - Established media policy and compliance infrastructure from scratch, materially reducing reputational and operational risk for the organization.
   {% endcapture %}
   <div class="collapsible-panel__content">
