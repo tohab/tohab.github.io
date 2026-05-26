@@ -39,7 +39,7 @@ I thrive with autonomy and a clear north-star. My instinct is to build structure
 
 **🔍 Problem**
 
-When I joined Constellation as the sole Operations Coordinator, the building was serving around 100 members per day with ad hoc processes, minimal documentation, and no structured service standards. Our capacity needed to scale with membership without degrading the service quality members had come to expect.
+When I joined Constellation as the sole Operations Coordinator, the building was serving members with ad hoc processes, minimal documentation, and no structured service standards. Our capacity needed to scale with membership without degrading the service quality members had come to expect.
 
 **💡 Approach**
 
