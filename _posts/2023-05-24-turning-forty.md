@@ -34,4 +34,3 @@ My instinct is to say, I'll stay healthy, watch my sugar levels, regularly exerc
 
 \* unless there's [anti-aging remedies](https://www.sens.org/about-us/) or [uploaded consciousness](https://en.wikipedia.org/wiki/Mind_uploading) by then, which is possible but I'm not holding my breath.   
 
-*This was originally posted on blogger.*

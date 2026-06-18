@@ -31,4 +31,3 @@ These days, I've been thinking about the job search. There's a whole slew of tip
   
 Two years ago, I recommended *The Defining Decade* to anyone and everyone. Now, I have a new Bible: *The 2-Hour Job Search* by Steve Dalton. This book is more easily summarized: instead of shooting resume after resume into the black hole of job application portals, your time is better spent networking at targeting companies by informational interviews to learn about your industry. Moreover, Dalton provides explicit instructions on how to implement this strategy. No generic tips & tricks -- just actionable advice, based on research and his experience as a career counselor. I like this book because it flips the traditional paradigm on its head. And god, there's a lot of vague advice for job searching, but very few people who actually know how to do it.   
 
-*This was originally posted on blogger.*

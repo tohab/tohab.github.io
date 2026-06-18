@@ -75,4 +75,3 @@ It's essential.
 Record as much as you possibly can. Every recording carries a memory; a story;
 an accident of people getting together to create music.
 
-*This was originally posted on blogger.*

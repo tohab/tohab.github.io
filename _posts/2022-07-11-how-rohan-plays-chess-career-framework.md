@@ -47,4 +47,3 @@ And here are some stylized facts from this framework:
 
 But what positions are worth striving for? How do you choose which opponents to face? These questions are out of the scope of this post.
 
-*This was originally posted on blogger.*

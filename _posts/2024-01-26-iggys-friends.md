@@ -22,4 +22,3 @@ Why's it weird? Are you dating?
 
 *Me and his mates, we organized a football match for him. There was like a hundred people, playing and watching. Some people met me there and they said, "you're John, aren't you??" They were like so excited to meet me because Iggy had talked about me. And they knew about my life actually, just because of what Iggy had said. And that made me happy.*
 
-*This was originally posted on blogger.*

@@ -19,4 +19,3 @@ Category 3: Exportable/imported goods. This is where my divide by ten metric bre
 
 So there you have it, a little bit about living abroad, pricing strategy and international trade.  
 
-*This was originally posted on blogger.*

@@ -258,4 +258,3 @@ Lily watched the boat from Magong recede into the horizon. The sunset
 illuminated the ocean, and I saw the disappearing outline of the Penghu
 islands.
 
-*This was originally posted on blogger.*

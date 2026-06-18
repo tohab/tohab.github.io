@@ -23,4 +23,3 @@ I'm not an ardent disciplinarian. Honestly, I was never made to write lines in s
 Today I met Hank's father. He's a well-built man; big like Hank; his right hand is missing half his pinky. He lives in Chengdu, Sichuan, China and comes back to Kaohsiung every three months or so. This time he stopped by his son's *buxiban*, worried about his grades are in decline.  
 I shake Hank's dad's hand, honored to meet the man himself. In Chinese I say, Hank does fine on tests. He's sometimes loud, and he sometimes gets in fights. And he talks kind of funny. But you know sir, Hank's an alright kid.
 
-*This was originally posted on blogger.*

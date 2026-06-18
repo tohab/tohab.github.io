@@ -57,4 +57,3 @@ I felt sad after reading *Never Let Me Go.* In some ways I feel that the world o
 
 \* There are many illusions in this novel. The make-believe skits and plots between the children at Hailsham are examples, but there are far more sinister ones surrounding their lives. The children hold onto hopes that once someone leaves Hailsham, they can grow up to be anyone they want -- they hold onto this because the truth would simply be too upsetting. And England at large holds onto the idea that raising children so that they can *die* for anothers' benefit is at all morally right. 
 
-*This was originally posted on blogger.*

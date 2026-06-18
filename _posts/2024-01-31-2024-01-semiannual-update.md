@@ -132,4 +132,3 @@ Some people notice grammar mistakes in these
 updates.
 A+ for participation!  
 
-*This was originally posted on blogger.*

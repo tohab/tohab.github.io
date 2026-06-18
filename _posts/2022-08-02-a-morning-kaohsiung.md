@@ -66,4 +66,3 @@ incredibly vibrant and refreshing to go out. Maybe we should make it a worldwide
 requirement for tourists to spend 3 full days in a hotel before they see the
 country they’re visiting. 
 
-*This was originally posted on blogger.*

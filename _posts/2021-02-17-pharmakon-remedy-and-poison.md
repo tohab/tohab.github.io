@@ -18,4 +18,3 @@ How is this possible? Well, as the German physician and philosopher Paracelsus s
 
 It's easy to deal with good and evil, but much harder to deal with *pharmakon*. When new technologies come up, like wearable computers or immersivevideo games, we have to watch out for the pitfalls and toxicity of it, even while recognizing the convenience and joy it may bring. That's really difficult sometimes, but necessary for living in this complicated world.  
 
-*This was originally posted on blogger.*

@@ -31,4 +31,3 @@ I have to say, the worst part of prison seems to be the solitude. There's nothin
 
 **Lin Yun-ju plays Ma Long in the World Table Tennis Championships.** Lin Yun-ju, representing Taiwan, beats Ma Long (the Chinese world #1) four games to one. An incredible match. Incredible to see two world-class players in such intense combat. It reminds me of Federer's [decade long fall](https://en.wikipedia.org/wiki/Federer%E2%80%93Nadal_rivalry) to Nadal in tennis. Is this the beginning of such a saga? Lin Yun-ju keeps his cool; Ma Long doesn't take defeat well.  
 
-*This was originally posted on blogger.*

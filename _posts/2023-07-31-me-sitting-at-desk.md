@@ -11,4 +11,3 @@ Normally I really hate sitting down for long periods of time. Sitting is importa
 
 The exception to my dislike of sitting is when I'm reading a book I really like. I've recently been reading the Mistborn trilogy; a fantasy series about a magical feudal kingdom. There's something about the escapism of fantasy that lets me forget everything else going and become obsessed with learning about the plot of the story. So maybe I can sit after all, I just need something enrapturing enough to do.
 
-*This was originally posted on blogger.*

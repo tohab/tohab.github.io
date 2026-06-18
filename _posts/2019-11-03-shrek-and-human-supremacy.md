@@ -127,4 +127,3 @@ depiction of donkeys is used to justify their enslavement and
 commidification for human use. Such jokes are also examples of human
 supremacy.
 
-*This was originally posted on blogger.*

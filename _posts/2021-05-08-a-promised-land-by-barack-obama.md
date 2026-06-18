@@ -34,4 +34,3 @@ This realization gives me a new perspective on how to judge politicians and peop
 
 I highly recommend Obama's autobiography. For aspiring politicians, and anyone who wants to be part of the ecology of change. It's a reminder that being President is just another job.  
 
-*This was originally posted on blogger.*

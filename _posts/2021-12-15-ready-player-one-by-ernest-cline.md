@@ -35,4 +35,3 @@ Now, I'm not sure about all that. I do know that for all its geekiness and sci-f
 
 \* Karl Marx himself described the difference between the "real bodily form" of money and its "abstract exchange value". Money can be converted universally exactly because it is not tied down to a particular commodity. OASIS currency, as it happens in the book, becomes more stable than coins produced by a government.  
 
-*This was originally posted on blogger.*

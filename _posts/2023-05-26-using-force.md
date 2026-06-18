@@ -17,4 +17,3 @@ In my fourth group lesson I notice my coach playing with his left hand.
 "Coach, you're not a leftie, are you??"   
 "I can do both," he says nonchalantly. He explains later, "I'm right-handed, but I realized my form on my right-hand was often *búdùi*, so I trained with my coach on the left," like what he did was the most sensical thing in the world. "The fundamentals of ping pong are very important."
 
-*This was originally posted on blogger.*

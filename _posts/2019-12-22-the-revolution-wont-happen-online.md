@@ -135,7 +135,6 @@ Billy Bragg, Three Dimensions to Freedom
 
 Martin Luther King Jr., [“Letter from a Birmingham Jail”](https://www.africa.upenn.edu/Articles_Gen/Letter_Birmingham.html)  
 
-*This was originally posted on blogger.*
 -----------------------------
 
 

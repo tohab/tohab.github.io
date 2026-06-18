@@ -55,4 +55,3 @@ Did it feel different to be in the woods and bathe in a stream? Was it fantastic
   
 I can imagine that for those who have been traveling for years in foreign countries, Rainbow felt like home. I personally felt neutral about being there. I didn't mind so much the naked white dudes or the bugs crawling on my sleeping bag. And I liked that the opportunity to be in nature and meet people of different backgrounds was rather unique. For me, though, Rainbow felt like a small retreat, not a way of life. I craved the hive mind of the city and internet connectivity. I felt stunted without being able to call my close friends or write on my blog. All that was there was the people and the work at hand.   
 
-*This was originally posted on blogger.*

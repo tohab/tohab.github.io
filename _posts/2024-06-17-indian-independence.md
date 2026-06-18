@@ -26,4 +26,3 @@ Some people ask me if I would live in India. I wouldn't say no... But it's a tou
   
 That's India so far. After Mumbai is Bangkok for 3 nights, then Kunming, China.   
 
-*This was originally posted on blogger.*

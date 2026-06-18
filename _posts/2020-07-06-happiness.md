@@ -29,4 +29,3 @@ I'm really repeating things that others have very eloquently said. My professor 
 
 Like money, happiness is something we have to work towards. Just because someone's rich or lives in an industrialized nation doesn't mean they're automatically cheerful all the time (we all know that). So it's worth considering -- what makes you happy? And how can you bring that more often into your life?
 
-*This was originally posted on blogger.*

@@ -22,4 +22,3 @@ Practice 3: Grammar study. Textbooks, online resources, or a language teacher ar
 
 Practice 4: Practice. I believe this is best done at your skill level, kind of like having a sparring partner. Or if you're like me and fortunate to live in the country whose language you are studying, "the streets" can serve as great conversation practice. It's also important to have deeper conversations with friends or a teacher about different topics, as much as you can. It's in these circumstances where I feel most lacking in my vocabulary, or my grammar feels overly simplistic, and I'm drawn back to practices 1-3.  
 
-*This was originally posted on blogger.*

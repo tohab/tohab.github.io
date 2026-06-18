@@ -42,7 +42,6 @@ face. Mr. Bezos on $100 bills, or him hanging out with Mr. Coronavirus is meant 
 
 Thanks for reading and watching. If you've read this far on the blog-post you may as well give a comment below :D. Right now, I'm excited to rest for a few days and then tackle my next creative project!
 
-*This was originally posted on blogger.*
 
 -----------------------------
 

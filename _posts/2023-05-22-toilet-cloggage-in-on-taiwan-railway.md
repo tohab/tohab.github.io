@@ -17,4 +17,3 @@ title: Toilet cloggage in on the Taiwan Railway
 
 因為這個經驗，我想，你怎麼判斷一個國家的設備（比如，台鐵）？應該是透過他們最尖峰，最有壓力的時刻才能了解設計得多好。
 
-*This was originally posted on blogger.*

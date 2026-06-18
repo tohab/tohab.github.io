@@ -220,7 +220,6 @@ I think *Avatar* is a powerful example of how fiction can really make a differen
 
 I feel really grateful that the show exists, and that so many talented people put time into writing, story-boarding, animating, music-ing, sound-tracking, and spreading the message to kids and adults across the world. The lessons of Team Avatar will not be forgotten, and remain dear to my heart.
 
-*This was originally posted on blogger.*
 
 -----------------------------
 

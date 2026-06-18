@@ -45,4 +45,3 @@ farm for spirulina, the algae that has made Auroville millions
 ![](/assets/img/posts/2024-05-auroville/img05.png)
 the solar kitchen cafe
 
-*This was originally posted on blogger.*

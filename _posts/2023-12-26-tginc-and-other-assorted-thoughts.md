@@ -24,4 +24,3 @@ title: TGINC and other assorted thoughts
 
 **A neat look at the [news](https://newsdejavu.github.io/).** Powered by an LLM, of course.  
 
-*This was originally posted on blogger.*

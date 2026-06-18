@@ -107,4 +107,3 @@ statement. We should do creative, positive demonstrations in line with
 the just world that we imagine. We should channel the energies used
 against fascists and use it *for* a more beautiful world. *That*, to me, is what social justice is about.
 
-*This was originally posted on blogger.*

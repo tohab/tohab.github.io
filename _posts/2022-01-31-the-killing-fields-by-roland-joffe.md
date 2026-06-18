@@ -80,7 +80,6 @@ to find the truth; and to speak that truth to those who will listen; and to
 make right the injustice his country has brought on others. May we find that
 urge in ourselves as we think about foreign policy.
 
-*This was originally posted on blogger.*
 -----------------------------
 
 

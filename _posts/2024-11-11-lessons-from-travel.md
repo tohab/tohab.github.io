@@ -30,4 +30,3 @@ title: Lessons from Travel
 * **Ground yourself in a new physical environment.** (e.g. via routine, exercise, putting luggage in a certain way). No routines but mini-routines. I had my bags set up so they felt familiar. A place for everything, and everything in its place, my dad likes to say. In the same vein, mini-routines in the morning, or a set time to go foraging for food, or having a hot beverage.
 * **Accepting there will be mistakes.** In Hong Kong, I thought it was way too pricey and bought too many groceries. I lost my hat and never went back to look for it. I got overcharged for a train booking. Mistakes are human, and I am human. It is part of life to make missteps, and these missteps do not define you. That's a tough lesson.
 
-*This was originally posted on blogger.*

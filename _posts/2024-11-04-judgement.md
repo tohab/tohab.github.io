@@ -36,4 +36,3 @@ Those who speak their mind too much are called judgmental, presumptuous, or bigo
   
 I tell friends I love them dearly, and I tell them that certain behaviors of theirs piss me off beyond belief. I've sent letters to teachers and professors telling them how much their class means to mean, and when I feel like their class is meaningless. All the times I am speaking a truth I feel, and to do so is intrinsically good. Yet I realize that such truth must be tempered with compassion and tactful delivery. I don't pretend I do a good job at this. But, for now, I do what I do and it's a process of learning.   
 
-*This was originally posted on blogger.*

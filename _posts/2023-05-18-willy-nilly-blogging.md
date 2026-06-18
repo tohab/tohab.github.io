@@ -14,4 +14,3 @@ I was talking to my friend Andrew today and he said he likes my habit of "willy 
 I support this but in actuality my blogging is not that willy nilly; I've only blogged every month or two the past year.  
 But I just had a spark of inspiration -- what if I could blog from my phone? Then I could blog from the Kaohsiung MRT, a Donutes coffee shop, or Jade Mountain. I'm not surprised to find that there's an app for that. So that's how I'm blogging now.
 
-*This was originally posted on blogger.*

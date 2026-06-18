@@ -140,4 +140,3 @@ times. No, if he thinks his performance was bad, he’ll just go outside, smoke 
 cigarette, and move on to the next one. There’s a practically – and a devotion
 to his craft – that I admire immensely, and I said as much on the car-ride back.
 
-*This was originally posted on blogger.*

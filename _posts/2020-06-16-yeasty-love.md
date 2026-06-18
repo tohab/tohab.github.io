@@ -59,4 +59,3 @@ To me you bring scrumptiousness
 
 In one bulbous creation.
 
-*This was originally posted on blogger.*

@@ -22,4 +22,3 @@ Pokemon is a mostly linear game, though it has open-world elements. Pokemon give
   
 There are no wrong notes in jazz because jazz is a sandbox game. In practice I believe this means having a certain humility if you are playing music with someone (or living life with someone). Their choices may be different to the choices you would make, but you must remember that you are you and they are them. My favorite musicians are those who made art personal to themselves, however they defined it: the poetry of Simon & Garfunkle, the spirituality of 1960s John Coltrane, the raspy voice of Tom Waits. It sounds trite, but there are truly no wrong notes in jazz. And jazz is like Minecraft, which is like life.
 
-*This was originally posted on blogger.*

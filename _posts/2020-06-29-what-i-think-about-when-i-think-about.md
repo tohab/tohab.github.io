@@ -26,7 +26,6 @@ Wherever I went, and whatever was on my mind, when my run is over my mind is cle
 
 \* or rather, a closed path. My multi-variable calculus professor, [Maciej Zworski](https://math.berkeley.edu/~zworski/), would correct me on that.
 
-*This was originally posted on blogger.*
 
 -----------------------------
 

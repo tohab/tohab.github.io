@@ -89,4 +89,3 @@ I’ve always been told numbers – big data, statistics, economics – are
 the way to land a job and change the world. I think now that to really
 make people *care*, it’s really important to nourish the art of story-telling. There’s really nothing like it.  
 
-*This was originally posted on blogger.*

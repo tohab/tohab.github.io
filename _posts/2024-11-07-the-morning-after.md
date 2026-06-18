@@ -24,4 +24,3 @@ Kamala was unknown by most voters before her own campaign, and so would've done 
   
 America has chosen Trump, and this is the time to find out why.
 
-*This was originally posted on blogger.*

@@ -27,4 +27,3 @@ Yes, this mantra asks a lot of you. But there's a lot to fix in this day and age
 
 \* My DIY ethic for Halloween costumes -- you may be pleased to know -- has continued past lower school. In tenth grade I dressed up as my physics teacher and won the "scariest costume prize" in the high school; in freshmen year of college I did a similar impersonation of my math professor (for that, no prize was received except a confused expression on his face.)
 
-*This was originally posted on blogger.*

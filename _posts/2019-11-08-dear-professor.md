@@ -124,4 +124,3 @@ Community Lead, Berkeley Organization for Animal Advocacy
 people understand that animals are fellow creatures, that we must
 protect them and love them as we love ourselves.” – Cesar Chavez*
 
-*This was originally posted on blogger.*

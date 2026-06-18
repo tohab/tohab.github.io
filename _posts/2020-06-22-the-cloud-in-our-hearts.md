@@ -40,7 +40,6 @@ mortal coils and transcend to a world grander than life. We shall explore the wo
 
 The cloud is in our ears and in front of our eyes and frankly in our hearts. We have grown up with the cloud following our every move. Many of us think of it as a third parent. Yet, like some horrid divorce, we are forced to pin the cloud down to a location and make it sign a lease. Some say move to Boulder, Colorado; others pretend that the spirit world can only exist near UC Berkeley. Some may stay in their childhood bedroom, and explore academic life like a rather dull night-time dream. As the Philosopher Tynan said, it's a continuum of options, ranging from loneliness to Coronaness. The world is our oyster.
 
-*This was originally posted on blogger.*
 
 -----------------------------
 

@@ -222,4 +222,3 @@ Data Toolkit.” Accessed September 28th, 2020.
 Ochigame, “The Invention of ‘Ethical AI’: How Big Tech
 Manipulates Academia to Avoid Regulation.” Dec 20, 2019.
 
-*This was originally posted on blogger.*

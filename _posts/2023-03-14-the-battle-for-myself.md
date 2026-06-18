@@ -21,4 +21,3 @@ I was lamenting my loss of Facebook access to my roommate. He told me he had bee
 
 The battle for my Facebook account continues. My and my shadowy self wrestle back and forth on Facebook's invisible servers, our attentions online but our physical selves perhaps separated by continents. I frantically close all the portals to my life that my phone may key into, whilst my hacker posts photos of phallus-looking sweet potatos.   
 
-*This was originally posted on blogger.*

@@ -82,4 +82,3 @@ Studying so far, it has been humbling. There's so much knowledge of English voca
 
 **Be well, joyful and healthy these next few months!**  
 
-*This was originally posted on blogger.*

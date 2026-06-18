@@ -48,4 +48,3 @@ It's up to all of us to decide how much we follow social convention, and how muc
 * Wearing clothes you like, or thrifting for nice stuff.
 * Creating art or music without thinking of whether it sounds "good".
 
-*This was originally posted on blogger.*

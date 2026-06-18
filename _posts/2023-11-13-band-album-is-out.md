@@ -68,4 +68,3 @@ sound technician at different venues in Kaohsiung City.
 * *Sandu*. Another song where the head is a duet with Etienne and myself. I played this song for an audition way back in high school, but actually struggled with the (relatively simple, blue-form) melody. It swings great and is bluesey. Great soloing by Etienne and me I think. Worth listening the whole way through!
 * *On the Sunny Side of the Street.* I do a slow intro on this song, and sing towards the end. We were going for a "New Orleans"-style blues towards the end. Hence my singing in the crackled voice.
 
-*This was originally posted on blogger.*

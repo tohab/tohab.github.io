@@ -44,4 +44,3 @@ After a few weeks with living with us, she loses her appetite. She withdraws to 
 
 *![](/assets/img/posts/2021-01-ode-to-buttercup/img02.png)* *- Rohan Prasad, Jan 4th, 2020.*  
 
-*This was originally posted on blogger.*

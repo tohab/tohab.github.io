@@ -56,7 +56,6 @@ mass spreading of disease.
 
 Now, developing countries [fighting Coronavirus](https://www.theguardian.com/commentisfree/2020/apr/21/coronavirus-disaster-developing-nations-global-marshall-plan), people are raising their voices against police brutality, and, well -- Whitey's off to space.
 
-*This was originally posted on blogger.*
 
 -----------------------------
 

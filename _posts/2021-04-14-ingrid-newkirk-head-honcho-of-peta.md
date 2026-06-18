@@ -35,4 +35,3 @@ am always learning about the struggles of humans even in the United States -- bu
 deportation, or the day-to-day struggle of homelessness, our world is
 full of systemic evils that people are working hard to address. I believe if we unite with others against common oppressor, change can be made for us all.
 
-*This was originally posted on blogger.*

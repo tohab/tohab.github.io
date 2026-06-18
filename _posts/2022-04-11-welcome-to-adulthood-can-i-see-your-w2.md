@@ -21,4 +21,3 @@ I've always had this sense when looking at complicated things from afar that it'
 
 Adulting at first glance looks awfully boring. But if you're willing to sit through paperwork and logistical meetings and bureaucracies -- a somewhat big if -- then the world is open to you as an adult. As long as you have a floor to sleep on and food in your belly, you can literally do anything you want.
 
-*This was originally posted on blogger.*

@@ -20,4 +20,3 @@ It seems to me that each of these students of Chinese gave up a great deal to "m
 
 I haven't made any horcruxes. Nor have I sprouted any gils. But you can catch me out here in Kaohsiung City, swimming with the fishes.  
 
-*This was originally posted on blogger.*

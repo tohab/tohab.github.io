@@ -34,4 +34,3 @@ one, not knowing the language, and trying to build a life. In a new city, I don'
 
 The mid-Autumn Festival is next week here in Taiwan. Though I've studied the vocab words in Chinese class, I'm excited to experience it in-person. And perhaps I'm more excited for Kaohsiung's summer heat to die down, so maybe walking outside in the afternoon will be more bearable.
 
-*This was originally posted on blogger.*

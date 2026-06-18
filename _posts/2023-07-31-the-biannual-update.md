@@ -10,4 +10,3 @@ title: the biannual update
 ---
 it's coming  
 
-*This was originally posted on blogger.*

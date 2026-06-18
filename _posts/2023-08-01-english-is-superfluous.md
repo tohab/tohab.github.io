@@ -26,4 +26,3 @@ Meaning: "make slides by wed."
 
 Now, now, you might be saying that all this superfluous add-on information isn't strictly necessary. Sure, not for super close friends or people you work with very closely. But in most situations I think that amount of buffer isn't unreasonable. Otherwise, you risk being considered rude, terse, or informal. I recently watched a woman on a plane spend several hours writing messages like the English above, and not doing actual object-level work at all. That's how society is I guess.  
 
-*This was originally posted on blogger.*
