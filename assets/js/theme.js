@@ -220,11 +220,6 @@ let determineThemeSetting = () => {
     return themeSetting;
   }
 
-  const userPref = window.matchMedia;
-  if (userPref && userPref("(prefers-color-scheme: dark)").matches) {
-    return "dark";
-  }
-
   return "light";
 };
 
@@ -258,13 +253,4 @@ let initTheme = () => {
     });
   });
 
-  // Add event listener to the system theme preference change.
-  const prefersDarkMatcher = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
-  if (prefersDarkMatcher && prefersDarkMatcher.addEventListener) {
-    prefersDarkMatcher.addEventListener("change", ({ matches }) => {
-      if (!localStorage.getItem("theme")) {
-        setThemeSetting(matches ? "dark" : "light", false);
-      }
-    });
-  }
 };
