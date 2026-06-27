@@ -5,7 +5,7 @@ layout: post
 published: true
 slug: 2026-05-26-truths-about-starting-something-new
 tags:
-- work
+- founding
 - philosophy
 - social change
 - assorted

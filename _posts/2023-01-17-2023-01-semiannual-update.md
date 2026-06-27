@@ -9,7 +9,6 @@ tags:
 - taiwan
 - teaching
 - language-learning
-- education
 title: rohan's times, winter 2023
 ---
 Hello hello!

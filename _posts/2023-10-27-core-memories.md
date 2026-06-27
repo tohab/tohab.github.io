@@ -8,7 +8,6 @@ tags:
 - teaching
 - assorted
 - ping pong
-- education
 title: Core Memories
 ---
 Here are some stories about my students thatI think are cute. They don't necessarily have a great resolution or take-away message**.** That's why I'm sharing them on my blog.

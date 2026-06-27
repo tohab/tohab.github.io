@@ -7,7 +7,6 @@ slug: 2023-07-wealth-based-affirmative-action
 tags:
 - politics
 - justice
-- social change
 - economics
 title: Wealth-based affirmative action?
 ---

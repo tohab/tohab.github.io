@@ -6,7 +6,6 @@ published: true
 slug: amodei-off-his-rocker
 tags:
 - ethics
-- social change
 - ai
 - technology
 - economics

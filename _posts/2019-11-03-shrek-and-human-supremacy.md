@@ -9,7 +9,6 @@ tags:
 - justice
 - ethics
 - philosophy
-- social change
 - activism
 - nature
 - animal-rights

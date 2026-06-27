@@ -7,7 +7,6 @@ slug: 2021-05-a-promised-land-by-barack-obama
 tags:
 - review
 - politics
-- social change
 - identity
 - justice
 title: A Promised Land by Barack Obama

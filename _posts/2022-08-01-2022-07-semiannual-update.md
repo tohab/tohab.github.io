@@ -10,7 +10,6 @@ tags:
 - taiwan
 - music
 - teaching
-- education
 - language-learning
 title: rohan's times, summer 2022
 ---

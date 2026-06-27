@@ -5,7 +5,6 @@ layout: post
 published: true
 slug: 2020-06-maybe-youve-heard-this-poem-before
 tags:
-- social change
 - politics
 - justice
 - economics

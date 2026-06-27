@@ -7,7 +7,6 @@ slug: 2024-11-the-morning-after
 tags:
 - politics
 - identity
-- social change
 title: the morning after
 ---
 The Republicans have taken the Senate, likely the house, and the Presidency. The legislative trifecta allows Trump to be unchallenged in the White House. What do we take from this moment?  

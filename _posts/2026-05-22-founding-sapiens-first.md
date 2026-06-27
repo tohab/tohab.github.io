@@ -9,7 +9,8 @@ tags:
 - philosophy
 - politics
 - social change
-- work
+- founding
+- belief
 title: Founding Sapiens First
 ---
 

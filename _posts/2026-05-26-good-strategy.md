@@ -5,7 +5,7 @@ layout: post
 published: true
 slug: 2026-05-26-good-strategy
 tags:
-- work
+- strategy
 - philosophy
 - assorted
 title: Good Strategy

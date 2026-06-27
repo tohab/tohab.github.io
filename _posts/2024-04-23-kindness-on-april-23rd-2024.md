@@ -8,7 +8,6 @@ tags:
 - taiwan
 - teaching
 - community
-- education
 title: Kindness on April 23rd, 2024
 ---
 My old jazz professor Ben Goldberg once wrote, "there are some downbeats that last a lifetime." As I write this it happens to be the eve of my 24th birthday. At midnight it'll be April 24th, 2024, exactly two zodiac cycles after I was born.   

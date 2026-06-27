@@ -5,7 +5,6 @@ layout: post
 published: true
 slug: 2020-05-coulter-cancel-culture-and-compassion
 tags:
-- social change
 - activism
 - ethics
 - politics

@@ -6,7 +6,6 @@ published: true
 slug: 2023-11-abiding-interests-and-discipline
 tags:
 - teaching
-- education
 title: abiding interests and discipline
 ---
 Abiding interests

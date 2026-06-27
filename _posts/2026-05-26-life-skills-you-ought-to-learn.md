@@ -7,7 +7,7 @@ slug: 2026-05-26-life-skills-you-ought-to-learn
 tags:
 - education
 - philosophy
-- work
+- strategy
 - assorted
 title: Life Skills You Ought to Learn
 ---

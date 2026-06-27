@@ -9,7 +9,6 @@ tags:
 - teaching
 - language-learning
 - community
-- education
 title: One month later in Taiwan
 ---
 The end of this week marks my first month of teaching in Taiwan, and five whole weeks in the country.

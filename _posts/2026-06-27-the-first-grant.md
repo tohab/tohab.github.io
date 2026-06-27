@@ -5,9 +5,8 @@ layout: post
 published: true
 slug: 2026-06-27-the-first-grant
 tags:
-- work
-- social change
 - founding
+- social change
 title: The First Grant
 ---
 

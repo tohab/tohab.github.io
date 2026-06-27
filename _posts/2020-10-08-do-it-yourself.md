@@ -6,6 +6,7 @@ published: true
 slug: 2020-10-do-it-yourself
 tags:
 - ethics
+- belief
 title: Do it yourself
 ---
 In the fourth grade I made my own Halloween costume: a garbage bag. That was how some saw it, at least. I'm not sure what I had in my head -- perhaps a paper warrior, or a recycling king? Either way, to make it I cut out a brown lunch bag as a helmet, taped an array of A4 sheets on my back, and held a long cardboard roll as a staff to parade around the streets of St. John's Wood.

@@ -7,7 +7,6 @@ slug: 2023-05-hank-and-goliath
 tags:
 - teaching
 - taiwan
-- education
 title: Hank and Goliath
 ---
 The battle to control Hank started long before I was his teacher. My predessor Bryan found him impossible. Bryan had him through the COVID online teaching period and eventually found a way to have him sent down a few English "levels", which is how he ended up in my class. Hank was dumped into my class.  

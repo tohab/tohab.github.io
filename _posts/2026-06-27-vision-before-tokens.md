@@ -7,7 +7,7 @@ slug: 2026-06-27-vision-before-tokens
 tags:
 - ai
 - technology
-- work
+- strategy
 title: Vision Before Tokens
 ---
 

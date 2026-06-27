@@ -7,6 +7,7 @@ slug: 2024-11-judgement
 tags:
 - philosophy
 - ethics
+- belief
 title: judgement
 ---
 Many people in my life have called me judgmental. The truth is that I speak my mind a lot, and sometimes people don't like it. Judgement is seen as something that is bad and I've never understood this. So this blogpost aims to breakdown the stages of judgement.  

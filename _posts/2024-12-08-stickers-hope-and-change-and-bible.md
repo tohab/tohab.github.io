@@ -7,7 +7,6 @@ slug: 2024-12-stickers-hope-and-change-and-bible
 tags:
 - taiwan
 - politics
-- social change
 - work
 title: Stickers, hope and change, and bible-pusher Rohan
 ---

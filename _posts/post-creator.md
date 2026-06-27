@@ -10,6 +10,8 @@ activism
 ai
 animal-rights
 assorted
+balance
+belief
 china
 community
 creativity
@@ -18,6 +20,7 @@ education
 ethics
 family
 food
+founding
 grief
 health
 identity
@@ -34,6 +37,7 @@ relationships
 review
 running
 social change
+strategy
 taiwan
 teaching
 technology

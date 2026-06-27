@@ -6,6 +6,7 @@ published: true
 slug: 2025-01-tangible-and-intangible-progress
 tags:
 - work
+- balance
 title: Tangible and Intangible Progress
 ---
 Starting a job hunt now, some of my friends ask me how it's going. Needless to say this is a rather stress-inducing question -- one that for the most part, I prefer not to talk about. Unless the other person has some actionable help they can provide, or I value their emotional support. For the most part this is not the case; people ask about the job search flippantly, as if they're just "checking in". Of course, some people can provide resources or connections. Some people have great advice for mental fortitude -- so it's not all bad.

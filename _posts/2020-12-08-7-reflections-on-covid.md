@@ -7,7 +7,6 @@ slug: 2020-12-7-reflections-on-covid
 tags:
 - health
 - politics
-- social change
 title: 7 Reflections on COVID
 ---
 Like Episode 7 of Star Wars, no one saw the third wave of Coronavirus coming. At least, I sure didn't. This time, our suffering has less to do with the strength of the virus and more to do with poor governance in supposedly advanced countries. It's rather shameful, really, but either way, the best thing we can do is sit at home and wait.

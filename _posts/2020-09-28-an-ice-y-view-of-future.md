@@ -8,7 +8,6 @@ tags:
 - technology
 - ethics
 - politics
-- social change
 - activism
 title: An ICE-y View of the Future
 ---

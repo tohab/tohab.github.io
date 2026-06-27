@@ -7,6 +7,7 @@ slug: 2026-06-15-clarity-and-fog
 tags:
 - philosophy
 - creativity
+- balance
 title: Clarity and Fog
 ---
 

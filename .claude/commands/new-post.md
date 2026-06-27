@@ -5,7 +5,7 @@ Create a new blog post from the content the user has provided (or ask them to pr
 1. **Title:** If the user hasn't provided one, ask for it.
 
 2. **Tags:** Suggest 2–5 tags from this list and confirm with the user:
-   activism, ai, animal-rights, assorted, china, community, creativity, economics, education, ethics, family, food, grief, health, identity, india, justice, language-learning, music, nature, philosophy, ping pong, poetry, politics, relationships, review, running, social change, taiwan, teaching, technology, travel, update, work, writing
+   activism, ai, animal-rights, assorted, balance, belief, china, community, creativity, economics, education, ethics, family, food, founding, grief, health, identity, india, justice, language-learning, music, nature, philosophy, ping pong, poetry, politics, relationships, review, running, social change, strategy, taiwan, teaching, technology, travel, update, work, writing
 
 3. **Grammar/spelling:** List any mistakes you spot and ask if they should be fixed.
 
