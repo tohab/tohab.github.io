@@ -11,7 +11,7 @@ tags:
 title: Vision Before Tokens
 ---
 
-I broadly agree that 99% of human beings would benefit from using more AI in just about anything they do. However, I don't think this means that the more tokens -- I still feel that human judgement has an important role to play in most undertakings. 
+I broadly agree that 99% of human beings would benefit from using more AI in just about anything they do. However, I don't think this means that the more tokens, the better.Human judgement has an important role to play in any undertaking. 
 
 Here are some things to think about before you start token-maxing:
 - Vision. Have you thought about what you want to do? 

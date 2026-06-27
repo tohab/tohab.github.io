@@ -7,6 +7,7 @@ slug: 2026-06-27-the-first-grant
 tags:
 - founding
 - social change
+- belief
 title: The First Grant
 ---
 
