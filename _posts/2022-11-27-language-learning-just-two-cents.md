@@ -5,7 +5,7 @@ layout: post
 published: true
 slug: 2022-11-language-learning-just-two-cents
 tags:
-- language-learning
+- languages
 title: Language Learning, just two cents
 ---
 Between teaching Chinese and learning, I've found myself spending a great deal of my waking hours thinking about language learning. It's not as overwhelming as it sounds. Language learning is rich and contains many elements. Right now, I have some sort of a system -- not so rigid and not so regimented, but a system nonetheless. So I figure I'd explain it in words.  

@@ -7,7 +7,7 @@ slug: james-and-i-at-starbucks
 tags:
 - identity
 - taiwan
-- language-learning
+- languages
 ---
 
 "Name?" they ask.

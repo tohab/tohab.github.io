@@ -119,8 +119,8 @@ html[data-theme="dark"] {
 }
 
 .game-detail {
-  background-color: #fff6eb;
-  color: #2f1d0c;
+  background-color: var(--global-bg-color);
+  color: var(--global-text-color);
 
   .container {
     max-width: 900px;
@@ -188,13 +188,13 @@ html[data-theme="dark"] {
 
 html[data-theme="dark"] {
   .game-detail {
-    background-color: #312215;
-    color: #fbead3;
+    background-color: var(--global-bg-color);
+    color: var(--global-text-color);
 
     &__summary,
     &__eyebrow,
     &__back-link {
-      color: rgba(251, 234, 211, 0.75);
+      color: var(--global-text-color-light);
     }
 
     &__playable {

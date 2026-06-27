@@ -7,7 +7,7 @@ slug: 2022-08-one-month-later-in-taiwan
 tags:
 - taiwan
 - teaching
-- language-learning
+- languages
 - community
 title: One month later in Taiwan
 ---

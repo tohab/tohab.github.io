@@ -5,7 +5,7 @@ layout: post
 published: true
 slug: 2023-08-english-is-superfluous
 tags:
-- language-learning
+- languages
 title: english is superfluous
 ---
 I've realized that English has more curtesies than I had previously thought. Let me give some examples:

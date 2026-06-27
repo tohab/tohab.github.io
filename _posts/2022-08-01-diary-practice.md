@@ -6,7 +6,7 @@ published: true
 slug: 2022-08-diary-practice
 tags:
 - taiwan
-- language-learning
+- languages
 title: Diary Practice
 ---
 七月五號   

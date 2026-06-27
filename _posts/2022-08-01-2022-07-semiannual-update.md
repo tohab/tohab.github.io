@@ -10,7 +10,7 @@ tags:
 - taiwan
 - music
 - teaching
-- language-learning
+- languages
 title: rohan's times, summer 2022
 ---
 Hello there!

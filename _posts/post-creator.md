@@ -26,7 +26,7 @@ health
 identity
 india
 justice
-language-learning
+languages
 music
 nature
 philosophy

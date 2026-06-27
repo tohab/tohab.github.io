@@ -5,7 +5,7 @@ layout: post
 published: true
 slug: 2023-01-swimming-with-fishes-or-my-english-is
 tags:
-- language-learning
+- languages
 title: Swimming with the fishes or My English is really good
 ---
 How good is my English? Really, quite good. In fact, yours is too, if you can understand every word I've used in my blog. I'm beginning to understand that being fluent in a language is no easy task. It took me two decades to get to my level with a sponge-like, child's brain and a fully immersive English environment. And not to brag, but I was speaking rather fluent English by maybe age 6. From then on, my diction and sophistication has only grown.
