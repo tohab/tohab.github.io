@@ -7,7 +7,6 @@ slug: 2025-10-celebrating-100-posts
 tags:
 - writing
 - creativity
-- update
 title: Celebrating 100 Posts
 ---
 

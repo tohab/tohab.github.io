@@ -5,7 +5,6 @@ layout: post
 published: true
 slug: 2023-07-the-biannual-update
 tags:
-- update
 title: the biannual update
 ---
 it's coming  
