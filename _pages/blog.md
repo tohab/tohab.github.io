@@ -404,7 +404,13 @@ pagination:
         <ul class="rohans-times-list">
           {% for post in rohans_times_posts %}
             {% assign normalized_title = post.title | downcase %}
-            {% if normalized_title contains rohans_times_label %}
+            {% assign is_update = false %}
+            {% for tag in post.tags %}
+              {% if tag == "update" %}
+                {% assign is_update = true %}
+              {% endif %}
+            {% endfor %}
+            {% if normalized_title contains rohans_times_label or is_update %}
               {% assign rohans_times_count = rohans_times_count | plus: 1 %}
               <li>
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>

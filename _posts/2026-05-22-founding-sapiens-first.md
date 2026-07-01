@@ -11,6 +11,7 @@ tags:
 - social change
 - founding
 - belief
+- update
 title: Founding Sapiens First
 ---
 
