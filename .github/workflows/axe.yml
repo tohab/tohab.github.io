@@ -13,11 +13,11 @@ on:
   workflow_dispatch:
     inputs:
       url:
-        description: "URL to be checked (e.g.: blog/)"
+        description: "Site-relative path to check (e.g. blog/)"
         required: false
 
-env:
-  URL: ""
+permissions:
+  contents: read
 
 jobs:
   check:
@@ -25,22 +25,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@651ff0d62c5c79bed6d53ec518387aae20e72c1a # v1.329.0
         with:
           ruby-version: "3.2.2"
           bundler-cache: true
-      - name: Update _config.yml ⚙️
-        uses: fjogeleit/yaml-update-action@main
-        with:
-          commitChange: false
-          valueFile: "_config.yml"
-          changes: |
-            {
-              "giscus.repo": "${{ github.repository }}",
-              "baseurl": ""
-            }
       - name: Install and Build 🔧
         run: |
           pip3 install --upgrade jupyter
@@ -58,7 +48,7 @@ jobs:
           echo "CHROMIUM_VERSION=$CHROMIUM_VERSION" >> $GITHUB_ENV
       - name: Setup Chrome 🌐
         id: setup-chrome
-        uses: browser-actions/setup-chrome@v1
+        uses: browser-actions/setup-chrome@48ad923757ca74d66703209fe939badbdf80f2f4 # v2.2.0
         with:
           chrome-version: ${{ env.CHROMIUM_VERSION }}
       - name: Install chromedriver 🚗
@@ -66,8 +56,15 @@ jobs:
           npm install -g chromedriver@$CHROMIUM_VERSION
       - name: Run axe 🪓
         # https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli
+        env:
+          URL_PATH: ${{ inputs.url }}
         run: |
+          url_path="${URL_PATH#/}"
+          if [[ "$url_path" == *".."* || "$url_path" == *[!A-Za-z0-9._/-]* || "$url_path" == /* ]]; then
+            echo "URL must be a site-relative path." >&2
+            exit 1
+          fi
           npm install -g @axe-core/cli
           npm install -g http-server
           http-server _site/ &
-          axe --chromedriver-path $(npm root -g)/chromedriver/bin/chromedriver http://localhost:8080/${{ github.event.inputs.url || env.URL }} --load-delay=1500 --exit
+          axe --chromedriver-path "$(npm root -g)/chromedriver/bin/chromedriver" "http://localhost:8080/$url_path" --load-delay=1500 --exit

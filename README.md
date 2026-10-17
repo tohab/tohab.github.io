@@ -1,10 +1,10 @@
 # Rohan Prasad — Website Ops Guide
 
-This fork of the **al-folio** theme powers [tohab.github.io](https://tohab.github.io), where Rohan publishes essays, artwork, music, and project notes. The upstream README that described the generic theme was removed in favor of this document so future Codex iterations (and human collaborators) can land quickly. Everything below reflects how the site is actually wired today.
+This fork of the **al-folio** theme powers [rohanprasad.org](https://www.rohanprasad.org), where Rohan publishes essays, artwork, music, and project notes. The upstream README that described the generic theme was removed in favor of this document so future Codex iterations (and human collaborators) can land quickly. Everything below reflects how the site is actually wired today.
 
 ## Stack at a Glance
 
-- Static site built with **Jekyll** (Ruby 3.1.x; `.ruby-version` pins 3.1.4, GitHub Pages compatible).
+- Static site built with **Jekyll** (GitHub Actions currently builds with Ruby 3.1).
 - Theme: [alshedivat/al-folio](https://github.com/alshedivat/al-folio) with custom pages in `_pages/` and many bespoke posts.
 - Tooling: Bundler (`Gemfile`), Node (`package.json`) for Prettier + PurgeCSS (`purgecss.config.js`), Python 3 for helper scripts (`scripts/*.py`), ImageMagick for asset processing, and Docker Compose (`docker-compose.yml`) for an optional containerized dev loop.
 - Deployment: GitHub Actions workflow `.github/workflows/deploy.yml` builds on every push to `main` and deploys via the Pages artifact flow (no `gh-pages` branch push); the branch-based path lives in `bin/deploy`.
@@ -39,7 +39,7 @@ This fork of the **al-folio** theme powers [tohab.github.io](https://tohab.githu
 
 | Tool | Why | Notes |
 | ---- | --- | ----- |
-| Ruby 3.1.4 + Bundler 2.x | Run Jekyll locally | `.ruby-version` pins 3.1.4. Install via `rbenv`, `asdf`, or system package manager. |
+| Ruby 3.1 + Bundler 2.x | Run Jekyll locally | Match the deployment workflow's Ruby version. Install via `rbenv`, `asdf`, or system package manager. |
 | Node.js 18+ & npm | PurgeCSS (manual deploy) + Prettier | Run `npm install` once to install dependencies in `package.json`. |
 | Python 3.10+ | Repo scripts (`scripts/*.py`) | Install packages with `python3 -m pip install -r requirements.txt` and `pip install pillow pyyaml` (needed for the image and stats scripts). |
 | ImageMagick (`convert`) | Downscale & optimize artwork | Homebrew: `brew install imagemagick`; Debian/Ubuntu: `sudo apt install imagemagick`. |
@@ -193,7 +193,7 @@ How it works:
 
 ### Secret posts (password-gated content)
 
-Sensitive essays live in an encrypted workflow so nothing private lands in git history:
+Password-protected essays are encrypted before publication; keep plaintext drafts out of Git history:
 
 1. **Draft in `secret_plain/` (gitignored).** Example scaffold:
    ```markdown
@@ -225,6 +225,7 @@ Sensitive essays live in an encrypted workflow so nothing private lands in git h
    - Wrong passwords simply display an inline error; nothing leaks because the ciphertext stays encrypted at rest.
 
 4. **Safety checks.**
+   - These are encrypted static pages, not server-side access control. Their metadata and ciphertext are public, and anyone with the passphrase can decrypt and keep a copy. Use a strong, unique passphrase shared separately, and do not use this feature for information that needs revocable access or account-level permissions.
    - Never commit files under `secret_plain/` (already gitignored).
    - If you need to rotate a password, update `secret_key` in the plaintext file and rerun the script—this regenerates the salt, IV, and ciphertext automatically.
    - For extra assurance run `git diff secret/` to verify only opaque metadata changed.
@@ -333,7 +334,7 @@ The raw directory stays out of Git (see `.gitignore`) so commits only include op
 
 ## Deployment
 
-- **GitHub Pages (default):** `.github/workflows/deploy.yml` triggers on every push to `main`, runs `bin/sync_archives.rb`, builds the site with Ruby 3.1, and deploys via `actions/deploy-pages@v4` (artifact-based Pages publish, no `gh-pages` branch). The site is served at https://tohab.github.io.
+- **GitHub Pages (default):** `.github/workflows/deploy.yml` triggers on every push to `main`, runs `bin/sync_archives.rb`, builds the site with Ruby 3.1, and deploys with the artifact-based Pages workflow (no `gh-pages` branch). The site is served at https://www.rohanprasad.org.
 - **Manual deploy:** If CI is unavailable, run `bin/deploy` from a clean working tree. It switches to a temporary `gh-pages` branch, builds with `JEKYLL_ENV=production`, runs PurgeCSS, commits the contents of `_site/` to `gh-pages`, and returns you to `main`.
 - **Other hosting:** `bundle exec jekyll build --destination path/to/output` will write a static bundle to `_site/` (or the provided destination). Remember to set `_config.yml`’s `url`/`baseurl` before building for custom domains/subpaths.
 
