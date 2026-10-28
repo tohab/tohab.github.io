@@ -8,19 +8,20 @@ import {buildHouse,validatePlan} from './house-model.js';
 // every current metre value is estimated, not measured. Adding a photo requires
 // no remodeling here: register it, associate its ID with a room or opening,
 // revise the JSON, rebuild the encrypted package and publish those new assets.
-export function mountHouse(host,plan,photos,{onPhoto=()=>{},fallbackUrl=null}={}) {
+export function mountHouse(host,plan,photos,{onPhoto=()=>{},fallbackUrl=null,fallbackUrls={}}={}) {
   validatePlan(plan);
   host.innerHTML=`<div class="house-header"><div><p class="house-eyebrow">RCG / A PLACE TO EXPLORE</p><h2>The house, room by room.</h2><p class="house-subtitle">First reconstruction · Approximate proportions</p></div><button type="button" class="house-reset">Reset view</button></div>
   <div class="house-tools"><div class="house-modes" role="group" aria-label="View mode"><button data-mode="exterior" aria-pressed="true">Exterior</button><button data-mode="dollhouse" aria-pressed="false">Dollhouse</button><button data-mode="inside" aria-pressed="false">Inside</button><button data-mode="plan" aria-pressed="false">Floor plan</button></div><div class="house-filters"><label>Floor <select aria-label="Floor"><option value="all">Both floors</option><option value="0">Downstairs</option><option value="1">Upstairs</option></select></label><label><input class="house-roof" type="checkbox" checked> Roof</label><label><input class="house-garden" type="checkbox" checked> Garden</label></div></div>
   <div class="house-layout"><div class="house-stage"><div class="house-canvas" aria-label="Interactive 3D house. Drag to rotate; pinch or scroll to zoom." role="img"></div><div class="house-labels"></div><div class="house-loading" role="status">Building the house…</div><p class="house-gesture">Drag to rotate · Scroll to zoom · Two fingers to pan</p><span class="house-view-badge">Exterior</span></div><aside class="house-info"><p class="house-eyebrow">TAKE A LOOK AROUND</p><label for="house-room">Choose a room</label><select id="house-room" aria-label="Room"><option value="">Select a room…</option></select><h3 class="house-room-title">Welcome to RCG.</h3><p class="house-room-note">Start outside, lift off the roof, or follow the route through the front door.</p><div class="house-route"><button class="house-tour" type="button">Start the tour →</button><div class="house-tour-nav" hidden><button class="house-prev" type="button" aria-label="Previous viewpoint">← Back</button><span class="house-tour-position"></span><button class="house-next" type="button" aria-label="Next viewpoint">Next →</button></div></div><div class="house-photo-refs"></div><details class="house-notes"><summary>About this reconstruction</summary><p>Room connections follow Rohan’s description. Photos guide visible finishes and features. Sizes, the full roof, unseen rooms and some window positions are approximate.</p><p>Garden placement is provisional. The raised deck beyond the fence is excluded while its ownership is unknown.</p><button type="button" class="house-download">Download editable plan</button><output class="house-performance" aria-label="Rendering performance"></output></details></aside></div>`;
   const $=s=>host.querySelector(s),stage=$('.house-stage'),canvasHost=$('.house-canvas'),roomSelect=$('#house-room'),floorSelect=$('select[aria-label="Floor"]');
+  let fallback=false;
   let renderer,scene,camera,controls,model,raf,resizeObserver,disposed=false,tourIndex=-1,selectedRoom=null,mode='exterior',motion=null,frame=0,lastFrame=0,statsStart=performance.now(),statsFrames=0,statsMs=0;
   const textureSet=makeTextures();
   const photoMap=new Map(photos.map(p=>[p.id,p]));
   const relevant=plan.rooms.filter(r=>r.kind!=='unknown');
   for(const floor of plan.floors){const group=document.createElement('optgroup');group.label=floor.level?'Upstairs':'Downstairs';for(const room of relevant.filter(r=>r.floor===floor.level)){const op=document.createElement('option');op.value=room.id;op.textContent=room.label;group.append(op);}roomSelect.append(group);}
   const labelElements=[];
-  function fail(message){$('.house-loading').textContent=message;$('.house-loading').classList.add('house-fallback');if(fallbackUrl){const img=document.createElement('img');img.src=fallbackUrl;img.alt='Approximate downstairs floor plan. Use the room list and photo references to explore.';canvasHost.replaceChildren(img);}$('.house-gesture').textContent='Use the room list and source photos to explore.';}
+  function fail(message){fallback=true;$('.house-loading').textContent=message;$('.house-loading').classList.add('house-fallback');if(fallbackUrls[0]||fallbackUrl){const img=document.createElement('img');img.src=fallbackUrls[0]||fallbackUrl;img.alt='Approximate downstairs floor plan. Use the room list and photo references to explore.';canvasHost.replaceChildren(img);}$('.house-gesture').textContent='Use the room list and source photos to explore.';}
   try{
     renderer=new THREE.WebGLRenderer({antialias:true,alpha:false,powerPreference:'low-power'});renderer.setPixelRatio(Math.min(devicePixelRatio,innerWidth<650?1.5:2));renderer.setClearColor('#dfdfd1');renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;renderer.localClippingEnabled=true;
     renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
@@ -51,7 +52,8 @@ export function mountHouse(host,plan,photos,{onPhoto=()=>{},fallbackUrl=null}={}
   function move(position,target){if(!camera)return;motion={from:camera.position.clone(),to:new THREE.Vector3(...position),fromTarget:controls.target.clone(),target:new THREE.Vector3(...target),start:performance.now()};}
   function updateLabels(){if(!model)return;const rect=canvasHost.getBoundingClientRect();for(const {room,position,el} of labelElements){const enabled=(mode==='dollhouse'||mode==='plan')&&model.levels.get(room.floor).visible;const p=position.clone().project(camera);el.hidden=!enabled||p.z>1||p.z<0||Math.abs(p.x)>.95||Math.abs(p.y)>.92;if(!el.hidden){el.style.left=`${(p.x*.5+.5)*rect.width}px`;el.style.top=`${(-p.y*.5+.5)*rect.height}px`;el.classList.toggle('is-selected',selectedRoom===room.id);}}}
   function visibility(){
-    if(!model)return;for(const [level,g] of model.levels)g.visible=floorSelect.value==='all'||Number(floorSelect.value)===level;
+    if(fallback){const level=floorSelect.value==='1'?1:0;const img=canvasHost.querySelector('img');if(img){img.src=fallbackUrls[level]||fallbackUrl;img.alt=`Approximate ${level?'upstairs':'downstairs'} floor plan. All dimensions estimated.`;}$('.house-view-badge').textContent=`${level?'Upstairs':'Downstairs'} · 2D fallback`;}
+    if(!model)return;for(const [level,g] of model.levels)g.visible=floorSelect.value==='all'||Number(floorSelect.value)===level||(mode==='inside'&&selectedRoom===plan.rooms.find(r=>r.kind==='stairs')?.id);
     model.site.visible=$('.house-garden').checked&&mode==='exterior';
     model.roofs.forEach(r=>r.visible=$('.house-roof').checked&&(mode==='exterior'));
     model.ceilings.forEach(c=>c.mesh.visible=mode==='inside'||mode==='exterior');
@@ -61,6 +63,7 @@ export function mountHouse(host,plan,photos,{onPhoto=()=>{},fallbackUrl=null}={}
   function setMode(next,animate=true){
     mode=next;host.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));$('.house-view-badge').textContent={exterior:'Exterior',dollhouse:'Dollhouse',inside:'Room view',plan:'Floor plan'}[mode];
     $('.house-roof').checked=mode==='exterior';
+    if(mode==='exterior')refs({photoIds:plan.site?.photoIds||[],kind:'site'});
     if(controls){controls.maxPolarAngle=mode==='inside'?Math.PI*.94:Math.PI*.49;controls.minDistance=mode==='inside'?.15:2;controls.maxDistance=mode==='inside'?16:70;}
     if(mode==='exterior'){floorSelect.value='all';if(animate)move([23,17,-23],[6.5,2.1,7]);}
     if(mode==='dollhouse'||mode==='plan'){if(floorSelect.value==='all')floorSelect.value=String(selectedRoom?model?.roomById.get(selectedRoom)?.floor||0:0);const y=Number(floorSelect.value)===1?3:0;if(animate)move(mode==='plan'?[7,29+y,6.01]:[20,18+y,-12],[7,y+.3,5.3]);}
@@ -68,7 +71,7 @@ export function mountHouse(host,plan,photos,{onPhoto=()=>{},fallbackUrl=null}={}
     if(mode==='inside'&&animate)chooseRoom(selectedRoom||'L');
   }
   function refs(room){
-    const wrap=$('.house-photo-refs');wrap.replaceChildren();if(!room.photoIds.length){const p=document.createElement('p');p.className='house-assumption';p.textContent=room.kind==='stairs'?'Stair dimensions are estimated.':'No room photo yet · Simple placeholder interior';wrap.append(p);return;}
+    const wrap=$('.house-photo-refs');wrap.replaceChildren();if(!room.photoIds.length){const p=document.createElement('p');p.className='house-assumption';p.textContent=room.kind==='stairs'?'Stair dimensions are estimated.':room.kind==='site'?'Exterior and garden placement remains approximate.':'No room photo yet · Simple placeholder interior';wrap.append(p);return;}
     const heading=document.createElement('p');heading.className='house-eyebrow';heading.textContent='SOURCE PHOTOS';wrap.append(heading);
     const grid=document.createElement('div');grid.className='house-reference-grid';
     for(const id of room.photoIds){const p=photoMap.get(id);if(!p)continue;const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`Open source photo ${id}`);const img=document.createElement('img');img.src=p.url;img.alt=p.caption;const span=document.createElement('span');span.textContent=id;b.append(img,span);b.addEventListener('click',()=>onPhoto(id));grid.append(b);}wrap.append(grid);
@@ -87,6 +90,7 @@ export function mountHouse(host,plan,photos,{onPhoto=()=>{},fallbackUrl=null}={}
   $('.house-reset').addEventListener('click',()=>{selectedRoom=null;roomSelect.value='';tourIndex=-1;$('.house-tour').hidden=false;$('.house-tour-nav').hidden=true;$('.house-room-title').textContent='Welcome to RCG.';$('.house-room-note').textContent='Start outside, lift off the roof, or follow the route through the front door.';$('.house-photo-refs').replaceChildren();setMode('exterior');});
   $('.house-tour').addEventListener('click',()=>tour(0));$('.house-prev').addEventListener('click',()=>tour(tourIndex-1));$('.house-next').addEventListener('click',()=>tour(tourIndex+1));
   $('.house-download').addEventListener('click',()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(plan,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='rcg-floor-plan.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+  refs({photoIds:plan.site?.photoIds||[],kind:'site'});
   visibility();
   return {dispose(){disposed=true;cancelAnimationFrame(raf);resizeObserver?.disconnect();controls?.dispose();model?.dispose();Object.values(textureSet).forEach(t=>t.dispose());renderer?.dispose();renderer?.forceContextLoss();host.replaceChildren();}};
 }
