@@ -1,0 +1,1216 @@
+---
+layout: none
+permalink: /tree/
+title: Tree
+description: A private corner.
+nav: false
+sitemap: false
+encrypted: true
+---
+
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    {% include head.liquid %}
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="referrer" content="no-referrer" />
+    <style>
+      .ft {
+        --paper: #fff3e5;
+        --ink: #38271f;
+        --muted: #795e50;
+        --line: #d5b6a0;
+        --accent: #9b3227;
+        --soft: #f3deca;
+        font: 15px/1.5 var(--global-font-family, Georgia, serif);
+        color: var(--ink);
+        max-width: 1320px;
+        margin: 0 auto 3rem;
+      }
+      html[data-theme="dark"] .ft {
+        --paper: #29231f;
+        --ink: #f6e4ce;
+        --muted: #d2bba5;
+        --line: #665144;
+        --accent: #f29878;
+        --soft: #3b2e27;
+      }
+      .ft *,
+      .ft *::before,
+      .ft *::after {
+        box-sizing: border-box;
+      }
+      .ft :where(div, p, span, strong, h1, h2, h3, label, li, small) {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        color: inherit;
+      }
+      .ft [hidden] {
+        display: none !important;
+      }
+      .ft button,
+      .ft input,
+      .ft textarea,
+      .ft select {
+        font: inherit;
+      }
+      .ft button {
+        cursor: pointer;
+        color: var(--ink);
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 9px 14px;
+        min-height: 42px;
+        box-shadow: none;
+      }
+      .ft button:hover {
+        background: var(--soft);
+      }
+      .ft button:disabled {
+        opacity: 0.55;
+        cursor: wait;
+      }
+      .ft :focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+      .ft .ft-primary {
+        color: var(--paper);
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+      .ft .ft-primary:hover {
+        filter: brightness(0.92);
+      }
+      .ft .ft-eyebrow {
+        font:
+          11px/1.4 system-ui,
+          sans-serif;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .ft h1 {
+        font-size: clamp(2.5rem, 6vw, 4.6rem);
+        font-weight: 400;
+        letter-spacing: -0.065em;
+        line-height: 1.12;
+        margin: 12px 0 16px;
+      }
+      .ft h2 {
+        font-size: 1.7rem;
+        font-weight: 400;
+        line-height: 1.25;
+        letter-spacing: -0.04em;
+        margin: 6px 0 16px;
+      }
+      .ft p {
+        margin: 0 0 16px;
+      }
+      .ft .ft-muted {
+        color: var(--muted);
+      }
+      .ft .ft-lockscreen {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 7%;
+        max-width: 960px;
+        min-height: 65vh;
+        margin: auto;
+        padding: 40px 0;
+      }
+      .ft .ft-gate {
+        max-width: 410px;
+      }
+      .ft .ft-gate > p {
+        max-width: 32ch;
+      }
+      .ft .ft-form {
+        margin-top: 30px;
+      }
+      .ft label {
+        display: block;
+        font:
+          12px/1.5 system-ui,
+          sans-serif;
+        margin-bottom: 7px;
+      }
+      .ft input,
+      .ft textarea,
+      .ft select {
+        display: block;
+        width: 100%;
+        color: var(--ink);
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        padding: 11px 12px;
+        min-width: 0;
+      }
+      .ft .ft-unlock-row {
+        display: flex;
+        gap: 8px;
+      }
+      .ft .ft-unlock-row input {
+        flex: 1;
+        width: 0;
+      }
+      .ft .ft-error {
+        color: var(--accent);
+        font:
+          13px/1.5 system-ui,
+          sans-serif;
+        margin: 12px 0;
+      }
+      .ft .ft-gate-note {
+        font:
+          11px/1.7 system-ui,
+          sans-serif;
+        color: var(--muted);
+        margin-top: 18px;
+      }
+      .ft .ft-botanical {
+        width: 100%;
+        max-height: 460px;
+        color: var(--accent);
+        opacity: 0.7;
+      }
+      .ft .ft-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 20px;
+        padding: 14px 0 30px;
+      }
+      .ft .ft-heading h1 {
+        margin-bottom: 8px;
+      }
+      .ft .ft-heading p {
+        margin-bottom: 0;
+      }
+      .ft .ft-lock {
+        font:
+          12px system-ui,
+          sans-serif;
+        white-space: nowrap;
+      }
+      .ft .ft-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        border: 1px solid var(--line);
+        border-radius: 10px 10px 0 0;
+        background: var(--paper);
+        padding: 12px 16px;
+      }
+      .ft .ft-tools {
+        display: flex;
+        gap: 7px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .ft .ft-tools button {
+        font:
+          12px/1.4 system-ui,
+          sans-serif;
+        padding: 7px 12px;
+        min-height: 38px;
+      }
+      .ft .ft-count {
+        font:
+          11px/1.4 system-ui,
+          sans-serif;
+        color: var(--muted);
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+      .ft .ft-viewport {
+        position: relative;
+        height: clamp(400px, 59vh, 680px);
+        overflow: auto;
+        background-color: var(--paper);
+        background-image: radial-gradient(var(--line) 0.7px, transparent 0.7px);
+        background-size: 22px 22px;
+        border: 1px solid var(--line);
+        border-top: 0;
+        overscroll-behavior: contain;
+        cursor: grab;
+      }
+      .ft .ft-viewport.is-dragging {
+        cursor: grabbing;
+        user-select: none;
+      }
+      .ft .ft-world {
+        position: relative;
+        min-width: 100%;
+        min-height: 100%;
+      }
+      .ft .ft-canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform-origin: top left;
+      }
+      .ft .ft-connectors {
+        position: absolute;
+        inset: 0;
+        overflow: visible;
+        pointer-events: none;
+      }
+      .ft .ft-connectors path {
+        fill: none;
+        stroke: var(--line);
+        stroke-width: 1.8;
+      }
+      .ft .ft-connectors .ft-partner-line {
+        stroke: var(--accent);
+        opacity: 0.5;
+        stroke-dasharray: 3 5;
+      }
+      .ft .ft-person {
+        position: absolute;
+        width: 196px;
+        height: 118px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        border-radius: 8px;
+        background: var(--paper);
+        box-shadow: 0 5px 22px #5d38200a;
+        transition:
+          box-shadow 0.15s,
+          border-color 0.15s;
+      }
+      .ft .ft-person:hover {
+        background: var(--paper);
+        border-color: var(--accent);
+        box-shadow: 0 7px 24px #5d382018;
+      }
+      .ft .ft-person.is-root {
+        border: 1.5px solid var(--accent);
+      }
+      .ft .ft-monogram {
+        display: grid;
+        place-items: center;
+        width: 29px;
+        height: 29px;
+        border-radius: 50%;
+        background: var(--soft);
+        color: var(--accent);
+        font-size: 12px;
+        margin-bottom: 7px;
+      }
+      .ft .ft-name {
+        font-size: 17px;
+        letter-spacing: -0.035em;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .ft .ft-caption {
+        font:
+          10px/1.4 system-ui,
+          sans-serif;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+      .ft .ft-bottom {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+        padding: 13px 16px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-top: 0;
+        border-radius: 0 0 10px 10px;
+        font:
+          11px/1.5 system-ui,
+          sans-serif;
+        color: var(--muted);
+      }
+      .ft .ft-bottom p {
+        margin: 0;
+      }
+      .ft .ft-storage-note {
+        margin-top: 18px;
+        font:
+          11px/1.7 system-ui,
+          sans-serif;
+        color: var(--muted);
+        max-width: 78ch;
+      }
+      .ft dialog {
+        color: var(--ink);
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 28px;
+        width: min(460px, calc(100vw - 28px));
+        max-height: 90vh;
+        overflow: auto;
+        box-shadow: 0 20px 80px #28170e33;
+      }
+      .ft dialog::backdrop {
+        background: #29180e66;
+        backdrop-filter: blur(3px);
+      }
+      .ft .ft-dialog-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 15px;
+      }
+      .ft .ft-dialog-header button {
+        border: 0;
+        padding: 2px 7px;
+        min-height: 32px;
+      }
+      .ft .ft-field {
+        margin-bottom: 16px;
+      }
+      .ft .ft-dialog-actions {
+        display: flex;
+        justify-content: end;
+        gap: 8px;
+        margin-top: 20px;
+      }
+      .ft .ft-section {
+        border-top: 1px solid var(--line);
+        padding-top: 20px;
+        margin-top: 24px;
+      }
+      .ft .ft-detail {
+        font-size: 14px;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+      .ft .ft-relative-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .ft .ft-relative-buttons button {
+        font:
+          12px system-ui,
+          sans-serif;
+      }
+      .ft .ft-relations {
+        font:
+          12px/1.8 system-ui,
+          sans-serif;
+        padding-left: 18px;
+        margin: 16px 0;
+      }
+      .ft .ft-relations li {
+        font: inherit;
+      }
+      @media (max-width: 650px) {
+        .ft .ft-lockscreen {
+          grid-template-columns: 1fr;
+          gap: 0;
+          min-height: auto;
+          padding: 25px 0 45px;
+        }
+        .ft .ft-botanical {
+          max-height: 180px;
+          order: -1;
+          margin-bottom: 24px;
+        }
+        .ft .ft-gate {
+          max-width: none;
+        }
+        .ft .ft-heading {
+          align-items: start;
+        }
+        .ft .ft-heading h1 {
+          font-size: 2.7rem;
+        }
+        .ft .ft-heading > div > p {
+          font-size: 13px;
+        }
+        .ft .ft-toolbar {
+          padding: 10px;
+        }
+        .ft .ft-count {
+          width: 100%;
+        }
+        .ft .ft-viewport {
+          height: 450px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .ft * {
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+    {% include header.liquid %}
+    <main class="container-fluid px-4 px-md-5 mt-5">
+      <div class="ft" id="family-tree">
+        <section class="ft-lockscreen" id="ft-gate" aria-labelledby="ft-gate-title">
+          <div class="ft-gate">
+            <div class="ft-eyebrow">A private corner</div>
+            <h1 id="ft-gate-title">A little closer<br />to home.</h1>
+            <p class="ft-muted">Every branch begins with a story.<br />Step inside to explore ours.</p>
+            <form class="ft-form" id="ft-unlock-form">
+              <label for="ft-password">Password</label>
+              <div class="ft-unlock-row">
+                <input id="ft-password" type="password" autocomplete="off" required /><button
+                  class="ft-primary"
+                  id="ft-unlock"
+                  type="submit"
+                >
+                  Enter &rarr;
+                </button>
+              </div>
+              <p class="ft-error" id="ft-gate-error" role="alert" hidden></p>
+            </form>
+            <p class="ft-gate-note">Encrypted. The tree stays private until you unlock it.</p>
+            <noscript><p>JavaScript is needed to decrypt and explore this page.</p></noscript>
+          </div>
+          <svg class="ft-botanical" viewBox="0 0 400 460" fill="none" aria-hidden="true">
+            <circle cx="200" cy="214" r="167" stroke="currentColor" opacity=".16" />
+            <circle cx="200" cy="214" r="144" stroke="currentColor" opacity=".08" />
+            <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M200 420C192 338 205 291 204 243C202 188 194 136 205 63M202 317C155 281 141 253 120 209M204 276C246 242 272 204 285 147M201 221C174 195 157 167 153 126M201 181C228 158 236 136 241 105M202 369C225 341 247 326 275 314"
+              />
+              <path
+                d="M120 209C86 205 71 180 73 153C102 158 121 176 120 209ZM141 251C105 254 81 240 74 213C106 207 130 222 141 251ZM172 289C141 297 116 288 106 266C133 254 160 266 172 289ZM153 126C123 119 114 96 120 74C146 82 158 99 153 126ZM197 129C170 111 167 88 178 70C200 82 207 106 197 129ZM205 89C195 63 207 39 228 29C239 56 227 81 205 89ZM241 105C232 77 246 56 269 48C275 72 265 95 241 105ZM230 153C254 157 277 142 282 117C258 111 237 130 230 153ZM285 147C279 117 294 96 319 90C321 119 307 138 285 147ZM265 205C293 211 317 195 323 171C294 164 274 181 265 205ZM231 249C262 262 287 253 299 231C272 215 247 228 231 249ZM275 314C275 286 291 269 315 268C314 294 297 311 275 314Z"
+              />
+              <path d="M200 420L179 431M200 420L217 435M201 404L186 411" opacity=".6" />
+            </g>
+          </svg>
+        </section>
+        <section id="ft-private" aria-labelledby="ft-title" hidden>
+          <header class="ft-heading">
+            <div>
+              <div class="ft-eyebrow">Roots &amp; branches</div>
+              <h1 id="ft-title" tabindex="-1">Our family tree.</h1>
+              <p class="ft-muted">The people we come from. The stories we carry.</p>
+            </div>
+            <button id="ft-lock" class="ft-lock" type="button">Lock &nearr;</button>
+          </header>
+          <div class="ft-toolbar">
+            <span class="ft-count" id="ft-count"></span>
+            <div class="ft-tools">
+              <button id="ft-zoom-out" type="button" aria-label="Zoom out">&minus;</button
+              ><button id="ft-fit" type="button">Fit tree</button><button id="ft-zoom-in" type="button" aria-label="Zoom in">+</button
+              ><button id="ft-export" type="button">Export</button><button id="ft-import" type="button">Import</button
+              ><input id="ft-import-file" type="file" accept=".json,application/json" hidden />
+            </div>
+          </div>
+          <div
+            class="ft-viewport"
+            id="ft-viewport"
+            tabindex="0"
+            aria-label="Family tree. Scroll to explore; select a person to edit or add relatives."
+          >
+            <div class="ft-world" id="ft-world"><div class="ft-canvas" id="ft-canvas"></div></div>
+          </div>
+          <div class="ft-bottom">
+            <p>Solid lines: parent &amp; child &nbsp; &middot; &nbsp; Dotted lines: partners</p>
+            <p>Select a person to grow the tree.</p>
+          </div>
+          <p id="ft-status" role="status" class="ft-storage-note"></p>
+          <p class="ft-storage-note">
+            Your changes save encrypted in this browser only. Export a backup to keep them or move to another device; import it here with
+            the same password. Changes do not update the shared website.
+          </p>
+        </section>
+        <dialog id="ft-person-dialog" aria-labelledby="ft-person-title">
+          <div class="ft-dialog-header">
+            <div>
+              <div class="ft-eyebrow" id="ft-person-label"></div>
+              <h2 id="ft-person-title"></h2>
+            </div>
+            <button type="button" data-close="ft-person-dialog" aria-label="Close person details">&times;</button>
+          </div>
+          <p id="ft-person-dates" class="ft-muted"></p>
+          <p id="ft-person-notes" class="ft-detail"></p>
+          <ul id="ft-relations" class="ft-relations"></ul>
+          <button id="ft-edit-person" type="button">Edit details</button>
+          <div class="ft-section">
+            <p class="ft-eyebrow">Grow this branch</p>
+            <div class="ft-relative-buttons">
+              <button type="button" data-relation="parent">+ Parent</button><button type="button" data-relation="sibling">+ Sibling</button
+              ><button type="button" data-relation="partner">+ Partner</button><button type="button" data-relation="child">+ Child</button>
+            </div>
+          </div>
+        </dialog>
+        <dialog id="ft-editor" aria-labelledby="ft-editor-title">
+          <div class="ft-dialog-header">
+            <h2 id="ft-editor-title">Edit details</h2>
+            <button type="button" data-close="ft-editor" aria-label="Close editor">&times;</button>
+          </div>
+          <form id="ft-edit-form">
+            <div class="ft-field"><label for="ft-name">Name</label><input id="ft-name" required maxlength="100" /></div>
+            <div class="ft-field">
+              <label for="ft-label">Short label <span class="ft-muted">(optional)</span></label
+              ><input id="ft-label" maxlength="80" placeholder="e.g. Mom, grandfather" />
+            </div>
+            <div class="ft-field">
+              <label for="ft-dates">Life dates <span class="ft-muted">(optional)</span></label
+              ><input id="ft-dates" maxlength="80" placeholder="e.g. 1945–2020" />
+            </div>
+            <div class="ft-field">
+              <label for="ft-notes">A little of their story <span class="ft-muted">(optional)</span></label
+              ><textarea id="ft-notes" rows="3" maxlength="3000"></textarea>
+            </div>
+            <p id="ft-relation-hint" class="ft-storage-note"></p>
+            <p id="ft-edit-error" class="ft-error" role="alert" hidden></p>
+            <div class="ft-dialog-actions">
+              <button type="button" data-close="ft-editor">Cancel</button
+              ><button type="submit" class="ft-primary" id="ft-save">Save</button>
+            </div>
+          </form>
+        </dialog>
+        <script id="ft-seed" type="application/json">
+          {
+            "format": "rohan-family-tree",
+            "version": 1,
+            "iterations": 600000,
+            "salt": "Drne/LqBPyaQ2o1qmCCdpg==",
+            "iv": "51djyGvyEQK30/Gk",
+            "ciphertext": "eCw3/ATJQOyhw39GEYpK0RIZoBCApQykheUIx4XYzELq0/vsGjSd2q3oC5TELTqs/wOXzZUVqhRlInT95fZ8g/709DiIntvjD7VwKCqKaM6lH5xA0k31P1hgSMyyEhTCDfMiJfD7JHyUd0GvPG/5M4sON/whdJ2OktXdieWDDiNfp3J23fGf+QaqM19rCkZ/2K2XjVCZPUQND4NXJFJD9LWxyZLDsFw6ZOuDlP2BRj7ANBFrOnqbaAnY66fbvh7fUHgMWpZaZ6gN1OB/mK5PadsGHqDcXGOm2laNKsuMojjLmhstwuhNbaXEeLpaN0ZUPxFWPP6o9grE3rcf8tUOi/NdNGVVPyCwyUw6MXDH4lMgdV7ePgtMnD5DMJlGkGsI81LEZOq5y5H5tJbvZ9KQ0GdRReGpDN/iUg30IKYhdeWEHtakcjhZJvTKysO2uLbVQMr75AfCiSC+9Tv8hxwdhXPxjAopSQkA3JOTuDi1jmXrf9wcQ9zfGqwvKIIVl5OW/MuLJg7uXepuoNL81xz/HeX3cVSYWQVc0qFKKrodIKEjpKZSb2yLHjw+UqD1hGaBaQm7rqSjPd6fkhf/CdtXmjojJZEdTiYGAj+OMoIfuccVXQvuCpcH"
+          }
+        </script>
+      </div>
+    </main>
+    {% include footer.liquid %} {% include scripts/jquery.liquid %} {% include scripts/bootstrap.liquid %} {% include scripts/search.liquid
+    %}
+    <script>
+      (() => {
+        "use strict";
+        const $ = (id) => document.getElementById(id);
+        const STORAGE = "rohan-family-tree-v1";
+        const seed = JSON.parse($("ft-seed").textContent);
+        const encoder = new TextEncoder();
+        let data = null,
+          key = null,
+          config = null,
+          selected = null,
+          editing = null;
+        let scale = 1,
+          dimensions = { width: 720, height: 500 },
+          positions = new Map();
+        let generation = 0,
+          saving = false,
+          busy = false,
+          drag = null;
+        const viewport = $("ft-viewport"),
+          canvas = $("ft-canvas"),
+          world = $("ft-world");
+        const from64 = (value) => Uint8Array.from(atob(value), (c) => c.charCodeAt(0));
+        const to64 = (value) => btoa(Array.from(new Uint8Array(value), (b) => String.fromCharCode(b)).join(""));
+        const clone = (value) => JSON.parse(JSON.stringify(value));
+        const person = (id) => data.people.find((p) => p.id === id);
+        const status = (message) => {
+          $("ft-status").textContent = message;
+        };
+        function validate(value) {
+          if (!value || value.version !== 1 || !Array.isArray(value.people) || !value.people.length || value.people.length > 500)
+            throw new Error("This is not a supported family tree.");
+          const ids = new Set();
+          for (const p of value.people) {
+            if (
+              typeof p.id !== "string" ||
+              !/^[\w-]{1,80}$/.test(p.id) ||
+              ids.has(p.id) ||
+              typeof p.name !== "string" ||
+              !p.name.trim() ||
+              p.name.length > 100 ||
+              !Array.isArray(p.parents) ||
+              !Array.isArray(p.partners)
+            )
+              throw new Error("Invalid person in this tree.");
+            ids.add(p.id);
+            for (const [field, max] of [
+              ["label", 80],
+              ["dates", 80],
+              ["notes", 3000],
+            ])
+              if (typeof p[field] !== "string" || p[field].length > max) throw new Error("Invalid person details.");
+          }
+          if (!ids.has(value.root)) throw new Error("The tree has no starting person.");
+          for (const p of value.people) {
+            for (const id of [...p.parents, ...p.partners]) if (!ids.has(id) || id === p.id) throw new Error("Invalid family connection.");
+            if (new Set(p.parents).size !== p.parents.length || new Set(p.partners).size !== p.partners.length)
+              throw new Error("Duplicate family connection.");
+            for (const id of p.partners)
+              if (!value.people.find((q) => q.id === id).partners.includes(p.id)) throw new Error("Partner connections must be mutual.");
+          }
+          const visiting = new Set(),
+            visited = new Set(),
+            map = new Map(value.people.map((p) => [p.id, p]));
+          function visit(id) {
+            if (visiting.has(id)) throw new Error("Parent connections cannot form a loop.");
+            if (visited.has(id)) return;
+            visiting.add(id);
+            map.get(id).parents.forEach(visit);
+            visiting.delete(id);
+            visited.add(id);
+          }
+          value.people.forEach((p) => visit(p.id));
+          return value;
+        }
+        function validateEnvelope(value) {
+          if (
+            !value ||
+            value.format !== "rohan-family-tree" ||
+            value.version !== 1 ||
+            value.iterations !== 600000 ||
+            typeof value.salt !== "string" ||
+            typeof value.iv !== "string" ||
+            typeof value.ciphertext !== "string" ||
+            value.ciphertext.length > 8000000 ||
+            from64(value.salt).length !== 16 ||
+            from64(value.iv).length !== 12
+          )
+            throw new Error("This is not a supported encrypted backup.");
+          return value;
+        }
+        async function derive(password, salt) {
+          const material = await crypto.subtle.importKey("raw", encoder.encode(password), "PBKDF2", false, ["deriveKey"]);
+          return crypto.subtle.deriveKey(
+            { name: "PBKDF2", salt: from64(salt), iterations: 600000, hash: "SHA-256" },
+            material,
+            { name: "AES-GCM", length: 256 },
+            false,
+            ["encrypt", "decrypt"],
+          );
+        }
+        async function decrypt(envelope, decryptKey) {
+          const plain = await crypto.subtle.decrypt({ name: "AES-GCM", iv: from64(envelope.iv) }, decryptKey, from64(envelope.ciphertext));
+          return validate(JSON.parse(new TextDecoder().decode(plain)));
+        }
+        async function encrypt(tree, encryptKey, envelope) {
+          const iv = crypto.getRandomValues(new Uint8Array(12));
+          const ciphertext = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, encryptKey, encoder.encode(JSON.stringify(tree)));
+          return {
+            format: "rohan-family-tree",
+            version: 1,
+            iterations: 600000,
+            salt: envelope.salt,
+            iv: to64(iv),
+            ciphertext: to64(ciphertext),
+          };
+        }
+        async function persist() {
+          const session = generation,
+            tree = clone(data),
+            sessionKey = key,
+            envelope = config;
+          saving = true;
+          status("Saving encrypted changes…");
+          try {
+            const encrypted = await encrypt(tree, sessionKey, envelope);
+            if (session !== generation) return;
+            localStorage.setItem(STORAGE, JSON.stringify(encrypted));
+            status("Saved encrypted in this browser.");
+          } catch (_) {
+            if (session === generation) status("Browser storage is unavailable. Export a backup to keep your changes.");
+          } finally {
+            if (session === generation) saving = false;
+          }
+        }
+        // Layout uses parent generations; partner groups remain together in each row.
+        function layout() {
+          const ranks = new Map();
+          function rank(id) {
+            if (ranks.has(id)) return ranks.get(id);
+            const p = person(id);
+            const r = p.parents.length ? Math.max(...p.parents.map(rank)) + 1 : 0;
+            ranks.set(id, r);
+            return r;
+          }
+          data.people.forEach((p) => rank(p.id));
+          // Bring partners to the same generation only when this does not contradict ancestry.
+          for (let pass = 0; pass < data.people.length; pass++) {
+            let changed = false;
+            for (const p of data.people) {
+              for (const id of p.partners) {
+                const target = Math.max(ranks.get(p.id), ranks.get(id));
+                for (const pid of [p.id, id])
+                  if (ranks.get(pid) < target) {
+                    ranks.set(pid, target);
+                    changed = true;
+                  }
+              }
+              for (const id of p.parents)
+                if (ranks.get(p.id) <= ranks.get(id)) {
+                  ranks.set(p.id, ranks.get(id) + 1);
+                  changed = true;
+                }
+            }
+            if (!changed) break;
+            if (pass === data.people.length - 1) throw new Error("These partner connections conflict with the tree generations.");
+          }
+          const rows = new Map();
+          data.people.forEach((p) => {
+            const r = ranks.get(p.id);
+            if (!rows.has(r)) rows.set(r, []);
+            rows.get(r).push(p);
+          });
+          const rowNumbers = [...rows.keys()].sort((a, b) => a - b);
+          const width = Math.max(720, ...[...rows.values()].map((row) => row.length * 236 + 100));
+          positions = new Map();
+          rowNumbers.forEach((number, rowIndex) => {
+            const row = rows.get(number),
+              ordered = [],
+              seen = new Set();
+            // Parents' centers guide descendant order; preserve input order for ties.
+            const center = (p) =>
+              p.parents.length ? p.parents.reduce((sum, id) => sum + (positions.get(id)?.x || 0), 0) / p.parents.length : 0;
+            row.sort((a, b) => center(a) - center(b));
+            function append(p) {
+              if (seen.has(p.id)) return;
+              seen.add(p.id);
+              ordered.push(p);
+              p.partners.forEach((id) => {
+                const q = row.find((n) => n.id === id);
+                if (q) append(q);
+              });
+            }
+            row.forEach(append);
+            ordered.forEach((p, i) =>
+              positions.set(p.id, { x: (width - ordered.length * 236 + 40) / 2 + i * 236, y: 65 + rowIndex * 225 }),
+            );
+          });
+          dimensions = { width, height: Math.max(430, rowNumbers.length * 225 + 60) };
+        }
+        function render(fit = false) {
+          layout();
+          canvas.replaceChildren();
+          canvas.style.width = dimensions.width + "px";
+          canvas.style.height = dimensions.height + "px";
+          const ns = "http://www.w3.org/2000/svg",
+            svg = document.createElementNS(ns, "svg");
+          svg.setAttribute("class", "ft-connectors");
+          svg.setAttribute("width", dimensions.width);
+          svg.setAttribute("height", dimensions.height);
+          svg.setAttribute("aria-hidden", "true");
+          const line = (d, partner = false) => {
+            const path = document.createElementNS(ns, "path");
+            path.setAttribute("d", d);
+            if (partner) path.setAttribute("class", "ft-partner-line");
+            svg.append(path);
+          };
+          const partnerships = new Set();
+          data.people.forEach((p) => {
+            const pos = positions.get(p.id);
+            p.partners.forEach((id) => {
+              const token = [p.id, id].sort().join(":");
+              if (partnerships.has(token)) return;
+              partnerships.add(token);
+              const q = positions.get(id);
+              line(`M ${pos.x + 196} ${pos.y + 59} L ${q.x} ${q.y + 59}`, true);
+            });
+          });
+          const families = new Map();
+          data.people.forEach((p) => {
+            if (p.parents.length) {
+              const token = [...p.parents].sort().join(":");
+              if (!families.has(token)) families.set(token, { parents: p.parents, children: [] });
+              families.get(token).children.push(p.id);
+            }
+          });
+          families.forEach((family) => {
+            const parents = family.parents.map((id) => positions.get(id)),
+              children = family.children.map((id) => positions.get(id));
+            const y = Math.max(...parents.map((p) => p.y + 118)),
+              top = Math.min(...children.map((p) => p.y));
+            const x = parents.reduce((sum, p) => sum + p.x + 98, 0) / parents.length,
+              mid = y + (top - y) * 0.5;
+            parents.forEach((p) => line(`M ${p.x + 98} ${p.y + 118} V ${y + 16} H ${x}`));
+            line(`M ${x} ${y + 16} V ${mid}`);
+            children.forEach((c) => line(`M ${x} ${mid} H ${c.x + 98} V ${c.y}`));
+          });
+          canvas.append(svg);
+          data.people.forEach((p) => {
+            const pos = positions.get(p.id),
+              button = document.createElement("button");
+            button.type = "button";
+            button.className = "ft-person" + (p.id === data.root ? " is-root" : "");
+            button.style.left = pos.x + "px";
+            button.style.top = pos.y + "px";
+            button.dataset.person = p.id;
+            button.setAttribute("aria-label", `${p.name}${p.label ? ", " + p.label : ""}. View details and add relatives.`);
+            const initials = document.createElement("span"),
+              name = document.createElement("span"),
+              label = document.createElement("span");
+            initials.className = "ft-monogram";
+            initials.setAttribute("aria-hidden", "true");
+            initials.textContent = p.name
+              .split(/\s+/)
+              .slice(0, 2)
+              .map((s) => Array.from(s)[0])
+              .join("")
+              .toUpperCase();
+            name.className = "ft-name";
+            name.textContent = p.name;
+            label.className = "ft-caption";
+            label.textContent = p.label || p.dates || "Family";
+            button.append(initials, name, label);
+            button.addEventListener("click", () => showPerson(p.id));
+            canvas.append(button);
+          });
+          $("ft-count").textContent = `${data.people.length} people · ${new Set([...positions.values()].map((p) => p.y)).size} generations`;
+          if (fit) fitTree();
+          else applyScale();
+        }
+        function applyScale() {
+          const width = dimensions.width * scale,
+            height = dimensions.height * scale;
+          world.style.width = Math.max(viewport.clientWidth, width) + "px";
+          world.style.height = Math.max(viewport.clientHeight, height) + "px";
+          canvas.style.transform = `translate(${Math.max(0, (viewport.clientWidth - width) / 2)}px, ${Math.max(
+            0,
+            (viewport.clientHeight - height) / 2,
+          )}px) scale(${scale})`;
+          $("ft-fit").textContent = `Fit tree · ${Math.round(scale * 100)}%`;
+        }
+        function fitTree() {
+          scale = Math.max(
+            0.15,
+            Math.min(1, (viewport.clientWidth - 24) / dimensions.width, (viewport.clientHeight - 24) / dimensions.height),
+          );
+          applyScale();
+          viewport.scrollLeft = 0;
+          viewport.scrollTop = 0;
+        }
+        function zoom(amount) {
+          const old = scale;
+          scale = Math.max(0.15, Math.min(2, scale * amount));
+          const x = (viewport.scrollLeft + viewport.clientWidth / 2) / old,
+            y = (viewport.scrollTop + viewport.clientHeight / 2) / old;
+          applyScale();
+          viewport.scrollLeft = x * scale - viewport.clientWidth / 2;
+          viewport.scrollTop = y * scale - viewport.clientHeight / 2;
+        }
+        function showPerson(id) {
+          selected = id;
+          const p = person(id);
+          $("ft-person-title").textContent = p.name;
+          $("ft-person-label").textContent = p.label || "Family";
+          $("ft-person-dates").textContent = p.dates;
+          $("ft-person-notes").textContent = p.notes || "There’s room for their story here.";
+          const list = $("ft-relations");
+          list.replaceChildren();
+          const add = (label, ids) => {
+            if (!ids.length) return;
+            const li = document.createElement("li");
+            li.textContent = label + ": " + ids.map((id) => person(id).name).join(", ");
+            list.append(li);
+          };
+          add("Parents", p.parents);
+          add("Partners", p.partners);
+          add(
+            "Children",
+            data.people.filter((q) => q.parents.includes(id)).map((q) => q.id),
+          );
+          $("ft-person-dialog").showModal();
+        }
+        function openEditor(relation = null) {
+          const p = person(selected);
+          editing = { id: p.id, relation };
+          $("ft-person-dialog").close();
+          $("ft-editor-title").textContent = relation ? "Add " + relation : "Edit details";
+          for (const field of ["name", "label", "dates", "notes"]) $("ft-" + field).value = relation ? "" : p[field];
+          let hint = "";
+          if (relation === "sibling")
+            hint = p.parents.length
+              ? `Shares the parents of ${p.name}.`
+              : `Adds a shared parent to connect ${p.name} and their sibling. You can rename that parent afterward.`;
+          if (relation === "child") hint = `Adds a child of ${p.name}. You can choose another parent below.`;
+          if (relation === "parent") hint = `Adds a parent of ${p.name}.`;
+          if (relation === "partner") hint = `Adds a partner of ${p.name}.`;
+          $("ft-relation-hint").textContent = hint;
+          // Choose the co-parent explicitly; do not assume a partner is a parent.
+          $("ft-coparent-field")?.remove();
+          if (relation === "child") {
+            const field = document.createElement("div"),
+              label = document.createElement("label"),
+              select = document.createElement("select");
+            field.id = "ft-coparent-field";
+            field.className = "ft-field";
+            label.htmlFor = "ft-coparent";
+            label.textContent = "Other parent (optional)";
+            select.id = "ft-coparent";
+            const none = document.createElement("option");
+            none.value = "";
+            none.textContent = "No other parent selected";
+            select.append(none);
+            data.people
+              .filter((q) => q.id !== p.id)
+              .forEach((q) => {
+                const option = document.createElement("option");
+                option.value = q.id;
+                option.textContent = q.name;
+                select.append(option);
+              });
+            field.append(label, select);
+            $("ft-relation-hint").before(field);
+          }
+          $("ft-edit-error").hidden = true;
+          $("ft-editor").showModal();
+          $("ft-name").focus();
+        }
+        $("ft-edit-form").addEventListener("submit", async (event) => {
+          event.preventDefault();
+          if (saving || busy) return;
+          const snapshot = clone(data),
+            p = person(editing.id),
+            fields = {};
+          for (const field of ["name", "label", "dates", "notes"]) fields[field] = $("ft-" + field).value.trim();
+          if (!fields.name) {
+            $("ft-name").focus();
+            return;
+          }
+          try {
+            let target = p;
+            if (editing.relation) {
+              target = { id: crypto.randomUUID(), ...fields, parents: [], partners: [] };
+              data.people.push(target);
+              if (editing.relation === "parent") p.parents.push(target.id);
+              if (editing.relation === "partner") {
+                p.partners.push(target.id);
+                target.partners.push(p.id);
+              }
+              if (editing.relation === "sibling") {
+                if (!p.parents.length) {
+                  const shared = {
+                    id: crypto.randomUUID(),
+                    name: "Shared parent",
+                    label: "Parent",
+                    dates: "",
+                    notes: "",
+                    parents: [],
+                    partners: [],
+                  };
+                  data.people.push(shared);
+                  p.parents.push(shared.id);
+                }
+                target.parents = [...p.parents];
+              }
+              if (editing.relation === "child") {
+                target.parents = [p.id];
+                const other = $("ft-coparent").value;
+                if (other) target.parents.push(other);
+              }
+            } else Object.assign(p, fields);
+            validate(data);
+            render(true);
+            $("ft-editor").close();
+            selected = target.id;
+            await persist();
+            canvas.querySelector(`[data-person="${target.id}"]`)?.focus({ preventScroll: true });
+          } catch (error) {
+            data = snapshot;
+            render();
+            $("ft-edit-error").textContent = error.message;
+            $("ft-edit-error").hidden = false;
+          }
+        });
+        function lock() {
+          generation++;
+          data = null;
+          key = null;
+          config = null;
+          selected = null;
+          editing = null;
+          busy = false;
+          saving = false;
+          positions.clear();
+          for (const dialog of [$("ft-person-dialog"), $("ft-editor")]) if (dialog.open) dialog.close();
+          for (const field of ["name", "label", "dates", "notes", "password"]) $("ft-" + field).value = "";
+          for (const id of [
+            "ft-person-title",
+            "ft-person-label",
+            "ft-person-dates",
+            "ft-person-notes",
+            "ft-relations",
+            "ft-relation-hint",
+            "ft-count",
+            "ft-status",
+            "ft-edit-error",
+            "ft-gate-error",
+          ])
+            $(id).replaceChildren();
+          $("ft-coparent-field")?.remove();
+          canvas.replaceChildren();
+          $("ft-private").hidden = true;
+          $("ft-gate").hidden = false;
+          $("ft-gate-error").hidden = true;
+          $("ft-password").focus();
+        }
+        $("ft-unlock-form").addEventListener("submit", async (event) => {
+          event.preventDefault();
+          if (busy) return;
+          busy = true;
+          const session = ++generation,
+            button = $("ft-unlock");
+          button.disabled = true;
+          button.textContent = "Opening…";
+          $("ft-gate-error").hidden = true;
+          try {
+            if (!crypto.subtle) throw new Error("Please use a current browser over HTTPS.");
+            const password = $("ft-password").value;
+            $("ft-password").value = "";
+            const initialKey = await derive(password, seed.salt);
+            let tree;
+            try {
+              tree = await decrypt(seed, initialKey);
+            } catch (_) {
+              throw new Error("That password didn’t open the tree. Please try again.");
+            }
+            let envelope = seed,
+              activeKey = initialKey,
+              message = "Select a person to edit details or add a relative.";
+            try {
+              const saved = localStorage.getItem(STORAGE);
+              if (saved) {
+                try {
+                  const local = validateEnvelope(JSON.parse(saved));
+                  const localKey = local.salt === seed.salt ? initialKey : await derive(password, local.salt);
+                  tree = await decrypt(local, localKey);
+                  envelope = local;
+                  activeKey = localKey;
+                  message = "Your encrypted tree was restored from this browser.";
+                } catch (_) {
+                  message = "Your saved tree could not be opened. The original tree is shown; the saved copy has been kept.";
+                }
+              }
+            } catch (_) {
+              message = "Browser storage is unavailable. Export a backup to keep changes.";
+            }
+            if (session !== generation) return;
+            data = tree;
+            key = activeKey;
+            config = envelope;
+            $("ft-gate").hidden = true;
+            $("ft-private").hidden = false;
+            render(true);
+            status(message);
+            $("ft-title").focus();
+          } catch (error) {
+            key = null;
+            data = null;
+            $("ft-gate-error").textContent = error.message;
+            $("ft-gate-error").hidden = false;
+            $("ft-password").focus();
+          } finally {
+            busy = false;
+            button.disabled = false;
+            button.textContent = "Enter →";
+            $("ft-password").value = "";
+          }
+        });
+        $("ft-export").addEventListener("click", async () => {
+          if (!data || busy) return;
+          busy = true;
+          const session = generation;
+          try {
+            const encrypted = await encrypt(clone(data), key, config);
+            if (session !== generation) return;
+            const url = URL.createObjectURL(new Blob([JSON.stringify(encrypted, null, 2)], { type: "application/json" }));
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "family-tree-encrypted.json";
+            a.click();
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
+            status("Encrypted backup exported. Keep this file and your password.");
+          } catch (_) {
+            status("The backup could not be exported. Please try again.");
+          } finally {
+            busy = false;
+          }
+        });
+        $("ft-import").addEventListener("click", () => {
+          if (!saving && !busy) $("ft-import-file").click();
+        });
+        $("ft-import-file").addEventListener("change", async (event) => {
+          const file = event.target.files[0];
+          event.target.value = "";
+          if (!file || !data || busy || saving) return;
+          if (file.size > 8000000) {
+            status("That file is too large. Please choose an encrypted tree backup.");
+            return;
+          }
+          if (!confirm("Replace the tree in this browser with this backup? Export first if you want to keep your current tree.")) return;
+          busy = true;
+          const session = generation,
+            snapshot = clone(data);
+          try {
+            const envelope = validateEnvelope(JSON.parse(await file.text()));
+            if (envelope.salt !== config.salt)
+              throw new Error("This backup belongs to a different tree. Use a backup exported from this page.");
+            const imported = await decrypt(envelope, key);
+            if (session !== generation) return;
+            data = imported;
+            render(true);
+            await persist();
+          } catch (error) {
+            if (session === generation) {
+              data = snapshot;
+              render();
+              status(
+                "Import failed. Your tree is unchanged. " +
+                  (error.name === "OperationError" ? "The backup could not be decrypted." : error.message),
+              );
+            }
+          } finally {
+            busy = false;
+          }
+        });
+        document
+          .querySelectorAll("[data-close]")
+          .forEach((button) => button.addEventListener("click", () => $(button.dataset.close).close()));
+        document
+          .querySelectorAll("[data-relation]")
+          .forEach((button) => button.addEventListener("click", () => openEditor(button.dataset.relation)));
+        $("ft-edit-person").addEventListener("click", () => openEditor());
+        $("ft-lock").addEventListener("click", lock);
+        $("ft-fit").addEventListener("click", fitTree);
+        $("ft-zoom-in").addEventListener("click", () => zoom(1.2));
+        $("ft-zoom-out").addEventListener("click", () => zoom(1 / 1.2));
+        viewport.addEventListener("pointerdown", (event) => {
+          if (event.target.closest("button") || event.button !== 0 || event.pointerType !== "mouse") return;
+          drag = { x: event.clientX, y: event.clientY, left: viewport.scrollLeft, top: viewport.scrollTop };
+          viewport.setPointerCapture(event.pointerId);
+          viewport.classList.add("is-dragging");
+        });
+        viewport.addEventListener("pointermove", (event) => {
+          if (drag) {
+            viewport.scrollLeft = drag.left - event.clientX + drag.x;
+            viewport.scrollTop = drag.top - event.clientY + drag.y;
+          }
+        });
+        const stopDrag = () => {
+          drag = null;
+          viewport.classList.remove("is-dragging");
+        };
+        viewport.addEventListener("pointerup", stopDrag);
+        viewport.addEventListener("pointercancel", stopDrag);
+        new ResizeObserver(() => {
+          if (data) applyScale();
+        }).observe(viewport);
+        window.addEventListener("pagehide", lock);
+      })();
+    </script>
+  </body>
+</html>
