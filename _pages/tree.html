@@ -274,7 +274,7 @@ encrypted: true
       }
       .ft .ft-person {
         position: absolute;
-        width: 196px;
+        width: var(--ft-card-width, 196px);
         height: 118px;
         display: flex;
         flex-direction: column;
@@ -606,6 +606,7 @@ encrypted: true
           selected = null,
           editing = null;
         let scale = 1,
+          cardWidth = 196,
           dimensions = { width: 720, height: 500 },
           positions = new Map();
         let generation = 0,
@@ -730,6 +731,11 @@ encrypted: true
         }
         // Layout uses parent generations; partner groups remain together in each row.
         function layout() {
+          const compact = window.innerWidth < 650;
+          cardWidth = compact ? 148 : 196;
+          const gap = compact ? 28 : 40,
+            step = cardWidth + gap;
+          canvas.style.setProperty("--ft-card-width", cardWidth + "px");
           const ranks = new Map();
           function rank(id) {
             if (ranks.has(id)) return ranks.get(id);
@@ -767,7 +773,7 @@ encrypted: true
             rows.get(r).push(p);
           });
           const rowNumbers = [...rows.keys()].sort((a, b) => a - b);
-          const width = Math.max(720, ...[...rows.values()].map((row) => row.length * 236 + 100));
+          const width = Math.max(compact ? 360 : 720, ...[...rows.values()].map((row) => row.length * step - gap + 60));
           positions = new Map();
           rowNumbers.forEach((number, rowIndex) => {
             const row = rows.get(number),
@@ -788,7 +794,7 @@ encrypted: true
             }
             row.forEach(append);
             ordered.forEach((p, i) =>
-              positions.set(p.id, { x: (width - ordered.length * 236 + 40) / 2 + i * 236, y: 65 + rowIndex * 225 }),
+              positions.set(p.id, { x: (width - ordered.length * step + gap) / 2 + i * step, y: 65 + rowIndex * 225 }),
             );
           });
           dimensions = { width, height: Math.max(430, rowNumbers.length * 225 + 60) };
@@ -818,7 +824,7 @@ encrypted: true
               if (partnerships.has(token)) return;
               partnerships.add(token);
               const q = positions.get(id);
-              line(`M ${pos.x + 196} ${pos.y + 59} L ${q.x} ${q.y + 59}`, true);
+              line(`M ${pos.x + cardWidth} ${pos.y + 59} L ${q.x} ${q.y + 59}`, true);
             });
           });
           const families = new Map();
@@ -834,11 +840,11 @@ encrypted: true
               children = family.children.map((id) => positions.get(id));
             const y = Math.max(...parents.map((p) => p.y + 118)),
               top = Math.min(...children.map((p) => p.y));
-            const x = parents.reduce((sum, p) => sum + p.x + 98, 0) / parents.length,
+            const x = parents.reduce((sum, p) => sum + p.x + cardWidth / 2, 0) / parents.length,
               mid = y + (top - y) * 0.5;
-            parents.forEach((p) => line(`M ${p.x + 98} ${p.y + 118} V ${y + 16} H ${x}`));
+            parents.forEach((p) => line(`M ${p.x + cardWidth / 2} ${p.y + 118} V ${y + 16} H ${x}`));
             line(`M ${x} ${y + 16} V ${mid}`);
-            children.forEach((c) => line(`M ${x} ${mid} H ${c.x + 98} V ${c.y}`));
+            children.forEach((c) => line(`M ${x} ${mid} H ${c.x + cardWidth / 2} V ${c.y}`));
           });
           canvas.append(svg);
           data.people.forEach((p) => {
