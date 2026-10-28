@@ -1,0 +1,183 @@
+---
+layout: default
+---
+<style>
+  .rcg-intro { margin: 0 0 1.5rem; }
+  .rcg-unlock { padding: 1.4rem; border: 1px solid var(--global-divider-color, #ddd); border-radius: .5rem; }
+  .rcg-unlock label { display: block; margin-bottom: .5rem; }
+  .rcg-fields { display: flex; flex-wrap: wrap; gap: .7rem; }
+  .rcg-fields input { flex: 1 1 190px; min-width: 0; padding: .6rem .75rem; color: var(--global-text-color); background: var(--global-bg-color); border: 1px solid var(--global-divider-color, #aaa); border-radius: .25rem; font-size: 1rem; }
+  .rcg-error { margin: .75rem 0 0; color: var(--global-theme-color, #b00020); }
+  .rcg-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 1rem 0 2rem; }
+  .rcg-toolbar p { margin: 0; }
+  .rcg-section { margin-bottom: 2rem; }
+  .rcg-section h2 { font-size: 1.35rem; margin-bottom: 1rem; }
+  .rcg-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .rcg-card { margin: 0; min-width: 0; }
+  .rcg-open { display: block; width: 100%; padding: 0; border: 0; border-radius: .35rem; overflow: hidden; background: transparent; cursor: zoom-in; }
+  .rcg-open:focus-visible { outline: 3px solid var(--global-theme-color); outline-offset: 4px; }
+  .rcg-open img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .rcg-card figcaption { margin-top: .5rem; font-size: .88rem; line-height: 1.4; }
+  .rcg-dialog { width: min(1050px, 95vw); max-width: 95vw; max-height: 95vh; margin: auto; padding: 1rem; border: 0; border-radius: .5rem; background: var(--global-bg-color, white); color: var(--global-text-color, #222); }
+  .rcg-dialog::backdrop { background: rgba(0, 0, 0, .87); }
+  .rcg-dialog:not([open]) { display: none; }
+  .rcg-dialog header, .rcg-dialog footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .rcg-dialog header p { margin: 0; font-size: 1rem; }
+  .rcg-dialog img { display: block; max-width: 100%; width: auto; height: auto; max-height: 70vh; object-fit: contain; margin: 1rem auto; }
+  .rcg-dialog footer span { font-size: .85rem; }
+  #rcg-viewer[hidden], #rcg-form[hidden], #rcg-error[hidden] { display: none !important; }
+  @media (max-width: 520px) { .rcg-grid { grid-template-columns: 1fr; } .rcg-toolbar { align-items: flex-start; } .rcg-dialog { padding: .8rem; } }
+</style>
+
+<div class="post">
+  <h1>{{ page.title }}</h1>
+  <p id="rcg-intro" class="rcg-intro">Enter the password to view the photos.</p>
+  <form id="rcg-form" class="rcg-unlock">
+    <label for="rcg-password">Photo password</label>
+    <div class="rcg-fields">
+      <input id="rcg-password" name="password" type="password" autocomplete="current-password" required>
+      <button id="rcg-unlock" class="btn btn-primary" type="submit">Unlock photos</button>
+    </div>
+    <p id="rcg-error" class="rcg-error" role="alert" hidden></p>
+  </form>
+  <noscript>JavaScript is needed to unlock these photos.</noscript>
+  <div id="rcg-viewer" hidden>
+    <div class="rcg-toolbar">
+      <p id="rcg-count" role="status"></p>
+      <button id="rcg-lock" class="btn btn-outline-secondary btn-sm" type="button">Lock photos</button>
+    </div>
+    <div id="rcg-gallery"></div>
+  </div>
+</div>
+<dialog id="rcg-dialog" class="rcg-dialog" aria-labelledby="rcg-caption">
+  <header>
+    <p id="rcg-caption"></p>
+    <button id="rcg-close" class="btn btn-outline-secondary btn-sm" type="button" aria-label="Close photo">Close</button>
+  </header>
+  <img id="rcg-large" alt="">
+  <footer>
+    <button id="rcg-previous" class="btn btn-outline-secondary btn-sm" type="button">Previous</button>
+    <span id="rcg-position"></span>
+    <button id="rcg-next" class="btn btn-outline-secondary btn-sm" type="button">Next</button>
+  </footer>
+</dialog>
+<script id="rcg-encrypted-data" type="application/json">{"salt":{{ page.salt | jsonify }},"iv":{{ page.iv | jsonify }},"iterations":{{ page.kdf.iterations }},"ciphertext":{{ page.ciphertext | jsonify }}}</script>
+<script>
+  (() => {
+    'use strict';
+    const byId = (id) => document.getElementById(id);
+    const form = byId('rcg-form');
+    const password = byId('rcg-password');
+    const unlock = byId('rcg-unlock');
+    const error = byId('rcg-error');
+    const viewer = byId('rcg-viewer');
+    const gallery = byId('rcg-gallery');
+    const dialog = byId('rcg-dialog');
+    let photos = [];
+    let activeIndex = 0;
+    let opener = null;
+    const bytes = (value) => Uint8Array.from(atob(value), (character) => character.charCodeAt(0));
+    function showPhoto(index) {
+      activeIndex = (index + photos.length) % photos.length;
+      const photo = photos[activeIndex];
+      byId('rcg-large').src = photo.url;
+      byId('rcg-large').alt = photo.caption;
+      byId('rcg-caption').textContent = photo.caption;
+      byId('rcg-position').textContent = `${activeIndex + 1} / ${photos.length}`;
+    }
+    function lockPhotos() {
+      if (dialog.open) dialog.close();
+      byId('rcg-large').removeAttribute('src');
+      byId('rcg-large').alt = '';
+      byId('rcg-caption').textContent = '';
+      byId('rcg-position').textContent = '';
+      gallery.replaceChildren();
+      photos.forEach((photo) => URL.revokeObjectURL(photo.url));
+      photos = [];
+      opener = null;
+      byId('rcg-count').textContent = '';
+      viewer.hidden = true;
+      byId('rcg-intro').hidden = false;
+      form.hidden = false;
+      password.value = '';
+      password.focus();
+    }
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      error.hidden = true;
+      if (!window.crypto || !window.crypto.subtle) {
+        error.textContent = 'This browser cannot unlock encrypted photos. Please use a current browser over HTTPS.';
+        error.hidden = false;
+        return;
+      }
+      unlock.disabled = true;
+      unlock.textContent = 'Unlocking…';
+      try {
+        const encrypted = JSON.parse(byId('rcg-encrypted-data').textContent);
+        const material = await crypto.subtle.importKey('raw', new TextEncoder().encode(password.value), 'PBKDF2', false, ['deriveKey']);
+        const key = await crypto.subtle.deriveKey({name: 'PBKDF2', salt: bytes(encrypted.salt), iterations: encrypted.iterations, hash: 'SHA-256'}, material, {name: 'AES-GCM', length: 256}, false, ['decrypt']);
+        const plain = await crypto.subtle.decrypt({name: 'AES-GCM', iv: bytes(encrypted.iv), tagLength: 128}, key, bytes(encrypted.ciphertext));
+        const data = JSON.parse(new TextDecoder().decode(plain));
+        photos = data.photos.map((photo) => ({...photo, url: URL.createObjectURL(new Blob([bytes(photo.image)], {type: 'image/webp'})), image: undefined}));
+        const sections = new Map();
+        photos.forEach((photo, index) => {
+          if (!sections.has(photo.section)) {
+            const section = document.createElement('section');
+            section.className = 'rcg-section';
+            const heading = document.createElement('h2');
+            heading.textContent = photo.section;
+            const grid = document.createElement('div');
+            grid.className = 'rcg-grid';
+            section.append(heading, grid);
+            gallery.append(section);
+            sections.set(photo.section, grid);
+          }
+          const figure = document.createElement('figure');
+          figure.className = 'rcg-card';
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'rcg-open';
+          button.setAttribute('aria-label', `View larger: ${photo.caption}`);
+          const image = document.createElement('img');
+          image.src = photo.url;
+          image.alt = photo.caption;
+          image.width = photo.width;
+          image.height = photo.height;
+          image.loading = 'lazy';
+          image.decoding = 'async';
+          const caption = document.createElement('figcaption');
+          caption.textContent = photo.caption;
+          button.append(image);
+          button.addEventListener('click', () => { opener = button; showPhoto(index); dialog.showModal(); });
+          figure.append(button, caption);
+          sections.get(photo.section).append(figure);
+        });
+        byId('rcg-count').textContent = `${photos.length} photos · Tap a photo to enlarge`;
+        form.hidden = true;
+        byId('rcg-intro').hidden = true;
+        viewer.hidden = false;
+        byId('rcg-lock').focus();
+      } catch (_) {
+        photos.forEach((photo) => URL.revokeObjectURL(photo.url));
+        photos = [];
+        gallery.replaceChildren();
+        error.textContent = 'Incorrect password. Please try again.';
+        error.hidden = false;
+        password.focus();
+      } finally {
+        password.value = '';
+        unlock.disabled = false;
+        unlock.textContent = 'Unlock photos';
+      }
+    });
+    byId('rcg-lock').addEventListener('click', lockPhotos);
+    byId('rcg-close').addEventListener('click', () => dialog.close());
+    byId('rcg-previous').addEventListener('click', () => showPhoto(activeIndex - 1));
+    byId('rcg-next').addEventListener('click', () => showPhoto(activeIndex + 1));
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); showPhoto(activeIndex + (event.key === 'ArrowLeft' ? -1 : 1)); }
+    });
+    dialog.addEventListener('close', () => { byId('rcg-large').removeAttribute('src'); if (opener && opener.isConnected) opener.focus(); });
+    window.addEventListener('pagehide', lockPhotos);
+  })();
+</script>
