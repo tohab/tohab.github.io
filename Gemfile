@@ -23,7 +23,7 @@ group :jekyll_plugins do
 end
 
 # Dependencies required by the repository's custom _plugins/ code.
-gem "activesupport", "~> 7.2"
+gem "activesupport", "~> 8.1"
 gem "css_parser"
 gem "feedjira"
 gem "httparty"
