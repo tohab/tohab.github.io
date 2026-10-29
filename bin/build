@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+export JEKYLL_ENV="${JEKYLL_ENV:-production}"
+bundle exec ruby bin/sync_archives.rb
+bundle exec jekyll build "$@"
