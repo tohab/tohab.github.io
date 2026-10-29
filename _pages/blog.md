@@ -36,67 +36,9 @@ pagination:
      margin: 0.0rem 0rem; /* Tighten paragraph spacing within list items */
   }
 
-  .post-summary {
-    margin: 0.2rem 0 0.35rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: rgba(0, 0, 0, 0.75);
-  }
-
   .post-tags a {
     white-space: nowrap;
   }
-
-  {% if site.blog_hover_preview.enabled %}
-  {% assign hover_bg = site.blog_hover_preview.background | default: '#fef7f1' %}
-  .post-list li {
-    position: relative;
-  }
-
-  .post-list li .post-hover-preview {
-    position: absolute;
-    top: 0.15rem;
-    left: calc(100% + 1rem);
-    width: 20rem;
-    background: {{ hover_bg }};
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
-    border-radius: 0.6rem;
-    padding: 0.7rem 0.9rem 0.85rem;
-    z-index: 5;
-    opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 0.18s ease, transform 0.18s ease;
-    pointer-events: none;
-  }
-
-  .post-list li .post-hover-preview__image {
-    width: 100%;
-    height: 8rem;
-    border-radius: 0.45rem;
-    object-fit: cover;
-    margin-bottom: 0.55rem;
-  }
-
-  .post-list li .post-hover-preview__summary {
-    font-size: 0.92rem;
-    color: rgba(0, 0, 0, 0.72);
-    margin: 0;
-  }
-
-  @media (hover: hover) and (pointer: fine) and (min-width: 992px) {
-    .post-list li:hover .post-hover-preview {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (max-width: 991px) {
-    .post-list li .post-hover-preview {
-      display: none;
-    }
-  }
-  {% endif %}
 
   .archive-years {
     font-size: 1.08rem;
@@ -213,7 +155,6 @@ pagination:
                           <i class="fa-solid fa-thumbtack fa-xs"></i>
                         </div>
                         <h4 class="card-title text-lowercase">{{ post.title }}</h4>
-                        <p class="card-text">{{ post.description }}</p>
                         {% if post.external_source == blank %}
                           {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
                         {% else %}
@@ -267,9 +208,6 @@ pagination:
                   {% endif %}
                 </h3>
 
-                {% if post.description %}
-                <p class="post-summary">{{ post.description }}</p>
-                {% endif %}
                 <p class="post-meta">
                   {{ read_time }} min read &nbsp; &middot; &nbsp;
                   {{ post.date | date: '%B %d, %Y' }}
@@ -315,26 +253,6 @@ pagination:
             </div>
             {% endif %}
 
-            {% if site.blog_hover_preview.enabled %}
-              {% assign preview_image = post.preview_image %}
-              {% if preview_image == nil or preview_image == '' %}
-                {% assign preview_image = post.thumbnail %}
-              {% endif %}
-              {% assign hover_summary = post.description %}
-              {% if hover_summary == nil or hover_summary == '' %}
-                {% assign hover_summary = post.content | strip_html | replace: '&nbsp;', ' ' | strip | truncatewords: 36 %}
-              {% endif %}
-              {% if preview_image or hover_summary %}
-                <div class="post-hover-preview">
-                  {% if preview_image %}
-                    <img class="post-hover-preview__image" src="{{ preview_image | relative_url }}" alt="preview for {{ post.title }}">
-                  {% endif %}
-                  {% if hover_summary %}
-                    <p class="post-hover-preview__summary">{{ hover_summary }}</p>
-                  {% endif %}
-                </div>
-              {% endif %}
-            {% endif %}
           </li>
         {% endfor %}
       </ul>
