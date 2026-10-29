@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'nokogiri'
+
 module Jekyll
   module AutoDescription
     MAX_LENGTH = 180
@@ -9,6 +11,7 @@ module Jekyll
     def update(post)
       site = post.site
       return unless site && post.respond_to?(:content)
+      return unless post.data['description'].to_s.strip.empty?
 
       converter = site.find_converter_instance(Jekyll::Converters::Markdown)
       text = first_text_block(post.content, converter)
@@ -36,7 +39,7 @@ module Jekyll
         next if italic_block?(stripped_html)
         next if image_block?(stripped_html)
 
-        text = Jekyll::Utils.strip_html(html)
+        text = Nokogiri::HTML.fragment(html).text
         text = text.gsub(/\s+/, ' ').strip
         next if text.empty?
 
@@ -55,7 +58,7 @@ module Jekyll
     end
 
     def image_block?(html)
-      (html.include?('<img') || html.include?('<figure')) && Jekyll::Utils.strip_html(html).strip.empty?
+      (html.include?('<img') || html.include?('<figure')) && Nokogiri::HTML.fragment(html).text.strip.empty?
     end
 
     def first_sentence(text)
