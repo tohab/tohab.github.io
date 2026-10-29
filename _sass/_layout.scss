@@ -56,7 +56,7 @@ body.sticky-bottom-footer {
     color: #2f1d0c;
     box-shadow: 0 0.6rem 1.2rem rgba(47, 29, 12, 0.12);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    aspect-ratio: 1 / 1;
+    overflow: hidden;
     display: flex;
   
     &:hover,
@@ -70,11 +70,33 @@ body.sticky-bottom-footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1rem;
-    padding: 1.5rem;
     flex: 1;
+    min-width: 0;
     color: inherit;
     text-decoration: none;
+  }
+
+  .game-card__preview {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    background: #f7e3c6;
+    border-bottom: 1px solid rgba(47, 29, 12, 0.12);
+  }
+
+  .game-card__footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.15rem 1.25rem;
+  }
+
+  .game-card__link:focus-visible {
+    outline: 3px solid var(--global-theme-color);
+    outline-offset: -3px;
+    border-radius: inherit;
   }
 
   .game-card__meta {
