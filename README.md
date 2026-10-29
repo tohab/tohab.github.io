@@ -1,13 +1,13 @@
 # Rohan Prasad — Website Ops Guide
 
-This fork of the **al-folio** theme powers [rohanprasad.org](https://www.rohanprasad.org), where Rohan publishes essays, artwork, music, and project notes. The upstream README that described the generic theme was removed in favor of this document so future Codex iterations (and human collaborators) can land quickly. Everything below reflects how the site is actually wired today.
+This fork of the **al-folio** theme powers [rohanprasad.org](https://www.rohanprasad.org), where Rohan publishes essays, artwork, music, and project notes. The upstream README that described the generic theme was removed in favor of this document so future Codex iterations (and human collaborators) can land quickly. The build and release instructions below describe this repository.
 
 ## Stack at a Glance
 
-- Static site built with **Jekyll** (GitHub Actions currently builds with Ruby 3.1).
+- Static site built with **Jekyll** (Ruby is pinned in `.ruby-version`, currently 3.4.12).
 - Theme: [alshedivat/al-folio](https://github.com/alshedivat/al-folio) with custom pages in `_pages/` and many bespoke posts.
-- Tooling: Bundler (`Gemfile`), Node (`package.json`) for Prettier + PurgeCSS (`purgecss.config.js`), Python 3 for helper scripts (`scripts/*.py`), ImageMagick for asset processing, and Docker Compose (`docker-compose.yml`) for an optional containerized dev loop.
-- Deployment: GitHub Actions workflow `.github/workflows/deploy.yml` builds on every push to `main` and deploys via the Pages artifact flow (no `gh-pages` branch push); the branch-based path lives in `bin/deploy`.
+- Tooling: Bundler (`Gemfile`), Node (`package.json`) for Prettier, Python 3 for helper scripts (`scripts/*.py`), ImageMagick for asset processing, and Docker Compose (`docker-compose.yml`) for an optional containerized dev loop.
+- Deployment: GitHub Actions workflow `.github/workflows/deploy.yml` builds on every push to `main` and deploys via the Pages artifact flow (no `gh-pages` branch push); `bin/deploy` now refuses the retired branch-based path.
 
 ## Quick Links (Most-Used Files)
 
@@ -39,8 +39,8 @@ This fork of the **al-folio** theme powers [rohanprasad.org](https://www.rohanpr
 
 | Tool | Why | Notes |
 | ---- | --- | ----- |
-| Ruby 3.1 + Bundler 2.x | Run Jekyll locally | Match the deployment workflow's Ruby version. Install via `rbenv`, `asdf`, or system package manager. |
-| Node.js 18+ & npm | PurgeCSS (manual deploy) + Prettier | Run `npm install` once to install dependencies in `package.json`. |
+| Ruby 3.4.12 + Bundler 2.6.9 | Run Jekyll locally | Match the deployment workflow's Ruby version. Install via `rbenv`, `asdf`, or system package manager. |
+| Node.js 22+ & npm | JavaScript syntax checks + Prettier | Run `npm ci` once to install dependencies in `package.json`. |
 | Python 3.10+ | Repo scripts (`scripts/*.py`) | Install packages with `python3 -m pip install -r requirements.txt` and `pip install pillow pyyaml` (needed for the image and stats scripts). |
 | ImageMagick (`convert`) | Downscale & optimize artwork | Homebrew: `brew install imagemagick`; Debian/Ubuntu: `sudo apt install imagemagick`. |
 | Optional: Docker | Run `docker compose up` for a self-contained dev server | Uses the provided `Dockerfile` and `docker-compose.yml`. |
@@ -50,9 +50,9 @@ This fork of the **al-folio** theme powers [rohanprasad.org](https://www.rohanpr
 ```bash
 git clone git@github.com:tohab/tohab.github.io.git
 cd tohab.github.io
-gem install bundler
+gem install bundler -v 2.6.9
 bundle install
-npm install
+npm ci
 python3 -m pip install -r requirements.txt pillow pyyaml
 ```
 
@@ -61,20 +61,27 @@ python3 -m pip install -r requirements.txt pillow pyyaml
 The standard dev loop is:
 
 ```bash
-bundle exec jekyll serve --livereload --incremental
+bash bin/build
+bundle exec jekyll serve --livereload
 ```
 
 - Visit `http://127.0.0.1:4000`.
 - Livereload watches `_pages`, `_posts`, `_sass`, `_layouts`, `_includes`, `_data`, and most assets. Restart the server if you touch `_config.yml` or `_plugins`.
 - Stop with `Ctrl+C`. If you see stale layouts, run `bundle exec jekyll clean` before restarting.
 
-**Docker option:** `docker compose up` uses the command in `docker-compose.yml` (`bundle install && bundle exec jekyll serve --host 0.0.0.0 --port 8080`) and exposes ports `8080` and `35729`. If you want `--livereload` or `--incremental`, edit the compose command.
+**Docker option:** `docker compose up --build` uses the same Ruby version and locked gems, generates archives, and serves on `http://127.0.0.1:8080` with livereload. Rebuild the image after changing the Gemfile or lockfile. Restart after changing `_config.yml` or `_plugins`. The compatibility `docker-compose-slim.yml` uses the same build.
 
-### Local dev variants (CLI vs Docker)
+### Build and release checks
 
-- CLI loop: `bundle exec jekyll serve --livereload --incremental` (fast rebuilds, local Ruby env).
-- Docker loop: `docker compose up` runs the fixed command in `docker-compose.yml` (currently no `--livereload` or `--incremental`).
-- If you need parity, edit the compose command to match the CLI flags.
+```bash
+bundle exec ruby tests/check_site_test.rb
+bash bin/build
+bundle exec ruby scripts/check_site.rb
+```
+
+Every pull request runs these checks. They verify core routes, eight-post pagination, internal link targets, inline JavaScript syntax, excluded development/private files, and exact preservation of the encrypted `/rcg` payload. PRs never deploy; a successful main-branch run publishes through Pages. The external-link audit remains a separate manual workflow because third-party sites can block CI requests.
+
+The root npm dependencies remain formatting tools. RCG's browser code, encryption, and assets are owned by its separate workstream; this build migration does not add, update, or bundle its JavaScript dependencies. See [build validation](docs/build-validation.md) for scope and known limitations.
 
 ## Repository Layout (What You Actually Need)
 
@@ -312,37 +319,31 @@ The raw directory stays out of Git (see `.gitignore`) so commits only include op
 
 | Command | Purpose | Notes |
 | ------- | ------- | ----- |
-| `bin/sync_archives.rb` | Rebuilds `_generated/tag` and `_generated/year` pages by scanning `_posts`. | GitHub Actions runs this on deploy, but run it locally after adding posts or renaming tags so the generated pages stay committed. |
+| `bin/sync_archives.rb` | Rebuilds `_generated/tag` and `_generated/year` pages by scanning `_posts`. | GitHub Actions runs this on deploy, but run it locally after adding posts or renaming tags when previewing new tags or years; `_generated/` is build output and is not committed. |
 | `python3 scripts/localize_images.py …` | See “Image & Media Pipeline” above. | Install PyYAML + ImageMagick. |
 | `python3 scripts/generate_blog_stats.py` | Produces `/assets/img/blog-stats/*.png` charts and a `summary.txt` describing totals. | Requires Pillow and the `DejaVuSans.ttf` font (install via `sudo apt install fonts-dejavu` or equivalent). Useful when updating posts like `_posts/2025-09-30-taking-stock-of-the-blog.md`. |
-| `bin/cibuild` | Convenience wrapper for `bundle exec jekyll build`. | Used by some CI workflows. |
-| `bin/deploy` | Force-pushes a production build to `gh-pages`. | Interactive, destructive: wipes the working tree except for `_site` artifacts, runs `purgecss -c purgecss.config.js`, and pushes to `gh-pages`. Requires `purgecss` on PATH (`npm install -g purgecss` or `npx purgecss …`). Prefer the GitHub Pages workflow unless you need an immediate manual publish. |
-
-### Danger zone (manual deploy)
-
-- `bin/deploy` deletes everything except `_site/` + git metadata during its run and force-pushes to `gh-pages`.
-- It will abort if there are uncommitted or untracked files, but still treat it as destructive.
-- Always run it from a clean working tree and only if you explicitly want to bypass the GitHub Pages workflow.
+| `bin/cibuild` | Compatibility wrapper for `bash bin/build`. | Used by some CI workflows. |
+| `bash bin/build` | Generates archives and runs a production Jekyll build. | Shared by local builds and CI. |
+| `bin/deploy` | Retired; exits without changing files or branches. | Publish through the Pages workflow. |
 
 ## Formatting, Checks, and Tooling
 
-- **Build check:** `bundle exec jekyll build` (or `bin/cibuild`). Use `JEKYLL_ENV=production` to mirror deploys.
+- **Build check:** `bash bin/build && bundle exec ruby scripts/check_site.rb` (or use `bin/cibuild` for the build).
 - **Prettier:** Liquid and Markdown formatting is standardized via Prettier 3 with the Shopify Liquid plugin. Run `npx prettier --write _layouts/ _includes/ _pages/ _posts/ _sass/`.
 - **Pre-commit:** `.pre-commit-config.yaml` provides whitespace/yaml/large-file hooks. Opt in with `pre-commit install` and run `pre-commit run --all-files` before pushing.
-- **CSS purging:** `purgecss -c purgecss.config.js` trims unused selectors in `_site/assets/css/`. The deploy script handles this automatically; don’t run during dev.
+- **CSS/media optimization:** Existing responsive image variants are used where available. Automatic image generation and HTML/JavaScript minification are deliberately excluded from this first build migration; they require a separate compatibility/performance pass.
 - **Python tooling:** `requirements.txt` currently lists `nbconvert` (used for notebook-to-Markdown conversions). Install Pillow + PyYAML as mentioned earlier for the scripts.
 
 ## Deployment
 
-- **GitHub Pages (default):** `.github/workflows/deploy.yml` triggers on every push to `main`, runs `bin/sync_archives.rb`, builds the site with Ruby 3.1, and deploys with the artifact-based Pages workflow (no `gh-pages` branch). The site is served at https://www.rohanprasad.org.
-- **Manual deploy:** If CI is unavailable, run `bin/deploy` from a clean working tree. It switches to a temporary `gh-pages` branch, builds with `JEKYLL_ENV=production`, runs PurgeCSS, commits the contents of `_site/` to `gh-pages`, and returns you to `main`.
-- **Other hosting:** `bundle exec jekyll build --destination path/to/output` will write a static bundle to `_site/` (or the provided destination). Remember to set `_config.yml`’s `url`/`baseurl` before building for custom domains/subpaths.
+- **GitHub Pages (default):** `.github/workflows/deploy.yml` validates pull requests and publishes successful pushes to `main`, using `.ruby-version`, `Gemfile.lock`, `bash bin/build`, and the artifact-based Pages workflow. The site is served at https://www.rohanprasad.org.
+- **Manual rerun:** Use the repository's Actions tab to rerun "Deploy Jekyll site to Pages" on `main`. The old `gh-pages` force-push script is retired.
+- **Other hosting:** `bash bin/build --destination path/to/output` will write a static bundle to `_site/` (or the provided destination). Remember to set `_config.yml`’s `url`/`baseurl` before building for custom domains/subpaths.
 
 ## Troubleshooting & Tips
 
 - **“Missing layouts/data” errors:** Usually solved by `bundle exec jekyll clean && bundle exec jekyll serve`.
-- **Broken archive/tag pages:** Re-run `bin/sync_archives.rb` and commit the regenerated files under `_generated/`.
-- **PurgeCSS not found during `bin/deploy`:** Install it globally (`npm install -g purgecss`) or edit `bin/deploy` to call `npx purgecss`. The GitHub Pages workflow does not run `bin/deploy`, so this only affects local deploys.
+- **Broken archive/tag pages:** Run `bash bin/build` to regenerate `_generated/`; do not commit generated files.
 - **ImageMagick `convert` failures:** Ensure the binary is available (`which convert`). macOS users on Apple Silicon sometimes need `brew install imagemagick` and to restart their shell.
 - **Blog stats script font errors:** Install the DejaVu font family (`sudo apt install fonts-dejavu` or `brew install --cask font-dejavu-sans`).
 - **More theme help:** See `CUSTOMIZE.md`, `FAQ.md`, `INSTALL.md`, and the upstream [al-folio documentation](https://github.com/alshedivat/al-folio). This repo follows the upstream layout closely, so their guidance usually applies verbatim.
