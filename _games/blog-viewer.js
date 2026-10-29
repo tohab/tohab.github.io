@@ -501,7 +501,7 @@ full_height: true
           chip.textContent = relatedNode.label;
           detailsRelatedList.appendChild(chip);
         });
-      });
+      }
       detailsLink.style.display = 'inline-flex';
       detailsLink.setAttribute('href', node.url);
     } else {

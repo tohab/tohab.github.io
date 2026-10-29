@@ -1,30 +1,9 @@
-name: Check for broken links
+name: Audit external links
 
+# Internal links are checked against the built site in deploy.yml before upload.
+# External hosts can rate-limit CI; keep this independent from release checks.
 on:
-  push:
-    branches:
-      - master
-      - main
-    paths:
-      - "assets/**"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "!lighthouse_results/**"
-  pull_request:
-    branches:
-      - master
-      - main
-    paths:
-      - "assets/**"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "!lighthouse_results/**"
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -37,8 +16,6 @@ jobs:
 
       - name: Link Checker 🔗
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
-        continue-on-error: true
         with:
           fail: true
-          # removed md files that include liquid tags
-          args: --user-agent 'curl/7.54' --exclude-path README.md --exclude-path _pages/404.md --exclude-path _pages/blog.md --exclude-path _posts/2018-12-22-distill.md --exclude-path _posts/2023-04-24-videos.md --verbose --no-progress './**/*.md' './**/*.html'
+          args: --scheme https --scheme http --verbose --no-progress './_posts/**/*.md' './_pages/**/*.md'
