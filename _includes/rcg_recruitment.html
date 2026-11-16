@@ -1,94 +1,417 @@
-<!-- RCG recruitment landing: public information only. Included by _pages/rcg.md above the password-protected tour. -->
+<!--
+  RCG housemate page, written like a short illustrated book.
+  Public: the cover illustration, the story, the 3D model (/assets/rcg/house-plan.json), the process.
+  Private: the photographs stay in the encrypted payload in _pages/rcg.md and unlock with the password.
+  The apply link comes from `apply_url` in _pages/rcg.md's front matter; it falls back to email.
+-->
+{% capture rcg_mailto %}mailto:rohan.prasad@berkeley.edu?subject=RCG%20housemate%20intro%20%E2%80%94%20Jan%202027&body=Hi%20RCG%20housemates%2C%0A%0AMy%20name%20is%3A%0A%0AA%20little%20about%20me%20and%20why%20I%27d%20like%20to%20live%20here%3A%0A%0AI%27m%20looking%20to%20move%20in%20around%20January%201%2C%202027%3A%0A{% endcapture %}
+{% assign rcg_apply = page.apply_url | default: rcg_mailto | strip %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
 <style>
-.rcg-recruitment{--rr-ink:#283b38;--rr-soft:#f5f3eb;--rr-edge:#d6d9ce;--rr-accent:#365c4b;color:var(--rr-ink);margin:0 0 1rem}
-.rcg-recruitment a{color:var(--rr-accent);text-decoration:underline;text-underline-offset:3px}
-.rcg-recruitment .rr-hero{padding:clamp(1.5rem,4vw,3.6rem);border-radius:15px;background:linear-gradient(120deg,#e6e9da,#f5f3eb);border:1px solid var(--rr-edge)}
-.rcg-recruitment .rr-kicker{font-size:.78rem;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:#53715d;margin:0 0 1rem}
-.rcg-recruitment h2{font:400 clamp(2rem,4.5vw,3.65rem)/1.12 Georgia,serif;letter-spacing:-.045em;margin:0 0 1.05rem;max-width:720px;color:var(--rr-ink)}
-.rcg-recruitment .rr-lead{font-size:clamp(1rem,1.7vw,1.16rem);max-width:660px;line-height:1.6;margin:0 0 1.6rem;color:#435850}
-.rcg-recruitment .rr-primary{display:inline-block;padding:.86rem 1.28rem;background:var(--rr-accent);color:#fff!important;text-decoration:none;font-weight:700;border-radius:7px;min-height:44px}
-.rcg-recruitment .rr-primary:hover,.rcg-recruitment .rr-primary:focus-visible{background:#244538}
-.rcg-recruitment .rr-small{font-size:.85rem;color:#5d6b61;margin:.85rem 0 0}
-.rcg-recruitment .rr-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:1rem 0 2.5rem}
-.rcg-recruitment .rr-fact{background:#fffefa;border:1px solid var(--rr-edge);padding:1rem 1.15rem;border-radius:8px}
-.rcg-recruitment .rr-fact dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.09em;color:#637168;font-weight:700}
-.rcg-recruitment .rr-fact dd{font:400 1.3rem Georgia,serif;margin:.4rem 0 0;color:var(--rr-ink)}
-.rcg-recruitment .rr-fact small{display:block;color:#617166;font:400 .75rem system-ui,sans-serif;margin-top:.3rem}
-.rcg-recruitment .rr-columns{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.3rem,4vw,3rem);margin-bottom:2.5rem}
-.rcg-recruitment h3{font:400 1.6rem Georgia,serif;letter-spacing:-.025em;color:var(--rr-ink);margin:0 0 .7rem}
-.rcg-recruitment p{line-height:1.6}
-.rcg-recruitment .rr-columns p,.rcg-recruitment .rr-columns li{font-size:1rem}
-.rcg-recruitment ul{padding-left:1.15rem;margin:.8rem 0}
-.rcg-recruitment li{margin:.55rem 0;line-height:1.5}
-.rcg-recruitment .rr-process{padding:1.6rem 1.8rem;background:#f8f8f2;border:1px solid var(--rr-edge);border-radius:12px;margin:0 0 1.8rem}
-.rcg-recruitment .rr-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.2rem;list-style:none;counter-reset:stage;padding:0;margin:1.2rem 0 0}
-.rcg-recruitment .rr-steps li{counter-increment:stage;margin:0}
-.rcg-recruitment .rr-steps li:before{content:counter(stage);display:inline-grid;place-items:center;width:30px;height:30px;background:#dce8dc;border-radius:50%;font-size:.86rem;font-weight:750;color:#315542;margin-bottom:.55rem}
-.rcg-recruitment .rr-steps strong{display:block;font-size:.96rem;margin:0 0 .3rem}
-.rcg-recruitment .rr-steps span{display:block;font-size:.87rem;line-height:1.52;color:#526258}
-.rcg-recruitment .rr-agreement{border:1px solid var(--rr-edge);border-radius:10px;background:#fffefa;margin:0 0 2rem}
-.rcg-recruitment .rr-agreement summary{padding:1rem 1.2rem;cursor:pointer;font-weight:700}
-.rcg-recruitment .rr-agreement>div{padding:.1rem 1.2rem 1.25rem}
-.rcg-recruitment .rr-agreement p{font-size:.9rem;margin:.7rem 0}
-@media(max-width:900px){.rcg-recruitment .rr-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.rcg-recruitment .rr-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.rcg-recruitment .rr-columns{grid-template-columns:1fr}.rcg-recruitment .rr-process{padding:1.25rem}.rcg-recruitment .rr-steps{gap:1.15rem}.rcg-recruitment .rr-facts{gap:8px}.rcg-recruitment .rr-fact{padding:.9rem}.rcg-recruitment .rr-fact dd{font-size:1.1rem}}
+.bk{--bk-paper:#f8f3e7;--bk-paper-2:#f1ead9;--bk-ink:#2b2f29;--bk-soft:#5f655b;--bk-faint:#8b8c7d;--bk-rule:#d9d0bb;--bk-green:#365c4b;--bk-green-2:#244538;--bk-tangerine:#d9782a;--bk-serif:"EB Garamond",Garamond,"Iowan Old Style",Georgia,serif;
+  position:relative;max-width:1120px;margin:0 auto 3rem;padding:clamp(28px,5vw,72px) clamp(16px,5vw,64px) clamp(40px,6vw,80px);
+  background:radial-gradient(120% 80% at 50% 0%,#fbf8ef 0%,var(--bk-paper) 55%,var(--bk-paper-2) 100%);color:var(--bk-ink);
+  border-radius:6px;box-shadow:0 1px 0 #e8dfca,0 18px 50px -24px #2b2f2940,inset 0 0 0 1px #e6dcc6;font-family:var(--bk-serif);font-size:1.12rem;line-height:1.65}
+.bk a{color:var(--bk-green);text-decoration-thickness:1px;text-underline-offset:3px}
+.bk a:hover{color:var(--bk-green-2)}
+.bk h1,.bk h2,.bk h3{font-family:var(--bk-serif);color:var(--bk-ink);font-weight:400}
+.bk p{margin:0 0 1.05em}
+.bk-prose{max-width:36rem;margin:0 auto}
+
+/* Cover */
+.bk-cover{text-align:center;margin-bottom:clamp(2.5rem,6vw,4.5rem)}
+.bk-frontis{margin:0 auto 1.6rem;max-width:1000px}
+.bk-frontis svg{display:block;width:100%;height:auto;border-radius:3px}
+.bk-kicker{font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bk-soft);margin:0 0 .6rem!important}
+.bk-cover h1{font-size:clamp(4rem,11vw,7.5rem);line-height:.95;letter-spacing:.06em;margin:0 0 .4rem}
+.bk-sub{font-style:italic;font-size:clamp(1.15rem,2.4vw,1.45rem);color:var(--bk-soft);margin:0 auto 1.6rem!important;max-width:34rem}
+.bk-cta{display:flex;gap:1.3rem;justify-content:center;align-items:center;flex-wrap:wrap}
+.bk-btn{display:inline-block;padding:.75rem 1.5rem;background:var(--bk-green);color:#fbf8ef!important;text-decoration:none!important;border-radius:999px;font-size:1.05rem;letter-spacing:.02em;box-shadow:0 6px 16px -8px #24453880;transition:transform .2s,background .2s}
+.bk-btn:hover,.bk-btn:focus-visible{background:var(--bk-green-2);transform:translateY(-1px)}
+.bk-quiet{font-style:italic;color:var(--bk-soft)!important;text-decoration:none!important}
+.bk-quiet:hover{color:var(--bk-ink)!important}
+
+/* Front matter */
+.bk-front{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,5vw,4rem);max-width:820px;margin:0 auto clamp(3rem,7vw,5rem);padding:2rem 0;border-top:1px solid var(--bk-rule);border-bottom:1px solid var(--bk-rule)}
+.bk-front h2{font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bk-soft);margin:0 0 1rem}
+.bk-particulars{margin:0}
+.bk-particulars div{display:flex;justify-content:space-between;gap:1rem;padding:.35rem 0;border-bottom:1px dotted var(--bk-rule)}
+.bk-particulars dt{font-weight:400;color:var(--bk-soft)}
+.bk-particulars dd{margin:0;text-align:right}
+.bk-particulars small{display:block;font-size:.8rem;color:var(--bk-faint);font-style:italic}
+.bk-contents{list-style:none;padding:0;margin:0;counter-reset:none}
+.bk-contents li{margin:0}
+.bk-contents a{display:flex;align-items:baseline;gap:.5rem;padding:.35rem 0;color:var(--bk-ink)!important;text-decoration:none!important}
+.bk-contents a:hover .bk-ct{color:var(--bk-green)}
+.bk-contents .bk-cn{font-variant:small-caps;color:var(--bk-faint);min-width:2.2rem}
+.bk-contents .bk-dots{flex:1;border-bottom:1px dotted var(--bk-rule);transform:translateY(-.3em)}
+.bk-contents .bk-cp{font-style:italic;color:var(--bk-faint);font-size:.92rem}
+
+/* Chapters */
+.bk-chapter{margin:0 auto clamp(3.5rem,8vw,6rem);scroll-margin-top:80px}
+.bk-ch{text-align:center;margin-bottom:2rem}
+.bk-ch-num{font-variant:small-caps;letter-spacing:.18em;color:var(--bk-faint);font-size:1rem;margin:0 0 .2rem!important}
+.bk-ch h2{font-size:clamp(2rem,4.5vw,2.9rem);line-height:1.1;margin:0;letter-spacing:-.01em}
+.bk-orn{display:block;color:var(--bk-tangerine);font-size:1.3rem;margin-top:.5rem}
+.bk-drop::first-letter{float:left;font-size:4.4em;line-height:.82;padding:.06em .1em 0 0;color:var(--bk-green);font-weight:500}
+.bk-aside{font-style:italic;color:var(--bk-soft);text-align:center;font-size:1rem}
+.bk-list{list-style:none;padding:0;margin:1.2rem 0}
+.bk-list li{padding-left:1.4rem;position:relative;margin:.45rem 0}
+.bk-list li:before{content:"❧";position:absolute;left:0;color:var(--bk-tangerine);font-size:.9em}
+.bk-fin{text-align:center;margin-top:3rem}
+.bk-fin .bk-orn{font-size:1.8rem;margin-bottom:1rem}
+
+/* Sealed pictures */
+.bk-seal{position:relative;max-width:34rem;margin:0 auto;padding:2.4rem 2rem 2rem;text-align:center;background:#fbf8f0;border:1px solid var(--bk-rule);border-radius:4px;box-shadow:0 14px 30px -22px #2b2f2960}
+.bk-wax{width:68px;height:68px;margin:-4.6rem auto 1rem;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#c4553a,#8f2f22 70%);color:#f6dccb;font-size:1rem;letter-spacing:.08em;box-shadow:0 4px 10px -4px #5d1f1680,inset 0 0 0 4px #a8402e}
+.bk-seal p{color:var(--bk-soft)}
+.bk-seal label{display:block;font-size:.9rem;color:var(--bk-soft);margin:1rem 0 .4rem}
+.bk-seal-fields{display:flex;gap:8px;max-width:24rem;margin:0 auto}
+.bk-seal input{flex:1;min-width:0;padding:.65rem .8rem;border:1px solid #cfc5ae;border-radius:6px;background:#fffdf7;color:var(--bk-ink);font:inherit;font-size:1rem}
+.bk-seal button{padding:.65rem 1.2rem;border:0;border-radius:6px;background:var(--bk-green);color:#fbf8ef;font:inherit;font-size:1rem;cursor:pointer}
+.bk-seal button:disabled{opacity:.6;cursor:wait}
+.bk-seal input:focus-visible,.bk-seal button:focus-visible{outline:3px solid #8aab85;outline-offset:2px}
+.bk-error{color:#943b34!important;margin:.8rem 0 0!important}
+
+/* Plates (unlocked gallery) */
+.bk-plates-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;max-width:1000px;margin:0 auto 1rem;font-size:.95rem;color:var(--bk-soft)}
+.bk-plates-head button{background:none;border:1px solid var(--bk-rule);border-radius:999px;padding:.3rem .9rem;font:inherit;font-size:.9rem;color:var(--bk-soft);cursor:pointer}
+.bk-plates-head button:hover{color:var(--bk-ink);border-color:var(--bk-soft)}
+.bk-plate{margin:0 auto 2.5rem;max-width:1000px}
+.bk-plate button,.bk-plate-grid button,.bk-album button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:3px;overflow:hidden}
+.bk-plate img{display:block;width:100%;max-height:82vh;object-fit:cover;box-shadow:0 22px 50px -28px #2b2f29a0;animation:bk-develop 1.4s ease-out both}
+.bk-plate figcaption,.bk-plate-grid figcaption,.bk-album figcaption{text-align:center;font-style:italic;color:var(--bk-soft);font-size:.98rem;margin-top:.7rem}
+.bk-plate figcaption b,.bk-plate-grid figcaption b{font-style:normal;font-weight:400;font-variant:small-caps;letter-spacing:.1em;color:var(--bk-faint);margin-right:.4em}
+.bk-plate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,3vw,32px);max-width:1000px;margin:0 auto 2.5rem}
+.bk-plate-grid figure{margin:0}
+.bk-plate-grid img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.bk-album-section{max-width:1000px;margin:2.5rem auto 0}
+.bk-album-section h3{text-align:center;font-size:1.5rem;margin:0 0 1.2rem;font-style:italic}
+.bk-album{columns:3 220px;column-gap:18px}
+.bk-album figure{break-inside:avoid;margin:0 0 18px}
+.bk-album img{display:block;width:100%;height:auto}
+.bk-album figcaption{font-size:.85rem;margin-top:.35rem}
+@keyframes bk-develop{from{opacity:0;filter:sepia(.6) brightness(1.15)}to{opacity:1;filter:none}}
+
+/* Model */
+.bk .bk-model-intro{max-width:36rem;margin:0 auto 1.6rem;text-align:center;color:var(--bk-soft);font-style:italic}
+.bk-model{max-width:1100px;margin:0 auto;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1rem;line-height:1.5}
+.bk-model-wait{display:grid;place-items:center;min-height:260px;padding:2rem;text-align:center;border:1px dashed var(--bk-rule);border-radius:6px;color:var(--bk-soft);font-family:var(--bk-serif);font-style:italic}
+
+/* Flowchart */
+.bk-path{list-style:none;padding:0;margin:2.5rem auto 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1rem;max-width:1000px;counter-reset:step}
+.bk-path li{position:relative;text-align:center;margin:0;padding:0 .3rem}
+.bk-path li:not(:last-child):after{content:"";position:absolute;top:38px;left:calc(50% + 46px);right:calc(-50% + 46px);border-top:2px dashed #b9ad92}
+.bk-path li:not(:last-child):before{content:"";position:absolute;top:33px;right:calc(-50% + 42px);border:6px solid transparent;border-left:8px solid #b9ad92;border-right:0}
+.bk-medal{width:78px;height:78px;margin:0 auto .9rem;border-radius:50%;display:grid;place-items:center;background:#fbf8f0;border:1.5px solid var(--bk-ink);box-shadow:0 0 0 5px var(--bk-paper),0 0 0 6px var(--bk-rule);color:var(--bk-ink)}
+.bk-medal svg{width:36px;height:36px}
+.bk-path li:last-child .bk-medal{background:var(--bk-green);color:#fbf8ef;border-color:var(--bk-green)}
+.bk-step-n{display:block;font-variant:small-caps;letter-spacing:.16em;color:var(--bk-faint);font-size:.9rem}
+.bk-path strong{display:block;font-weight:500;font-size:1.25rem;line-height:1.2;margin:.1rem 0 .4rem}
+.bk-path span.bk-step-t{display:block;font-size:.98rem;line-height:1.45;color:var(--bk-soft)}
+.bk-path-end{text-align:center;font-style:italic;color:var(--bk-green);margin-top:1.8rem!important}
+
+.bk-terms{max-width:36rem;margin:2.5rem auto 0;border-top:1px solid var(--bk-rule);border-bottom:1px solid var(--bk-rule)}
+.bk-terms summary{padding:1rem 0;cursor:pointer;font-variant:small-caps;letter-spacing:.12em;color:var(--bk-soft)}
+.bk-terms summary:hover{color:var(--bk-ink)}
+.bk-terms>div{padding:0 0 1.2rem;font-size:1rem}
+.bk-terms ul{padding-left:1.1rem}
+.bk-terms li{margin:.45rem 0}
+
+/* Illustration motion */
+.ill-sway{transform-box:fill-box;transform-origin:50% 100%;animation:ill-sway 7s ease-in-out infinite alternate}
+.ill-sway.slow{animation-duration:10s}
+.ill-glow{animation:ill-glow 5s ease-in-out infinite alternate}
+.ill-glow.d1{animation-delay:-1.3s}.ill-glow.d2{animation-delay:-2.6s}.ill-glow.d3{animation-delay:-3.9s}
+.ill-late{opacity:0;animation:ill-on .6s 2.2s ease-out forwards,ill-glow 5s 2.8s ease-in-out infinite alternate}
+.ill-smoke circle{transform-box:fill-box;transform-origin:center;animation:ill-smoke 6s linear infinite;opacity:0}
+.ill-smoke circle:nth-child(2){animation-delay:-2s}.ill-smoke circle:nth-child(3){animation-delay:-4s}
+.ill-birds{animation:ill-birds 26s linear infinite}
+.ill-label{font-family:var(--bk-serif);font-style:italic;font-size:21px;fill:#5f655b}
+@keyframes ill-sway{from{transform:rotate(-1.2deg)}to{transform:rotate(1.2deg)}}
+@keyframes ill-glow{from{opacity:.82}to{opacity:1}}
+@keyframes ill-on{to{opacity:1}}
+@keyframes ill-smoke{0%{opacity:0;transform:translate(0,0) scale(.6)}15%{opacity:.55}100%{opacity:0;transform:translate(26px,-90px) scale(1.8)}}
+@keyframes ill-birds{from{transform:translateX(-140px)}to{transform:translateX(1340px)}}
+@media(prefers-reduced-motion:reduce){.bk *{animation:none!important;transition:none!important}.ill-late{opacity:1}.ill-smoke circle{opacity:.35}}
+
+@media(max-width:820px){
+  .bk-path{grid-template-columns:1fr;gap:0;max-width:30rem}
+  .bk-path li{display:grid;grid-template-columns:78px 1fr;column-gap:1.1rem;text-align:left;padding:0 0 1.8rem}
+  .bk-path li .bk-medal{grid-row:span 3;margin:0}
+  .bk-path li:not(:last-child):after{top:86px;bottom:4px;left:38px;right:auto;border-top:0;border-left:2px dashed #b9ad92}
+  .bk-path li:not(:last-child):before{display:none}
+}
+@media(max-width:650px){
+  .bk{font-size:1.06rem;border-radius:0;margin-left:-16px;margin-right:-16px}
+  .bk-front{grid-template-columns:1fr}
+  .ill-label{display:none}
+  .bk-seal{padding:2.2rem 1.2rem 1.5rem}
+  .bk-seal-fields{flex-direction:column}
+  .bk-plate-grid{grid-template-columns:1fr}
+  .bk-album{columns:2 140px;column-gap:10px}
+  .bk-album figure{margin-bottom:10px}
+}
 </style>
-<section class="rcg-recruitment" aria-label="Roommate recruitment">
-  <div class="rr-hero">
-    <p class="rr-kicker">One room available · January 1, 2027</p>
-    <h2>A room in our Berkeley house.</h2>
-    <p class="rr-lead">We're looking for a new housemate to share a friendly, collaborative home near UC Berkeley. If you like a lively common space, good communication, and pitching in to keep a home running, we'd love to meet you.</p>
-    <a class="rr-primary" href="mailto:rohan.prasad@berkeley.edu?subject=RCG%20housemate%20intro%20%E2%80%94%20Jan%202027&body=Hi%20RCG%20housemates%2C%0A%0AMy%20name%20is%3A%0A%0AA%20little%20about%20me%20and%20why%20I%27d%20like%20to%20live%20here%3A%0A%0AI%27m%20looking%20to%20move%20in%20around%20January%201%2C%202027%3A%0A%0AQuestions%20or%20anything%20else%20you%27d%20like%20us%20to%20know%3A%0A">Introduce yourself →</a>
-    <p class="rr-small">Start with a short email. No lengthy form.</p>
-  </div>
-  <dl class="rr-facts">
-    <div class="rr-fact"><dt>Monthly rent</dt><dd>$940</dd></div>
-    <div class="rr-fact"><dt>Utilities</dt><dd>~$90–130 <small>per month; varies</small></dd></div>
-    <div class="rr-fact"><dt>Security deposit</dt><dd>$940 <small>also confirms move-in</small></dd></div>
-    <div class="rr-fact"><dt>Move-in</dt><dd>Jan 1, 2027</dd></div>
-  </dl>
-  <div class="rr-columns">
-    <section>
-      <h3>The house</h3>
-      <p>Our two-story Berkeley home has five bedrooms and two bathrooms, with room to cook, spend time together, and find quiet when you need it.</p>
-      <ul>
-        <li>Shared kitchen with gas range, plus laundry</li>
-        <li>Bike rack and parking</li>
-        <li>Near UC Berkeley, BART, and Ohlone Park</li>
-        <li>Photos and an interactive 3D tour below (password-protected)</li>
-      </ul>
-    </section>
-    <section>
-      <h3>Living together</h3>
-      <p>We share responsibility for the house: cleaning, supplies, small projects, and decisions that affect everyone. We look for people who communicate clearly and take initiative.</p>
-      <ul>
-        <li>Quiet hours: 10:30 PM–7:30 AM</li>
-        <li>Shared chores and occasional house meetings</li>
+
+<article class="bk rcg-recruitment" aria-label="RCG: a room in our Berkeley house">
+
+  <header class="bk-cover">
+    <figure class="bk-frontis" aria-hidden="false">
+      <svg viewBox="0 0 1200 660" role="img" aria-labelledby="ill-title ill-desc" xmlns="http://www.w3.org/2000/svg">
+        <title id="ill-title">An illustration of the RCG house</title>
+        <desc id="ill-desc">A two-story house with lit windows and a smoking chimney. A forty-foot cedar rises behind it, a eucalyptus stands to the left and a tangerine tree grows in the front yard. Two bikes lean on a steel rack, raised garden beds sit to the right, and the Berkeley hills roll behind.</desc>
+        <defs>
+          <linearGradient id="ill-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3dfc0"/><stop offset=".55" stop-color="#f6ebd6"/><stop offset="1" stop-color="#f8f3e7"/></linearGradient>
+          <radialGradient id="ill-sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#f6c87e"/><stop offset=".55" stop-color="#f3c27a" stop-opacity=".5"/><stop offset="1" stop-color="#f3c27a" stop-opacity="0"/></radialGradient>
+          <radialGradient id="ill-win" cx=".5" cy=".55" r=".7"><stop offset="0" stop-color="#ffe7a8"/><stop offset="1" stop-color="#f1b85b"/></radialGradient>
+          <linearGradient id="ill-lawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9d3ac"/><stop offset="1" stop-color="#b7c49b"/></linearGradient>
+          <pattern id="ill-siding" width="10" height="14" patternUnits="userSpaceOnUse"><rect width="10" height="14" fill="#f1e6cd"/><path d="M0 13.5H10" stroke="#d8c9a8" stroke-width="1.2"/></pattern>
+        </defs>
+
+        <rect width="1200" height="660" fill="url(#ill-sky)"/>
+        <circle cx="955" cy="150" r="120" fill="url(#ill-sun)"/>
+        <circle cx="955" cy="150" r="38" fill="#f4c27b" opacity=".85"/>
+
+        <!-- hills, with a tiny campanile on the far ridge -->
+        <path d="M0 395C120 352 230 336 330 350S520 318 640 330 860 300 980 322 1120 340 1200 330V660H0Z" fill="#dfe0c8"/>
+        <g fill="#c8cdb3"><rect x="214" y="300" width="9" height="46"/><path d="M211 301h15l-7.5-17z"/><rect x="216" y="306" width="5" height="5" fill="#dfe0c8"/></g>
+        <path d="M0 430C160 392 300 404 420 392S700 372 820 388 1060 376 1200 396V660H0Z" fill="#cfd6ba"/>
+
+        <!-- birds -->
+        <g class="ill-birds" fill="none" stroke="#5f655b" stroke-width="2" stroke-linecap="round">
+          <path d="M40 120q8-8 16 0q8-8 16 0"/><path d="M84 96q6-6 12 0q6-6 12 0"/><path d="M10 88q5-5 10 0q5-5 10 0"/>
+        </g>
+
+        <!-- the forty-foot cedar, behind the house -->
+        <g class="ill-sway slow">
+          <rect x="871" y="430" width="16" height="100" fill="#5b4433"/>
+          <path d="M879 46L812 190h28L790 300h34L765 410h38L748 500h262l-55-90h38l-59-110h34l-50-110h28z" fill="#3f5c47" stroke="#2b2f29" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M879 46l-20 144M879 120l26 70M860 230l-40 70M900 230l40 70M870 330l-60 80M890 330l60 80" stroke="#34503d" stroke-width="2" fill="none"/>
+        </g>
+
+        <!-- eucalyptus, left -->
+        <g class="ill-sway">
+          <path d="M262 530C258 470 270 420 250 360S262 260 240 200M252 380C220 340 200 320 180 300M248 300C280 270 300 250 330 240" stroke="#2b2f29" stroke-width="13" stroke-linecap="round" fill="none"/>
+          <path d="M262 530C258 470 270 420 250 360S262 260 240 200M252 380C220 340 200 320 180 300M248 300C280 270 300 250 330 240" stroke="#ebe2cf" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <g fill="#9fb3a2" stroke="#2b2f29" stroke-width="2.2">
+            <ellipse cx="236" cy="186" rx="62" ry="40"/><ellipse cx="172" cy="282" rx="52" ry="32"/><ellipse cx="334" cy="226" rx="58" ry="34"/><ellipse cx="282" cy="150" rx="44" ry="30"/>
+          </g>
+          <g fill="#869e8d"><ellipse cx="226" cy="196" rx="30" ry="14"/><ellipse cx="330" cy="236" rx="26" ry="12"/><ellipse cx="168" cy="290" rx="22" ry="10"/></g>
+        </g>
+
+        <!-- lawn, walk, sidewalk -->
+        <rect x="0" y="512" width="1200" height="100" fill="url(#ill-lawn)"/>
+        <path d="M0 512H1200" stroke="#2b2f29" stroke-width="2"/>
+        <rect x="0" y="600" width="1200" height="26" fill="#e7dfcb" stroke="#2b2f29" stroke-width="2"/>
+        <path d="M80 600v26M260 600v26M440 600v26M620 600v26M800 600v26M980 600v26M1160 600v26" stroke="#cfc4aa" stroke-width="2"/>
+        <rect x="0" y="626" width="1200" height="34" fill="#d5cdb9"/>
+        <path d="M600 528L586 600h66L638 528z" fill="#e7dfcb" stroke="#2b2f29" stroke-width="2"/>
+
+        <!-- the house -->
+        <g stroke="#2b2f29" stroke-width="3" stroke-linejoin="round">
+          <rect x="676" y="118" width="34" height="80" fill="#a5644c"/>
+          <rect x="671" y="110" width="44" height="12" fill="#8c513d"/>
+          <rect x="462" y="250" width="316" height="262" fill="url(#ill-siding)"/>
+          <path d="M440 258L620 120L800 258Z" fill="#7a4a3a"/>
+          <path d="M462 250L620 140L778 250Z" fill="url(#ill-siding)"/>
+          <path d="M462 386H778" stroke-width="2.5"/>
+          <!-- attic window -->
+          <circle cx="620" cy="200" r="20" fill="url(#ill-win)" class="ill-glow d2"/>
+          <path d="M600 200h40M620 180v40" stroke-width="2"/>
+          <!-- upstairs windows -->
+          <g class="ill-glow"><rect x="492" y="284" width="64" height="74" fill="url(#ill-win)"/><path d="M524 284v74M492 321h64" stroke-width="2"/></g>
+          <g class="ill-late"><rect x="588" y="284" width="64" height="74" fill="url(#ill-win)"/><path d="M620 284v74M588 321h64" stroke-width="2"/></g>
+          <g class="ill-glow d1"><rect x="684" y="284" width="64" height="74" fill="url(#ill-win)"/><path d="M716 284v74M684 321h64" stroke-width="2"/></g>
+          <!-- window boxes -->
+          <rect x="488" y="358" width="72" height="12" fill="#8c513d"/>
+          <rect x="680" y="358" width="72" height="12" fill="#8c513d"/>
+          <!-- downstairs -->
+          <g class="ill-glow d3"><rect x="484" y="410" width="92" height="70" fill="url(#ill-win)"/><path d="M514 410v70M546 410v70" stroke-width="2"/></g>
+          <g class="ill-glow d1"><rect x="676" y="410" width="80" height="70" fill="url(#ill-win)"/><path d="M716 410v70M676 445h80" stroke-width="2"/></g>
+          <!-- porch and door -->
+          <path d="M574 398h92l10 12H564z" fill="#7a4a3a"/>
+          <path d="M578 410v102M662 410v102" stroke-width="4"/>
+          <rect x="598" y="420" width="44" height="92" rx="2" fill="#365c4b"/>
+          <circle cx="634" cy="468" r="3" fill="#e2b25a" stroke="none"/>
+          <rect x="606" y="430" width="28" height="18" fill="url(#ill-win)" stroke-width="1.6"/>
+          <rect x="588" y="512" width="64" height="8" fill="#e7dfcb"/>
+          <rect x="594" y="520" width="52" height="8" fill="#e7dfcb"/>
+        </g>
+        <!-- flowers in the window boxes -->
+        <g fill="#d9782a"><circle cx="498" cy="354" r="5"/><circle cx="516" cy="352" r="5"/><circle cx="550" cy="354" r="5"/><circle cx="694" cy="354" r="5"/><circle cx="726" cy="352" r="5"/><circle cx="744" cy="354" r="5"/></g>
+        <g fill="#5f8a55"><circle cx="507" cy="355" r="4"/><circle cx="533" cy="354" r="5"/><circle cx="710" cy="355" r="4"/></g>
+        <!-- chimney smoke: the gas range at work -->
+        <g class="ill-smoke" fill="#d9d2c2"><circle cx="694" cy="100" r="11"/><circle cx="694" cy="100" r="11"/><circle cx="694" cy="100" r="11"/></g>
+
+        <!-- tangerine tree, front yard -->
+        <g class="ill-sway">
+          <path d="M408 586c2-30-2-60 4-96" stroke="#5b4433" stroke-width="10" stroke-linecap="round" fill="none"/>
+          <circle cx="410" cy="456" r="62" fill="#5f8a55" stroke="#2b2f29" stroke-width="2.5"/>
+          <circle cx="386" cy="438" r="22" fill="#6e9a62"/><circle cx="436" cy="470" r="18" fill="#557d4c"/>
+          <g fill="#e98a2c" stroke="#2b2f29" stroke-width="1.5"><circle cx="372" cy="470" r="7"/><circle cx="402" cy="424" r="7"/><circle cx="440" cy="438" r="7"/><circle cx="420" cy="488" r="7"/><circle cx="452" cy="476" r="6"/><circle cx="384" cy="496" r="6"/><circle cx="428" cy="410" r="6"/></g>
+        </g>
+
+        <!-- steel bike rack with two bikes -->
+        <g fill="none" stroke-linecap="round">
+          <path d="M96 586v-36a16 16 0 0132 0v36M150 586v-36a16 16 0 0132 0v36M204 586v-36a16 16 0 0132 0v36" stroke="#2b2f29" stroke-width="7"/>
+          <path d="M96 586v-36a16 16 0 0132 0v36M150 586v-36a16 16 0 0132 0v36M204 586v-36a16 16 0 0132 0v36" stroke="#a8b0ab" stroke-width="3"/>
+          <g stroke="#2b2f29" stroke-width="3"><circle cx="86" cy="566" r="20"/><circle cx="150" cy="566" r="20"/><path d="M86 566l22-32h30l12 32M108 534l14 32 16-32M100 528h14M134 524l6 10" stroke="#3f7f86" stroke-width="4"/></g>
+          <g stroke="#2b2f29" stroke-width="3"><circle cx="190" cy="570" r="18"/><circle cx="250" cy="570" r="18"/><path d="M190 570l20-28h26l14 28M210 542l14 28 12-28M204 536h12M232 532l4 10" stroke="#b8503a" stroke-width="4"/></g>
+        </g>
+
+        <!-- raised garden beds, coming soon -->
+        <g stroke="#2b2f29" stroke-width="2.5">
+          <rect x="972" y="548" width="112" height="28" fill="#9a6b47"/><rect x="1100" y="552" width="86" height="24" fill="#9a6b47"/>
+          <path d="M972 562h112M1100 564h86" stroke="#7c5236" stroke-width="2"/>
+        </g>
+        <g stroke="#4f7a46" stroke-width="3" stroke-linecap="round" fill="none">
+          <path d="M990 548c0-14 6-20 10-26M990 548c-2-10-8-14-12-16M1022 548c0-16-4-22-8-28M1022 548c2-10 8-14 12-16M1054 548c0-14 6-20 10-26M1054 548c-4-8-8-12-12-14M1120 552c0-12 4-16 8-20M1150 552c0-12-4-18-8-22M1170 552c0-10 4-14 8-18"/>
+        </g>
+        <g fill="#c4553a"><circle cx="1034" cy="534" r="4"/><circle cx="1064" cy="528" r="4"/></g>
+
+        <!-- mailbox -->
+        <g stroke="#2b2f29" stroke-width="2.5"><path d="M686 590v-38" stroke-width="4"/><rect x="668" y="536" width="38" height="22" rx="8" fill="#365c4b"/></g>
+        <text x="687" y="552" text-anchor="middle" font-family="EB Garamond, Georgia, serif" font-size="12" fill="#f6ebd6" letter-spacing="1">RCG</text>
+
+        <!-- marginalia -->
+        <g class="ill-label">
+          <text x="960" y="96">the forty-foot cedar</text><path d="M956 90c-24 2-40 8-56 22" fill="none" stroke="#8b8c7d" stroke-width="1.2"/>
+          <text x="34" y="214">eucalyptus</text><path d="M134 208c24 0 40-6 58-14" fill="none" stroke="#8b8c7d" stroke-width="1.2"/>
+          <text x="282" y="378">tangerine tree</text><path d="M342 384c8 14 16 26 26 36" fill="none" stroke="#8b8c7d" stroke-width="1.2"/>
+          <text x="66" y="508">the bike rack</text><path d="M118 514c4 8 6 14 6 22" fill="none" stroke="#8b8c7d" stroke-width="1.2"/>
+          <text x="1002" y="508">garden beds (soon)</text><path d="M1050 514c-2 8-4 14-2 20" fill="none" stroke="#8b8c7d" stroke-width="1.2"/>
+        </g>
+      </svg>
+    </figure>
+
+    <p class="bk-kicker">A house in Berkeley · One room opening January 1, 2027</p>
+    <h1>RCG</h1>
+    <p class="bk-sub">or, Five Bedrooms, a Tangerine Tree &amp; the People Who Live There</p>
+    <div class="bk-cta">
+      <a class="bk-btn" href="{{ rcg_apply }}"{% unless rcg_apply contains "mailto:" %} target="_blank" rel="noopener"{% endunless %}>Apply for the room</a>
+      <a class="bk-quiet" href="#chapter-1">or begin reading ↓</a>
+    </div>
+  </header>
+
+  <section class="bk-front" aria-label="Particulars and contents">
+    <div>
+      <h2>Particulars</h2>
+      <dl class="bk-particulars">
+        <div><dt>Rent</dt><dd>$940 a month</dd></div>
+        <div><dt>Utilities</dt><dd>$90–130 <small>depending on the season</small></dd></div>
+        <div><dt>Deposit</dt><dd>$940 <small>also holds your room</small></dd></div>
+        <div><dt>Move-in</dt><dd>January 1, 2027</dd></div>
+        <div><dt>The house</dt><dd>2 stories · 5 bd · 2 ba</dd></div>
+      </dl>
+    </div>
+    <nav aria-label="Contents">
+      <h2>Contents</h2>
+      <ol class="bk-contents">
+        <li><a href="#chapter-1"><span class="bk-cn">i</span><span class="bk-ct">The Yard &amp; the House</span><span class="bk-dots"></span></a></li>
+        <li><a href="#chapter-2"><span class="bk-cn">ii</span><span class="bk-ct">Plates</span><span class="bk-dots"></span><span class="bk-cp">sealed</span></a></li>
+        <li><a href="#chapter-3"><span class="bk-cn">iii</span><span class="bk-ct">Room by Room</span><span class="bk-dots"></span><span class="bk-cp">3D</span></a></li>
+        <li><a href="#chapter-4"><span class="bk-cn">iv</span><span class="bk-ct">The People &amp; the Block</span><span class="bk-dots"></span></a></li>
+        <li><a href="#chapter-5"><span class="bk-cn">v</span><span class="bk-ct">How to Join</span><span class="bk-dots"></span></a></li>
+      </ol>
+    </nav>
+  </section>
+
+  <section class="bk-chapter" id="chapter-1" aria-labelledby="ch1-title">
+    <header class="bk-ch"><p class="bk-ch-num">Chapter i</p><h2 id="ch1-title">The Yard &amp; the House</h2><span class="bk-orn" aria-hidden="true">❦</span></header>
+    <div class="bk-prose">
+      <p class="bk-drop">The front patio is framed by a tangerine tree, a eucalyptus, and a forty-foot cedar. Behind them stands the house: two stories, five bedrooms, two baths. Out front there's a steel rack for bikes; inside, a free washer and dryer and a five-burner gas range that gets plenty of use.</p>
+      <p>We're adding raised garden beds soon, so some of what we eat can grow right on the lot. We're also setting up a communal food share, entirely optional, sourcing from Eatwell Farms, Trader Joe's, Costco, and the Berkeley Bowl.</p>
+      <p>Every tenant is eligible for a city parking permit, and there's ample space to park in the neighborhood.</p>
+    </div>
+  </section>
+
+  <section class="bk-chapter" id="chapter-2" aria-labelledby="ch2-title">
+    <header class="bk-ch"><p class="bk-ch-num">Chapter ii</p><h2 id="ch2-title" tabindex="-1">Plates</h2><span class="bk-orn" aria-hidden="true">❦</span></header>
+    <form id="rcg-form" class="bk-seal">
+      <div class="bk-wax" aria-hidden="true">RCG</div>
+      <p>The photographs are kept for people we've talked with. If a housemate has given you the password, break the seal. If not, apply and we'll share it.</p>
+      <label for="rcg-password">Password</label>
+      <div class="bk-seal-fields"><input id="rcg-password" type="password" autocomplete="current-password" required><button id="rcg-unlock" type="submit">Unlock</button></div>
+      <p id="rcg-error" class="bk-error" role="alert" hidden></p>
+    </form>
+    <noscript><p class="bk-aside">JavaScript is needed to unlock the photographs.</p></noscript>
+    <div id="rcg-photos" hidden>
+      <div class="bk-plates-head"><span id="rcg-photo-status"></span><button id="rcg-lock" type="button">Seal again</button></div>
+      <div id="rcg-gallery"></div>
+    </div>
+  </section>
+
+  <section class="bk-chapter" id="chapter-3" aria-labelledby="ch3-title">
+    <header class="bk-ch"><p class="bk-ch-num">Chapter iii</p><h2 id="ch3-title">Room by Room</h2><span class="bk-orn" aria-hidden="true">❦</span></header>
+    <p class="bk-model-intro">A rough 3D reconstruction of the house. Lift off the roof, step inside, or follow the guided tour. Proportions are approximate.</p>
+    <div class="bk-model">
+      <div id="rcg-house"></div>
+      <div id="rcg-model-wait" class="bk-model-wait"><span id="rcg-model-msg">The model is on its way…</span></div>
+    </div>
+  </section>
+
+  <section class="bk-chapter" id="chapter-4" aria-labelledby="ch4-title">
+    <header class="bk-ch"><p class="bk-ch-num">Chapter iv</p><h2 id="ch4-title">The People &amp; the Block</h2><span class="bk-orn" aria-hidden="true">❦</span></header>
+    <div class="bk-prose">
+      <p class="bk-drop">Over the last four years or so, our house has grown from a MechE hub into a home for humanities, neuroscience and meditation heads, culinary people, and young professionals. It's an ideal place for grad students and other young professionals who want to stay connected to local events and the things happening in the Bay.</p>
+      <p>We share responsibility for the house: cleaning, supplies, small projects, and the decisions that affect everyone. We look for people who communicate clearly and take initiative.</p>
+      <ul class="bk-list">
+        <li>Quiet hours from 10:30 PM to 7:30 AM</li>
+        <li>Shared chores and the occasional house meeting</li>
         <li>No pets; assistance animals, including ESAs, are accommodated as required by law</li>
       </ul>
-    </section>
-  </div>
-  <section class="rr-process" aria-labelledby="rr-process-heading">
-    <h3 id="rr-process-heading">How to join</h3>
-    <ol class="rr-steps">
-      <li><strong>Send an intro</strong><span>Tell us a little about yourself, what draws you here, and your move-in timing.</span></li>
-      <li><strong>Housemate screener</strong><span>A 15-minute conversation with a housemate so we can get to know each other.</span></li>
-      <li><strong>Group call or visit</strong><span>Meet the housemates in a group conversation or visit, depending on everyone's schedules.</span></li>
-      <li><strong>Offer &amp; agreement</strong><span>If it's a mutual fit, review and sign the agreement, then pay the deposit.</span></li>
-    </ol>
-  </section>
-  <details class="rr-agreement">
-    <summary>Housemate agreement &amp; deposit terms — preview</summary>
-    <div>
-      <p><strong>Before you commit:</strong> We'll share the full agreement for review. This preview is informational; the signed agreement sets out the final terms.</p>
-      <ul>
-        <li><strong>Rent:</strong> $940 per month, plus shared utilities estimated at $90–130 per month.</li>
-        <li><strong>Deposit:</strong> $940, due after acceptance and signing. It confirms your commitment to move in and doubles as your security deposit.</li>
-        <li><strong>Return:</strong> The deposit is held through the tenancy and returned after move-out at the end of your lease, less any lawful deductions (such as damage beyond ordinary wear and tear), subject to applicable law.</li>
-        <li><strong>Shared expectations:</strong> Respect quiet hours, participate in shared upkeep, and communicate with housemates.</li>
-      </ul>
-      <p>We'll confirm lease duration, payment logistics, and other terms in writing before any money is requested.</p>
+      <p>We're a block north of University Avenue, between Grant Street and McGee Avenue. UC Berkeley is several minutes away, Ohlone Park is a block over, and BART, the bus lines, Trader Joe's, and the Berkeley Farmers' Market are all a short walk.</p>
     </div>
-  </details>
-</section>
-<!-- /RCG recruitment landing -->
+  </section>
+
+  <section class="bk-chapter" id="chapter-5" aria-labelledby="ch5-title">
+    <header class="bk-ch"><p class="bk-ch-num">Chapter v</p><h2 id="ch5-title">How to Join</h2><span class="bk-orn" aria-hidden="true">❦</span></header>
+    <p class="bk-aside">Five short steps, so that we and you can both be sure.</p>
+    <ol class="bk-path">
+      <li>
+        <span class="bk-medal" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h12l5 5v19H8z"/><path d="M20 4v5h5M12 15h9M12 19h9M12 23h5"/></svg></span>
+        <span class="bk-step-n">i</span><strong>Apply</strong><span class="bk-step-t">Fill out a short form: who you are, what draws you here, and when you'd move in.</span>
+      </li>
+      <li>
+        <span class="bk-medal" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h10v7a4 4 0 01-4 4H7a4 4 0 01-4-4z"/><path d="M13 16h1.5a2 2 0 010 4H13"/><path d="M17 14h10v7a4 4 0 01-4 4h-2a4 4 0 01-4-4z"/><path d="M27 16h1.5a2 2 0 010 4H27"/><path d="M8 6c-1 2 1 3 0 5M22 6c-1 2 1 3 0 5"/></svg></span>
+        <span class="bk-step-n">ii</span><strong>One-on-one</strong><span class="bk-step-t">A relaxed conversation with one housemate, over coffee or a call.</span>
+      </li>
+      <li>
+        <span class="bk-medal" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15L16 5l12 10"/><path d="M7 13v14h18V13"/><path d="M13 27v-8h6v8"/><path d="M22 7v4"/></svg></span>
+        <span class="bk-step-n">iii</span><strong>House tour</strong><span class="bk-step-t">Come by in person. See the room, the kitchen, the yard, and the block.</span>
+      </li>
+      <li>
+        <span class="bk-medal" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="9" r="3.5"/><circle cx="7" cy="12" r="3"/><circle cx="25" cy="12" r="3"/><path d="M10 26v-3a6 6 0 0112 0v3M2.5 25v-2a4.5 4.5 0 016.5-4M29.5 25v-2a4.5 4.5 0 00-6.5-4"/></svg></span>
+        <span class="bk-step-n">iv</span><strong>Group interview</strong><span class="bk-step-t">Meet the whole house together. Ask us anything; we'll do the same.</span>
+      </li>
+      <li>
+        <span class="bk-medal" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="16" r="5.5"/><circle cx="10" cy="16" r="1.6"/><path d="M15.5 16H29M24 16v4M28 16v3"/></svg></span>
+        <span class="bk-step-n">v</span><strong>Deposit &amp; offer</strong><span class="bk-step-t">If it's a mutual fit, we'll make an offer. Sign the agreement; a $940 deposit holds your room.</span>
+      </li>
+    </ol>
+    <p class="bk-path-end">…and then, welcome home.</p>
+
+    <details class="bk-terms">
+      <summary>The fine print: agreement &amp; deposit</summary>
+      <div>
+        <p>We'll share the full agreement for review before you commit. This preview is informational; the signed agreement sets out the final terms.</p>
+        <ul>
+          <li><strong>Rent:</strong> $940 per month, plus shared utilities estimated at $90–130 per month.</li>
+          <li><strong>Deposit:</strong> $940, due after acceptance and signing. It confirms your commitment to move in and doubles as your security deposit.</li>
+          <li><strong>Return:</strong> The deposit is held through the tenancy and returned after move-out at the end of your lease, less any lawful deductions (such as damage beyond ordinary wear and tear), subject to applicable law.</li>
+          <li><strong>Shared expectations:</strong> Respect quiet hours, take part in shared upkeep, and communicate with housemates.</li>
+        </ul>
+        <p>We'll confirm lease duration, payment logistics, and other terms in writing before any money is requested.</p>
+      </div>
+    </details>
+
+    <div class="bk-fin">
+      <span class="bk-orn" aria-hidden="true">❦</span>
+      <p>If this sounds like a good fit for you or a friend, we'd love to hear from you.</p>
+      <a class="bk-btn" href="{{ rcg_apply }}"{% unless rcg_apply contains "mailto:" %} target="_blank" rel="noopener"{% endunless %}>Apply for the room</a>
+    </div>
+  </section>
+</article>
