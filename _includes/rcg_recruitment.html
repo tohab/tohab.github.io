@@ -60,17 +60,18 @@
 .bk-facts small{display:block;font-size:var(--fs-small);color:var(--bk-faint);line-height:1.3}
 
 /* Listing */
-.bk-listing{background:var(--bk-card);border:1px solid var(--bk-rule);border-radius:8px;padding:clamp(1.2rem,4vw,2rem)}
-.bk-lead{font-size:var(--fs-lead);line-height:1.35;text-align:center;margin-bottom:.4rem!important}
+#house{max-width:54rem}
+.bk-listing{background:var(--bk-card);border:1px solid var(--bk-rule);border-radius:8px;padding:clamp(1.4rem,4vw,2.6rem) clamp(1.2rem,4.5vw,3rem);font-size:var(--fs-small)}
+.bk-lead{font-size:1.25rem;line-height:1.35;text-align:center;margin-bottom:.5rem!important}
 .bk-lead+p{text-align:center;color:var(--bk-soft)}
 .bk-listing strong{font-weight:600}
 .bk input,.bk button,.bk select{font-family:var(--bk-serif)}
-.bk-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem 2.2rem;margin-top:1rem}
-.bk-group h3{font-size:var(--fs-label)!important;letter-spacing:.16em;text-transform:uppercase;color:var(--bk-accent)!important;margin:.8rem 0 .4rem!important;padding-bottom:.3rem;border-bottom:1px solid var(--bk-rule)}
+.bk-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem 3rem;margin-top:1.6rem}
+.bk-group h3{font-size:var(--fs-label)!important;letter-spacing:.16em;text-transform:uppercase;color:var(--bk-accent)!important;margin:0 0 .7rem!important;padding-bottom:.45rem;border-bottom:1px solid var(--bk-rule)}
 .bk-group ul{list-style:none;padding:0;margin:0 0 .6rem}
-.bk-group li{position:relative;padding-left:1.2rem;margin:0 0 .3rem;line-height:1.45}
+.bk-group li{position:relative;padding-left:1.2rem;margin:0 0 .55rem;line-height:1.55}
 .bk-group li:before{content:"";position:absolute;left:.2rem;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--bk-tangerine)}
-.bk-copy-row{margin:1.1rem 0 0;font-size:var(--fs-small);color:var(--bk-soft);display:flex;align-items:center;justify-content:center;gap:.9rem;flex-wrap:wrap}
+.bk-copy-row{margin:1.5rem 0 0;font-size:var(--fs-small);color:var(--bk-soft);display:flex;align-items:center;justify-content:center;gap:.9rem;flex-wrap:wrap}
 
 /* Photos (password) */
 .bk-seal{max-width:32rem;margin:0 auto;padding:1.8rem 1.6rem;text-align:center;background:var(--bk-card);border:1px solid var(--bk-rule);border-radius:8px}
@@ -109,11 +110,16 @@
 .bk-path li{position:relative;text-align:center;margin:0;padding:0 .2rem;counter-increment:step}
 .bk-path li:before{content:counter(step);display:grid;place-items:center;width:52px;height:52px;margin:0 auto .7rem;border-radius:50%;background:var(--bk-card);border:1.5px solid var(--bk-ink);font-size:var(--fs-lead)}
 .bk-path li:not(:last-child):after{content:"";position:absolute;top:26px;left:calc(50% + 34px);right:calc(-50% - .7rem + 34px);border-top:2px dashed #cdb796}
-.bk-path li:last-child:before{background:var(--bk-accent);border-color:var(--bk-accent);color:#fffaf2}
+.bk-path li:first-child:before{background:var(--bk-accent);border-color:var(--bk-accent);color:#fffaf2}
 .bk-path strong{display:block;font-weight:500;font-size:var(--fs-body);line-height:1.2;margin:0 0 .3rem}
 .bk-path span{display:block;font-size:var(--fs-small);line-height:1.45;color:var(--bk-soft)}
 
 /* Agreement */
+.bk-note{max-width:40rem;margin:0 auto 1.4rem;padding:1rem 1.3rem;background:var(--bk-card);border:1px solid var(--bk-rule);border-left:3px solid var(--bk-accent);border-radius:6px}
+.bk-note p{margin:0 0 .4rem}
+.bk-note ul{margin:0;padding-left:1.2rem}
+.bk-note li{margin:.2rem 0}
+.bk-note li::marker{color:var(--bk-tangerine)}
 .bk-terms{max-width:40rem;margin:0 auto}
 .bk-terms>summary{list-style:none;cursor:pointer;text-align:center;padding:.75rem 1rem;border:1px solid var(--bk-rule);border-radius:6px;color:var(--bk-accent);background:var(--bk-card);max-width:22rem;margin:0 auto}
 .bk-terms>summary::-webkit-details-marker{display:none}
@@ -365,23 +371,23 @@ html{scroll-behavior:smooth}
   </header>
 
   <nav class="bk-nav" aria-label="On this page">
-    <a href="#house">the house</a>
-    <a href="#photos">photos</a>
-    <a href="#join">how to join</a>
-    <a href="#agreement">agreement</a>
-    <a href="#model">3D tour</a>
+    <a href="#house">The House</a>
+    <a href="#photos">Photos</a>
+    <a href="#join">How to Join</a>
+    <a href="#agreement">Agreement</a>
+    <a href="#model">3D Tour</a>
   </nav>
 
   <dl class="bk-facts">
     <div><dt>Rent</dt><dd>$940<small>per month</small></dd></div>
     <div><dt>Utilities</dt><dd>$90–130<small>depending on the season</small></dd></div>
-    <div><dt>Deposit</dt><dd>$940<small>also holds your room</small></dd></div>
+    <div><dt>Deposit</dt><dd>$940<small>holding + security; returned at move-out</small></dd></div>
     <div><dt>Move-in</dt><dd>Jan 1, 2027</dd></div>
     <div><dt>Lease</dt><dd>Ongoing<small>renews yearly on Aug 1</small></dd></div>
   </dl>
 
   <section class="bk-section bk-reveal" id="house" aria-labelledby="house-title">
-    <h2 id="house-title">The house</h2>
+    <h2 id="house-title">The House</h2>
     <div id="rcg-listing" class="bk-listing">
       <p class="bk-lead"><strong>Room for rent in Berkeley: $940/month, available January 1, 2027</strong></p>
       <p>A private room in a 2-story, 5 bed / 2 bath house, one block north of University Ave between Grant St. and McGee Ave.</p>
@@ -391,7 +397,7 @@ html{scroll-behavior:smooth}
           <ul>
             <li><strong>Rent:</strong> $940/month</li>
             <li><strong>Utilities:</strong> about $90–130/month, depending on the season</li>
-            <li><strong>Deposit:</strong> $940 (also holds your room)</li>
+            <li><strong>Deposit:</strong> $940, a holding and security deposit. Binding once paid (not refunded if you change your mind); returned when you move out</li>
             <li><strong>Move-in:</strong> January 1, 2027</li>
             <li><strong>Lease:</strong> ongoing, renews yearly on August 1</li>
             <li><strong>Pets:</strong> no pets, unless an emotional support animal</li>
@@ -490,7 +496,7 @@ html{scroll-behavior:smooth}
   </section>
 
   <section class="bk-section bk-reveal" id="join" aria-labelledby="join-title">
-    <h2 id="join-title">How to join</h2>
+    <h2 id="join-title">How to Join</h2>
     <ol class="bk-path">
       <li>
         <strong>Apply</strong><span>Fill out the <a href="{{ rcg_apply }}"{{ rcg_target }}>application form</a>.</span>
@@ -505,13 +511,20 @@ html{scroll-behavior:smooth}
         <strong>Group interview</strong><span>Meet the whole house.</span>
       </li>
       <li>
-        <strong>Deposit &amp; offer</strong><span>If it's a mutual fit: sign the <a href="#agreement">agreement</a> and pay the $940 deposit.</span>
+        <strong>Deposit &amp; offer</strong><span>If it's a mutual fit: sign the <a href="#agreement">Agreement</a> and pay the $940 deposit, which is binding.</span>
       </li>
     </ol>
   </section>
 
   <section class="bk-section bk-reveal" id="agreement" aria-labelledby="agreement-title">
-    <h2 id="agreement-title">Housemate agreement</h2>
+    <h2 id="agreement-title">Housemate Agreement</h2>
+    <div class="bk-note">
+        <p><strong>About the $940 deposit.</strong> It is both a <strong>holding deposit</strong> and your <strong>security deposit</strong>.</p>
+        <ul>
+          <li><strong>Binding once paid.</strong> It holds your room for you, so if you change your mind, it is not refunded.</li>
+          <li><strong>Returned only when you move out</strong>, minus any deductions in section 3 below.</li>
+        </ul>
+      </div>
     <details class="bk-terms">
       <summary>Read the full agreement</summary>
       <article class="bk-doc" aria-label="Roommate agreement">
@@ -537,6 +550,8 @@ html{scroll-behavior:smooth}
 
         <h4><span>3.</span>Security Deposit</h4>
         <p>Each roommate has contributed $940 toward the security deposit.</p>
+        <p>For a new roommate, the $940 deposit is both a holding deposit and the security deposit. It is binding once paid: it holds the room, and it is not refunded if the new roommate changes their mind before moving in.</p>
+        <p>The deposit is returned only upon move-out, subject to the deductions below.</p>
         <p>When we move out, the landlord's deposit return (minus any deductions) will be split evenly unless damage is clearly attributable to a specific person.</p>
         <p>If damage is clearly caused by one roommate, that roommate is responsible for the cost.</p>
         <p>If a roommate moves out and leaves an unreasonable amount of trash or debris in the room or the house, a $200 fine may be deducted from their deposit.</p>
@@ -564,7 +579,7 @@ html{scroll-behavior:smooth}
   </section>
 
   <section class="bk-section" id="model" aria-labelledby="model-title" style="margin-bottom:0">
-    <h2 id="model-title">3D tour</h2>
+    <h2 id="model-title">3D Tour</h2>
     <p class="bk-model-intro">A rough 3D reconstruction of the house. Proportions are approximate.</p>
     <div class="bk-model">
       <div id="rcg-house"></div>
