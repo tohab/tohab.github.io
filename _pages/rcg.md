@@ -4,8 +4,8 @@ permalink: /rcg/
 title: RCG
 nav: false
 sitemap: false
-# Paste the application form link here; until then "Apply" opens an email.
-apply_url: ""
+# Apply button target; /rcg-apply/ redirects to the Google Form (_pages/rcg-apply.html).
+apply_url: "/rcg-apply/"
 encrypted: true
 full_width: true
 ---
@@ -34,7 +34,6 @@ const $=id=>document.getElementById(id),bytes=s=>Uint8Array.from(atob(s),c=>c.ch
 let session=0,key=null,photos=[],fullPhotos=new Map(),fullPromise=null,aborter=null,house=null,privatePlan=null,privateFallback={},publicPlan=null,publicFallback={},publicTried=null,photoMeta=null,active=0,opener=null,loading=false,modelWanted=false,modelGen=0;
 const dialog=$('rcg-dialog'),form=$('rcg-form'),password=$('rcg-password'),button=$('rcg-unlock');
 const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const roman=n=>{let s='';for(const [v,r] of [[10,'x'],[9,'ix'],[5,'v'],[4,'iv'],[1,'i']])while(n>=v){s+=r;n-=v;}return s;};
 const pngUrls=obj=>Object.fromEntries(Object.entries(obj||{}).map(([level,b64])=>[level,URL.createObjectURL(new Blob([bytes(b64)],{type:'image/png'}))]));
 const revokeAll=obj=>Object.values(obj).forEach(u=>URL.revokeObjectURL(u));
 async function inflate(binary){return JSON.parse(await new Response(new Blob([binary]).stream().pipeThrough(new DecompressionStream('gzip'))).text());}
@@ -47,13 +46,16 @@ async function mountModel(){
  const gen=++modelGen;await loadPublicModel();if(gen!==modelGen)return;
  house?.dispose();house=null;$('rcg-house').replaceChildren();
  const plan=publicPlan||privatePlan;
- if(!plan){$('rcg-model-msg').textContent='The 3D model opens along with the photographs. Unlock the plates above to walk through.';$('rcg-model-wait').hidden=false;return;}
+ if(!plan){$('rcg-model-msg').textContent='The 3D model opens along with the photographs. Unlock the photos above to walk through it.';$('rcg-model-wait').hidden=false;return;}
  $('rcg-model-msg').textContent='Building the house…';
  try{const module=await import(VIEWER);if(gen!==modelGen)return;const started=performance.now();house=module.mountHouse($('rcg-house'),plan,photos,{onPhoto:showPhoto,fallbackUrls:publicPlan?publicFallback:privateFallback});$('rcg-house').dataset.startupMs=Math.round(performance.now()-started);$('rcg-model-wait').hidden=true;}
  catch(e){$('rcg-model-msg').textContent='The 3D model could not load in this browser.';$('rcg-model-wait').hidden=false;console.error('RCG viewer:',e.message);}
 }
-new IntersectionObserver((entries,observer)=>{if(entries.some(e=>e.isIntersecting)){observer.disconnect();modelWanted=true;mountModel();}},{rootMargin:'600px 0px'}).observe($('chapter-3'));
+new IntersectionObserver((entries,observer)=>{if(entries.some(e=>e.isIntersecting)){observer.disconnect();modelWanted=true;mountModel();}},{rootMargin:'600px 0px'}).observe($('model'));
 
+// Fade sections in as they arrive, and highlight the current section in the contents bar.
+{const reveal=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-in');reveal.unobserve(e.target);}}),{rootMargin:'0px 0px -8% 0px'});document.querySelectorAll('.bk-reveal').forEach(el=>reveal.observe(el));
+ const links=[...document.querySelectorAll('.bk-nav a')],spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('is-here',a.hash==='#'+e.target.id));}),{rootMargin:'-45% 0px -50% 0px'});links.forEach(a=>{const s=document.querySelector(a.hash);if(s)spy.observe(s);});}
 function lock(remount=true){
  session++;aborter?.abort();key=null;privatePlan=null;photoMeta=null;fullPromise=null;loading=false;if(dialog.open)dialog.close();
  $('rcg-large').removeAttribute('src');$('rcg-large').alt='';$('rcg-gallery').replaceChildren();
@@ -74,7 +76,7 @@ async function showPhoto(id){
 function figure(p,{plate=0,lazy=true}={}){
  const fig=document.createElement('figure'),b=document.createElement('button'),im=document.createElement('img'),cap=document.createElement('figcaption');
  b.type='button';b.setAttribute('aria-label',`View photo ${p.id}: ${p.caption}`);im.src=p.url;im.alt=p.caption;if(p.width)im.width=p.width;if(p.height)im.height=p.height;if(lazy)im.loading='lazy';im.dataset.photo=p.id;
- if(plate){const n=document.createElement('b');n.textContent=`Plate ${roman(plate)}`;cap.append(n,p.caption);}else cap.textContent=p.caption;
+ cap.textContent=p.caption;
  b.append(im);b.addEventListener('click',()=>{opener=b;showPhoto(p.id);});fig.append(b,cap);return fig;
 }
 function buildGallery(){
@@ -85,7 +87,7 @@ function buildGallery(){
  if(lead.length>1){const grid=document.createElement('div');grid.className='bk-plate-grid';lead.slice(1).forEach((p,i)=>grid.append(figure(p,{plate:i+2})));gallery.append(grid);}
  const groups=new Map();
  photos.slice(lead.length).forEach(p=>{const name=p.section||'More of the house';if(!groups.has(name)){const section=document.createElement('section');section.className='bk-album-section';const title=document.createElement('h3');title.textContent=name;const album=document.createElement('div');album.className='bk-album';section.append(title,album);gallery.append(section);groups.set(name,album);}groups.get(name).append(figure(p));});
- $('rcg-photo-status').textContent=`${photos.length} plates · tap any to enlarge`;
+ $('rcg-photo-status').textContent=`${photos.length} photos · tap any to enlarge`;
  // Sharpen the lead plates with the full-resolution photos in the background.
  const generation=session;loadFull().then(()=>{if(session!==generation)return;for(const p of lead){const img=gallery.querySelector(`img[data-photo="${CSS.escape(p.id)}"]`),full=fullPhotos.get(p.id);if(img&&full)img.src=full;}}).catch(()=>{});
 }
@@ -95,12 +97,12 @@ form.addEventListener('submit',async e=>{
   if(!crypto.subtle||!window.DecompressionStream)throw new Error('Use a current browser over HTTPS to unlock this page.');
   const cfg=JSON.parse($('rcg-encrypted-data').textContent),material=await crypto.subtle.importKey('raw',new TextEncoder().encode(password.value),'PBKDF2',false,['deriveKey']);password.value='';
   key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:bytes(cfg.salt),iterations:cfg.iterations,hash:'SHA-256'},material,{name:'AES-GCM',length:256},false,['decrypt']);
-  let data;try{const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv:bytes(cfg.iv)},key,bytes(cfg.ciphertext));data=await inflate(plain);}catch(e){throw new Error('That password didn’t break the seal. Please try again.');}
+  let data;try{const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv:bytes(cfg.iv)},key,bytes(cfg.ciphertext));data=await inflate(plain);}catch(e){throw new Error('Incorrect password. Please try again.');}
   if(session!==generation)return;
   privatePlan=data.house;photoMeta=data.gallery;photos=data.photos.map(p=>({...p,url:URL.createObjectURL(new Blob([bytes(p.image)],{type:'image/webp'})),image:undefined}));
   privateFallback=pngUrls(data.fallbackPlans||(data.fallback?{0:data.fallback}:{}));data=null;
   form.hidden=true;$('rcg-photos').hidden=false;buildGallery();
-  $('chapter-2').scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'start'});$('ch2-title').focus({preventScroll:true});
+  $('photos').scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'start'});$('photos-title').focus({preventScroll:true});
   if(modelWanted)mountModel(); // remount so room photos appear in the 3D panel
  }catch(e){key=null;$('rcg-error').textContent=e.message;$('rcg-error').hidden=false;password.focus();}
  finally{loading=false;password.value='';button.disabled=false;button.textContent='Unlock';}
