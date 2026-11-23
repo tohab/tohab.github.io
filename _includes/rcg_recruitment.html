@@ -1,8 +1,9 @@
 <!--
   RCG housemate page.
-  Public: the illustration, the house description, how to join, the agreement, and the 3D model
-  (/assets/rcg/house-plan.json, once exported). Private: photos stay in the encrypted payload in
-  _pages/rcg.md and unlock with the password. The apply link comes from `apply_url` in _pages/rcg.md.
+  Everything here is public; nothing on this page is encrypted. The room photos live in
+  /assets/rcg/room/, and the "More photos" link comes from `photos_url` in _pages/rcg.md
+  (hidden until it is set). The apply link comes from `apply_url` in _pages/rcg.md.
+  The 3D tour is commented out at the bottom of this file; see the note there to bring it back.
 -->
 {% capture rcg_mailto %}mailto:rohan.prasad@berkeley.edu?subject=RCG%20housemate%20intro%20%E2%80%94%20Jan%202027{% endcapture %}
 {% assign rcg_apply = page.apply_url | default: rcg_mailto | strip %}
@@ -33,6 +34,7 @@
 .bk-btn:hover,.bk-go-big:hover,.bk-btn:focus-visible,.bk-go-big:focus-visible{background:var(--bk-accent-2);transform:translateY(-1px)}
 .bk-btn:focus-visible,.bk-go-big:focus-visible{outline:3px solid #f0b48a;outline-offset:2px}
 .bk-btn-quiet{background:var(--bk-card);color:var(--bk-accent)!important;border:1px solid var(--bk-rule);box-shadow:none}
+.bk-share{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:1rem}.bk-share .bk-btn{padding:.45rem 1rem;font-size:var(--fs-small)}.bk-share-status{min-height:1.3em;margin:.5rem 0 0!important;font-size:var(--fs-small);color:var(--bk-soft)}
 .bk-btn-quiet:hover{background:#f6e7d3;color:var(--bk-accent-2)!important}
 
 /* Cover */
@@ -73,35 +75,11 @@
 .bk-group li:before{content:"";position:absolute;left:.2rem;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--bk-tangerine)}
 .bk-copy-row{margin:1.5rem 0 0;font-size:var(--fs-small);color:var(--bk-soft);display:flex;align-items:center;justify-content:center;gap:.9rem;flex-wrap:wrap}
 
-/* Photos (password) */
-.bk-seal{max-width:32rem;margin:0 auto;padding:1.8rem 1.6rem;text-align:center;background:var(--bk-card);border:1px solid var(--bk-rule);border-radius:8px}
-.bk-seal p{color:var(--bk-soft);margin-bottom:.9rem}
-.bk-seal-fields{display:flex;gap:8px;max-width:24rem;margin:0 auto}
-.bk-seal input{flex:1;min-width:0;padding:.6rem .8rem;border:1px solid #d9c6a8;border-radius:6px;background:#fffdf8;color:var(--bk-ink);font:inherit;font-size:var(--fs-body)}
-.bk-seal button{padding:.6rem 1.2rem;border:0;border-radius:6px;background:var(--bk-accent);color:#fffaf2;font:inherit;font-size:var(--fs-body);cursor:pointer}
-.bk-seal button:hover{background:var(--bk-accent-2)}
-.bk-seal button:disabled{opacity:.6;cursor:wait}
-.bk-seal input:focus-visible,.bk-seal button:focus-visible{outline:3px solid #f0b48a;outline-offset:2px}
-.bk-error{color:#a3382a!important;margin:.8rem 0 0!important}
-#photos{max-width:1000px}
-#photos>form,#photos>noscript{display:block}
-.bk-plates-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin:0 auto 1rem;font-size:var(--fs-small);color:var(--bk-soft)}
-.bk-plates-head button{background:var(--bk-card);border:1px solid var(--bk-rule);border-radius:6px;padding:.3rem .9rem;font:inherit;font-size:var(--fs-small);color:var(--bk-soft);cursor:pointer}
-.bk-plates-head button:hover{color:var(--bk-ink);background:#f6e7d3}
-.bk-plate{margin:0 auto 2rem}
-.bk-plate button,.bk-plate-grid button,.bk-album button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:6px;overflow:hidden}
-.bk-plate img{display:block;width:100%;max-height:82vh;object-fit:cover;box-shadow:0 22px 50px -28px #5a3218a0;animation:bk-develop 1.2s ease-out both}
-.bk-plate figcaption,.bk-plate-grid figcaption,.bk-album figcaption{text-align:center;font-style:italic;color:var(--bk-soft);font-size:var(--fs-small);margin-top:.6rem}
+/* Room photos */
+.bk-plate-grid button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:6px;overflow:hidden}
 .bk-plate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,3vw,28px);margin:0 auto 2rem}
 .bk-plate-grid figure{margin:0}
 .bk-plate-grid img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
-.bk-album-section{margin:2rem auto 0}
-.bk-album-section h3{text-align:center;font-size:var(--fs-lead);margin:0 0 1rem}
-.bk-album{columns:3 220px;column-gap:16px}
-.bk-album figure{break-inside:avoid;margin:0 0 16px}
-.bk-album img{display:block;width:100%;height:auto;transition:transform .4s}
-.bk-album button:hover img{transform:scale(1.03)}
-.bk-album figcaption{font-size:var(--fs-small);margin-top:.3rem}
 @keyframes bk-develop{from{opacity:0;filter:sepia(.5) brightness(1.12)}to{opacity:1;filter:none}}
 
 /* How to join */
@@ -120,7 +98,7 @@
 .bk-note ul{margin:0 0 1em;padding-left:1.2rem}
 .bk-note li{margin:.35rem 0}
 .bk-room-dim{text-align:center;font-style:italic;color:var(--bk-soft);margin:-0.5rem 0 1rem!important}
-.bk-room-label{text-align:center;font-style:italic;color:var(--bk-soft);margin:0 auto 1.2rem}
+.bk-room{max-width:60rem}.bk-room img{height:auto}.bk-room .bk-plate-grid{margin-bottom:1rem}.bk-room .bk-plate-grid a{display:block;cursor:zoom-in;border-radius:6px;overflow:hidden;box-shadow:0 18px 40px -26px #5a3218a0}.bk-room .bk-plate-grid figcaption{text-align:center;font-style:italic;color:var(--bk-soft);font-size:var(--fs-small);margin-top:.5rem}.bk-room-more{text-align:center;margin-top:1.2rem}.bk-room-note{text-align:center;font-size:var(--fs-small);color:var(--bk-soft)}
 .bk-terms{max-width:40rem;margin:0 auto}
 .bk-terms>summary{list-style:none;cursor:pointer;text-align:center;padding:.75rem 1rem;border:1px solid var(--bk-rule);border-radius:6px;color:var(--bk-accent);background:var(--bk-card);max-width:22rem;margin:0 auto}
 .bk-terms>summary::-webkit-details-marker{display:none}
@@ -189,9 +167,7 @@ html{scroll-behavior:smooth}
   .bk-nav{justify-content:flex-start;max-width:100%}
   .bk-groups{grid-template-columns:1fr}
   .ill-label{display:none}
-  .bk-seal-fields{flex-direction:column}
   .bk-plate-grid{grid-template-columns:1fr}
-  .bk-album{columns:2 140px;column-gap:10px}
 }
 </style>
 
@@ -368,16 +344,47 @@ html{scroll-behavior:smooth}
     <div class="bk-col">
       <div><p class="bk-kicker">One room available · January 1, 2027</p><h1>Red Cedar Grove</h1><p class="bk-sub">A room in our Berkeley house.</p></div>
       <a class="bk-go-big" href="{{ rcg_apply }}"{{ rcg_target }}>Apply for the room</a>
+      <div class="bk-share">
+        <button type="button" id="rcg-share" class="bk-btn bk-btn-quiet">Share this listing</button>
+        <button type="button" id="rcg-copy-link" class="bk-btn bk-btn-quiet">Copy link</button>
+      </div>
+      <p id="rcg-share-status" class="bk-share-status" role="status"></p>
     </div>
   </header>
 
+  <section class="bk-section bk-room" id="room" aria-labelledby="room-title">
+    <h2 id="room-title">The Room</h2>
+    <p class="bk-room-dim">Upstairs · about 14 × 13 ft</p>
+    <div class="bk-plate-grid">
+      <figure><a href="/assets/rcg/room/room-alcove.webp"><img src="/assets/rcg/room/room-alcove.webp" width="1800" height="1350" alt="The upstairs room, looking toward the alcove under the sloped ceiling"></a><figcaption>Looking toward the alcove</figcaption></figure>
+      <figure><a href="/assets/rcg/room/room-opposite.webp"><img src="/assets/rcg/room/room-opposite.webp" width="1800" height="1350" alt="The upstairs room from the opposite side"></a><figcaption>From the opposite side</figcaption></figure>
+    </div>
+    <p class="bk-room-note">Shown with the current furniture; the room will be unfurnished when you move in.</p>
+    {% if page.photos_url and page.photos_url != "" %}<p class="bk-room-more"><a class="bk-btn bk-btn-quiet" href="{{ page.photos_url }}" target="_blank" rel="noopener">More photos of the house</a></p>{% endif %}
+  </section>
+
+  <script>
+  // Share: the phone's share sheet where there is one, otherwise copy the link.
+  (function(){
+    var url=location.origin+location.pathname,status=document.getElementById('rcg-share-status'),timer;
+    var data={title:'Red Cedar Grove: room for rent in Berkeley',text:'Room for rent in Berkeley: $940/month, available January 1, 2027.',url:url};
+    function say(msg){status.textContent=msg;clearTimeout(timer);timer=setTimeout(function(){status.textContent='';},4000);}
+    function copy(){
+      if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(url).then(function(){say('Link copied');},function(){say(url);});
+      window.prompt('Copy this link:',url);return Promise.resolve();
+    }
+    document.getElementById('rcg-copy-link').addEventListener('click',copy);
+    document.getElementById('rcg-share').addEventListener('click',function(){
+      if(navigator.share)navigator.share(data).catch(function(e){if(e&&e.name!=='AbortError')copy();});else copy();
+    });
+  })();
+  </script>
+
   <nav class="bk-nav" aria-label="On this page">
-    <a href="#room">The room</a>
+    <a href="#room">The Room</a>
     <a href="#house">The House</a>
-    <a href="#photos">Photos</a>
     <a href="#join">How to Join</a>
     <a href="#agreement">Agreement</a>
-    <a href="#model">3D Tour</a>
   </nav>
 
   <dl class="bk-facts">
@@ -387,12 +394,6 @@ html{scroll-behavior:smooth}
     <div><dt>Move-in</dt><dd>Jan 1, 2027</dd></div>
     <div><dt>Lease</dt><dd>Ongoing<small>renews yearly on Aug 1</small></dd></div>
   </dl>
-
-  <section class="bk-section bk-reveal" id="room" aria-labelledby="room-title">
-    <h2 id="room-title">The room</h2>
-    <p class="bk-room-dim">About 14 × 13 ft</p>
-    <p style="text-align:center">Photos of the room are in the <a href="#photos">Photos</a> section.</p>
-  </section>
 
   <section class="bk-section bk-reveal" id="house" aria-labelledby="house-title">
     <h2 id="house-title">The House</h2>
@@ -491,21 +492,6 @@ html{scroll-behavior:smooth}
     });})();
   </script>
 
-  <section class="bk-section bk-reveal" id="photos" aria-labelledby="photos-title">
-    <h2 id="photos-title" tabindex="-1">Photos</h2>
-    <form id="rcg-form" class="bk-seal">
-      <p>The photos are password-protected. Apply, or ask a housemate for access.</p>
-      <div class="bk-seal-fields"><input id="rcg-password" type="password" autocomplete="current-password" aria-label="Password" placeholder="Password" required><button id="rcg-unlock" type="submit">Unlock</button></div>
-      <p id="rcg-error" class="bk-error" role="alert" hidden></p>
-    </form>
-    <noscript><p style="text-align:center">JavaScript is needed to unlock the photos.</p></noscript>
-    <div id="rcg-photos" hidden>
-      <div class="bk-plates-head"><span id="rcg-photo-status"></span><button id="rcg-lock" type="button">Lock</button></div>
-      <p class="bk-room-label">The room · About 14 × 13 ft</p>
-      <div id="rcg-gallery"></div>
-    </div>
-  </section>
-
   <section class="bk-section bk-reveal" id="join" aria-labelledby="join-title">
     <h2 id="join-title">How to Join</h2>
     <ol class="bk-path">
@@ -589,6 +575,11 @@ html{scroll-behavior:smooth}
     <a class="bk-go-big" href="{{ rcg_apply }}"{{ rcg_target }}>Apply for the room</a>
   </section>
 
+  {% comment %}
+  3D tour, switched off. To bring it back: export the house plan to /assets/rcg/house-plan.json
+  (the plan was only in the encrypted payload; it is in _pages/rcg.md as of commit cb5e3ae, which
+  scripts/rcg-export-public-model.mjs can read), uncomment this section and the model script in
+  _pages/rcg.md, and re-add <a href="#model">3D Tour</a> to the contents bar.
   <section class="bk-section" id="model" aria-labelledby="model-title" style="margin-bottom:0">
     <h2 id="model-title">3D Tour</h2>
     <p class="bk-model-intro">A rough 3D reconstruction of the house. Proportions are approximate.</p>
@@ -597,4 +588,5 @@ html{scroll-behavior:smooth}
       <div id="rcg-model-wait" class="bk-model-wait"><span id="rcg-model-msg">Loading the model…</span></div>
     </div>
   </section>
+  {% endcomment %}
 </article>

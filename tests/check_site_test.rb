@@ -53,15 +53,12 @@ Dir.mktmpdir('site-check') do |root|
   output = File.join(root, 'output')
   FileUtils.mkdir_p(File.join(source, '_pages'))
   File.write(File.join(source, '_pages/blog.md'), "---\npagination:\n  per_page: 1\n---\n")
-  File.write(File.join(source, '_pages/rcg.md'), "---\nsalt: salt\niv: iv\nciphertext: opaque\nkdf:\n  iterations: 600000\n---\n")
   %w[index.html blog/index.html blog/page/2/index.html music/index.html work/index.html rcg/index.html feed.xml sitemap.xml].each do |path|
     FileUtils.mkdir_p(File.dirname(File.join(output, path)))
     File.write(File.join(output, path), '<html></html>')
   end
   File.write(File.join(output, 'sitemap.xml'), '<urlset></urlset>')
   File.write(File.join(output, 'blog/index.html'), '<ul class="post-list"><li>post</li></ul><a href="/blog/page/2/">next</a>')
-  gallery = '<script id="rcg-encrypted-data" type="application/json">{"salt":"salt","iv":"iv","ciphertext":"opaque","iterations":600000}</script>'
-  File.write(File.join(output, 'rcg/index.html'), gallery)
   check = -> { SiteCheck.new(output, source: source) }
   assert(check.call.run, 'Valid site should pass')
 
@@ -82,18 +79,10 @@ Dir.mktmpdir('site-check') do |root|
   File.write(File.join(output, 'index.html'), '<script>const answer = 42;</script>')
   assert(check.call.run, 'Valid JavaScript should pass')
 
-  File.write(File.join(output, 'rcg/index.html'), gallery.sub('opaque', 'changed'))
+  File.write(File.join(output, 'sitemap.xml'), '<urlset><url><loc>https://site.invalid/rcg/</loc></url></urlset>')
   result = check.call
-  assert(!result.run && result.errors.include?('RCG encrypted payload changed during build'), 'Changed RCG ciphertext must fail')
-  File.write(File.join(output, 'rcg/index.html'), gallery)
-  inline_gallery = gallery.sub('"iterations":600000', '"iterations":600000,"compression":"gzip"')
-  File.write(File.join(source, '_pages/rcg.md'), "---\nlayout: page\nsitemap: false\n---\n" + inline_gallery)
-  File.write(File.join(output, 'rcg/index.html'), inline_gallery)
-  assert(check.call.run, 'Inline encrypted payload must be preserved for the current RCG page')
-  File.write(File.join(output, 'rcg/index.html'), inline_gallery.sub('gzip', 'changed'))
-  result = check.call
-  assert(!result.run && result.errors.include?('RCG encrypted payload changed during build'), 'Inline payload compression metadata must be preserved')
-  File.write(File.join(output, 'rcg/index.html'), inline_gallery)
+  assert(!result.run && result.errors.include?('RCG must stay out of the sitemap'), 'RCG in the sitemap must fail')
+  File.write(File.join(output, 'sitemap.xml'), '<urlset></urlset>')
   FileUtils.mkdir_p(File.join(output, 'secret_plain'))
   result = check.call
   assert(!result.run && result.errors.any? { |error| error.include?('secret_plain') }, 'Private draft directory must fail')
@@ -104,4 +93,4 @@ Dir.mktmpdir('site-check') do |root|
   assert(!result.run && result.errors.any? { |error| error.include?('posts per page') }, 'Disabled pagination must fail')
 end
 
-puts 'Build tests passed (duplicate outputs, authored/generated summaries, valid output, links/assets, JavaScript, RCG preservation, private files, pagination).'
+puts 'Build tests passed (duplicate outputs, authored/generated summaries, valid output, links/assets, JavaScript, RCG sitemap exclusion, private files, pagination).'

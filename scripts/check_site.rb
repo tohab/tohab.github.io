@@ -56,7 +56,7 @@ class SiteCheck
     end
     check_javascript
     check_pagination
-    check_encrypted_gallery
+    check_rcg_sitemap
     errors.empty?
   end
 
@@ -98,35 +98,9 @@ class SiteCheck
     errors << "Blog should show #{expected} posts per page" unless blog.css('.post-list > li').length == expected
   end
 
-  def check_encrypted_gallery
-    source = @source.join('_pages/rcg.md')
-    output = @destination.join('rcg/index.html')
-    return unless source.file? && output.file?
-
-    source_text = source.read
-    metadata = YAML.safe_load(source_text.split(/^---\s*$/, 3)[1], permitted_classes: [Date, Time])
-    data_element = Nokogiri::HTML(output.read).at_css('script#rcg-encrypted-data')
-    unless data_element
-      errors << 'RCG encrypted data element missing'
-      return
-    end
-    actual = JSON.parse(data_element.content)
-    source_element = Nokogiri::HTML(source_text).at_css('script#rcg-encrypted-data')
-    expected = if source_element
-                 JSON.parse(source_element.content)
-               else
-                 metadata.slice('salt', 'iv', 'ciphertext').merge('iterations' => metadata.fetch('kdf').fetch('iterations'))
-               end
-    required = %w[salt iv iterations ciphertext]
-    unless (required - expected.keys).empty? && required.all? { |key| !expected[key].nil? }
-      errors << 'RCG encrypted metadata is invalid'
-      return
-    end
-    errors << 'RCG encrypted payload changed during build' unless actual == expected
+  def check_rcg_sitemap
     sitemap = @destination.join('sitemap.xml')
     errors << 'RCG must stay out of the sitemap' if sitemap.file? && Nokogiri::XML(sitemap.read).xpath('//*[local-name()="loc"]').any? { |loc| URI(loc.text).path == '/rcg/' }
-  rescue JSON::ParserError, KeyError
-    errors << 'RCG encrypted metadata is invalid'
   end
 end
 

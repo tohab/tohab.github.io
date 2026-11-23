@@ -1,5 +1,7 @@
 # RCG viewer maintenance
 
+> **Status (Nov 2026):** the `/rcg/` page is no longer encrypted. It shows the room photos from `assets/rcg/room/` publicly and links to a Google Drive folder (`photos_url` in `_pages/rcg.md`) for more. The encrypted galleries and the unlock flow were removed, and the 3D tour is commented out in `_includes/rcg_recruitment.html` and `_pages/rcg.md`. The house plan only ever lived in the encrypted payload. To bring the tour back, export it from `_pages/rcg.md` at commit `cb5e3ae` with `scripts/rcg-export-public-model.mjs`. The notes below describe the old encrypted setup.
+
 `viewer.min.js` is the prebuilt browser module; `viewer.js` and `house-model.js` are its editable source. Three.js 0.186.1 is bundled, including OrbitControls; no third-party CDN is needed. See `LICENSE-three.txt`.
 
 House-specific coordinates and photographic references live in an **encrypted private JSON payload**, not in these public modules. Keep private plans, originals, model exports and passwords out of this repository. The encrypted page and `gallery-<hash>.enc` use AES-256-GCM / PBKDF2-SHA256, 600,000 iterations, fresh salt and distinct nonces. Only the generic renderer is public. Passwords are requested during packaging and are never saved.

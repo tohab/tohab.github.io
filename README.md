@@ -79,7 +79,7 @@ bash bin/build
 bundle exec ruby scripts/check_site.rb
 ```
 
-Every pull request runs these checks. They verify core routes, eight-post pagination, internal link targets, inline JavaScript syntax, excluded development/private files, and exact preservation of the encrypted `/rcg` payload. PRs never deploy; a successful main-branch run publishes through Pages. The external-link audit remains a separate manual workflow because third-party sites can block CI requests.
+Every pull request runs these checks. They verify core routes, eight-post pagination, internal link targets, inline JavaScript syntax, excluded development/private files, and that `/rcg` stays out of the sitemap. PRs never deploy; a successful main-branch run publishes through Pages. The external-link audit remains a separate manual workflow because third-party sites can block CI requests.
 
 The root npm dependencies remain formatting tools. RCG's browser code, encryption, and assets are owned by its separate workstream; this build migration does not add, update, or bundle its JavaScript dependencies. See [build validation](docs/build-validation.md) for scope and known limitations.
 
