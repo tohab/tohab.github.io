@@ -1060,6 +1060,16 @@ html.transition *:after {
   transition-delay: 0 !important;
 }
 
+// Responsive images in posts and pages: never wider than the text column,
+// keep aspect ratio, and don't let tall images exceed the viewport height.
+.post-content img,
+article img {
+  max-width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
 // Extra Markdown style (post Customization)
 .post {
   .post-meta {
