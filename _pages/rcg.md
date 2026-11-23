@@ -10,7 +10,7 @@ sitemap: false
 # Apply button target; /rcg-apply/ redirects to the Google Form (_pages/rcg-apply.html).
 apply_url: "/rcg-apply/"
 # Link to the Google Drive folder of house photos. Leave empty to hide the "More photos" button.
-photos_url: ""
+photos_url: "https://drive.google.com/drive/folders/1lWA5JBDwKB7LRrNTJVRGm15khwRJGwsE"
 full_width: true
 ---
 <style>
