@@ -2,9 +2,11 @@
  * Home page (_layouts/home.liquid): hero, now, selected essays,
  * music/films/games, elsewhere.
  *
- * Colors come from the site theme (_sass/_themes.scss), so light and dark
- * modes both work. Red (--global-theme-color) is used only for highlights:
- * hover states and the Chinese name.
+ * Look: a printed zine. Paper grain over everything, ink borders with hard
+ * offset shadows on anything you can pick up (photo, tiles, buttons), and one
+ * dark band for Sapiens First. Colors come from the site theme
+ * (_sass/_themes.scss), so light and dark modes both work. Red
+ * (--global-theme-color) is the accent.
  ******************************************************************************/
 
 .home {
@@ -17,12 +19,20 @@
   // Tile tones derived from the page color: lighter (toward the card color) and deeper (toward the ink).
   --h-tint: color-mix(in srgb, var(--global-bg-color) 50%, var(--global-card-bg-color));
   --h-paper: color-mix(in srgb, var(--global-bg-color) 22%, var(--global-card-bg-color));
-  --h-deep: color-mix(in srgb, var(--global-bg-color) 90%, var(--global-text-color));
-  // A warmer band, tinted toward the red, for the one section that should stand out.
-  --h-band: color-mix(in srgb, var(--global-bg-color) 86%, var(--global-theme-color));
+  --h-deep: color-mix(in srgb, var(--global-bg-color) 88%, var(--global-text-color));
+  // Borders and the hard "print" shadow under picked-up things.
+  --h-rule: 1.5px solid var(--h-ink);
+  --h-shadow-c: color-mix(in srgb, var(--h-ink) 82%, var(--h-red));
+  // The dark Sapiens First band and the text that sits on it.
+  --h-band: color-mix(in srgb, var(--global-text-color) 84%, var(--global-theme-color));
+  --h-on-band: var(--global-bg-color);
+  // The hero's sheet of paper: a little lighter and creamier than the page.
+  --h-sheet: color-mix(in srgb, var(--global-bg-color) 62%, #fff8ee);
   --h-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --h-spring: cubic-bezier(0.3, 1.5, 0.5, 1);
   --h-pad: clamp(4.5rem, 10vw, 7rem);
 
+  position: relative;
   max-width: 1080px;
   margin: 0 auto;
   color: var(--h-ink);
@@ -41,11 +51,21 @@
   }
 }
 
-// In dark mode the card color is black too, so lift the tiles toward the ink instead.
+// In dark mode the card color is black too, so lift the tiles toward the ink instead,
+// and make the band a deep red rather than a (now light) ink.
 html[data-theme="dark"] .home {
   --h-tint: color-mix(in srgb, var(--global-bg-color) 93%, var(--global-text-color));
   --h-paper: color-mix(in srgb, var(--global-bg-color) 89%, var(--global-text-color));
   --h-deep: color-mix(in srgb, var(--global-bg-color) 84%, var(--global-text-color));
+  --h-band: color-mix(in srgb, var(--global-bg-color) 72%, var(--global-theme-color));
+  --h-on-band: var(--global-text-color);
+  --h-sheet: color-mix(in srgb, var(--global-bg-color) 90%, #f5e6c8);
+  --h-shadow-c: color-mix(in srgb, var(--global-theme-color) 70%, var(--global-bg-color));
+}
+
+// The full-bleed band is 100vw wide; don't let it add a sideways scroll.
+body:has(.home) {
+  overflow-x: clip;
 }
 
 // Line the site navbar up with the wider home page.
@@ -53,30 +73,28 @@ body:has(.home) .navbar > .container {
   max-width: 1080px;
 }
 
-// The home page ends with its own links, so the footer icons would repeat them.
-body:has(.home) footer .social {
-  display: none;
-}
-
 // A faint paper grain over the whole page, so the flat color feels like a print.
-body:has(.home)::after {
+body:has(.home)::after,
+body:has(.work)::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 2000;
   pointer-events: none;
-  opacity: 0.28;
+  opacity: 0.32;
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.25 0 0 0 0 0.12 0 0 0 0 0.05 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-html[data-theme="dark"] body:has(.home)::after {
+html[data-theme="dark"] body:has(.home)::after,
+html[data-theme="dark"] body:has(.work)::after {
   opacity: 0.12;
   mix-blend-mode: screen;
 }
 
 @media print {
-  body:has(.home)::after {
+  body:has(.home)::after,
+  body:has(.work)::after {
     display: none;
   }
 }
@@ -145,8 +163,14 @@ html[data-theme="dark"] body:has(.home)::after {
   color: var(--h-soft);
 }
 
-/* ---------------------------------------------------------------- Hero */
+/* ---------------------------------------------------------------- Hero
+ * The hero is its own sheet of paper: lighter than the page, with long
+ * fibers, a few flecks, foxed edges, and a deckled bottom edge that casts a
+ * soft shadow onto the page below.
+ */
 .home-hero {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   align-items: center;
@@ -154,6 +178,94 @@ html[data-theme="dark"] body:has(.home)::after {
   min-height: min(80vh, 720px);
   padding-top: 2rem;
   border-top: 0;
+
+  // The sheet and its shadow share the deckled mask; the shadow sits 3px lower.
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: -3rem; // up under the navbar's margin
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    z-index: -1;
+    -webkit-mask:
+      linear-gradient(#000, #000) top / 100% calc(100% - 21px) no-repeat,
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='22' preserveAspectRatio='none'%3E%3Cpath d='M0 0H420V9L412 12 404 8 395 13 388 10 379 15 370 9 361 12 350 8 342 14 333 11 322 16 314 10 305 13 296 9 286 14 277 10 268 15 258 9 249 13 240 8 230 14 221 11 212 16 203 10 193 13 184 9 175 15 165 10 156 13 147 8 137 14 128 11 119 15 110 9 101 13 91 8 82 14 73 10 64 16 55 11 46 13 37 8 28 14 19 10 10 13 0 9Z'/%3E%3C/svg%3E") bottom left / 420px 22px repeat-x;
+    mask:
+      linear-gradient(#000, #000) top / 100% calc(100% - 21px) no-repeat,
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='22' preserveAspectRatio='none'%3E%3Cpath d='M0 0H420V9L412 12 404 8 395 13 388 10 379 15 370 9 361 12 350 8 342 14 333 11 322 16 314 10 305 13 296 9 286 14 277 10 268 15 258 9 249 13 240 8 230 14 221 11 212 16 203 10 193 13 184 9 175 15 165 10 156 13 147 8 137 14 128 11 119 15 110 9 101 13 91 8 82 14 73 10 64 16 55 11 46 13 37 8 28 14 19 10 10 13 0 9Z'/%3E%3C/svg%3E") bottom left / 420px 22px repeat-x;
+  }
+
+  &::before {
+    z-index: -1;
+    background:
+      // flecks: a few dark specks, like bits of bark in handmade paper
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='1' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .18 0 0 0 0 .1 14 0 0 0 -10.4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E"),
+      // formation: the soft, cloudy unevenness of pressed pulp
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.025' numOctaves='4' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .36 0 0 0 0 .2 .55 0 0 0 -.22'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E"),
+      // fibers: short, fine strands
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='turbulence' baseFrequency='.03 .06' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .33 0 0 0 0 .2 -2.2 0 0 0 .2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E"),
+      // foxing: warmer, darker toward the edges
+      radial-gradient(ellipse 75% 85% at 45% 40%, transparent 55%, color-mix(in srgb, var(--h-red) 9%, transparent) 100%),
+      var(--h-sheet);
+  }
+
+  // The sheet's shadow on the page.
+  &::after {
+    z-index: -2;
+    top: calc(-3rem + 3px);
+    bottom: -4px;
+    background: color-mix(in srgb, var(--h-ink) 14%, transparent);
+    filter: blur(1.5px);
+  }
+}
+
+// Name, set like a proof.
+.home-nameplate {
+  position: relative;
+  display: inline-block;
+  padding: 1.6rem 1.8rem 1.9rem 0;
+}
+
+// Printer's crop marks at the corners.
+.home-crop {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: color-mix(in srgb, var(--h-ink) 55%, transparent);
+  border-style: solid;
+  border-width: 0;
+  pointer-events: none;
+}
+
+.home-crop--tl {
+  top: 0;
+  left: -1.4rem;
+  border-top-width: 1px;
+  border-left-width: 1px;
+}
+
+.home-crop--tr {
+  top: 0;
+  right: 0;
+  border-top-width: 1px;
+  border-right-width: 1px;
+}
+
+.home-crop--bl {
+  bottom: 0;
+  left: -1.4rem;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+
+.home-crop--br {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
 }
 
 .home-name {
@@ -164,9 +276,60 @@ html[data-theme="dark"] body:has(.home)::after {
   letter-spacing: -0.035em;
 
   em {
+    position: relative;
+    display: inline-block; // so the brush stroke spans just the surname
     font-style: italic;
   }
 }
+
+// A red brush stroke under the surname: the red thread starts here.
+.home-swash {
+  position: absolute;
+  left: -0.04em;
+  right: -0.25em;
+  bottom: -0.2em;
+  width: calc(100% + 0.29em);
+  height: 0.28em;
+  overflow: visible;
+  pointer-events: none;
+
+  path {
+    fill: none;
+    stroke: var(--h-red);
+    stroke-width: 5;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+  }
+}
+
+// 卜天蓝 as a name seal, pressed in red ink beside the name.
+.home-seal {
+  position: absolute;
+  top: 1.9rem;
+  right: -2.2rem;
+  display: grid;
+  place-items: center;
+  padding: 0.5rem 0.35rem;
+  writing-mode: vertical-rl;
+  font-size: clamp(1.35rem, 2.6vw, 1.95rem);
+  line-height: 1;
+  letter-spacing: 0.12em;
+  color: var(--h-sheet);
+  background: var(--h-red);
+  border-radius: 4px;
+  // A thin inner border, as carved into the stone.
+  box-shadow: inset 0 0 0 2px var(--h-red), inset 0 0 0 3.5px color-mix(in srgb, var(--h-sheet) 85%, transparent);
+  font-weight: 400;
+  transform: rotate(5deg);
+  // Ink that didn't quite take: speckled gaps in the color.
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='2' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -5 0 0 0 3.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='2' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -5 0 0 0 3.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+}
+
+.home-name__row {
+  display: block;
+}
+
 
 .home-hero__line {
   margin: 2rem 0 0;
@@ -178,21 +341,52 @@ html[data-theme="dark"] body:has(.home)::after {
 .home-print-wrap {
   position: relative;
   justify-self: center;
-  width: min(320px, 100%);
+  width: min(300px, 100%);
+
+  // A dot screen behind the photo, like the back of a print.
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -2.2rem -2.6rem 2.2rem 2.4rem;
+    z-index: -1;
+    background-image: radial-gradient(color-mix(in srgb, var(--h-red) 55%, transparent) 1.2px, transparent 1.6px);
+    background-size: 11px 11px;
+    mask-image: radial-gradient(closest-side, #000 55%, transparent);
+    opacity: 0.55;
+  }
 }
 
 .home-print {
   position: relative;
   margin: 0;
-  padding: 12px 12px 48px;
-  background: var(--h-paper);
-  box-shadow: 0 24px 60px rgba(60, 25, 5, 0.16);
-  transform: rotate(3deg);
+  transform: rotate(-2deg);
   transition: transform 0.6s var(--h-ease);
 
-  &:hover {
-    transform: rotate(0deg) scale(1.02);
+  figcaption {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.1rem;
+    font-size: 0.98rem;
+    font-style: italic;
+    color: var(--h-soft);
+
+    &::before {
+      content: "";
+      width: 1.2rem;
+      height: 1px;
+      background: var(--h-red);
+    }
   }
+}
+
+// The photo itself: an ink frame over an offset, outlined block (no white mat).
+.home-print__frame {
+  border: var(--h-rule);
+  box-shadow:
+    10px 10px 0 -1.5px var(--h-deep),
+    10px 10px 0 0 var(--h-ink);
+  transition: box-shadow 0.5s var(--h-ease);
 
   img {
     display: block;
@@ -200,117 +394,170 @@ html[data-theme="dark"] body:has(.home)::after {
     height: auto;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-  }
-
-  figcaption {
-    position: absolute;
-    left: 16px;
-    bottom: 14px;
-    font-size: 0.95rem;
-    font-style: italic;
+    filter: saturate(0.92) contrast(1.03);
   }
 }
 
-.home-print__zh {
-  position: absolute;
-  top: 0;
-  right: -3.4rem;
-  writing-mode: vertical-rl;
-  font-size: 2.1rem;
-  letter-spacing: 0.3em;
-  color: var(--h-red);
+.home-print-wrap:hover {
+  .home-print {
+    transform: rotate(0deg) translate(-3px, -3px);
+  }
+
+  .home-print__frame {
+    box-shadow:
+      15px 15px 0 -1.5px var(--h-deep),
+      15px 15px 0 0 var(--h-ink);
+  }
 }
 
-/* ----------------------------------------------------------------- Now */
+/* ----------------------------------------------------------------- Now
+ * A full-bleed dark band with a halftone, and a framed poster card inside:
+ * the logo and wordmark as one lockup on the left; what it is, where to go,
+ * and the founding essay on the right.
+ */
 .home-now {
-  // Full-bleed warm band: the page's high point.
-  background: var(--h-band);
-  box-shadow: 0 0 0 100vmax var(--h-band);
-  clip-path: inset(0 -100vmax);
+  position: relative;
   border-top: 0;
+  color: var(--h-on-band);
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    z-index: -1;
+    background:
+      radial-gradient(color-mix(in srgb, var(--h-on-band) 16%, transparent) 1px, transparent 1.5px) 0 0 / 9px 9px,
+      var(--h-band);
+    mask-image: none;
+  }
+
+  // Fade the halftone so it's densest at the right edge.
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    z-index: -1;
+    background: linear-gradient(100deg, var(--h-band) 35%, transparent 90%);
+  }
+
+  // _base.scss colors every div and p directly, so hand the band color down.
+  :where(div, p, span, li, em, strong) {
+    color: inherit;
+  }
+
+  .home-label {
+    color: color-mix(in srgb, var(--h-on-band) 75%, transparent);
+  }
+
+  .home-lead {
+    margin-bottom: 1.6rem;
+  }
+}
+
+.home-now__card {
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  align-items: end;
-  gap: 2rem 4rem;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: 2.5rem 4rem;
+  padding: clamp(1.6rem, 4vw, 3rem);
+  border: 1px solid color-mix(in srgb, var(--h-on-band) 35%, transparent);
+  border-radius: 6px;
+  // A second, inset hairline: a printed frame.
+  outline: 1px solid color-mix(in srgb, var(--h-on-band) 14%, transparent);
+  outline-offset: -9px;
+}
+
+.home-now__lockup {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 1.6rem);
+}
+
+.home-now__logo {
+  flex: none;
+  width: clamp(4.2rem, 9vw, 6.5rem);
+  height: auto;
+  transform-origin: 50% 90%;
 }
 
 .home-now__big {
-  font-size: clamp(3.2rem, 8vw, 5.5rem);
+  font-size: clamp(3rem, 7vw, 5.2rem);
   line-height: 0.95;
   letter-spacing: -0.03em;
 }
 
-.home-now__logo {
+.home-now__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.home-now__post {
   display: block;
-  width: clamp(3rem, 6vw, 4.5rem);
-  height: auto;
-  margin: 1.25rem 0 0.75rem;
+  align-self: stretch;
+  margin-top: 1.6rem;
+  padding: 1rem 1.2rem;
+  border-top: 1px solid color-mix(in srgb, var(--h-on-band) 30%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--h-on-band) 30%, transparent);
+  transition: background 0.3s ease, padding 0.35s var(--h-ease);
+
+  &:hover {
+    background: color-mix(in srgb, var(--h-on-band) 8%, transparent);
+    padding-left: 1.6rem;
+
+    .home-now__post-t span {
+      transform: translateX(5px);
+    }
+  }
+}
+
+.home-now__post-k {
+  display: block;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: color-mix(in srgb, var(--h-on-band) 72%, transparent);
+}
+
+.home-now__post-t {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 1.35rem;
+
+  span {
+    display: inline-block;
+    color: var(--global-theme-color);
+    transition: transform 0.3s var(--h-ease);
+  }
+}
+
+html:not([data-theme="dark"]) .home-now__post-t span {
+  color: #ff7a59;
 }
 
 .home-now + .home-sect {
   border-top: 0;
 }
 
-.home-currently {
-  list-style: none;
-  margin: 2rem 0 0;
-  padding: 0;
-  font-size: 1.02rem;
-
-  li {
-    display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
-  }
-
-  // A small live dot: this part of the page is tended.
-  li::before {
-    content: "";
-    flex: none;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--h-red);
-    transform: translateY(-1px);
-  }
-
-  span {
-    font-style: italic;
-    color: var(--h-soft);
-  }
-}
-
-.home--animate .home-currently li::before {
-  animation: home-pulse 2.4s ease-in-out infinite;
-}
-
-@keyframes home-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--global-theme-color) 45%, transparent);
-  }
-
-  60% {
-    box-shadow: 0 0 0 7px transparent;
-  }
-}
-
-.home-now__actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem 1.5rem;
-}
-
+/* -------------------------------------------------------------- Buttons */
 .home-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  padding: 0.9rem 1.5rem;
-  border: 1px solid var(--h-ink);
+  padding: 0.85rem 1.5rem;
+  border: var(--h-rule);
   border-radius: 999px;
   font-size: 1.05rem;
-  transition: background 0.25s ease, transform 0.25s var(--h-ease);
+  box-shadow: 3px 3px 0 var(--h-shadow-c);
+  transition: background 0.25s ease, transform 0.25s var(--h-ease), box-shadow 0.25s var(--h-ease);
 
   span {
     color: var(--h-red);
@@ -319,11 +566,17 @@ html[data-theme="dark"] body:has(.home)::after {
 
   &:hover {
     background: var(--h-paper);
-    transform: translateY(-2px);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--h-shadow-c);
 
     span {
       transform: translateX(4px);
     }
+  }
+
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 var(--h-shadow-c);
   }
 }
 
@@ -341,15 +594,29 @@ html[data-theme="dark"] body:has(.home)::after {
   }
 }
 
+// On the dark band: a paper-colored button.
+.home-btn--light {
+  background: var(--h-on-band);
+  color: var(--h-band) !important;
+  border-color: var(--h-on-band);
+  box-shadow: 3px 3px 0 color-mix(in srgb, var(--h-on-band) 40%, transparent);
+
+  &:hover {
+    background: var(--h-on-band);
+    box-shadow: 5px 5px 0 var(--global-theme-color);
+  }
+}
+
 /* ------------------------------------------------------------- Writing */
 .home-shelf {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid var(--h-line);
+  border-top: var(--h-rule);
+  border-bottom: var(--h-rule);
 
-  li {
-    border-bottom: 1px solid var(--h-line);
+  li + li {
+    border-top: 1px solid var(--h-line);
   }
 
   a {
@@ -358,14 +625,19 @@ html[data-theme="dark"] body:has(.home)::after {
     grid-template-columns: 5rem 1fr 9rem;
     align-items: baseline;
     gap: 1.5rem;
-    padding: 1.5rem 0.5rem;
+    padding: 1.5rem 0.75rem;
+    transition: background 0.35s ease;
+
+    &:hover {
+      background: color-mix(in srgb, var(--h-paper) 55%, transparent);
+    }
   }
 
   // Arrow that replaces the topic on hover.
   a::after {
     content: "→";
     position: absolute;
-    right: 0.5rem;
+    right: 0.75rem;
     top: 1.55rem;
     font-size: 1.3rem;
     color: var(--h-red);
@@ -449,35 +721,69 @@ html[data-theme="dark"] body:has(.home)::after {
   }
 }
 
-/* ------------------------------------------------- Music, films & games */
+/* ------------------------------------------------- Music, films & games
+ * Every picture sits in the normal flow of its tile, with room reserved for
+ * the way it moves on hover, so nothing overlaps text or gets clipped.
+ */
+// Off the page sits on its own deeper band, set apart from the writing above.
+.home-play {
+  position: relative;
+  isolation: isolate;
+  border-top: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    z-index: -1;
+    background: var(--h-deep);
+    border-top: 1px solid color-mix(in srgb, var(--h-ink) 12%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--h-ink) 12%, transparent);
+  }
+
+  + .home-sect {
+    border-top: 0;
+  }
+}
+
 .home-bento {
   display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  grid-template-rows: repeat(2, minmax(15rem, auto));
-  gap: 1.25rem;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+  // Room for the hard shadows on the right and bottom.
+  padding: 0 6px 6px 0;
 }
 
 .home-tile {
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-height: 15rem;
+  min-width: 0;
   padding: 1.6rem;
-  border-radius: 18px;
-  overflow: hidden;
+  border: var(--h-rule);
+  border-radius: 14px;
+  box-shadow: 5px 5px 0 var(--h-shadow-c);
   transition: transform 0.45s var(--h-ease), box-shadow 0.45s var(--h-ease);
 
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 22px 50px rgba(60, 25, 5, 0.14);
+  &:hover,
+  &:focus-visible {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0 var(--h-shadow-c);
+  }
+
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--h-shadow-c);
   }
 }
 
 .home-tile__cap {
-  position: relative;
-  z-index: 1;
-  max-width: 26rem;
+  display: block;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .home-tile__kind {
@@ -490,7 +796,7 @@ html[data-theme="dark"] body:has(.home)::after {
 
 .home-tile__t {
   display: block;
-  font-size: 1.55rem;
+  font-size: 1.5rem;
   line-height: 1.2;
 }
 
@@ -502,46 +808,50 @@ html[data-theme="dark"] body:has(.home)::after {
 }
 
 .home-tile__go {
-  position: absolute;
-  right: 1.5rem;
-  bottom: 1.4rem;
-  font-size: 0.95rem;
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-size: 0.98rem;
   color: var(--h-red);
-  opacity: 0;
-  transform: translateX(-6px);
-  transition: opacity 0.3s ease, transform 0.3s var(--h-ease);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, transform 0.3s var(--h-ease);
 }
 
 .home-tile:hover .home-tile__go,
 .home-tile:focus-visible .home-tile__go {
-  opacity: 1;
-  transform: none;
+  border-color: var(--h-red);
+  transform: translateX(4px);
 }
 
-// Music: a big light tile with the album name set large.
+// Music: a tall light tile. Title, then the sleeve with the record peeking out
+// to the right (inside the tile), then the caption.
 .home-tile--music {
   grid-row: 1 / span 2;
+  flex-direction: column;
+  gap: 1.2rem;
   background: var(--h-tint);
 
   .home-tile__go {
-    top: 1.5rem;
-    bottom: auto;
+    margin-top: 0;
+  }
+
+  .home-tile__cap {
+    margin-top: auto;
+    max-width: 28rem;
   }
 }
 
+.home-tile__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .home-tile__big {
-  position: absolute;
-  left: 1.6rem;
-  right: 1.6rem;
-  top: 4.2rem;
-  font-size: clamp(3rem, 7vw, 5.2rem);
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
   line-height: 1;
 }
 
 .home-eq {
-  position: absolute;
-  left: 1.7rem;
-  top: 1.7rem;
   display: flex;
   align-items: flex-end;
   gap: 5px;
@@ -590,17 +900,11 @@ html[data-theme="dark"] body:has(.home)::after {
   }
 }
 
-// The album sleeve, with the record peeking out; on hover it slides up and spins.
-.home-tile--music .home-tile__cap {
-  max-width: calc(100% - 17rem);
-}
-
 .home-sleeve {
-  position: absolute;
-  right: 1.6rem;
-  bottom: 1.6rem;
-  width: 14rem;
+  position: relative;
+  width: min(14.5rem, 54%);
   aspect-ratio: 1;
+  flex: none;
 
   img {
     position: relative;
@@ -608,8 +912,9 @@ html[data-theme="dark"] body:has(.home)::after {
     display: block;
     width: 100%;
     height: 100%;
-    border-radius: 4px;
-    box-shadow: 0 18px 40px rgba(60, 25, 5, 0.22);
+    border: var(--h-rule);
+    border-radius: 3px;
+    box-shadow: 4px 4px 0 var(--h-shadow-c);
     transform: rotate(-2deg);
     transition: transform 0.6s var(--h-ease);
   }
@@ -622,8 +927,8 @@ html[data-theme="dark"] body:has(.home)::after {
   background:
     radial-gradient(circle, var(--h-red) 0 15%, #111 15.5% 17%, transparent 17.5%),
     repeating-radial-gradient(circle, #1b1b1b 0 2px, #2a2a2a 2px 3px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
-  transform: translateY(-18%) rotate(0deg);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  transform: translateX(32%) rotate(0deg);
   transition: transform 0.9s var(--h-ease);
 }
 
@@ -634,62 +939,25 @@ html[data-theme="dark"] body:has(.home)::after {
   }
 
   .home-sleeve__disc {
-    transform: translateY(-38%) rotate(200deg);
+    transform: translateX(58%) rotate(220deg);
   }
 }
 
-// Film: paper tile with a little film frame.
+// Film: a small framed still beside the caption.
 .home-tile--film {
-  background: var(--h-paper);
-
-  .home-tile__cap {
-    max-width: calc(100% - 9rem);
-  }
-}
-
-.home-film {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 7.5rem;
-  height: 5rem;
-  border-radius: 10px;
-  border: 1px solid var(--h-line);
-  background:
-    repeating-linear-gradient(90deg, var(--h-ink) 0 7px, transparent 7px 14px) top / 100% 6px no-repeat,
-    repeating-linear-gradient(90deg, var(--h-ink) 0 7px, transparent 7px 14px) bottom / 100% 6px no-repeat,
-    var(--h-bg);
-  transition: transform 0.45s var(--h-ease);
-
-  span {
-    font-size: 1.4rem;
-    transition: transform 0.3s var(--h-ease), color 0.3s ease;
-  }
+  gap: 1.5rem;
+  background: var(--h-paper);
 }
 
-.home-tile--film:hover .home-film {
-  transform: rotate(-4deg) scale(1.05);
-
-  span {
-    color: var(--h-red);
-    transform: scale(1.2);
-  }
-}
-
-// A real still from the film, set like a small print, with a play badge.
 .home-still {
-  position: absolute;
-  top: 1.4rem;
-  right: 1.5rem;
-  width: 6.5rem;
-  height: 8.6rem;
-  padding: 5px 5px 14px;
-  background: var(--h-bg);
-  box-shadow: 0 10px 24px rgba(60, 25, 5, 0.18);
-  transform: rotate(3deg);
+  position: relative;
+  flex: none;
+  width: 6.2rem;
+  aspect-ratio: 3 / 4;
+  border: var(--h-rule);
+  box-shadow: 4px 4px 0 var(--h-shadow-c);
+  transform: rotate(-3deg);
   transition: transform 0.5s var(--h-ease);
 
   img {
@@ -703,19 +971,19 @@ html[data-theme="dark"] body:has(.home)::after {
 .home-still__play {
   position: absolute;
   left: 50%;
-  top: 45%;
+  top: 50%;
   display: grid;
   place-items: center;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.3rem;
+  height: 2.3rem;
   border-radius: 50%;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   padding-left: 3px;
   color: #fff;
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(2px);
   transform: translate(-50%, -50%);
-  transition: background 0.3s ease, transform 0.3s var(--h-ease);
+  transition: background 0.3s ease, transform 0.3s var(--h-spring);
 }
 
 .home-tile--film:hover .home-still {
@@ -724,24 +992,22 @@ html[data-theme="dark"] body:has(.home)::after {
 
 .home-tile--film:hover .home-still__play {
   background: var(--h-red);
-  transform: translate(-50%, -50%) scale(1.12);
+  transform: translate(-50%, -50%) scale(1.15);
 }
 
-// Games: deeper peach tile with a stack of screenshots that fans out.
+// Games: a stack of screenshots that fans out, with its spread reserved.
 .home-tile--games {
-  background: var(--h-deep);
-
-  .home-tile__cap {
-    max-width: calc(100% - 4rem);
-  }
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--h-paper);
 }
 
 .home-fan {
-  position: absolute;
-  top: 1.4rem;
-  right: 2rem;
-  width: 9.5rem;
-  height: 7rem;
+  position: relative;
+  flex: none;
+  width: 8rem;
+  height: 6rem;
+  margin: 0.4rem 1.4rem 0.4rem 1.6rem;
 
   img {
     position: absolute;
@@ -749,43 +1015,47 @@ html[data-theme="dark"] body:has(.home)::after {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: 4px solid var(--h-paper);
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(60, 25, 5, 0.18);
-    transition: transform 0.5s var(--h-ease);
+    border: var(--h-rule);
+    border-radius: 6px;
+    box-shadow: 3px 3px 0 var(--h-shadow-c);
+    transition: transform 0.5s var(--h-spring);
   }
 
-  // Slightly fanned at rest so you can tell there are several games.
   img:nth-child(1) {
-    transform: translate(-2.2rem, 0.4rem) rotate(-9deg);
+    transform: translate(-0.9rem, 0.2rem) rotate(-8deg);
   }
 
   img:nth-child(2) {
-    transform: translate(-0.9rem, -0.1rem) rotate(-2deg);
+    transform: translate(-0.3rem, -0.1rem) rotate(-2deg);
   }
 
   img:nth-child(3) {
-    transform: rotate(5deg);
+    transform: translate(0.4rem, 0.1rem) rotate(5deg);
   }
 }
 
 .home-tile--games:hover .home-fan {
   img:nth-child(1) {
-    transform: translate(-4.2rem, 0.5rem) rotate(-12deg);
+    transform: translate(-1.5rem, 0.3rem) rotate(-12deg);
   }
 
   img:nth-child(2) {
-    transform: translate(-1.8rem, -0.25rem) rotate(-3deg);
+    transform: translate(-0.3rem, -0.35rem) rotate(-1deg);
   }
 
   img:nth-child(3) {
-    transform: translate(0.6rem, 0.4rem) rotate(6deg);
+    transform: translate(1rem, 0.25rem) rotate(9deg);
   }
 }
 
 /* ----------------------------------------------------------- Elsewhere */
 .home-elsewhere {
   text-align: center;
+
+  // Shrink-wrapped, so the thread can find where the label really starts.
+  .home-label {
+    display: inline-block;
+  }
 }
 
 .home-elsewhere__line {
@@ -796,37 +1066,14 @@ html[data-theme="dark"] body:has(.home)::after {
   color: var(--h-soft);
 }
 
-.home-elsewhere__links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem 2.6rem;
-  list-style: none;
-  margin: 2.6rem 0 0;
-  padding: 0;
-
-  a {
-    position: relative;
-    font-size: clamp(1.3rem, 2.6vw, 1.65rem);
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -4px;
-      height: 2px;
-      background: var(--h-red);
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.35s var(--h-ease);
-    }
-
-    &:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-  }
+// Section marks: a short hand-drawn squiggle instead of a ruled line.
+.home-label::before {
+  width: 1.9rem;
+  height: 0.6rem;
+  margin-right: 0.6rem;
+  background: var(--h-red);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 12'%3E%3Cpath d='M2 7C7 2 10 2 13 6s6 4 9 0 6-4 9 0 5 3 7 1' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 12'%3E%3Cpath d='M2 7C7 2 10 2 13 6s6 4 9 0 6-4 9 0 5 3 7 1' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 /* ---------------------------------------------------------- Animations
@@ -836,8 +1083,8 @@ html[data-theme="dark"] body:has(.home)::after {
 .home--animate {
   .home-r {
     opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 1s ease var(--d, 0s), transform 1s var(--h-ease) var(--d, 0s);
+    transform: translateY(14px);
+    transition: opacity 0.8s ease var(--d, 0s), transform 0.8s var(--h-ease) var(--d, 0s);
   }
 
   .is-in .home-r {
@@ -845,29 +1092,50 @@ html[data-theme="dark"] body:has(.home)::after {
     transform: none;
   }
 
+  // The one flourish: the brush stroke is drawn under the name, then the seal is stamped.
+  .home-swash path {
+    stroke-dasharray: 320;
+    stroke-dashoffset: 320;
+    transition: stroke-dashoffset 0.8s cubic-bezier(0.6, 0, 0.2, 1) 0.5s;
+  }
+
+  .is-in .home-swash path {
+    stroke-dashoffset: 0;
+  }
+
+  .home-hero:not(.is-in) .home-seal {
+    opacity: 0;
+    transform: rotate(-8deg) scale(1.5);
+  }
+
+  .home-seal {
+    transition: opacity 0.2s ease 1.1s, transform 0.4s cubic-bezier(0.5, 1.6, 0.6, 1) 1.1s;
+  }
+
   // Once revealed, tiles go back to their quick hover lift.
   .is-in .home-tile.home-r {
-    transition: opacity 1s ease var(--d, 0s), transform 0.45s var(--h-ease), box-shadow 0.45s var(--h-ease);
+    transition: opacity 0.8s ease var(--d, 0s), transform 0.45s var(--h-ease), box-shadow 0.45s var(--h-ease);
   }
 
   .is-in .home-tile.home-r:hover {
-    transform: translateY(-4px);
+    transform: translate(-3px, -3px);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .home-print,
-  .home-print:hover {
+  .home-print-wrap:hover .home-print {
     transform: none;
   }
 
   .home-eq i {
-    animation: none;
+    animation: none !important;
   }
 
   .home-sleeve img,
   .home-sleeve__disc,
-  .home-still {
+  .home-still,
+  .home-fan img {
     transition: none;
   }
 }
@@ -883,34 +1151,28 @@ html[data-theme="dark"] body:has(.home)::after {
 
   .home-print-wrap {
     justify-self: start;
-    width: min(260px, 70%);
+    width: min(250px, 66%);
     margin-left: 0.5rem;
   }
 
-  .home-now {
+  .home-now__card {
     grid-template-columns: 1fr;
   }
 
   .home-bento {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
   }
 
   .home-tile--music {
     grid-column: 1 / -1;
     grid-row: auto;
-    min-height: 17rem;
   }
 
-  // Stack the film frame and game screenshots above their captions.
-  .home-tile--film .home-tile__cap {
-    max-width: none;
-    padding-top: 9rem;
-  }
-
-  .home-tile--games .home-tile__cap {
-    max-width: none;
-    padding-top: 7.5rem;
+  // Half-width tiles: picture above the caption.
+  .home-tile--film,
+  .home-tile--games {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -918,7 +1180,7 @@ html[data-theme="dark"] body:has(.home)::after {
   .home-shelf a {
     grid-template-columns: 1fr;
     gap: 0.3rem;
-    padding: 1.2rem 0.25rem;
+    padding: 1.2rem 0.4rem;
 
     &::after {
       display: none;
@@ -933,6 +1195,13 @@ html[data-theme="dark"] body:has(.home)::after {
     grid-template-columns: 1fr;
   }
 
+  // Full-width again, so the picture can sit beside the caption.
+  .home-tile--film,
+  .home-tile--games {
+    flex-direction: row;
+    align-items: center;
+  }
+
   .home-shelf__yr small {
     display: inline;
     margin-left: 0.5rem;
@@ -942,17 +1211,42 @@ html[data-theme="dark"] body:has(.home)::after {
     }
   }
 
-  // Phones: the sleeve sits in the flow, under the album name.
-  .home-tile--music .home-tile__cap {
-    max-width: none;
+  // Narrow tiles: smaller pictures and titles so the words keep their room.
+  .home-fan {
+    width: 5.2rem;
+    height: 4rem;
+    margin: 0.3rem 0.8rem 0.3rem 0.9rem;
   }
 
-  .home-sleeve {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    align-self: center;
-    width: min(13rem, 70%);
-    margin: 9rem 0 1.6rem;
+  .home-still {
+    width: 5rem;
+  }
+
+  .home-tile {
+    padding: 1.3rem;
+  }
+
+  .home-tile--film,
+  .home-tile--games {
+    gap: 1.1rem;
+  }
+
+  .home-tile__t {
+    font-size: 1.3rem;
+  }
+
+  .home-nameplate {
+    padding: 1.1rem 1.6rem 1.4rem 0;
+  }
+
+  .home-crop--tl,
+  .home-crop--bl {
+    left: -0.7rem;
+  }
+
+  .home-seal {
+    top: 1.2rem;
+    right: -1.4rem;
+    padding: 0.4rem 0.28rem;
   }
 }

@@ -486,13 +486,16 @@ ol ol ol {
     font-size: 1.7rem;
 
     a {
-      i::before {
+      // Inline SVG icons (Substack) have no ::before, so color the svg itself.
+      i::before,
+      svg {
         color: var(--global-text-color);
         transition-property: all 0.2s ease-in-out;
       }
 
       &:hover {
-        i::before {
+        i::before,
+        svg {
           color: var(--global-theme-color);
         }
       }
@@ -573,13 +576,16 @@ ol ol ol {
     font-size: 2rem;
 
     a {
-      i::before {
+      // Inline SVG icons (Substack) have no ::before, so color the svg itself.
+      i::before,
+      svg {
         color: var(--global-text-color);
         transition-property: all 0.2s ease-in-out;
       }
 
       &:hover {
-        i::before {
+        i::before,
+        svg {
           color: var(--global-theme-color);
         }
       }

@@ -1,5 +1,13 @@
-// Home page motion: each section fades up as it scrolls into view.
-// Content stays visible without JavaScript or when reduced motion is preferred.
+// Home page motion.
+//
+// The story: this page is my notebook. The name is set like a proof and
+// underlined by hand, and each section gets a note in the margin, written in
+// with its arrow sketched as the section arrives. (/work is the typeset,
+// ruled counterpart.)
+//
+// Sections fade up as they scroll into view; the notes and pen strokes are
+// CSS transitions keyed off the same .is-in class. Everything is visible
+// without JavaScript or with reduced motion.
 (function () {
   const root = document.querySelector("[data-home]");
   if (!root) return;

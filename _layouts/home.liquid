@@ -9,23 +9,36 @@ layout: default
   <!-- 1. Hero -->
   <header class="home-hero home-sect">
     <div class="home-hero__text">
-      <h1 class="home-name home-r">{{ hero.first }}<br><em>{{ hero.last }}</em></h1>
-      <p class="home-hero__line home-r" style="--d: 0.25s">{{ hero.line }}</p>
+      <!-- The name, set like a proof: crop marks at the corners, a brush
+           underline (where the red thread begins), and the Chinese name as a seal. -->
+      <div class="home-nameplate">
+        <span class="home-crop home-crop--tl" aria-hidden="true"></span>
+        <span class="home-crop home-crop--tr" aria-hidden="true"></span>
+        <span class="home-crop home-crop--bl" aria-hidden="true"></span>
+        <span class="home-crop home-crop--br" aria-hidden="true"></span>
+        <h1 class="home-name home-r" aria-label="{{ hero.first }} {{ hero.last }}">
+          <span class="home-name__row" aria-hidden="true">{{ hero.first }}</span>
+          <em class="home-name__row" aria-hidden="true">{{ hero.last }}<svg class="home-swash" viewBox="0 0 300 36" preserveAspectRatio="none" aria-hidden="true"><path d="M3,24 C48,30 110,17 168,15 C214,13 258,18 297,9"></path></svg></em>
+        </h1>
+        <span class="home-seal home-zh" lang="zh" title="{{ hero.zh }}">{{ hero.zh }}</span>
+      </div>
+      <p class="home-hero__line home-r" style="--d: 0.55s">{{ hero.line }}</p>
     </div>
     <div class="home-print-wrap home-r" style="--d: 0.4s">
       <figure class="home-print">
-        <img
-          src="{{ 'assets/img/prof_pic-800.webp' | relative_url }}"
-          srcset="{{ 'assets/img/prof_pic-480.webp' | relative_url }} 480w, {{ 'assets/img/prof_pic-800.webp' | relative_url }} 800w"
-          sizes="(min-width: 860px) 320px, 70vw"
-          alt="Rohan Prasad"
-          width="800"
-          height="1200"
-          loading="eager"
-        >
+        <div class="home-print__frame">
+          <img
+            src="{{ 'assets/img/prof_pic-800.webp' | relative_url }}"
+            srcset="{{ 'assets/img/prof_pic-480.webp' | relative_url }} 480w, {{ 'assets/img/prof_pic-800.webp' | relative_url }} 800w"
+            sizes="(min-width: 860px) 320px, 70vw"
+            alt="Rohan Prasad"
+            width="800"
+            height="1200"
+            loading="eager"
+          >
+        </div>
         <figcaption>{{ hero.caption }}</figcaption>
       </figure>
-      <div class="home-print__zh home-zh" lang="zh">{{ hero.zh }}</div>
     </div>
   </header>
 
@@ -34,24 +47,24 @@ layout: default
   {% assign needle = '_posts/' | append: now.post | append: '.md' %}
   {% assign now_post = site.posts | where: 'path', needle | first %}
   <section class="home-now home-sect" aria-labelledby="home-now">
-    <div>
-      <div class="home-label home-r" id="home-now">{{ now.label }}</div>
-      {% if now.logo %}<img class="home-now__logo home-r" style="--d: 0.05s" src="{{ '/assets/img/' | append: now.logo | relative_url }}" alt="Sapiens First logo" width="192" height="192" loading="lazy" decoding="async">{% endif %}
-      <div class="home-now__big home-r" style="--d: 0.1s">{{ now.big[0] }}<br><em>{{ now.big[1] }}</em></div>
-    </div>
-    <div>
-      <p class="home-lead home-r" style="--d: 0.25s">{{ now.line }}</p>
-      <div class="home-now__actions home-r" style="--d: 0.4s">
-        <a class="home-btn" href="{{ now.button.url }}">{{ now.button.text }} <span aria-hidden="true">→</span></a>
-        {% if now_post %}<a class="home-quiet" href="{{ now_post.url | relative_url }}">{{ now_post.title }}</a>{% endif %}
+    <div class="home-now__card">
+      <div class="home-now__brand">
+        <div class="home-label home-r" id="home-now">{{ now.label }}</div>
+        <div class="home-now__lockup home-r" style="--d: 0.1s">
+          {% if now.logo %}<img class="home-now__logo" src="{{ '/assets/img/' | append: now.logo | relative_url }}" alt="Sapiens First logo" width="192" height="192" loading="lazy" decoding="async">{% endif %}
+          <div class="home-now__big">{{ now.big[0] }}<br><em>{{ now.big[1] }}</em></div>
+        </div>
       </div>
-      {% if now.currently %}
-        <ul class="home-currently home-r" style="--d: 0.5s">
-          {% for c in now.currently %}
-            <li><span>{{ c.label }}</span> {{ c.text }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
+      <div class="home-now__body">
+        <p class="home-lead home-r" style="--d: 0.25s">{{ now.line }}</p>
+        <a class="home-btn home-btn--light home-r" style="--d: 0.35s" href="{{ now.button.url }}">{{ now.button.text }} <span aria-hidden="true">→</span></a>
+        {% if now_post %}
+          <a class="home-now__post home-r" style="--d: 0.45s" href="{{ now_post.url | relative_url }}">
+            <span class="home-now__post-k">{{ now.post_label | default: 'Read' }} · {{ now_post.date | date: '%B %Y' }}</span>
+            <span class="home-now__post-t">{{ now_post.title }} <span aria-hidden="true">→</span></span>
+          </a>
+        {% endif %}
+      </div>
     </div>
   </section>
 
@@ -63,14 +76,14 @@ layout: default
         <div class="home-label home-r">{{ essays.label }}</div>
         <h2 class="home-r" id="home-writing" style="--d: 0.1s">{{ essays.title }}</h2>
       </div>
-      <a class="home-quiet home-r" href="{{ '/blog/' | relative_url }}">{{ essays.all }} →</a>
+      <a class="home-quiet home-r" style="--d: 0.2s" href="{{ '/blog/' | relative_url }}">{{ essays.all }} →</a>
     </div>
     <ul class="home-shelf home-r" style="--d: 0.2s">
       {% for e in essays.posts %}
         {% assign needle = '_posts/' | append: e.file | append: '.md' %}
         {% assign p = site.posts | where: 'path', needle | first %}
         {% if p %}
-          <li>
+          <li style="--i: {{ forloop.index0 }}">
             <a href="{{ p.url | relative_url }}">
               {% assign words = p.content | strip_html | number_of_words %}
               {% assign mins = words | plus: 199 | divided_by: 200 %}
@@ -99,7 +112,10 @@ layout: default
     </div>
     <div class="home-bento">
       <a class="home-tile home-tile--music home-r" style="--d: 0.15s" href="{{ play.music.url | relative_url }}">
-        <span class="home-eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="home-tile__top">
+          <span class="home-eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="home-tile__go">{{ play.music.go }} →</span>
+        </span>
         <span class="home-tile__big home-zh" lang="zh">{{ play.music.title }}</span>
         {% if play.music.cover %}
           <span class="home-sleeve" aria-hidden="true">
@@ -111,7 +127,6 @@ layout: default
           <span class="home-tile__kind">{{ play.music.kind }}</span>
           <span class="home-tile__line">{{ play.music.line }}</span>
         </span>
-        <span class="home-tile__go">{{ play.music.go }} →</span>
       </a>
       <a class="home-tile home-tile--film home-r" style="--d: 0.25s" href="{{ play.film.url | relative_url }}">
         {% if play.film.still %}
@@ -119,15 +134,13 @@ layout: default
             <img src="{{ '/assets/img/' | append: play.film.still | relative_url }}" alt="" width="360" height="640" loading="lazy" decoding="async">
             <span class="home-still__play">▶</span>
           </span>
-        {% else %}
-          <span class="home-film" aria-hidden="true"><span>▶</span></span>
         {% endif %}
         <span class="home-tile__cap">
           <span class="home-tile__kind">{{ play.film.kind }}</span>
           <span class="home-tile__t">{{ play.film.title }}</span>
           <span class="home-tile__line">{{ play.film.line }}</span>
+          <span class="home-tile__go">{{ play.film.go }} →</span>
         </span>
-        <span class="home-tile__go">{{ play.film.go }} →</span>
       </a>
       <a class="home-tile home-tile--games home-r" style="--d: 0.35s" href="{{ play.games.url | relative_url }}">
         <span class="home-fan" aria-hidden="true">
@@ -138,8 +151,8 @@ layout: default
         <span class="home-tile__cap">
           <span class="home-tile__kind">{{ play.games.kind }}</span>
           <span class="home-tile__t">{{ play.games.title }}</span>
+          <span class="home-tile__go">{{ play.games.go }} →</span>
         </span>
-        <span class="home-tile__go">{{ play.games.go }} →</span>
       </a>
     </div>
   </section>
@@ -152,11 +165,6 @@ layout: default
     {% if home.elsewhere.button %}
       <a class="home-btn home-btn--solid home-r" style="--d: 0.2s" href="{{ home.elsewhere.button.url }}">{{ home.elsewhere.button.text }} <span aria-hidden="true">→</span></a>
     {% endif %}
-    <ul class="home-elsewhere__links home-r" style="--d: 0.3s">
-      {% for l in home.elsewhere.links %}
-        <li><a href="{{ l.url }}" rel="me noopener">{{ l.name }}</a></li>
-      {% endfor %}
-    </ul>
   </section>
 </div>
 

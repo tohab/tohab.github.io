@@ -1,5 +1,7 @@
 // Work portfolio motion: section reveals, line-by-line unfurl, reading
-// progress, and the margin spine (fill line, case dots, sticky case label).
+// progress, the margin spine (fill line, case dots, sticky case label),
+// numbers that count up, the chapter bar (where you are) and the skim
+// switch (bold lead-ins only).
 (function () {
   const root = document.querySelector("[data-work]");
   if (!root) return;
@@ -15,11 +17,36 @@
   let batch = 0;
   let batchTimer = null;
   function reveal(el) {
-    el.style.setProperty("--d", `${Math.min(batch, 6) * 0.09}s`);
+    el.style.setProperty("--d", `${Math.min(batch, 4) * 0.04}s`);
     batch += 1;
     clearTimeout(batchTimer);
     batchTimer = setTimeout(() => (batch = 0), 120);
     el.classList.add("is-in");
+  }
+
+  // Count a figure up from zero, keeping its words and symbols ("1 → 4", "$2.5M").
+  function count(el) {
+    if (reduceMotion || el.dataset.counted) return;
+    el.dataset.counted = "1";
+    const text = el.textContent;
+    const parts = text.split(/(\d+(?:\.\d+)?)/);
+    if (parts.length < 2) return;
+    const t0 = performance.now();
+    const dur = 900;
+    function frame(now) {
+      const k = Math.min(1, (now - t0) / dur);
+      const e = 1 - Math.pow(1 - k, 3);
+      el.textContent = parts
+        .map((p, i) => {
+          if (i % 2 === 0) return p;
+          const decimals = (p.split(".")[1] || "").length;
+          return (parseFloat(p) * e).toFixed(decimals);
+        })
+        .join("");
+      if (k < 1) requestAnimationFrame(frame);
+      else el.textContent = text;
+    }
+    requestAnimationFrame(frame);
   }
 
   // Grow each impact bar to match how many of its items have arrived.
@@ -44,21 +71,85 @@
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.05 }
     );
     sections.forEach((s) => io.observe(s));
   }
 
   function unfurl() {
     if (!pending.length) return;
-    const line = window.innerHeight * 0.92;
+    const line = window.innerHeight; // start as soon as a line enters the screen
     pending = pending.filter((el) => {
       if (el.getBoundingClientRect().top > line) return true;
       reveal(el);
+      const figure = el.querySelector("[data-count]");
+      if (figure) setTimeout(() => count(figure), 150);
       const impact = el.closest(".work-impact");
       if (impact) growImpact(impact);
       return false;
     });
+  }
+
+  // The five figures in the intro count up as the page opens.
+  if (animate) {
+    root.querySelectorAll(".work-glance [data-count]").forEach((el, i) => setTimeout(() => count(el), 700 + i * 90));
+  }
+
+  // Skim: fold every line down to its bold lead-in. Remembered between visits.
+  const skim = root.querySelector("[data-skim]");
+  if (skim) {
+    skim.hidden = false;
+    const setSkim = (on) => {
+      root.classList.toggle("work--skim", on);
+      skim.setAttribute("aria-pressed", String(on));
+      try {
+        localStorage.setItem("work-skim", on ? "1" : "0");
+      } catch (e) {}
+    };
+    let saved = false;
+    try {
+      saved = localStorage.getItem("work-skim") === "1";
+    } catch (e) {}
+    setSkim(saved);
+    skim.addEventListener("click", () => {
+      setSkim(skim.getAttribute("aria-pressed") !== "true");
+      onScroll();
+    });
+  }
+
+  // The chapter bar sticks just under the site navbar, whatever its height.
+  const navbar = document.querySelector(".navbar");
+  function fitBar() {
+    if (navbar) root.style.setProperty("--work-bar-top", `${navbar.offsetHeight}px`);
+  }
+  fitBar();
+  window.addEventListener("resize", fitBar);
+
+  // Chapter bar: mark where you are.
+  const bar = root.querySelector("[data-bar]");
+  const barLinks = bar ? Array.from(bar.querySelectorAll("[data-bar-link]")) : [];
+  const barTargets = barLinks.map((a) => document.getElementById(a.dataset.barLink)).filter(Boolean);
+  let activeLink = null;
+  function markBar() {
+    if (!bar) return;
+    const line = bar.getBoundingClientRect().bottom + 60;
+    let id = null;
+    barTargets.forEach((t) => {
+      if (t.getBoundingClientRect().top < line) id = t.id;
+    });
+    const link = id ? bar.querySelector(`[data-bar-link="${id}"]`) : null;
+    if (link === activeLink) return;
+    if (activeLink) activeLink.classList.remove("is-active");
+    activeLink = link;
+    if (!link) return;
+    link.classList.add("is-active");
+    // Keep the active item in view when the bar scrolls sideways (phones).
+    const inner = bar.firstElementChild;
+    const lb = link.getBoundingClientRect();
+    const ib = inner.getBoundingClientRect();
+    if (lb.left < ib.left || lb.right > ib.right) {
+      inner.scrollTo({ left: inner.scrollLeft + lb.left - ib.left - 24, behavior: reduceMotion ? "auto" : "smooth" });
+    }
   }
 
   // Résumé: the toggle is a plain link to /resume/ until this takes over.
@@ -81,7 +172,7 @@
         panel.classList.add("is-open");
       } else {
         panel.classList.remove("is-open");
-        closeTimer = setTimeout(() => (panel.hidden = true), reduceMotion ? 0 : 900);
+        closeTimer = setTimeout(() => (panel.hidden = true), reduceMotion ? 0 : 500);
       }
     }
 
@@ -134,6 +225,7 @@
     const max = doc.scrollHeight - window.innerHeight;
     if (progress) progress.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
     unfurl();
+    markBar();
 
     if (!timeline) return;
     const probe = window.innerHeight * 0.4; // matches .work-tl__sticky top

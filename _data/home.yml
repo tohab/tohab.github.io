@@ -16,9 +16,7 @@ now:
   line: I'm the founder of a political movement known as Sapiens First.
   button: { text: sapiensfirst.org, url: "https://www.sapiensfirst.org" }
   post: 2026-05-22-founding-sapiens-first
-  # A small "currently" line under the Now section. Keep it fresh, or delete it.
-  currently:
-    - { label: Reading, text: "Emotional Design, by Don Norman" }
+  post_label: Read the founding essay
 
 essays:
   label: Writing
@@ -69,10 +67,5 @@ play:
 elsewhere:
   label: Elsewhere
   title: Stay in touch
-  line: New essays go out on Substack. Or find me here.
+  line: New essays go out on Substack. The rest of my links are just below.
   button: { text: Get new essays, url: "https://sapiensfirst.substack.com/subscribe" }
-  links:
-    - { name: Substack, url: "https://sapiensfirst.substack.com" }
-    - { name: LinkedIn, url: "https://www.linkedin.com/in/therohanprasad" }
-    - { name: GitHub, url: "https://github.com/tohab" }
-    - { name: YouTube, url: "https://www.youtube.com/@rohantohab" }

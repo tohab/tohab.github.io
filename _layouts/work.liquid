@@ -3,38 +3,72 @@ layout: default
 ---
 {% comment %}
   Work portfolio. Content lives in _data/work.yml (résumé in
-  _includes/resume_content.md). Styles and scroll unfurling: _sass/_work.scss,
+  _includes/resume_content.md). Styles and motion: _sass/_work.scss,
   assets/js/work.js. Everything is visible without JS or with reduced motion.
+
+  The story: home is my handwritten notebook; this is the typeset, ruled
+  version of me. The same red ink becomes a measured spine (a ruler under the
+  title, a ticked line down the cases): structure where there was none. Navigation layers sit on top of the full content:
+  a chapter bar with a skim switch (bold lead-ins only), highlight cards and
+  a timeline that jump to each case, and links between cases.
 {% endcomment %}
 {% assign work = site.data.work %}
 {% assign intro = work.intro %}
 
+{% comment %} Timeline span: earliest start year to the latest end year. {% endcomment %}
+{% assign t_min = 9999 %}
+{% assign t_max = 0 %}
+{% for c in work.cases %}
+  {% assign yrs = c.years | split: '–' %}
+  {% assign y0 = yrs[0] | strip | plus: 0 %}
+  {% assign y1 = yrs[1] | default: yrs[0] | strip | plus: 0 %}
+  {% if y0 < t_min %}{% assign t_min = y0 %}{% endif %}
+  {% if y1 > t_max %}{% assign t_max = y1 %}{% endif %}
+{% endfor %}
+{% assign t_span = t_max | plus: 1 | minus: t_min %}
+
 <div class="work" data-work>
   <div class="work-progress" aria-hidden="true"></div>
 
-  <!-- Intro -->
+  <!-- Intro: who, then the numbers, each one a door into its case -->
   <header class="work-hero work-sect">
-    <div class="work-eyebrow work-r">{{ intro.eyebrow }}</div>
-    <h1 class="work-title">
-      {% assign words = intro.title | split: ' ' %}
-      {% for w in words %}<span class="work-w" style="--d: {{ forloop.index0 | times: 0.18 | plus: 0.15 }}s">{% if forloop.last %}<em>{{ w }}</em>{% else %}{{ w }}{% endif %}</span> {% endfor %}
-    </h1>
-    <div class="work-summary work-r" style="--d: 0.7s">{{ intro.summary | markdownify }}</div>
-    <div class="work-actions work-r" style="--d: 0.95s">
-      <a
-        class="work-resume-toggle"
-        href="{{ '/resume/' | relative_url }}"
-        aria-controls="work-resume"
-        aria-expanded="false"
-        data-resume-toggle
-      >
-        <span class="work-resume-toggle__label">résumé</span>
-        <span class="work-resume-toggle__icon" aria-hidden="true">+</span>
-      </a>
-      <a class="work-linkedin" href="{{ intro.linkedin }}">
-        <i class="fa-brands fa-linkedin" aria-hidden="true"></i> linkedin
-      </a>
+    <div class="work-hero__text">
+      <div class="work-eyebrow work-r">{{ intro.eyebrow }}</div>
+      <h1 class="work-title">
+        {% assign words = intro.title | split: ' ' %}
+        {% for w in words %}<span class="work-w" style="--d: {{ forloop.index0 | times: 0.18 | plus: 0.15 }}s">{% if forloop.last %}<em>{{ w }}</em>{% else %}{{ w }}{% endif %}</span> {% endfor %}
+      </h1>
+      <div class="work-ruler" aria-hidden="true"></div>
+      <div class="work-summary work-r" style="--d: 0.7s">{{ intro.summary | markdownify }}</div>
+      <div class="work-actions work-r" style="--d: 0.95s">
+        <a
+          class="work-btn work-resume-toggle"
+          href="{{ '/resume/' | relative_url }}"
+          aria-controls="work-resume"
+          aria-expanded="false"
+          data-resume-toggle
+        >
+          <span class="work-resume-toggle__label">résumé</span>
+          <span class="work-resume-toggle__icon" aria-hidden="true">+</span>
+        </a>
+        <a class="work-btn work-btn--quiet" href="{{ intro.linkedin }}">
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i> linkedin
+        </a>
+      </div>
     </div>
+
+    <ol class="work-glance" aria-label="One number from each case">
+      {% for c in work.cases %}
+        {% assign st = c.stats.first %}
+        <li class="work-r" style="--d: {{ forloop.index0 | times: 0.1 | plus: 0.6 }}s">
+          <a href="#case-{{ forloop.index }}">
+            <span class="work-glance__n" data-count>{{ st.n }}</span>
+            <span class="work-glance__l">{{ st.label }}</span>
+            <span class="work-glance__org">{{ forloop.index | prepend: '0' | slice: -2, 2 }} · {{ c.short }} →</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ol>
   </header>
 
   <!-- Résumé, unfolded in place from the toggle above (content shared with /resume/) -->
@@ -48,8 +82,26 @@ layout: default
     </div>
   </section>
 
-  <!-- Highlights -->
-  <section class="work-chapter work-sect" aria-labelledby="work-highlights">
+  <!-- Chapter bar: where you are, where you can go, and how much to read -->
+  <nav class="work-bar" aria-label="On this page" data-bar>
+    <div class="work-bar__inner">
+      <a href="#chapter-highlights" data-bar-link="chapter-highlights"><span>I</span> highlights</a>
+      <a href="#chapter-cases" data-bar-link="chapter-cases"><span>II</span> timeline</a>
+      <span class="work-bar__cases">
+        {% for c in work.cases %}
+          <a href="#case-{{ forloop.index }}" data-bar-link="case-{{ forloop.index }}" title="{{ c.title | escape }}">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</a>
+        {% endfor %}
+      </span>
+      <a href="#chapter-side" data-bar-link="chapter-side"><span>III</span> side projects</a>
+      <button class="work-skim" type="button" aria-pressed="false" data-skim hidden>
+        <span class="work-skim__track" aria-hidden="true"><span></span></span>
+        skim
+      </button>
+    </div>
+  </nav>
+
+  <!-- I. Highlights -->
+  <section class="work-chapter work-sect" id="chapter-highlights" aria-labelledby="work-highlights">
     <div class="work-chapter__side work-r">
       <span class="work-chapter__num">I</span>at a glance
     </div>
@@ -58,28 +110,50 @@ layout: default
       <h2 class="work-r" id="work-highlights">career highlights.</h2>
       <ol class="work-highlights">
         {% for h in work.highlights %}
+          {% assign parts = h.text | split: '**' %}
+          {% assign rest = parts | slice: 2, 99 | join: '**' | markdownify | remove: '<p>' | remove: '</p>' | strip %}
           <li class="work-u">
             <span class="work-highlights__n" aria-hidden="true">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
-            <div class="work-prose">{{ h | markdownify }}</div>
+            <p class="work-prose">{% assign lead_end = rest | slice: 0 %}<strong>{{ parts[1] }}</strong>{% if lead_end != ',' %}&#32;{% endif %}<span class="work-more">{{ rest }}</span></p>
+            {% if h.case %}
+              {% assign hi = h.case | minus: 1 %}{% assign hc = work.cases[hi] %}
+              <a class="work-highlights__go" href="#case-{{ h.case }}">case {{ h.case | prepend: '0' | slice: -2, 2 }} · {{ hc.short }} →</a>
+            {% endif %}
           </li>
         {% endfor %}
       </ol>
     </div>
   </section>
 
-  <section class="work-chapter work-sect work-chapter-head" aria-labelledby="work-cases">
+  <!-- II. Timeline: every case on one screen, set against the years -->
+  <section class="work-chapter work-sect work-chapter-head" id="chapter-cases" aria-labelledby="work-cases">
     <div class="work-chapter__side work-r">
       <span class="work-chapter__num">II</span>{{ work.cases.size }} cases
     </div>
     <div class="work-chapter__main">
       <div class="work-rule"></div>
       <h2 class="work-r" id="work-cases">case studies.</h2>
-      <ol class="work-index">
+      <div class="work-years work-r" aria-hidden="true">
+        <span class="work-years__axis">
+          {% for y in (t_min..t_max) %}
+            <span style="--x: {{ y | minus: t_min | times: 100.0 | divided_by: t_span }}%">{{ y }}</span>
+          {% endfor %}
+        </span>
+      </div>
+      <ol class="work-index" style="--span: {{ t_span }}">
         {% for c in work.cases %}
+          {% assign yrs = c.years | split: '–' %}
+          {% assign y0 = yrs[0] | strip | plus: 0 %}
+          {% assign y1 = yrs[1] | default: yrs[0] | strip | plus: 0 %}
           <li class="work-u">
             <a href="#case-{{ forloop.index }}">
               <span class="work-index__n">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
               <span class="work-index__title">{{ c.title }}</span>
+              <span class="work-index__track" aria-hidden="true">
+                <span class="work-index__bar" style="--x: {{ y0 | minus: t_min | times: 100.0 | divided_by: t_span }}%; --w: {{ y1 | plus: 1 | minus: y0 | times: 100.0 | divided_by: t_span }}%">
+                  <span>{{ c.short }}</span>
+                </span>
+              </span>
               <span class="work-index__years">{{ c.years }}</span>
             </a>
           </li>
@@ -113,7 +187,7 @@ layout: default
         >
           <span class="work-dot" aria-hidden="true"></span>
           <header class="work-u">
-            <div class="work-case__meta">case {{ n }} · {{ c.org }} · {{ c.years }}</div>
+            <div class="work-case__meta"><span class="work-case__num">case {{ n }}</span> · {{ c.org }} · {{ c.years }}</div>
             <h3>{{ c.title }}</h3>
           </header>
 
@@ -122,41 +196,65 @@ layout: default
               {% for st in c.stats %}
                 <div class="work-stat work-u">
                   <dt>{{ st.label }}</dt>
-                  <dd>{{ st.n }}</dd>
+                  <dd data-count>{{ st.n }}</dd>
                 </div>
               {% endfor %}
             </dl>
           {% endif %}
 
-          <div class="work-block">
-            <div class="work-label work-u">the challenge</div>
-            <div class="work-prose work-u">{{ c.problem | markdownify }}</div>
+          <!-- Before and after, side by side -->
+          <div class="work-pair">
+            <div class="work-block work-challenge">
+              <div class="work-label work-u">the challenge</div>
+              <div class="work-prose work-u">{{ c.problem | markdownify }}</div>
+            </div>
+
+            <div class="work-block work-impact">
+              <div class="work-label work-u">what changed</div>
+              <ul class="work-impact__list">
+                {% for i in c.impact %}
+                  {% assign parts = i | split: '**' %}
+                  {% assign rest = parts | slice: 2, 99 | join: '**' | markdownify | remove: '<p>' | remove: '</p>' | strip %}
+                  <li class="work-u"><p><strong>{{ parts[1] }}</strong> <span class="work-more">{{ rest }}</span></p></li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
 
-          <div class="work-block">
-            <div class="work-label work-u">what I did</div>
-            <ul class="work-steps">
+          <div class="work-block work-how">
+            <div class="work-label work-u">what I did <span class="work-label__count">{{ c.approach.size }} moves</span></div>
+            <ol class="work-steps">
               {% for a in c.approach %}
-                <li class="work-u">{{ a | markdownify }}</li>
+                {% assign parts = a | split: '**' %}
+                {% assign rest = parts | slice: 2, 99 | join: '**' | markdownify | remove: '<p>' | remove: '</p>' | strip %}
+                <li class="work-u">
+                  <span class="work-steps__n" aria-hidden="true">{{ forloop.index }}</span>
+                  <p><strong>{{ parts[1] }}</strong> <span class="work-more">{{ rest }}</span></p>
+                </li>
               {% endfor %}
-            </ul>
+            </ol>
           </div>
 
-          <div class="work-block work-impact">
-            <div class="work-label work-u">what changed</div>
-            <ul class="work-impact__list">
-              {% for i in c.impact %}
-                <li class="work-u">{{ i | markdownify }}</li>
-              {% endfor %}
-            </ul>
-          </div>
+          <nav class="work-case__nav" aria-label="Between cases">
+            {% if forloop.first %}
+              <a href="#chapter-cases">↑ all cases</a>
+            {% else %}
+              <a href="#case-{{ forloop.index | minus: 1 }}">← case {{ forloop.index | minus: 1 | prepend: '0' | slice: -2, 2 }}</a>
+            {% endif %}
+            {% if forloop.last %}
+              <a href="#chapter-side">side projects →</a>
+            {% else %}
+              {% assign nx = work.cases[forloop.index] %}
+              <a href="#case-{{ forloop.index | plus: 1 }}">next: {{ nx.short }} →</a>
+            {% endif %}
+          </nav>
         </article>
       {% endfor %}
     </div>
   </div>
 
-  <!-- Side projects -->
-  <section class="work-chapter work-sect" aria-labelledby="work-side">
+  <!-- III. Side projects -->
+  <section class="work-chapter work-sect" id="chapter-side" aria-labelledby="work-side">
     <div class="work-chapter__side work-r">
       <span class="work-chapter__num">III</span>music · writing · research
     </div>
@@ -175,6 +273,19 @@ layout: default
         {% endfor %}
       </ul>
     </div>
+  </section>
+
+  <!-- Coda: the ruled line loosens into a hand-drawn curl, and points home -->
+  <section class="work-coda work-sect" aria-label="Next steps">
+    <svg class="work-coda__curl" viewBox="0 0 240 80" aria-hidden="true">
+      <path d="M2,40 H96 C130,40 136,8 116,8 C94,8 98,62 134,62 C170,62 176,30 206,40 L238,40"></path>
+    </svg>
+    <p class="work-coda__line work-r">want it on one page?</p>
+    <div class="work-actions work-r" style="--d: 0.15s">
+      <a class="work-btn work-btn--solid" href="{{ '/resume/' | relative_url }}">résumé →</a>
+      <a class="work-btn work-btn--quiet" href="{{ intro.linkedin }}"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> linkedin</a>
+    </div>
+    <a class="work-coda__home work-r" style="--d: 0.3s" href="{{ '/' | relative_url }}">or back to the notebook: the rest of me →</a>
   </section>
 </div>
 
