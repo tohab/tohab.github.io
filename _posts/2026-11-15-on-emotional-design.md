@@ -9,6 +9,7 @@ tags:
 - relationships
 - strategy
 - activism
+- substack
 title: On Emotional Design
 ---
 Lately, I've been reading a book called Emotional Design. The idea in a nutshell is that humans are not rational creatures: we have emotional needs from our day-to-day life. So everything -- products, conversations, events -- is judged by how they make us *feel* as much as what they actually do.

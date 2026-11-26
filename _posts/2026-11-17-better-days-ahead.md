@@ -9,6 +9,7 @@ tags:
 - activism
 - technology
 - founding
+- substack
 title: Better Days Ahead
 ---
 More and more, I have felt my chest tighten and shoulders clench when I think about AI.

@@ -10,6 +10,7 @@ tags:
 - politics
 - social change
 - strategy
+- substack
 title: Bread, Butter and AI
 ---
 

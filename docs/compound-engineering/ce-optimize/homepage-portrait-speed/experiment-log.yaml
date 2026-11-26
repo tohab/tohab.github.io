@@ -1,0 +1,125 @@
+spec: homepage-portrait-speed
+run_id: 20261017T060806Z
+started_at: '2026-10-17T06:08:06Z'
+baseline:
+  timestamp: '2026-10-17T06:08:06Z'
+  gates:
+    portrait_asset_available: 1
+    png_fallback_available: 1
+  metrics:
+    portrait_payload_bytes:
+      aggregate: 2816355
+      samples:
+        - 2816355
+  diagnostics:
+    responsive_variant_count: 0
+    largest_variant_width: 0
+    fallback_png_bytes: 2816355
+  live_readback:
+    url: https://www.rohanprasad.org/
+    selected_image: https://www.rohanprasad.org/assets/img/prof_pic.png
+    image_dimensions: 1024x1536
+    responsive_sources: 0
+    downloaded_bytes: 2816355
+experiments:
+  - iteration: 1
+    batch: 1
+    hypothesis: Generate high-quality 480px and 800px WebP sources for the existing homepage portrait, retaining the original PNG fallback.
+    category: preprocessing
+    outcome: kept
+    opportunity:
+      workload: Live homepage's eager 1024x1536 profile portrait.
+      baseline: CP-1 live measurement at commit e3d013a; 2,816,355-byte PNG and no responsive source.
+      evidence: Browser readback identified https://www.rohanprasad.org/assets/img/prof_pic.png at 2,816,355 bytes. The existing figure.liquid emits responsive WebP srcset entries for matching static files while preserving the PNG img fallback.
+      expected_benefit: Reduce the largest responsive portrait payload from 2,816,355 bytes to at most 350,000 bytes (at least 87.6%); assumes the browser selects an appropriate WebP source from the generated srcset. Verify candidate selection after deployment.
+      confidence: High that modern browsers will transfer fewer bytes if the generated variants meet the target and the live template emits them; visual fidelity and deployed HTML remain to be checked.
+      cost_and_risk: One local ImageMagick conversion pass and visual/byte checks; no new dependencies or paid services. Low behavior risk because only two derived assets are added and PNG fallback/templates remain unchanged. Local Jekyll build is unavailable, so deployed HTML requires post-publish verification.
+    changes:
+      - file: assets/img/prof_pic-480.webp
+        summary: Added 480x720 WebP portrait, 23,056 bytes.
+      - file: assets/img/prof_pic-800.webp
+        summary: Added 800x1200 WebP portrait, 48,920 bytes.
+    gates:
+      portrait_asset_available: 1
+      png_fallback_available: 1
+    gates_passed: true
+    diagnostics:
+      responsive_variant_count: 2
+      largest_variant_width: 800
+      fallback_png_bytes: 2816355
+    metrics:
+      portrait_payload_bytes:
+        aggregate: 48920
+        samples:
+          - 48920
+    comparisons:
+      - kind: standalone
+        reference_revision: live homepage baseline at e3d013a; PNG sha256 b5ad8641224a6fca7f0b020bef53971d1740cb5d485e61560ccd5c0e1892d526
+        candidate_revision: uncommitted candidates; 480 sha256 1cd12966f04547e89636484d8c8454cdc4dd658a4fa84fc44a9f29d5d382bf3a; 800 sha256 372b4bc3277f2e2a11414c8306176647297032928bb22d0ac3f07b0bf17180af
+        workload: Live homepage eager profile portrait, 1024x1536 source.
+        reference:
+          metrics:
+            portrait_payload_bytes:
+              aggregate: 2816355
+              samples:
+                - 2816355
+        candidate:
+          metrics:
+            portrait_payload_bytes:
+              aggregate: 48920
+              samples:
+                - 48920
+        uncertainty: One stable deterministic file-size sample per snapshot; byte counts have no timing noise. Source and candidates are identified by SHA-256. Live source selection and deployed HTML remain unconfirmed.
+        correctness: Both candidates inspected visually against the original. PSNR against a Lanczos-resized source was 35.7548 dB at 480px and 35.6372 dB at 800px. Source alpha extrema are 255/255, so it is fully opaque; both WebP files are valid and preserve the full uncropped composition. Original PNG remains unchanged and present. Local Jekyll build unavailable; actual rendered srcset awaits live verification.
+    decision:
+      result: keep
+      eligible: true
+      next_measurement: none
+      target_reached: true
+      primary_delta: 2767435
+      rank_score: 0.9826300306601973
+      reason: improved portrait_payload_bytes without violating other required objectives
+    post_commit_verification:
+      revision: 9c6264f8086cd1a4722b1f926215e889bb9e8b7f
+      metrics:
+        portrait_payload_bytes: 48920
+      gates:
+        portrait_asset_available: 1
+        png_fallback_available: 1
+      diagnostics:
+        responsive_variant_count: 2
+        largest_variant_width: 800
+        fallback_png_bytes: 2816355
+best:
+  iteration: 1
+  metrics:
+    portrait_payload_bytes: 48920
+  total_judge_cost_usd: 0
+  total_run_cost_usd: 0
+  run_cost_basis: No judges, research workers, paid services, or new dependencies; local ImageMagick conversion and byte measurement only. Host does not report per-turn model cost, so the recorded $0 external run cost excludes model usage.
+hypothesis_backlog: []
+phase1_readiness:
+  working_tree: clean
+  measurement_script: docs/compound-engineering/ce-optimize/homepage-portrait-speed/measure.py
+  measurement_command: python3 docs/compound-engineering/ce-optimize/homepage-portrait-speed/measure.py
+  measurement_output:
+    portrait_payload_bytes: 2816355
+    portrait_asset_available: 1
+    png_fallback_available: 1
+    responsive_variant_count: 0
+    largest_variant_width: 0
+    fallback_png_bytes: 2816355
+  parallel_probe:
+    reported_mode: parallel
+    blockers: []
+  execution:
+    configured_mode: serial
+    max_concurrent: 1
+    existing_worktrees: 0
+    maximum_experiment_worktrees: 1
+  estimated_paid_spend_usd: 0
+  total_spend_cap_usd: 0.1
+  local_build:
+    passed: false
+    limitation: Ruby Bundler and Jekyll are unavailable in the current environment; no dependencies were installed.
+  planned_experiment: Generate 480px and 800px WebP variants from the existing portrait; compare the largest variant's byte size and visually inspect both against the original.

@@ -1,0 +1,48 @@
+iteration: 1
+batch: 1
+hypothesis: Generate high-quality 480px and 800px WebP sources for the existing homepage portrait, retaining the original PNG fallback.
+measurement_command: python3 docs/compound-engineering/ce-optimize/homepage-portrait-speed/measure.py
+metrics:
+  portrait_payload_bytes:
+    aggregate: 48920
+    samples:
+      - 48920
+gates:
+  portrait_asset_available: 1
+  png_fallback_available: 1
+diagnostics:
+  responsive_variant_count: 2
+  largest_variant_width: 800
+  fallback_png_bytes: 2816355
+artifacts:
+  assets/img/prof_pic.png:
+    sha256: b5ad8641224a6fca7f0b020bef53971d1740cb5d485e61560ccd5c0e1892d526
+    bytes: 2816355
+  assets/img/prof_pic-480.webp:
+    sha256: 1cd12966f04547e89636484d8c8454cdc4dd658a4fa84fc44a9f29d5d382bf3a
+    bytes: 23056
+    dimensions: 480x720
+  assets/img/prof_pic-800.webp:
+    sha256: 372b4bc3277f2e2a11414c8306176647297032928bb22d0ac3f07b0bf17180af
+    bytes: 48920
+    dimensions: 800x1200
+decision:
+  result: keep
+  eligible: true
+  next_measurement: none
+  target_reached: true
+  primary_delta_bytes: 2767435
+  relative_reduction: 0.9826300306601973
+  reason: improved portrait_payload_bytes without violating other required objectives
+post_commit_measurement:
+  commit: 9c6264f8086cd1a4722b1f926215e889bb9e8b7f
+  portrait_payload_bytes: 48920
+  responsive_variant_count: 2
+  largest_variant_width: 800
+  png_fallback_available: 1
+quality_checks:
+  visual_inspection: Both variants preserve the original framing, colors, and facial detail at their intended responsive sizes.
+  source_alpha: Fully opaque (alpha extrema 255/255); no transparency is lost.
+  psnr_against_lanczos_resize_db:
+    480: 35.7548
+    800: 35.6372
