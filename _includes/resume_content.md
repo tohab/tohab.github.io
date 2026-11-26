@@ -1,6 +1,6 @@
 # Rohan Prasad
 
-📞 +1 (941) 280-7329 &nbsp;·&nbsp; [LinkedIn: therohanprasad](https://linkedin.com/in/therohanprasad) &nbsp;·&nbsp; [rohanprasad.org/work](https://www.rohanprasad.org/work/)
+[LinkedIn: therohanprasad](https://linkedin.com/in/therohanprasad) &nbsp;·&nbsp; [rohanprasad.org/work](https://www.rohanprasad.org/work/)
 
 ## Education
 {: .resume-major-title }
