@@ -1,0 +1,762 @@
+/*******************************************************************************
+ * Work portfolio (_layouts/work.liquid, content in _data/work.yml).
+ * Self-contained editorial layout: margin chapters, a red margin spine
+ * through the case studies, and the scroll "unfurl" (each line unrolls
+ * top-down as it enters the viewport). Colors come from the theme
+ * variables so light and dark modes both work.
+ ******************************************************************************/
+
+.work {
+  --work-red: var(--global-theme-color);
+  --work-ink: var(--global-text-color);
+  --work-soft: var(--global-text-color-light);
+  --work-line: color-mix(in srgb, var(--global-theme-color) 30%, transparent);
+  --work-side: 190px;
+  --work-gap: 56px;
+  --work-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+  color: var(--work-ink);
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--work-line);
+    transition: border-color 0.25s ease, color 0.25s ease;
+
+    &:hover {
+      color: var(--work-red);
+      border-bottom-color: var(--work-red);
+    }
+  }
+}
+
+/* Line the site navbar up with the wider page */
+body:has(.work) .navbar > .container {
+  max-width: 1080px;
+}
+
+/* Reading progress (fixed to the very top of the window) */
+.work-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--work-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 1100;
+  pointer-events: none;
+}
+
+.work-eyebrow {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--work-red);
+}
+
+/* ------------------------------------------------------------ Chapters */
+.work-chapter {
+  display: grid;
+  grid-template-columns: var(--work-side) 1fr;
+  gap: var(--work-gap);
+  padding: 2.75rem 0;
+
+  h2 {
+    font-size: 1.65rem;
+    font-weight: 400;
+    font-style: italic;
+    margin: 1.4rem 0 0.9rem;
+  }
+}
+
+.work-chapter__side {
+  text-align: right;
+  padding-top: 1.6rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--work-soft);
+}
+
+.work-chapter__num {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  color: var(--work-red);
+}
+
+.work-rule {
+  height: 1px;
+  max-width: 38rem;
+  background: var(--work-red);
+}
+
+.work-prose {
+  max-width: 38rem;
+  font-size: 1.06rem;
+  line-height: 1.85;
+
+  p {
+    margin: 0 0 0.8rem;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+
+/* --------------------------------------------------------- Margin spine */
+.work-tl {
+  display: grid;
+  grid-template-columns: var(--work-side) 1fr;
+  gap: var(--work-gap);
+  padding: 0.5rem 0 2rem;
+}
+
+.work-tl__rail {
+  position: relative;
+}
+
+.work-tl__spine,
+.work-tl__fill {
+  position: absolute;
+  top: 0;
+  right: calc(var(--work-gap) / -2);
+  width: 1px;
+}
+
+.work-tl__spine {
+  bottom: 0;
+  background: var(--work-line);
+}
+
+.work-tl__fill {
+  width: 2px;
+  margin-right: -0.5px;
+  height: 0;
+  background: var(--work-red);
+}
+
+.work-tl__sticky {
+  position: sticky;
+  top: calc(40vh - 0.9rem); // rides alongside the tip of the red line (work.js probe)
+  text-align: right;
+  transition: opacity 0.25s ease;
+}
+
+.work-tl__place {
+  font-size: 1.75rem;
+  font-style: italic;
+  line-height: 1.15;
+}
+
+.work-tl__years {
+  margin-top: 0.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--work-red);
+}
+
+.work-dot {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--global-bg-color);
+  border: 2px solid var(--work-red);
+  transition: background 0.4s ease, transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+/* ---------------------------------------------------------------- Intro */
+.work-hero {
+  padding: 2.5rem 0 3.5rem;
+  max-width: 44rem;
+}
+
+.work-title {
+  font-size: clamp(3.2rem, 9vw, 5.6rem);
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin: 1.1rem 0 0;
+
+  em {
+    color: var(--work-red);
+  }
+}
+
+.work-summary {
+  font-size: 1.3rem;
+  line-height: 1.55;
+  font-style: italic;
+  max-width: 36rem;
+  margin-top: 1.9rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+.work-actions {
+  display: flex;
+  align-items: baseline;
+  gap: 1.6rem;
+  margin-top: 1.6rem;
+}
+
+.work .work-linkedin,
+.work .work-resume-toggle {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--work-soft);
+}
+
+.work .work-resume-toggle {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-size: 0.8rem;
+  color: var(--work-red);
+  border-bottom-color: var(--work-red);
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 1px solid var(--work-red);
+    outline-offset: 4px;
+  }
+}
+
+.work-resume-toggle__icon {
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1;
+  transition: transform 0.5s var(--work-ease);
+}
+
+.work-resume-toggle[aria-expanded="true"] .work-resume-toggle__icon {
+  transform: rotate(45deg);
+}
+
+/* --------------------------------------------------------------- Résumé
+ * Unfolds under the intro: the grid row grows from 0fr to 1fr, then the
+ * sheet's sections drop in one after another (--i set by work.js).
+ */
+.work-resume {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.9s cubic-bezier(0.6, 0, 0.2, 1);
+
+  &[hidden] {
+    display: none;
+  }
+
+  &.is-open {
+    grid-template-rows: 1fr;
+  }
+}
+
+.work-resume__inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.work-resume__sheet {
+  max-width: 50rem;
+  margin: 0 0 3rem;
+  padding: 2rem 0 0.5rem;
+  border-top: 1px solid var(--work-red);
+  border-bottom: 1px solid var(--work-line);
+
+  > * {
+    transition: opacity 0.6s ease calc(var(--i, 0) * 0.04s + 0.25s), transform 0.7s var(--work-ease) calc(var(--i, 0) * 0.04s + 0.25s);
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 0.3rem;
+  }
+
+  h1 + p {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--work-soft);
+  }
+
+  h2 {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: lowercase;
+    color: var(--work-red);
+    margin: 2.2rem 0 0.9rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--work-line);
+  }
+
+  h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 1.15rem;
+    font-weight: 400;
+    font-style: italic;
+    margin: 1.2rem 0 0.15rem;
+  }
+
+  .resume-dates,
+  .resume-location {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-style: normal;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: var(--work-soft);
+    white-space: nowrap;
+  }
+
+  .resume-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin: 0 0 0.4rem;
+    font-size: 0.95rem;
+
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  ul {
+    margin: 0.3rem 0 0;
+    padding-left: 1.1rem;
+  }
+
+  li {
+    font-size: 0.97rem;
+    line-height: 1.65;
+    margin-bottom: 0.3rem;
+  }
+}
+
+.work .work-resume__full {
+  display: inline-block;
+  margin: 1.8rem 0 1rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--work-red);
+}
+
+.work-resume--animate .work-resume__sheet > * {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.work-resume--animate.is-open .work-resume__sheet > * {
+  opacity: 1;
+  transform: none;
+}
+
+/* ------------------------------------------------------------ Highlights */
+.work-highlights {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  max-width: 38rem;
+
+  li {
+    display: grid;
+    grid-template-columns: 2.4rem 1fr;
+    align-items: baseline;
+    padding: 0.85rem 0;
+    border-top: 1px solid var(--work-line);
+  }
+
+  .work-prose p {
+    margin: 0;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}
+
+.work-highlights__n {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--work-red);
+}
+
+/* ----------------------------------------------------------------- Cases */
+.work-chapter-head {
+  padding-bottom: 0.5rem;
+}
+
+.work-case {
+  position: relative;
+  padding: 1.6rem 0 3.5rem;
+  max-width: 38rem;
+
+  h3 {
+    font-size: 1.55rem;
+    line-height: 1.25;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0.35rem 0 0;
+  }
+
+  .work-dot {
+    left: calc(var(--work-gap) / -2 - 7px);
+    top: 1.75rem;
+  }
+
+  &.is-on .work-dot {
+    background: var(--work-red);
+    transform: scale(1.2);
+  }
+}
+
+/* Case index: every case on one screen, linking down to it */
+.work-index {
+  list-style: none;
+  margin: 0.2rem 0 0;
+  padding: 0;
+  max-width: 38rem;
+
+  .work & a,
+  a {
+    display: grid;
+    grid-template-columns: 2.4rem 1fr auto;
+    gap: 0.8rem;
+    align-items: baseline;
+    padding: 0.7rem 0;
+    border-bottom: none;
+    border-top: 1px solid var(--work-line);
+    transition: padding 0.25s var(--work-ease), color 0.25s ease;
+
+    &:hover {
+      padding-left: 0.4rem;
+    }
+  }
+}
+
+.work-index__n,
+.work-index__years {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--work-red);
+}
+
+.work-index__years {
+  color: var(--work-soft);
+  white-space: nowrap;
+}
+
+.work-index__title {
+  font-size: 1.02rem;
+  line-height: 1.4;
+}
+
+.work-case {
+  scroll-margin-top: 5rem;
+}
+
+/* Headline numbers: the case at a glance, before any prose */
+.work-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  margin: 1.4rem 0 0;
+  padding: 1.1rem 0 1rem;
+  border-top: 1px solid var(--work-line);
+  border-bottom: 1px solid var(--work-line);
+}
+
+.work-stat {
+  display: flex;
+  flex-direction: column-reverse; // show the number (dd) above its label (dt)
+  justify-content: flex-end;
+  margin: 0;
+
+  dd {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.05;
+    font-style: italic;
+    color: var(--work-red);
+    white-space: nowrap;
+  }
+
+  dt {
+    margin-top: 0.4rem;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    font-size: 0.72rem;
+    line-height: 1.45;
+    letter-spacing: 0.04em;
+    color: var(--work-soft);
+  }
+}
+
+.work-case__meta,
+.work-label,
+.work-side__years {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--work-red);
+}
+
+.work-case__meta {
+  color: var(--work-soft);
+}
+
+.work-block {
+  margin-top: 2rem;
+}
+
+.work-label {
+  margin-bottom: 0.6rem;
+}
+
+.work-steps,
+.work-impact__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+
+.work-steps strong,
+.work-impact__list strong {
+  font-weight: 600;
+  font-style: normal;
+  color: var(--work-ink);
+}
+
+.work-steps li {
+  padding-left: 1.6rem;
+
+  // A short red stroke, drawn in after the line unrolls.
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.85em;
+    width: 0.8rem;
+    height: 1px;
+    background: var(--work-red);
+    transform-origin: left;
+    transition: transform 0.7s var(--work-ease) 0.35s;
+  }
+}
+
+.work-impact {
+  position: relative;
+  padding-left: 1.25rem;
+
+  // The impact bar grows down as its items arrive (height set by work.js).
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--work-red);
+    transform-origin: top;
+    transform: scaleY(var(--grow, 1));
+    transition: transform 0.6s var(--work-ease);
+  }
+
+  .work-impact__list li {
+    font-style: italic;
+  }
+}
+
+/* --------------------------------------------------------- Side projects */
+.work-side {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  max-width: 38rem;
+
+  li {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--work-line);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 0.35rem;
+  }
+
+  .work-prose p {
+    margin: 0;
+  }
+}
+
+.work-side__years {
+  color: var(--work-soft);
+}
+
+/* ------------------------------------------------------------- Unfurl
+ * work.js adds .work--animate only when motion is allowed, so no-JS and
+ * reduced-motion readers see a static page. Each .work-u unrolls from the
+ * top edge down, lifting slightly, when it scrolls into view.
+ */
+.work--animate {
+  .work-r {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.9s ease var(--d, 0s), transform 0.9s var(--work-ease) var(--d, 0s);
+  }
+
+  .work-w {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.55em);
+    transition: opacity 0.8s ease var(--d, 0s), transform 0.8s var(--work-ease) var(--d, 0s);
+  }
+
+  .work-rule {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.6s cubic-bezier(0.6, 0, 0.2, 1);
+  }
+
+  .work-sect.is-in {
+    .work-r,
+    .work-w {
+      opacity: 1;
+      transform: none;
+    }
+
+    .work-rule {
+      transform: none;
+    }
+  }
+
+  .work-u {
+    opacity: 0;
+    transform: translateY(16px);
+    clip-path: inset(0 0 100% 0);
+    transition:
+      opacity 0.8s ease var(--d, 0s),
+      transform 0.9s var(--work-ease) var(--d, 0s),
+      clip-path 1s cubic-bezier(0.6, 0, 0.2, 1) var(--d, 0s);
+
+    &.is-in {
+      opacity: 1;
+      transform: none;
+      clip-path: inset(0);
+    }
+  }
+
+  .work-steps li.work-u::before {
+    transform: scaleX(0);
+  }
+
+  .work-steps li.work-u.is-in::before {
+    transform: none;
+  }
+
+  .work-impact {
+    --grow: 0;
+  }
+}
+
+/* ------------------------------------------------------------- Mobile */
+@media (max-width: 820px) {
+  .work {
+    --work-gap: 1.75rem;
+  }
+
+  .work-chapter {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 2rem 0;
+  }
+
+  .work-chapter__side {
+    text-align: left;
+    padding-top: 0;
+    margin-bottom: 0.4rem;
+
+    .work-chapter__num {
+      display: inline;
+      margin-right: 0.6rem;
+    }
+  }
+
+  .work-tl {
+    grid-template-columns: 0 1fr;
+  }
+
+  .work-tl__sticky {
+    display: none;
+  }
+
+  .work-hero {
+    padding-top: 1rem;
+  }
+
+  .work-resume__sheet h3,
+  .work-resume__sheet .resume-meta {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .work-stats {
+    gap: 0.9rem;
+  }
+
+  .work-stat dd {
+    font-size: 1.45rem;
+    white-space: normal;
+  }
+
+  .work-index a {
+    grid-template-columns: 2rem 1fr;
+  }
+
+  .work-index__years {
+    display: none;
+  }
+
+  .work-side li {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+}

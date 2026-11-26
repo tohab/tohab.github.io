@@ -5,8 +5,7 @@
   (hidden until it is set). The apply link comes from `apply_url` in _pages/rcg.md.
   The 3D tour is commented out at the bottom of this file; see the note there to bring it back.
 -->
-{% capture rcg_mailto %}mailto:rohan.prasad@berkeley.edu?subject=RCG%20housemate%20intro%20%E2%80%94%20Jan%202027{% endcapture %}
-{% assign rcg_apply = page.apply_url | default: rcg_mailto | strip %}
+{% assign rcg_apply = page.apply_url | default: "/rcg-apply/" | strip %}
 {% capture rcg_target %}{% unless rcg_apply contains "mailto:" %} target="_blank" rel="noopener"{% endunless %}{% endcapture %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

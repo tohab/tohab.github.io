@@ -1,0 +1,163 @@
+---
+layout: default
+---
+{% assign home = site.data.home %}
+{% assign hero = home.hero %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&display=swap&text={{ hero.zh | append: home.play.music.title | url_encode }}">
+
+<div class="home" data-home>
+  <!-- 1. Hero -->
+  <header class="home-hero home-sect">
+    <div class="home-hero__text">
+      <h1 class="home-name home-r">{{ hero.first }}<br><em>{{ hero.last }}</em></h1>
+      <p class="home-hero__line home-r" style="--d: 0.25s">{{ hero.line }}</p>
+    </div>
+    <div class="home-print-wrap home-r" style="--d: 0.4s">
+      <figure class="home-print">
+        <img
+          src="{{ 'assets/img/prof_pic-800.webp' | relative_url }}"
+          srcset="{{ 'assets/img/prof_pic-480.webp' | relative_url }} 480w, {{ 'assets/img/prof_pic-800.webp' | relative_url }} 800w"
+          sizes="(min-width: 860px) 320px, 70vw"
+          alt="Rohan Prasad"
+          width="800"
+          height="1200"
+          loading="eager"
+        >
+        <figcaption>{{ hero.caption }}</figcaption>
+      </figure>
+      <div class="home-print__zh home-zh" lang="zh">{{ hero.zh }}</div>
+    </div>
+  </header>
+
+  <!-- 2. Now -->
+  {% assign now = home.now %}
+  {% assign needle = '_posts/' | append: now.post | append: '.md' %}
+  {% assign now_post = site.posts | where: 'path', needle | first %}
+  <section class="home-now home-sect" aria-labelledby="home-now">
+    <div>
+      <div class="home-label home-r" id="home-now">{{ now.label }}</div>
+      {% if now.logo %}<img class="home-now__logo home-r" style="--d: 0.05s" src="{{ '/assets/img/' | append: now.logo | relative_url }}" alt="Sapiens First logo" width="192" height="192" loading="lazy" decoding="async">{% endif %}
+      <div class="home-now__big home-r" style="--d: 0.1s">{{ now.big[0] }}<br><em>{{ now.big[1] }}</em></div>
+    </div>
+    <div>
+      <p class="home-lead home-r" style="--d: 0.25s">{{ now.line }}</p>
+      <div class="home-now__actions home-r" style="--d: 0.4s">
+        <a class="home-btn" href="{{ now.button.url }}">{{ now.button.text }} <span aria-hidden="true">→</span></a>
+        {% if now_post %}<a class="home-quiet" href="{{ now_post.url | relative_url }}">{{ now_post.title }}</a>{% endif %}
+      </div>
+      {% if now.currently %}
+        <ul class="home-currently home-r" style="--d: 0.5s">
+          {% for c in now.currently %}
+            <li><span>{{ c.label }}</span> {{ c.text }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- 3. Writing -->
+  {% assign essays = home.essays %}
+  <section class="home-writing home-sect" aria-labelledby="home-writing">
+    <div class="home-head">
+      <div>
+        <div class="home-label home-r">{{ essays.label }}</div>
+        <h2 class="home-r" id="home-writing" style="--d: 0.1s">{{ essays.title }}</h2>
+      </div>
+      <a class="home-quiet home-r" href="{{ '/blog/' | relative_url }}">{{ essays.all }} →</a>
+    </div>
+    <ul class="home-shelf home-r" style="--d: 0.2s">
+      {% for e in essays.posts %}
+        {% assign needle = '_posts/' | append: e.file | append: '.md' %}
+        {% assign p = site.posts | where: 'path', needle | first %}
+        {% if p %}
+          <li>
+            <a href="{{ p.url | relative_url }}">
+              {% assign words = p.content | strip_html | number_of_words %}
+              {% assign mins = words | plus: 199 | divided_by: 200 %}
+              <span class="home-shelf__yr">{{ p.date | date: '%Y' }}<small>{{ mins }} min</small></span>
+              <span class="home-shelf__body">
+                <span class="home-shelf__t">{{ p.title }}</span>
+                <span class="home-shelf__q">“{{ e.quote }}”</span>
+              </span>
+              <span class="home-shelf__tag">{{ e.topic }}</span>
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
+
+  <!-- 4. Music, films & games -->
+  {% assign play = home.play %}
+  <section class="home-play home-sect" aria-labelledby="home-play">
+    <div class="home-head home-head--split">
+      <div>
+        <div class="home-label home-r">{{ play.label }}</div>
+        <h2 class="home-r" id="home-play" style="--d: 0.1s">{{ play.title }}</h2>
+      </div>
+      <p class="home-head__aside home-r" style="--d: 0.2s">{{ play.line }}</p>
+    </div>
+    <div class="home-bento">
+      <a class="home-tile home-tile--music home-r" style="--d: 0.15s" href="{{ play.music.url | relative_url }}">
+        <span class="home-eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="home-tile__big home-zh" lang="zh">{{ play.music.title }}</span>
+        {% if play.music.cover %}
+          <span class="home-sleeve" aria-hidden="true">
+            <span class="home-sleeve__disc"></span>
+            <img src="{{ '/assets/img/' | append: play.music.cover | relative_url }}" alt="" width="640" height="640" loading="lazy" decoding="async">
+          </span>
+        {% endif %}
+        <span class="home-tile__cap">
+          <span class="home-tile__kind">{{ play.music.kind }}</span>
+          <span class="home-tile__line">{{ play.music.line }}</span>
+        </span>
+        <span class="home-tile__go">{{ play.music.go }} →</span>
+      </a>
+      <a class="home-tile home-tile--film home-r" style="--d: 0.25s" href="{{ play.film.url | relative_url }}">
+        {% if play.film.still %}
+          <span class="home-still" aria-hidden="true">
+            <img src="{{ '/assets/img/' | append: play.film.still | relative_url }}" alt="" width="360" height="640" loading="lazy" decoding="async">
+            <span class="home-still__play">▶</span>
+          </span>
+        {% else %}
+          <span class="home-film" aria-hidden="true"><span>▶</span></span>
+        {% endif %}
+        <span class="home-tile__cap">
+          <span class="home-tile__kind">{{ play.film.kind }}</span>
+          <span class="home-tile__t">{{ play.film.title }}</span>
+          <span class="home-tile__line">{{ play.film.line }}</span>
+        </span>
+        <span class="home-tile__go">{{ play.film.go }} →</span>
+      </a>
+      <a class="home-tile home-tile--games home-r" style="--d: 0.35s" href="{{ play.games.url | relative_url }}">
+        <span class="home-fan" aria-hidden="true">
+          {% for img in play.games.images %}
+            <img src="{{ '/assets/img/games/' | append: img | append: '.jpg' | relative_url }}" alt="" width="660" height="495" loading="lazy" decoding="async">
+          {% endfor %}
+        </span>
+        <span class="home-tile__cap">
+          <span class="home-tile__kind">{{ play.games.kind }}</span>
+          <span class="home-tile__t">{{ play.games.title }}</span>
+        </span>
+        <span class="home-tile__go">{{ play.games.go }} →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 5. Elsewhere -->
+  <section class="home-elsewhere home-sect" aria-labelledby="home-elsewhere">
+    <div class="home-label home-r">{{ home.elsewhere.label }}</div>
+    <h2 class="home-r" id="home-elsewhere" style="--d: 0.1s">{{ home.elsewhere.title }}</h2>
+    {% if home.elsewhere.line %}<p class="home-elsewhere__line home-r" style="--d: 0.15s">{{ home.elsewhere.line }}</p>{% endif %}
+    {% if home.elsewhere.button %}
+      <a class="home-btn home-btn--solid home-r" style="--d: 0.2s" href="{{ home.elsewhere.button.url }}">{{ home.elsewhere.button.text }} <span aria-hidden="true">→</span></a>
+    {% endif %}
+    <ul class="home-elsewhere__links home-r" style="--d: 0.3s">
+      {% for l in home.elsewhere.links %}
+        <li><a href="{{ l.url }}" rel="me noopener">{{ l.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
+
+<script defer src="{{ '/assets/js/home.js' | relative_url | bust_file_cache }}"></script>

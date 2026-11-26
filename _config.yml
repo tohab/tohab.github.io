@@ -6,7 +6,7 @@ title: Rohan Prasad # the website title (if blank, full name will be used instea
 first_name: Rohan
 middle_name: 
 last_name: Prasad
-email: rohan.prasad@berkeley.edu
+email: # left blank on purpose: no email on the public site
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A place where Rohan publishes his writings and artwork.
 footer_text: >
@@ -70,6 +70,7 @@ serve_schema_org: true # Include Schema.org in the HTML head
 linkedin_username: therohanprasad # your LinkedIn user name
 youtube_id: rohantohab # your youtube channel id (youtube.com/@<youtube_id>)
 github_username: tohab # your GitHub user name
+substack_url: https://sapiensfirst.substack.com # your Substack URL
 
 
 acm_id: # your dl.acm.org/profile/id
@@ -110,7 +111,7 @@ work_url: # work page URL
 x_username: # your X handle
 zotero_username: # your zotero username
 
-contact_note: To get in touch, email me at first dot last at berkeley dot edu
+contact_note:
 # You can even add a little note about which of these is the best way to reach you.
 
 # -----------------------------------------------------------------------------
@@ -172,7 +173,7 @@ cusdis:
   theme: auto # auto | light | dark
 
 # Disqus comments (DEPRECATED)
-disqus_shortname: al-folio # put your disqus shortname
+disqus_shortname: # put your disqus shortname (was the theme demo account "al-folio")
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 # External sources.
@@ -248,7 +249,6 @@ exclude:
   - docs/
   - secret_plain/
   - requirements.txt
-  - old Gemfile
   - CONTRIBUTING.md
   - CUSTOMIZE.md
   - Dockerfile
@@ -259,11 +259,8 @@ exclude:
   - Gemfile.lock
   - INSTALL.md
   - LICENSE
-  - lighthouse_results/
   - package.json
   - package-lock.json
-  - _pages/about_einstein.md
-  - _pages/profiles.md # unused theme sample also claims /work/
   - assets/**/*.map
   - assets/img/raw/
   - assets/img/defunct/

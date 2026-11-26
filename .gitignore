@@ -13,3 +13,8 @@ vendor
 _generated/
 assets/img/raw/
 secret_plain/
+__pycache__/
+
+# Brainstorm mockups (local only)
+.superpowers/
+.superpowers/

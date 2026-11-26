@@ -1420,7 +1420,7 @@ html[data-theme='dark'] {
   min-height: 120px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .navbar.navbar-light {
     .container {
       display: flex;
@@ -1439,7 +1439,7 @@ html[data-theme='dark'] {
   }
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .navbar.navbar-light .navbar-brand {
     flex: initial;
     max-width: none;

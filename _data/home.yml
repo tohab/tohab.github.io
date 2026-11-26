@@ -1,0 +1,78 @@
+# Content for the home page (_layouts/home.liquid).
+# Posts are referenced by their file name in _posts/ (without .md).
+# Quotes are copied word for word from the post.
+
+hero:
+  first: Rohan
+  last: Prasad
+  zh: 卜天蓝
+  line: I'm a writer, creator, and thinker navigating the 21st century.
+  caption: Berkeley, California
+
+now:
+  label: Now
+  big: [Sapiens, First.]
+  logo: home/sapiens-first-mark.png
+  line: I'm the founder of a political movement known as Sapiens First.
+  button: { text: sapiensfirst.org, url: "https://www.sapiensfirst.org" }
+  post: 2026-05-22-founding-sapiens-first
+  # A small "currently" line under the Now section. Keep it fresh, or delete it.
+  currently:
+    - { label: Reading, text: "Emotional Design, by Don Norman" }
+
+essays:
+  label: Writing
+  title: Selected essays
+  all: All posts since 2019
+  posts:
+    - file: 2019-11-03-shrek-and-human-supremacy
+      topic: animal rights
+      quote: If you haven't seen it, you have a deep problem that needs addressing.
+    - file: 2020-12-28-cyborgs-at-harkness-table
+      topic: technology
+      quote: "Here's a thought: Are English majors Cyborgs when they sit around a discussion table?"
+    - file: 2021-01-04-ode-to-buttercup
+      topic: grief
+      quote: Strong-willed. Determined.
+    - file: 2024-04-23-kindness-on-april-23rd-2024
+      topic: taiwan
+      quote: My old jazz professor Ben Goldberg once wrote, "there are some downbeats that last a lifetime."
+    - file: 2026-11-15-on-emotional-design
+      topic: politics
+      quote: Suddenly, you realize politics is not about policy, it's about stories.
+
+play:
+  label: Off the page
+  title: Music, films & games
+  line: I love to write on this blog, bike, run, play the alto saxophone, and strum acoustic guitar.
+  music:
+    kind: Album
+    title: 補習BAND
+    line: I played alto saxophone on most tracks, and also some flute and voice.
+    url: /music/
+    go: Listen
+    cover: home/buxiband-cover.webp
+  film:
+    kind: Film
+    title: Banana Story
+    line: Here's a story I performed with my friend Leon about an unusual tour bus experience shortly after we moved to Taiwan.
+    url: /etc/films/
+    go: Watch
+    still: home/banana-story.webp
+  games:
+    kind: Games
+    title: Rainbow ragdoll playground, and others
+    url: /etc/games/
+    go: Play
+    images: [conway-life, fractal-mouse-generator, ragdoll-playground]
+
+elsewhere:
+  label: Elsewhere
+  title: Stay in touch
+  line: New essays go out on Substack. Or find me here.
+  button: { text: Get new essays, url: "https://sapiensfirst.substack.com/subscribe" }
+  links:
+    - { name: Substack, url: "https://sapiensfirst.substack.com" }
+    - { name: LinkedIn, url: "https://www.linkedin.com/in/therohanprasad" }
+    - { name: GitHub, url: "https://github.com/tohab" }
+    - { name: YouTube, url: "https://www.youtube.com/@rohantohab" }

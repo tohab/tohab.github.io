@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Live local preview with livereload: http://127.0.0.1:4000
+# Extra args pass through to `jekyll serve` (e.g. --drafts, --port 4001).
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+# Use mise-managed Ruby (pinned in .ruby-version) if the shell hasn't activated it.
+if [ -d "$HOME/.local/share/mise/shims" ]; then
+  export PATH="$HOME/.local/share/mise/shims:$PATH"
+fi
+
+bundle exec ruby bin/sync_archives.rb
+exec bundle exec jekyll serve --livereload --host 127.0.0.1 "$@"

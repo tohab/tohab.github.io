@@ -1,80 +1,181 @@
 ---
 layout: default
 ---
-<div class="post" {% if page.url == '/' %} style="text-align: center;" {% endif %}>
-  <header class="post-header">
-    <h1 class="post-title">
-      {{ page.header_title | default: 'Work Portfolio' }}
+{% comment %}
+  Work portfolio. Content lives in _data/work.yml (résumé in
+  _includes/resume_content.md). Styles and scroll unfurling: _sass/_work.scss,
+  assets/js/work.js. Everything is visible without JS or with reduced motion.
+{% endcomment %}
+{% assign work = site.data.work %}
+{% assign intro = work.intro %}
+
+<div class="work" data-work>
+  <div class="work-progress" aria-hidden="true"></div>
+
+  <!-- Intro -->
+  <header class="work-hero work-sect">
+    <div class="work-eyebrow work-r">{{ intro.eyebrow }}</div>
+    <h1 class="work-title">
+      {% assign words = intro.title | split: ' ' %}
+      {% for w in words %}<span class="work-w" style="--d: {{ forloop.index0 | times: 0.18 | plus: 0.15 }}s">{% if forloop.last %}<em>{{ w }}</em>{% else %}{{ w }}{% endif %}</span> {% endfor %}
     </h1>
-    <p class="desc">{{ page.subtitle }}</p>
+    <div class="work-summary work-r" style="--d: 0.7s">{{ intro.summary | markdownify }}</div>
+    <div class="work-actions work-r" style="--d: 0.95s">
+      <a
+        class="work-resume-toggle"
+        href="{{ '/resume/' | relative_url }}"
+        aria-controls="work-resume"
+        aria-expanded="false"
+        data-resume-toggle
+      >
+        <span class="work-resume-toggle__label">résumé</span>
+        <span class="work-resume-toggle__icon" aria-hidden="true">+</span>
+      </a>
+      <a class="work-linkedin" href="{{ intro.linkedin }}">
+        <i class="fa-brands fa-linkedin" aria-hidden="true"></i> linkedin
+      </a>
+    </div>
   </header>
-</div>
 
+  <!-- Résumé, unfolded in place from the toggle above (content shared with /resume/) -->
+  <section class="work-resume" id="work-resume" aria-label="Résumé" hidden>
+    <div class="work-resume__inner">
+      <div class="work-resume__sheet">
+        {% capture resume %}{% include resume_content.md %}{% endcapture %}
+        {{ resume | markdownify }}
+        <a class="work-resume__full" href="{{ '/resume/' | relative_url }}">open the full page →</a>
+      </div>
+    </div>
+  </section>
 
-  <article>
-    
-  <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
+  <!-- Highlights -->
+  <section class="work-chapter work-sect" aria-labelledby="work-highlights">
+    <div class="work-chapter__side work-r">
+      <span class="work-chapter__num">I</span>at a glance
+    </div>
+    <div class="work-chapter__main">
+      <div class="work-rule"></div>
+      <h2 class="work-r" id="work-highlights">career highlights.</h2>
+      <ol class="work-highlights">
+        {% for h in work.highlights %}
+          <li class="work-u">
+            <span class="work-highlights__n" aria-hidden="true">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+            <div class="work-prose">{{ h | markdownify }}</div>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+
+  <section class="work-chapter work-sect work-chapter-head" aria-labelledby="work-cases">
+    <div class="work-chapter__side work-r">
+      <span class="work-chapter__num">II</span>{{ work.cases.size }} cases
+    </div>
+    <div class="work-chapter__main">
+      <div class="work-rule"></div>
+      <h2 class="work-r" id="work-cases">case studies.</h2>
+      <ol class="work-index">
+        {% for c in work.cases %}
+          <li class="work-u">
+            <a href="#case-{{ forloop.index }}">
+              <span class="work-index__n">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+              <span class="work-index__title">{{ c.title }}</span>
+              <span class="work-index__years">{{ c.years }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Cases, along the margin spine -->
+  <div class="work-tl" data-timeline>
+    <div class="work-tl__rail" aria-hidden="true">
+      <div class="work-tl__spine"></div>
+      <div class="work-tl__fill"></div>
+      <div class="work-tl__sticky">
+        <div class="work-tl__years work-rail__n">case 01</div>
+        <div class="work-tl__place work-rail__org">{{ work.cases.first.short }}</div>
+        <div class="work-tl__years work-rail__years">{{ work.cases.first.years }}</div>
+      </div>
+    </div>
+
+    <div class="work-cases">
+      {% for c in work.cases %}
+        {% capture n %}{{ forloop.index | prepend: '0' | slice: -2, 2 }}{% endcapture %}
+        <article
+          class="work-case"
+          id="case-{{ forloop.index }}"
+          data-case
+          data-n="case {{ n }}"
+          data-org="{{ c.short | escape }}"
+          data-years="{{ c.years | escape }}"
+        >
+          <span class="work-dot" aria-hidden="true"></span>
+          <header class="work-u">
+            <div class="work-case__meta">case {{ n }} · {{ c.org }} · {{ c.years }}</div>
+            <h3>{{ c.title }}</h3>
+          </header>
+
+          {% if c.stats %}
+            <dl class="work-stats">
+              {% for st in c.stats %}
+                <div class="work-stat work-u">
+                  <dt>{{ st.label }}</dt>
+                  <dd>{{ st.n }}</dd>
+                </div>
+              {% endfor %}
+            </dl>
           {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
+          <div class="work-block">
+            <div class="work-label work-u">the challenge</div>
+            <div class="work-prose work-u">{{ c.problem | markdownify }}</div>
+          </div>
 
-    <!-- News -->
-    {% if page.news and site.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
+          <div class="work-block">
+            <div class="work-label work-u">what I did</div>
+            <ul class="work-steps">
+              {% for a in c.approach %}
+                <li class="work-u">{{ a | markdownify }}</li>
+              {% endfor %}
+            </ul>
+          </div>
 
-    <!-- Latest posts -->
-    {% if site.latest_posts.enabled %}
-      <hr style="margin: 3em 0; border-top: 1px solid #ccc;"> <!-- Adds a horizontal line -->
-      <h3>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h3>
-      {% include latest_posts.liquid %}
-    {% endif %}
+          <div class="work-block work-impact">
+            <div class="work-label work-u">what changed</div>
+            <ul class="work-impact__list">
+              {% for i in c.impact %}
+                <li class="work-u">{{ i | markdownify }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
 
-
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
-
-    <!-- Social -->
-    {% if page.social %}
-      <hr style="margin: 3em 0; border-top: 1px solid #ccc;"> <!-- Adds a horizontal line -->
-      <div class="social">
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
-
-    {% if site.newsletter.enabled and site.footer_fixed %}
-      {% include scripts/newsletter.liquid center=true %}
-    {% endif %}
-  </article>
+  <!-- Side projects -->
+  <section class="work-chapter work-sect" aria-labelledby="work-side">
+    <div class="work-chapter__side work-r">
+      <span class="work-chapter__num">III</span>music · writing · research
+    </div>
+    <div class="work-chapter__main">
+      <div class="work-rule"></div>
+      <h2 class="work-r" id="work-side">side projects.</h2>
+      <ul class="work-side">
+        {% for s in work.side %}
+          <li class="work-u">
+            <div class="work-side__years">{{ s.years }}</div>
+            <div>
+              <h3>{{ s.title }}</h3>
+              <div class="work-prose">{{ s.body | markdownify }}</div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
 </div>
+
+<script defer src="{{ '/assets/js/work.js' | relative_url | bust_file_cache }}"></script>

@@ -1,0 +1,144 @@
+# Content for the work portfolio (_layouts/work.liquid, page _pages/work.md).
+# Prose is Markdown. Each case reads top-down: title, stats (the headline
+# numbers, `n` + short `label`), problem, approach, impact. Start each
+# approach/impact item with a bold lead-in ("**Grew the team.** ...") so the
+# page can be skimmed by lead-ins alone.
+
+intro:
+  eyebrow: work portfolio
+  title: the work.
+  linkedin: https://www.linkedin.com/in/therohanprasad/
+  summary: |
+    I thrive with autonomy and a clear north-star. My instinct is to build structure where it's missing — whether that's documentation, processes, or team systems — so impactful work compounds as organizations scale.
+
+highlights:
+  - "**Scaled a member services team four-fold** at Constellation, building infrastructure that enabled doubling of daily attendance with premier service quality throughout"
+  - "**Built Constellation's media operations function from scratch** — coordinating 8 successful engagements with national outlets establishing media policy and procedures that dramatically reduced reputational risk"
+  - "**Founded and incorporated a housing nonprofit**, growing funding to $2.5M and expanding applicant capacity from 5 informal referrals to 200+ through a structured, repeatable selection pipeline"
+  - "**Digitized curriculum and evaluation operations** at a Taiwanese language school using AI tools, securing franchise-wide CEO adoption across 8 teachers and operations staff"
+  - "**Built strategic roadmap for a Drop Tyson Foods campaign at UC Berkeley**, resulting in successful, multi-year campaign that led to a campus boycott of the supplier due to animal cruelty issues"
+
+cases:
+  - title: Scaling Member Services Operations at Constellation
+    org: Constellation Institute
+    short: Constellation
+    years: 2025 – 2026
+    stats:
+      - { n: "1 → 4", label: coordination team in 11 months }
+      - { n: "2×", label: daily building attendance }
+      - { n: "−60%", label: member onboarding time }
+    problem: |
+      When I joined Constellation as the sole Operations Coordinator, the building was serving members with ad hoc processes, minimal documentation, and no structured service standards. Our capacity needed to scale with membership without degrading the service quality members had come to expect.
+    approach:
+      - "**Grew the team.** Scaled the membership services coordination team from 1 (myself) to 4 people over 11 months, spearheading training and team coordination efforts."
+      - "**Wrote the playbook.** Created a comprehensive internal guide covering the full scope of the Coordinator role, decision flowcharts for triaging requests, and escalation protocols — documentation that was subsequently used by all new hires to the position."
+      - "**Ran the porter team.** Coordinated a team of 10 porters, implementing a shift system and ticketing workflow to triage and assign daily member requests as volume scaled from ~5 to ~12 per day."
+      - "**Tiered service standards.** Co-developed a member tiering system with the policy team, establishing differentiated service standards calibrated to organizational values, staff capacity, and budget constraints."
+      - "**Rebuilt onboarding.** Redesigned the member onboarding and offboarding processes, increasing max onboarding capacity from ~3-5 to up to 100 in a day"
+      - "**Restructured inventory.** Strategized and executed restructuring of inventory, slashing costs and staff time by 50%."
+    impact:
+      - "**Attendance doubled.** Built the operational infrastructure that enabled daily building attendance to double with consistent service quality throughout."
+      - "**Faster onboarding.** Reduced member onboarding time by 60%, enabling faster, more consistent member integration at higher throughput."
+      - "**Lower costs.** Cut food and beverage operational costs by 50% through supplier restructuring."
+
+  - title: Building Constellation's Media Operations Function
+    org: Constellation Institute
+    short: Constellation
+    years: 2025 – 2026
+    stats:
+      - { n: "8", label: national media engagements }
+      - { n: "3", label: podcasts from a new podcast room }
+      - { n: "5", label: media consultants convened }
+    problem: |
+      Constellation Institute is a hub for researchers in the AI safety ecosystem — many of whom attract journalistic interest. As AI entered public discourse, two things became clear: the absence of a media operations function posed real reputational risk, Constellation's affiliates were well-position to shape the public narrative.
+    approach:
+      - "**Policy and playbook.** Drafted Constellation's media policy and visit playbook from scratch — enforceable guidelines covering journalist access, talking points, and escalation protocols, alongside step-by-step logistics and defined staff roles so any team member could execute a visit professionally and consistently."
+      - "**Media visits.** Coordinated 8 end-to-end media engagements, managing logistics staff briefings, and affiliate coordination for journalists from national outlets."
+      - "**Contact system.** Built and deployed a system to track journalist and expert contacts, enabling warm introductions and creating a searchable, institutional record of media relationships."
+      - "**Podcast room.** Piloted Constellation's podcast room program, leading to 3 high-quality podcasts."
+      - "**Field-wide workshop.** Convened a communications workshop with 5 AI safety media consultants to develop a coordinated, field-wide communications approach."
+    impact:
+      - "**A new function.** Built a media operations function where none existed, producing durable policy, process, and relationship infrastructure."
+      - "**Engagements delivered.** Delivered 8 successful media engagements."
+      - "**Lower risk.** Established media policy and compliance infrastructure from scratch, materially reducing reputational and operational risk for the organization."
+
+  - title: Co-founding and Scaling Operations for Grassyouths, Inc.
+    org: Grassyouths Inc.
+    short: Grassyouths
+    years: 2021 – 2025
+    stats:
+      - { n: "$2.5M", label: funding secured }
+      - { n: "5 → 200+", label: applicants considered }
+      - { n: "8", label: residents housed today }
+    problem: |
+      Grassyouths Inc. was a newly founded organization — which meant all foundational infrastructure needed to be established from the ground up: legal incorporation, a structured resident selection process, and operational systems for managing shared living. The central challenge was building durable institutional infrastructure capable of supporting the organization's mission as it scaled.
+    approach:
+      - "**Legal foundations.** Established the nonprofit's legal framework from scratch — filing for 501(c)(3) status, drafting bylaws, and co-authoring an organizational constitution with co-founders."
+      - "**Selection pipeline.** Replaced an informal, referral-based selection process with a structured two-stage pipeline: a 1-on-1 screening interview followed by a full panel interview with standardized questions, assessed against criteria developed through deliberate consensus-building across housemates and the primary donor/landlord."
+      - "**Facilities.** Managed facility operations end-to-end: coordinated renovations, implemented a house chore system, established domain ownership and management responsibilities, and set structured timelines for leases, move-ins, and move-outs."
+      - "**Donor relationship.** Built trust with the primary donor and landlord through consistent communication and demonstrated operational competency, securing long-term funding commitments."
+      - "**Succession.** Designed and executed a leadership transition, handing off to the next generation with documented systems and a functional operational structure."
+    impact:
+      - "**More applicants.** Expanded candidate consideration capacity from ~5 informal referrals to 200+ applicants through a structured, repeatable pipeline."
+      - "**Funding.** Secured and grew funding to $2.5 million."
+      - "**Still running.** Built a self-sustaining organization that has continued operating independently through multiple leadership transitions, currently housing 8 residents."
+
+  - title: Building an Advocacy Organization and Succession Pipeline at the Berkeley Organization for Animal Advocacy
+    org: Berkeley Organization for Animal Advocacy (BOAA)
+    short: BOAA
+    years: 2019 – 2022
+    stats:
+      - { n: "40–50", label: active members in three months, up from under 10 }
+      - { n: "80+", label: students in a UC-wide coalition }
+      - { n: "$30K", label: added university funding }
+    problem: |
+      BOAA had a mission — building political support for animal rights legislation — but almost no organizational infrastructure to pursue it. Membership had fallen below 10 active participants. We had no programs to develop new advocates, no framework for cross-campus coordination, and no strategic documentation to ensure institutional continuity. The work that did happen lived entirely in the heads of a small group of people.
+    approach:
+      - "**Intern program.** Launched the BOAA Intern Program, designing a structured mentorship curriculum that gave new advocates a defined development pathway — from onboarding through leading their own campaigns — producing a replicable pipeline that developed dozens of advocates across subsequent semesters."
+      - "**Multi-campus coalition.** Founded Students for Animal Rights (StAR), a multi-campus coalition connecting 80+ students across UC campuses, establishing a weekly meeting cadence, shared campaign objectives, and cross-campus coordination infrastructure that extended BOAA's reach beyond Berkeley."
+      - "**Tyson Foods campaign.** Identified Tyson Foods as the campaign target; built out the campaign strategy, documentation framework, evidence-gathering protocols, and escalation tactics for a coordinated multi-campus pressure campaign; then deliberately transferred ownership to a trained successor who carried it to completion."
+      - "**University funding.** Cultivated relationships with University of California stakeholders to unlock $30K in additional funding through university allocations."
+      - "**Membership.** Grew active membership from fewer than 10 to 40–50 participants in three months through targeted recruitment and structured onboarding."
+    impact:
+      - "**Leadership pipeline.** Established a replicable intern program that became BOAA's core leadership development program, developing dozens of advocates in the semesters that followed."
+      - "**Wider reach.** Built and operationalized a multi-campus coalition that extended the organization's political reach across the UC system."
+      - "**Legislation.** Influenced two pieces of legislation: the Animal Sentience Bill and Right to Know legislation, at both the student government and Berkeley City Council level."
+      - "**Contract severed.** Designed and executed a campaign succession strategy that enabled a trained successor to carry the Tyson Foods campaign to completion — resulting in UC Berkeley severing its contract with Tyson Foods."
+      - "**Funding.** Generated $30K in additional funding through university stakeholder relationships."
+
+  - title: Systematizing Operations for a Bilingual Educational Program Serving 150+ Students
+    org: Schoolhouse Language Center, Taiwan
+    short: Schoolhouse
+    years: 2022 – 2024
+    stats:
+      - { n: "+200%", label: student assessment scores }
+      - { n: "−90%", label: behavioral disruptions }
+      - { n: "−75%", label: report card time per teacher }
+    problem: |
+      As Schoolhouse Language Center's flagship branch grew to serve 150+ students, I identified an opportunity to systematize operations and establish consistent outcomes across classrooms. Instruction varied by individual teacher, and coordination ran on paper and informal LINE messages — meaning there was significant room to build shared systems that could raise the floor for all students and give leadership meaningful visibility into performance across the branch.
+    approach:
+      - "**Diagnosis.** Diagnosed the root causes of inconsistent classroom performance: absence of behavioral standards, no differentiated instruction by proficiency level, and no feedback loop between assessments and curriculum adjustments."
+      - "**Behavior framework.** Developed a tiered behavioral framework — clear guidelines, a graduated consequence structure, and defined escalation protocols to parents and administration — replacing ad hoc discipline with a consistent, enforceable system across classrooms."
+      - "**Differentiated tracks.** Segmented students by proficiency and designed differentiated engagement tracks by age and ability, ensuring instruction was calibrated to where each group actually was rather than teaching to an undifferentiated middle."
+      - "**Data-driven curriculum.** Implemented a data-driven curriculum adjustment process: used assessment results as diagnostic signals to identify specific fluency gaps and updated lesson plans accordingly each cycle."
+      - "**Shared planning system.** Designed and implemented a Google Sheets-based curriculum planning system across all teachers, replacing fragmented paper and LINE-based coordination with a shared, structured format."
+      - "**AI-automated report cards.** Automated the evaluation and report card workflow using AI tools, cutting per-teacher report card time by 75% — and secured buy-in from the franchise CEO to adopt the system across the flagship branch, making the changes institutionally durable."
+    impact:
+      - "**Scores up.** Increased student assessment scores by 200% across vocabulary, spoken fluency, and reading comprehension metrics — a direct result of systematized, differentiated instruction and data-driven curriculum adjustment."
+      - "**Calmer classrooms.** Reduced behavioral disruption rates by 90% through the tiered behavioral framework and escalation structure."
+      - "**Time saved.** Cut report card and evaluation time by 75% per teacher across 8 teachers through AI-automated workflows, with comparable savings for operations and translation staff."
+      - "**Lasting systems.** Left behind a digitized operational infrastructure adopted at the franchise level, outlasting my tenure."
+
+side:
+  - title: 補習BAND Jazz Album
+    years: "2023"
+    body: |
+      Founded and led a jazz band in Taiwan, performing alto saxophone, flute, and vocals on a 13-track [album](https://www.youtube.com/playlist?list=PLLmNtQG2epzFG2PwtDTz4U9OVDCsiJGG8&si=USk_tLQg9ANbEvwG). Produced and oversaw the recording process and designed the album cover art.
+  - title: Blog and Portfolio Website
+    years: 2019 – present
+    body: |
+      Written 100+ posts since 2019 across travel writing, argumentative essays, and creative non-fiction. Designed and built the site from scratch in HTML/CSS, deployed via GitHub Pages.
+  - title: "Economics Paper: Illegal Wildlife Trade"
+    years: 2020 – 2022
+    body: |
+      Co-authored a 20-page paper published in the *Annual Review of Resource Economics* alongside two prize-winning Berkeley economics professors. Conducted an extensive literature review with 150+ references, used Excel and Python for data analysis, and delivered data-driven insights on wildlife trade regulations to policymakers.
