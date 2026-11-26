@@ -68,4 +68,4 @@ elsewhere:
   label: Elsewhere
   title: Stay in touch
   line: New essays go out on Substack. The rest of my links are just below.
-  button: { text: Get new essays, url: "https://sapiensfirst.substack.com/subscribe" }
+  button: { text: Get new essays, url: "https://sapiensfirst.substack.com/subscribe?simple=true" }
